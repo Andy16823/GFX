@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <AllBinaries Include="BulletSharp.dll.config;libbulletc-windows-x86.dll;libbulletc-windows-x64.dll;libbulletc-linux-x86.so;libbulletc-linux-x64.so" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'anycpu'">
+    <InputBinaries Include="libbulletc-windows-x64.dll;@(AllBinaries)" />
+    <OutputBinaries Include="libbulletc.dll;@(AllBinaries)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'x86'">
+    <InputBinaries Include="libbulletc-windows-x86.dll;@(AllBinaries)" />
+    <OutputBinaries Include="libbulletc.dll;@(AllBinaries)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'x64'">
+    <InputBinaries Include="libbulletc-windows-x64.dll;@(AllBinaries)" />
+    <OutputBinaries Include="libbulletc.dll;@(AllBinaries)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <BinariesSource Include="@(InputBinaries->'$(MSBuildThisFileDirectory)%(Identity)')" />
+    <BinariesTarget Include="@(OutputBinaries->'$(OutputPath)%(Identity)')" />
+  </ItemGroup>
+
+  <Target Name="CopyNativeBinaries"
+      AfterTargets="CoreCompile"
+      Inputs="@(BinariesSource)"
+      Outputs="@(BinariesTarget)">
+    <Copy SourceFiles="@(BinariesSource)" DestinationFiles="@(BinariesTarget)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>
