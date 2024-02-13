@@ -2,8 +2,6 @@
 
 Welcome to the Genesis Game Engine, version 0.9.9.9!
 
-![Genesis Logo](link_to_logo_image)
-
 **Overview:**
 The Genesis Game Engine is a powerful framework built in C# for creating both 2D and 3D games. Designed with a focus on simplicity, it provides easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to facilitate seamless customization.
 
