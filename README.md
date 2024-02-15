@@ -1,6 +1,6 @@
 **Genesis Game Engine 0.9.9.9**
 
-Welcome to the Genesis Game Engine, version 0.9.9.9!
+Welcome to the Genesis Game Engine, version 0.1.0.0!
 
 **Overview:**
 The Genesis Game Engine is a powerful framework built in C# for creating both 2D and 3D games. Designed with a focus on simplicity, it provides easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to facilitate seamless customization.
@@ -44,6 +44,6 @@ Clone the repository and explore the extensive documentation in the Wiki to star
 
 Genesis Game Engine is licensed under the MIT License. See the License folder for details.
 
-For the latest updates and community support, visit [Genesis Game Engine on GitHub](link_to_repository).
+For the latest updates and community support, visit [Genesis Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.0).
 
-Let your creativity thrive with Genesis Game Engine 0.9.9.9!
+Let your creativity thrive with Genesis Game Engine 0.1.0.0!
