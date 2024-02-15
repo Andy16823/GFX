@@ -1,4 +1,4 @@
-**Genesis Game Engine 0.9.9.9**
+**Genesis Game Engine 0.1.0.0**
 
 Welcome to the Genesis Game Engine, version 0.1.0.0!
 
