@@ -1,6 +1,6 @@
-**Genesis Game Engine 0.1.0.0**
+**Genesis Game Engine 0.1.0.1**
 
-Welcome to the Genesis Game Engine, version 0.1.0.0!
+Welcome to the Genesis Game Engine, version 0.1.0.1!
 
 **Overview:**
 The Genesis Game Engine is a powerful framework built in C# for creating both 2D and 3D games. Designed with a focus on simplicity, it provides easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to facilitate seamless customization.
@@ -22,11 +22,11 @@ Physics simulation within the game world is handled by PhysicHandlers, featuring
 
 **Supported Games:**
 
-Genesis is ideal for creating 2D games across various genres. While 3D support is under development in version 0.9.9.9, some features such as animations, loading FBX objects, and efficient shadow implementation are still pending. Future updates will address these aspects.
+Genesis is ideal for creating 2D games across various genres. While 3D support is under development in version 0.1.0.1, some features such as animations, loading FBX objects, and efficient shadow implementation are still pending. Future updates will address these aspects.
 
 **Current 3D Features:**
 
-Version 0.9.9.9 includes basic 3D functionality like loading and rendering Wavefront (.obj) files and foundational physics simulation (collision, raycasts).
+Version 0.1.0.1 includes basic 3D functionality like loading and rendering Wavefront and FBX (.obj, .fbx) files and foundational physics simulation (collision, raycasts).
 
 **Asset Loading:**
 
@@ -44,6 +44,6 @@ Clone the repository and explore the extensive documentation in the Wiki to star
 
 Genesis Game Engine is licensed under the MIT License. See the License folder for details.
 
-For the latest updates and community support, visit [Genesis Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.0).
+For the latest updates and community support, visit [Genesis Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.1).
 
 Let your creativity thrive with Genesis Game Engine 0.1.0.0!
