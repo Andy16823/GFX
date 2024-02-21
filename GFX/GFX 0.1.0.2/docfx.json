@@ -1,0 +1,47 @@
+{
+  "nav": [
+    {
+      "href": "https://gfx.676-games.de/",
+      "name": "Website",
+      "target": "_blank"
+    }
+  ],
+  "metadata": [
+    {
+      "src": ["Genesis/bin/Debug/Genesis.dll"],
+      "dest": "api",
+      "files": ["Genesis.xml"]
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern",
+      "statictoc"
+    ],
+    "globalMetadata": {
+      "_appName": "GFX",
+      "_appTitle": "GFX",
+      "_enableSearch": true,
+      "pdf": false
+    }
+  }
+}

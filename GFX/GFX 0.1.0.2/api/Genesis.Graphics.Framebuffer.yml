@@ -1,0 +1,472 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Framebuffer
+  commentId: T:Genesis.Graphics.Framebuffer
+  id: Framebuffer
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.Framebuffer.#ctor
+  - Genesis.Graphics.Framebuffer.FramebufferID
+  - Genesis.Graphics.Framebuffer.RenderBuffer
+  - Genesis.Graphics.Framebuffer.Texture
+  - Genesis.Graphics.Framebuffer.ToTexture
+  langs:
+  - csharp
+  - vb
+  name: Framebuffer
+  nameWithType: Framebuffer
+  fullName: Genesis.Graphics.Framebuffer
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Represents a framebuffer object in graphics rendering.
+  example: []
+  syntax:
+    content: public class Framebuffer
+    content.vb: Public Class Framebuffer
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Framebuffer.ToTexture
+  commentId: M:Genesis.Graphics.Framebuffer.ToTexture
+  id: ToTexture
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: ToTexture()
+  nameWithType: Framebuffer.ToTexture()
+  fullName: Genesis.Graphics.Framebuffer.ToTexture()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Converts the framebuffer to a texture.
+  example: []
+  syntax:
+    content: public Texture ToTexture()
+    return:
+      type: Genesis.Graphics.Texture
+      description: The converted texture.
+    content.vb: Public Function ToTexture() As Texture
+  overload: Genesis.Graphics.Framebuffer.ToTexture*
+- uid: Genesis.Graphics.Framebuffer.#ctor
+  commentId: M:Genesis.Graphics.Framebuffer.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: Framebuffer()
+  nameWithType: Framebuffer.Framebuffer()
+  fullName: Genesis.Graphics.Framebuffer.Framebuffer()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Framebuffer()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Framebuffer.#ctor*
+  nameWithType.vb: Framebuffer.New()
+  fullName.vb: Genesis.Graphics.Framebuffer.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Framebuffer.FramebufferID
+  commentId: P:Genesis.Graphics.Framebuffer.FramebufferID
+  id: FramebufferID
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: FramebufferID
+  nameWithType: Framebuffer.FramebufferID
+  fullName: Genesis.Graphics.Framebuffer.FramebufferID
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the ID of the framebuffer.
+  example: []
+  syntax:
+    content: public int FramebufferID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property FramebufferID As Integer
+  overload: Genesis.Graphics.Framebuffer.FramebufferID*
+- uid: Genesis.Graphics.Framebuffer.RenderBuffer
+  commentId: P:Genesis.Graphics.Framebuffer.RenderBuffer
+  id: RenderBuffer
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: RenderBuffer
+  nameWithType: Framebuffer.RenderBuffer
+  fullName: Genesis.Graphics.Framebuffer.RenderBuffer
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the ID of the render buffer associated with the framebuffer.
+  example: []
+  syntax:
+    content: public int RenderBuffer { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RenderBuffer As Integer
+  overload: Genesis.Graphics.Framebuffer.RenderBuffer*
+- uid: Genesis.Graphics.Framebuffer.Texture
+  commentId: P:Genesis.Graphics.Framebuffer.Texture
+  id: Texture
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: Framebuffer.Texture
+  fullName: Genesis.Graphics.Framebuffer.Texture
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the ID of the texture associated with the framebuffer.
+  example: []
+  syntax:
+    content: public int Texture { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Texture As Integer
+  overload: Genesis.Graphics.Framebuffer.Texture*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Framebuffer.ToTexture*
+  commentId: Overload:Genesis.Graphics.Framebuffer.ToTexture
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer_ToTexture
+  name: ToTexture
+  nameWithType: Framebuffer.ToTexture
+  fullName: Genesis.Graphics.Framebuffer.ToTexture
+- uid: Genesis.Graphics.Texture
+  commentId: T:Genesis.Graphics.Texture
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Genesis.Graphics.Texture
+- uid: Genesis.Graphics.Framebuffer.#ctor*
+  commentId: Overload:Genesis.Graphics.Framebuffer.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer__ctor
+  name: Framebuffer
+  nameWithType: Framebuffer.Framebuffer
+  fullName: Genesis.Graphics.Framebuffer.Framebuffer
+  nameWithType.vb: Framebuffer.New
+  fullName.vb: Genesis.Graphics.Framebuffer.New
+  name.vb: New
+- uid: Genesis.Graphics.Framebuffer.FramebufferID*
+  commentId: Overload:Genesis.Graphics.Framebuffer.FramebufferID
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer_FramebufferID
+  name: FramebufferID
+  nameWithType: Framebuffer.FramebufferID
+  fullName: Genesis.Graphics.Framebuffer.FramebufferID
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.Framebuffer.RenderBuffer*
+  commentId: Overload:Genesis.Graphics.Framebuffer.RenderBuffer
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer_RenderBuffer
+  name: RenderBuffer
+  nameWithType: Framebuffer.RenderBuffer
+  fullName: Genesis.Graphics.Framebuffer.RenderBuffer
+- uid: Genesis.Graphics.Framebuffer.Texture*
+  commentId: Overload:Genesis.Graphics.Framebuffer.Texture
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer_Texture
+  name: Texture
+  nameWithType: Framebuffer.Texture
+  fullName: Genesis.Graphics.Framebuffer.Texture

@@ -1,0 +1,621 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Physics.Aabb
+  commentId: T:Genesis.Physics.Aabb
+  id: Aabb
+  parent: Genesis.Physics
+  children:
+  - Genesis.Physics.Aabb.#ctor
+  - Genesis.Physics.Aabb.#ctor(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  - Genesis.Physics.Aabb.Contains(Genesis.Math.Vec3)
+  - Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
+  - Genesis.Physics.Aabb.IntersectRay(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Physics.Aabb.Max
+  - Genesis.Physics.Aabb.Min
+  langs:
+  - csharp
+  - vb
+  name: Aabb
+  nameWithType: Aabb
+  fullName: Genesis.Physics.Aabb
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public class Aabb
+    content.vb: Public Class Aabb
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Physics.Aabb.#ctor
+  commentId: M:Genesis.Physics.Aabb.#ctor
+  id: '#ctor'
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Aabb()
+  nameWithType: Aabb.Aabb()
+  fullName: Genesis.Physics.Aabb.Aabb()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Creates a new Aabb
+  example: []
+  syntax:
+    content: public Aabb()
+    content.vb: Public Sub New()
+  overload: Genesis.Physics.Aabb.#ctor*
+  nameWithType.vb: Aabb.New()
+  fullName.vb: Genesis.Physics.Aabb.New()
+  name.vb: New()
+- uid: Genesis.Physics.Aabb.#ctor(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  commentId: M:Genesis.Physics.Aabb.#ctor(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  id: '#ctor(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)'
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Aabb(Vector3, Vector3)
+  nameWithType: Aabb.Aabb(Vector3, Vector3)
+  fullName: Genesis.Physics.Aabb.Aabb(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Creates a new Aabb
+  example: []
+  syntax:
+    content: public Aabb(Vector3 min, Vector3 max)
+    parameters:
+    - id: min
+      type: BulletSharp.Math.Vector3
+      description: ''
+    - id: max
+      type: BulletSharp.Math.Vector3
+      description: ''
+    content.vb: Public Sub New(min As Vector3, max As Vector3)
+  overload: Genesis.Physics.Aabb.#ctor*
+  nameWithType.vb: Aabb.New(Vector3, Vector3)
+  fullName.vb: Genesis.Physics.Aabb.New(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: New(Vector3, Vector3)
+- uid: Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
+  commentId: M:Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
+  id: FromBulletRigidBody(BulletSharp.RigidBody)
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: FromBulletRigidBody(RigidBody)
+  nameWithType: Aabb.FromBulletRigidBody(RigidBody)
+  fullName: Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Returns the aabb from a bullet rigidbody
+  example: []
+  syntax:
+    content: public static Aabb FromBulletRigidBody(RigidBody rigidBody)
+    parameters:
+    - id: rigidBody
+      type: BulletSharp.RigidBody
+      description: ''
+    return:
+      type: Genesis.Physics.Aabb
+      description: ''
+    content.vb: Public Shared Function FromBulletRigidBody(rigidBody As RigidBody) As Aabb
+  overload: Genesis.Physics.Aabb.FromBulletRigidBody*
+- uid: Genesis.Physics.Aabb.Contains(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.Aabb.Contains(Genesis.Math.Vec3)
+  id: Contains(Genesis.Math.Vec3)
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Contains(Vec3)
+  nameWithType: Aabb.Contains(Vec3)
+  fullName: Genesis.Physics.Aabb.Contains(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Checks if the aabb contains a point
+  example: []
+  syntax:
+    content: public bool Contains(Vec3 v)
+    parameters:
+    - id: v
+      type: Genesis.Math.Vec3
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function Contains(v As Vec3) As Boolean
+  overload: Genesis.Physics.Aabb.Contains*
+- uid: Genesis.Physics.Aabb.IntersectRay(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.Aabb.IntersectRay(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  id: IntersectRay(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: IntersectRay(Vec3, Vec3, Vec3, Vec3)
+  nameWithType: Aabb.IntersectRay(Vec3, Vec3, Vec3, Vec3)
+  fullName: Genesis.Physics.Aabb.IntersectRay(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public static bool IntersectRay(Vec3 rayOrigin, Vec3 rayDirection, Vec3 aabbMin, Vec3 aabbMax)
+    parameters:
+    - id: rayOrigin
+      type: Genesis.Math.Vec3
+    - id: rayDirection
+      type: Genesis.Math.Vec3
+    - id: aabbMin
+      type: Genesis.Math.Vec3
+    - id: aabbMax
+      type: Genesis.Math.Vec3
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IntersectRay(rayOrigin As Vec3, rayDirection As Vec3, aabbMin As Vec3, aabbMax As Vec3) As Boolean
+  overload: Genesis.Physics.Aabb.IntersectRay*
+- uid: Genesis.Physics.Aabb.Max
+  commentId: P:Genesis.Physics.Aabb.Max
+  id: Max
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: Aabb.Max
+  fullName: Genesis.Physics.Aabb.Max
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public Vec3 Max { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property Max As Vec3
+  overload: Genesis.Physics.Aabb.Max*
+- uid: Genesis.Physics.Aabb.Min
+  commentId: P:Genesis.Physics.Aabb.Min
+  id: Min
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Min
+  nameWithType: Aabb.Min
+  fullName: Genesis.Physics.Aabb.Min
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public Vec3 Min { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property Min As Vec3
+  overload: Genesis.Physics.Aabb.Min*
+references:
+- uid: Genesis.Physics
+  commentId: N:Genesis.Physics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Physics
+  nameWithType: Genesis.Physics
+  fullName: Genesis.Physics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Physics.Aabb.#ctor*
+  commentId: Overload:Genesis.Physics.Aabb.#ctor
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb__ctor
+  name: Aabb
+  nameWithType: Aabb.Aabb
+  fullName: Genesis.Physics.Aabb.Aabb
+  nameWithType.vb: Aabb.New
+  fullName.vb: Genesis.Physics.Aabb.New
+  name.vb: New
+- uid: BulletSharp.Math.Vector3
+  commentId: T:BulletSharp.Math.Vector3
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: BulletSharp.Math.Vector3
+- uid: BulletSharp.Math
+  commentId: N:BulletSharp.Math
+  isExternal: true
+  name: BulletSharp.Math
+  nameWithType: BulletSharp.Math
+  fullName: BulletSharp.Math
+  spec.csharp:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+  spec.vb:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+- uid: Genesis.Physics.Aabb.FromBulletRigidBody*
+  commentId: Overload:Genesis.Physics.Aabb.FromBulletRigidBody
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb_FromBulletRigidBody_BulletSharp_RigidBody_
+  name: FromBulletRigidBody
+  nameWithType: Aabb.FromBulletRigidBody
+  fullName: Genesis.Physics.Aabb.FromBulletRigidBody
+- uid: BulletSharp.RigidBody
+  commentId: T:BulletSharp.RigidBody
+  parent: BulletSharp
+  isExternal: true
+  name: RigidBody
+  nameWithType: RigidBody
+  fullName: BulletSharp.RigidBody
+- uid: Genesis.Physics.Aabb
+  commentId: T:Genesis.Physics.Aabb
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.Aabb.html
+  name: Aabb
+  nameWithType: Aabb
+  fullName: Genesis.Physics.Aabb
+- uid: BulletSharp
+  commentId: N:BulletSharp
+  isExternal: true
+  name: BulletSharp
+  nameWithType: BulletSharp
+  fullName: BulletSharp
+- uid: Genesis.Physics.Aabb.Contains*
+  commentId: Overload:Genesis.Physics.Aabb.Contains
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb_Contains_Genesis_Math_Vec3_
+  name: Contains
+  nameWithType: Aabb.Contains
+  fullName: Genesis.Physics.Aabb.Contains
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: Genesis.Physics.Aabb.IntersectRay*
+  commentId: Overload:Genesis.Physics.Aabb.IntersectRay
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb_IntersectRay_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_
+  name: IntersectRay
+  nameWithType: Aabb.IntersectRay
+  fullName: Genesis.Physics.Aabb.IntersectRay
+- uid: Genesis.Physics.Aabb.Max*
+  commentId: Overload:Genesis.Physics.Aabb.Max
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb_Max
+  name: Max
+  nameWithType: Aabb.Max
+  fullName: Genesis.Physics.Aabb.Max
+- uid: Genesis.Physics.Aabb.Min*
+  commentId: Overload:Genesis.Physics.Aabb.Min
+  isExternal: true
+  href: Genesis.Physics.Aabb.html#Genesis_Physics_Aabb_Min
+  name: Min
+  nameWithType: Aabb.Min
+  fullName: Genesis.Physics.Aabb.Min

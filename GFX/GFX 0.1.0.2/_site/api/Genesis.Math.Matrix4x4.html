@@ -1,0 +1,1174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Matrix4x4 | GFX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Matrix4x4 | GFX ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="GFX">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../docs/introduction.html" title="Docs">Docs</a>
+                      </li>
+                      <li>
+                          <a href="../api/Genesis.Core.html" title="API">API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.html" title="Genesis.Core" class="">Genesis.Core</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.AssetManager.html" title="AssetManager" class="">AssetManager</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Game.html" title="Game" class="">Game</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElement.html" title="GameElement" class="">GameElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameEventHandler.html" title="GameEventHandler" class="">GameEventHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GenesisWindow.html" title="GenesisWindow" class="">GenesisWindow</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.IGameBehavior.html" title="IGameBehavior" class="">IGameBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Input.html" title="Input" class="">Input</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Layer.html" title="Layer" class="">Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.SceneEventHandler.html" title="SceneEventHandler" class="">SceneEventHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.SceneSizeEvenHandler.html" title="SceneSizeEvenHandler" class="">SceneSizeEvenHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Storage.html" title="Storage" class="">Storage</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Utils.html" title="Utils" class="">Utils</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.html" title="Genesis.Core.Behaviors" class="">Genesis.Core.Behaviors</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.AnimationBehavior.html" title="AnimationBehavior" class="">AnimationBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.SpriteMovementController.html" title="SpriteMovementController" class="">SpriteMovementController</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.Physics2D.html" title="Genesis.Core.Behaviors.Physics2D" class="">Genesis.Core.Behaviors.Physics2D</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html" title="Rigidbody2D" class="">Rigidbody2D</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.Physics3D.html" title="Genesis.Core.Behaviors.Physics3D" class="">Genesis.Core.Behaviors.Physics3D</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html" title="ConvexHullBehavior" class="">ConvexHullBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html" title="QubeConvexHull" class="">QubeConvexHull</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html" title="StaticMeshBehavior" class="">StaticMeshBehavior</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.GameElements.html" title="Genesis.Core.GameElements" class="">Genesis.Core.GameElements</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.BufferedSprite.html" title="BufferedSprite" class="">BufferedSprite</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.CameraElement.html" title="CameraElement" class="">CameraElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Element3D.html" title="Element3D" class="">Element3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Empty.html" title="Empty" class="">Empty</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Qube.html" title="Qube" class="">Qube</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.RectElement.html" title="RectElement" class="">RectElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Skybox.html" title="Skybox" class="">Skybox</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Sprite.html" title="Sprite" class="">Sprite</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Terrain2D.html" title="Terrain2D" class="">Terrain2D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Terrain3D.html" title="Terrain3D" class="">Terrain3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.TerrainData.html" title="TerrainData" class="">TerrainData</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.html" title="Genesis.Graphics" class="">Genesis.Graphics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Animation.html" title="Animation" class="">Animation</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Animation3D.html" title="Animation3D" class="">Animation3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Camera.html" title="Camera" class="">Camera</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.CameraType.html" title="CameraType" class="">CameraType</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Face.html" title="Face" class="">Face</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Font.html" title="Font" class="">Font</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Framebuffer.html" title="Framebuffer" class="">Framebuffer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Glyphe.html" title="Glyphe" class="">Glyphe</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.IRenderDevice.html" title="IRenderDevice" class="">IRenderDevice</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Material.html" title="Material" class="">Material</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.MaterialBuffer.html" title="MaterialBuffer" class="">MaterialBuffer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Mesh.html" title="Mesh" class="">Mesh</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.PerspectiveCamera.html" title="PerspectiveCamera" class="">PerspectiveCamera</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shader.html" title="Shader" class="">Shader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.ShaderProgram.html" title="ShaderProgram" class="">ShaderProgram</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.TexCoords.html" title="TexCoords" class="">TexCoords</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Texture.html" title="Texture" class="">Texture</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Viewport.html" title="Viewport" class="">Viewport</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Physics.html" title="Genesis.Graphics.Physics" class="">Genesis.Graphics.Physics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Physics.BulletDebugRenderer.html" title="BulletDebugRenderer" class="">BulletDebugRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.RenderDevice.html" title="Genesis.Graphics.RenderDevice" class="">Genesis.Graphics.RenderDevice</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Shaders.OpenGL.html" title="Genesis.Graphics.Shaders.OpenGL" class="">Genesis.Graphics.Shaders.OpenGL</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.BasicShader.html" title="BasicShader" class="">BasicShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseLightning.html" title="DiffuseLightning" class="">DiffuseLightning</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning.html" title="DiffuseNormalLightning" class="">DiffuseNormalLightning</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader.html" title="DiffuseNormalShader" class="">DiffuseNormalShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseShader.html" title="DiffuseShader" class="">DiffuseShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPShader.html" title="MVPShader" class="">MVPShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html" title="MVPSolidShader" class="">MVPSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.ScreenShader.html" title="ScreenShader" class="">ScreenShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.SkyboxShader.html" title="SkyboxShader" class="">SkyboxShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.SpriteShader.html" title="SpriteShader" class="">SpriteShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.TerrainShader.html" title="TerrainShader" class="">TerrainShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.WireframeShader.html" title="WireframeShader" class="">WireframeShader</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Shapes.html" title="Genesis.Graphics.Shapes" class="">Genesis.Graphics.Shapes</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.BufferedSpriteShape.html" title="BufferedSpriteShape" class="">BufferedSpriteShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.FrameShape.html" title="FrameShape" class="">FrameShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.PlaneShape.html" title="PlaneShape" class="">PlaneShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.QubeShape.html" title="QubeShape" class="">QubeShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.RectShape.html" title="RectShape" class="">RectShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Shape.html" title="Shape" class="">Shape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.SpriteShape.html" title="SpriteShape" class="">SpriteShape</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Math.html" title="Genesis.Math" class="">Genesis.Math</a>
+
+                        <ul class="nav level2">
+                          <li class="active">
+                            <a href="Genesis.Math.Matrix4x4.html" title="Matrix4x4" class="active">Matrix4x4</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.NoisePoint.html" title="NoisePoint" class="">NoisePoint</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.PerlinNoise.html" title="PerlinNoise" class="">PerlinNoise</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.Rect.html" title="Rect" class="">Rect</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.Vec3.html" title="Vec3" class="">Vec3</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Physics.html" title="Genesis.Physics" class="">Genesis.Physics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Physics.Aabb.html" title="Aabb" class="">Aabb</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.HitResult.html" title="HitResult" class="">HitResult</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.MatrixSet.html" title="MatrixSet" class="">MatrixSet</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.MouseRay2.html" title="MouseRay2" class="">MouseRay2</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicHandler.html" title="PhysicHandler" class="">PhysicHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicHandlerEvent.html" title="PhysicHandlerEvent" class="">PhysicHandlerEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicPropeterys.html" title="PhysicPropeterys" class="">PhysicPropeterys</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsBehavior.html" title="PhysicsBehavior" class="">PhysicsBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsBehaviorEvent.html" title="PhysicsBehaviorEvent" class="">PhysicsBehaviorEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsHandler2D.html" title="PhysicsHandler2D" class="">PhysicsHandler2D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsHandler3D.html" title="PhysicsHandler3D" class="">PhysicsHandler3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.Raycast.html" title="Raycast" class="">Raycast</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.UI.html" title="Genesis.UI" class="">Genesis.UI</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.UI.Canvas.html" title="Canvas" class="">Canvas</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ImageButton.html" title="ImageButton" class="">ImageButton</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Label.html" title="Label" class="">Label</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListItem.html" title="ListItem" class="">ListItem</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListItemBehavior.html" title="ListItemBehavior" class="">ListItemBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListSelector.html" title="ListSelector" class="">ListSelector</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListSelectorBehavior.html" title="ListSelectorBehavior" class="">ListSelectorBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Panel.html" title="Panel" class="">Panel</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ProgressBar.html" title="ProgressBar" class="">ProgressBar</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIEvent.html" title="UIEvent" class="">UIEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIParseHandler.html" title="UIParseHandler" class="">UIParseHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIParser.html" title="UIParser" class="">UIParser</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Widget.html" title="Widget" class="">Widget</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Genesis.Math.Matrix4x4">
+
+
+
+  <h1 id="Genesis_Math_Matrix4x4" data-uid="Genesis.Math.Matrix4x4" class="text-break">Class Matrix4x4</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Matrix4x4</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Genesis.html">Genesis</a>.<a class="xref" href="Genesis.Math.html">Math</a></h6>
+  <h6><strong>Assembly</strong>: Genesis.dll</h6>
+  <h5 id="Genesis_Math_Matrix4x4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Matrix4x4</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Genesis_Math_Matrix4x4__ctor_" data-uid="Genesis.Math.Matrix4x4.#ctor*"></a>
+  <h4 id="Genesis_Math_Matrix4x4__ctor" data-uid="Genesis.Math.Matrix4x4.#ctor">Matrix4x4()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Genesis_Math_Matrix4x4_Item_" data-uid="Genesis.Math.Matrix4x4.Item*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Item_System_Int32_System_Int32_" data-uid="Genesis.Math.Matrix4x4.Item(System.Int32,System.Int32)">this[int, int]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float this[int row, int col] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">row</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">col</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Genesis_Math_Matrix4x4_Identity_" data-uid="Genesis.Math.Matrix4x4.Identity*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Identity" data-uid="Genesis.Math.Matrix4x4.Identity">Identity()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 Identity()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_LookAt_" data-uid="Genesis.Math.Matrix4x4.LookAt*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_LookAt_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_" data-uid="Genesis.Math.Matrix4x4.LookAt(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">LookAt(Vec3, Vec3, Vec3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 LookAt(Vec3 eye, Vec3 target, Vec3 up)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">eye</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">target</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">up</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_Multiply_" data-uid="Genesis.Math.Matrix4x4.Multiply*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Multiply_Genesis_Math_Matrix4x4_" data-uid="Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Matrix4x4)">Multiply(Matrix4x4)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 Multiply(Matrix4x4 right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_Multiply_" data-uid="Genesis.Math.Matrix4x4.Multiply*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Multiply_Genesis_Math_Vec3_" data-uid="Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Vec3)">Multiply(Vec3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vec3 Multiply(Vec3 vector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">vector</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_Normalize_" data-uid="Genesis.Math.Matrix4x4.Normalize*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Normalize" data-uid="Genesis.Math.Matrix4x4.Normalize">Normalize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Normalize()</code></pre>
+  </div>
+
+
+  <a id="Genesis_Math_Matrix4x4_Ortho_" data-uid="Genesis.Math.Matrix4x4.Ortho*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Ortho_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_" data-uid="Genesis.Math.Matrix4x4.Ortho(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">Ortho(float, float, float, float, float, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 Ortho(float left, float right, float bottom, float top, float near, float far)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">bottom</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">top</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">near</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">far</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_RotateX_" data-uid="Genesis.Math.Matrix4x4.RotateX*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_RotateX_System_Single_" data-uid="Genesis.Math.Matrix4x4.RotateX(System.Single)">RotateX(float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 RotateX(float angleInRadians)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">angleInRadians</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_RotateY_" data-uid="Genesis.Math.Matrix4x4.RotateY*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_RotateY_System_Single_" data-uid="Genesis.Math.Matrix4x4.RotateY(System.Single)">RotateY(float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 RotateY(float angleInRadians)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">angleInRadians</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_RotateZ_" data-uid="Genesis.Math.Matrix4x4.RotateZ*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_RotateZ_System_Single_" data-uid="Genesis.Math.Matrix4x4.RotateZ(System.Single)">RotateZ(float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 RotateZ(float angleInRadians)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">angleInRadians</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_Scale_" data-uid="Genesis.Math.Matrix4x4.Scale*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Scale_Genesis_Math_Vec3_" data-uid="Genesis.Math.Matrix4x4.Scale(Genesis.Math.Vec3)">Scale(Vec3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 Scale(Vec3 scale)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">scale</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_ToArray_" data-uid="Genesis.Math.Matrix4x4.ToArray*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_ToArray" data-uid="Genesis.Math.Matrix4x4.ToArray">ToArray()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float[] ToArray()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Math_Matrix4x4_Translate_" data-uid="Genesis.Math.Matrix4x4.Translate*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_Translate_Genesis_Math_Vec3_" data-uid="Genesis.Math.Matrix4x4.Translate(Genesis.Math.Vec3)">Translate(Vec3)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 Translate(Vec3 translation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">translation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+
+
+  <a id="Genesis_Math_Matrix4x4_op_Multiply_" data-uid="Genesis.Math.Matrix4x4.op_Multiply*"></a>
+  <h4 id="Genesis_Math_Matrix4x4_op_Multiply_Genesis_Math_Matrix4x4_Genesis_Math_Matrix4x4_" data-uid="Genesis.Math.Matrix4x4.op_Multiply(Genesis.Math.Matrix4x4,Genesis.Math.Matrix4x4)">operator *(Matrix4x4, Matrix4x4)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix4x4 operator *(Matrix4x4 left, Matrix4x4 right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Matrix4x4.html">Matrix4x4</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

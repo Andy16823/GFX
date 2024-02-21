@@ -1,0 +1,1727 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Scene | GFX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Scene | GFX ">
+    
+    <meta name="description" content="Represents a game scene in the Genesis framework.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="GFX">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../docs/introduction.html" title="Docs">Docs</a>
+                      </li>
+                      <li>
+                          <a href="../api/Genesis.Core.html" title="API">API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.html" title="Genesis.Core" class="">Genesis.Core</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.AssetManager.html" title="AssetManager" class="">AssetManager</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Game.html" title="Game" class="">Game</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElement.html" title="GameElement" class="">GameElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameEventHandler.html" title="GameEventHandler" class="">GameEventHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GenesisWindow.html" title="GenesisWindow" class="">GenesisWindow</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.IGameBehavior.html" title="IGameBehavior" class="">IGameBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Input.html" title="Input" class="">Input</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Layer.html" title="Layer" class="">Layer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
+                          </li>
+                          <li class="active">
+                            <a href="Genesis.Core.Scene.html" title="Scene" class="active">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.SceneEventHandler.html" title="SceneEventHandler" class="">SceneEventHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.SceneSizeEvenHandler.html" title="SceneSizeEvenHandler" class="">SceneSizeEvenHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Storage.html" title="Storage" class="">Storage</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Utils.html" title="Utils" class="">Utils</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.html" title="Genesis.Core.Behaviors" class="">Genesis.Core.Behaviors</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.AnimationBehavior.html" title="AnimationBehavior" class="">AnimationBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.SpriteMovementController.html" title="SpriteMovementController" class="">SpriteMovementController</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.Physics2D.html" title="Genesis.Core.Behaviors.Physics2D" class="">Genesis.Core.Behaviors.Physics2D</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html" title="Rigidbody2D" class="">Rigidbody2D</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors.Physics3D.html" title="Genesis.Core.Behaviors.Physics3D" class="">Genesis.Core.Behaviors.Physics3D</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html" title="ConvexHullBehavior" class="">ConvexHullBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html" title="QubeConvexHull" class="">QubeConvexHull</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html" title="StaticMeshBehavior" class="">StaticMeshBehavior</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.GameElements.html" title="Genesis.Core.GameElements" class="">Genesis.Core.GameElements</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.BufferedSprite.html" title="BufferedSprite" class="">BufferedSprite</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.CameraElement.html" title="CameraElement" class="">CameraElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Element3D.html" title="Element3D" class="">Element3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Empty.html" title="Empty" class="">Empty</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Qube.html" title="Qube" class="">Qube</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.RectElement.html" title="RectElement" class="">RectElement</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Skybox.html" title="Skybox" class="">Skybox</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Sprite.html" title="Sprite" class="">Sprite</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Terrain2D.html" title="Terrain2D" class="">Terrain2D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.Terrain3D.html" title="Terrain3D" class="">Terrain3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElements.TerrainData.html" title="TerrainData" class="">TerrainData</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.html" title="Genesis.Graphics" class="">Genesis.Graphics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Animation.html" title="Animation" class="">Animation</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Animation3D.html" title="Animation3D" class="">Animation3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Camera.html" title="Camera" class="">Camera</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.CameraType.html" title="CameraType" class="">CameraType</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Face.html" title="Face" class="">Face</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Font.html" title="Font" class="">Font</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Framebuffer.html" title="Framebuffer" class="">Framebuffer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Glyphe.html" title="Glyphe" class="">Glyphe</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.IRenderDevice.html" title="IRenderDevice" class="">IRenderDevice</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Material.html" title="Material" class="">Material</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.MaterialBuffer.html" title="MaterialBuffer" class="">MaterialBuffer</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Mesh.html" title="Mesh" class="">Mesh</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.PerspectiveCamera.html" title="PerspectiveCamera" class="">PerspectiveCamera</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shader.html" title="Shader" class="">Shader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.ShaderProgram.html" title="ShaderProgram" class="">ShaderProgram</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.TexCoords.html" title="TexCoords" class="">TexCoords</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Texture.html" title="Texture" class="">Texture</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Viewport.html" title="Viewport" class="">Viewport</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Physics.html" title="Genesis.Graphics.Physics" class="">Genesis.Graphics.Physics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Physics.BulletDebugRenderer.html" title="BulletDebugRenderer" class="">BulletDebugRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.RenderDevice.html" title="Genesis.Graphics.RenderDevice" class="">Genesis.Graphics.RenderDevice</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Shaders.OpenGL.html" title="Genesis.Graphics.Shaders.OpenGL" class="">Genesis.Graphics.Shaders.OpenGL</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.BasicShader.html" title="BasicShader" class="">BasicShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseLightning.html" title="DiffuseLightning" class="">DiffuseLightning</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning.html" title="DiffuseNormalLightning" class="">DiffuseNormalLightning</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader.html" title="DiffuseNormalShader" class="">DiffuseNormalShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseShader.html" title="DiffuseShader" class="">DiffuseShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPShader.html" title="MVPShader" class="">MVPShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html" title="MVPSolidShader" class="">MVPSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.ScreenShader.html" title="ScreenShader" class="">ScreenShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.SkyboxShader.html" title="SkyboxShader" class="">SkyboxShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.SpriteShader.html" title="SpriteShader" class="">SpriteShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.TerrainShader.html" title="TerrainShader" class="">TerrainShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.WireframeShader.html" title="WireframeShader" class="">WireframeShader</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Graphics.Shapes.html" title="Genesis.Graphics.Shapes" class="">Genesis.Graphics.Shapes</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.BufferedSpriteShape.html" title="BufferedSpriteShape" class="">BufferedSpriteShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.FrameShape.html" title="FrameShape" class="">FrameShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.PlaneShape.html" title="PlaneShape" class="">PlaneShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.QubeShape.html" title="QubeShape" class="">QubeShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.RectShape.html" title="RectShape" class="">RectShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Shape.html" title="Shape" class="">Shape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.SpriteShape.html" title="SpriteShape" class="">SpriteShape</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Math.html" title="Genesis.Math" class="">Genesis.Math</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Math.Matrix4x4.html" title="Matrix4x4" class="">Matrix4x4</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.NoisePoint.html" title="NoisePoint" class="">NoisePoint</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.PerlinNoise.html" title="PerlinNoise" class="">PerlinNoise</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.Rect.html" title="Rect" class="">Rect</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Math.Vec3.html" title="Vec3" class="">Vec3</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Physics.html" title="Genesis.Physics" class="">Genesis.Physics</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Physics.Aabb.html" title="Aabb" class="">Aabb</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.HitResult.html" title="HitResult" class="">HitResult</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.MatrixSet.html" title="MatrixSet" class="">MatrixSet</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.MouseRay2.html" title="MouseRay2" class="">MouseRay2</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicHandler.html" title="PhysicHandler" class="">PhysicHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicHandlerEvent.html" title="PhysicHandlerEvent" class="">PhysicHandlerEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicPropeterys.html" title="PhysicPropeterys" class="">PhysicPropeterys</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsBehavior.html" title="PhysicsBehavior" class="">PhysicsBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsBehaviorEvent.html" title="PhysicsBehaviorEvent" class="">PhysicsBehaviorEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsHandler2D.html" title="PhysicsHandler2D" class="">PhysicsHandler2D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.PhysicsHandler3D.html" title="PhysicsHandler3D" class="">PhysicsHandler3D</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Physics.Raycast.html" title="Raycast" class="">Raycast</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.UI.html" title="Genesis.UI" class="">Genesis.UI</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.UI.Canvas.html" title="Canvas" class="">Canvas</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ImageButton.html" title="ImageButton" class="">ImageButton</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Label.html" title="Label" class="">Label</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListItem.html" title="ListItem" class="">ListItem</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListItemBehavior.html" title="ListItemBehavior" class="">ListItemBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListSelector.html" title="ListSelector" class="">ListSelector</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ListSelectorBehavior.html" title="ListSelectorBehavior" class="">ListSelectorBehavior</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Panel.html" title="Panel" class="">Panel</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.ProgressBar.html" title="ProgressBar" class="">ProgressBar</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIEvent.html" title="UIEvent" class="">UIEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIParseHandler.html" title="UIParseHandler" class="">UIParseHandler</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.UIParser.html" title="UIParser" class="">UIParser</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.UI.Widget.html" title="Widget" class="">Widget</a>
+                          </li>
+                        </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Genesis.Core.Scene">
+
+
+
+  <h1 id="Genesis_Core_Scene" data-uid="Genesis.Core.Scene" class="text-break">Class Scene</h1>
+  <div class="markdown level0 summary"><p>Represents a game scene in the Genesis framework.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Scene</span></div>
+      <div class="level2"><a class="xref" href="Genesis.Core.Scene3D.html">Scene3D</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Genesis.html">Genesis</a>.<a class="xref" href="Genesis.Core.html">Core</a></h6>
+  <h6><strong>Assembly</strong>: Genesis.dll</h6>
+  <h5 id="Genesis_Core_Scene_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Scene</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Genesis_Core_Scene__ctor_" data-uid="Genesis.Core.Scene.#ctor*"></a>
+  <h4 id="Genesis_Core_Scene__ctor" data-uid="Genesis.Core.Scene.#ctor">Scene()</h4>
+  <div class="markdown level1 summary"><p>Creates a new game scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene()</code></pre>
+  </div>
+
+
+  <a id="Genesis_Core_Scene__ctor_" data-uid="Genesis.Core.Scene.#ctor*"></a>
+  <h4 id="Genesis_Core_Scene__ctor_System_String_" data-uid="Genesis.Core.Scene.#ctor(System.String)">Scene(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a new game scene with the specified name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Genesis_Core_Scene_AfterCanvasRender_" data-uid="Genesis.Core.Scene.AfterCanvasRender*"></a>
+  <h4 id="Genesis_Core_Scene_AfterCanvasRender" data-uid="Genesis.Core.Scene.AfterCanvasRender">AfterCanvasRender</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered after UI canvas rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler AfterCanvasRender { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_AfterSceneRender_" data-uid="Genesis.Core.Scene.AfterSceneRender*"></a>
+  <h4 id="Genesis_Core_Scene_AfterSceneRender" data-uid="Genesis.Core.Scene.AfterSceneRender">AfterSceneRender</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered after scene rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler AfterSceneRender { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_BeforeCanvasPreperation_" data-uid="Genesis.Core.Scene.BeforeCanvasPreperation*"></a>
+  <h4 id="Genesis_Core_Scene_BeforeCanvasPreperation" data-uid="Genesis.Core.Scene.BeforeCanvasPreperation">BeforeCanvasPreperation</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered before UI canvas preparation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler BeforeCanvasPreperation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_BeforeCanvasRender_" data-uid="Genesis.Core.Scene.BeforeCanvasRender*"></a>
+  <h4 id="Genesis_Core_Scene_BeforeCanvasRender" data-uid="Genesis.Core.Scene.BeforeCanvasRender">BeforeCanvasRender</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered before UI canvas rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler BeforeCanvasRender { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_BeforeScenePreperation_" data-uid="Genesis.Core.Scene.BeforeScenePreperation*"></a>
+  <h4 id="Genesis_Core_Scene_BeforeScenePreperation" data-uid="Genesis.Core.Scene.BeforeScenePreperation">BeforeScenePreperation</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered before scene preparation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler BeforeScenePreperation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_BeforeSceneRender_" data-uid="Genesis.Core.Scene.BeforeSceneRender*"></a>
+  <h4 id="Genesis_Core_Scene_BeforeSceneRender" data-uid="Genesis.Core.Scene.BeforeSceneRender">BeforeSceneRender</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered before scene rendering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneEventHandler BeforeSceneRender { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneEventHandler.html">SceneEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_Camera_" data-uid="Genesis.Core.Scene.Camera*"></a>
+  <h4 id="Genesis_Core_Scene_Camera" data-uid="Genesis.Core.Scene.Camera">Camera</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the camera used for rendering the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Camera Camera { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Camera.html">Camera</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_Canvas_" data-uid="Genesis.Core.Scene.Canvas*"></a>
+  <h4 id="Genesis_Core_Scene_Canvas" data-uid="Genesis.Core.Scene.Canvas">Canvas</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of UI canvases within the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Canvas&gt; Canvas { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.UI.Canvas.html">Canvas</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_Layer_" data-uid="Genesis.Core.Scene.Layer*"></a>
+  <h4 id="Genesis_Core_Scene_Layer" data-uid="Genesis.Core.Scene.Layer">Layer</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of layers within the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Layer&gt; Layer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Core.Layer.html">Layer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_Name_" data-uid="Genesis.Core.Scene.Name*"></a>
+  <h4 id="Genesis_Core_Scene_Name" data-uid="Genesis.Core.Scene.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_OnSceneResize_" data-uid="Genesis.Core.Scene.OnSceneResize*"></a>
+  <h4 id="Genesis_Core_Scene_OnSceneResize" data-uid="Genesis.Core.Scene.OnSceneResize">OnSceneResize</h4>
+  <div class="markdown level1 summary"><p>Event handler triggered when the scene is resized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SceneSizeEvenHandler OnSceneResize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.SceneSizeEvenHandler.html">SceneSizeEvenHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_PhysicHandler_" data-uid="Genesis.Core.Scene.PhysicHandler*"></a>
+  <h4 id="Genesis_Core_Scene_PhysicHandler" data-uid="Genesis.Core.Scene.PhysicHandler">PhysicHandler</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the physics handler for the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PhysicHandler PhysicHandler { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Physics.PhysicHandler.html">PhysicHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Genesis_Core_Scene_AddCanvas_" data-uid="Genesis.Core.Scene.AddCanvas*"></a>
+  <h4 id="Genesis_Core_Scene_AddCanvas_Genesis_UI_Canvas_" data-uid="Genesis.Core.Scene.AddCanvas(Genesis.UI.Canvas)">AddCanvas(Canvas)</h4>
+  <div class="markdown level1 summary"><p>Adds a new ui canvas to the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Canvas AddCanvas(Canvas canvas)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
+        <td><span class="parametername">canvas</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_AddGameElement_" data-uid="Genesis.Core.Scene.AddGameElement*"></a>
+  <h4 id="Genesis_Core_Scene_AddGameElement_System_String_Genesis_Core_GameElement_" data-uid="Genesis.Core.Scene.AddGameElement(System.String,Genesis.Core.GameElement)">AddGameElement(string, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Adds a GameElement in the scene. It will be placed in the given layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddGameElement(string layerName, GameElement gameElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">gameElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_AddGameElements_" data-uid="Genesis.Core.Scene.AddGameElements*"></a>
+  <h4 id="Genesis_Core_Scene_AddGameElements_System_String_System_Collections_Generic_List_Genesis_Core_GameElement__" data-uid="Genesis.Core.Scene.AddGameElements(System.String,System.Collections.Generic.List{Genesis.Core.GameElement})">AddGameElements(string, List&lt;GameElement&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds GameElements into the scene. The elements will be placed in the given layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddGameElements(string layer, List&lt;GameElement&gt; gameElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Core.GameElement.html">GameElement</a>&gt;</td>
+        <td><span class="parametername">gameElements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_AddLayer_" data-uid="Genesis.Core.Scene.AddLayer*"></a>
+  <h4 id="Genesis_Core_Scene_AddLayer_Genesis_Core_Layer_" data-uid="Genesis.Core.Scene.AddLayer(Genesis.Core.Layer)">AddLayer(Layer)</h4>
+  <div class="markdown level1 summary"><p>Adds a layer to the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLayer(Layer layer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Layer.html">Layer</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_AddLayer_" data-uid="Genesis.Core.Scene.AddLayer*"></a>
+  <h4 id="Genesis_Core_Scene_AddLayer_System_String_" data-uid="Genesis.Core.Scene.AddLayer(System.String)">AddLayer(string)</h4>
+  <div class="markdown level1 summary"><p>Adds a layer to the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLayer(string layerName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetCanvas_" data-uid="Genesis.Core.Scene.GetCanvas*"></a>
+  <h4 id="Genesis_Core_Scene_GetCanvas_System_String_" data-uid="Genesis.Core.Scene.GetCanvas(System.String)">GetCanvas(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the canvas with the given name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Canvas GetCanvas(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetElement_" data-uid="Genesis.Core.Scene.GetElement*"></a>
+  <h4 id="Genesis_Core_Scene_GetElement_System_String_" data-uid="Genesis.Core.Scene.GetElement(System.String)">GetElement(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the element with the given name. This function searchs
+in every layer until it finds a element with an equal name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameElement GetElement(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetElement_" data-uid="Genesis.Core.Scene.GetElement*"></a>
+  <h4 id="Genesis_Core_Scene_GetElement_System_String_System_String_" data-uid="Genesis.Core.Scene.GetElement(System.String,System.String)">GetElement(string, string)</h4>
+  <div class="markdown level1 summary"><p>Gets the element with the given name out of the given layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameElement GetElement(string layerName, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetElements_" data-uid="Genesis.Core.Scene.GetElements*"></a>
+  <h4 id="Genesis_Core_Scene_GetElements_System_String_" data-uid="Genesis.Core.Scene.GetElements(System.String)">GetElements(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the elements from the given layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GameElement&gt; GetElements(string layername)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layername</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Core.GameElement.html">GameElement</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetElements_" data-uid="Genesis.Core.Scene.GetElements*"></a>
+  <h4 id="Genesis_Core_Scene_GetElements_System_String___" data-uid="Genesis.Core.Scene.GetElements(System.String[])">GetElements(string[])</h4>
+  <div class="markdown level1 summary"><p>Gets the elements from the given layers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;GameElement&gt; GetElements(string[] layer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Core.GameElement.html">GameElement</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetLayer_" data-uid="Genesis.Core.Scene.GetLayer*"></a>
+  <h4 id="Genesis_Core_Scene_GetLayer_System_String_" data-uid="Genesis.Core.Scene.GetLayer(System.String)">GetLayer(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the layer with the given name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Layer GetLayer(string layername)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layername</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Layer.html">Layer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_GetWidget_" data-uid="Genesis.Core.Scene.GetWidget*"></a>
+  <h4 id="Genesis_Core_Scene_GetWidget_System_String_System_String_" data-uid="Genesis.Core.Scene.GetWidget(System.String,System.String)">GetWidget(string, string)</h4>
+  <div class="markdown level1 summary"><p>Gets a entity with the given name from the canvas</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Widget GetWidget(string canvasName, string entityName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">canvasName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">entityName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.UI.Widget.html">Widget</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_Init_" data-uid="Genesis.Core.Scene.Init*"></a>
+  <h4 id="Genesis_Core_Scene_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_" data-uid="Genesis.Core.Scene.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">Init(Game, IRenderDevice)</h4>
+  <div class="markdown level1 summary"><p>Initial the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(Game game, IRenderDevice renderDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.IRenderDevice.html">IRenderDevice</a></td>
+        <td><span class="parametername">renderDevice</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_OnDestroy_" data-uid="Genesis.Core.Scene.OnDestroy*"></a>
+  <h4 id="Genesis_Core_Scene_OnDestroy_Genesis_Core_Game_" data-uid="Genesis.Core.Scene.OnDestroy(Genesis.Core.Game)">OnDestroy(Game)</h4>
+  <div class="markdown level1 summary"><p>Destroys the scene data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnDestroy(Game game)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_OnRender_" data-uid="Genesis.Core.Scene.OnRender*"></a>
+  <h4 id="Genesis_Core_Scene_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_" data-uid="Genesis.Core.Scene.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">OnRender(Game, IRenderDevice)</h4>
+  <div class="markdown level1 summary"><p>Renders the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnRender(Game game, IRenderDevice renderDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.IRenderDevice.html">IRenderDevice</a></td>
+        <td><span class="parametername">renderDevice</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_OnUpdate_" data-uid="Genesis.Core.Scene.OnUpdate*"></a>
+  <h4 id="Genesis_Core_Scene_OnUpdate_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_" data-uid="Genesis.Core.Scene.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">OnUpdate(Game, IRenderDevice)</h4>
+  <div class="markdown level1 summary"><p>Update the scene and the elements. Called every frame</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnUpdate(Game game, IRenderDevice renderDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.IRenderDevice.html">IRenderDevice</a></td>
+        <td><span class="parametername">renderDevice</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_RemoveCanvas_" data-uid="Genesis.Core.Scene.RemoveCanvas*"></a>
+  <h4 id="Genesis_Core_Scene_RemoveCanvas_Genesis_UI_Canvas_" data-uid="Genesis.Core.Scene.RemoveCanvas(Genesis.UI.Canvas)">RemoveCanvas(Canvas)</h4>
+  <div class="markdown level1 summary"><p>Removes the ui canvas from the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveCanvas(Canvas canvas)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
+        <td><span class="parametername">canvas</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_RemoveCanvas_" data-uid="Genesis.Core.Scene.RemoveCanvas*"></a>
+  <h4 id="Genesis_Core_Scene_RemoveCanvas_System_String_" data-uid="Genesis.Core.Scene.RemoveCanvas(System.String)">RemoveCanvas(string)</h4>
+  <div class="markdown level1 summary"><p>Removes the ui canvas with the given name from the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveCanvas(string canvasName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">canvasName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_RemoveElement_" data-uid="Genesis.Core.Scene.RemoveElement*"></a>
+  <h4 id="Genesis_Core_Scene_RemoveElement_Genesis_Core_GameElement_" data-uid="Genesis.Core.Scene.RemoveElement(Genesis.Core.GameElement)">RemoveElement(GameElement)</h4>
+  <div class="markdown level1 summary"><p>Removes a element from the scene. This function will look in all
+layer for the element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveElement(GameElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_RemoveElement_" data-uid="Genesis.Core.Scene.RemoveElement*"></a>
+  <h4 id="Genesis_Core_Scene_RemoveElement_System_String_Genesis_Core_GameElement_" data-uid="Genesis.Core.Scene.RemoveElement(System.String,Genesis.Core.GameElement)">RemoveElement(string, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Removes a element from the given layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveElement(string layerName, GameElement element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">element</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_RemoveLayer_" data-uid="Genesis.Core.Scene.RemoveLayer*"></a>
+  <h4 id="Genesis_Core_Scene_RemoveLayer_Genesis_Core_Layer_" data-uid="Genesis.Core.Scene.RemoveLayer(Genesis.Core.Layer)">RemoveLayer(Layer)</h4>
+  <div class="markdown level1 summary"><p>Removes a layer from the scene</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveLayer(Layer layer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Layer.html">Layer</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Scene_ResizeScene_" data-uid="Genesis.Core.Scene.ResizeScene*"></a>
+  <h4 id="Genesis_Core_Scene_ResizeScene_Genesis_Graphics_Viewport_" data-uid="Genesis.Core.Scene.ResizeScene(Genesis.Graphics.Viewport)">ResizeScene(Viewport)</h4>
+  <div class="markdown level1 summary"><p>Resizes the scene by invoking the event handler for scene resize.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ResizeScene(Viewport viewport)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Viewport.html">Viewport</a></td>
+        <td><span class="parametername">viewport</span></td>
+        <td><p>The viewport containing information about the new dimensions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

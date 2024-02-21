@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0B6089B-BA05-4535-A071-538B918C3AD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Genesis</RootNamespace>
+    <AssemblyName>Genesis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Genesis.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Genesis.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\AssimpNet.4.1.0\lib\net40\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="BulletSharp, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BulletSharp.0.11.1\lib\net40-client\BulletSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="NetGL, Version=1.0.8542.25412, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\NetGL - Kopie\x64\Debug\NetGL.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenObjectLoader">
+      <HintPath>C:\Users\andy1\source\repos\OpenObjectLoader\OpenObjectLoader\bin\Debug\OpenObjectLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\AssetManager.cs" />
+    <Compile Include="Core\Behaviors\AnimationBehavior.cs" />
+    <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\StaticMeshBehavior.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\ConvexHullBehavior.cs" />
+    <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
+    <Compile Include="Core\Game.cs" />
+    <Compile Include="Core\GameElement.cs" />
+    <Compile Include="Core\GenesisWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\IGameBehavior.cs" />
+    <Compile Include="Core\Input.cs" />
+    <Compile Include="Core\Layer.cs" />
+    <Compile Include="Core\Light.cs" />
+    <Compile Include="Core\GameElments\BufferedSprite.cs" />
+    <Compile Include="Core\GameElments\CameraElement.cs" />
+    <Compile Include="Core\GameElments\Terrain3D.cs" />
+    <Compile Include="Core\Scene3D.cs" />
+    <Compile Include="Core\GameElments\Element3D.cs" />
+    <Compile Include="Core\GameElments\Empty.cs" />
+    <Compile Include="Core\GameElments\Qube.cs" />
+    <Compile Include="Core\GameElments\RectElement.cs" />
+    <Compile Include="Core\GameElments\Sprite.cs" />
+    <Compile Include="Core\GameElments\Terrain2D.cs" />
+    <Compile Include="Core\Scene.cs" />
+    <Compile Include="Core\GameElments\Skybox.cs" />
+    <Compile Include="Core\Storage.cs" />
+    <Compile Include="Core\Utils.cs" />
+    <Compile Include="Graphics\Animation.cs" />
+    <Compile Include="Graphics\Animation3D.cs" />
+    <Compile Include="Graphics\Face.cs" />
+    <Compile Include="Graphics\Font.cs" />
+    <Compile Include="Graphics\Framebuffer.cs" />
+    <Compile Include="Graphics\Glyphe.cs" />
+    <Compile Include="Graphics\IRenderDevice.cs" />
+    <Compile Include="Graphics\Material.cs" />
+    <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Physics\Aabb.cs" />
+    <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
+    <Compile Include="Graphics\RenderDevice\ClassicGL.cs" />
+    <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
+    <Compile Include="Graphics\Shader.cs" />
+    <Compile Include="Graphics\ShaderProgram.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\DiffuseNormalLightning.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\DiffuseLightning.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\DiffuseNormalShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\DiffuseSolidShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\SpriteShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\ScreenShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\SkyboxShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\DiffuseShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\MVPRectShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\MVPShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\BasicShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\MVPSolidShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\TerrainShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\WireframeShader.cs" />
+    <Compile Include="Graphics\Shapes\FrameShape.cs" />
+    <Compile Include="Graphics\Shapes\GlypheShape.cs" />
+    <Compile Include="Graphics\Shapes\LineShape.cs" />
+    <Compile Include="Graphics\Shapes\PlaneShape.cs" />
+    <Compile Include="Graphics\Shapes\QubeShape.cs" />
+    <Compile Include="Graphics\Shapes\RectShape.cs" />
+    <Compile Include="Graphics\Shapes\Shape.cs" />
+    <Compile Include="Graphics\Shapes\BufferedSpriteShape.cs" />
+    <Compile Include="Graphics\Shapes\SpriteShape.cs" />
+    <Compile Include="Graphics\TexCoords.cs" />
+    <Compile Include="Graphics\Texture.cs" />
+    <Compile Include="Graphics\Viewport.cs" />
+    <Compile Include="Math\Matrix4x4.cs" />
+    <Compile Include="Graphics\Mesh.cs" />
+    <Compile Include="Math\PerlinNoise.cs" />
+    <Compile Include="Math\Rect.cs" />
+    <Compile Include="Math\Vec3.cs" />
+    <Compile Include="Physics\PhysicsHandler2D.cs" />
+    <Compile Include="Physics\Raycast.cs" />
+    <Compile Include="Physics\MouseRay2.cs" />
+    <Compile Include="Physics\PhysicHandler.cs" />
+    <Compile Include="Physics\PhysicsHandler3D.cs" />
+    <Compile Include="Physics\PhysicsBehavior.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Canvas.cs" />
+    <Compile Include="UI\UIParser.cs" />
+    <Compile Include="UI\Widget.cs" />
+    <Compile Include="UI\ImageButton.cs" />
+    <Compile Include="UI\Label.cs" />
+    <Compile Include="UI\ListSelector.cs" />
+    <Compile Include="UI\Panel.cs" />
+    <Compile Include="UI\ProgressBar.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Graphics\Camera.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Licences\AssimpNet.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Licences\BulletSharp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Licences\GlmSharp.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Licences\NetGL.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Licences\NewtonsoftJson.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Licences\OpenObjectLoader.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\BulletSharp.0.11.1\build\net40-client\BulletSharp.targets" Condition="Exists('..\packages\BulletSharp.0.11.1\build\net40-client\BulletSharp.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\BulletSharp.0.11.1\build\net40-client\BulletSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BulletSharp.0.11.1\build\net40-client\BulletSharp.targets'))" />
+    <Error Condition="!Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AssimpNet.4.1.0\build\AssimpNet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AssimpNet.4.1.0\build\AssimpNet.targets" Condition="Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" />
+</Project>

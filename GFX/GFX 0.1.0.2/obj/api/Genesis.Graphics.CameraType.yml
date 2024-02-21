@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.CameraType
+  commentId: T:Genesis.Graphics.CameraType
+  id: CameraType
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.CameraType.Ortho
+  - Genesis.Graphics.CameraType.Perspective
+  langs:
+  - csharp
+  - vb
+  name: CameraType
+  nameWithType: CameraType
+  fullName: Genesis.Graphics.CameraType
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public enum CameraType
+    content.vb: Public Enum CameraType
+- uid: Genesis.Graphics.CameraType.Ortho
+  commentId: F:Genesis.Graphics.CameraType.Ortho
+  id: Ortho
+  parent: Genesis.Graphics.CameraType
+  langs:
+  - csharp
+  - vb
+  name: Ortho
+  nameWithType: CameraType.Ortho
+  fullName: Genesis.Graphics.CameraType.Ortho
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: Ortho = 0
+    return:
+      type: Genesis.Graphics.CameraType
+- uid: Genesis.Graphics.CameraType.Perspective
+  commentId: F:Genesis.Graphics.CameraType.Perspective
+  id: Perspective
+  parent: Genesis.Graphics.CameraType
+  langs:
+  - csharp
+  - vb
+  name: Perspective
+  nameWithType: CameraType.Perspective
+  fullName: Genesis.Graphics.CameraType.Perspective
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: Perspective = 1
+    return:
+      type: Genesis.Graphics.CameraType
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Graphics.CameraType
+  commentId: T:Genesis.Graphics.CameraType
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.CameraType.html
+  name: CameraType
+  nameWithType: CameraType
+  fullName: Genesis.Graphics.CameraType
