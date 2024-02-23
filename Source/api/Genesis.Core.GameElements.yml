@@ -12,6 +12,7 @@ items:
   - Genesis.Core.GameElements.RectElement
   - Genesis.Core.GameElements.Skybox
   - Genesis.Core.GameElements.Sprite
+  - Genesis.Core.GameElements.SpriteShapeDeffinition
   - Genesis.Core.GameElements.Terrain2D
   - Genesis.Core.GameElements.Terrain3D
   - Genesis.Core.GameElements.TerrainData
@@ -25,6 +26,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition
+  commentId: T:Genesis.Core.GameElements.SpriteShapeDeffinition
+  isExternal: true
+  href: Genesis.Core.GameElements.SpriteShapeDeffinition.html
+  name: SpriteShapeDeffinition
+  nameWithType: SpriteShapeDeffinition
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition
 - uid: Genesis.Core.GameElements.BufferedSprite
   commentId: T:Genesis.Core.GameElements.BufferedSprite
   parent: Genesis.Core.GameElements

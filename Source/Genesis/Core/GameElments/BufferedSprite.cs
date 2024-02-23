@@ -10,6 +10,26 @@ using System.Threading.Tasks;
 namespace Genesis.Core.GameElements
 {
     /// <summary>
+    /// Represents the definition of the shape for a sprite, including its location and size.
+    /// </summary>
+    public struct SpriteShapeDeffinition
+    {    
+        public SpriteShapeDeffinition(Vec3 loc, Vec3 size)
+        {
+            this.locX = loc.X;
+            this.locY = loc.Y;
+            this.sizeX = size.X;
+            this.sizeY = size.Y;
+        }
+
+        public float locX;
+        public float locY;
+        public float sizeX;
+        public float sizeY;
+    }
+
+
+    /// <summary>
     /// Represents a game element that creates a buffered sprite with vertices, colors, and texture coordinates.
     /// </summary>
     public class BufferedSprite : GameElement
@@ -30,6 +50,11 @@ namespace Genesis.Core.GameElements
         public List<float> TexCoords { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of shape definitions for the sprite.
+        /// </summary>
+        public List<SpriteShapeDeffinition> ShapeDeffinitions { get; set; }
+
+        /// <summary>
         /// Gets or sets the texture applied to the sprite.
         /// </summary>
         public Texture Texture { get; set; }
@@ -48,6 +73,7 @@ namespace Genesis.Core.GameElements
             this.Verticies = new List<float>();
             this.Colors = new List<float>();
             this.TexCoords = new List<float>();
+            this.ShapeDeffinitions = new List<SpriteShapeDeffinition>();
         }
 
         /// <summary>
@@ -98,6 +124,69 @@ namespace Genesis.Core.GameElements
             };
             this.TexCoords.AddRange(textCoordsf);
 
+            SpriteShapeDeffinition deffinition = new SpriteShapeDeffinition();
+            deffinition.locX = location.X;
+            deffinition.locY = location.Y;
+            deffinition.sizeX = size.X;
+            deffinition.sizeY = size.Y;
+            this.ShapeDeffinitions.Add(deffinition);
+        }
+
+        /// <summary>
+        /// Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
+        /// </summary>
+        /// <param name="location">The location for the sprite.</param>
+        /// <param name="size">The size for the sprite.</param>
+        /// <param name="texCoords">The texture coordinates for the sprite.</param>
+        public void AddShape(Vec3 location, Vec3 size, TexCoords texCoords)
+        {
+            float LeftX = location.X - (size.X / 2);
+            float RightX = location.X + (size.X / 2);
+            float top = location.Y + (size.Y / 2);
+            float bottom = location.Y - (size.Y / 2);
+
+            float[] verticies =
+            {
+                LeftX, bottom, 0.0f,
+                LeftX, top, 0.0f,
+                RightX, top, 0.0f,
+
+                LeftX, bottom, 0.0f,
+                RightX, top, 0.0f,
+                RightX, bottom, 0.0f
+            };
+            this.Verticies.AddRange(verticies);
+
+            float[] color =
+            {
+                1f, 1f, 1f,
+                1f, 1f, 1f,
+                1f, 1f, 1f,
+
+                1f, 1f, 1f,
+                1f, 1f, 1f,
+                1f, 1f, 1f
+            };
+            this.Colors.AddRange(color);
+
+            float[] textCoordsf =
+            {
+                texCoords.BottomLeft.X, texCoords.BottomLeft.Y, // Left bottom
+                texCoords.TopLeft.X, texCoords.TopLeft.Y,
+                texCoords.TopRight.X, texCoords.TopRight.Y,
+               
+                texCoords.BottomLeft.X, texCoords.BottomLeft.Y,
+                texCoords.TopRight.X, texCoords.TopRight.Y,
+                texCoords.BottomRight.X,texCoords.BottomRight.Y
+            };
+            this.TexCoords.AddRange(textCoordsf);
+
+            SpriteShapeDeffinition deffinition = new SpriteShapeDeffinition();
+            deffinition.locX = location.X;
+            deffinition.locY = location.Y;
+            deffinition.sizeX = size.X;
+            deffinition.sizeY = size.Y;
+            this.ShapeDeffinitions.Add(deffinition);
         }
 
         /// <summary>

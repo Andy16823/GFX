@@ -42,6 +42,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.yml",
       "output": {
         ".html": {
@@ -216,6 +226,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.GameElements.Sprite.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.SpriteShapeDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.SpriteShapeDeffinition.html"
         }
       },
       "version": ""

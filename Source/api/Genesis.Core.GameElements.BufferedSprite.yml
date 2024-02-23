@@ -7,10 +7,12 @@ items:
   children:
   - Genesis.Core.GameElements.BufferedSprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Graphics.Texture)
   - Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
   - Genesis.Core.GameElements.BufferedSprite.Colors
   - Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.BufferedSprite.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.BufferedSprite.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
   - Genesis.Core.GameElements.BufferedSprite.TexCoords
   - Genesis.Core.GameElements.BufferedSprite.Texture
   - Genesis.Core.GameElements.BufferedSprite.Verticies
@@ -118,6 +120,36 @@ items:
       type: Genesis.Math.Vec3
       description: The size for the sprite.
     content.vb: Public Sub AddShape(location As Vec3, size As Vec3)
+  overload: Genesis.Core.GameElements.BufferedSprite.AddShape*
+- uid: Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
+  commentId: M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
+  id: AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
+  parent: Genesis.Core.GameElements.BufferedSprite
+  langs:
+  - csharp
+  - vb
+  name: AddShape(Vec3, Vec3, TexCoords)
+  nameWithType: BufferedSprite.AddShape(Vec3, Vec3, TexCoords)
+  fullName: Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.TexCoords)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
+  example: []
+  syntax:
+    content: public void AddShape(Vec3 location, Vec3 size, TexCoords texCoords)
+    parameters:
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location for the sprite.
+    - id: size
+      type: Genesis.Math.Vec3
+      description: The size for the sprite.
+    - id: texCoords
+      type: Genesis.Graphics.TexCoords
+      description: The texture coordinates for the sprite.
+    content.vb: Public Sub AddShape(location As Vec3, size As Vec3, texCoords As TexCoords)
   overload: Genesis.Core.GameElements.BufferedSprite.AddShape*
 - uid: Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
@@ -272,6 +304,29 @@ items:
       type: System.Collections.Generic.List{System.Single}
     content.vb: Public Property TexCoords As List(Of Single)
   overload: Genesis.Core.GameElements.BufferedSprite.TexCoords*
+- uid: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  commentId: P:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  id: ShapeDeffinitions
+  parent: Genesis.Core.GameElements.BufferedSprite
+  langs:
+  - csharp
+  - vb
+  name: ShapeDeffinitions
+  nameWithType: BufferedSprite.ShapeDeffinitions
+  fullName: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Gets or sets the list of shape definitions for the sprite.
+  example: []
+  syntax:
+    content: public List<SpriteShapeDeffinition> ShapeDeffinitions { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Core.GameElements.SpriteShapeDeffinition}
+    content.vb: Public Property ShapeDeffinitions As List(Of SpriteShapeDeffinition)
+  overload: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions*
 - uid: Genesis.Core.GameElements.BufferedSprite.Texture
   commentId: P:Genesis.Core.GameElements.BufferedSprite.Texture
   id: Texture
@@ -1054,6 +1109,14 @@ references:
   name: AddShape
   nameWithType: BufferedSprite.AddShape
   fullName: Genesis.Core.GameElements.BufferedSprite.AddShape
+- uid: Genesis.Graphics.TexCoords
+  commentId: T:Genesis.Graphics.TexCoords
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.TexCoords.html
+  name: TexCoords
+  nameWithType: TexCoords
+  fullName: Genesis.Graphics.TexCoords
 - uid: Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   parent: Genesis.Core.GameElement
@@ -1338,6 +1401,48 @@ references:
   name: TexCoords
   nameWithType: BufferedSprite.TexCoords
   fullName: Genesis.Core.GameElements.BufferedSprite.TexCoords
+- uid: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions*
+  commentId: Overload:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  isExternal: true
+  href: Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_ShapeDeffinitions
+  name: ShapeDeffinitions
+  nameWithType: BufferedSprite.ShapeDeffinitions
+  fullName: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+- uid: System.Collections.Generic.List{Genesis.Core.GameElements.SpriteShapeDeffinition}
+  commentId: T:System.Collections.Generic.List{Genesis.Core.GameElements.SpriteShapeDeffinition}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<SpriteShapeDeffinition>
+  nameWithType: List<SpriteShapeDeffinition>
+  fullName: System.Collections.Generic.List<Genesis.Core.GameElements.SpriteShapeDeffinition>
+  nameWithType.vb: List(Of SpriteShapeDeffinition)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Core.GameElements.SpriteShapeDeffinition)
+  name.vb: List(Of SpriteShapeDeffinition)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Core.GameElements.SpriteShapeDeffinition
+    name: SpriteShapeDeffinition
+    isExternal: true
+    href: Genesis.Core.GameElements.SpriteShapeDeffinition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Core.GameElements.SpriteShapeDeffinition
+    name: SpriteShapeDeffinition
+    isExternal: true
+    href: Genesis.Core.GameElements.SpriteShapeDeffinition.html
+  - name: )
 - uid: Genesis.Core.GameElements.BufferedSprite.Texture*
   commentId: Overload:Genesis.Core.GameElements.BufferedSprite.Texture
   isExternal: true

@@ -33,6 +33,8 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// </summary>
         public Vec3 AngularFactor { get; set; } = new Vec3(0, 1, 0);
 
+        public bool EnablePhysic { get; set; } = true;
+
         /// <summary>
         /// Creates a RigidBody with the specified mass using the provided PhysicHandler.
         /// </summary>
@@ -53,6 +55,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             RigidBody = new BulletSharp.RigidBody(info);
             RigidBody.LinearFactor = this.LinearFactor.ToBulletVec3();
             RigidBody.AngularFactor = this.AngularFactor.ToBulletVec3();
+            RigidBody.UserObject = this.Parent;
             this.RigidBody.ApplyGravity();
             handler.ManageElement(this);
         }
@@ -105,7 +108,7 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// <param name="parent">The parent game element associated with this behavior.</param>
         public override void OnUpdate(Game game, GameElement parent)
         {
-            if (this.RigidBody != null && this.RigidBody.InvMass > 0)
+            if (this.EnablePhysic && this.RigidBody != null && this.RigidBody.InvMass > 0)
             {
                 Vector3 position = RigidBody.WorldTransform.Origin;
                 Vec3 newLocation = Utils.GetModelSpaceLocation(Parent, new Vec3(position.X, position.Y, position.Z));

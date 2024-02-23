@@ -463,6 +463,150 @@ references:
   commentId: N:Genesis.Core.Behaviors.Physics2D
   fullName: Genesis.Core.Behaviors.Physics2D
   nameWithType: Genesis.Core.Behaviors.Physics2D
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  name: BufferedSpriteCollider
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  nameWithType: BufferedSpriteCollider
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor
+  name: BufferedSpriteCollider()
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.BufferedSpriteCollider()
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.New()
+  nameWithType: BufferedSpriteCollider.BufferedSpriteCollider()
+  nameWithType.vb: BufferedSpriteCollider.New()
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor*
+  name: BufferedSpriteCollider
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.BufferedSpriteCollider
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.New
+  nameWithType: BufferedSpriteCollider.BufferedSpriteCollider
+  nameWithType.vb: BufferedSpriteCollider.New
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor
+  name: AngularFactor
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_AngularFactor
+  commentId: P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor
+  nameWithType: BufferedSpriteCollider.AngularFactor
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor*
+  name: AngularFactor
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_AngularFactor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor
+  nameWithType: BufferedSpriteCollider.AngularFactor
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(System.Single,Genesis.Physics.PhysicHandler)
+  name: CreateRigidBody(float, PhysicHandler)
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_CreateRigidBody_System_Single_Genesis_Physics_PhysicHandler_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(System.Single,Genesis.Physics.PhysicHandler)
+  name.vb: CreateRigidBody(Single, PhysicHandler)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(float, Genesis.Physics.PhysicHandler)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(Single, Genesis.Physics.PhysicHandler)
+  nameWithType: BufferedSpriteCollider.CreateRigidBody(float, PhysicHandler)
+  nameWithType.vb: BufferedSpriteCollider.CreateRigidBody(Single, PhysicHandler)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody*
+  name: CreateRigidBody
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_CreateRigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody
+  nameWithType: BufferedSpriteCollider.CreateRigidBody
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject()
+  nameWithType: BufferedSpriteCollider.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject
+  nameWithType: BufferedSpriteCollider.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject(Of T)()
+  nameWithType: BufferedSpriteCollider.GetPhysicsObject<T>()
+  nameWithType.vb: BufferedSpriteCollider.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor
+  name: LinearFactor
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_LinearFactor
+  commentId: P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor
+  nameWithType: BufferedSpriteCollider.LinearFactor
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor*
+  name: LinearFactor
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_LinearFactor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor
+  nameWithType: BufferedSpriteCollider.LinearFactor
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BufferedSpriteCollider.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy
+  nameWithType: BufferedSpriteCollider.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BufferedSpriteCollider.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit
+  nameWithType: BufferedSpriteCollider.OnInit
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BufferedSpriteCollider.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender
+  nameWithType: BufferedSpriteCollider.OnRender
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BufferedSpriteCollider.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate
+  nameWithType: BufferedSpriteCollider.OnUpdate
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_RigidBody
+  commentId: P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody
+  nameWithType: BufferedSpriteCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody*
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_RigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody
+  nameWithType: BufferedSpriteCollider.RigidBody
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   name: Rigidbody2D
   href: api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html
@@ -514,6 +658,18 @@ references:
   commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
   fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
   nameWithType: Rigidbody2D.CreateRigidbody
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
+  name: EnablePhysic
+  href: api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_EnablePhysic
+  commentId: P:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
+  nameWithType: Rigidbody2D.EnablePhysic
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic*
+  name: EnablePhysic
+  href: api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_EnablePhysic_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
+  nameWithType: Rigidbody2D.EnablePhysic
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
   name: GetPhysicsObject()
   href: api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_GetPhysicsObject
@@ -1849,6 +2005,12 @@ references:
   commentId: M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3)
   fullName: Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3, Genesis.Math.Vec3)
   nameWithType: BufferedSprite.AddShape(Vec3, Vec3)
+- uid: Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
+  name: AddShape(Vec3, Vec3, TexCoords)
+  href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_AddShape_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_TexCoords_
+  commentId: M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
+  fullName: Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.TexCoords)
+  nameWithType: BufferedSprite.AddShape(Vec3, Vec3, TexCoords)
 - uid: Genesis.Core.GameElements.BufferedSprite.AddShape*
   name: AddShape
   href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_AddShape_
@@ -1903,6 +2065,18 @@ references:
   commentId: Overload:Genesis.Core.GameElements.BufferedSprite.OnUpdate
   fullName: Genesis.Core.GameElements.BufferedSprite.OnUpdate
   nameWithType: BufferedSprite.OnUpdate
+- uid: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  name: ShapeDeffinitions
+  href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_ShapeDeffinitions
+  commentId: P:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  fullName: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  nameWithType: BufferedSprite.ShapeDeffinitions
+- uid: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions*
+  name: ShapeDeffinitions
+  href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_ShapeDeffinitions_
+  commentId: Overload:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  fullName: Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
+  nameWithType: BufferedSprite.ShapeDeffinitions
 - uid: Genesis.Core.GameElements.BufferedSprite.TexCoords
   name: TexCoords
   href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_TexCoords
@@ -2569,6 +2743,54 @@ references:
   commentId: Overload:Genesis.Core.GameElements.Sprite.Texture
   fullName: Genesis.Core.GameElements.Sprite.Texture
   nameWithType: Sprite.Texture
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition
+  name: SpriteShapeDeffinition
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html
+  commentId: T:Genesis.Core.GameElements.SpriteShapeDeffinition
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition
+  nameWithType: SpriteShapeDeffinition
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  name: SpriteShapeDeffinition(Vec3, Vec3)
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition__ctor_Genesis_Math_Vec3_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.GameElements.SpriteShapeDeffinition.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  name.vb: New(Vec3, Vec3)
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.SpriteShapeDeffinition(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Core.GameElements.SpriteShapeDeffinition.New(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  nameWithType: SpriteShapeDeffinition.SpriteShapeDeffinition(Vec3, Vec3)
+  nameWithType.vb: SpriteShapeDeffinition.New(Vec3, Vec3)
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.#ctor*
+  name: SpriteShapeDeffinition
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition__ctor_
+  commentId: Overload:Genesis.Core.GameElements.SpriteShapeDeffinition.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.SpriteShapeDeffinition
+  fullName.vb: Genesis.Core.GameElements.SpriteShapeDeffinition.New
+  nameWithType: SpriteShapeDeffinition.SpriteShapeDeffinition
+  nameWithType.vb: SpriteShapeDeffinition.New
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.locX
+  name: locX
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition_locX
+  commentId: F:Genesis.Core.GameElements.SpriteShapeDeffinition.locX
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.locX
+  nameWithType: SpriteShapeDeffinition.locX
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.locY
+  name: locY
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition_locY
+  commentId: F:Genesis.Core.GameElements.SpriteShapeDeffinition.locY
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.locY
+  nameWithType: SpriteShapeDeffinition.locY
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.sizeX
+  name: sizeX
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition_sizeX
+  commentId: F:Genesis.Core.GameElements.SpriteShapeDeffinition.sizeX
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.sizeX
+  nameWithType: SpriteShapeDeffinition.sizeX
+- uid: Genesis.Core.GameElements.SpriteShapeDeffinition.sizeY
+  name: sizeY
+  href: api/Genesis.Core.GameElements.SpriteShapeDeffinition.html#Genesis_Core_GameElements_SpriteShapeDeffinition_sizeY
+  commentId: F:Genesis.Core.GameElements.SpriteShapeDeffinition.sizeY
+  fullName: Genesis.Core.GameElements.SpriteShapeDeffinition.sizeY
+  nameWithType: SpriteShapeDeffinition.sizeY
 - uid: Genesis.Core.GameElements.Terrain2D
   name: Terrain2D
   href: api/Genesis.Core.GameElements.Terrain2D.html

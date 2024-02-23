@@ -178,6 +178,66 @@
             Called when the game element is updated.
             </summary>
         </member>
+        <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
+            <summary>
+            Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody">
+            <summary>
+            Gets or sets the rigid body associated with the collider.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor">
+            <summary>
+            Gets or sets the linear factor for the RigidBody's motion.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor">
+            <summary>
+            Gets or sets the angular factor for the RigidBody's rotation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with the collider.
+            </summary>
+            <returns>The rigid body associated with the collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject``1">
+            <summary>
+            Gets the typed physics object associated with the collider.
+            </summary>
+            <typeparam name="T">Type of the physics object.</typeparam>
+            <returns>The typed rigid body associated with the collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(System.Single,Genesis.Physics.PhysicHandler)">
+            <summary>
+            Creates a rigid body for the collider.
+            </summary>
+            <param name="mass">The mass of the rigid body.</param>
+            <param name="handler">The physics handler for managing the collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnDestroy event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnInit event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnRender event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnUpdate event. No implementation.
+            </summary>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D">
             <summary>
             Represents a 2D physics behavior for game elements.
@@ -999,6 +1059,11 @@
             </summary>
             <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
         </member>
+        <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
+            <summary>
+            Represents the definition of the shape for a sprite, including its location and size.
+            </summary>
+        </member>
         <member name="T:Genesis.Core.GameElements.BufferedSprite">
             <summary>
             Represents a game element that creates a buffered sprite with vertices, colors, and texture coordinates.
@@ -1017,6 +1082,11 @@
         <member name="P:Genesis.Core.GameElements.BufferedSprite.TexCoords">
             <summary>
             Gets or sets the list of texture coordinates for the sprite.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions">
+            <summary>
+            Gets or sets the list of shape definitions for the sprite.
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.BufferedSprite.Texture">
@@ -1038,6 +1108,14 @@
             </summary>
             <param name="location">The location for the sprite.</param>
             <param name="size">The size for the sprite.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)">
+            <summary>
+            Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
+            </summary>
+            <param name="location">The location for the sprite.</param>
+            <param name="size">The size for the sprite.</param>
+            <param name="texCoords">The texture coordinates for the sprite.</param>
         </member>
         <member name="M:Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
