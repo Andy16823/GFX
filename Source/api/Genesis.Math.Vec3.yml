@@ -19,14 +19,17 @@ items:
   - Genesis.Math.Vec3.AddX(System.Single)
   - Genesis.Math.Vec3.AddY(System.Single)
   - Genesis.Math.Vec3.AddZ(System.Single)
+  - Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Cross(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Degres(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Degres(System.Single,System.Single)
   - Genesis.Math.Vec3.Distance(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Dot(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
   - Genesis.Math.Vec3.Normalize
   - Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)
   - Genesis.Math.Vec3.Sub(Genesis.Math.Vec3)
@@ -1105,6 +1108,87 @@ items:
       description: A normalized Vec3 instance.
     content.vb: Public Shared Function Normalized(vec As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Normalized*
+- uid: Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  id: Ceiling(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Ceiling(Vec3)
+  nameWithType: Vec3.Ceiling(Vec3)
+  fullName: Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new Vec3 object where each component is the smallest integer greater than or equal to the corresponding component of the input Vec3.
+  example: []
+  syntax:
+    content: public static Vec3 Ceiling(Vec3 vec)
+    parameters:
+    - id: vec
+      type: Genesis.Math.Vec3
+      description: The input Vec3 to be processed.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with each component rounded up to the nearest integer.
+    content.vb: Public Shared Function Ceiling(vec As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Ceiling*
+- uid: Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  id: Floor(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Floor(Vec3)
+  nameWithType: Vec3.Floor(Vec3)
+  fullName: Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new Vec3 object where each component is rounded down to the nearest integer
+  example: []
+  syntax:
+    content: public static Vec3 Floor(Vec3 vec)
+    parameters:
+    - id: vec
+      type: Genesis.Math.Vec3
+      description: The input Vec3 to be processed.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with each component rounded down to the nearest integer.
+    content.vb: Public Shared Function Floor(vec As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Floor*
+- uid: Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  id: Round(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Round(Vec3)
+  nameWithType: Vec3.Round(Vec3)
+  fullName: Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new Vec3 object where each component is rounded to the nearest integer
+  example: []
+  syntax:
+    content: public static Vec3 Round(Vec3 vec)
+    parameters:
+    - id: vec
+      type: Genesis.Math.Vec3
+      description: The input Vec3 to be processed.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with each component rounded to the nearest integer.
+    content.vb: Public Shared Function Round(vec As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Round*
 - uid: Genesis.Math.Vec3.ToString
   commentId: M:Genesis.Math.Vec3.ToString
   id: ToString
@@ -1773,6 +1857,27 @@ references:
   name: Normalized
   nameWithType: Vec3.Normalized
   fullName: Genesis.Math.Vec3.Normalized
+- uid: Genesis.Math.Vec3.Ceiling*
+  commentId: Overload:Genesis.Math.Vec3.Ceiling
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Ceiling_Genesis_Math_Vec3_
+  name: Ceiling
+  nameWithType: Vec3.Ceiling
+  fullName: Genesis.Math.Vec3.Ceiling
+- uid: Genesis.Math.Vec3.Floor*
+  commentId: Overload:Genesis.Math.Vec3.Floor
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Floor_Genesis_Math_Vec3_
+  name: Floor
+  nameWithType: Vec3.Floor
+  fullName: Genesis.Math.Vec3.Floor
+- uid: Genesis.Math.Vec3.Round*
+  commentId: Overload:Genesis.Math.Vec3.Round
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Round_Genesis_Math_Vec3_
+  name: Round
+  nameWithType: Vec3.Round
+  fullName: Genesis.Math.Vec3.Round
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

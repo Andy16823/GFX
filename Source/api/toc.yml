@@ -38,6 +38,14 @@ items:
   items:
   - uid: Genesis.Core.Behaviors.AnimationBehavior
     name: AnimationBehavior
+  - uid: Genesis.Core.Behaviors.CameraFlags
+    name: CameraFlags
+  - uid: Genesis.Core.Behaviors.CharacterController2D
+    name: CharacterController2D
+  - uid: Genesis.Core.Behaviors.ControllerPreset
+    name: ControllerPreset
+  - uid: Genesis.Core.Behaviors.MovementFlags
+    name: MovementFlags
   - uid: Genesis.Core.Behaviors.SpriteMovementController
     name: SpriteMovementController
 - uid: Genesis.Core.Behaviors.Physics2D

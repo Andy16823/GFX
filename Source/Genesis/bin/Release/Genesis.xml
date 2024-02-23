@@ -178,6 +178,212 @@
             Called when the game element is updated.
             </summary>
         </member>
+        <member name="T:Genesis.Core.Behaviors.MovementFlags">
+            <summary>
+            Enumeration for defining movement flags.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.CameraFlags">
+            <summary>
+            Enumeration for defining camera flags.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.ControllerPreset">
+            <summary>
+            Enumeration for defining controller presets.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.CharacterController2D">
+            <summary>
+            Class representing a 2D character controller as a game behavior.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.Mass">
+            <summary>
+            Gets or sets the mass of the character.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.Speed">
+            <summary>
+            Gets or sets the speed of the character movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.JumpSpeed">
+            <summary>
+            Gets or sets the jump speed of the character.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.UpKey">
+            <summary>
+            Gets or sets the key for moving the character up.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.DownKey">
+            <summary>
+            Gets or sets the key for moving the character down.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.LeftKey">
+            <summary>
+            Gets or sets the key for moving the character right.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.RightKey">
+            <summary>
+            Gets or sets the key for making the character jump.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.JumpKey">
+            <summary>
+            Gets or sets whether jumping is allowed.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.AllowJump">
+            <summary>
+            Gets or sets the jump cooldown duration in milliseconds.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.JumpCooldown">
+            <summary>
+            Gets or sets the jump cooldown in milliseconds
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.CameraFlags">
+            <summary>
+            Gets or sets the camera flags for character control.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.MovementFlags">
+            <summary>
+            Gets or sets the movement flags for character control.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.Rigidbody">
+            <summary>
+            Gets or sets the Rigidbody2D component for character physics.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.#ctor">
+            <summary>
+            Default constructor for CharacterController2D.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Initialization method called when the game starts.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent GameElement of the behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)">
+            <summary>
+            Creates physics for the character based on the specified controller preset.
+            </summary>
+            <param name="physicsHandler">The physics handler for creating the physics.</param>
+            <param name="controllerPreset">The preset for the controller.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Creates default physics for the character with no specified factors.
+            </summary>
+            <param name="physicHandler">The physics handler for creating the physics.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)">
+            <summary>
+            Creates physics for the character with specified factors and physics enabling.
+            </summary>
+            <param name="physicHandler">The physics handler for creating the physics.</param>
+            <param name="linearFactor">The linear factor for the physics.</param>
+            <param name="angularFactor">The angular factor for the physics.</param>
+            <param name="enablePhysics">Specifies whether physics should be enabled initially.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Updates the character state on each frame.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent GameElement of the behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)">
+            <summary>
+            Processes character movement and behavior based on user input.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Destruction method called when the game ends or the behavior is removed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent GameElement of the behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Rendering method called during the rendering phase.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent GameElement of the behavior.</param>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
+            <summary>
+            Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.RigidBody">
+            <summary>
+            Gets or sets the rigid body associated with the collider.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.LinearFactor">
+            <summary>
+            Gets or sets the linear factor for the RigidBody's motion.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor">
+            <summary>
+            Gets or sets the angular factor for the RigidBody's rotation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with the collider.
+            </summary>
+            <returns>The rigid body associated with the collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject``1">
+            <summary>
+            Gets the typed physics object associated with the collider.
+            </summary>
+            <typeparam name="T">Type of the physics object.</typeparam>
+            <returns>The typed rigid body associated with the collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateRigidBody(System.Single,Genesis.Physics.PhysicHandler)">
+            <summary>
+            Creates a rigid body for the collider.
+            </summary>
+            <param name="mass">The mass of the rigid body.</param>
+            <param name="handler">The physics handler for managing the collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnDestroy event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnInit event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnRender event. No implementation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Placeholder for OnUpdate event. No implementation.
+            </summary>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D">
             <summary>
             Represents a 2D physics behavior for game elements.
@@ -999,6 +1205,11 @@
             </summary>
             <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
         </member>
+        <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
+            <summary>
+            Represents the definition of the shape for a sprite, including its location and size.
+            </summary>
+        </member>
         <member name="T:Genesis.Core.GameElements.BufferedSprite">
             <summary>
             Represents a game element that creates a buffered sprite with vertices, colors, and texture coordinates.
@@ -1017,6 +1228,11 @@
         <member name="P:Genesis.Core.GameElements.BufferedSprite.TexCoords">
             <summary>
             Gets or sets the list of texture coordinates for the sprite.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions">
+            <summary>
+            Gets or sets the list of shape definitions for the sprite.
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.BufferedSprite.Texture">
@@ -1041,11 +1257,11 @@
         </member>
         <member name="M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)">
             <summary>
-            Adds a new rectangular shape at the given location size and the textcords of the sprite.
+            Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
             </summary>
             <param name="location">The location for the sprite.</param>
             <param name="size">The size for the sprite.</param>
-            <param name="texCoords">The textcord for the sprite</param>
+            <param name="texCoords">The texture coordinates for the sprite.</param>
         </member>
         <member name="M:Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
@@ -4540,6 +4756,27 @@
             </summary>
             <param name="vec">The vector to normalize.</param>
             <returns>A normalized Vec3 instance.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is the smallest integer greater than or equal to the corresponding component of the input Vec3.
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded up to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is rounded down to the nearest integer
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded down to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Round(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is rounded to the nearest integer
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
         </member>
         <member name="M:Genesis.Math.Vec3.ToString">
             <summary>

@@ -208,11 +208,6 @@ namespace Genesis.Core
         /// <param name="renderDevice"></param>
         public virtual void OnUpdate(Game game, IRenderDevice renderDevice) 
         {
-            if(this.PhysicHandler != null)
-            {
-                this.PhysicHandler.Process(this, game);
-            }
-
             foreach (var item in Layer)
             {
                 item.OnUpdate(game, renderDevice);
@@ -221,6 +216,11 @@ namespace Genesis.Core
             foreach (var item in Canvas)
             {
                 item.OnUpdate(game, this);
+            }
+
+            if (this.PhysicHandler != null)
+            {
+                this.PhysicHandler.Process(this, game);
             }
         }
 

@@ -72,6 +72,7 @@
     <Compile Include="Core\AssetManager.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
+    <Compile Include="Core\Behaviors\CharacterController2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BufferedSpriteCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />

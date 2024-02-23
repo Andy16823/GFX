@@ -457,6 +457,339 @@ references:
   commentId: Overload:Genesis.Core.Behaviors.AnimationBehavior.Stop
   fullName: Genesis.Core.Behaviors.AnimationBehavior.Stop
   nameWithType: AnimationBehavior.Stop
+- uid: Genesis.Core.Behaviors.CameraFlags
+  name: CameraFlags
+  href: api/Genesis.Core.Behaviors.CameraFlags.html
+  commentId: T:Genesis.Core.Behaviors.CameraFlags
+  fullName: Genesis.Core.Behaviors.CameraFlags
+  nameWithType: CameraFlags
+- uid: Genesis.Core.Behaviors.CameraFlags.CameraLookAtSprite
+  name: CameraLookAtSprite
+  href: api/Genesis.Core.Behaviors.CameraFlags.html#Genesis_Core_Behaviors_CameraFlags_CameraLookAtSprite
+  commentId: F:Genesis.Core.Behaviors.CameraFlags.CameraLookAtSprite
+  fullName: Genesis.Core.Behaviors.CameraFlags.CameraLookAtSprite
+  nameWithType: CameraFlags.CameraLookAtSprite
+- uid: Genesis.Core.Behaviors.CameraFlags.CameraLookAtSpriteRounded
+  name: CameraLookAtSpriteRounded
+  href: api/Genesis.Core.Behaviors.CameraFlags.html#Genesis_Core_Behaviors_CameraFlags_CameraLookAtSpriteRounded
+  commentId: F:Genesis.Core.Behaviors.CameraFlags.CameraLookAtSpriteRounded
+  fullName: Genesis.Core.Behaviors.CameraFlags.CameraLookAtSpriteRounded
+  nameWithType: CameraFlags.CameraLookAtSpriteRounded
+- uid: Genesis.Core.Behaviors.CameraFlags.IgnoreCamera
+  name: IgnoreCamera
+  href: api/Genesis.Core.Behaviors.CameraFlags.html#Genesis_Core_Behaviors_CameraFlags_IgnoreCamera
+  commentId: F:Genesis.Core.Behaviors.CameraFlags.IgnoreCamera
+  fullName: Genesis.Core.Behaviors.CameraFlags.IgnoreCamera
+  nameWithType: CameraFlags.IgnoreCamera
+- uid: Genesis.Core.Behaviors.CharacterController2D
+  name: CharacterController2D
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html
+  commentId: T:Genesis.Core.Behaviors.CharacterController2D
+  fullName: Genesis.Core.Behaviors.CharacterController2D
+  nameWithType: CharacterController2D
+- uid: Genesis.Core.Behaviors.CharacterController2D.#ctor
+  name: CharacterController2D()
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D__ctor
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterController2D()
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.New()
+  nameWithType: CharacterController2D.CharacterController2D()
+  nameWithType.vb: CharacterController2D.New()
+- uid: Genesis.Core.Behaviors.CharacterController2D.#ctor*
+  name: CharacterController2D
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterController2D
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.New
+  nameWithType: CharacterController2D.CharacterController2D
+  nameWithType.vb: CharacterController2D.New
+- uid: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  name: AllowJump
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_AllowJump
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  fullName: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  nameWithType: CharacterController2D.AllowJump
+- uid: Genesis.Core.Behaviors.CharacterController2D.AllowJump*
+  name: AllowJump
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_AllowJump_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  fullName: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  nameWithType: CharacterController2D.AllowJump
+- uid: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  name: CameraFlags
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CameraFlags
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  nameWithType: CharacterController2D.CameraFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.CameraFlags*
+  name: CameraFlags
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CameraFlags_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  nameWithType: CharacterController2D.CameraFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  name: CharacterProcess(Game)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CharacterProcess_Genesis_Core_Game_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  nameWithType: CharacterController2D.CharacterProcess(Game)
+- uid: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess*
+  name: CharacterProcess
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CharacterProcess_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CharacterProcess
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess
+  nameWithType: CharacterController2D.CharacterProcess
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  name: CreatePhysics(PhysicHandler)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CreatePhysics_Genesis_Physics_PhysicHandler_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler)
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  name: CreatePhysics(PhysicHandler, ControllerPreset)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CreatePhysics_Genesis_Physics_PhysicHandler_Genesis_Core_Behaviors_ControllerPreset_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Core.Behaviors.ControllerPreset)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler, ControllerPreset)
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  name: CreatePhysics(PhysicHandler, Vec3, Vec3, bool)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CreatePhysics_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Boolean_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  name.vb: CreatePhysics(PhysicHandler, Vec3, Vec3, Boolean)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Genesis.Math.Vec3, bool)
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Genesis.Math.Vec3, Boolean)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler, Vec3, Vec3, bool)
+  nameWithType.vb: CharacterController2D.CreatePhysics(PhysicHandler, Vec3, Vec3, Boolean)
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics*
+  name: CreatePhysics
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CreatePhysics_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics
+  nameWithType: CharacterController2D.CreatePhysics
+- uid: Genesis.Core.Behaviors.CharacterController2D.DownKey
+  name: DownKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_DownKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.DownKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.DownKey
+  nameWithType: CharacterController2D.DownKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.DownKey*
+  name: DownKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_DownKey_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.DownKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.DownKey
+  nameWithType: CharacterController2D.DownKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  name: JumpCooldown
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpCooldown
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  nameWithType: CharacterController2D.JumpCooldown
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown*
+  name: JumpCooldown
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpCooldown_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  nameWithType: CharacterController2D.JumpCooldown
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  name: JumpKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  nameWithType: CharacterController2D.JumpKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpKey*
+  name: JumpKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpKey_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  nameWithType: CharacterController2D.JumpKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  name: JumpSpeed
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpSpeed
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  nameWithType: CharacterController2D.JumpSpeed
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed*
+  name: JumpSpeed
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpSpeed_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  nameWithType: CharacterController2D.JumpSpeed
+- uid: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  name: LeftKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_LeftKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  nameWithType: CharacterController2D.LeftKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.LeftKey*
+  name: LeftKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_LeftKey_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  nameWithType: CharacterController2D.LeftKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.Mass
+  name: Mass
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Mass
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Mass
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Mass
+  nameWithType: CharacterController2D.Mass
+- uid: Genesis.Core.Behaviors.CharacterController2D.Mass*
+  name: Mass
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Mass_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Mass
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Mass
+  nameWithType: CharacterController2D.Mass
+- uid: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  name: MovementFlags
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_MovementFlags
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  nameWithType: CharacterController2D.MovementFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.MovementFlags*
+  name: MovementFlags
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_MovementFlags_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  nameWithType: CharacterController2D.MovementFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CharacterController2D.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnDestroy
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnDestroy
+  nameWithType: CharacterController2D.OnDestroy
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CharacterController2D.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnInit
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnInit
+  nameWithType: CharacterController2D.OnInit
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CharacterController2D.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnRender
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnRender
+  nameWithType: CharacterController2D.OnRender
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CharacterController2D.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnUpdate
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnUpdate
+  nameWithType: CharacterController2D.OnUpdate
+- uid: Genesis.Core.Behaviors.CharacterController2D.RightKey
+  name: RightKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_RightKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.RightKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.RightKey
+  nameWithType: CharacterController2D.RightKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.RightKey*
+  name: RightKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_RightKey_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.RightKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.RightKey
+  nameWithType: CharacterController2D.RightKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  name: Rigidbody
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Rigidbody
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  nameWithType: CharacterController2D.Rigidbody
+- uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody*
+  name: Rigidbody
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Rigidbody_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  nameWithType: CharacterController2D.Rigidbody
+- uid: Genesis.Core.Behaviors.CharacterController2D.Speed
+  name: Speed
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Speed
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Speed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Speed
+  nameWithType: CharacterController2D.Speed
+- uid: Genesis.Core.Behaviors.CharacterController2D.Speed*
+  name: Speed
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Speed_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Speed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Speed
+  nameWithType: CharacterController2D.Speed
+- uid: Genesis.Core.Behaviors.CharacterController2D.UpKey
+  name: UpKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_UpKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.UpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.UpKey
+  nameWithType: CharacterController2D.UpKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.UpKey*
+  name: UpKey
+  href: api/Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_UpKey_
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.UpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.UpKey
+  nameWithType: CharacterController2D.UpKey
+- uid: Genesis.Core.Behaviors.ControllerPreset
+  name: ControllerPreset
+  href: api/Genesis.Core.Behaviors.ControllerPreset.html
+  commentId: T:Genesis.Core.Behaviors.ControllerPreset
+  fullName: Genesis.Core.Behaviors.ControllerPreset
+  nameWithType: ControllerPreset
+- uid: Genesis.Core.Behaviors.ControllerPreset.SideScrollerController
+  name: SideScrollerController
+  href: api/Genesis.Core.Behaviors.ControllerPreset.html#Genesis_Core_Behaviors_ControllerPreset_SideScrollerController
+  commentId: F:Genesis.Core.Behaviors.ControllerPreset.SideScrollerController
+  fullName: Genesis.Core.Behaviors.ControllerPreset.SideScrollerController
+  nameWithType: ControllerPreset.SideScrollerController
+- uid: Genesis.Core.Behaviors.ControllerPreset.TopDownController
+  name: TopDownController
+  href: api/Genesis.Core.Behaviors.ControllerPreset.html#Genesis_Core_Behaviors_ControllerPreset_TopDownController
+  commentId: F:Genesis.Core.Behaviors.ControllerPreset.TopDownController
+  fullName: Genesis.Core.Behaviors.ControllerPreset.TopDownController
+  nameWithType: ControllerPreset.TopDownController
+- uid: Genesis.Core.Behaviors.MovementFlags
+  name: MovementFlags
+  href: api/Genesis.Core.Behaviors.MovementFlags.html
+  commentId: T:Genesis.Core.Behaviors.MovementFlags
+  fullName: Genesis.Core.Behaviors.MovementFlags
+  nameWithType: MovementFlags
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  name: CharacterMoveHorizontal
+  href: api/Genesis.Core.Behaviors.MovementFlags.html#Genesis_Core_Behaviors_MovementFlags_CharacterMoveHorizontal
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  nameWithType: MovementFlags.CharacterMoveHorizontal
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  name: CharacterMoveVertical
+  href: api/Genesis.Core.Behaviors.MovementFlags.html#Genesis_Core_Behaviors_MovementFlags_CharacterMoveVertical
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  nameWithType: MovementFlags.CharacterMoveVertical
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  name: CharacterMoveVerticalAndHorizontal
+  href: api/Genesis.Core.Behaviors.MovementFlags.html#Genesis_Core_Behaviors_MovementFlags_CharacterMoveVerticalAndHorizontal
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  nameWithType: MovementFlags.CharacterMoveVerticalAndHorizontal
 - uid: Genesis.Core.Behaviors.Physics2D
   name: Genesis.Core.Behaviors.Physics2D
   href: api/Genesis.Core.Behaviors.Physics2D.html
@@ -10030,6 +10363,18 @@ references:
   commentId: Overload:Genesis.Math.Vec3.AddZ
   fullName: Genesis.Math.Vec3.AddZ
   nameWithType: Vec3.AddZ
+- uid: Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  name: Ceiling(Vec3)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Ceiling_Genesis_Math_Vec3_
+  commentId: M:Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  fullName: Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)
+  nameWithType: Vec3.Ceiling(Vec3)
+- uid: Genesis.Math.Vec3.Ceiling*
+  name: Ceiling
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Ceiling_
+  commentId: Overload:Genesis.Math.Vec3.Ceiling
+  fullName: Genesis.Math.Vec3.Ceiling
+  nameWithType: Vec3.Ceiling
 - uid: Genesis.Math.Vec3.Cross(Genesis.Math.Vec3,Genesis.Math.Vec3)
   name: Cross(Vec3, Vec3)
   href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Cross_Genesis_Math_Vec3_Genesis_Math_Vec3_
@@ -10087,6 +10432,18 @@ references:
   commentId: Overload:Genesis.Math.Vec3.Dot
   fullName: Genesis.Math.Vec3.Dot
   nameWithType: Vec3.Dot
+- uid: Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  name: Floor(Vec3)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Floor_Genesis_Math_Vec3_
+  commentId: M:Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  fullName: Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
+  nameWithType: Vec3.Floor(Vec3)
+- uid: Genesis.Math.Vec3.Floor*
+  name: Floor
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Floor_
+  commentId: Overload:Genesis.Math.Vec3.Floor
+  fullName: Genesis.Math.Vec3.Floor
+  nameWithType: Vec3.Floor
 - uid: Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
   name: Forward(Vec3, float)
   href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Forward_Genesis_Math_Vec3_System_Single_
@@ -10126,6 +10483,18 @@ references:
   commentId: Overload:Genesis.Math.Vec3.Normalized
   fullName: Genesis.Math.Vec3.Normalized
   nameWithType: Vec3.Normalized
+- uid: Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  name: Round(Vec3)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Round_Genesis_Math_Vec3_
+  commentId: M:Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  fullName: Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
+  nameWithType: Vec3.Round(Vec3)
+- uid: Genesis.Math.Vec3.Round*
+  name: Round
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Round_
+  commentId: Overload:Genesis.Math.Vec3.Round
+  fullName: Genesis.Math.Vec3.Round
+  nameWithType: Vec3.Round
 - uid: Genesis.Math.Vec3.Set(Genesis.Math.Vec3)
   name: Set(Vec3)
   href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Set_Genesis_Math_Vec3_
