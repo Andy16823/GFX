@@ -29,6 +29,9 @@ items:
   - System.Object
   - Genesis.Core.IGameBehavior
   derivedClasses:
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  - Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+  - Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull

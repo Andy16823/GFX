@@ -472,6 +472,46 @@ namespace Genesis.Math
         }
 
         /// <summary>
+        /// Returns a new Vec3 object where each component is the smallest integer greater than or equal to the corresponding component of the input Vec3.
+        /// </summary>
+        /// <param name="vec">The input Vec3 to be processed.</param>
+        /// <returns>A new Vec3 with each component rounded up to the nearest integer.</returns>
+        public static Vec3 Ceiling(Vec3 vec)
+        {
+            float x = (float)System.Math.Ceiling(vec.X);
+            float y = (float)System.Math.Ceiling(vec.Y);
+            float z = (float)System.Math.Ceiling(vec.Y);
+            return new Vec3(x, y, z);
+        }
+
+        /// <summary>
+        /// Returns a new Vec3 object where each component is rounded down to the nearest integer
+        /// </summary>
+        /// <param name="vec">The input Vec3 to be processed.</param>
+        /// <returns>A new Vec3 with each component rounded down to the nearest integer.</returns>
+        public static Vec3 Floor(Vec3 vec)
+        {
+            float x = (float)System.Math.Floor(vec.X);
+            float y = (float)System.Math.Floor(vec.Y);
+            float z = (float)System.Math.Floor(vec.Z);
+            return new Vec3(x, y, z);
+        }
+
+        /// <summary>
+        /// Returns a new Vec3 object where each component is rounded to the nearest integer
+        /// </summary>
+        /// <param name="vec">The input Vec3 to be processed.</param>
+        /// <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
+        public static Vec3 Round(Vec3 vec)
+        {
+            float x = (float)System.Math.Round(vec.X);
+            float y = (float)System.Math.Round(vec.Y);
+            float z = (float)System.Math.Round(vec.Z);
+
+            return new Vec3(x, y, z);
+        }
+
+        /// <summary>
         /// Returns a string representation of the vector.
         /// </summary>
         /// <returns>A string containing the X, Y, and Z coordinates of the vector.</returns>

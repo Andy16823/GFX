@@ -100,6 +100,5 @@ namespace Genesis.UI
             rect.Height = FontSize;
             return rect;
         }
-
     }
 }

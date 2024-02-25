@@ -49,6 +49,7 @@ items:
   - Genesis.Core.Scene.RemoveCanvas(Genesis.UI.Canvas)
   - Genesis.Core.Scene.RemoveCanvas(System.String)
   - Genesis.Core.Scene.ResizeScene(Genesis.Graphics.Viewport)
+  - Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
   - Genesis.Core.Scene.Name
   - Genesis.Core.Scene.Layer
   - Genesis.Core.Scene.Camera
@@ -61,6 +62,7 @@ items:
   - Genesis.Core.Scene.BeforeCanvasRender
   - Genesis.Core.Scene.AfterCanvasRender
   - Genesis.Core.Scene.OnSceneResize
+  - Genesis.Core.Scene.BackgroundTexture
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -954,6 +956,51 @@ references:
     isExternal: true
     href: Genesis.Graphics.Viewport.html
   - name: )
+- uid: Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+  commentId: M:Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+  parent: Genesis.Core.Scene
+  isExternal: true
+  href: Genesis.Core.Scene.html#Genesis_Core_Scene_ImportScene2D_System_String_Genesis_Core_AssetManager_
+  name: ImportScene2D(string, AssetManager)
+  nameWithType: Scene.ImportScene2D(string, AssetManager)
+  fullName: Genesis.Core.Scene.ImportScene2D(string, Genesis.Core.AssetManager)
+  nameWithType.vb: Scene.ImportScene2D(String, AssetManager)
+  fullName.vb: Genesis.Core.Scene.ImportScene2D(String, Genesis.Core.AssetManager)
+  name.vb: ImportScene2D(String, AssetManager)
+  spec.csharp:
+  - uid: Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+    name: ImportScene2D
+    isExternal: true
+    href: Genesis.Core.Scene.html#Genesis_Core_Scene_ImportScene2D_System_String_Genesis_Core_AssetManager_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.AssetManager
+    name: AssetManager
+    isExternal: true
+    href: Genesis.Core.AssetManager.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+    name: ImportScene2D
+    isExternal: true
+    href: Genesis.Core.Scene.html#Genesis_Core_Scene_ImportScene2D_System_String_Genesis_Core_AssetManager_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.AssetManager
+    name: AssetManager
+    isExternal: true
+    href: Genesis.Core.AssetManager.html
+  - name: )
 - uid: Genesis.Core.Scene.Name
   commentId: P:Genesis.Core.Scene.Name
   parent: Genesis.Core.Scene
@@ -1050,6 +1097,14 @@ references:
   name: OnSceneResize
   nameWithType: Scene.OnSceneResize
   fullName: Genesis.Core.Scene.OnSceneResize
+- uid: Genesis.Core.Scene.BackgroundTexture
+  commentId: P:Genesis.Core.Scene.BackgroundTexture
+  parent: Genesis.Core.Scene
+  isExternal: true
+  href: Genesis.Core.Scene.html#Genesis_Core_Scene_BackgroundTexture
+  name: BackgroundTexture
+  nameWithType: Scene.BackgroundTexture
+  fullName: Genesis.Core.Scene.BackgroundTexture
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

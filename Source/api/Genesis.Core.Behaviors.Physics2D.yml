@@ -4,6 +4,9 @@ items:
   commentId: N:Genesis.Core.Behaviors.Physics2D
   id: Genesis.Core.Behaviors.Physics2D
   children:
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  - Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+  - Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   langs:
   - csharp
@@ -15,10 +18,79 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html
+  name: BufferedSpriteCollider
+  nameWithType: BufferedSpriteCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+- uid: Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.html
+  name: PhysicsBox2D
+  nameWithType: PhysicsBox2D
+  fullName: Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+- uid: Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.html
+  name: PhysicsPolygon2D
+  nameWithType: PhysicsPolygon2D
+  fullName: Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   commentId: T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  parent: Genesis.Core.Behaviors.Physics2D
   isExternal: true
   href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html
   name: Rigidbody2D
   nameWithType: Rigidbody2D
   fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+- uid: Genesis.Core.Behaviors.Physics2D
+  commentId: N:Genesis.Core.Behaviors.Physics2D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors.Physics2D
+  nameWithType: Genesis.Core.Behaviors.Physics2D
+  fullName: Genesis.Core.Behaviors.Physics2D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html

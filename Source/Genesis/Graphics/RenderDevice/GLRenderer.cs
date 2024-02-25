@@ -1647,6 +1647,21 @@ namespace Genesis.Graphics.RenderDevice
             gl.Disable(OpenGL.DepthTest);
             gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
 
+            if(scene.BackgroundTexture != null)
+            {
+                //gl.Disable(OpenGL.Blend);
+                gl.ActiveTexture(OpenGL.Texture0);
+                gl.BindTexture(OpenGL.Texture2D, scene.BackgroundTexture.RenderID);
+                gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
+                gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+
+                gl.EnableVertexAttribArray(0);
+                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+                gl.EnableVertexAttribArray(1);
+                gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+                gl.DrawArrays(OpenGL.Triangles, 0, 6);
+            }
+
             gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(OpenGL.Texture2D, sceneBuffer.Texture);
             gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);

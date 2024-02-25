@@ -24,3 +24,4 @@ E:\Own Games\Genesis\Genesis\bin\Release\Licences\GlmSharp.txt
 E:\Own Games\Genesis\Genesis\bin\Release\Licences\NetGL.txt
 E:\Own Games\Genesis\Genesis\bin\Release\Licences\NewtonsoftJson.txt
 E:\Own Games\Genesis\Genesis\bin\Release\Licences\OpenObjectLoader.txt
+E:\Own Games\Genesis\Genesis\bin\Release\Genesis.xml

@@ -30,6 +30,7 @@ items:
   - System.Object
   derivedClasses:
   - Genesis.Core.Behaviors.AnimationBehavior
+  - Genesis.Core.Behaviors.CharacterController2D
   - Genesis.Core.Behaviors.SpriteMovementController
   - Genesis.Physics.PhysicsBehavior
   inheritedMembers:

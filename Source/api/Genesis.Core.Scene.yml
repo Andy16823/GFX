@@ -14,6 +14,7 @@ items:
   - Genesis.Core.Scene.AddLayer(System.String)
   - Genesis.Core.Scene.AfterCanvasRender
   - Genesis.Core.Scene.AfterSceneRender
+  - Genesis.Core.Scene.BackgroundTexture
   - Genesis.Core.Scene.BeforeCanvasPreperation
   - Genesis.Core.Scene.BeforeCanvasRender
   - Genesis.Core.Scene.BeforeScenePreperation
@@ -27,6 +28,7 @@ items:
   - Genesis.Core.Scene.GetElements(System.String[])
   - Genesis.Core.Scene.GetLayer(System.String)
   - Genesis.Core.Scene.GetWidget(System.String,System.String)
+  - Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
   - Genesis.Core.Scene.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.Scene.Layer
   - Genesis.Core.Scene.Name
@@ -735,6 +737,36 @@ items:
       description: The viewport containing information about the new dimensions.
     content.vb: Public Overridable Sub ResizeScene(viewport As Viewport)
   overload: Genesis.Core.Scene.ResizeScene*
+- uid: Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+  commentId: M:Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)
+  id: ImportScene2D(System.String,Genesis.Core.AssetManager)
+  parent: Genesis.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: ImportScene2D(string, AssetManager)
+  nameWithType: Scene.ImportScene2D(string, AssetManager)
+  fullName: Genesis.Core.Scene.ImportScene2D(string, Genesis.Core.AssetManager)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Loads the given scene file into this scene
+  example: []
+  syntax:
+    content: public void ImportScene2D(string filename, AssetManager assetManager)
+    parameters:
+    - id: filename
+      type: System.String
+      description: The file name
+    - id: assetManager
+      type: Genesis.Core.AssetManager
+      description: The asset manager
+    content.vb: Public Sub ImportScene2D(filename As String, assetManager As AssetManager)
+  overload: Genesis.Core.Scene.ImportScene2D*
+  nameWithType.vb: Scene.ImportScene2D(String, AssetManager)
+  fullName.vb: Genesis.Core.Scene.ImportScene2D(String, Genesis.Core.AssetManager)
+  name.vb: ImportScene2D(String, AssetManager)
 - uid: Genesis.Core.Scene.Name
   commentId: P:Genesis.Core.Scene.Name
   id: Name
@@ -1011,6 +1043,29 @@ items:
       type: Genesis.Core.SceneSizeEvenHandler
     content.vb: Public Property OnSceneResize As SceneSizeEvenHandler
   overload: Genesis.Core.Scene.OnSceneResize*
+- uid: Genesis.Core.Scene.BackgroundTexture
+  commentId: P:Genesis.Core.Scene.BackgroundTexture
+  id: BackgroundTexture
+  parent: Genesis.Core.Scene
+  langs:
+  - csharp
+  - vb
+  name: BackgroundTexture
+  nameWithType: Scene.BackgroundTexture
+  fullName: Genesis.Core.Scene.BackgroundTexture
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Set or gets the background texture for the scene
+  example: []
+  syntax:
+    content: public Texture BackgroundTexture { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Graphics.Texture
+    content.vb: Public Property BackgroundTexture As Texture
+  overload: Genesis.Core.Scene.BackgroundTexture*
 references:
 - uid: Genesis.Core
   commentId: N:Genesis.Core
@@ -1649,6 +1704,21 @@ references:
   name: Viewport
   nameWithType: Viewport
   fullName: Genesis.Graphics.Viewport
+- uid: Genesis.Core.Scene.ImportScene2D*
+  commentId: Overload:Genesis.Core.Scene.ImportScene2D
+  isExternal: true
+  href: Genesis.Core.Scene.html#Genesis_Core_Scene_ImportScene2D_System_String_Genesis_Core_AssetManager_
+  name: ImportScene2D
+  nameWithType: Scene.ImportScene2D
+  fullName: Genesis.Core.Scene.ImportScene2D
+- uid: Genesis.Core.AssetManager
+  commentId: T:Genesis.Core.AssetManager
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.AssetManager.html
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Genesis.Core.AssetManager
 - uid: Genesis.Core.Scene.Name*
   commentId: Overload:Genesis.Core.Scene.Name
   isExternal: true
@@ -1862,3 +1932,18 @@ references:
   name: SceneSizeEvenHandler
   nameWithType: SceneSizeEvenHandler
   fullName: Genesis.Core.SceneSizeEvenHandler
+- uid: Genesis.Core.Scene.BackgroundTexture*
+  commentId: Overload:Genesis.Core.Scene.BackgroundTexture
+  isExternal: true
+  href: Genesis.Core.Scene.html#Genesis_Core_Scene_BackgroundTexture
+  name: BackgroundTexture
+  nameWithType: Scene.BackgroundTexture
+  fullName: Genesis.Core.Scene.BackgroundTexture
+- uid: Genesis.Graphics.Texture
+  commentId: T:Genesis.Graphics.Texture
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Genesis.Graphics.Texture
