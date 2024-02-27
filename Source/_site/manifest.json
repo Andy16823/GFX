@@ -352,6 +352,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleEmitter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.GameEventHandler.yml",
       "output": {
         ".html": {
@@ -766,6 +806,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.html"
         }
       },
       "version": ""

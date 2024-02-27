@@ -31,6 +31,10 @@ items:
   - Genesis.Core.Utils.GetModelSpaceScale(Genesis.Core.GameElement,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetModelTransformation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetParentModelView(Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetRandomColor
+  - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  - Genesis.Core.Utils.GetRandomColor(System.Int32)
   - Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringHeight(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringWidth(System.String,System.Single,System.Single)
@@ -1028,6 +1032,125 @@ items:
       description: The float array representing the color.
     content.vb: Public Shared Function ConvertColor(color As Color) As Single()
   overload: Genesis.Core.Utils.ConvertColor*
+- uid: Genesis.Core.Utils.GetRandomColor
+  commentId: M:Genesis.Core.Utils.GetRandomColor
+  id: GetRandomColor
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor()
+  nameWithType: Utils.GetRandomColor()
+  fullName: Genesis.Core.Utils.GetRandomColor()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Generates an random color
+  example: []
+  syntax:
+    content: public static Color GetRandomColor()
+    return:
+      type: System.Drawing.Color
+      description: The color
+    content.vb: Public Shared Function GetRandomColor() As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+- uid: Genesis.Core.Utils.GetRandomColor(System.Int32)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Int32)
+  id: GetRandomColor(System.Int32)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(int)
+  nameWithType: Utils.GetRandomColor(int)
+  fullName: Genesis.Core.Utils.GetRandomColor(int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Generates an random color from an seed
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(int seed)
+    parameters:
+    - id: seed
+      type: System.Int32
+      description: The seed for the randomizer
+    return:
+      type: System.Drawing.Color
+      description: The color
+    content.vb: Public Shared Function GetRandomColor(seed As Integer) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+  nameWithType.vb: Utils.GetRandomColor(Integer)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(Integer)
+  name.vb: GetRandomColor(Integer)
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  id: GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(Color, Color)
+  nameWithType: Utils.GetRandomColor(Color, Color)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns a random color between the given colors.
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(Color colorA, Color colorB)
+    parameters:
+    - id: colorA
+      type: System.Drawing.Color
+      description: The minimum color.
+    - id: colorB
+      type: System.Drawing.Color
+      description: The maximum color.
+    return:
+      type: System.Drawing.Color
+      description: A randomly generated color within the specified range.
+    content.vb: Public Shared Function GetRandomColor(colorA As Color, colorB As Color) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  id: GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(Color, Color, int)
+  nameWithType: Utils.GetRandomColor(Color, Color, int)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns a random color between the given colors using a specified seed for reproducibility.
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(Color colorA, Color colorB, int seed)
+    parameters:
+    - id: colorA
+      type: System.Drawing.Color
+      description: The minimum color.
+    - id: colorB
+      type: System.Drawing.Color
+      description: The maximum color.
+    - id: seed
+      type: System.Int32
+      description: The seed for the random number generator.
+    return:
+      type: System.Drawing.Color
+      description: A randomly generated color within the specified range and seed.
+    content.vb: Public Shared Function GetRandomColor(colorA As Color, colorB As Color, seed As Integer) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+  nameWithType.vb: Utils.GetRandomColor(Color, Color, Integer)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, Integer)
+  name.vb: GetRandomColor(Color, Color, Integer)
 - uid: Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
   commentId: M:Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
   id: ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
@@ -1900,6 +2023,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: (
   - name: )
+- uid: Genesis.Core.Utils.GetRandomColor*
+  commentId: Overload:Genesis.Core.Utils.GetRandomColor
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor
+  name: GetRandomColor
+  nameWithType: Utils.GetRandomColor
+  fullName: Genesis.Core.Utils.GetRandomColor
 - uid: Genesis.Core.Utils.ConvertDrawingColor*
   commentId: Overload:Genesis.Core.Utils.ConvertDrawingColor
   isExternal: true

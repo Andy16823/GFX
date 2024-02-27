@@ -625,5 +625,10 @@ namespace Genesis.Graphics.RenderDevice
         {
             throw new NotImplementedException();
         }
+
+        public void DisposeElement(GameElement element)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

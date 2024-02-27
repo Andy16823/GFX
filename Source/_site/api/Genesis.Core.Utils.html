@@ -250,6 +250,22 @@
                     </li>
                     <li class="">
                       <span class="expand-stub"></span>
+                      <a href="Genesis.Core.GameElments.html" title="Genesis.Core.GameElments" class="">Genesis.Core.GameElments</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleBuffers.html" title="ParticleBuffers" class="">ParticleBuffers</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleDeffinition.html" title="ParticleDeffinition" class="">ParticleDeffinition</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleEmitter.html" title="ParticleEmitter" class="">ParticleEmitter</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
                       <a href="Genesis.Graphics.html" title="Genesis.Graphics" class="">Genesis.Graphics</a>
 
                         <ul class="nav level2">
@@ -363,6 +379,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html" title="MVPSolidShader" class="">MVPSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.ParticleShader.html" title="ParticleShader" class="">ParticleShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.ScreenShader.html" title="ScreenShader" class="">ScreenShader</a>
@@ -1783,6 +1802,186 @@
       <tr>
         <td><span class="xref">mat4</span></td>
         <td><p>The transformation matrix for the parent model view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_GetRandomColor_" data-uid="Genesis.Core.Utils.GetRandomColor*"></a>
+  <h4 id="Genesis_Core_Utils_GetRandomColor" data-uid="Genesis.Core.Utils.GetRandomColor">GetRandomColor()</h4>
+  <div class="markdown level1 summary"><p>Generates an random color</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color GetRandomColor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><p>The color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_GetRandomColor_" data-uid="Genesis.Core.Utils.GetRandomColor*"></a>
+  <h4 id="Genesis_Core_Utils_GetRandomColor_System_Drawing_Color_System_Drawing_Color_" data-uid="Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)">GetRandomColor(Color, Color)</h4>
+  <div class="markdown level1 summary"><p>Returns a random color between the given colors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color GetRandomColor(Color colorA, Color colorB)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><span class="parametername">colorA</span></td>
+        <td><p>The minimum color.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><span class="parametername">colorB</span></td>
+        <td><p>The maximum color.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><p>A randomly generated color within the specified range.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_GetRandomColor_" data-uid="Genesis.Core.Utils.GetRandomColor*"></a>
+  <h4 id="Genesis_Core_Utils_GetRandomColor_System_Drawing_Color_System_Drawing_Color_System_Int32_" data-uid="Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">GetRandomColor(Color, Color, int)</h4>
+  <div class="markdown level1 summary"><p>Returns a random color between the given colors using a specified seed for reproducibility.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color GetRandomColor(Color colorA, Color colorB, int seed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><span class="parametername">colorA</span></td>
+        <td><p>The minimum color.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><span class="parametername">colorB</span></td>
+        <td><p>The maximum color.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">seed</span></td>
+        <td><p>The seed for the random number generator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><p>A randomly generated color within the specified range and seed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_GetRandomColor_" data-uid="Genesis.Core.Utils.GetRandomColor*"></a>
+  <h4 id="Genesis_Core_Utils_GetRandomColor_System_Int32_" data-uid="Genesis.Core.Utils.GetRandomColor(System.Int32)">GetRandomColor(int)</h4>
+  <div class="markdown level1 summary"><p>Generates an random color from an seed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color GetRandomColor(int seed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">seed</span></td>
+        <td><p>The seed for the randomizer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><p>The color</p>
 </td>
       </tr>
     </tbody>

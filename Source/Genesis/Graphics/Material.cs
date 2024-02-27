@@ -55,6 +55,11 @@ namespace Genesis.Graphics
         public String NormalTexture { get; set; }
 
         /// <summary>
+        /// Gets or sets the opacity
+        /// </summary>
+        public float Opacity { get; set; }
+
+        /// <summary>
         /// A collection of user-defined properties.
         /// </summary>
         public Dictionary<String, Object> Propeterys { get; set; }

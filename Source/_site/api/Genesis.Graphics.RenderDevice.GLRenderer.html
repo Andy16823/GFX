@@ -250,6 +250,22 @@
                     </li>
                     <li class="">
                       <span class="expand-stub"></span>
+                      <a href="Genesis.Core.GameElments.html" title="Genesis.Core.GameElments" class="">Genesis.Core.GameElments</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleBuffers.html" title="ParticleBuffers" class="">ParticleBuffers</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleDeffinition.html" title="ParticleDeffinition" class="">ParticleDeffinition</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.GameElments.ParticleEmitter.html" title="ParticleEmitter" class="">ParticleEmitter</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
                       <a href="Genesis.Graphics.html" title="Genesis.Graphics" class="">Genesis.Graphics</a>
 
                         <ul class="nav level2">
@@ -363,6 +379,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html" title="MVPSolidShader" class="">MVPSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.ParticleShader.html" title="ParticleShader" class="">ParticleShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.ScreenShader.html" title="ScreenShader" class="">ScreenShader</a>
@@ -932,14 +951,25 @@ Static buffers are suitable for infrequently changing data, like static geometry
   </table>
 
 
-  <a id="Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader*"></a>
-  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_Genesis_Graphics_ShaderProgram_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)">DisoseShader(ShaderProgram)</h4>
-  <div class="markdown level1 summary"><p>Deletes the shader program</p>
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_Dispose_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.Dispose*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_Dispose" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes the render device</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void DisoseShader(ShaderProgram program)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement_Genesis_Core_GameElement_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)">DisposeElement(GameElement)</h4>
+  <div class="markdown level1 summary"><p>Disposes the element data from the gpu</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisposeElement(GameElement element)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -952,23 +982,13 @@ Static buffers are suitable for infrequently changing data, like static geometry
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Genesis.Graphics.ShaderProgram.html">ShaderProgram</a></td>
-        <td><span class="parametername">program</span></td>
-        <td></td>
+        <td><a class="xref" href="Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element to dispose</p>
+</td>
       </tr>
     </tbody>
   </table>
-
-
-  <a id="Genesis_Graphics_RenderDevice_GLRenderer_Dispose_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.Dispose*"></a>
-  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_Dispose" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.Dispose">Dispose()</h4>
-  <div class="markdown level1 summary"><p>Disposes the render device</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
-  </div>
 
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement3D_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement3D*"></a>
@@ -1021,6 +1041,34 @@ Static buffers are suitable for infrequently changing data, like static geometry
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Font.html">Font</a></td>
         <td><span class="parametername">font</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_DisposeShader_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DisposeShader_Genesis_Graphics_ShaderProgram_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)">DisposeShader(ShaderProgram)</h4>
+  <div class="markdown level1 summary"><p>Deletes the shader program</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisposeShader(ShaderProgram program)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.ShaderProgram.html">ShaderProgram</a></td>
+        <td><span class="parametername">program</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1211,6 +1259,34 @@ Static buffers are suitable for infrequently changing data, like static geometry
   </table>
 
 
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElments_ParticleEmitter_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">DrawParticleEmitter(ParticleEmitter)</h4>
+  <div class="markdown level1 summary"><p>Draws the particle emitter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DrawParticleEmitter(ParticleEmitter emitter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.GameElments.ParticleEmitter.html">ParticleEmitter</a></td>
+        <td><span class="parametername">emitter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_DrawRect_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawRect*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DrawRect_Genesis_Math_Rect_System_Drawing_Color_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)">DrawRect(Rect, Color)</h4>
   <div class="markdown level1 summary"><p>Draws a rect with no fill</p>
@@ -1284,7 +1360,7 @@ Static buffers are suitable for infrequently changing data, like static geometry
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_DrawSkyBox_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_DrawSkyBox_Genesis_Core_GameElements_Skybox_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)">DrawSkyBox(Skybox)</h4>
-  <div class="markdown level1 summary"><p>Draws a skybox in the current rendering context.</p>
+  <div class="markdown level1 summary"><p>Draws an skybox</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -1304,8 +1380,7 @@ Static buffers are suitable for infrequently changing data, like static geometry
       <tr>
         <td><a class="xref" href="Genesis.Core.GameElements.Skybox.html">Skybox</a></td>
         <td><span class="parametername">skybox</span></td>
-        <td><p>The skybox to draw.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1740,7 +1815,7 @@ LegacyGL</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_FinishCanvasRendering_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_FinishCanvasRendering_Genesis_Core_Scene_Genesis_UI_Canvas_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">FinishCanvasRendering(Scene, Canvas)</h4>
-  <div class="markdown level1 summary"><p>Finishes the rendering for a canvas within a 2D scene.</p>
+  <div class="markdown level1 summary"><p>Finish the canvas rendering</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -1760,13 +1835,13 @@ LegacyGL</p>
       <tr>
         <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
         <td><span class="parametername">scene</span></td>
-        <td><p>The 2D scene containing the canvas.</p>
+        <td><p>The scene from the canvas</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
         <td><span class="parametername">canvas</span></td>
-        <td><p>The canvas to finish rendering.</p>
+        <td><p>The canvas to render</p>
 </td>
       </tr>
     </tbody>
@@ -1775,7 +1850,7 @@ LegacyGL</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_FinishSceneRendering_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_FinishSceneRendering_Genesis_Core_Scene_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)">FinishSceneRendering(Scene)</h4>
-  <div class="markdown level1 summary"><p>Finishes the rendering for a 2D scene.</p>
+  <div class="markdown level1 summary"><p>Finish the scene rendering</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -1795,7 +1870,7 @@ LegacyGL</p>
       <tr>
         <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
         <td><span class="parametername">scene</span></td>
-        <td><p>The 2D scene to finish rendering.</p>
+        <td><p>The scene which getted rendered</p>
 </td>
       </tr>
     </tbody>
@@ -1952,7 +2027,8 @@ LegacyGL</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_GetRenderer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.GetRenderer*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_GetRenderer" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.GetRenderer">GetRenderer()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the native renderer</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -2315,7 +2391,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareCanvasRendering_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareCanvasRendering_Genesis_Core_Scene_Genesis_UI_Canvas_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">PrepareCanvasRendering(Scene, Canvas)</h4>
-  <div class="markdown level1 summary"><p>Prepares the rendering for a canvas within a 2D scene.</p>
+  <div class="markdown level1 summary"><p>Prepares the renderer for the canvas rendering</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2335,13 +2411,13 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
         <td><span class="parametername">scene</span></td>
-        <td><p>The 2D scene containing the canvas.</p>
+        <td><p>The scene from the canvas</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Genesis.UI.Canvas.html">Canvas</a></td>
         <td><span class="parametername">canvas</span></td>
-        <td><p>The canvas to prepare rendering for.</p>
+        <td><p>The canvas to render</p>
 </td>
       </tr>
     </tbody>
@@ -2350,7 +2426,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareSceneRendering_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareSceneRendering_Genesis_Core_Scene_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)">PrepareSceneRendering(Scene)</h4>
-  <div class="markdown level1 summary"><p>Prepares the rendering for a 2D scene.</p>
+  <div class="markdown level1 summary"><p>Prepares the renderer for scene rendering</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2370,7 +2446,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
         <td><span class="parametername">scene</span></td>
-        <td><p>The 2D scene to prepare.</p>
+        <td><p>The scene to render</p>
 </td>
       </tr>
     </tbody>
@@ -2462,7 +2538,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_SetFramebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_SetFramebuffer_Genesis_Graphics_Framebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Genesis.Graphics.Framebuffer)">SetFramebuffer(Framebuffer)</h4>
-  <div class="markdown level1 summary"><p>Sets the active framebuffer using its ID.</p>
+  <div class="markdown level1 summary"><p>Sets an framebuffer as active render target</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2482,7 +2558,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
         <td><span class="parametername">framebuffer</span></td>
-        <td><p>The ID of the framebuffer to set as active.</p>
+        <td><p>The framebuffer for the rendering</p>
 </td>
       </tr>
     </tbody>
@@ -2491,7 +2567,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_SetFramebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_SetFramebuffer_System_Int32_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(System.Int32)">SetFramebuffer(int)</h4>
-  <div class="markdown level1 summary"><p>Sets the active framebuffer using the specified framebuffer object.</p>
+  <div class="markdown level1 summary"><p>Sets an framebuffer as active render target</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2511,7 +2587,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">framebuffer</span></td>
-        <td><p>The framebuffer to set as active.</p>
+        <td><p>The framebuffer id for the rendering</p>
 </td>
       </tr>
     </tbody>
@@ -2520,7 +2596,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_SetLightSource_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_SetLightSource_Genesis_Core_Light_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource(Genesis.Core.Light)">SetLightSource(Light)</h4>
-  <div class="markdown level1 summary"><p>Sets the light source for rendering.</p>
+  <div class="markdown level1 summary"><p>Sets an Lightsource</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2540,8 +2616,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="Genesis.Core.Light.html">Light</a></td>
         <td><span class="parametername">light</span></td>
-        <td><p>The light source to set.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

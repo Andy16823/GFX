@@ -21,6 +21,8 @@ using Genesis.Graphics.Shaders.OpenGL;
 using System.CodeDom;
 using Genesis.UI;
 using Genesis.Graphics.Shapes;
+using Genesis.Core.GameElments;
+using System.Runtime.CompilerServices;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -75,6 +77,8 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("ScreenShader", new Shaders.OpenGL.ScreenShader());
             this.ShaderPrograms.Add("SpriteShader", new Shaders.OpenGL.SpriteShader());
             this.ShaderPrograms.Add("TerrainShader", new Shaders.OpenGL.TerrainShader());
+
+            this.ShaderPrograms.Add("ParticleShader", new Shaders.OpenGL.ParticleShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -229,23 +233,6 @@ namespace Genesis.Graphics.RenderDevice
         }
 
         /// <summary>
-        /// Disposes the render device
-        /// </summary>
-        public void Dispose()
-        {
-            foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
-            {
-                Console.WriteLine("Dispose " +  item.Key);
-                this.DisoseShader(item.Value);
-            }
-
-            foreach(var item in InstancedShapes) {
-                Console.WriteLine("Dispose " + item.Key + " vbo");
-                gl.DeleteBuffers(1, item.Value.vbo);
-            }
-        }
-
-        /// <summary>
         /// Loads a shader program
         /// </summary>
         /// <param name="name"></param>
@@ -276,15 +263,6 @@ namespace Genesis.Graphics.RenderDevice
 
             gl.DeleteShader(program.VertexShader.ShaderID);
             gl.DeleteShader(program.FragmentShader.ShaderID);
-        }
-
-        /// <summary>
-        /// Deletes the shader program
-        /// </summary>
-        /// <param name="program"></param>
-        public void DisoseShader(ShaderProgram program)
-        {
-            gl.DeleteProgram(program.ProgramID);
         }
 
         /// <summary>
@@ -369,6 +347,10 @@ namespace Genesis.Graphics.RenderDevice
             else if (element.GetType() == typeof(Terrain3D))
             {
                 this.InitTerrain3D((Terrain3D)element);
+            }
+            else if(element.GetType() == typeof(ParticleEmitter))
+            {
+                this.InitParticleEmitter((ParticleEmitter)element);
             }
         }
 
@@ -512,33 +494,6 @@ namespace Genesis.Graphics.RenderDevice
         }
 
         /// <summary>
-        /// Disposes the texture
-        /// </summary>
-        /// <param name="texture"></param>
-        public void DisposeTexture(Texture texture)
-        {
-            if (texture.RenderID != 0)
-            {
-                gl.DeleteTextures(1, texture.RenderID);
-                texture.RenderID = 0;
-                Console.WriteLine("Texture " + texture.Name + " disposed");
-            }
-        }
-
-        /// <summary>
-        /// Disposes the font
-        /// </summary>
-        /// <param name="font"></param>
-        public void DisposeFont(Font font)
-        {
-            if (font.RenderID != 0)
-            {
-                gl.DeleteTextures(1, font.RenderID);
-                font.RenderID = 0;
-            }
-        }
-
-        /// <summary>
         /// Draws a rect with no fill
         /// </summary>
         /// <param name="rect"></param>
@@ -630,6 +585,10 @@ namespace Genesis.Graphics.RenderDevice
             else if(element.GetType() == typeof(Terrain3D))
             {
                 this.RenderTerrain3D((Terrain3D)element);
+            }
+            else if(element.GetType() == typeof(ParticleEmitter))
+            {
+                this.DrawParticleEmitter((ParticleEmitter)element);
             }
         }
 
@@ -1567,16 +1526,28 @@ namespace Genesis.Graphics.RenderDevice
             Console.WriteLine("Element3D: " + element.Name + " Disposed");
         }
 
+        /// <summary>
+        /// Returns the native renderer
+        /// </summary>
+        /// <returns></returns>
         public OpenGL GetRenderer()
         {
             return this.gl;
         }
 
+        /// <summary>
+        /// Sets an Lightsource
+        /// </summary>
+        /// <param name="light"></param>
         public void SetLightSource(Light light)
         {
             this.lightSource = light;
         }
 
+        /// <summary>
+        /// Draws an skybox
+        /// </summary>
+        /// <param name="skybox"></param>
         public void DrawSkyBox(Skybox skybox)
         {
             int elementShaderID = (int)skybox.Propertys["ShaderID"];
@@ -1631,6 +1602,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.Disable(OpenGL.Texture2D);
         }
 
+        /// <summary>
+        /// Prepares the renderer for scene rendering
+        /// </summary>
+        /// <param name="scene">The scene to render</param>
         public void PrepareSceneRendering(Scene scene)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, sceneBuffer.FramebufferID);
@@ -1641,41 +1616,30 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
+        /// <summary>
+        /// Finish the scene rendering
+        /// </summary>
+        /// <param name="scene">The scene which getted rendered</param>
         public void FinishSceneRendering(Scene scene)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
-            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
 
             if(scene.BackgroundTexture != null)
             {
-                //gl.Disable(OpenGL.Blend);
-                gl.ActiveTexture(OpenGL.Texture0);
-                gl.BindTexture(OpenGL.Texture2D, scene.BackgroundTexture.RenderID);
-                gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
-                gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
-
-                gl.EnableVertexAttribArray(0);
-                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-                gl.EnableVertexAttribArray(1);
-                gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
-                gl.DrawArrays(OpenGL.Triangles, 0, 6);
+                DrawFramebuffer(scene.BackgroundTexture.RenderID);
             }
 
-            gl.ActiveTexture(OpenGL.Texture0);
-            gl.BindTexture(OpenGL.Texture2D, sceneBuffer.Texture);
-            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
-            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+            DrawFramebuffer(sceneBuffer.Texture);
 
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
-            gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
         }
 
+        /// <summary>
+        /// Prepares the renderer for the canvas rendering
+        /// </summary>
+        /// <param name="scene">The scene from the canvas</param>
+        /// <param name="canvas">The canvas to render</param>
         public void PrepareCanvasRendering(Scene scene, Canvas canvas)
         {
             SetUIMatrices();
@@ -1687,32 +1651,64 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
+        /// <summary>
+        /// Finish the canvas rendering
+        /// </summary>
+        /// <param name="scene">The scene from the canvas</param>
+        /// <param name="canvas">The canvas to render</param>
         public void FinishCanvasRendering(Scene scene, Canvas canvas)
         {
             SetCamera(this.camera);
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
-            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
 
-            gl.ActiveTexture(OpenGL.Texture0);
-            gl.BindTexture(OpenGL.Texture2D, uiBuffer.Texture);
-            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
-            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+            DrawFramebuffer(uiBuffer.Texture);
 
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
-            gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
         }
 
+        /// <summary>
+        /// Draws an framebuffer
+        /// </summary>
+        /// <param name="textureID">The framebuffer texture id</param>
+        private void DrawFramebuffer(int textureID)
+        {
+            // load shader
+            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
+
+            // send texture to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, textureID);
+            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+
+            // bind vertex buffer
+            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
+
+            // define verticies
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            // define texture coords
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+
+            // render vertex buffer
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+        }
+
+        /// <summary>
+        /// Sets an framebuffer as active render target
+        /// </summary>
+        /// <param name="framebuffer">The framebuffer for the rendering</param>
         public void SetFramebuffer(Framebuffer framebuffer)
         {
             this.SetFramebuffer(framebuffer.FramebufferID);
         }
 
+        /// <summary>
+        /// Sets an framebuffer as active render target
+        /// </summary>
+        /// <param name="framebuffer">The framebuffer id for the rendering</param>
         public void SetFramebuffer(int framebuffer)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer);
@@ -1723,6 +1719,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
+        /// <summary>
+        /// Renders an qube
+        /// </summary>
+        /// <param name="qube">The qube to render</param>
         private void RenderQube(Qube qube)
         {
             mat4 mt_mat = mat4.Translate(qube.Location.ToGlmVec3());
@@ -1763,6 +1763,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.DrawArrays(OpenGL.Triangles, 0, (int)qube.Propertys["tris"]);
         }
 
+        /// <summary>
+        /// Init an terrain3d
+        /// </summary>
+        /// <param name="terrain">The terrain to initalize</param>
         private void InitTerrain3D(Terrain3D terrain)
         {
             // 2. Load verticies into the gpu
@@ -1781,6 +1785,10 @@ namespace Genesis.Graphics.RenderDevice
             terrain.Propertys.Add("ShaderID", ShaderPrograms["TerrainShader"].ProgramID);
         }
 
+        /// <summary>
+        /// Renders an terrain3D
+        /// </summary>
+        /// <param name="terrain">The terrain to render</param>
         private void RenderTerrain3D(Terrain3D terrain)
         {
             mat4 mt_mat = mat4.Translate(terrain.Location.ToGlmVec3());
@@ -1808,6 +1816,191 @@ namespace Genesis.Graphics.RenderDevice
             gl.DrawArrays(OpenGL.Triangles, 0, terrain.TerrainData.tris);
             
             Console.WriteLine("redered terrain3d");
+        }
+
+        /// <summary>
+        /// Initial the particle emitter
+        /// </summary>
+        /// <param name="emitter">The emitter to initalize</param>
+        private void InitParticleEmitter(ParticleEmitter emitter)
+        {
+            ParticleBuffers buffers = emitter.GetParticleBuffers();
+
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.verticies.Length * sizeof(float), buffers.verticies, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("vbo", vbo);
+
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.colors.Length * sizeof(float), buffers.colors, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("cbo", cbo);
+
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.texCords.Length * sizeof(float), buffers.texCords, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("tbo", tbo);
+
+            int pbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, pbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.positions.Length * sizeof(float), buffers.positions, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("pbo", pbo);
+
+            int rbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, rbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.rotations.Length * sizeof(float), buffers.rotations, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("rbo", rbo);
+
+            int sbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, sbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.scales.Length * sizeof(float), buffers.scales, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("sbo", sbo);
+
+            emitter.Propertys.Add("ShaderID", this.ShaderPrograms["ParticleShader"].ProgramID);
+        }
+
+        /// <summary>
+        /// Draws the particle emitter
+        /// </summary>
+        public void DrawParticleEmitter(ParticleEmitter emitter)
+        {
+            ParticleBuffers buffers = emitter.GetParticleBuffers();
+
+            mat4 mt_mat = mat4.Translate(emitter.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(emitter.Rotation.X) * mat4.RotateY(emitter.Rotation.Y) * mat4.RotateZ(emitter.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(emitter.Size.ToGlmVec3());
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            int shaderID = (int)emitter.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+            Console.WriteLine(gl.GetError());
+
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, emitter.ParticleMask.RenderID);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+            int vbo = (int)emitter.Propertys["vbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            int cbo = (int)emitter.Propertys["cbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+
+            int tbo = (int)emitter.Propertys["tbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+
+            int pbo = (int)emitter.Propertys["pbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, pbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.positions.Length * sizeof(float), buffers.positions, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+
+            int rbo = (int)emitter.Propertys["rbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, rbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.rotations.Length * sizeof(float), buffers.rotations, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(4);
+            gl.VertexAttribPointer(4, 3, OpenGL.Float, false, 0, 0);
+
+            int sbo = (int)emitter.Propertys["sbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, sbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.scales.Length * sizeof(float), buffers.scales, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(5);
+            gl.VertexAttribPointer(5, 3, OpenGL.Float, false, 0, 0);
+
+            gl.DrawArrays(OpenGL.Triangles, 0, emitter.ParticleDeffinitions.Count * 6);
+        }
+
+        /// <summary>
+        /// Disposes the render device
+        /// </summary>
+        public void Dispose()
+        {
+            foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
+            {
+                Console.WriteLine("Dispose " + item.Key);
+                this.DisposeShader(item.Value);
+            }
+
+            foreach (var item in InstancedShapes)
+            {
+                Console.WriteLine("Dispose " + item.Key + " vbo");
+                gl.DeleteBuffers(1, item.Value.vbo);
+            }
+        }
+
+        /// <summary>
+        /// Deletes the shader program
+        /// </summary>
+        /// <param name="program"></param>
+        public void DisposeShader(ShaderProgram program)
+        {
+            gl.DeleteProgram(program.ProgramID);
+        }
+
+        /// <summary>
+        /// Disposes the texture
+        /// </summary>
+        /// <param name="texture"></param>
+        public void DisposeTexture(Texture texture)
+        {
+            if (texture.RenderID != 0)
+            {
+                gl.DeleteTextures(1, texture.RenderID);
+                texture.RenderID = 0;
+                Console.WriteLine("Texture " + texture.Name + " disposed");
+            }
+        }
+
+        /// <summary>
+        /// Disposes the font
+        /// </summary>
+        /// <param name="font"></param>
+        public void DisposeFont(Font font)
+        {
+            if (font.RenderID != 0)
+            {
+                gl.DeleteTextures(1, font.RenderID);
+                font.RenderID = 0;
+            }
+        }
+
+        /// <summary>
+        /// Disposes the element data from the gpu
+        /// </summary>
+        /// <param name="element">The element to dispose</param>
+        public void DisposeElement(GameElement element)
+        {
+            if (element.GetType() == typeof(ParticleEmitter))
+            {
+                this.DisposeParticleEmitter((ParticleEmitter)element);
+            }
+        }
+
+        /// <summary>
+        /// Disposes the particle emitter
+        /// </summary>
+        /// <param name="emitter"></param>
+        private void DisposeParticleEmitter(ParticleEmitter emitter)
+        {
+            if(emitter.Propertys.ContainsKey("vbo")) 
+            {
+                Console.WriteLine("Disposing " + emitter.Name);
+                gl.DeleteBuffers(1, (int) emitter.Propertys["vbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["cbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["tbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["pbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["rbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["sbo"]);
+                Console.WriteLine(emitter.Name + " Disposed!");
+            }
         }
     }
 }

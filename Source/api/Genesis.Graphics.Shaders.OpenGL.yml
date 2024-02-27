@@ -13,6 +13,7 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.ParticleShader
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader
@@ -28,6 +29,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.ParticleShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.ParticleShader.html
+  name: ParticleShader
+  nameWithType: ParticleShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.ParticleShader
 - uid: Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
   commentId: T:Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
   isExternal: true

@@ -83,6 +83,7 @@
     <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameElement.cs" />
+    <Compile Include="Core\GameElments\ParticleEmitter.cs" />
     <Compile Include="Core\GenesisWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +114,7 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\ClassicGL.cs" />

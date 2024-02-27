@@ -12,6 +12,7 @@ items:
   - Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.Dispose
+  - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
   - Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
   - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
@@ -1411,6 +1412,30 @@ items:
       description: The font to dispose.
     content.vb: Sub DisposeFont(font As Font)
   overload: Genesis.Graphics.IRenderDevice.DisposeFont*
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  id: DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: DisposeElement(GameElement)
+  nameWithType: IRenderDevice.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Disposes the game element
+  example: []
+  syntax:
+    content: void DisposeElement(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The element to dispose
+    content.vb: Sub DisposeElement(element As GameElement)
+  overload: Genesis.Graphics.IRenderDevice.DisposeElement*
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   id: DisposeElement3D(Genesis.Core.GameElements.Element3D)
@@ -2282,6 +2307,13 @@ references:
   name: DisposeFont
   nameWithType: IRenderDevice.DisposeFont
   fullName: Genesis.Graphics.IRenderDevice.DisposeFont
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement
+  nameWithType: IRenderDevice.DisposeElement
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement3D*
   commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement3D
   isExternal: true

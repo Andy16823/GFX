@@ -9,6 +9,7 @@ items:
   - Genesis.Graphics.Material.DiffuseColor
   - Genesis.Graphics.Material.DiffuseTexture
   - Genesis.Graphics.Material.NormalTexture
+  - Genesis.Graphics.Material.Opacity
   - Genesis.Graphics.Material.Propeterys
   langs:
   - csharp
@@ -127,6 +128,29 @@ items:
       type: System.String
     content.vb: Public Property NormalTexture As String
   overload: Genesis.Graphics.Material.NormalTexture*
+- uid: Genesis.Graphics.Material.Opacity
+  commentId: P:Genesis.Graphics.Material.Opacity
+  id: Opacity
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Opacity
+  nameWithType: Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the opacity
+  example: []
+  syntax:
+    content: public float Opacity { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Opacity As Single
+  overload: Genesis.Graphics.Material.Opacity*
 - uid: Genesis.Graphics.Material.Propeterys
   commentId: P:Genesis.Graphics.Material.Propeterys
   id: Propeterys
@@ -492,6 +516,24 @@ references:
   name: NormalTexture
   nameWithType: Material.NormalTexture
   fullName: Genesis.Graphics.Material.NormalTexture
+- uid: Genesis.Graphics.Material.Opacity*
+  commentId: Overload:Genesis.Graphics.Material.Opacity
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_Opacity
+  name: Opacity
+  nameWithType: Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: Genesis.Graphics.Material.Propeterys*
   commentId: Overload:Genesis.Graphics.Material.Propeterys
   isExternal: true

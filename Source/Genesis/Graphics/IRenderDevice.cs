@@ -351,6 +351,12 @@ namespace Genesis.Graphics
         void DisposeFont(Font font);
 
         /// <summary>
+        /// Disposes the game element
+        /// </summary>
+        /// <param name="element">The element to dispose</param>
+        void DisposeElement(GameElement element);
+
+        /// <summary>
         /// Disposes the specified 3D element, freeing up resources.
         /// </summary>
         /// <param name="element">The 3D element to dispose.</param>

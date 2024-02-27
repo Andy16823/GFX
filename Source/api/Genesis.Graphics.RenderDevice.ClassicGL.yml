@@ -13,6 +13,7 @@ items:
   - Genesis.Graphics.RenderDevice.ClassicGL.CreateDynamicVertexBuffer(System.Single[])
   - Genesis.Graphics.RenderDevice.ClassicGL.CreateStaticVertexBuffer(System.Single[])
   - Genesis.Graphics.RenderDevice.ClassicGL.Dispose
+  - Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
   - Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.RenderDevice.ClassicGL.DisposeFont(Genesis.Graphics.Font)
   - Genesis.Graphics.RenderDevice.ClassicGL.DisposeTexture(Genesis.Graphics.Texture)
@@ -1831,6 +1832,32 @@ items:
   nameWithType.vb: ClassicGL.CreateStaticVertexBuffer(Single())
   fullName.vb: Genesis.Graphics.RenderDevice.ClassicGL.CreateStaticVertexBuffer(Single())
   name.vb: CreateStaticVertexBuffer(Single())
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  id: DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.RenderDevice.ClassicGL
+  langs:
+  - csharp
+  - vb
+  name: DisposeElement(GameElement)
+  nameWithType: ClassicGL.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Disposes the game element
+  example: []
+  syntax:
+    content: public void DisposeElement(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The element to dispose
+    content.vb: Public Sub DisposeElement(element As GameElement)
+  overload: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement*
+  implements:
+  - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
 references:
 - uid: Genesis.Graphics.RenderDevice
   commentId: N:Genesis.Graphics.RenderDevice
@@ -5143,4 +5170,41 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: (
   - name: )
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement*
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement
+  nameWithType: ClassicGL.DisposeElement
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement(GameElement)
+  nameWithType: IRenderDevice.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+    name: DisposeElement
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+    name: DisposeElement
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
   - name: )

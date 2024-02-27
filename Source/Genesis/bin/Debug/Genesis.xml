@@ -1190,6 +1190,160 @@
             </summary>
             <param name="element">The game element from which to copy properties.</param>
         </member>
+        <member name="T:Genesis.Core.GameElments.ParticleBuffers">
+            <summary>
+            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElments.ParticleDeffinition">
+            <summary>
+            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Location">
+            <summary>
+            Gets or sets the location of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Rotation">
+            <summary>
+            Gets or sets the rotation of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Size">
+            <summary>
+            Gets or sets the size of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Delay">
+            <summary>
+            Gets or sets the delay before the particle becomes active.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate">
+            <summary>
+            Gets or sets the last update time of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Speed">
+            <summary>
+            Gets or sets the speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed">
+            <summary>
+            Gets or sets the rotation speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor">
+            <summary>
+            Gets or sets the color of the particle.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElments.ParticleEmitter">
+            <summary>
+            Represents a particle emitter as a game element.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.Texture">
+            <summary>
+            Gets or sets the texture used for the particles.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection">
+            <summary>
+            Gets or sets the primary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2">
+            <summary>
+            Gets or sets the secondary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance">
+            <summary>
+            Gets or sets the maximum distance a particle can travel before being reset.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleMask">
+            <summary>
+            Gets or sets the mask for the particles
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions">
+            <summary>
+            Gets or sets the list of particle definitions managed by the emitter.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the ParticleEmitter class with specified parameters.
+            </summary>
+            <param name="name">The name of the particle emitter.</param>
+            <param name="location">The initial location of the particle emitter.</param>
+            <param name="rotation">The initial rotation of the particle emitter.</param>
+            <param name="size">The initial size of the particle emitter.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
+            <summary>
+            Generates particles with default settings, using the provided particle size.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with default settings, using the provided particle size and specified colors.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="minRotation">The minimum rotation of particles.</param>
+            <param name="maxRotation">The maximum rotation of particles.</param>
+            <param name="minDelay">The minimum delay before particles become active.</param>
+            <param name="maxDelay">The maximum delay before particles become active.</param>
+            <param name="minSpeed">The minimum speed of particles.</param>
+            <param name="maxSpeed">The maximum speed of particles.</param>
+            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
+            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)">
+            <summary>
+            Processes the movement and rotation of a particle based on its current state.
+            </summary>
+            <param name="particle">The particle definition to be processed.</param>
+            <param name="now">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers">
+            <summary>
+            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
+            </summary>
+            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the particle emitter is being destroyed in the game.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the particle emitter using the specified render device.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
         <member name="T:Genesis.Core.IGameBehavior">
             <summary>
             Represents the base class for game behaviors in the Genesis framework.
@@ -2513,6 +2667,36 @@
             <param name="color">The color.</param>
             <returns>The float array representing the color.</returns>
         </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor">
+            <summary>
+            Generates an random color
+            </summary>
+            <returns>The color</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Int32)">
+            <summary>
+            Generates an random color from an seed
+            </summary>
+            <param name="seed">The seed for the randomizer</param>
+            <returns>The color</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Returns a random color between the given colors.
+            </summary>
+            <param name="colorA">The minimum color.</param>
+            <param name="colorB">The maximum color.</param>
+            <returns>A randomly generated color within the specified range.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            Returns a random color between the given colors using a specified seed for reproducibility.
+            </summary>
+            <param name="colorA">The minimum color.</param>
+            <param name="colorB">The maximum color.</param>
+            <param name="seed">The seed for the random number generator.</param>
+            <returns>A randomly generated color within the specified range and seed.</returns>
+        </member>
         <member name="M:Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Converts float values to a System.Drawing.Color.
@@ -3127,6 +3311,12 @@
             </summary>
             <param name="font">The font to dispose.</param>
         </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)">
+            <summary>
+            Disposes the game element
+            </summary>
+            <param name="element">The element to dispose</param>
+        </member>
         <member name="M:Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)">
             <summary>
             Disposes the specified 3D element, freeing up resources.
@@ -3223,6 +3413,11 @@
         <member name="P:Genesis.Graphics.Material.NormalTexture">
             <summary>
             The path to the normal texture of the material.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Material.Opacity">
+            <summary>
+            Gets or sets the opacity
             </summary>
         </member>
         <member name="P:Genesis.Graphics.Material.Propeterys">
@@ -3372,22 +3567,11 @@
             <param name="height"></param>
             <returns></returns>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose">
-            <summary>
-            Disposes the render device
-            </summary>
-        </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)">
             <summary>
             Loads a shader program
             </summary>
             <param name="name"></param>
-            <param name="program"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)">
-            <summary>
-            Deletes the shader program
-            </summary>
             <param name="program"></param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)">
@@ -3428,18 +3612,6 @@
             <summary>
             Beginn to draw
             </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)">
-            <summary>
-            Disposes the texture
-            </summary>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)">
-            <summary>
-            Disposes the font
-            </summary>
-            <param name="font"></param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)">
             <summary>
@@ -3747,6 +3919,132 @@
             Dispose the 3D element
             </summary>
             <param name="element"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.GetRenderer">
+            <summary>
+            Returns the native renderer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource(Genesis.Core.Light)">
+            <summary>
+            Sets an Lightsource
+            </summary>
+            <param name="light"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)">
+            <summary>
+            Draws an skybox
+            </summary>
+            <param name="skybox"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)">
+            <summary>
+            Prepares the renderer for scene rendering
+            </summary>
+            <param name="scene">The scene to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)">
+            <summary>
+            Finish the scene rendering
+            </summary>
+            <param name="scene">The scene which getted rendered</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+            Prepares the renderer for the canvas rendering
+            </summary>
+            <param name="scene">The scene from the canvas</param>
+            <param name="canvas">The canvas to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+            Finish the canvas rendering
+            </summary>
+            <param name="scene">The scene from the canvas</param>
+            <param name="canvas">The canvas to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawFramebuffer(System.Int32)">
+            <summary>
+            Draws an framebuffer
+            </summary>
+            <param name="textureID">The framebuffer texture id</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Genesis.Graphics.Framebuffer)">
+            <summary>
+            Sets an framebuffer as active render target
+            </summary>
+            <param name="framebuffer">The framebuffer for the rendering</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(System.Int32)">
+            <summary>
+            Sets an framebuffer as active render target
+            </summary>
+            <param name="framebuffer">The framebuffer id for the rendering</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderQube(Genesis.Core.GameElements.Qube)">
+            <summary>
+            Renders an qube
+            </summary>
+            <param name="qube">The qube to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitTerrain3D(Genesis.Core.GameElements.Terrain3D)">
+            <summary>
+            Init an terrain3d
+            </summary>
+            <param name="terrain">The terrain to initalize</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderTerrain3D(Genesis.Core.GameElements.Terrain3D)">
+            <summary>
+            Renders an terrain3D
+            </summary>
+            <param name="terrain">The terrain to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+            <summary>
+            Initial the particle emitter
+            </summary>
+            <param name="emitter">The emitter to initalize</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+            <summary>
+            Draws the particle emitter
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose">
+            <summary>
+            Disposes the render device
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)">
+            <summary>
+            Deletes the shader program
+            </summary>
+            <param name="program"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)">
+            <summary>
+            Disposes the texture
+            </summary>
+            <param name="texture"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)">
+            <summary>
+            Disposes the font
+            </summary>
+            <param name="font"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)">
+            <summary>
+            Disposes the element data from the gpu
+            </summary>
+            <param name="element">The element to dispose</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+            <summary>
+            Disposes the particle emitter
+            </summary>
+            <param name="emitter"></param>
         </member>
         <member name="T:Genesis.Graphics.Shader">
             <summary>
@@ -4973,6 +5271,23 @@
             </summary>
             <param name="vec">The input Vec3 to be processed.</param>
             <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)">
+            <summary>
+            Generates an rendom vector from min an max value with the given seed
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <param name="seed">The seed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Generates an rendom vector from min an max value
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <returns></returns>
         </member>
         <member name="M:Genesis.Math.Vec3.ToString">
             <summary>

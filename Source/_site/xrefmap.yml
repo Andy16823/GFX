@@ -3862,6 +3862,363 @@ references:
   commentId: F:Genesis.Core.GameElements.TerrainData.verticies
   fullName: Genesis.Core.GameElements.TerrainData.verticies
   nameWithType: TerrainData.verticies
+- uid: Genesis.Core.GameElments
+  name: Genesis.Core.GameElments
+  href: api/Genesis.Core.GameElments.html
+  commentId: N:Genesis.Core.GameElments
+  fullName: Genesis.Core.GameElments
+  nameWithType: Genesis.Core.GameElments
+- uid: Genesis.Core.GameElments.ParticleBuffers
+  name: ParticleBuffers
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html
+  commentId: T:Genesis.Core.GameElments.ParticleBuffers
+  fullName: Genesis.Core.GameElments.ParticleBuffers
+  nameWithType: ParticleBuffers
+- uid: Genesis.Core.GameElments.ParticleBuffers.colors
+  name: colors
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_colors
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.colors
+  fullName: Genesis.Core.GameElments.ParticleBuffers.colors
+  nameWithType: ParticleBuffers.colors
+- uid: Genesis.Core.GameElments.ParticleBuffers.positions
+  name: positions
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_positions
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.positions
+  fullName: Genesis.Core.GameElments.ParticleBuffers.positions
+  nameWithType: ParticleBuffers.positions
+- uid: Genesis.Core.GameElments.ParticleBuffers.rotations
+  name: rotations
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_rotations
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.rotations
+  fullName: Genesis.Core.GameElments.ParticleBuffers.rotations
+  nameWithType: ParticleBuffers.rotations
+- uid: Genesis.Core.GameElments.ParticleBuffers.scales
+  name: scales
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_scales
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.scales
+  fullName: Genesis.Core.GameElments.ParticleBuffers.scales
+  nameWithType: ParticleBuffers.scales
+- uid: Genesis.Core.GameElments.ParticleBuffers.texCords
+  name: texCords
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_texCords
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.texCords
+  fullName: Genesis.Core.GameElments.ParticleBuffers.texCords
+  nameWithType: ParticleBuffers.texCords
+- uid: Genesis.Core.GameElments.ParticleBuffers.verticies
+  name: verticies
+  href: api/Genesis.Core.GameElments.ParticleBuffers.html#Genesis_Core_GameElments_ParticleBuffers_verticies
+  commentId: F:Genesis.Core.GameElments.ParticleBuffers.verticies
+  fullName: Genesis.Core.GameElments.ParticleBuffers.verticies
+  nameWithType: ParticleBuffers.verticies
+- uid: Genesis.Core.GameElments.ParticleDeffinition
+  name: ParticleDeffinition
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html
+  commentId: T:Genesis.Core.GameElments.ParticleDeffinition
+  fullName: Genesis.Core.GameElments.ParticleDeffinition
+  nameWithType: ParticleDeffinition
+- uid: Genesis.Core.GameElments.ParticleDeffinition.#ctor
+  name: ParticleDeffinition()
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition__ctor
+  commentId: M:Genesis.Core.GameElments.ParticleDeffinition.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.ParticleDeffinition()
+  fullName.vb: Genesis.Core.GameElments.ParticleDeffinition.New()
+  nameWithType: ParticleDeffinition.ParticleDeffinition()
+  nameWithType.vb: ParticleDeffinition.New()
+- uid: Genesis.Core.GameElments.ParticleDeffinition.#ctor*
+  name: ParticleDeffinition
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition__ctor_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.ParticleDeffinition
+  fullName.vb: Genesis.Core.GameElments.ParticleDeffinition.New
+  nameWithType: ParticleDeffinition.ParticleDeffinition
+  nameWithType.vb: ParticleDeffinition.New
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Delay
+  name: Delay
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Delay
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.Delay
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Delay
+  nameWithType: ParticleDeffinition.Delay
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Delay*
+  name: Delay
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Delay_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.Delay
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Delay
+  nameWithType: ParticleDeffinition.Delay
+- uid: Genesis.Core.GameElments.ParticleDeffinition.LastUpdate
+  name: LastUpdate
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_LastUpdate
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.LastUpdate
+  nameWithType: ParticleDeffinition.LastUpdate
+- uid: Genesis.Core.GameElments.ParticleDeffinition.LastUpdate*
+  name: LastUpdate
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_LastUpdate_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.LastUpdate
+  nameWithType: ParticleDeffinition.LastUpdate
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Location
+  name: Location
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Location
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.Location
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Location
+  nameWithType: ParticleDeffinition.Location
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Location*
+  name: Location
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Location_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.Location
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Location
+  nameWithType: ParticleDeffinition.Location
+- uid: Genesis.Core.GameElments.ParticleDeffinition.ParticleColor
+  name: ParticleColor
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_ParticleColor
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.ParticleColor
+  nameWithType: ParticleDeffinition.ParticleColor
+- uid: Genesis.Core.GameElments.ParticleDeffinition.ParticleColor*
+  name: ParticleColor
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_ParticleColor_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.ParticleColor
+  nameWithType: ParticleDeffinition.ParticleColor
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Rotation
+  name: Rotation
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Rotation
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.Rotation
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Rotation
+  nameWithType: ParticleDeffinition.Rotation
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Rotation*
+  name: Rotation
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Rotation_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.Rotation
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Rotation
+  nameWithType: ParticleDeffinition.Rotation
+- uid: Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed
+  name: RotationSpeed
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_RotationSpeed
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed
+  nameWithType: ParticleDeffinition.RotationSpeed
+- uid: Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed*
+  name: RotationSpeed
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_RotationSpeed_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed
+  nameWithType: ParticleDeffinition.RotationSpeed
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Size
+  name: Size
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Size
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.Size
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Size
+  nameWithType: ParticleDeffinition.Size
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Size*
+  name: Size
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Size_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.Size
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Size
+  nameWithType: ParticleDeffinition.Size
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Speed
+  name: Speed
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Speed
+  commentId: P:Genesis.Core.GameElments.ParticleDeffinition.Speed
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Speed
+  nameWithType: ParticleDeffinition.Speed
+- uid: Genesis.Core.GameElments.ParticleDeffinition.Speed*
+  name: Speed
+  href: api/Genesis.Core.GameElments.ParticleDeffinition.html#Genesis_Core_GameElments_ParticleDeffinition_Speed_
+  commentId: Overload:Genesis.Core.GameElments.ParticleDeffinition.Speed
+  fullName: Genesis.Core.GameElments.ParticleDeffinition.Speed
+  nameWithType: ParticleDeffinition.Speed
+- uid: Genesis.Core.GameElments.ParticleEmitter
+  name: ParticleEmitter
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html
+  commentId: T:Genesis.Core.GameElments.ParticleEmitter
+  fullName: Genesis.Core.GameElments.ParticleEmitter
+  nameWithType: ParticleEmitter
+- uid: Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name: ParticleEmitter(string, Vec3, Vec3, Vec3, Texture)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter__ctor_System_String_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name.vb: New(String, Vec3, Vec3, Vec3, Texture)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleEmitter(string, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.New(String, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  nameWithType: ParticleEmitter.ParticleEmitter(string, Vec3, Vec3, Vec3, Texture)
+  nameWithType.vb: ParticleEmitter.New(String, Vec3, Vec3, Vec3, Texture)
+- uid: Genesis.Core.GameElments.ParticleEmitter.#ctor*
+  name: ParticleEmitter
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter__ctor_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleEmitter
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.New
+  nameWithType: ParticleEmitter.ParticleEmitter
+  nameWithType.vb: ParticleEmitter.New
+- uid: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)
+  name: CreateParticles(int, Vec3)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)
+  name.vb: CreateParticles(Integer, Vec3)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3)
+- uid: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_System_Int32_System_Single_System_Single_System_Single_System_Single_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, int, int, float, float, float, float, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Integer, Integer, Single, Single, Single, Single, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+- uid: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_System_Int32_System_Single_System_Single_System_Single_System_Single_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, int, int, float, float, float, float, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Integer, Integer, Single, Single, Single, Single, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+- uid: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Color, Color)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Color, Color)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Color, Color)
+- uid: Genesis.Core.GameElments.ParticleEmitter.CreateParticles*
+  name: CreateParticles
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_CreateParticles_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.CreateParticles
+  fullName: Genesis.Core.GameElments.ParticleEmitter.CreateParticles
+  nameWithType: ParticleEmitter.CreateParticles
+- uid: Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers
+  name: GetParticleBuffers()
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_GetParticleBuffers
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers
+  fullName: Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers()
+  nameWithType: ParticleEmitter.GetParticleBuffers()
+- uid: Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers*
+  name: GetParticleBuffers
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_GetParticleBuffers_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers
+  fullName: Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers
+  nameWithType: ParticleEmitter.GetParticleBuffers
+- uid: Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  nameWithType: ParticleEmitter.OnDestroy(Game)
+- uid: Genesis.Core.GameElments.ParticleEmitter.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_OnDestroy_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.OnDestroy
+  fullName: Genesis.Core.GameElments.ParticleEmitter.OnDestroy
+  nameWithType: ParticleEmitter.OnDestroy
+- uid: Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnRender(Game, IRenderDevice)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: ParticleEmitter.OnRender(Game, IRenderDevice)
+- uid: Genesis.Core.GameElments.ParticleEmitter.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_OnRender_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.OnRender
+  fullName: Genesis.Core.GameElments.ParticleEmitter.OnRender
+  nameWithType: ParticleEmitter.OnRender
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions
+  name: ParticleDeffinitions
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDeffinitions
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions
+  nameWithType: ParticleEmitter.ParticleDeffinitions
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions*
+  name: ParticleDeffinitions
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDeffinitions_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions
+  nameWithType: ParticleEmitter.ParticleDeffinitions
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection
+  name: ParticleDirection
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDirection
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection
+  nameWithType: ParticleEmitter.ParticleDirection
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection*
+  name: ParticleDirection
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDirection_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection
+  nameWithType: ParticleEmitter.ParticleDirection
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2
+  name: ParticleDirection2
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDirection2
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2
+  nameWithType: ParticleEmitter.ParticleDirection2
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2*
+  name: ParticleDirection2
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDirection2_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2
+  nameWithType: ParticleEmitter.ParticleDirection2
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDistance
+  name: ParticleDistance
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDistance
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDistance
+  nameWithType: ParticleEmitter.ParticleDistance
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleDistance*
+  name: ParticleDistance
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleDistance_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleDistance
+  nameWithType: ParticleEmitter.ParticleDistance
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleMask
+  name: ParticleMask
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleMask
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.ParticleMask
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleMask
+  nameWithType: ParticleEmitter.ParticleMask
+- uid: Genesis.Core.GameElments.ParticleEmitter.ParticleMask*
+  name: ParticleMask
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ParticleMask_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ParticleMask
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ParticleMask
+  nameWithType: ParticleEmitter.ParticleMask
+- uid: Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)
+  name: ProcessParticle(ParticleDeffinition, long)
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ProcessParticle_Genesis_Core_GameElments_ParticleDeffinition_System_Int64_
+  commentId: M:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)
+  name.vb: ProcessParticle(ParticleDeffinition, Long)
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition, long)
+  fullName.vb: Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition, Long)
+  nameWithType: ParticleEmitter.ProcessParticle(ParticleDeffinition, long)
+  nameWithType.vb: ParticleEmitter.ProcessParticle(ParticleDeffinition, Long)
+- uid: Genesis.Core.GameElments.ParticleEmitter.ProcessParticle*
+  name: ProcessParticle
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_ProcessParticle_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle
+  fullName: Genesis.Core.GameElments.ParticleEmitter.ProcessParticle
+  nameWithType: ParticleEmitter.ProcessParticle
+- uid: Genesis.Core.GameElments.ParticleEmitter.Texture
+  name: Texture
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_Texture
+  commentId: P:Genesis.Core.GameElments.ParticleEmitter.Texture
+  fullName: Genesis.Core.GameElments.ParticleEmitter.Texture
+  nameWithType: ParticleEmitter.Texture
+- uid: Genesis.Core.GameElments.ParticleEmitter.Texture*
+  name: Texture
+  href: api/Genesis.Core.GameElments.ParticleEmitter.html#Genesis_Core_GameElments_ParticleEmitter_Texture_
+  commentId: Overload:Genesis.Core.GameElments.ParticleEmitter.Texture
+  fullName: Genesis.Core.GameElments.ParticleEmitter.Texture
+  nameWithType: ParticleEmitter.Texture
 - uid: Genesis.Core.GameEventHandler
   name: GameEventHandler
   href: api/Genesis.Core.GameEventHandler.html
@@ -5482,6 +5839,42 @@ references:
   commentId: Overload:Genesis.Core.Utils.GetParentModelView
   fullName: Genesis.Core.Utils.GetParentModelView
   nameWithType: Utils.GetParentModelView
+- uid: Genesis.Core.Utils.GetRandomColor
+  name: GetRandomColor()
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor
+  commentId: M:Genesis.Core.Utils.GetRandomColor
+  fullName: Genesis.Core.Utils.GetRandomColor()
+  nameWithType: Utils.GetRandomColor()
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  name: GetRandomColor(Color, Color)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color)
+  nameWithType: Utils.GetRandomColor(Color, Color)
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  name: GetRandomColor(Color, Color, int)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor_System_Drawing_Color_System_Drawing_Color_System_Int32_
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  name.vb: GetRandomColor(Color, Color, Integer)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, int)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, Integer)
+  nameWithType: Utils.GetRandomColor(Color, Color, int)
+  nameWithType.vb: Utils.GetRandomColor(Color, Color, Integer)
+- uid: Genesis.Core.Utils.GetRandomColor(System.Int32)
+  name: GetRandomColor(int)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor_System_Int32_
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Int32)
+  name.vb: GetRandomColor(Integer)
+  fullName: Genesis.Core.Utils.GetRandomColor(int)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(Integer)
+  nameWithType: Utils.GetRandomColor(int)
+  nameWithType.vb: Utils.GetRandomColor(Integer)
+- uid: Genesis.Core.Utils.GetRandomColor*
+  name: GetRandomColor
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor_
+  commentId: Overload:Genesis.Core.Utils.GetRandomColor
+  fullName: Genesis.Core.Utils.GetRandomColor
+  nameWithType: Utils.GetRandomColor
 - uid: Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   name: GetStringBounds(Vec3, string, float, float)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetStringBounds_Genesis_Math_Vec3_System_String_System_Single_System_Single_
@@ -6475,6 +6868,18 @@ references:
   commentId: Overload:Genesis.Graphics.IRenderDevice.Dispose
   fullName: Genesis.Graphics.IRenderDevice.Dispose
   nameWithType: IRenderDevice.Dispose
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  name: DisposeElement(GameElement)
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  nameWithType: IRenderDevice.DisposeElement(GameElement)
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement*
+  name: DisposeElement
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement
+  nameWithType: IRenderDevice.DisposeElement
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   name: DisposeElement3D(Element3D)
   href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement3D_Genesis_Core_GameElements_Element3D_
@@ -7129,6 +7534,18 @@ references:
   commentId: Overload:Genesis.Graphics.Material.NormalTexture
   fullName: Genesis.Graphics.Material.NormalTexture
   nameWithType: Material.NormalTexture
+- uid: Genesis.Graphics.Material.Opacity
+  name: Opacity
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Opacity
+  commentId: P:Genesis.Graphics.Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+  nameWithType: Material.Opacity
+- uid: Genesis.Graphics.Material.Opacity*
+  name: Opacity
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Opacity_
+  commentId: Overload:Genesis.Graphics.Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+  nameWithType: Material.Opacity
 - uid: Genesis.Graphics.Material.Propeterys
   name: Propeterys
   href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Propeterys
@@ -7645,6 +8062,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.Dispose
   fullName: Genesis.Graphics.RenderDevice.ClassicGL.Dispose
   nameWithType: ClassicGL.Dispose
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  name: DisposeElement(GameElement)
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_DisposeElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement(Genesis.Core.GameElement)
+  nameWithType: ClassicGL.DisposeElement(GameElement)
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement*
+  name: DisposeElement
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_DisposeElement_
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement
+  nameWithType: ClassicGL.DisposeElement
 - uid: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   name: DisposeElement3D(Element3D)
   href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_DisposeElement3D_Genesis_Core_GameElements_Element3D_
@@ -8370,13 +8799,13 @@ references:
   nameWithType: GLRenderer.CreateStaticVertexBuffer
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
   name: DisoseShader(ShaderProgram)
-  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_Genesis_Graphics_ShaderProgram_
+  href: obj/api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_Genesis_Graphics_ShaderProgram_
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
   nameWithType: GLRenderer.DisoseShader(ShaderProgram)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader*
   name: DisoseShader
-  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_
+  href: obj/api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader
   nameWithType: GLRenderer.DisoseShader
@@ -8392,6 +8821,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
   nameWithType: GLRenderer.Dispose
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  name: DisposeElement(GameElement)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  nameWithType: GLRenderer.DisposeElement(GameElement)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*
+  name: DisposeElement
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement_
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement
+  nameWithType: GLRenderer.DisposeElement
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   name: DisposeElement3D(Element3D)
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement3D_Genesis_Core_GameElements_Element3D_
@@ -8416,6 +8857,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
   nameWithType: GLRenderer.DisposeFont
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  name: DisposeShader(ShaderProgram)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeShader_Genesis_Graphics_ShaderProgram_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  nameWithType: GLRenderer.DisposeShader(ShaderProgram)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader*
+  name: DisposeShader
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeShader_
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader
+  nameWithType: GLRenderer.DisposeShader
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
   name: DisposeTexture(Texture)
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeTexture_Genesis_Graphics_Texture_
@@ -8488,6 +8941,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh
   nameWithType: GLRenderer.DrawMesh
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  name: DrawParticleEmitter(ParticleEmitter)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElments_ParticleEmitter_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  nameWithType: GLRenderer.DrawParticleEmitter(ParticleEmitter)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
+  name: DrawParticleEmitter
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
+  nameWithType: GLRenderer.DrawParticleEmitter
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
   name: DrawRect(Rect, Color)
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawRect_Genesis_Math_Rect_System_Drawing_Color_
@@ -9433,6 +9898,30 @@ references:
   fullName.vb: Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.New
   nameWithType: MVPSolidShader.MVPSolidShader
   nameWithType.vb: MVPSolidShader.New
+- uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
+  name: ParticleShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.html
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.ParticleShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.ParticleShader
+  nameWithType: ParticleShader
+- uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader.#ctor
+  name: ParticleShader()
+  href: api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.html#Genesis_Graphics_Shaders_OpenGL_ParticleShader__ctor
+  commentId: M:Genesis.Graphics.Shaders.OpenGL.ParticleShader.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Shaders.OpenGL.ParticleShader.ParticleShader()
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.ParticleShader.New()
+  nameWithType: ParticleShader.ParticleShader()
+  nameWithType.vb: ParticleShader.New()
+- uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader.#ctor*
+  name: ParticleShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.html#Genesis_Graphics_Shaders_OpenGL_ParticleShader__ctor_
+  commentId: Overload:Genesis.Graphics.Shaders.OpenGL.ParticleShader.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Shaders.OpenGL.ParticleShader.ParticleShader
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.ParticleShader.New
+  nameWithType: ParticleShader.ParticleShader
+  nameWithType.vb: ParticleShader.New
 - uid: Genesis.Graphics.Shaders.OpenGL.ScreenShader
   name: ScreenShader
   href: api/Genesis.Graphics.Shaders.OpenGL.ScreenShader.html
@@ -10921,6 +11410,27 @@ references:
   commentId: Overload:Genesis.Math.Vec3.Normalized
   fullName: Genesis.Math.Vec3.Normalized
   nameWithType: Vec3.Normalized
+- uid: Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  name: Random(Vec3, Vec3)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Random_Genesis_Math_Vec3_Genesis_Math_Vec3_
+  commentId: M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  fullName: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  nameWithType: Vec3.Random(Vec3, Vec3)
+- uid: Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
+  name: Random(Vec3, Vec3, int)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Random_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_
+  commentId: M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
+  name.vb: Random(Vec3, Vec3, Integer)
+  fullName: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3, int)
+  fullName.vb: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3, Integer)
+  nameWithType: Vec3.Random(Vec3, Vec3, int)
+  nameWithType.vb: Vec3.Random(Vec3, Vec3, Integer)
+- uid: Genesis.Math.Vec3.Random*
+  name: Random
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Random_
+  commentId: Overload:Genesis.Math.Vec3.Random
+  fullName: Genesis.Math.Vec3.Random
+  nameWithType: Vec3.Random
 - uid: Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
   name: Round(Vec3)
   href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Round_Genesis_Math_Vec3_

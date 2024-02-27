@@ -36,6 +36,7 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.ParticleShader
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader

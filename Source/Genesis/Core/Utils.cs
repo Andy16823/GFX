@@ -558,6 +558,68 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Generates an random color
+        /// </summary>
+        /// <returns>The color</returns>
+        public static Color GetRandomColor()
+        {
+            Random rand = new Random();
+            int r = rand.Next(0, 255);
+            int g = rand.Next(0, 255);
+            int b = rand.Next(0, 255);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Generates an random color from an seed
+        /// </summary>
+        /// <param name="seed">The seed for the randomizer</param>
+        /// <returns>The color</returns>
+        public static Color GetRandomColor(int seed)
+        {
+            Random rand = new Random(seed);
+            int r = rand.Next(0, 255);
+            int g = rand.Next(0, 255);
+            int b = rand.Next(0, 255);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Returns a random color between the given colors.
+        /// </summary>
+        /// <param name="colorA">The minimum color.</param>
+        /// <param name="colorB">The maximum color.</param>
+        /// <returns>A randomly generated color within the specified range.</returns>
+        public static Color GetRandomColor(Color colorA, Color colorB)
+        {
+            Random rand = new Random();
+            int r = rand.Next(colorA.R, colorB.R);
+            int g = rand.Next(colorA.G, colorB.G);
+            int b = rand.Next(colorA.B, colorB.B);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Returns a random color between the given colors using a specified seed for reproducibility.
+        /// </summary>
+        /// <param name="colorA">The minimum color.</param>
+        /// <param name="colorB">The maximum color.</param>
+        /// <param name="seed">The seed for the random number generator.</param>
+        /// <returns>A randomly generated color within the specified range and seed.</returns>
+        public static Color GetRandomColor(Color colorA, Color colorB, int seed)
+        {
+            Random rand = new Random(seed);
+            int r = rand.Next(colorA.R, colorB.R);
+            int g = rand.Next(colorA.G, colorB.G);
+            int b = rand.Next(colorA.B, colorB.B);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
         /// Converts float values to a System.Drawing.Color.
         /// </summary>
         /// <param name="a">The alpha component.</param>

@@ -62,6 +62,7 @@ namespace Genesis.Core.GameElements
             foreach (var material in model.Materials)
             {
                 var gMaterial = new Genesis.Graphics.Material();
+                gMaterial.Opacity = material.Opacity;
                 gMaterial.DiffuseColor = Utils.ConvertDrawingColor(material.ColorDiffuse.A, material.ColorDiffuse.R, material.ColorDiffuse.G, material.ColorDiffuse.B);
                 gMaterial.DiffuseTexture = material.TextureDiffuse.FilePath;
                 if(material.HasTextureNormal)

@@ -97,6 +97,15 @@ items:
     name: Terrain3D
   - uid: Genesis.Core.GameElements.TerrainData
     name: TerrainData
+- uid: Genesis.Core.GameElments
+  name: Genesis.Core.GameElments
+  items:
+  - uid: Genesis.Core.GameElments.ParticleBuffers
+    name: ParticleBuffers
+  - uid: Genesis.Core.GameElments.ParticleDeffinition
+    name: ParticleDeffinition
+  - uid: Genesis.Core.GameElments.ParticleEmitter
+    name: ParticleEmitter
 - uid: Genesis.Graphics
   name: Genesis.Graphics
   items:
@@ -169,6 +178,8 @@ items:
     name: MVPShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
     name: MVPSolidShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
+    name: ParticleShader
   - uid: Genesis.Graphics.Shaders.OpenGL.ScreenShader
     name: ScreenShader
   - uid: Genesis.Graphics.Shaders.OpenGL.SkyboxShader
