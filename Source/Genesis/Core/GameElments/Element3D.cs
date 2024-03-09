@@ -37,6 +37,11 @@ namespace Genesis.Core.GameElements
         public List<Genesis.Graphics.Material> Materials { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the object has transparency.
+        /// </summary>
+        public bool HasTransparancy { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the Element3D class with specified parameters.
         /// </summary>
         /// <param name="name">The name of the 3D element.</param>
@@ -79,7 +84,7 @@ namespace Genesis.Core.GameElements
             foreach (var mesh in model.Meshes)
             {
                 var gMesh = new Genesis.Graphics.Mesh();
-                gMesh.MaterialIndex = mesh.MaterialIndex;
+                gMesh.Material = this.Materials[mesh.MaterialIndex];
                 gMesh.Indicies.AddRange(mesh.GetIndices());
                 foreach (var face in mesh.Faces)
                 {
@@ -107,6 +112,7 @@ namespace Genesis.Core.GameElements
                 this.Meshes.Add(gMesh);
             }
 
+            this.Materials = this.Materials.OrderBy(m => m.Opacity).ToList();
             this.Propertys.Add("path", directory);
         }
 
@@ -179,7 +185,7 @@ namespace Genesis.Core.GameElements
         /// </summary>
         /// <param name="material">The material index.</param>
         /// <returns>A MaterialBuffer containing vertex, normal, and texture coordinate data.</returns>
-        public MaterialBuffer GetMaterialBuffers(int material)
+        public MaterialBuffer GetMaterialBuffers(Graphics.Material material)
         {
             List<float> verticies = new List<float>();
             List<float> normals = new List<float>();
@@ -187,7 +193,7 @@ namespace Genesis.Core.GameElements
 
             foreach (var mesh in this.Meshes)
             {
-                if(mesh.MaterialIndex == material)
+                if(mesh.Material.Equals(material))
                 {
                     verticies.AddRange(mesh.Vericies);
                     normals.AddRange(mesh.Normals);

@@ -387,7 +387,7 @@ namespace Genesis.Graphics.RenderDevice
             for (int i = 0; i < element.Materials.Count; i++)
             {
                 var material = element.Materials[i];
-                var buffers = element.GetMaterialBuffers(i);
+                var buffers = element.GetMaterialBuffers(material);
                 if(buffers.HasData)
                 {
                     material.Propeterys.Add("tex_id", this.InitElement3DTexture(element.Propertys["path"] + "\\" + material.DiffuseTexture));

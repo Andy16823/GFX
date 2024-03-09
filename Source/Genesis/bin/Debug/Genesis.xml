@@ -1759,6 +1759,11 @@
             Gets or sets the materials from the model
             </summary>
         </member>
+        <member name="P:Genesis.Core.GameElements.Element3D.HasTransparancy">
+            <summary>
+            Gets or sets a value indicating whether the object has transparency.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.GameElements.Element3D.#ctor(System.String,System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Initializes a new instance of the Element3D class with specified parameters.
@@ -1802,7 +1807,7 @@
             </summary>
             <returns>An array representing the shape data.</returns>
         </member>
-        <member name="M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)">
+        <member name="M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)">
             <summary>
             Gets the material buffers for a specific material index.
             </summary>
@@ -4413,7 +4418,7 @@
             Class representing a 3D mesh, including its geometry and material information.
             </summary>
         </member>
-        <member name="P:Genesis.Graphics.Mesh.MaterialIndex">
+        <member name="P:Genesis.Graphics.Mesh.Material">
             <summary>
             Index of the material associated with the mesh.
             </summary>
