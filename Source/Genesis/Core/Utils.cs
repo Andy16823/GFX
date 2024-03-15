@@ -787,5 +787,41 @@ namespace Genesis.Core
         {
             return new quat(pOrientation.X, pOrientation.Y, pOrientation.Z, pOrientation.W);
         }
+
+        public static Vec3 GetRelativePosition(GameElement parent, GameElement child)
+        {
+            Vec3 currentPosition = child.Location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
+
+        public static Vec3 GetRelativePosition(GameElement parent, Camera camera)
+        {
+            Vec3 currentPosition = camera.Location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
+
+        public static Vec3 GetRelativePosition(GameElement parent, Vec3 location)
+        {
+            Vec3 currentPosition = location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
     }
 }

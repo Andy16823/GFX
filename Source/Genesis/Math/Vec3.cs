@@ -512,6 +512,26 @@ namespace Genesis.Math
         }
 
         /// <summary>
+        /// Returns a new <see cref="Vec3"/> instance with each component halved.
+        /// </summary>
+        /// <param name="vec">The <see cref="Vec3"/> instance to halve.</param>
+        /// <returns>A new <see cref="Vec3"/> instance with each component halved.</returns>
+        public static Vec3 Half(Vec3 vec)
+        {
+            Vec3 newVec = new Vec3(vec.X / 2, vec.Y / 2, vec.Z / 2);
+            return newVec;
+        }
+
+        /// <summary>
+        /// Returns a new <see cref="Vec3"/> instance with the components of this instance halved.
+        /// </summary>
+        /// <returns>A new <see cref="Vec3"/> instance with the components halved.</returns>
+        public Vec3 Half()
+        {
+            return new Vec3(X / 2, Y / 2, Z / 2);
+        }
+
+        /// <summary>
         /// Generates an rendom vector from min an max value with the given seed
         /// </summary>
         /// <param name="min">The min vector</param>

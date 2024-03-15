@@ -5677,6 +5677,19 @@
             <param name="vec">The input Vec3 to be processed.</param>
             <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
         </member>
+        <member name="M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.
+            </summary>
+            <param name="vec">The <see cref="T:Genesis.Math.Vec3"/> instance to halve.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Half">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with the components of this instance halved.
+            </summary>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with the components halved.</returns>
+        </member>
         <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)">
             <summary>
             Generates an rendom vector from min an max value with the given seed

@@ -75,6 +75,11 @@ namespace Genesis.Physics
                     {
                         Callbacks[obA](scene, game, obB);
                     }
+
+                    if (Callbacks.ContainsKey(obB))
+                    {
+                        Callbacks[obB](scene, game, obA);
+                    }
                 }
             }
         }
