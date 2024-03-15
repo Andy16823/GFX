@@ -8,6 +8,7 @@ items:
   - Genesis.Graphics.Material.#ctor
   - Genesis.Graphics.Material.DiffuseColor
   - Genesis.Graphics.Material.DiffuseTexture
+  - Genesis.Graphics.Material.Name
   - Genesis.Graphics.Material.NormalTexture
   - Genesis.Graphics.Material.Opacity
   - Genesis.Graphics.Material.Propeterys
@@ -59,6 +60,27 @@ items:
   nameWithType.vb: Material.New()
   fullName.vb: Genesis.Graphics.Material.New()
   name.vb: New()
+- uid: Genesis.Graphics.Material.Name
+  commentId: P:Genesis.Graphics.Material.Name
+  id: Name
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Material.Name
+  fullName: Genesis.Graphics.Material.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Graphics.Material.Name*
 - uid: Genesis.Graphics.Material.DiffuseColor
   commentId: P:Genesis.Graphics.Material.DiffuseColor
   id: DiffuseColor
@@ -449,6 +471,24 @@ references:
   nameWithType.vb: Material.New
   fullName.vb: Genesis.Graphics.Material.New
   name.vb: New
+- uid: Genesis.Graphics.Material.Name*
+  commentId: Overload:Genesis.Graphics.Material.Name
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_Name
+  name: Name
+  nameWithType: Material.Name
+  fullName: Genesis.Graphics.Material.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Genesis.Graphics.Material.DiffuseColor*
   commentId: Overload:Genesis.Graphics.Material.DiffuseColor
   isExternal: true
@@ -498,17 +538,6 @@ references:
   name: DiffuseTexture
   nameWithType: Material.DiffuseTexture
   fullName: Genesis.Graphics.Material.DiffuseTexture
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: Genesis.Graphics.Material.NormalTexture*
   commentId: Overload:Genesis.Graphics.Material.NormalTexture
   isExternal: true

@@ -81,6 +81,14 @@ items:
     name: Element3D
   - uid: Genesis.Core.GameElements.Empty
     name: Empty
+  - uid: Genesis.Core.GameElements.Model
+    name: Model
+  - uid: Genesis.Core.GameElements.ParticleBuffers
+    name: ParticleBuffers
+  - uid: Genesis.Core.GameElements.ParticleDeffinition
+    name: ParticleDeffinition
+  - uid: Genesis.Core.GameElements.ParticleEmitter
+    name: ParticleEmitter
   - uid: Genesis.Core.GameElements.Qube
     name: Qube
   - uid: Genesis.Core.GameElements.RectElement
@@ -97,22 +105,11 @@ items:
     name: Terrain3D
   - uid: Genesis.Core.GameElements.TerrainData
     name: TerrainData
-- uid: Genesis.Core.GameElments
-  name: Genesis.Core.GameElments
-  items:
-  - uid: Genesis.Core.GameElments.ParticleBuffers
-    name: ParticleBuffers
-  - uid: Genesis.Core.GameElments.ParticleDeffinition
-    name: ParticleDeffinition
-  - uid: Genesis.Core.GameElments.ParticleEmitter
-    name: ParticleEmitter
 - uid: Genesis.Graphics
   name: Genesis.Graphics
   items:
   - uid: Genesis.Graphics.Animation
     name: Animation
-  - uid: Genesis.Graphics.Animation3D
-    name: Animation3D
   - uid: Genesis.Graphics.Camera
     name: Camera
   - uid: Genesis.Graphics.CameraType
@@ -145,6 +142,29 @@ items:
     name: Texture
   - uid: Genesis.Graphics.Viewport
     name: Viewport
+- uid: Genesis.Graphics.Animation3D
+  name: Genesis.Graphics.Animation3D
+  items:
+  - uid: Genesis.Graphics.Animation3D.Animation
+    name: Animation
+  - uid: Genesis.Graphics.Animation3D.Animator
+    name: Animator
+  - uid: Genesis.Graphics.Animation3D.AssimpNodeData
+    name: AssimpNodeData
+  - uid: Genesis.Graphics.Animation3D.Bone
+    name: Bone
+  - uid: Genesis.Graphics.Animation3D.KeyPosition
+    name: KeyPosition
+  - uid: Genesis.Graphics.Animation3D.KeyRotation
+    name: KeyRotation
+  - uid: Genesis.Graphics.Animation3D.KeyScale
+    name: KeyScale
+  - uid: Genesis.Graphics.Animation3D.ModelMesh
+    name: ModelMesh
+  - uid: Genesis.Graphics.Animation3D.boneinfo
+    name: boneinfo
+  - uid: Genesis.Graphics.Animation3D.vertex
+    name: vertex
 - uid: Genesis.Graphics.Physics
   name: Genesis.Graphics.Physics
   items:
@@ -160,6 +180,8 @@ items:
 - uid: Genesis.Graphics.Shaders.OpenGL
   name: Genesis.Graphics.Shaders.OpenGL
   items:
+  - uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+    name: AnimatedModelShader
   - uid: Genesis.Graphics.Shaders.OpenGL.BasicShader
     name: BasicShader
   - uid: Genesis.Graphics.Shaders.OpenGL.DiffuseLightning

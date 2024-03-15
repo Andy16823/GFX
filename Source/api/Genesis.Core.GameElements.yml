@@ -8,6 +8,10 @@ items:
   - Genesis.Core.GameElements.CameraElement
   - Genesis.Core.GameElements.Element3D
   - Genesis.Core.GameElements.Empty
+  - Genesis.Core.GameElements.Model
+  - Genesis.Core.GameElements.ParticleBuffers
+  - Genesis.Core.GameElements.ParticleDeffinition
+  - Genesis.Core.GameElements.ParticleEmitter
   - Genesis.Core.GameElements.Qube
   - Genesis.Core.GameElements.RectElement
   - Genesis.Core.GameElements.Skybox
@@ -26,6 +30,38 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Core.GameElements.Model
+  commentId: T:Genesis.Core.GameElements.Model
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html
+  name: Model
+  nameWithType: Model
+  fullName: Genesis.Core.GameElements.Model
+- uid: Genesis.Core.GameElements.ParticleBuffers
+  commentId: T:Genesis.Core.GameElements.ParticleBuffers
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleBuffers.html
+  name: ParticleBuffers
+  nameWithType: ParticleBuffers
+  fullName: Genesis.Core.GameElements.ParticleBuffers
+- uid: Genesis.Core.GameElements.ParticleDeffinition
+  commentId: T:Genesis.Core.GameElements.ParticleDeffinition
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleDeffinition.html
+  name: ParticleDeffinition
+  nameWithType: ParticleDeffinition
+  fullName: Genesis.Core.GameElements.ParticleDeffinition
+- uid: Genesis.Core.GameElements.ParticleEmitter
+  commentId: T:Genesis.Core.GameElements.ParticleEmitter
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleEmitter.html
+  name: ParticleEmitter
+  nameWithType: ParticleEmitter
+  fullName: Genesis.Core.GameElements.ParticleEmitter
 - uid: Genesis.Core.GameElements.SpriteShapeDeffinition
   commentId: T:Genesis.Core.GameElements.SpriteShapeDeffinition
   isExternal: true

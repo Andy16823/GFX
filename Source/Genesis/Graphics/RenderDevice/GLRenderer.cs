@@ -21,7 +21,6 @@ using Genesis.Graphics.Shaders.OpenGL;
 using System.CodeDom;
 using Genesis.UI;
 using Genesis.Graphics.Shapes;
-using Genesis.Core.GameElments;
 using System.Runtime.CompilerServices;
 using Genesis.Graphics.Animation3D;
 using System.Runtime.InteropServices;

@@ -1190,6 +1190,280 @@
             </summary>
             <param name="element">The game element from which to copy properties.</param>
         </member>
+        <member name="T:Genesis.Core.GameElements.Model">
+            <summary>
+            Represents a 3D model in the game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Shader">
+            <summary>
+            Gets or sets the shader program used for rendering the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Materials">
+            <summary>
+            Gets or sets the list of materials used by the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.BoneInfoMap">
+            <summary>
+            Gets or sets the mapping of bone names to bone information.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Animations">
+            <summary>
+            Gets or sets the list of animations associated with the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.BoneCounter">
+            <summary>
+            Gets or sets the counter for bones in the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Meshes">
+            <summary>
+            Gets or sets the list of meshes composing the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.FileDirectory">
+            <summary>
+            Gets or sets the directory of the model file.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.FileName">
+            <summary>
+            Gets or sets the name of the model file.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.AnimationSpeed">
+            <summary>
+            Gets or sets the speed of animation playback.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Animator">
+            <summary>
+            Gets or sets the animator responsible for controlling animations.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Updates the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Cleans up resources associated with the model when destroyed.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.#ctor(System.String,Genesis.Math.Vec3,System.String)">
+            <summary>
+            Constructs a new instance of the Model class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractMaterials(Assimp.Scene)">
+            <summary>
+            Extracts materials information from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractMeshes(Assimp.Scene)">
+            <summary>
+            Extracts mesh data from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)">
+            <summary>
+            Extracts animations from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.SetVertexBoneDataToDefault(Genesis.Graphics.Animation3D.vertex@)">
+            <summary>
+            Sets default bone data for a vertex.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.SetVertexBoneData(Genesis.Graphics.Animation3D.vertex@,System.Int32,System.Single)">
+            <summary>
+            Sets bone data for a vertex.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractBoneWeightForVertices(Assimp.Mesh,Assimp.Scene,Genesis.Graphics.Animation3D.ModelMesh)">
+            <summary>
+            Extracts bone weight information for vertices of a mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.PlayAnimation(System.String)">
+            <summary>
+            Plays the specified animation on the model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.FindAnimation(System.String)">
+            <summary>
+            Finds an animation with the specified name.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleBuffers">
+            <summary>
+            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleDeffinition">
+            <summary>
+            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Location">
+            <summary>
+            Gets or sets the location of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Rotation">
+            <summary>
+            Gets or sets the rotation of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Size">
+            <summary>
+            Gets or sets the size of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Delay">
+            <summary>
+            Gets or sets the delay before the particle becomes active.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.LastUpdate">
+            <summary>
+            Gets or sets the last update time of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Speed">
+            <summary>
+            Gets or sets the speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed">
+            <summary>
+            Gets or sets the rotation speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.ParticleColor">
+            <summary>
+            Gets or sets the color of the particle.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleEmitter">
+            <summary>
+            Represents a particle emitter as a game element.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.Texture">
+            <summary>
+            Gets or sets the texture used for the particles.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection">
+            <summary>
+            Gets or sets the primary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2">
+            <summary>
+            Gets or sets the secondary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDistance">
+            <summary>
+            Gets or sets the maximum distance a particle can travel before being reset.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleMask">
+            <summary>
+            Gets or sets the mask for the particles
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions">
+            <summary>
+            Gets or sets the list of particle definitions managed by the emitter.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the ParticleEmitter class with specified parameters.
+            </summary>
+            <param name="name">The name of the particle emitter.</param>
+            <param name="location">The initial location of the particle emitter.</param>
+            <param name="rotation">The initial rotation of the particle emitter.</param>
+            <param name="size">The initial size of the particle emitter.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
+            <summary>
+            Generates particles with default settings, using the provided particle size.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with default settings, using the provided particle size and specified colors.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="minRotation">The minimum rotation of particles.</param>
+            <param name="maxRotation">The maximum rotation of particles.</param>
+            <param name="minDelay">The minimum delay before particles become active.</param>
+            <param name="maxDelay">The maximum delay before particles become active.</param>
+            <param name="minSpeed">The minimum speed of particles.</param>
+            <param name="maxSpeed">The maximum speed of particles.</param>
+            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
+            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition,System.Int64)">
+            <summary>
+            Processes the movement and rotation of a particle based on its current state.
+            </summary>
+            <param name="particle">The particle definition to be processed.</param>
+            <param name="now">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers">
+            <summary>
+            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
+            </summary>
+            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the particle emitter is being destroyed in the game.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the particle emitter using the specified render device.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
         <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
             <summary>
             Represents the definition of the shape for a sprite, including its location and size.
@@ -1741,160 +2015,6 @@
         <member name="M:Genesis.Core.GameElements.Skybox.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
             Updates the skybox position based on the selected scene's camera location.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The render device used for rendering.</param>
-        </member>
-        <member name="T:Genesis.Core.GameElments.ParticleBuffers">
-            <summary>
-            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
-            </summary>
-        </member>
-        <member name="T:Genesis.Core.GameElments.ParticleDeffinition">
-            <summary>
-            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Location">
-            <summary>
-            Gets or sets the location of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Rotation">
-            <summary>
-            Gets or sets the rotation of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Size">
-            <summary>
-            Gets or sets the size of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Delay">
-            <summary>
-            Gets or sets the delay before the particle becomes active.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate">
-            <summary>
-            Gets or sets the last update time of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Speed">
-            <summary>
-            Gets or sets the speed of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed">
-            <summary>
-            Gets or sets the rotation speed of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor">
-            <summary>
-            Gets or sets the color of the particle.
-            </summary>
-        </member>
-        <member name="T:Genesis.Core.GameElments.ParticleEmitter">
-            <summary>
-            Represents a particle emitter as a game element.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.Texture">
-            <summary>
-            Gets or sets the texture used for the particles.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection">
-            <summary>
-            Gets or sets the primary direction of particle movement.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2">
-            <summary>
-            Gets or sets the secondary direction of particle movement.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance">
-            <summary>
-            Gets or sets the maximum distance a particle can travel before being reset.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleMask">
-            <summary>
-            Gets or sets the mask for the particles
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions">
-            <summary>
-            Gets or sets the list of particle definitions managed by the emitter.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
-            <summary>
-            Initializes a new instance of the ParticleEmitter class with specified parameters.
-            </summary>
-            <param name="name">The name of the particle emitter.</param>
-            <param name="location">The initial location of the particle emitter.</param>
-            <param name="rotation">The initial rotation of the particle emitter.</param>
-            <param name="size">The initial size of the particle emitter.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
-            <summary>
-            Generates particles with default settings, using the provided particle size.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Generates particles with default settings, using the provided particle size and specified colors.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-            <param name="colorA">The minimum color of particles.</param>
-            <param name="colorB">The maximum color of particles.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-            <param name="minRotation">The minimum rotation of particles.</param>
-            <param name="maxRotation">The maximum rotation of particles.</param>
-            <param name="minDelay">The minimum delay before particles become active.</param>
-            <param name="maxDelay">The maximum delay before particles become active.</param>
-            <param name="minSpeed">The minimum speed of particles.</param>
-            <param name="maxSpeed">The maximum speed of particles.</param>
-            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
-            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
-            <param name="colorA">The minimum color of particles.</param>
-            <param name="colorB">The maximum color of particles.</param>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)">
-            <summary>
-            Processes the movement and rotation of a particle based on its current state.
-            </summary>
-            <param name="particle">The particle definition to be processed.</param>
-            <param name="now">The current time in milliseconds.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers">
-            <summary>
-            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
-            </summary>
-            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
-            <summary>
-            Called when the particle emitter is being destroyed in the game.
-            </summary>
-            <param name="game">The game instance.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Renders the particle emitter using the specified render device.
             </summary>
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
@@ -2779,6 +2899,286 @@
             <param name="cell">The starting cell index of the animation.</param>
             <param name="row">The row index in the animation sheet.</param>
             <param name="frames">The number of frames in the animation.</param>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.AssimpNodeData">
+            <summary>
+            Represents data associated with a node in the Assimp scene hierarchy.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Animation">
+            <summary>
+            Represents an animation associated with a 3D model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Name">
+            <summary>
+            Name of the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Duration">
+            <summary>
+            Duration of the animation in ticks.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.TicksPerSecond">
+            <summary>
+            Number of ticks per second for the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Bones">
+            <summary>
+            List of bones affected by the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.RootNode">
+            <summary>
+            Root node of the animation's scene hierarchy.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.BoneInfoMap">
+            <summary>
+            Mapping of bone names to bone information.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.#ctor(Assimp.Scene,Genesis.Core.GameElements.Model,System.Int32)">
+            <summary>
+            Initializes a new instance of the Animation class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.ReadHeirarchyData(Genesis.Graphics.Animation3D.AssimpNodeData@,Assimp.Node)">
+            <summary>
+            Reads hierarchy data from the Assimp scene node.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.ReadMissingBones(Assimp.Animation,Genesis.Core.GameElements.Model)">
+            <summary>
+            Reads bones engaged in the animation and their keyframes.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.FindBone(System.String)">
+            <summary>
+            Finds a bone with the specified name.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Animator">
+            <summary>
+            Controls the animation playback of a 3D model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices">
+            <summary>
+            List of final bone transformation matrices.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.CurrentAnimation">
+            <summary>
+            Currently active animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.CurrentTime">
+            <summary>
+            Current time in the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.DeltaTime">
+            <summary>
+            Time elapsed since last frame.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.Play">
+            <summary>
+            Flag indicating whether the animation is playing.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.InterpolateFrames">
+            <summary>
+            Flag indicating whether to interpolate frames during animation playback.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.Loop">
+            <summary>
+            Flag indicating whether to loop the animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)">
+            <summary>
+            Initializes a new instance of the Animator class with the specified animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)">
+            <summary>
+            Updates the animation based on the elapsed time since the last frame.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)">
+            <summary>
+            Loads a new animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)">
+            <summary>
+            Calculates bone transformations recursively based on the animation hierarchy.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyPosition">
+            <summary>
+            Represents a keyframe position in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyRotation">
+            <summary>
+            Represents a keyframe rotation in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyScale">
+            <summary>
+            Represents a keyframe scale in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Bone">
+            <summary>
+            Represents a bone in a skeletal animation system.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Positions">
+            <summary>
+            List of position keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumPositions">
+            <summary>
+            Number of position keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Rotations">
+            <summary>
+            List of rotation keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumRotations">
+            <summary>
+            Number of rotation keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Scales">
+            <summary>
+            List of scale keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumScalings">
+            <summary>
+            Number of scale keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.LocalTransform">
+            <summary>
+            Local transformation matrix of the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Name">
+            <summary>
+            Name of the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.ID">
+            <summary>
+            ID of the bone.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.#ctor(System.String,System.Int32,Assimp.NodeAnimationChannel)">
+            <summary>
+            Initializes a new instance of the Bone class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetPositionIndex(System.Single)">
+            <summary>
+            Gets the index of the position keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetRotationIndex(System.Single)">
+            <summary>
+            Gets the index of the rotation keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetScaleIndex(System.Single)">
+            <summary>
+            Gets the index of the scale keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetScaleFactor(System.Single,System.Single,System.Single)">
+            <summary>
+            Calculates the interpolation factor between two keyframes.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolatePosition(System.Single)">
+            <summary>
+            Interpolates position for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolateRotation(System.Single)">
+            <summary>
+            Interpolates rotation for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolateScaling(System.Single)">
+            <summary>
+            Interpolates scale for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.Update(System.Single,System.Boolean)">
+            <summary>
+            Updates the bone transformation based on the animation time.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.vertex">
+            <summary>
+            Represents a vertex in a 3D model mesh.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.boneinfo">
+            <summary>
+            Contains information about a bone.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.ModelMesh">
+            <summary>
+            Represents a mesh of a 3D model.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Animation3D.ModelMesh.MaxBoneInfluence">
+            <summary>
+            Maximum number of bones influencing a vertex.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Name">
+            <summary>
+            Name of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Vertices">
+            <summary>
+            List of vertices in the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Indices">
+            <summary>
+            List of indices defining the geometry of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Material">
+            <summary>
+            Material applied to the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Propertys">
+            <summary>
+            Additional properties of the mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.ModelMesh.#ctor">
+            <summary>
+            Initializes a new instance of the ModelMesh class.
+            </summary>
         </member>
         <member name="T:Genesis.Graphics.Face">
             <summary>
@@ -4005,13 +4405,13 @@
             </summary>
             <param name="terrain">The terrain to render</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
             <summary>
             Initial the particle emitter
             </summary>
             <param name="emitter">The emitter to initalize</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
             <summary>
             Draws the particle emitter
             </summary>
@@ -4045,7 +4445,7 @@
             </summary>
             <param name="element">The element to dispose</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
             <summary>
             Disposes the particle emitter
             </summary>

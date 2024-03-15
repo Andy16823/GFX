@@ -13,43 +13,99 @@ using Genesis.Graphics.Shaders.OpenGL;
 
 namespace Genesis.Core.GameElements
 {
+    /// <summary>
+    /// Represents a 3D model in the game.
+    /// </summary>
     public class Model : GameElement
     {
+        /// <summary>
+        /// Gets or sets the shader program used for rendering the model.
+        /// </summary>
         public ShaderProgram Shader { get; set; } = new AnimatedModelShader();
+
+        /// <summary>
+        /// Gets or sets the list of materials used by the model.
+        /// </summary>
         public List<Graphics.Material> Materials { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mapping of bone names to bone information.
+        /// </summary>
         public Dictionary<String, boneinfo> BoneInfoMap { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of animations associated with the model.
+        /// </summary>
         public List<Graphics.Animation3D.Animation> Animations { get; set; }
+
+        /// <summary>
+        /// Gets or sets the counter for bones in the model.
+        /// </summary>
         public int BoneCounter { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of meshes composing the model.
+        /// </summary>
         public List<ModelMesh> Meshes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the directory of the model file.
+        /// </summary>
         public String FileDirectory { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the model file.
+        /// </summary>
         public String FileName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the speed of animation playback.
+        /// </summary>
         public float AnimationSpeed { get; set; } = 0.01f;
+
+        /// <summary>
+        /// Gets or sets the animator responsible for controlling animations.
+        /// </summary>
         public Animator Animator { get; set; }
 
-
+        /// <summary>
+        /// Initializes the model within the game environment.
+        /// </summary>
         public override void Init(Game game, IRenderDevice renderDevice)
         {
             base.Init(game, renderDevice);
         }
 
+        /// <summary>
+        /// Renders the model within the game environment.
+        /// </summary>
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
             renderDevice.DrawGameElement(this);
             base.OnRender(game, renderDevice);
         }
 
+        /// <summary>
+        /// Updates the model within the game environment.
+        /// </summary>
         public override void OnUpdate(Game game, IRenderDevice renderDevice)
         {
             base.OnUpdate(game, renderDevice);
             Animator.UpdateAnimation(AnimationSpeed);
         }
 
+        /// <summary>
+        /// Cleans up resources associated with the model when destroyed.
+        /// </summary>
         public override void OnDestroy(Game game)
         {
             game.RenderDevice.DisposeElement(this);
             base.OnDestroy(game);
         }
 
+        /// <summary>
+        /// Constructs a new instance of the Model class.
+        /// </summary>
         public Model(String name, Vec3 location, String filename)
         {
             this.Name = name;
@@ -71,6 +127,9 @@ namespace Genesis.Core.GameElements
             this.ExtractAnimations(model);
         }
 
+        /// <summary>
+        /// Extracts materials information from the imported model.
+        /// </summary>
         public void ExtractMaterials(Assimp.Scene scene)
         {
             this.Materials = new List<Graphics.Material>();
@@ -83,6 +142,9 @@ namespace Genesis.Core.GameElements
             }
         }
 
+        /// <summary>
+        /// Extracts mesh data from the imported model.
+        /// </summary>
         public void ExtractMeshes(Assimp.Scene scene)
         {
             this.Meshes = new List<ModelMesh>();
@@ -112,6 +174,9 @@ namespace Genesis.Core.GameElements
             }
         }
 
+        /// <summary>
+        /// Extracts animations from the imported model.
+        /// </summary>
         public void ExtractAnimations(Assimp.Scene scene)
         {
             Animations = new List<Graphics.Animation3D.Animation>();
@@ -124,12 +189,18 @@ namespace Genesis.Core.GameElements
             this.Animator = new Graphics.Animation3D.Animator(this.Animations[0]);
         }
 
+        /// <summary>
+        /// Sets default bone data for a vertex.
+        /// </summary>
         private void SetVertexBoneDataToDefault(ref vertex vertex)
         {
             vertex.BoneIDs = new ivec4(-1);
             vertex.BoneWeights = new vec4(0.0f);
         }
 
+        /// <summary>
+        /// Sets bone data for a vertex.
+        /// </summary>
         private void SetVertexBoneData(ref vertex v, int boneId, float weight)
         {
             for (int i = 0; i < 4; ++i)
@@ -143,6 +214,9 @@ namespace Genesis.Core.GameElements
             }
         }
 
+        /// <summary>
+        /// Extracts bone weight information for vertices of a mesh.
+        /// </summary>
         private void ExtractBoneWeightForVertices(Assimp.Mesh mesh, Assimp.Scene scene, ModelMesh gmesh)
         {
             for (int boneIndex = 0; boneIndex < mesh.BoneCount; boneIndex++)
@@ -177,6 +251,9 @@ namespace Genesis.Core.GameElements
             }
         }
 
+        /// <summary>
+        /// Plays the specified animation on the model.
+        /// </summary>
         public void PlayAnimation(String name)
         {
             var animation = this.FindAnimation(name);
@@ -186,6 +263,9 @@ namespace Genesis.Core.GameElements
             }
         }
 
+        /// <summary>
+        /// Finds an animation with the specified name.
+        /// </summary>
         public Genesis.Graphics.Animation3D.Animation FindAnimation(String name)
         {
             var animation = Animations.FirstOrDefault(a => a.Name == name);

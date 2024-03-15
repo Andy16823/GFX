@@ -16,6 +16,7 @@ items:
   - Genesis.Core.Utils.ConvertBitmapToBase64(System.Drawing.Bitmap)
   - Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
   - Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
+  - Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
   - Genesis.Core.Utils.CreateEmptyNormalMap(System.Int32,System.Int32)
   - Genesis.Core.Utils.CreateEmptyTexture(System.Int32,System.Int32)
   - Genesis.Core.Utils.EulerToQuaternion(Genesis.Math.Vec3)
@@ -24,6 +25,8 @@ items:
   - Genesis.Core.Utils.GetElementWorldLocation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldRotation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldScale(Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  - Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
   - Genesis.Core.Utils.GetModelRotation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetModelScale(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetModelSpaceLocation(Genesis.Core.GameElement,Genesis.Math.Vec3)
@@ -1304,6 +1307,75 @@ items:
   nameWithType.vb: Utils.RayDirection(Camera, Viewport, Single, Single)
   fullName.vb: Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Single, Single)
   name.vb: RayDirection(Camera, Viewport, Single, Single)
+- uid: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  commentId: M:Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  id: ConvertToGlmMat4(Assimp.Matrix4x4)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: ConvertToGlmMat4(Matrix4x4)
+  nameWithType: Utils.ConvertToGlmMat4(Matrix4x4)
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static mat4 ConvertToGlmMat4(Matrix4x4 matrix)
+    parameters:
+    - id: matrix
+      type: Assimp.Matrix4x4
+    return:
+      type: GlmSharp.mat4
+    content.vb: Public Shared Function ConvertToGlmMat4(matrix As Matrix4x4) As mat4
+  overload: Genesis.Core.Utils.ConvertToGlmMat4*
+- uid: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  commentId: M:Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  id: GetGLMVec(Assimp.Vector3D)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetGLMVec(Vector3D)
+  nameWithType: Utils.GetGLMVec(Vector3D)
+  fullName: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static vec3 GetGLMVec(Vector3D vec)
+    parameters:
+    - id: vec
+      type: Assimp.Vector3D
+    return:
+      type: GlmSharp.vec3
+    content.vb: Public Shared Function GetGLMVec(vec As Vector3D) As vec3
+  overload: Genesis.Core.Utils.GetGLMVec*
+- uid: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  commentId: M:Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  id: GetGLMQuat(Assimp.Quaternion)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetGLMQuat(Quaternion)
+  nameWithType: Utils.GetGLMQuat(Quaternion)
+  fullName: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static quat GetGLMQuat(Quaternion pOrientation)
+    parameters:
+    - id: pOrientation
+      type: Assimp.Quaternion
+    return:
+      type: GlmSharp.quat
+    content.vb: Public Shared Function GetGLMQuat(pOrientation As Quaternion) As quat
+  overload: Genesis.Core.Utils.GetGLMQuat*
 - uid: Genesis.Core.Utils.#ctor
   commentId: M:Genesis.Core.Utils.#ctor
   id: '#ctor'
@@ -2067,6 +2139,61 @@ references:
   name: RayDirection
   nameWithType: Utils.RayDirection
   fullName: Genesis.Core.Utils.RayDirection
+- uid: Genesis.Core.Utils.ConvertToGlmMat4*
+  commentId: Overload:Genesis.Core.Utils.ConvertToGlmMat4
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertToGlmMat4_Assimp_Matrix4x4_
+  name: ConvertToGlmMat4
+  nameWithType: Utils.ConvertToGlmMat4
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4
+- uid: Assimp.Matrix4x4
+  commentId: T:Assimp.Matrix4x4
+  parent: Assimp
+  isExternal: true
+  name: Matrix4x4
+  nameWithType: Matrix4x4
+  fullName: Assimp.Matrix4x4
+- uid: Assimp
+  commentId: N:Assimp
+  isExternal: true
+  name: Assimp
+  nameWithType: Assimp
+  fullName: Assimp
+- uid: Genesis.Core.Utils.GetGLMVec*
+  commentId: Overload:Genesis.Core.Utils.GetGLMVec
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMVec_Assimp_Vector3D_
+  name: GetGLMVec
+  nameWithType: Utils.GetGLMVec
+  fullName: Genesis.Core.Utils.GetGLMVec
+- uid: Assimp.Vector3D
+  commentId: T:Assimp.Vector3D
+  parent: Assimp
+  isExternal: true
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: Assimp.Vector3D
+- uid: GlmSharp.vec3
+  commentId: T:GlmSharp.vec3
+  parent: GlmSharp
+  isExternal: true
+  name: vec3
+  nameWithType: vec3
+  fullName: GlmSharp.vec3
+- uid: Genesis.Core.Utils.GetGLMQuat*
+  commentId: Overload:Genesis.Core.Utils.GetGLMQuat
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMQuat_Assimp_Quaternion_
+  name: GetGLMQuat
+  nameWithType: Utils.GetGLMQuat
+  fullName: Genesis.Core.Utils.GetGLMQuat
+- uid: Assimp.Quaternion
+  commentId: T:Assimp.Quaternion
+  parent: Assimp
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: Assimp.Quaternion
 - uid: Genesis.Core.Utils.#ctor*
   commentId: Overload:Genesis.Core.Utils.#ctor
   isExternal: true

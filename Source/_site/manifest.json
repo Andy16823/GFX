@@ -262,6 +262,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.Model.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleEmitter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.GameElements.Qube.yml",
       "output": {
         ".html": {
@@ -532,6 +572,106 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Animation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Animator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Animator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.AssimpNodeData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.AssimpNodeData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Bone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Bone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyPosition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyRotation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyRotation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.ModelMesh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.ModelMesh.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.boneinfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.boneinfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.vertex.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.Animation3D.yml",
       "output": {
         ".html": {
@@ -716,6 +856,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.ShaderProgram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html"
         }
       },
       "version": ""

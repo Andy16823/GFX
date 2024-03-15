@@ -50,12 +50,13 @@ items:
   - Genesis.Core.GameElements.CameraElement
   - Genesis.Core.GameElements.Element3D
   - Genesis.Core.GameElements.Empty
+  - Genesis.Core.GameElements.Model
+  - Genesis.Core.GameElements.ParticleEmitter
   - Genesis.Core.GameElements.Qube
   - Genesis.Core.GameElements.RectElement
   - Genesis.Core.GameElements.Sprite
   - Genesis.Core.GameElements.Terrain2D
   - Genesis.Core.GameElements.Terrain3D
-  - Genesis.Core.GameElments.ParticleEmitter
   - Genesis.Core.Light
   inheritedMembers:
   - System.Object.ToString

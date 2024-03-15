@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 
 namespace Genesis.Graphics.Animation3D
 {
-
+    /// <summary>
+    /// Represents data associated with a node in the Assimp scene hierarchy.
+    /// </summary>
     public struct AssimpNodeData
     {
         public mat4 transformation;
@@ -20,15 +22,44 @@ namespace Genesis.Graphics.Animation3D
         public List<AssimpNodeData> children;
     };
 
+    /// <summary>
+    /// Represents an animation associated with a 3D model.
+    /// </summary>
     public class Animation
     {
+        /// <summary>
+        /// Name of the animation.
+        /// </summary>
         public String Name { get; set; }
+
+        /// <summary>
+        /// Duration of the animation in ticks.
+        /// </summary>
         public float Duration { get; set; }
+
+        /// <summary>
+        /// Number of ticks per second for the animation.
+        /// </summary>
         public float TicksPerSecond { get; set; }
+
+        /// <summary>
+        /// List of bones affected by the animation.
+        /// </summary>
         public List<Bone> Bones { get; set; }
+
+        /// <summary>
+        /// Root node of the animation's scene hierarchy.
+        /// </summary>
         public AssimpNodeData RootNode { get; set; }
+
+        /// <summary>
+        /// Mapping of bone names to bone information.
+        /// </summary>
         public Dictionary<String, boneinfo> BoneInfoMap { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the Animation class.
+        /// </summary>
         public Animation(Assimp.Scene scene, Model model, int index)
         {
             this.Bones = new List<Bone>();
@@ -42,6 +73,9 @@ namespace Genesis.Graphics.Animation3D
             ReadMissingBones(animation, model);
         }
 
+        /// <summary>
+        /// Reads hierarchy data from the Assimp scene node.
+        /// </summary>
         void ReadHeirarchyData(ref AssimpNodeData dest, Assimp.Node src)
         {
             Debug.Assert(src != null);
@@ -58,6 +92,9 @@ namespace Genesis.Graphics.Animation3D
             }
         }
 
+        /// <summary>
+        /// Reads bones engaged in the animation and their keyframes.
+        /// </summary>
         void ReadMissingBones(Assimp.Animation animation, Model model)
         {
             int size = animation.NodeAnimationChannelCount;
@@ -84,6 +121,9 @@ namespace Genesis.Graphics.Animation3D
             BoneInfoMap = model.BoneInfoMap;
         }
 
+        /// <summary>
+        /// Finds a bone with the specified name.
+        /// </summary>
         public Bone FindBone(string name)
         {
             var bone = Bones.FirstOrDefault(b => b.Name == name);

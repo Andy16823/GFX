@@ -31,10 +31,11 @@ items:
   - Genesis.Core.GameElements.Element3D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Element3D.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.Element3D.GetShape
-  - Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
+  - Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
   - Genesis.Core.GameElements.Element3D.Shader
   - Genesis.Core.GameElements.Element3D.Meshes
   - Genesis.Core.GameElements.Element3D.Materials
+  - Genesis.Core.GameElements.Element3D.HasTransparancy
   - Genesis.Core.GameElement.AddBehavior``1({T})
   - Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
   - Genesis.Core.GameElement.GetBehavior``1
@@ -328,38 +329,35 @@ references:
     href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetShape
   - name: (
   - name: )
-- uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
-  commentId: M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
+- uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
+  commentId: M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
   parent: Genesis.Core.GameElements.Element3D
   isExternal: true
-  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_System_Int32_
-  name: GetMaterialBuffers(int)
-  nameWithType: Element3D.GetMaterialBuffers(int)
-  fullName: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(int)
-  nameWithType.vb: Element3D.GetMaterialBuffers(Integer)
-  fullName.vb: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Integer)
-  name.vb: GetMaterialBuffers(Integer)
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_Genesis_Graphics_Material_
+  name: GetMaterialBuffers(Material)
+  nameWithType: Element3D.GetMaterialBuffers(Material)
+  fullName: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
   spec.csharp:
-  - uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
+  - uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
     name: GetMaterialBuffers
     isExternal: true
-    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_System_Int32_
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_Genesis_Graphics_Material_
   - name: (
-  - uid: System.Int32
-    name: int
+  - uid: Genesis.Graphics.Material
+    name: Material
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+    href: Genesis.Graphics.Material.html
   - name: )
   spec.vb:
-  - uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
+  - uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
     name: GetMaterialBuffers
     isExternal: true
-    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_System_Int32_
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_Genesis_Graphics_Material_
   - name: (
-  - uid: System.Int32
-    name: Integer
+  - uid: Genesis.Graphics.Material
+    name: Material
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
+    href: Genesis.Graphics.Material.html
   - name: )
 - uid: Genesis.Core.GameElements.Element3D.Shader
   commentId: P:Genesis.Core.GameElements.Element3D.Shader
@@ -385,6 +383,14 @@ references:
   name: Materials
   nameWithType: Element3D.Materials
   fullName: Genesis.Core.GameElements.Element3D.Materials
+- uid: Genesis.Core.GameElements.Element3D.HasTransparancy
+  commentId: P:Genesis.Core.GameElements.Element3D.HasTransparancy
+  parent: Genesis.Core.GameElements.Element3D
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_HasTransparancy
+  name: HasTransparancy
+  nameWithType: Element3D.HasTransparancy
+  fullName: Genesis.Core.GameElements.Element3D.HasTransparancy
 - uid: Genesis.Core.GameElement.AddBehavior``1({T})
   commentId: M:Genesis.Core.GameElement.AddBehavior``1(``0)
   parent: Genesis.Core.GameElement

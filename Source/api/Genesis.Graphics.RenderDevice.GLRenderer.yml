@@ -24,7 +24,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawGameElement(Genesis.Core.GameElement)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)
-  - Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  - Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color,System.Single)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)
@@ -1968,16 +1968,16 @@ items:
   nameWithType.vb: GLRenderer.SetFramebuffer(Integer)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Integer)
   name.vb: SetFramebuffer(Integer)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
-  id: DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  id: DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
   name: DrawParticleEmitter(ParticleEmitter)
   nameWithType: GLRenderer.DrawParticleEmitter(ParticleEmitter)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   type: Method
   assemblies:
   - Genesis
@@ -1988,7 +1988,7 @@ items:
     content: public void DrawParticleEmitter(ParticleEmitter emitter)
     parameters:
     - id: emitter
-      type: Genesis.Core.GameElments.ParticleEmitter
+      type: Genesis.Core.GameElements.ParticleEmitter
     content.vb: Public Sub DrawParticleEmitter(emitter As ParticleEmitter)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
@@ -5423,55 +5423,18 @@ references:
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElments_ParticleEmitter_
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElements_ParticleEmitter_
   name: DrawParticleEmitter
   nameWithType: GLRenderer.DrawParticleEmitter
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
-- uid: Genesis.Core.GameElments.ParticleEmitter
-  commentId: T:Genesis.Core.GameElments.ParticleEmitter
-  parent: Genesis.Core.GameElments
+- uid: Genesis.Core.GameElements.ParticleEmitter
+  commentId: T:Genesis.Core.GameElements.ParticleEmitter
+  parent: Genesis.Core.GameElements
   isExternal: true
-  href: Genesis.Core.GameElments.ParticleEmitter.html
+  href: Genesis.Core.GameElements.ParticleEmitter.html
   name: ParticleEmitter
   nameWithType: ParticleEmitter
-  fullName: Genesis.Core.GameElments.ParticleEmitter
-- uid: Genesis.Core.GameElments
-  commentId: N:Genesis.Core.GameElments
-  isExternal: true
-  href: Genesis.html
-  name: Genesis.Core.GameElments
-  nameWithType: Genesis.Core.GameElments
-  fullName: Genesis.Core.GameElments
-  spec.csharp:
-  - uid: Genesis
-    name: Genesis
-    isExternal: true
-    href: Genesis.html
-  - name: .
-  - uid: Genesis.Core
-    name: Core
-    isExternal: true
-    href: Genesis.Core.html
-  - name: .
-  - uid: Genesis.Core.GameElments
-    name: GameElments
-    isExternal: true
-    href: Genesis.Core.GameElments.html
-  spec.vb:
-  - uid: Genesis
-    name: Genesis
-    isExternal: true
-    href: Genesis.html
-  - name: .
-  - uid: Genesis.Core
-    name: Core
-    isExternal: true
-    href: Genesis.Core.html
-  - name: .
-  - uid: Genesis.Core.GameElments
-    name: GameElments
-    isExternal: true
-    href: Genesis.Core.GameElments.html
+  fullName: Genesis.Core.GameElements.ParticleEmitter
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
   isExternal: true

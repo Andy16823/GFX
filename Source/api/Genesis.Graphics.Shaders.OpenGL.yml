@@ -4,6 +4,7 @@ items:
   commentId: N:Genesis.Graphics.Shaders.OpenGL
   id: Genesis.Graphics.Shaders.OpenGL
   children:
+  - Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
   - Genesis.Graphics.Shaders.OpenGL.BasicShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
@@ -29,6 +30,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html
+  name: AnimatedModelShader
+  nameWithType: AnimatedModelShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
 - uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
   commentId: T:Genesis.Graphics.Shaders.OpenGL.ParticleShader
   isExternal: true

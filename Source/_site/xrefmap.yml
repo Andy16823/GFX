@@ -2962,9 +2962,15 @@ references:
   fullName.vb: Genesis.Core.GameElements.Element3D.New
   nameWithType: Element3D.Element3D
   nameWithType.vb: Element3D.New
+- uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
+  name: GetMaterialBuffers(Material)
+  href: api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_Genesis_Graphics_Material_
+  commentId: M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
+  fullName: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
+  nameWithType: Element3D.GetMaterialBuffers(Material)
 - uid: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
   name: GetMaterialBuffers(int)
-  href: api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_System_Int32_
+  href: obj/api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_GetMaterialBuffers_System_Int32_
   commentId: M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)
   name.vb: GetMaterialBuffers(Integer)
   fullName: Genesis.Core.GameElements.Element3D.GetMaterialBuffers(int)
@@ -2989,6 +2995,18 @@ references:
   commentId: Overload:Genesis.Core.GameElements.Element3D.GetShape
   fullName: Genesis.Core.GameElements.Element3D.GetShape
   nameWithType: Element3D.GetShape
+- uid: Genesis.Core.GameElements.Element3D.HasTransparancy
+  name: HasTransparancy
+  href: api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_HasTransparancy
+  commentId: P:Genesis.Core.GameElements.Element3D.HasTransparancy
+  fullName: Genesis.Core.GameElements.Element3D.HasTransparancy
+  nameWithType: Element3D.HasTransparancy
+- uid: Genesis.Core.GameElements.Element3D.HasTransparancy*
+  name: HasTransparancy
+  href: api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_HasTransparancy_
+  commentId: Overload:Genesis.Core.GameElements.Element3D.HasTransparancy
+  fullName: Genesis.Core.GameElements.Element3D.HasTransparancy
+  nameWithType: Element3D.HasTransparancy
 - uid: Genesis.Core.GameElements.Element3D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   name: Init(Game, IRenderDevice)
   href: api/Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
@@ -3097,6 +3115,615 @@ references:
   fullName.vb: Genesis.Core.GameElements.Empty.New
   nameWithType: Empty.Empty
   nameWithType.vb: Empty.New
+- uid: Genesis.Core.GameElements.Model
+  name: Model
+  href: api/Genesis.Core.GameElements.Model.html
+  commentId: T:Genesis.Core.GameElements.Model
+  fullName: Genesis.Core.GameElements.Model
+  nameWithType: Model
+- uid: Genesis.Core.GameElements.Model.#ctor(System.String,Genesis.Math.Vec3,System.String)
+  name: Model(string, Vec3, string)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model__ctor_System_String_Genesis_Math_Vec3_System_String_
+  commentId: M:Genesis.Core.GameElements.Model.#ctor(System.String,Genesis.Math.Vec3,System.String)
+  name.vb: New(String, Vec3, String)
+  fullName: Genesis.Core.GameElements.Model.Model(string, Genesis.Math.Vec3, string)
+  fullName.vb: Genesis.Core.GameElements.Model.New(String, Genesis.Math.Vec3, String)
+  nameWithType: Model.Model(string, Vec3, string)
+  nameWithType.vb: Model.New(String, Vec3, String)
+- uid: Genesis.Core.GameElements.Model.#ctor*
+  name: Model
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model__ctor_
+  commentId: Overload:Genesis.Core.GameElements.Model.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElements.Model.Model
+  fullName.vb: Genesis.Core.GameElements.Model.New
+  nameWithType: Model.Model
+  nameWithType.vb: Model.New
+- uid: Genesis.Core.GameElements.Model.AnimationSpeed
+  name: AnimationSpeed
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationSpeed
+  commentId: P:Genesis.Core.GameElements.Model.AnimationSpeed
+  fullName: Genesis.Core.GameElements.Model.AnimationSpeed
+  nameWithType: Model.AnimationSpeed
+- uid: Genesis.Core.GameElements.Model.AnimationSpeed*
+  name: AnimationSpeed
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationSpeed_
+  commentId: Overload:Genesis.Core.GameElements.Model.AnimationSpeed
+  fullName: Genesis.Core.GameElements.Model.AnimationSpeed
+  nameWithType: Model.AnimationSpeed
+- uid: Genesis.Core.GameElements.Model.Animations
+  name: Animations
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Animations
+  commentId: P:Genesis.Core.GameElements.Model.Animations
+  fullName: Genesis.Core.GameElements.Model.Animations
+  nameWithType: Model.Animations
+- uid: Genesis.Core.GameElements.Model.Animations*
+  name: Animations
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Animations_
+  commentId: Overload:Genesis.Core.GameElements.Model.Animations
+  fullName: Genesis.Core.GameElements.Model.Animations
+  nameWithType: Model.Animations
+- uid: Genesis.Core.GameElements.Model.Animator
+  name: Animator
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Animator
+  commentId: P:Genesis.Core.GameElements.Model.Animator
+  fullName: Genesis.Core.GameElements.Model.Animator
+  nameWithType: Model.Animator
+- uid: Genesis.Core.GameElements.Model.Animator*
+  name: Animator
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Animator_
+  commentId: Overload:Genesis.Core.GameElements.Model.Animator
+  fullName: Genesis.Core.GameElements.Model.Animator
+  nameWithType: Model.Animator
+- uid: Genesis.Core.GameElements.Model.BoneCounter
+  name: BoneCounter
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_BoneCounter
+  commentId: P:Genesis.Core.GameElements.Model.BoneCounter
+  fullName: Genesis.Core.GameElements.Model.BoneCounter
+  nameWithType: Model.BoneCounter
+- uid: Genesis.Core.GameElements.Model.BoneCounter*
+  name: BoneCounter
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_BoneCounter_
+  commentId: Overload:Genesis.Core.GameElements.Model.BoneCounter
+  fullName: Genesis.Core.GameElements.Model.BoneCounter
+  nameWithType: Model.BoneCounter
+- uid: Genesis.Core.GameElements.Model.BoneInfoMap
+  name: BoneInfoMap
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_BoneInfoMap
+  commentId: P:Genesis.Core.GameElements.Model.BoneInfoMap
+  fullName: Genesis.Core.GameElements.Model.BoneInfoMap
+  nameWithType: Model.BoneInfoMap
+- uid: Genesis.Core.GameElements.Model.BoneInfoMap*
+  name: BoneInfoMap
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_BoneInfoMap_
+  commentId: Overload:Genesis.Core.GameElements.Model.BoneInfoMap
+  fullName: Genesis.Core.GameElements.Model.BoneInfoMap
+  nameWithType: Model.BoneInfoMap
+- uid: Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)
+  name: ExtractAnimations(Scene)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractAnimations_Assimp_Scene_
+  commentId: M:Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)
+  fullName: Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)
+  nameWithType: Model.ExtractAnimations(Scene)
+- uid: Genesis.Core.GameElements.Model.ExtractAnimations*
+  name: ExtractAnimations
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractAnimations_
+  commentId: Overload:Genesis.Core.GameElements.Model.ExtractAnimations
+  fullName: Genesis.Core.GameElements.Model.ExtractAnimations
+  nameWithType: Model.ExtractAnimations
+- uid: Genesis.Core.GameElements.Model.ExtractMaterials(Assimp.Scene)
+  name: ExtractMaterials(Scene)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractMaterials_Assimp_Scene_
+  commentId: M:Genesis.Core.GameElements.Model.ExtractMaterials(Assimp.Scene)
+  fullName: Genesis.Core.GameElements.Model.ExtractMaterials(Assimp.Scene)
+  nameWithType: Model.ExtractMaterials(Scene)
+- uid: Genesis.Core.GameElements.Model.ExtractMaterials*
+  name: ExtractMaterials
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractMaterials_
+  commentId: Overload:Genesis.Core.GameElements.Model.ExtractMaterials
+  fullName: Genesis.Core.GameElements.Model.ExtractMaterials
+  nameWithType: Model.ExtractMaterials
+- uid: Genesis.Core.GameElements.Model.ExtractMeshes(Assimp.Scene)
+  name: ExtractMeshes(Scene)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractMeshes_Assimp_Scene_
+  commentId: M:Genesis.Core.GameElements.Model.ExtractMeshes(Assimp.Scene)
+  fullName: Genesis.Core.GameElements.Model.ExtractMeshes(Assimp.Scene)
+  nameWithType: Model.ExtractMeshes(Scene)
+- uid: Genesis.Core.GameElements.Model.ExtractMeshes*
+  name: ExtractMeshes
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_ExtractMeshes_
+  commentId: Overload:Genesis.Core.GameElements.Model.ExtractMeshes
+  fullName: Genesis.Core.GameElements.Model.ExtractMeshes
+  nameWithType: Model.ExtractMeshes
+- uid: Genesis.Core.GameElements.Model.FileDirectory
+  name: FileDirectory
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FileDirectory
+  commentId: P:Genesis.Core.GameElements.Model.FileDirectory
+  fullName: Genesis.Core.GameElements.Model.FileDirectory
+  nameWithType: Model.FileDirectory
+- uid: Genesis.Core.GameElements.Model.FileDirectory*
+  name: FileDirectory
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FileDirectory_
+  commentId: Overload:Genesis.Core.GameElements.Model.FileDirectory
+  fullName: Genesis.Core.GameElements.Model.FileDirectory
+  nameWithType: Model.FileDirectory
+- uid: Genesis.Core.GameElements.Model.FileName
+  name: FileName
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FileName
+  commentId: P:Genesis.Core.GameElements.Model.FileName
+  fullName: Genesis.Core.GameElements.Model.FileName
+  nameWithType: Model.FileName
+- uid: Genesis.Core.GameElements.Model.FileName*
+  name: FileName
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FileName_
+  commentId: Overload:Genesis.Core.GameElements.Model.FileName
+  fullName: Genesis.Core.GameElements.Model.FileName
+  nameWithType: Model.FileName
+- uid: Genesis.Core.GameElements.Model.FindAnimation(System.String)
+  name: FindAnimation(string)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FindAnimation_System_String_
+  commentId: M:Genesis.Core.GameElements.Model.FindAnimation(System.String)
+  name.vb: FindAnimation(String)
+  fullName: Genesis.Core.GameElements.Model.FindAnimation(string)
+  fullName.vb: Genesis.Core.GameElements.Model.FindAnimation(String)
+  nameWithType: Model.FindAnimation(string)
+  nameWithType.vb: Model.FindAnimation(String)
+- uid: Genesis.Core.GameElements.Model.FindAnimation*
+  name: FindAnimation
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_FindAnimation_
+  commentId: Overload:Genesis.Core.GameElements.Model.FindAnimation
+  fullName: Genesis.Core.GameElements.Model.FindAnimation
+  nameWithType: Model.FindAnimation
+- uid: Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: Init(Game, IRenderDevice)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.GameElements.Model.Init(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Model.Init(Game, IRenderDevice)
+- uid: Genesis.Core.GameElements.Model.Init*
+  name: Init
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Init_
+  commentId: Overload:Genesis.Core.GameElements.Model.Init
+  fullName: Genesis.Core.GameElements.Model.Init
+  nameWithType: Model.Init
+- uid: Genesis.Core.GameElements.Model.Materials
+  name: Materials
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Materials
+  commentId: P:Genesis.Core.GameElements.Model.Materials
+  fullName: Genesis.Core.GameElements.Model.Materials
+  nameWithType: Model.Materials
+- uid: Genesis.Core.GameElements.Model.Materials*
+  name: Materials
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Materials_
+  commentId: Overload:Genesis.Core.GameElements.Model.Materials
+  fullName: Genesis.Core.GameElements.Model.Materials
+  nameWithType: Model.Materials
+- uid: Genesis.Core.GameElements.Model.Meshes
+  name: Meshes
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Meshes
+  commentId: P:Genesis.Core.GameElements.Model.Meshes
+  fullName: Genesis.Core.GameElements.Model.Meshes
+  nameWithType: Model.Meshes
+- uid: Genesis.Core.GameElements.Model.Meshes*
+  name: Meshes
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Meshes_
+  commentId: Overload:Genesis.Core.GameElements.Model.Meshes
+  fullName: Genesis.Core.GameElements.Model.Meshes
+  nameWithType: Model.Meshes
+- uid: Genesis.Core.GameElements.Model.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.GameElements.Model.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.GameElements.Model.OnDestroy(Genesis.Core.Game)
+  nameWithType: Model.OnDestroy(Game)
+- uid: Genesis.Core.GameElements.Model.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnDestroy_
+  commentId: Overload:Genesis.Core.GameElements.Model.OnDestroy
+  fullName: Genesis.Core.GameElements.Model.OnDestroy
+  nameWithType: Model.OnDestroy
+- uid: Genesis.Core.GameElements.Model.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnRender(Game, IRenderDevice)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.GameElements.Model.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.GameElements.Model.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Model.OnRender(Game, IRenderDevice)
+- uid: Genesis.Core.GameElements.Model.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnRender_
+  commentId: Overload:Genesis.Core.GameElements.Model.OnRender
+  fullName: Genesis.Core.GameElements.Model.OnRender
+  nameWithType: Model.OnRender
+- uid: Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnUpdate(Game, IRenderDevice)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnUpdate_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Model.OnUpdate(Game, IRenderDevice)
+- uid: Genesis.Core.GameElements.Model.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_OnUpdate_
+  commentId: Overload:Genesis.Core.GameElements.Model.OnUpdate
+  fullName: Genesis.Core.GameElements.Model.OnUpdate
+  nameWithType: Model.OnUpdate
+- uid: Genesis.Core.GameElements.Model.PlayAnimation(System.String)
+  name: PlayAnimation(string)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_PlayAnimation_System_String_
+  commentId: M:Genesis.Core.GameElements.Model.PlayAnimation(System.String)
+  name.vb: PlayAnimation(String)
+  fullName: Genesis.Core.GameElements.Model.PlayAnimation(string)
+  fullName.vb: Genesis.Core.GameElements.Model.PlayAnimation(String)
+  nameWithType: Model.PlayAnimation(string)
+  nameWithType.vb: Model.PlayAnimation(String)
+- uid: Genesis.Core.GameElements.Model.PlayAnimation*
+  name: PlayAnimation
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_PlayAnimation_
+  commentId: Overload:Genesis.Core.GameElements.Model.PlayAnimation
+  fullName: Genesis.Core.GameElements.Model.PlayAnimation
+  nameWithType: Model.PlayAnimation
+- uid: Genesis.Core.GameElements.Model.Shader
+  name: Shader
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Shader
+  commentId: P:Genesis.Core.GameElements.Model.Shader
+  fullName: Genesis.Core.GameElements.Model.Shader
+  nameWithType: Model.Shader
+- uid: Genesis.Core.GameElements.Model.Shader*
+  name: Shader
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Shader_
+  commentId: Overload:Genesis.Core.GameElements.Model.Shader
+  fullName: Genesis.Core.GameElements.Model.Shader
+  nameWithType: Model.Shader
+- uid: Genesis.Core.GameElements.ParticleBuffers
+  name: ParticleBuffers
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html
+  commentId: T:Genesis.Core.GameElements.ParticleBuffers
+  fullName: Genesis.Core.GameElements.ParticleBuffers
+  nameWithType: ParticleBuffers
+- uid: Genesis.Core.GameElements.ParticleBuffers.colors
+  name: colors
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_colors
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.colors
+  fullName: Genesis.Core.GameElements.ParticleBuffers.colors
+  nameWithType: ParticleBuffers.colors
+- uid: Genesis.Core.GameElements.ParticleBuffers.positions
+  name: positions
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_positions
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.positions
+  fullName: Genesis.Core.GameElements.ParticleBuffers.positions
+  nameWithType: ParticleBuffers.positions
+- uid: Genesis.Core.GameElements.ParticleBuffers.rotations
+  name: rotations
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_rotations
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.rotations
+  fullName: Genesis.Core.GameElements.ParticleBuffers.rotations
+  nameWithType: ParticleBuffers.rotations
+- uid: Genesis.Core.GameElements.ParticleBuffers.scales
+  name: scales
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_scales
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.scales
+  fullName: Genesis.Core.GameElements.ParticleBuffers.scales
+  nameWithType: ParticleBuffers.scales
+- uid: Genesis.Core.GameElements.ParticleBuffers.texCords
+  name: texCords
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_texCords
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.texCords
+  fullName: Genesis.Core.GameElements.ParticleBuffers.texCords
+  nameWithType: ParticleBuffers.texCords
+- uid: Genesis.Core.GameElements.ParticleBuffers.verticies
+  name: verticies
+  href: api/Genesis.Core.GameElements.ParticleBuffers.html#Genesis_Core_GameElements_ParticleBuffers_verticies
+  commentId: F:Genesis.Core.GameElements.ParticleBuffers.verticies
+  fullName: Genesis.Core.GameElements.ParticleBuffers.verticies
+  nameWithType: ParticleBuffers.verticies
+- uid: Genesis.Core.GameElements.ParticleDeffinition
+  name: ParticleDeffinition
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html
+  commentId: T:Genesis.Core.GameElements.ParticleDeffinition
+  fullName: Genesis.Core.GameElements.ParticleDeffinition
+  nameWithType: ParticleDeffinition
+- uid: Genesis.Core.GameElements.ParticleDeffinition.#ctor
+  name: ParticleDeffinition()
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition__ctor
+  commentId: M:Genesis.Core.GameElements.ParticleDeffinition.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.ParticleDeffinition()
+  fullName.vb: Genesis.Core.GameElements.ParticleDeffinition.New()
+  nameWithType: ParticleDeffinition.ParticleDeffinition()
+  nameWithType.vb: ParticleDeffinition.New()
+- uid: Genesis.Core.GameElements.ParticleDeffinition.#ctor*
+  name: ParticleDeffinition
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition__ctor_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.ParticleDeffinition
+  fullName.vb: Genesis.Core.GameElements.ParticleDeffinition.New
+  nameWithType: ParticleDeffinition.ParticleDeffinition
+  nameWithType.vb: ParticleDeffinition.New
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Delay
+  name: Delay
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Delay
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.Delay
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Delay
+  nameWithType: ParticleDeffinition.Delay
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Delay*
+  name: Delay
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Delay_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.Delay
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Delay
+  nameWithType: ParticleDeffinition.Delay
+- uid: Genesis.Core.GameElements.ParticleDeffinition.LastUpdate
+  name: LastUpdate
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_LastUpdate
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.LastUpdate
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.LastUpdate
+  nameWithType: ParticleDeffinition.LastUpdate
+- uid: Genesis.Core.GameElements.ParticleDeffinition.LastUpdate*
+  name: LastUpdate
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_LastUpdate_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.LastUpdate
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.LastUpdate
+  nameWithType: ParticleDeffinition.LastUpdate
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Location
+  name: Location
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Location
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.Location
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Location
+  nameWithType: ParticleDeffinition.Location
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Location*
+  name: Location
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Location_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.Location
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Location
+  nameWithType: ParticleDeffinition.Location
+- uid: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
+  name: ParticleColor
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_ParticleColor
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
+  nameWithType: ParticleDeffinition.ParticleColor
+- uid: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor*
+  name: ParticleColor
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_ParticleColor_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
+  nameWithType: ParticleDeffinition.ParticleColor
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Rotation
+  name: Rotation
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Rotation
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.Rotation
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Rotation
+  nameWithType: ParticleDeffinition.Rotation
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Rotation*
+  name: Rotation
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Rotation_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.Rotation
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Rotation
+  nameWithType: ParticleDeffinition.Rotation
+- uid: Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed
+  name: RotationSpeed
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_RotationSpeed
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed
+  nameWithType: ParticleDeffinition.RotationSpeed
+- uid: Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed*
+  name: RotationSpeed
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_RotationSpeed_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed
+  nameWithType: ParticleDeffinition.RotationSpeed
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Size
+  name: Size
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Size
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.Size
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Size
+  nameWithType: ParticleDeffinition.Size
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Size*
+  name: Size
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Size_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.Size
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Size
+  nameWithType: ParticleDeffinition.Size
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Speed
+  name: Speed
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Speed
+  commentId: P:Genesis.Core.GameElements.ParticleDeffinition.Speed
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Speed
+  nameWithType: ParticleDeffinition.Speed
+- uid: Genesis.Core.GameElements.ParticleDeffinition.Speed*
+  name: Speed
+  href: api/Genesis.Core.GameElements.ParticleDeffinition.html#Genesis_Core_GameElements_ParticleDeffinition_Speed_
+  commentId: Overload:Genesis.Core.GameElements.ParticleDeffinition.Speed
+  fullName: Genesis.Core.GameElements.ParticleDeffinition.Speed
+  nameWithType: ParticleDeffinition.Speed
+- uid: Genesis.Core.GameElements.ParticleEmitter
+  name: ParticleEmitter
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html
+  commentId: T:Genesis.Core.GameElements.ParticleEmitter
+  fullName: Genesis.Core.GameElements.ParticleEmitter
+  nameWithType: ParticleEmitter
+- uid: Genesis.Core.GameElements.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name: ParticleEmitter(string, Vec3, Vec3, Vec3, Texture)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter__ctor_System_String_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name.vb: New(String, Vec3, Vec3, Vec3, Texture)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleEmitter(string, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.New(String, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  nameWithType: ParticleEmitter.ParticleEmitter(string, Vec3, Vec3, Vec3, Texture)
+  nameWithType.vb: ParticleEmitter.New(String, Vec3, Vec3, Vec3, Texture)
+- uid: Genesis.Core.GameElements.ParticleEmitter.#ctor*
+  name: ParticleEmitter
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter__ctor_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.#ctor
+  name.vb: New
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleEmitter
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.New
+  nameWithType: ParticleEmitter.ParticleEmitter
+  nameWithType.vb: ParticleEmitter.New
+- uid: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)
+  name: CreateParticles(int, Vec3)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)
+  name.vb: CreateParticles(Integer, Vec3)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3)
+- uid: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_System_Int32_System_Single_System_Single_System_Single_System_Single_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, int, int, float, float, float, float, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Integer, Integer, Single, Single, Single, Single, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+- uid: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_System_Int32_System_Single_System_Single_System_Single_System_Single_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, int, int, float, float, float, float, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3, Integer, Integer, Single, Single, Single, Single, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Vec3, Vec3, int, int, float, float, float, float, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Vec3, Vec3, Integer, Integer, Single, Single, Single, Single, Color, Color)
+- uid: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)
+  name: CreateParticles(int, Vec3, Color, Color)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_CreateParticles_System_Int32_Genesis_Math_Vec3_System_Drawing_Color_System_Drawing_Color_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)
+  name.vb: CreateParticles(Integer, Vec3, Color, Color)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(int, Genesis.Math.Vec3, System.Drawing.Color, System.Drawing.Color)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.CreateParticles(Integer, Genesis.Math.Vec3, System.Drawing.Color, System.Drawing.Color)
+  nameWithType: ParticleEmitter.CreateParticles(int, Vec3, Color, Color)
+  nameWithType.vb: ParticleEmitter.CreateParticles(Integer, Vec3, Color, Color)
+- uid: Genesis.Core.GameElements.ParticleEmitter.CreateParticles*
+  name: CreateParticles
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_CreateParticles_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.CreateParticles
+  fullName: Genesis.Core.GameElements.ParticleEmitter.CreateParticles
+  nameWithType: ParticleEmitter.CreateParticles
+- uid: Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers
+  name: GetParticleBuffers()
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_GetParticleBuffers
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers
+  fullName: Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers()
+  nameWithType: ParticleEmitter.GetParticleBuffers()
+- uid: Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers*
+  name: GetParticleBuffers
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_GetParticleBuffers_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers
+  fullName: Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers
+  nameWithType: ParticleEmitter.GetParticleBuffers
+- uid: Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)
+  nameWithType: ParticleEmitter.OnDestroy(Game)
+- uid: Genesis.Core.GameElements.ParticleEmitter.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_OnDestroy_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.OnDestroy
+  fullName: Genesis.Core.GameElements.ParticleEmitter.OnDestroy
+  nameWithType: ParticleEmitter.OnDestroy
+- uid: Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnRender(Game, IRenderDevice)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: ParticleEmitter.OnRender(Game, IRenderDevice)
+- uid: Genesis.Core.GameElements.ParticleEmitter.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_OnRender_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.OnRender
+  fullName: Genesis.Core.GameElements.ParticleEmitter.OnRender
+  nameWithType: ParticleEmitter.OnRender
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
+  name: ParticleDeffinitions
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDeffinitions
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
+  nameWithType: ParticleEmitter.ParticleDeffinitions
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions*
+  name: ParticleDeffinitions
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDeffinitions_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
+  nameWithType: ParticleEmitter.ParticleDeffinitions
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection
+  name: ParticleDirection
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDirection
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection
+  nameWithType: ParticleEmitter.ParticleDirection
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection*
+  name: ParticleDirection
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDirection_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection
+  nameWithType: ParticleEmitter.ParticleDirection
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2
+  name: ParticleDirection2
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDirection2
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2
+  nameWithType: ParticleEmitter.ParticleDirection2
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2*
+  name: ParticleDirection2
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDirection2_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2
+  nameWithType: ParticleEmitter.ParticleDirection2
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
+  name: ParticleDistance
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDistance
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
+  nameWithType: ParticleEmitter.ParticleDistance
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDistance*
+  name: ParticleDistance
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleDistance_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
+  nameWithType: ParticleEmitter.ParticleDistance
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+  name: ParticleMask
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleMask
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+  nameWithType: ParticleEmitter.ParticleMask
+- uid: Genesis.Core.GameElements.ParticleEmitter.ParticleMask*
+  name: ParticleMask
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ParticleMask_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+  nameWithType: ParticleEmitter.ParticleMask
+- uid: Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition,System.Int64)
+  name: ProcessParticle(ParticleDeffinition, long)
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ProcessParticle_Genesis_Core_GameElements_ParticleDeffinition_System_Int64_
+  commentId: M:Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition,System.Int64)
+  name.vb: ProcessParticle(ParticleDeffinition, Long)
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition, long)
+  fullName.vb: Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition, Long)
+  nameWithType: ParticleEmitter.ProcessParticle(ParticleDeffinition, long)
+  nameWithType.vb: ParticleEmitter.ProcessParticle(ParticleDeffinition, Long)
+- uid: Genesis.Core.GameElements.ParticleEmitter.ProcessParticle*
+  name: ProcessParticle
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_ProcessParticle_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ProcessParticle
+  fullName: Genesis.Core.GameElements.ParticleEmitter.ProcessParticle
+  nameWithType: ParticleEmitter.ProcessParticle
+- uid: Genesis.Core.GameElements.ParticleEmitter.Texture
+  name: Texture
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_Texture
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.Texture
+  fullName: Genesis.Core.GameElements.ParticleEmitter.Texture
+  nameWithType: ParticleEmitter.Texture
+- uid: Genesis.Core.GameElements.ParticleEmitter.Texture*
+  name: Texture
+  href: api/Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_Texture_
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.Texture
+  fullName: Genesis.Core.GameElements.ParticleEmitter.Texture
+  nameWithType: ParticleEmitter.Texture
 - uid: Genesis.Core.GameElements.Qube
   name: Qube
   href: api/Genesis.Core.GameElements.Qube.html
@@ -5650,6 +6277,18 @@ references:
   commentId: Overload:Genesis.Core.Utils.ConvertDrawingColor
   fullName: Genesis.Core.Utils.ConvertDrawingColor
   nameWithType: Utils.ConvertDrawingColor
+- uid: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  name: ConvertToGlmMat4(Matrix4x4)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertToGlmMat4_Assimp_Matrix4x4_
+  commentId: M:Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  nameWithType: Utils.ConvertToGlmMat4(Matrix4x4)
+- uid: Genesis.Core.Utils.ConvertToGlmMat4*
+  name: ConvertToGlmMat4
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertToGlmMat4_
+  commentId: Overload:Genesis.Core.Utils.ConvertToGlmMat4
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4
+  nameWithType: Utils.ConvertToGlmMat4
 - uid: Genesis.Core.Utils.CreateEmptyNormalMap(System.Int32,System.Int32)
   name: CreateEmptyNormalMap(int, int)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_CreateEmptyNormalMap_System_Int32_System_Int32_
@@ -5755,6 +6394,30 @@ references:
   commentId: Overload:Genesis.Core.Utils.GetElementWorldScale
   fullName: Genesis.Core.Utils.GetElementWorldScale
   nameWithType: Utils.GetElementWorldScale
+- uid: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  name: GetGLMQuat(Quaternion)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMQuat_Assimp_Quaternion_
+  commentId: M:Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  fullName: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  nameWithType: Utils.GetGLMQuat(Quaternion)
+- uid: Genesis.Core.Utils.GetGLMQuat*
+  name: GetGLMQuat
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMQuat_
+  commentId: Overload:Genesis.Core.Utils.GetGLMQuat
+  fullName: Genesis.Core.Utils.GetGLMQuat
+  nameWithType: Utils.GetGLMQuat
+- uid: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  name: GetGLMVec(Vector3D)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMVec_Assimp_Vector3D_
+  commentId: M:Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  fullName: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  nameWithType: Utils.GetGLMVec(Vector3D)
+- uid: Genesis.Core.Utils.GetGLMVec*
+  name: GetGLMVec
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMVec_
+  commentId: Overload:Genesis.Core.Utils.GetGLMVec
+  fullName: Genesis.Core.Utils.GetGLMVec
+  nameWithType: Utils.GetGLMVec
 - uid: Genesis.Core.Utils.GetModelRotation(Genesis.Core.GameElement)
   name: GetModelRotation(GameElement)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetModelRotation_Genesis_Core_GameElement_
@@ -6110,14 +6773,14 @@ references:
   fullName: Genesis.Graphics.Animation.Row
   nameWithType: Animation.Row
 - uid: Genesis.Graphics.Animation3D
-  name: Animation3D
+  name: Genesis.Graphics.Animation3D
   href: api/Genesis.Graphics.Animation3D.html
-  commentId: T:Genesis.Graphics.Animation3D
+  commentId: N:Genesis.Graphics.Animation3D
   fullName: Genesis.Graphics.Animation3D
-  nameWithType: Animation3D
+  nameWithType: Genesis.Graphics.Animation3D
 - uid: Genesis.Graphics.Animation3D.#ctor(System.String)
   name: Animation3D(string)
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_System_String_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_System_String_
   commentId: M:Genesis.Graphics.Animation3D.#ctor(System.String)
   name.vb: New(String)
   fullName: Genesis.Graphics.Animation3D.Animation3D(string)
@@ -6126,7 +6789,7 @@ references:
   nameWithType.vb: Animation3D.New(String)
 - uid: Genesis.Graphics.Animation3D.#ctor(System.String,System.String)
   name: Animation3D(string, string)
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_System_String_System_String_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_System_String_System_String_
   commentId: M:Genesis.Graphics.Animation3D.#ctor(System.String,System.String)
   name.vb: New(String, String)
   fullName: Genesis.Graphics.Animation3D.Animation3D(string, string)
@@ -6135,52 +6798,541 @@ references:
   nameWithType.vb: Animation3D.New(String, String)
 - uid: Genesis.Graphics.Animation3D.#ctor*
   name: Animation3D
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D__ctor_
   commentId: Overload:Genesis.Graphics.Animation3D.#ctor
   name.vb: New
   fullName: Genesis.Graphics.Animation3D.Animation3D
   fullName.vb: Genesis.Graphics.Animation3D.New
   nameWithType: Animation3D.Animation3D
   nameWithType.vb: Animation3D.New
+- uid: Genesis.Graphics.Animation3D.Animation
+  name: Animation
+  href: api/Genesis.Graphics.Animation3D.Animation.html
+  commentId: T:Genesis.Graphics.Animation3D.Animation
+  fullName: Genesis.Graphics.Animation3D.Animation
+  nameWithType: Animation
+- uid: Genesis.Graphics.Animation3D.Animation.#ctor(Assimp.Scene,Genesis.Core.GameElements.Model,System.Int32)
+  name: Animation(Scene, Model, int)
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation__ctor_Assimp_Scene_Genesis_Core_GameElements_Model_System_Int32_
+  commentId: M:Genesis.Graphics.Animation3D.Animation.#ctor(Assimp.Scene,Genesis.Core.GameElements.Model,System.Int32)
+  name.vb: New(Scene, Model, Integer)
+  fullName: Genesis.Graphics.Animation3D.Animation.Animation(Assimp.Scene, Genesis.Core.GameElements.Model, int)
+  fullName.vb: Genesis.Graphics.Animation3D.Animation.New(Assimp.Scene, Genesis.Core.GameElements.Model, Integer)
+  nameWithType: Animation.Animation(Scene, Model, int)
+  nameWithType.vb: Animation.New(Scene, Model, Integer)
+- uid: Genesis.Graphics.Animation3D.Animation.#ctor*
+  name: Animation
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation__ctor_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Animation3D.Animation.Animation
+  fullName.vb: Genesis.Graphics.Animation3D.Animation.New
+  nameWithType: Animation.Animation
+  nameWithType.vb: Animation.New
+- uid: Genesis.Graphics.Animation3D.Animation.BoneInfoMap
+  name: BoneInfoMap
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_BoneInfoMap
+  commentId: P:Genesis.Graphics.Animation3D.Animation.BoneInfoMap
+  fullName: Genesis.Graphics.Animation3D.Animation.BoneInfoMap
+  nameWithType: Animation.BoneInfoMap
+- uid: Genesis.Graphics.Animation3D.Animation.BoneInfoMap*
+  name: BoneInfoMap
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_BoneInfoMap_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.BoneInfoMap
+  fullName: Genesis.Graphics.Animation3D.Animation.BoneInfoMap
+  nameWithType: Animation.BoneInfoMap
+- uid: Genesis.Graphics.Animation3D.Animation.Bones
+  name: Bones
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Bones
+  commentId: P:Genesis.Graphics.Animation3D.Animation.Bones
+  fullName: Genesis.Graphics.Animation3D.Animation.Bones
+  nameWithType: Animation.Bones
+- uid: Genesis.Graphics.Animation3D.Animation.Bones*
+  name: Bones
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Bones_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.Bones
+  fullName: Genesis.Graphics.Animation3D.Animation.Bones
+  nameWithType: Animation.Bones
+- uid: Genesis.Graphics.Animation3D.Animation.Duration
+  name: Duration
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Duration
+  commentId: P:Genesis.Graphics.Animation3D.Animation.Duration
+  fullName: Genesis.Graphics.Animation3D.Animation.Duration
+  nameWithType: Animation.Duration
+- uid: Genesis.Graphics.Animation3D.Animation.Duration*
+  name: Duration
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Duration_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.Duration
+  fullName: Genesis.Graphics.Animation3D.Animation.Duration
+  nameWithType: Animation.Duration
+- uid: Genesis.Graphics.Animation3D.Animation.FindBone(System.String)
+  name: FindBone(string)
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_FindBone_System_String_
+  commentId: M:Genesis.Graphics.Animation3D.Animation.FindBone(System.String)
+  name.vb: FindBone(String)
+  fullName: Genesis.Graphics.Animation3D.Animation.FindBone(string)
+  fullName.vb: Genesis.Graphics.Animation3D.Animation.FindBone(String)
+  nameWithType: Animation.FindBone(string)
+  nameWithType.vb: Animation.FindBone(String)
+- uid: Genesis.Graphics.Animation3D.Animation.FindBone*
+  name: FindBone
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_FindBone_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.FindBone
+  fullName: Genesis.Graphics.Animation3D.Animation.FindBone
+  nameWithType: Animation.FindBone
+- uid: Genesis.Graphics.Animation3D.Animation.Name
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Name
+  commentId: P:Genesis.Graphics.Animation3D.Animation.Name
+  fullName: Genesis.Graphics.Animation3D.Animation.Name
+  nameWithType: Animation.Name
+- uid: Genesis.Graphics.Animation3D.Animation.Name*
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Name_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.Name
+  fullName: Genesis.Graphics.Animation3D.Animation.Name
+  nameWithType: Animation.Name
+- uid: Genesis.Graphics.Animation3D.Animation.RootNode
+  name: RootNode
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_RootNode
+  commentId: P:Genesis.Graphics.Animation3D.Animation.RootNode
+  fullName: Genesis.Graphics.Animation3D.Animation.RootNode
+  nameWithType: Animation.RootNode
+- uid: Genesis.Graphics.Animation3D.Animation.RootNode*
+  name: RootNode
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_RootNode_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.RootNode
+  fullName: Genesis.Graphics.Animation3D.Animation.RootNode
+  nameWithType: Animation.RootNode
+- uid: Genesis.Graphics.Animation3D.Animation.TicksPerSecond
+  name: TicksPerSecond
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_TicksPerSecond
+  commentId: P:Genesis.Graphics.Animation3D.Animation.TicksPerSecond
+  fullName: Genesis.Graphics.Animation3D.Animation.TicksPerSecond
+  nameWithType: Animation.TicksPerSecond
+- uid: Genesis.Graphics.Animation3D.Animation.TicksPerSecond*
+  name: TicksPerSecond
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_TicksPerSecond_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.TicksPerSecond
+  fullName: Genesis.Graphics.Animation3D.Animation.TicksPerSecond
+  nameWithType: Animation.TicksPerSecond
+- uid: Genesis.Graphics.Animation3D.Animator
+  name: Animator
+  href: api/Genesis.Graphics.Animation3D.Animator.html
+  commentId: T:Genesis.Graphics.Animation3D.Animator
+  fullName: Genesis.Graphics.Animation3D.Animator
+  nameWithType: Animator
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
+  name: Animator(Animation)
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator__ctor_Genesis_Graphics_Animation3D_Animation_
+  commentId: M:Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
+  name.vb: New(Animation)
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator(Genesis.Graphics.Animation3D.Animation)
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New(Genesis.Graphics.Animation3D.Animation)
+  nameWithType: Animator.Animator(Animation)
+  nameWithType.vb: Animator.New(Animation)
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor*
+  name: Animator
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator__ctor_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New
+  nameWithType: Animator.Animator
+  nameWithType.vb: Animator.New
+- uid: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  name: CalculateBoneTransform(AssimpNodeData, mat4)
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CalculateBoneTransform_Genesis_Graphics_Animation3D_AssimpNodeData_GlmSharp_mat4_
+  commentId: M:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  fullName: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData, GlmSharp.mat4)
+  nameWithType: Animator.CalculateBoneTransform(AssimpNodeData, mat4)
+- uid: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform*
+  name: CalculateBoneTransform
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CalculateBoneTransform_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform
+  fullName: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform
+  nameWithType: Animator.CalculateBoneTransform
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  name: CurrentAnimation
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentAnimation
+  commentId: P:Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  nameWithType: Animator.CurrentAnimation
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentAnimation*
+  name: CurrentAnimation
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentAnimation_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  nameWithType: Animator.CurrentAnimation
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentTime
+  name: CurrentTime
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentTime
+  commentId: P:Genesis.Graphics.Animation3D.Animator.CurrentTime
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentTime
+  nameWithType: Animator.CurrentTime
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentTime*
+  name: CurrentTime
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentTime_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CurrentTime
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentTime
+  nameWithType: Animator.CurrentTime
+- uid: Genesis.Graphics.Animation3D.Animator.DeltaTime
+  name: DeltaTime
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_DeltaTime
+  commentId: P:Genesis.Graphics.Animation3D.Animator.DeltaTime
+  fullName: Genesis.Graphics.Animation3D.Animator.DeltaTime
+  nameWithType: Animator.DeltaTime
+- uid: Genesis.Graphics.Animation3D.Animator.DeltaTime*
+  name: DeltaTime
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_DeltaTime_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.DeltaTime
+  fullName: Genesis.Graphics.Animation3D.Animator.DeltaTime
+  nameWithType: Animator.DeltaTime
+- uid: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  name: FinalBoneMatrices
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_FinalBoneMatrices
+  commentId: P:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  fullName: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  nameWithType: Animator.FinalBoneMatrices
+- uid: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices*
+  name: FinalBoneMatrices
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_FinalBoneMatrices_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  fullName: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  nameWithType: Animator.FinalBoneMatrices
+- uid: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  name: InterpolateFrames
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_InterpolateFrames
+  commentId: P:Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  fullName: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  nameWithType: Animator.InterpolateFrames
+- uid: Genesis.Graphics.Animation3D.Animator.InterpolateFrames*
+  name: InterpolateFrames
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_InterpolateFrames_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  fullName: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  nameWithType: Animator.InterpolateFrames
+- uid: Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  name: LoadAnimation(Animation)
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_LoadAnimation_Genesis_Graphics_Animation3D_Animation_
+  commentId: M:Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  fullName: Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  nameWithType: Animator.LoadAnimation(Animation)
+- uid: Genesis.Graphics.Animation3D.Animator.LoadAnimation*
+  name: LoadAnimation
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_LoadAnimation_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.LoadAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.LoadAnimation
+  nameWithType: Animator.LoadAnimation
+- uid: Genesis.Graphics.Animation3D.Animator.Loop
+  name: Loop
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Loop
+  commentId: P:Genesis.Graphics.Animation3D.Animator.Loop
+  fullName: Genesis.Graphics.Animation3D.Animator.Loop
+  nameWithType: Animator.Loop
+- uid: Genesis.Graphics.Animation3D.Animator.Loop*
+  name: Loop
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Loop_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.Loop
+  fullName: Genesis.Graphics.Animation3D.Animator.Loop
+  nameWithType: Animator.Loop
+- uid: Genesis.Graphics.Animation3D.Animator.Play
+  name: Play
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Play
+  commentId: P:Genesis.Graphics.Animation3D.Animator.Play
+  fullName: Genesis.Graphics.Animation3D.Animator.Play
+  nameWithType: Animator.Play
+- uid: Genesis.Graphics.Animation3D.Animator.Play*
+  name: Play
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Play_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.Play
+  fullName: Genesis.Graphics.Animation3D.Animator.Play
+  nameWithType: Animator.Play
+- uid: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
+  name: UpdateAnimation(float)
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_UpdateAnimation_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
+  name.vb: UpdateAnimation(Single)
+  fullName: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(Single)
+  nameWithType: Animator.UpdateAnimation(float)
+  nameWithType.vb: Animator.UpdateAnimation(Single)
+- uid: Genesis.Graphics.Animation3D.Animator.UpdateAnimation*
+  name: UpdateAnimation
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_UpdateAnimation_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.UpdateAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.UpdateAnimation
+  nameWithType: Animator.UpdateAnimation
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData
+  name: AssimpNodeData
+  href: api/Genesis.Graphics.Animation3D.AssimpNodeData.html
+  commentId: T:Genesis.Graphics.Animation3D.AssimpNodeData
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData
+  nameWithType: AssimpNodeData
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData.children
+  name: children
+  href: api/Genesis.Graphics.Animation3D.AssimpNodeData.html#Genesis_Graphics_Animation3D_AssimpNodeData_children
+  commentId: F:Genesis.Graphics.Animation3D.AssimpNodeData.children
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData.children
+  nameWithType: AssimpNodeData.children
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData.childrenCount
+  name: childrenCount
+  href: api/Genesis.Graphics.Animation3D.AssimpNodeData.html#Genesis_Graphics_Animation3D_AssimpNodeData_childrenCount
+  commentId: F:Genesis.Graphics.Animation3D.AssimpNodeData.childrenCount
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData.childrenCount
+  nameWithType: AssimpNodeData.childrenCount
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData.name
+  name: name
+  href: api/Genesis.Graphics.Animation3D.AssimpNodeData.html#Genesis_Graphics_Animation3D_AssimpNodeData_name
+  commentId: F:Genesis.Graphics.Animation3D.AssimpNodeData.name
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData.name
+  nameWithType: AssimpNodeData.name
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData.transformation
+  name: transformation
+  href: api/Genesis.Graphics.Animation3D.AssimpNodeData.html#Genesis_Graphics_Animation3D_AssimpNodeData_transformation
+  commentId: F:Genesis.Graphics.Animation3D.AssimpNodeData.transformation
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData.transformation
+  nameWithType: AssimpNodeData.transformation
+- uid: Genesis.Graphics.Animation3D.Bone
+  name: Bone
+  href: api/Genesis.Graphics.Animation3D.Bone.html
+  commentId: T:Genesis.Graphics.Animation3D.Bone
+  fullName: Genesis.Graphics.Animation3D.Bone
+  nameWithType: Bone
+- uid: Genesis.Graphics.Animation3D.Bone.#ctor(System.String,System.Int32,Assimp.NodeAnimationChannel)
+  name: Bone(string, int, NodeAnimationChannel)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone__ctor_System_String_System_Int32_Assimp_NodeAnimationChannel_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.#ctor(System.String,System.Int32,Assimp.NodeAnimationChannel)
+  name.vb: New(String, Integer, NodeAnimationChannel)
+  fullName: Genesis.Graphics.Animation3D.Bone.Bone(string, int, Assimp.NodeAnimationChannel)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.New(String, Integer, Assimp.NodeAnimationChannel)
+  nameWithType: Bone.Bone(string, int, NodeAnimationChannel)
+  nameWithType.vb: Bone.New(String, Integer, NodeAnimationChannel)
+- uid: Genesis.Graphics.Animation3D.Bone.#ctor*
+  name: Bone
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone__ctor_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Animation3D.Bone.Bone
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.New
+  nameWithType: Bone.Bone
+  nameWithType.vb: Bone.New
+- uid: Genesis.Graphics.Animation3D.Bone.ID
+  name: ID
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_ID
+  commentId: P:Genesis.Graphics.Animation3D.Bone.ID
+  fullName: Genesis.Graphics.Animation3D.Bone.ID
+  nameWithType: Bone.ID
+- uid: Genesis.Graphics.Animation3D.Bone.ID*
+  name: ID
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_ID_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.ID
+  fullName: Genesis.Graphics.Animation3D.Bone.ID
+  nameWithType: Bone.ID
+- uid: Genesis.Graphics.Animation3D.Bone.LocalTransform
+  name: LocalTransform
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_LocalTransform
+  commentId: P:Genesis.Graphics.Animation3D.Bone.LocalTransform
+  fullName: Genesis.Graphics.Animation3D.Bone.LocalTransform
+  nameWithType: Bone.LocalTransform
+- uid: Genesis.Graphics.Animation3D.Bone.LocalTransform*
+  name: LocalTransform
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_LocalTransform_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.LocalTransform
+  fullName: Genesis.Graphics.Animation3D.Bone.LocalTransform
+  nameWithType: Bone.LocalTransform
+- uid: Genesis.Graphics.Animation3D.Bone.Name
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Name
+  commentId: P:Genesis.Graphics.Animation3D.Bone.Name
+  fullName: Genesis.Graphics.Animation3D.Bone.Name
+  nameWithType: Bone.Name
+- uid: Genesis.Graphics.Animation3D.Bone.Name*
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Name_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.Name
+  fullName: Genesis.Graphics.Animation3D.Bone.Name
+  nameWithType: Bone.Name
+- uid: Genesis.Graphics.Animation3D.Bone.NumPositions
+  name: NumPositions
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumPositions
+  commentId: P:Genesis.Graphics.Animation3D.Bone.NumPositions
+  fullName: Genesis.Graphics.Animation3D.Bone.NumPositions
+  nameWithType: Bone.NumPositions
+- uid: Genesis.Graphics.Animation3D.Bone.NumPositions*
+  name: NumPositions
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumPositions_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.NumPositions
+  fullName: Genesis.Graphics.Animation3D.Bone.NumPositions
+  nameWithType: Bone.NumPositions
+- uid: Genesis.Graphics.Animation3D.Bone.NumRotations
+  name: NumRotations
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumRotations
+  commentId: P:Genesis.Graphics.Animation3D.Bone.NumRotations
+  fullName: Genesis.Graphics.Animation3D.Bone.NumRotations
+  nameWithType: Bone.NumRotations
+- uid: Genesis.Graphics.Animation3D.Bone.NumRotations*
+  name: NumRotations
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumRotations_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.NumRotations
+  fullName: Genesis.Graphics.Animation3D.Bone.NumRotations
+  nameWithType: Bone.NumRotations
+- uid: Genesis.Graphics.Animation3D.Bone.NumScalings
+  name: NumScalings
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumScalings
+  commentId: P:Genesis.Graphics.Animation3D.Bone.NumScalings
+  fullName: Genesis.Graphics.Animation3D.Bone.NumScalings
+  nameWithType: Bone.NumScalings
+- uid: Genesis.Graphics.Animation3D.Bone.NumScalings*
+  name: NumScalings
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_NumScalings_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.NumScalings
+  fullName: Genesis.Graphics.Animation3D.Bone.NumScalings
+  nameWithType: Bone.NumScalings
+- uid: Genesis.Graphics.Animation3D.Bone.Positions
+  name: Positions
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Positions
+  commentId: P:Genesis.Graphics.Animation3D.Bone.Positions
+  fullName: Genesis.Graphics.Animation3D.Bone.Positions
+  nameWithType: Bone.Positions
+- uid: Genesis.Graphics.Animation3D.Bone.Positions*
+  name: Positions
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Positions_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.Positions
+  fullName: Genesis.Graphics.Animation3D.Bone.Positions
+  nameWithType: Bone.Positions
+- uid: Genesis.Graphics.Animation3D.Bone.Rotations
+  name: Rotations
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Rotations
+  commentId: P:Genesis.Graphics.Animation3D.Bone.Rotations
+  fullName: Genesis.Graphics.Animation3D.Bone.Rotations
+  nameWithType: Bone.Rotations
+- uid: Genesis.Graphics.Animation3D.Bone.Rotations*
+  name: Rotations
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Rotations_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.Rotations
+  fullName: Genesis.Graphics.Animation3D.Bone.Rotations
+  nameWithType: Bone.Rotations
+- uid: Genesis.Graphics.Animation3D.Bone.Scales
+  name: Scales
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Scales
+  commentId: P:Genesis.Graphics.Animation3D.Bone.Scales
+  fullName: Genesis.Graphics.Animation3D.Bone.Scales
+  nameWithType: Bone.Scales
+- uid: Genesis.Graphics.Animation3D.Bone.Scales*
+  name: Scales
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Scales_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.Scales
+  fullName: Genesis.Graphics.Animation3D.Bone.Scales
+  nameWithType: Bone.Scales
+- uid: Genesis.Graphics.Animation3D.Bone.Update(System.Single,System.Boolean)
+  name: Update(float, bool)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Update_System_Single_System_Boolean_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.Update(System.Single,System.Boolean)
+  name.vb: Update(Single, Boolean)
+  fullName: Genesis.Graphics.Animation3D.Bone.Update(float, bool)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.Update(Single, Boolean)
+  nameWithType: Bone.Update(float, bool)
+  nameWithType.vb: Bone.Update(Single, Boolean)
+- uid: Genesis.Graphics.Animation3D.Bone.Update*
+  name: Update
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_Update_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.Update
+  fullName: Genesis.Graphics.Animation3D.Bone.Update
+  nameWithType: Bone.Update
 - uid: Genesis.Graphics.Animation3D.CopyTextures(OpenObjectLoader.Model)
   name: CopyTextures(Model)
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_CopyTextures_OpenObjectLoader_Model_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_CopyTextures_OpenObjectLoader_Model_
   commentId: M:Genesis.Graphics.Animation3D.CopyTextures(OpenObjectLoader.Model)
   fullName: Genesis.Graphics.Animation3D.CopyTextures(OpenObjectLoader.Model)
   nameWithType: Animation3D.CopyTextures(Model)
 - uid: Genesis.Graphics.Animation3D.CopyTextures*
   name: CopyTextures
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_CopyTextures_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_CopyTextures_
   commentId: Overload:Genesis.Graphics.Animation3D.CopyTextures
   fullName: Genesis.Graphics.Animation3D.CopyTextures
   nameWithType: Animation3D.CopyTextures
 - uid: Genesis.Graphics.Animation3D.Frames
   name: Frames
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Frames
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Frames
   commentId: P:Genesis.Graphics.Animation3D.Frames
   fullName: Genesis.Graphics.Animation3D.Frames
   nameWithType: Animation3D.Frames
 - uid: Genesis.Graphics.Animation3D.Frames*
   name: Frames
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Frames_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Frames_
   commentId: Overload:Genesis.Graphics.Animation3D.Frames
   fullName: Genesis.Graphics.Animation3D.Frames
   nameWithType: Animation3D.Frames
 - uid: Genesis.Graphics.Animation3D.InitAnimation(Genesis.Graphics.IRenderDevice)
   name: InitAnimation(IRenderDevice)
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_InitAnimation_Genesis_Graphics_IRenderDevice_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_InitAnimation_Genesis_Graphics_IRenderDevice_
   commentId: M:Genesis.Graphics.Animation3D.InitAnimation(Genesis.Graphics.IRenderDevice)
   fullName: Genesis.Graphics.Animation3D.InitAnimation(Genesis.Graphics.IRenderDevice)
   nameWithType: Animation3D.InitAnimation(IRenderDevice)
 - uid: Genesis.Graphics.Animation3D.InitAnimation*
   name: InitAnimation
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_InitAnimation_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_InitAnimation_
   commentId: Overload:Genesis.Graphics.Animation3D.InitAnimation
   fullName: Genesis.Graphics.Animation3D.InitAnimation
   nameWithType: Animation3D.InitAnimation
+- uid: Genesis.Graphics.Animation3D.KeyPosition
+  name: KeyPosition
+  href: api/Genesis.Graphics.Animation3D.KeyPosition.html
+  commentId: T:Genesis.Graphics.Animation3D.KeyPosition
+  fullName: Genesis.Graphics.Animation3D.KeyPosition
+  nameWithType: KeyPosition
+- uid: Genesis.Graphics.Animation3D.KeyPosition.position
+  name: position
+  href: api/Genesis.Graphics.Animation3D.KeyPosition.html#Genesis_Graphics_Animation3D_KeyPosition_position
+  commentId: F:Genesis.Graphics.Animation3D.KeyPosition.position
+  fullName: Genesis.Graphics.Animation3D.KeyPosition.position
+  nameWithType: KeyPosition.position
+- uid: Genesis.Graphics.Animation3D.KeyPosition.timeStamp
+  name: timeStamp
+  href: api/Genesis.Graphics.Animation3D.KeyPosition.html#Genesis_Graphics_Animation3D_KeyPosition_timeStamp
+  commentId: F:Genesis.Graphics.Animation3D.KeyPosition.timeStamp
+  fullName: Genesis.Graphics.Animation3D.KeyPosition.timeStamp
+  nameWithType: KeyPosition.timeStamp
+- uid: Genesis.Graphics.Animation3D.KeyRotation
+  name: KeyRotation
+  href: api/Genesis.Graphics.Animation3D.KeyRotation.html
+  commentId: T:Genesis.Graphics.Animation3D.KeyRotation
+  fullName: Genesis.Graphics.Animation3D.KeyRotation
+  nameWithType: KeyRotation
+- uid: Genesis.Graphics.Animation3D.KeyRotation.orientation
+  name: orientation
+  href: api/Genesis.Graphics.Animation3D.KeyRotation.html#Genesis_Graphics_Animation3D_KeyRotation_orientation
+  commentId: F:Genesis.Graphics.Animation3D.KeyRotation.orientation
+  fullName: Genesis.Graphics.Animation3D.KeyRotation.orientation
+  nameWithType: KeyRotation.orientation
+- uid: Genesis.Graphics.Animation3D.KeyRotation.timeStamp
+  name: timeStamp
+  href: api/Genesis.Graphics.Animation3D.KeyRotation.html#Genesis_Graphics_Animation3D_KeyRotation_timeStamp
+  commentId: F:Genesis.Graphics.Animation3D.KeyRotation.timeStamp
+  fullName: Genesis.Graphics.Animation3D.KeyRotation.timeStamp
+  nameWithType: KeyRotation.timeStamp
+- uid: Genesis.Graphics.Animation3D.KeyScale
+  name: KeyScale
+  href: api/Genesis.Graphics.Animation3D.KeyScale.html
+  commentId: T:Genesis.Graphics.Animation3D.KeyScale
+  fullName: Genesis.Graphics.Animation3D.KeyScale
+  nameWithType: KeyScale
+- uid: Genesis.Graphics.Animation3D.KeyScale.scale
+  name: scale
+  href: api/Genesis.Graphics.Animation3D.KeyScale.html#Genesis_Graphics_Animation3D_KeyScale_scale
+  commentId: F:Genesis.Graphics.Animation3D.KeyScale.scale
+  fullName: Genesis.Graphics.Animation3D.KeyScale.scale
+  nameWithType: KeyScale.scale
+- uid: Genesis.Graphics.Animation3D.KeyScale.timeStamp
+  name: timeStamp
+  href: api/Genesis.Graphics.Animation3D.KeyScale.html#Genesis_Graphics_Animation3D_KeyScale_timeStamp
+  commentId: F:Genesis.Graphics.Animation3D.KeyScale.timeStamp
+  fullName: Genesis.Graphics.Animation3D.KeyScale.timeStamp
+  nameWithType: KeyScale.timeStamp
 - uid: Genesis.Graphics.Animation3D.LoadFramesFromDirectory(System.String)
   name: LoadFramesFromDirectory(string)
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_LoadFramesFromDirectory_System_String_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_LoadFramesFromDirectory_System_String_
   commentId: M:Genesis.Graphics.Animation3D.LoadFramesFromDirectory(System.String)
   name.vb: LoadFramesFromDirectory(String)
   fullName: Genesis.Graphics.Animation3D.LoadFramesFromDirectory(string)
@@ -6189,22 +7341,160 @@ references:
   nameWithType.vb: Animation3D.LoadFramesFromDirectory(String)
 - uid: Genesis.Graphics.Animation3D.LoadFramesFromDirectory*
   name: LoadFramesFromDirectory
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_LoadFramesFromDirectory_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_LoadFramesFromDirectory_
   commentId: Overload:Genesis.Graphics.Animation3D.LoadFramesFromDirectory
   fullName: Genesis.Graphics.Animation3D.LoadFramesFromDirectory
   nameWithType: Animation3D.LoadFramesFromDirectory
+- uid: Genesis.Graphics.Animation3D.ModelMesh
+  name: ModelMesh
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html
+  commentId: T:Genesis.Graphics.Animation3D.ModelMesh
+  fullName: Genesis.Graphics.Animation3D.ModelMesh
+  nameWithType: ModelMesh
+- uid: Genesis.Graphics.Animation3D.ModelMesh.#ctor
+  name: ModelMesh()
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh__ctor
+  commentId: M:Genesis.Graphics.Animation3D.ModelMesh.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.ModelMesh()
+  fullName.vb: Genesis.Graphics.Animation3D.ModelMesh.New()
+  nameWithType: ModelMesh.ModelMesh()
+  nameWithType.vb: ModelMesh.New()
+- uid: Genesis.Graphics.Animation3D.ModelMesh.#ctor*
+  name: ModelMesh
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh__ctor_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.ModelMesh
+  fullName.vb: Genesis.Graphics.Animation3D.ModelMesh.New
+  nameWithType: ModelMesh.ModelMesh
+  nameWithType.vb: ModelMesh.New
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Indices
+  name: Indices
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Indices
+  commentId: P:Genesis.Graphics.Animation3D.ModelMesh.Indices
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Indices
+  nameWithType: ModelMesh.Indices
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Indices*
+  name: Indices
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Indices_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.Indices
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Indices
+  nameWithType: ModelMesh.Indices
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Material
+  name: Material
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Material
+  commentId: P:Genesis.Graphics.Animation3D.ModelMesh.Material
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Material
+  nameWithType: ModelMesh.Material
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Material*
+  name: Material
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Material_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.Material
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Material
+  nameWithType: ModelMesh.Material
+- uid: Genesis.Graphics.Animation3D.ModelMesh.MaxBoneInfluence
+  name: MaxBoneInfluence
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_MaxBoneInfluence
+  commentId: F:Genesis.Graphics.Animation3D.ModelMesh.MaxBoneInfluence
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.MaxBoneInfluence
+  nameWithType: ModelMesh.MaxBoneInfluence
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Name
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Name
+  commentId: P:Genesis.Graphics.Animation3D.ModelMesh.Name
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Name
+  nameWithType: ModelMesh.Name
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Name*
+  name: Name
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Name_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.Name
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Name
+  nameWithType: ModelMesh.Name
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Propertys
+  name: Propertys
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Propertys
+  commentId: P:Genesis.Graphics.Animation3D.ModelMesh.Propertys
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Propertys
+  nameWithType: ModelMesh.Propertys
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Propertys*
+  name: Propertys
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Propertys_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.Propertys
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Propertys
+  nameWithType: ModelMesh.Propertys
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Vertices
+  name: Vertices
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Vertices
+  commentId: P:Genesis.Graphics.Animation3D.ModelMesh.Vertices
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Vertices
+  nameWithType: ModelMesh.Vertices
+- uid: Genesis.Graphics.Animation3D.ModelMesh.Vertices*
+  name: Vertices
+  href: api/Genesis.Graphics.Animation3D.ModelMesh.html#Genesis_Graphics_Animation3D_ModelMesh_Vertices_
+  commentId: Overload:Genesis.Graphics.Animation3D.ModelMesh.Vertices
+  fullName: Genesis.Graphics.Animation3D.ModelMesh.Vertices
+  nameWithType: ModelMesh.Vertices
 - uid: Genesis.Graphics.Animation3D.Name
   name: Name
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Name
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Name
   commentId: P:Genesis.Graphics.Animation3D.Name
   fullName: Genesis.Graphics.Animation3D.Name
   nameWithType: Animation3D.Name
 - uid: Genesis.Graphics.Animation3D.Name*
   name: Name
-  href: api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Name_
+  href: obj/api/Genesis.Graphics.Animation3D.html#Genesis_Graphics_Animation3D_Name_
   commentId: Overload:Genesis.Graphics.Animation3D.Name
   fullName: Genesis.Graphics.Animation3D.Name
   nameWithType: Animation3D.Name
+- uid: Genesis.Graphics.Animation3D.boneinfo
+  name: boneinfo
+  href: api/Genesis.Graphics.Animation3D.boneinfo.html
+  commentId: T:Genesis.Graphics.Animation3D.boneinfo
+  fullName: Genesis.Graphics.Animation3D.boneinfo
+  nameWithType: boneinfo
+- uid: Genesis.Graphics.Animation3D.boneinfo.id
+  name: id
+  href: api/Genesis.Graphics.Animation3D.boneinfo.html#Genesis_Graphics_Animation3D_boneinfo_id
+  commentId: F:Genesis.Graphics.Animation3D.boneinfo.id
+  fullName: Genesis.Graphics.Animation3D.boneinfo.id
+  nameWithType: boneinfo.id
+- uid: Genesis.Graphics.Animation3D.boneinfo.offset
+  name: offset
+  href: api/Genesis.Graphics.Animation3D.boneinfo.html#Genesis_Graphics_Animation3D_boneinfo_offset
+  commentId: F:Genesis.Graphics.Animation3D.boneinfo.offset
+  fullName: Genesis.Graphics.Animation3D.boneinfo.offset
+  nameWithType: boneinfo.offset
+- uid: Genesis.Graphics.Animation3D.vertex
+  name: vertex
+  href: api/Genesis.Graphics.Animation3D.vertex.html
+  commentId: T:Genesis.Graphics.Animation3D.vertex
+  fullName: Genesis.Graphics.Animation3D.vertex
+  nameWithType: vertex
+- uid: Genesis.Graphics.Animation3D.vertex.BoneIDs
+  name: BoneIDs
+  href: api/Genesis.Graphics.Animation3D.vertex.html#Genesis_Graphics_Animation3D_vertex_BoneIDs
+  commentId: F:Genesis.Graphics.Animation3D.vertex.BoneIDs
+  fullName: Genesis.Graphics.Animation3D.vertex.BoneIDs
+  nameWithType: vertex.BoneIDs
+- uid: Genesis.Graphics.Animation3D.vertex.BoneWeights
+  name: BoneWeights
+  href: api/Genesis.Graphics.Animation3D.vertex.html#Genesis_Graphics_Animation3D_vertex_BoneWeights
+  commentId: F:Genesis.Graphics.Animation3D.vertex.BoneWeights
+  fullName: Genesis.Graphics.Animation3D.vertex.BoneWeights
+  nameWithType: vertex.BoneWeights
+- uid: Genesis.Graphics.Animation3D.vertex.position
+  name: position
+  href: api/Genesis.Graphics.Animation3D.vertex.html#Genesis_Graphics_Animation3D_vertex_position
+  commentId: F:Genesis.Graphics.Animation3D.vertex.position
+  fullName: Genesis.Graphics.Animation3D.vertex.position
+  nameWithType: vertex.position
+- uid: Genesis.Graphics.Animation3D.vertex.textcoords
+  name: textcoords
+  href: api/Genesis.Graphics.Animation3D.vertex.html#Genesis_Graphics_Animation3D_vertex_textcoords
+  commentId: F:Genesis.Graphics.Animation3D.vertex.textcoords
+  fullName: Genesis.Graphics.Animation3D.vertex.textcoords
+  nameWithType: vertex.textcoords
 - uid: Genesis.Graphics.Camera
   name: Camera
   href: api/Genesis.Graphics.Camera.html
@@ -7522,6 +8812,18 @@ references:
   commentId: Overload:Genesis.Graphics.Material.DiffuseTexture
   fullName: Genesis.Graphics.Material.DiffuseTexture
   nameWithType: Material.DiffuseTexture
+- uid: Genesis.Graphics.Material.Name
+  name: Name
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Name
+  commentId: P:Genesis.Graphics.Material.Name
+  fullName: Genesis.Graphics.Material.Name
+  nameWithType: Material.Name
+- uid: Genesis.Graphics.Material.Name*
+  name: Name
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Name_
+  commentId: Overload:Genesis.Graphics.Material.Name
+  fullName: Genesis.Graphics.Material.Name
+  nameWithType: Material.Name
 - uid: Genesis.Graphics.Material.NormalTexture
   name: NormalTexture
   href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_NormalTexture
@@ -7636,15 +8938,27 @@ references:
   commentId: Overload:Genesis.Graphics.Mesh.Indicies
   fullName: Genesis.Graphics.Mesh.Indicies
   nameWithType: Mesh.Indicies
+- uid: Genesis.Graphics.Mesh.Material
+  name: Material
+  href: api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_Material
+  commentId: P:Genesis.Graphics.Mesh.Material
+  fullName: Genesis.Graphics.Mesh.Material
+  nameWithType: Mesh.Material
+- uid: Genesis.Graphics.Mesh.Material*
+  name: Material
+  href: api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_Material_
+  commentId: Overload:Genesis.Graphics.Mesh.Material
+  fullName: Genesis.Graphics.Mesh.Material
+  nameWithType: Mesh.Material
 - uid: Genesis.Graphics.Mesh.MaterialIndex
   name: MaterialIndex
-  href: api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_MaterialIndex
+  href: obj/api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_MaterialIndex
   commentId: P:Genesis.Graphics.Mesh.MaterialIndex
   fullName: Genesis.Graphics.Mesh.MaterialIndex
   nameWithType: Mesh.MaterialIndex
 - uid: Genesis.Graphics.Mesh.MaterialIndex*
   name: MaterialIndex
-  href: api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_MaterialIndex_
+  href: obj/api/Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_MaterialIndex_
   commentId: Overload:Genesis.Graphics.Mesh.MaterialIndex
   fullName: Genesis.Graphics.Mesh.MaterialIndex
   nameWithType: Mesh.MaterialIndex
@@ -8941,11 +10255,11 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh
   nameWithType: GLRenderer.DrawMesh
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   name: DrawParticleEmitter(ParticleEmitter)
-  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElments_ParticleEmitter_
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElments.ParticleEmitter)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElements_ParticleEmitter_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   nameWithType: GLRenderer.DrawParticleEmitter(ParticleEmitter)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
   name: DrawParticleEmitter
@@ -9682,6 +10996,30 @@ references:
   commentId: N:Genesis.Graphics.Shaders.OpenGL
   fullName: Genesis.Graphics.Shaders.OpenGL
   nameWithType: Genesis.Graphics.Shaders.OpenGL
+- uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+  name: AnimatedModelShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+  nameWithType: AnimatedModelShader
+- uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.#ctor
+  name: AnimatedModelShader()
+  href: api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html#Genesis_Graphics_Shaders_OpenGL_AnimatedModelShader__ctor
+  commentId: M:Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.AnimatedModelShader()
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.New()
+  nameWithType: AnimatedModelShader.AnimatedModelShader()
+  nameWithType.vb: AnimatedModelShader.New()
+- uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.#ctor*
+  name: AnimatedModelShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html#Genesis_Graphics_Shaders_OpenGL_AnimatedModelShader__ctor_
+  commentId: Overload:Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.AnimatedModelShader
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.New
+  nameWithType: AnimatedModelShader.AnimatedModelShader
+  nameWithType.vb: AnimatedModelShader.New
 - uid: Genesis.Graphics.Shaders.OpenGL.BasicShader
   name: BasicShader
   href: api/Genesis.Graphics.Shaders.OpenGL.BasicShader.html

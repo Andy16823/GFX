@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Genesis.Core.GameElments
+namespace Genesis.Core.GameElements
 {
     /// <summary>
     /// Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.

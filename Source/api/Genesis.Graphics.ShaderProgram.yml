@@ -27,6 +27,7 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
   - Genesis.Graphics.Shaders.OpenGL.BasicShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
