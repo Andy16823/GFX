@@ -39,6 +39,7 @@ namespace Genesis.Graphics
     /// </summary>
     public class Material
     {
+        public String Name { get; set; }
         /// <summary>
         /// The diffuse color of the material.
         /// </summary>

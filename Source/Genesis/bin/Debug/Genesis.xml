@@ -1190,351 +1190,6 @@
             </summary>
             <param name="element">The game element from which to copy properties.</param>
         </member>
-        <member name="T:Genesis.Core.GameElments.ParticleBuffers">
-            <summary>
-            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
-            </summary>
-        </member>
-        <member name="T:Genesis.Core.GameElments.ParticleDeffinition">
-            <summary>
-            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Location">
-            <summary>
-            Gets or sets the location of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Rotation">
-            <summary>
-            Gets or sets the rotation of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Size">
-            <summary>
-            Gets or sets the size of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Delay">
-            <summary>
-            Gets or sets the delay before the particle becomes active.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate">
-            <summary>
-            Gets or sets the last update time of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Speed">
-            <summary>
-            Gets or sets the speed of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed">
-            <summary>
-            Gets or sets the rotation speed of the particle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor">
-            <summary>
-            Gets or sets the color of the particle.
-            </summary>
-        </member>
-        <member name="T:Genesis.Core.GameElments.ParticleEmitter">
-            <summary>
-            Represents a particle emitter as a game element.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.Texture">
-            <summary>
-            Gets or sets the texture used for the particles.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection">
-            <summary>
-            Gets or sets the primary direction of particle movement.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2">
-            <summary>
-            Gets or sets the secondary direction of particle movement.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance">
-            <summary>
-            Gets or sets the maximum distance a particle can travel before being reset.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleMask">
-            <summary>
-            Gets or sets the mask for the particles
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions">
-            <summary>
-            Gets or sets the list of particle definitions managed by the emitter.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
-            <summary>
-            Initializes a new instance of the ParticleEmitter class with specified parameters.
-            </summary>
-            <param name="name">The name of the particle emitter.</param>
-            <param name="location">The initial location of the particle emitter.</param>
-            <param name="rotation">The initial rotation of the particle emitter.</param>
-            <param name="size">The initial size of the particle emitter.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
-            <summary>
-            Generates particles with default settings, using the provided particle size.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Generates particles with default settings, using the provided particle size and specified colors.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-            <param name="colorA">The minimum color of particles.</param>
-            <param name="colorB">The maximum color of particles.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
-            </summary>
-            <param name="numPartikel">The number of particles to create.</param>
-            <param name="particleSize">The size of each particle.</param>
-            <param name="minRotation">The minimum rotation of particles.</param>
-            <param name="maxRotation">The maximum rotation of particles.</param>
-            <param name="minDelay">The minimum delay before particles become active.</param>
-            <param name="maxDelay">The maximum delay before particles become active.</param>
-            <param name="minSpeed">The minimum speed of particles.</param>
-            <param name="maxSpeed">The maximum speed of particles.</param>
-            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
-            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
-            <param name="colorA">The minimum color of particles.</param>
-            <param name="colorB">The maximum color of particles.</param>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)">
-            <summary>
-            Processes the movement and rotation of a particle based on its current state.
-            </summary>
-            <param name="particle">The particle definition to be processed.</param>
-            <param name="now">The current time in milliseconds.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers">
-            <summary>
-            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
-            </summary>
-            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
-            <summary>
-            Called when the particle emitter is being destroyed in the game.
-            </summary>
-            <param name="game">The game instance.</param>
-        </member>
-        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Renders the particle emitter using the specified render device.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The render device used for rendering.</param>
-        </member>
-        <member name="T:Genesis.Core.IGameBehavior">
-            <summary>
-            Represents the base class for game behaviors in the Genesis framework.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.IGameBehavior.Parent">
-            <summary>
-            Gets or sets the parent game element to which this behavior is attached.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the game behavior is initialized.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the game behavior is updated.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the game behavior is rendered.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the game behavior is being destroyed.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="T:Genesis.Core.Input">
-            <summary>
-            Provides utility methods for handling user input in the Genesis framework.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Windows.Forms.Keys)">
-            <summary>
-            Gets the state of the specified key.
-            </summary>
-            <param name="vKey">The virtual key code to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Int32)">
-            <summary>
-            Gets the state of the specified key.
-            </summary>
-            <param name="vKey">The virtual key code to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">
-            <summary>
-            Checks if the specified key is currently pressed.
-            </summary>
-            <param name="vKey">The virtual key to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetMousePos">
-            <summary>
-            Gets the current mouse position.
-            </summary>
-            <returns>A Vec3 representing the current mouse position.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)">
-            <summary>
-            Gets the mouse position relative to the specified control.
-            </summary>
-            <param name="control">The control relative to which the mouse position is obtained.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(System.IntPtr)">
-            <summary>
-            Gets the mouse position relative to the control associated with the specified handle.
-            </summary>
-            <param name="handle">The handle of the control.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(Genesis.Core.Game)">
-            <summary>
-            Gets the mouse position relative to the control associated with the specified game instance.
-            </summary>
-            <param name="game">The game instance.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="T:Genesis.Core.Layer">
-            <summary>
-            Represents a layer containing game elements in the Genesis framework.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.Layer.Name">
-            <summary>
-            Gets or sets the name of the layer.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.Layer.Elements">
-            <summary>
-            Gets or sets the list of game elements within the layer.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.Layer.UpdateElements">
-            <summary>
-            Gets or sets a value indicating whether the elements within the layer should be updated.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Layer.#ctor">
-            <summary>
-            Creates a new instance of the Layer class.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Layer.#ctor(System.String)">
-            <summary>
-            Creates a new instance of the Layer class with the specified name.
-            </summary>
-            <param name="name">The name of the layer.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.#ctor(System.String,System.Boolean)">
-            <summary>
-            Creates a new instance of the Layer class with the specified name and updateElements flag.
-            </summary>
-            <param name="name">The name of the layer.</param>
-            <param name="updateElements">Flag indicating whether the elements within the layer should be updated.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Initializes all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Renders all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Updates all game elements within the layer if the UpdateElements flag is true.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnDestroy(Genesis.Core.Game)">
-            <summary>
-            Destroys all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-        </member>
-        <member name="T:Genesis.Core.Light">
-            <summary>
-            Represents a light source in the Genesis framework.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3)">
-            <summary>
-            Creates a new instance of the Light class with the specified name and location.
-            </summary>
-            <param name="name">The name of the light.</param>
-            <param name="location">The 3D location of the light.</param>
-        </member>
-        <member name="P:Genesis.Core.Light.LightColor">
-            <summary>
-            Gets or sets the color of the light.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.Light.Intensity">
-            <summary>
-            Gets or sets the intensity of the light.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)">
-            <summary>
-            Returns the direction vector from the light to the camera.
-            </summary>
-            <param name="camera">The camera to which the direction is calculated.</param>
-            <returns>The normalized vector representing the light direction.</returns>
-        </member>
-        <member name="M:Genesis.Core.Light.GetLightColor">
-            <summary>
-            Returns the light color in RGB values normalized between 0 and 1.
-            </summary>
-            <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
-        </member>
         <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
             <summary>
             Represents the definition of the shape for a sprite, including its location and size.
@@ -2089,6 +1744,351 @@
             </summary>
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="T:Genesis.Core.GameElments.ParticleBuffers">
+            <summary>
+            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElments.ParticleDeffinition">
+            <summary>
+            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Location">
+            <summary>
+            Gets or sets the location of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Rotation">
+            <summary>
+            Gets or sets the rotation of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Size">
+            <summary>
+            Gets or sets the size of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Delay">
+            <summary>
+            Gets or sets the delay before the particle becomes active.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.LastUpdate">
+            <summary>
+            Gets or sets the last update time of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.Speed">
+            <summary>
+            Gets or sets the speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.RotationSpeed">
+            <summary>
+            Gets or sets the rotation speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleDeffinition.ParticleColor">
+            <summary>
+            Gets or sets the color of the particle.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElments.ParticleEmitter">
+            <summary>
+            Represents a particle emitter as a game element.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.Texture">
+            <summary>
+            Gets or sets the texture used for the particles.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection">
+            <summary>
+            Gets or sets the primary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDirection2">
+            <summary>
+            Gets or sets the secondary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDistance">
+            <summary>
+            Gets or sets the maximum distance a particle can travel before being reset.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleMask">
+            <summary>
+            Gets or sets the mask for the particles
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElments.ParticleEmitter.ParticleDeffinitions">
+            <summary>
+            Gets or sets the list of particle definitions managed by the emitter.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the ParticleEmitter class with specified parameters.
+            </summary>
+            <param name="name">The name of the particle emitter.</param>
+            <param name="location">The initial location of the particle emitter.</param>
+            <param name="rotation">The initial rotation of the particle emitter.</param>
+            <param name="size">The initial size of the particle emitter.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
+            <summary>
+            Generates particles with default settings, using the provided particle size.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with default settings, using the provided particle size and specified colors.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="minRotation">The minimum rotation of particles.</param>
+            <param name="maxRotation">The maximum rotation of particles.</param>
+            <param name="minDelay">The minimum delay before particles become active.</param>
+            <param name="maxDelay">The maximum delay before particles become active.</param>
+            <param name="minSpeed">The minimum speed of particles.</param>
+            <param name="maxSpeed">The maximum speed of particles.</param>
+            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
+            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElments.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.ProcessParticle(Genesis.Core.GameElments.ParticleDeffinition,System.Int64)">
+            <summary>
+            Processes the movement and rotation of a particle based on its current state.
+            </summary>
+            <param name="particle">The particle definition to be processed.</param>
+            <param name="now">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.GetParticleBuffers">
+            <summary>
+            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
+            </summary>
+            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the particle emitter is being destroyed in the game.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElments.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the particle emitter using the specified render device.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="T:Genesis.Core.IGameBehavior">
+            <summary>
+            Represents the base class for game behaviors in the Genesis framework.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.IGameBehavior.Parent">
+            <summary>
+            Gets or sets the parent game element to which this behavior is attached.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is updated.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="T:Genesis.Core.Input">
+            <summary>
+            Provides utility methods for handling user input in the Genesis framework.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Windows.Forms.Keys)">
+            <summary>
+            Gets the state of the specified key.
+            </summary>
+            <param name="vKey">The virtual key code to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Int32)">
+            <summary>
+            Gets the state of the specified key.
+            </summary>
+            <param name="vKey">The virtual key code to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">
+            <summary>
+            Checks if the specified key is currently pressed.
+            </summary>
+            <param name="vKey">The virtual key to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetMousePos">
+            <summary>
+            Gets the current mouse position.
+            </summary>
+            <returns>A Vec3 representing the current mouse position.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)">
+            <summary>
+            Gets the mouse position relative to the specified control.
+            </summary>
+            <param name="control">The control relative to which the mouse position is obtained.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(System.IntPtr)">
+            <summary>
+            Gets the mouse position relative to the control associated with the specified handle.
+            </summary>
+            <param name="handle">The handle of the control.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(Genesis.Core.Game)">
+            <summary>
+            Gets the mouse position relative to the control associated with the specified game instance.
+            </summary>
+            <param name="game">The game instance.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="T:Genesis.Core.Layer">
+            <summary>
+            Represents a layer containing game elements in the Genesis framework.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.Name">
+            <summary>
+            Gets or sets the name of the layer.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.Elements">
+            <summary>
+            Gets or sets the list of game elements within the layer.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.UpdateElements">
+            <summary>
+            Gets or sets a value indicating whether the elements within the layer should be updated.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor">
+            <summary>
+            Creates a new instance of the Layer class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Layer class with the specified name.
+            </summary>
+            <param name="name">The name of the layer.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates a new instance of the Layer class with the specified name and updateElements flag.
+            </summary>
+            <param name="name">The name of the layer.</param>
+            <param name="updateElements">Flag indicating whether the elements within the layer should be updated.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Updates all game elements within the layer if the UpdateElements flag is true.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Destroys all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="T:Genesis.Core.Light">
+            <summary>
+            Represents a light source in the Genesis framework.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3)">
+            <summary>
+            Creates a new instance of the Light class with the specified name and location.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The 3D location of the light.</param>
+        </member>
+        <member name="P:Genesis.Core.Light.LightColor">
+            <summary>
+            Gets or sets the color of the light.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light.Intensity">
+            <summary>
+            Gets or sets the intensity of the light.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)">
+            <summary>
+            Returns the direction vector from the light to the camera.
+            </summary>
+            <param name="camera">The camera to which the direction is calculated.</param>
+            <returns>The normalized vector representing the light direction.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightColor">
+            <summary>
+            Returns the light color in RGB values normalized between 0 and 1.
+            </summary>
+            <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
         </member>
         <member name="T:Genesis.Core.Scene3D">
             <summary>

@@ -23,6 +23,9 @@ using Genesis.UI;
 using Genesis.Graphics.Shapes;
 using Genesis.Core.GameElments;
 using System.Runtime.CompilerServices;
+using Genesis.Graphics.Animation3D;
+using System.Runtime.InteropServices;
+using static System.Windows.Forms.AxHost;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -352,6 +355,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.InitParticleEmitter((ParticleEmitter)element);
             }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.InitModel((Core.GameElements.Model)element);
+            }
         }
 
         /// <summary>
@@ -589,6 +596,10 @@ namespace Genesis.Graphics.RenderDevice
             else if(element.GetType() == typeof(ParticleEmitter))
             {
                 this.DrawParticleEmitter((ParticleEmitter)element);
+            }
+            else if (element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.DrawModel((Genesis.Core.GameElements.Model)element);
             }
         }
 
@@ -1918,6 +1929,98 @@ namespace Genesis.Graphics.RenderDevice
             gl.DrawArrays(OpenGL.Triangles, 0, emitter.ParticleDeffinitions.Count * 6);
         }
 
+        private void InitModel(Core.GameElements.Model model)
+        {
+            var preBuildShader = this.GetShaderProgram(model.Shader);
+            if (preBuildShader != null)
+            {
+                model.Propertys.Add("ShaderID", preBuildShader.ProgramID);
+                Console.WriteLine("Shader found");
+            }
+            else
+            {
+                this.LoadShader(model.Shader.GetType().Name, model.Shader);
+                this.ShaderPrograms.Add(model.Shader.GetType().Name, model.Shader);
+                model.Propertys.Add("ShaderID", model.Shader.ProgramID);
+                Console.WriteLine("Shader was not found, added it into the shaders list");
+            }
+
+            foreach (var mesh in model.Meshes)
+            {
+                mesh.Material.Propeterys["DiffuseTextureID"] = InitElement3DTexture(mesh.Material.DiffuseTexture);
+
+                var verices = mesh.Vertices.ToArray();
+                var vertexSize = Marshal.SizeOf<vertex>();
+                var indices = mesh.Indices.ToArray();
+
+                int VAO = gl.GenVertexArrays(1);
+                int VBO = gl.GenBuffer(1);
+                int EBO = gl.GenBuffer(1);
+
+                gl.BindVertexArray(VAO);
+
+                gl.BindBuffer(OpenGL.ArrayBuffer, VBO);
+                gl.BufferData(OpenGL.ArrayBuffer, verices.Length * vertexSize, verices, OpenGL.StaticDraw);
+
+                gl.BindBuffer(OpenGL.ElementArrayBuffer, EBO);
+                gl.BufferData(OpenGL.ElementArrayBuffer, indices.Length * sizeof(int), indices, OpenGL.StaticDraw);
+
+                gl.EnableVertexAttribArray(0);
+                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, vertexSize, IntPtr.Zero);
+
+                gl.EnableVertexAttribArray(2);
+                gl.VertexAttribPointer(2, 2, OpenGL.Float, false, vertexSize, Marshal.OffsetOf<vertex>("textcoords"));
+
+                gl.EnableVertexAttribArray(3);
+                gl.VertexAtrribIPointer(3, 4, OpenGL.Int, vertexSize, Marshal.OffsetOf<vertex>("BoneIDs"));
+
+                // weights
+                gl.EnableVertexAttribArray(4);
+                gl.VertexAttribPointer(4, 4, OpenGL.Float, false, vertexSize, Marshal.OffsetOf<vertex>("BoneWeights"));
+
+                gl.BindVertexArray(0);
+
+                mesh.Propertys.Add("vao", VAO);
+                mesh.Propertys.Add("vbo", VBO);
+                mesh.Propertys.Add("ebo", EBO);
+
+            }
+        }
+
+        private void DrawModel(Core.GameElements.Model model)
+        {
+            mat4 mt_mat = mat4.Translate(model.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(model.Rotation.X) * mat4.RotateY(model.Rotation.Y) * mat4.RotateZ(model.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(model.Size.ToGlmVec3());
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            foreach (var mesh in model.Meshes)
+            {
+                int vao = (int)mesh.Propertys["vao"];
+                int ebo = (int)mesh.Propertys["ebo"];
+
+                var program = (int)model.Propertys["ShaderID"];
+                gl.UseProgram(program);
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "projection"), 1, false, p_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "view"), 1, false, v_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "model"), 1, false, m_mat.ToArray());
+
+                for (int i = 0; i < 100; i++)
+                {
+                    gl.UniformMatrix4fv(gl.GetUniformLocation(program, "finalBonesMatrices[" + i.ToString() + "]"), 1, false, model.Animator.FinalBoneMatrices[i].ToArray());
+                }
+
+                gl.ActiveTexture(OpenGL.Texture0);
+                gl.BindTexture(OpenGL.Texture2D, (int) mesh.Material.Propeterys["DiffuseTextureID"]);
+                gl.Uniform1I(gl.GetUniformLocation(program, "textureSampler"), 0);
+
+                gl.BindVertexArray(vao);
+                gl.BindBuffer(OpenGL.ElementArrayBuffer, ebo);
+                gl.DrawElements(OpenGL.Triangles, mesh.Indices.Count, OpenGL.UnsignedInt);
+                gl.BindVertexArray(0);
+            }
+        }
+
         /// <summary>
         /// Disposes the render device
         /// </summary>
@@ -1982,6 +2085,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.DisposeParticleEmitter((ParticleEmitter)element);
             }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.DisposeModel((Genesis.Core.GameElements.Model) element);
+            }
         }
 
         /// <summary>
@@ -2000,6 +2107,23 @@ namespace Genesis.Graphics.RenderDevice
                 gl.DeleteBuffers(1, (int)emitter.Propertys["rbo"]);
                 gl.DeleteBuffers(1, (int)emitter.Propertys["sbo"]);
                 Console.WriteLine(emitter.Name + " Disposed!");
+            }
+        }
+
+        private void DisposeModel(Genesis.Core.GameElements.Model model)
+        {
+            foreach (var mesh in model.Meshes)
+            {
+                int vao = (int)mesh.Propertys["vao"];
+                int ebo = (int)mesh.Propertys["ebo"];
+                int vbo = (int)mesh.Propertys["vbo"];
+
+                Console.WriteLine("Disposing Mesh " + mesh.Name);
+                gl.DeleteBuffers(1, vbo);
+                gl.DeleteBuffers(1, ebo);
+                gl.DeleteVertexArrays(1, vao);
+                gl.DeleteTextures(1, (int)mesh.Material.Propeterys["DiffuseTextureID"]);
+                Console.WriteLine("Disposed Mesh with error " + gl.GetError());
             }
         }
     }

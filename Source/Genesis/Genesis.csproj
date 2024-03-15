@@ -83,7 +83,8 @@
     <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameElement.cs" />
-    <Compile Include="Core\GameElments\ParticleEmitter.cs" />
+    <Compile Include="Core\GameElements\Model.cs" />
+    <Compile Include="Core\GameElements\ParticleEmitter.cs" />
     <Compile Include="Core\GenesisWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,22 +92,25 @@
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\Layer.cs" />
     <Compile Include="Core\Light.cs" />
-    <Compile Include="Core\GameElments\BufferedSprite.cs" />
-    <Compile Include="Core\GameElments\CameraElement.cs" />
-    <Compile Include="Core\GameElments\Terrain3D.cs" />
+    <Compile Include="Core\GameElements\BufferedSprite.cs" />
+    <Compile Include="Core\GameElements\CameraElement.cs" />
+    <Compile Include="Core\GameElements\Terrain3D.cs" />
     <Compile Include="Core\Scene3D.cs" />
-    <Compile Include="Core\GameElments\Element3D.cs" />
-    <Compile Include="Core\GameElments\Empty.cs" />
-    <Compile Include="Core\GameElments\Qube.cs" />
-    <Compile Include="Core\GameElments\RectElement.cs" />
-    <Compile Include="Core\GameElments\Sprite.cs" />
-    <Compile Include="Core\GameElments\Terrain2D.cs" />
+    <Compile Include="Core\GameElements\Element3D.cs" />
+    <Compile Include="Core\GameElements\Empty.cs" />
+    <Compile Include="Core\GameElements\Qube.cs" />
+    <Compile Include="Core\GameElements\RectElement.cs" />
+    <Compile Include="Core\GameElements\Sprite.cs" />
+    <Compile Include="Core\GameElements\Terrain2D.cs" />
     <Compile Include="Core\Scene.cs" />
-    <Compile Include="Core\GameElments\Skybox.cs" />
+    <Compile Include="Core\GameElements\Skybox.cs" />
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\Utils.cs" />
     <Compile Include="Graphics\Animation.cs" />
-    <Compile Include="Graphics\Animation3D.cs" />
+    <Compile Include="Graphics\Animation3D\Animation.cs" />
+    <Compile Include="Graphics\Animation3D\Animator.cs" />
+    <Compile Include="Graphics\Animation3D\Bone.cs" />
+    <Compile Include="Graphics\Animation3D\ModelMesh.cs" />
     <Compile Include="Graphics\Face.cs" />
     <Compile Include="Graphics\Font.cs" />
     <Compile Include="Graphics\Framebuffer.cs" />
@@ -114,6 +118,7 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />

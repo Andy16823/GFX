@@ -751,5 +751,41 @@ namespace Genesis.Core
 
             return new Vec3(rayDirection);
         }
+
+        public static mat4 ConvertToGlmMat4(Assimp.Matrix4x4 matrix)
+        {
+            var mat = new mat4();
+            mat.m00 = matrix.A1; // col 0, row 0
+            mat.m01 = matrix.B1; // col 0, row 1
+            mat.m02 = matrix.C1; // col 0, row 2
+            mat.m03 = matrix.D1; // col 0, row 3
+
+            mat.m10 = matrix.A2; // col 1, row 0
+            mat.m11 = matrix.B2; // col 1, row 1
+            mat.m12 = matrix.C2; // col 1, row 2
+            mat.m13 = matrix.D2; // col 1, row 3
+
+            mat.m20 = matrix.A3; // col 2, row 0
+            mat.m21 = matrix.B3; // col 2, row 1
+            mat.m22 = matrix.C3; // col 2, row 2
+            mat.m23 = matrix.D3; // col 2, row 3
+
+            mat.m30 = matrix.A4; // col 3, row 0
+            mat.m31 = matrix.B4; // col 3, row 1
+            mat.m32 = matrix.C4; // col 3, row 2
+            mat.m33 = matrix.D4; // col 3, row 3
+
+            return mat;
+        }
+
+        public static vec3 GetGLMVec(Assimp.Vector3D vec)
+        {
+            return new vec3(vec.X, vec.Y, vec.Z);
+        }
+
+        public static quat GetGLMQuat(Assimp.Quaternion pOrientation)
+        {
+            return new quat(pOrientation.X, pOrientation.Y, pOrientation.Z, pOrientation.W);
+        }
     }
 }
