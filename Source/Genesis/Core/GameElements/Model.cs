@@ -124,7 +124,15 @@ namespace Genesis.Core.GameElements
 
             this.ExtractMaterials(model);
             this.ExtractMeshes(model);
-            this.ExtractAnimations(model);
+
+            if(model.HasAnimations)
+            {
+                this.ExtractAnimations(model);
+            }
+            else
+            {
+                this.Animator = new Animator();
+            }
         }
 
         /// <summary>

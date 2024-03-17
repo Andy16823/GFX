@@ -752,6 +752,11 @@ namespace Genesis.Core
             return new Vec3(rayDirection);
         }
 
+        /// <summary>
+        /// Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+        /// </summary>
+        /// <param name="matrix">The Matrix4x4 to convert.</param>
+        /// <returns>A mat4 representing the converted matrix.</returns>
         public static mat4 ConvertToGlmMat4(Assimp.Matrix4x4 matrix)
         {
             var mat = new mat4();
@@ -778,16 +783,32 @@ namespace Genesis.Core
             return mat;
         }
 
+        /// <summary>
+        /// Converts an Assimp Vector3D to a vec3 from GLM library.
+        /// </summary>
+        /// <param name="vec">The Vector3D to convert.</param>
+        /// <returns>A vec3 representing the converted vector.</returns>
         public static vec3 GetGLMVec(Assimp.Vector3D vec)
         {
             return new vec3(vec.X, vec.Y, vec.Z);
         }
 
+        /// <summary>
+        /// Converts an Assimp Quaternion to a quat from GLM library.
+        /// </summary>
+        /// <param name="pOrientation">The Quaternion to convert.</param>
+        /// <returns>A quat representing the converted quaternion.</returns>
         public static quat GetGLMQuat(Assimp.Quaternion pOrientation)
         {
             return new quat(pOrientation.X, pOrientation.Y, pOrientation.Z, pOrientation.W);
         }
 
+        /// <summary>
+        /// Gets the relative position of a child GameElement with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="child">The child GameElement.</param>
+        /// <returns>A Vec3 representing the relative position of the child.</returns>
         public static Vec3 GetRelativePosition(GameElement parent, GameElement child)
         {
             Vec3 currentPosition = child.Location;
@@ -800,6 +821,12 @@ namespace Genesis.Core
             return currentPosition;
         }
 
+        /// <summary>
+        /// Gets the relative position of a camera with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="camera">The camera.</param>
+        /// <returns>A Vec3 representing the relative position of the camera.</returns>
         public static Vec3 GetRelativePosition(GameElement parent, Camera camera)
         {
             Vec3 currentPosition = camera.Location;
@@ -812,6 +839,12 @@ namespace Genesis.Core
             return currentPosition;
         }
 
+        /// <summary>
+        /// Gets the relative position of a location with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="location">The location.</param>
+        /// <returns>A Vec3 representing the relative position of the location.</returns>
         public static Vec3 GetRelativePosition(GameElement parent, Vec3 location)
         {
             Vec3 currentPosition = location;
@@ -822,6 +855,23 @@ namespace Genesis.Core
 
 
             return currentPosition;
+        }
+
+        /// <summary>
+        /// Calculates the forward direction vector based on Euler angles.
+        /// </summary>
+        /// <param name="eulerAngles">The Euler angles representing rotation.</param>
+        /// <returns>The forward direction vector.</returns>
+        public static Vec3 GetForwardDirection(Vec3 eulerAngles)
+        {
+            quat quatX = quat.FromAxisAngle(eulerAngles.X, new vec3(1, 0, 0));
+            quat quatY = quat.FromAxisAngle(eulerAngles.Y, new vec3(0, 1, 0));
+            quat quatZ = quat.FromAxisAngle(eulerAngles.Z, new vec3(0, 0, 1));
+            
+            var rotMat = mat4.RotateX(eulerAngles.X) * mat4.RotateY(eulerAngles.Y) * mat4.RotateZ(eulerAngles.Z);
+            quat rotation = quatX * quatY * quatZ;
+            vec3 forward = rotation * new vec3(0, 0, 1);
+            return new Vec3(forward);
         }
     }
 }

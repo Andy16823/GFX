@@ -33,6 +33,14 @@ namespace Genesis.Core
         public static extern short GetAsyncKeyState(System.Int32 vKey);
 
         /// <summary>
+        /// Sets the cursor position on the screen.
+        /// </summary>
+        /// <param name="X">The new x-coordinate of the cursor position.</param>
+        /// <param name="Y">The new y-coordinate of the cursor position.</param>
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool SetCursorPos(int X, int Y);
+
+        /// <summary>
         /// Checks if the specified key is currently pressed.
         /// </summary>
         /// <param name="vKey">The virtual key to check.</param>
@@ -101,5 +109,45 @@ namespace Genesis.Core
             return Input.GetRefMousePos(game.RenderDevice.GetHandle());
         }
 
+        /// <summary>
+        /// Sets the cursor position on the screen.
+        /// </summary>
+        /// <param name="pos">The new position of the cursor.</param>
+        /// <param name="handle">The handle of the control where the cursor position will be set.</param>
+        public static void SetCursorPos(Vec3 pos, IntPtr handle)
+        {
+            SetCursorPos((int) pos.X, (int) pos.Y, handle);
+        }
+
+
+        /// <summary>
+        /// Sets the cursor position on the screen.
+        /// </summary>
+        /// <param name="X">The new x-coordinate of the cursor position.</param>
+        /// <param name="Y">The new y-coordinate of the cursor position.</param>
+        /// /// <param name="handle">The handle of the control where the cursor position will be set.</param>
+        public static void SetCursorPos(int x, int y, IntPtr handle)
+        {
+            Point point = new Point();
+            Control c = Control.FromHandle(handle);
+            c.Invoke(new Action(() => { point = c.Location; }));
+            SetCursorPos(point.X + x, point.Y + y);
+        }
+
+        /// <summary>
+        /// Shows the cursor.
+        /// </summary>
+        public static void ShowCursor()
+        {
+            Cursor.Show();
+        }
+
+        /// <summary>
+        /// Hides the cursor.
+        /// </summary>
+        public static void HideCursor()
+        {
+            Cursor.Hide();
+        }
     }
 }

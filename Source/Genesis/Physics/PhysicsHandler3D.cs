@@ -62,7 +62,7 @@ namespace Genesis.Physics
         {
             if (this.ProcessPhysics && this.PhysicsWorld != null)
             {
-                this.PhysicsWorld.StepSimulation((float)(game.DeltaTime / 1000));
+                this.PhysicsWorld.StepSimulation(1.0f / 60.0f, 10); // (float)(game.DeltaTime / 1000)
 
                 int numManifolds = PhysicsWorld.Dispatcher.NumManifolds;
                 for (int i = 0; i < numManifolds; i++)

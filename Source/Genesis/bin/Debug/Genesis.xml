@@ -2076,6 +2076,13 @@
             <param name="vKey">The virtual key code to check.</param>
             <returns>True if the key is down; otherwise, false.</returns>
         </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="X">The new x-coordinate of the cursor position.</param>
+            <param name="Y">The new y-coordinate of the cursor position.</param>
+        </member>
         <member name="M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">
             <summary>
             Checks if the specified key is currently pressed.
@@ -2109,6 +2116,31 @@
             </summary>
             <param name="game">The game instance.</param>
             <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="pos">The new position of the cursor.</param>
+            <param name="handle">The handle of the control where the cursor position will be set.</param>
+        </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="X">The new x-coordinate of the cursor position.</param>
+            <param name="Y">The new y-coordinate of the cursor position.</param>
+            /// <param name="handle">The handle of the control where the cursor position will be set.</param>
+        </member>
+        <member name="M:Genesis.Core.Input.ShowCursor">
+            <summary>
+            Shows the cursor.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Input.HideCursor">
+            <summary>
+            Hides the cursor.
+            </summary>
         </member>
         <member name="T:Genesis.Core.Layer">
             <summary>
@@ -2860,6 +2892,58 @@
             <param name="x">X-coordinate on the screen.</param>
             <param name="y">Y-coordinate on the screen.</param>
             <returns>Direction of the ray as a Vec3.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)">
+            <summary>
+            Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+            </summary>
+            <param name="matrix">The Matrix4x4 to convert.</param>
+            <returns>A mat4 representing the converted matrix.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)">
+            <summary>
+            Converts an Assimp Vector3D to a vec3 from GLM library.
+            </summary>
+            <param name="vec">The Vector3D to convert.</param>
+            <returns>A vec3 representing the converted vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)">
+            <summary>
+            Converts an Assimp Quaternion to a quat from GLM library.
+            </summary>
+            <param name="pOrientation">The Quaternion to convert.</param>
+            <returns>A quat representing the converted quaternion.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)">
+            <summary>
+            Gets the relative position of a child GameElement with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="child">The child GameElement.</param>
+            <returns>A Vec3 representing the relative position of the child.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)">
+            <summary>
+            Gets the relative position of a camera with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="camera">The camera.</param>
+            <returns>A Vec3 representing the relative position of the camera.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)">
+            <summary>
+            Gets the relative position of a location with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="location">The location.</param>
+            <returns>A Vec3 representing the relative position of the location.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)">
+            <summary>
+            Calculates the forward direction vector based on Euler angles.
+            </summary>
+            <param name="eulerAngles">The Euler angles representing rotation.</param>
+            <returns>The forward direction vector.</returns>
         </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>

@@ -1,4 +1,5 @@
-﻿using GlmSharp;
+﻿using Assimp;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -55,6 +56,17 @@ namespace Genesis.Graphics.Animation3D
         {
             this.CurrentTime = 0;
             this.CurrentAnimation = animation;
+
+            FinalBoneMatrices = new List<mat4>();
+            for (int i = 0; i < 100; i++)
+            {
+                FinalBoneMatrices.Add(mat4.Identity);
+            }
+        }
+
+        public Animator()
+        {
+            this.CurrentTime = 0;
 
             FinalBoneMatrices = new List<mat4>();
             for (int i = 0; i < 100; i++)
