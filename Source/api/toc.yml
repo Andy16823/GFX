@@ -64,12 +64,25 @@ items:
 - uid: Genesis.Core.Behaviors.Physics3D
   name: Genesis.Core.Behaviors.Physics3D
   items:
+  - uid: Genesis.Core.Behaviors.Physics3D.BoxCollider
+    name: BoxCollider
+  - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+    name: CapsuleCollider
   - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
     name: ConvexHullBehavior
   - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
     name: QubeConvexHull
+  - uid: Genesis.Core.Behaviors.Physics3D.SphereCollider
+    name: SphereCollider
   - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
     name: StaticMeshBehavior
+- uid: Genesis.Core.Behaviors._3D
+  name: Genesis.Core.Behaviors._3D
+  items:
+  - uid: Genesis.Core.Behaviors._3D.Stance
+    name: Stance
+  - uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+    name: ThirdpersonCharacterController
 - uid: Genesis.Core.GameElements
   name: Genesis.Core.GameElements
   items:

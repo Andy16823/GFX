@@ -4,8 +4,11 @@ items:
   commentId: N:Genesis.Core.Behaviors.Physics3D
   id: Genesis.Core.Behaviors.Physics3D
   children:
+  - Genesis.Core.Behaviors.Physics3D.BoxCollider
+  - Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider
   - Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   langs:
   - csharp
@@ -17,6 +20,21 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider
+  commentId: T:Genesis.Core.Behaviors.Physics3D.BoxCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.BoxCollider.html
+  name: BoxCollider
+  nameWithType: BoxCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  parent: Genesis.Core.Behaviors.Physics3D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html
+  name: CapsuleCollider
+  nameWithType: CapsuleCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
   commentId: T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull
   isExternal: true
@@ -24,6 +42,13 @@ references:
   name: QubeConvexHull
   nameWithType: QubeConvexHull
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider
+  commentId: T:Genesis.Core.Behaviors.Physics3D.SphereCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html
+  name: SphereCollider
+  nameWithType: SphereCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider
 - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   commentId: T:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   isExternal: true
@@ -38,3 +63,50 @@ references:
   name: ConvexHullBehavior
   nameWithType: ConvexHullBehavior
   fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
+- uid: Genesis.Core.Behaviors.Physics3D
+  commentId: N:Genesis.Core.Behaviors.Physics3D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors.Physics3D
+  nameWithType: Genesis.Core.Behaviors.Physics3D
+  fullName: Genesis.Core.Behaviors.Physics3D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics3D
+    name: Physics3D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics3D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics3D
+    name: Physics3D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics3D.html

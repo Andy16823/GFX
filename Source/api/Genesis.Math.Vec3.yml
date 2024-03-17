@@ -27,6 +27,8 @@ items:
   - Genesis.Math.Vec3.Dot(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
+  - Genesis.Math.Vec3.Half
+  - Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Normalize
   - Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
@@ -1191,6 +1193,56 @@ items:
       description: A new Vec3 with each component rounded to the nearest integer.
     content.vb: Public Shared Function Round(vec As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Round*
+- uid: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  id: Half(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Half(Vec3)
+  nameWithType: Vec3.Half(Vec3)
+  fullName: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with each component halved.
+  example: []
+  syntax:
+    content: public static Vec3 Half(Vec3 vec)
+    parameters:
+    - id: vec
+      type: Genesis.Math.Vec3
+      description: The <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance to halve.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with each component halved.
+    content.vb: Public Shared Function Half(vec As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Half*
+- uid: Genesis.Math.Vec3.Half
+  commentId: M:Genesis.Math.Vec3.Half
+  id: Half
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Half()
+  nameWithType: Vec3.Half()
+  fullName: Genesis.Math.Vec3.Half()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with the components of this instance halved.
+  example: []
+  syntax:
+    content: public Vec3 Half()
+    return:
+      type: Genesis.Math.Vec3
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with the components halved.
+    content.vb: Public Function Half() As Vec3
+  overload: Genesis.Math.Vec3.Half*
 - uid: Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
   commentId: M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
   id: Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
@@ -1946,6 +1998,13 @@ references:
   name: Round
   nameWithType: Vec3.Round
   fullName: Genesis.Math.Vec3.Round
+- uid: Genesis.Math.Vec3.Half*
+  commentId: Overload:Genesis.Math.Vec3.Half
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Half_Genesis_Math_Vec3_
+  name: Half
+  nameWithType: Vec3.Half
+  fullName: Genesis.Math.Vec3.Half
 - uid: Genesis.Math.Vec3.Random*
   commentId: Overload:Genesis.Math.Vec3.Random
   isExternal: true

@@ -1525,6 +1525,267 @@ references:
   commentId: N:Genesis.Core.Behaviors.Physics3D
   fullName: Genesis.Core.Behaviors.Physics3D
   nameWithType: Genesis.Core.Behaviors.Physics3D
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider
+  name: BoxCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html
+  commentId: T:Genesis.Core.Behaviors.Physics3D.BoxCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider
+  nameWithType: BoxCollider
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.#ctor
+  name: BoxCollider()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.BoxCollider()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxCollider.New()
+  nameWithType: BoxCollider.BoxCollider()
+  nameWithType.vb: BoxCollider.New()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.#ctor*
+  name: BoxCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.BoxCollider
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxCollider.New
+  nameWithType: BoxCollider.BoxCollider
+  nameWithType.vb: BoxCollider.New
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)
+  name: CreateCollider(PhysicHandler, Vec3, float)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_CreateCollider_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_System_Single_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)
+  name.vb: CreateCollider(PhysicHandler, Vec3, Single)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, float)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Single)
+  nameWithType: BoxCollider.CreateCollider(PhysicHandler, Vec3, float)
+  nameWithType.vb: BoxCollider.CreateCollider(PhysicHandler, Vec3, Single)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider*
+  name: CreateCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_CreateCollider_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider
+  nameWithType: BoxCollider.CreateCollider
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject()
+  nameWithType: BoxCollider.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject
+  nameWithType: BoxCollider.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject(Of T)()
+  nameWithType: BoxCollider.GetPhysicsObject<T>()
+  nameWithType.vb: BoxCollider.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxCollider.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy
+  nameWithType: BoxCollider.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxCollider.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit
+  nameWithType: BoxCollider.OnInit
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxCollider.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender
+  nameWithType: BoxCollider.OnRender
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxCollider.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate
+  nameWithType: BoxCollider.OnUpdate
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_RigidBody
+  commentId: P:Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
+  nameWithType: BoxCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody*
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html#Genesis_Core_Behaviors_Physics3D_BoxCollider_RigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
+  nameWithType: BoxCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  name: CapsuleCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html
+  commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  nameWithType: CapsuleCollider
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.#ctor
+  name: CapsuleCollider()
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CapsuleCollider()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.New()
+  nameWithType: CapsuleCollider.CapsuleCollider()
+  nameWithType.vb: CapsuleCollider.New()
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.#ctor*
+  name: CapsuleCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CapsuleCollider
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.New
+  nameWithType: CapsuleCollider.CapsuleCollider
+  nameWithType.vb: CapsuleCollider.New
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)
+  name: CreateRigidBody(PhysicHandler, Vec3, float, float, float)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_CreateRigidBody_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)
+  name.vb: CreateRigidBody(PhysicHandler, Vec3, Single, Single, Single)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, float, float, float)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Single, Single, Single)
+  nameWithType: CapsuleCollider.CreateRigidBody(PhysicHandler, Vec3, float, float, float)
+  nameWithType.vb: CapsuleCollider.CreateRigidBody(PhysicHandler, Vec3, Single, Single, Single)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  name: CreateRigidBody(PhysicHandler, float, float, float)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_CreateRigidBody_Genesis_Physics_PhysicHandler_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  name.vb: CreateRigidBody(PhysicHandler, Single, Single, Single)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, float, float, float)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Single, Single, Single)
+  nameWithType: CapsuleCollider.CreateRigidBody(PhysicHandler, float, float, float)
+  nameWithType.vb: CapsuleCollider.CreateRigidBody(PhysicHandler, Single, Single, Single)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody*
+  name: CreateRigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_CreateRigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateRigidBody
+  nameWithType: CapsuleCollider.CreateRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject()
+  nameWithType: CapsuleCollider.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject
+  nameWithType: CapsuleCollider.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.GetPhysicsObject(Of T)()
+  nameWithType: CapsuleCollider.GetPhysicsObject<T>()
+  nameWithType.vb: CapsuleCollider.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset
+  name: Offset
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_Offset
+  commentId: P:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset
+  nameWithType: CapsuleCollider.Offset
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset*
+  name: Offset
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_Offset_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.Offset
+  nameWithType: CapsuleCollider.Offset
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CapsuleCollider.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnDestroy
+  nameWithType: CapsuleCollider.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CapsuleCollider.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnInit
+  nameWithType: CapsuleCollider.OnInit
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CapsuleCollider.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnRender
+  nameWithType: CapsuleCollider.OnRender
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: CapsuleCollider.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.OnUpdate
+  nameWithType: CapsuleCollider.OnUpdate
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_RigidBody
+  commentId: P:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody
+  nameWithType: CapsuleCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody*
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html#Genesis_Core_Behaviors_Physics3D_CapsuleCollider_RigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.RigidBody
+  nameWithType: CapsuleCollider.RigidBody
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   name: ConvexHullBehavior
   href: api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html
@@ -1813,6 +2074,147 @@ references:
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody
   nameWithType: QubeConvexHull.UpdateRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider
+  name: SphereCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html
+  commentId: T:Genesis.Core.Behaviors.Physics3D.SphereCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider
+  nameWithType: SphereCollider
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
+  name: SphereCollider()
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New()
+  nameWithType: SphereCollider.SphereCollider()
+  nameWithType.vb: SphereCollider.New()
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor*
+  name: SphereCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New
+  nameWithType: SphereCollider.SphereCollider
+  nameWithType.vb: SphereCollider.New
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
+  name: CreateRigidBody(PhysicHandler, Vec3, float, float)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateRigidBody_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
+  name.vb: CreateRigidBody(PhysicHandler, Vec3, Single, Single)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, float, float)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Single, Single)
+  nameWithType: SphereCollider.CreateRigidBody(PhysicHandler, Vec3, float, float)
+  nameWithType.vb: SphereCollider.CreateRigidBody(PhysicHandler, Vec3, Single, Single)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
+  name: CreateRigidBody(PhysicHandler, float, float)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateRigidBody_Genesis_Physics_PhysicHandler_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
+  name.vb: CreateRigidBody(PhysicHandler, Single, Single)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, float, float)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Single, Single)
+  nameWithType: SphereCollider.CreateRigidBody(PhysicHandler, float, float)
+  nameWithType.vb: SphereCollider.CreateRigidBody(PhysicHandler, Single, Single)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody*
+  name: CreateRigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateRigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody
+  nameWithType: SphereCollider.CreateRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject()
+  nameWithType: SphereCollider.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
+  nameWithType: SphereCollider.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject(Of T)()
+  nameWithType: SphereCollider.GetPhysicsObject<T>()
+  nameWithType.vb: SphereCollider.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
+  name: Offset
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_Offset
+  commentId: P:Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
+  nameWithType: SphereCollider.Offset
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset*
+  name: Offset
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_Offset_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
+  nameWithType: SphereCollider.Offset
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: SphereCollider.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy
+  nameWithType: SphereCollider.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: SphereCollider.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit
+  nameWithType: SphereCollider.OnInit
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: SphereCollider.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender
+  nameWithType: SphereCollider.OnRender
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: SphereCollider.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate
+  nameWithType: SphereCollider.OnUpdate
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_RigidBody
+  commentId: P:Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  nameWithType: SphereCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody*
+  name: RigidBody
+  href: api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_RigidBody_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  nameWithType: SphereCollider.RigidBody
 - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   name: StaticMeshBehavior
   href: api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html
@@ -2101,6 +2503,276 @@ references:
   commentId: Overload:Genesis.Core.Behaviors.SpriteMovementController.OnUpdate
   fullName: Genesis.Core.Behaviors.SpriteMovementController.OnUpdate
   nameWithType: SpriteMovementController.OnUpdate
+- uid: Genesis.Core.Behaviors._3D
+  name: Genesis.Core.Behaviors._3D
+  href: api/Genesis.Core.Behaviors._3D.html
+  commentId: N:Genesis.Core.Behaviors._3D
+  fullName: Genesis.Core.Behaviors._3D
+  nameWithType: Genesis.Core.Behaviors._3D
+- uid: Genesis.Core.Behaviors._3D.Stance
+  name: Stance
+  href: api/Genesis.Core.Behaviors._3D.Stance.html
+  commentId: T:Genesis.Core.Behaviors._3D.Stance
+  fullName: Genesis.Core.Behaviors._3D.Stance
+  nameWithType: Stance
+- uid: Genesis.Core.Behaviors._3D.Stance.Idle
+  name: Idle
+  href: api/Genesis.Core.Behaviors._3D.Stance.html#Genesis_Core_Behaviors__3D_Stance_Idle
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Idle
+  fullName: Genesis.Core.Behaviors._3D.Stance.Idle
+  nameWithType: Stance.Idle
+- uid: Genesis.Core.Behaviors._3D.Stance.Run
+  name: Run
+  href: api/Genesis.Core.Behaviors._3D.Stance.html#Genesis_Core_Behaviors__3D_Stance_Run
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Run
+  fullName: Genesis.Core.Behaviors._3D.Stance.Run
+  nameWithType: Stance.Run
+- uid: Genesis.Core.Behaviors._3D.Stance.Walk
+  name: Walk
+  href: api/Genesis.Core.Behaviors._3D.Stance.html#Genesis_Core_Behaviors__3D_Stance_Walk
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Walk
+  fullName: Genesis.Core.Behaviors._3D.Stance.Walk
+  nameWithType: Stance.Walk
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  name: ThirdpersonCharacterController
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html
+  commentId: T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  nameWithType: ThirdpersonCharacterController
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor
+  name: ThirdpersonCharacterController()
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController__ctor
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.ThirdpersonCharacterController()
+  fullName.vb: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.New()
+  nameWithType: ThirdpersonCharacterController.ThirdpersonCharacterController()
+  nameWithType.vb: ThirdpersonCharacterController.New()
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor*
+  name: ThirdpersonCharacterController
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController__ctor_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.ThirdpersonCharacterController
+  fullName.vb: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.New
+  nameWithType: ThirdpersonCharacterController.ThirdpersonCharacterController
+  nameWithType.vb: ThirdpersonCharacterController.New
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  name: Collider
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Collider
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  nameWithType: ThirdpersonCharacterController.Collider
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider*
+  name: Collider
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Collider_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  nameWithType: ThirdpersonCharacterController.Collider
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)
+  name: CreatePhysics(PhysicHandler, Vec3, float, float, float)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_CreatePhysics_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)
+  name.vb: CreatePhysics(PhysicHandler, Vec3, Single, Single, Single)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, float, float, float)
+  fullName.vb: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Single, Single, Single)
+  nameWithType: ThirdpersonCharacterController.CreatePhysics(PhysicHandler, Vec3, float, float, float)
+  nameWithType.vb: ThirdpersonCharacterController.CreatePhysics(PhysicHandler, Vec3, Single, Single, Single)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  name: CreatePhysics(PhysicHandler, float, float, float)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_CreatePhysics_Genesis_Physics_PhysicHandler_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  name.vb: CreatePhysics(PhysicHandler, Single, Single, Single)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler, float, float, float)
+  fullName.vb: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler, Single, Single, Single)
+  nameWithType: ThirdpersonCharacterController.CreatePhysics(PhysicHandler, float, float, float)
+  nameWithType.vb: ThirdpersonCharacterController.CreatePhysics(PhysicHandler, Single, Single, Single)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics*
+  name: CreatePhysics
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_CreatePhysics_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics
+  nameWithType: ThirdpersonCharacterController.CreatePhysics
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
+  name: IdleAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IdleAnimation
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
+  nameWithType: ThirdpersonCharacterController.IdleAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation*
+  name: IdleAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IdleAnimation_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
+  nameWithType: ThirdpersonCharacterController.IdleAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse
+  name: InvertMouse
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_InvertMouse
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse
+  nameWithType: ThirdpersonCharacterController.InvertMouse
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse*
+  name: InvertMouse
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_InvertMouse_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse
+  nameWithType: ThirdpersonCharacterController.InvertMouse
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn
+  name: IsAirborn()
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsAirborn
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn()
+  nameWithType: ThirdpersonCharacterController.IsAirborn()
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn*
+  name: IsAirborn
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsAirborn_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn
+  nameWithType: ThirdpersonCharacterController.IsAirborn
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding
+  name: IsColliding
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsColliding
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding
+  nameWithType: ThirdpersonCharacterController.IsColliding
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding*
+  name: IsColliding
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsColliding_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding
+  nameWithType: ThirdpersonCharacterController.IsColliding
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning
+  name: IsRunning
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsRunning
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning
+  nameWithType: ThirdpersonCharacterController.IsRunning
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning*
+  name: IsRunning
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_IsRunning_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning
+  nameWithType: ThirdpersonCharacterController.IsRunning
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed
+  name: JumpSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_JumpSpeed
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed
+  nameWithType: ThirdpersonCharacterController.JumpSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed*
+  name: JumpSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_JumpSpeed_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed
+  nameWithType: ThirdpersonCharacterController.JumpSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: ThirdpersonCharacterController.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy
+  nameWithType: ThirdpersonCharacterController.OnDestroy
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: ThirdpersonCharacterController.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit
+  nameWithType: ThirdpersonCharacterController.OnInit
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: ThirdpersonCharacterController.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender
+  nameWithType: ThirdpersonCharacterController.OnRender
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: ThirdpersonCharacterController.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate
+  nameWithType: ThirdpersonCharacterController.OnUpdate
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
+  name: RunAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_RunAnimation
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
+  nameWithType: ThirdpersonCharacterController.RunAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation*
+  name: RunAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_RunAnimation_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
+  nameWithType: ThirdpersonCharacterController.RunAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  name: RunSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_RunSpeed
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  nameWithType: ThirdpersonCharacterController.RunSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed*
+  name: RunSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_RunSpeed_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  nameWithType: ThirdpersonCharacterController.RunSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
+  name: Stance
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Stance
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
+  nameWithType: ThirdpersonCharacterController.Stance
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance*
+  name: Stance
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Stance_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
+  nameWithType: ThirdpersonCharacterController.Stance
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
+  name: WalkAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_WalkAnimation
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
+  nameWithType: ThirdpersonCharacterController.WalkAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation*
+  name: WalkAnimation
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_WalkAnimation_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
+  nameWithType: ThirdpersonCharacterController.WalkAnimation
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
+  name: WalkSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_WalkSpeed
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
+  nameWithType: ThirdpersonCharacterController.WalkSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed*
+  name: WalkSpeed
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_WalkSpeed_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
+  nameWithType: ThirdpersonCharacterController.WalkSpeed
 - uid: Genesis.Core.Game
   name: Game
   href: api/Genesis.Core.Game.html
@@ -5158,6 +5830,18 @@ references:
   commentId: Overload:Genesis.Core.Input.GetRefMousePos
   fullName: Genesis.Core.Input.GetRefMousePos
   nameWithType: Input.GetRefMousePos
+- uid: Genesis.Core.Input.HideCursor
+  name: HideCursor()
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_HideCursor
+  commentId: M:Genesis.Core.Input.HideCursor
+  fullName: Genesis.Core.Input.HideCursor()
+  nameWithType: Input.HideCursor()
+- uid: Genesis.Core.Input.HideCursor*
+  name: HideCursor
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_HideCursor_
+  commentId: Overload:Genesis.Core.Input.HideCursor
+  fullName: Genesis.Core.Input.HideCursor
+  nameWithType: Input.HideCursor
 - uid: Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)
   name: IsKeyDown(Keys)
   href: api/Genesis.Core.Input.html#Genesis_Core_Input_IsKeyDown_System_Windows_Forms_Keys_
@@ -5170,6 +5854,48 @@ references:
   commentId: Overload:Genesis.Core.Input.IsKeyDown
   fullName: Genesis.Core.Input.IsKeyDown
   nameWithType: Input.IsKeyDown
+- uid: Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  name: SetCursorPos(Vec3, IntPtr)
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_SetCursorPos_Genesis_Math_Vec3_System_IntPtr_
+  commentId: M:Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  fullName: Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3, System.IntPtr)
+  nameWithType: Input.SetCursorPos(Vec3, IntPtr)
+- uid: Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
+  name: SetCursorPos(int, int)
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_SetCursorPos_System_Int32_System_Int32_
+  commentId: M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
+  name.vb: SetCursorPos(Integer, Integer)
+  fullName: Genesis.Core.Input.SetCursorPos(int, int)
+  fullName.vb: Genesis.Core.Input.SetCursorPos(Integer, Integer)
+  nameWithType: Input.SetCursorPos(int, int)
+  nameWithType.vb: Input.SetCursorPos(Integer, Integer)
+- uid: Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  name: SetCursorPos(int, int, IntPtr)
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_SetCursorPos_System_Int32_System_Int32_System_IntPtr_
+  commentId: M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  name.vb: SetCursorPos(Integer, Integer, IntPtr)
+  fullName: Genesis.Core.Input.SetCursorPos(int, int, System.IntPtr)
+  fullName.vb: Genesis.Core.Input.SetCursorPos(Integer, Integer, System.IntPtr)
+  nameWithType: Input.SetCursorPos(int, int, IntPtr)
+  nameWithType.vb: Input.SetCursorPos(Integer, Integer, IntPtr)
+- uid: Genesis.Core.Input.SetCursorPos*
+  name: SetCursorPos
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_SetCursorPos_
+  commentId: Overload:Genesis.Core.Input.SetCursorPos
+  fullName: Genesis.Core.Input.SetCursorPos
+  nameWithType: Input.SetCursorPos
+- uid: Genesis.Core.Input.ShowCursor
+  name: ShowCursor()
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_ShowCursor
+  commentId: M:Genesis.Core.Input.ShowCursor
+  fullName: Genesis.Core.Input.ShowCursor()
+  nameWithType: Input.ShowCursor()
+- uid: Genesis.Core.Input.ShowCursor*
+  name: ShowCursor
+  href: api/Genesis.Core.Input.html#Genesis_Core_Input_ShowCursor_
+  commentId: Overload:Genesis.Core.Input.ShowCursor
+  fullName: Genesis.Core.Input.ShowCursor
+  nameWithType: Input.ShowCursor
 - uid: Genesis.Core.Layer
   name: Layer
   href: api/Genesis.Core.Layer.html
@@ -6394,6 +7120,18 @@ references:
   commentId: Overload:Genesis.Core.Utils.GetElementWorldScale
   fullName: Genesis.Core.Utils.GetElementWorldScale
   nameWithType: Utils.GetElementWorldScale
+- uid: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  name: GetForwardDirection(Vec3)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetForwardDirection_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  fullName: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  nameWithType: Utils.GetForwardDirection(Vec3)
+- uid: Genesis.Core.Utils.GetForwardDirection*
+  name: GetForwardDirection
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetForwardDirection_
+  commentId: Overload:Genesis.Core.Utils.GetForwardDirection
+  fullName: Genesis.Core.Utils.GetForwardDirection
+  nameWithType: Utils.GetForwardDirection
 - uid: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
   name: GetGLMQuat(Quaternion)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMQuat_Assimp_Quaternion_
@@ -6538,6 +7276,30 @@ references:
   commentId: Overload:Genesis.Core.Utils.GetRandomColor
   fullName: Genesis.Core.Utils.GetRandomColor
   nameWithType: Utils.GetRandomColor
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  name: GetRelativePosition(GameElement, GameElement)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_Genesis_Core_GameElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Core.GameElement)
+  nameWithType: Utils.GetRelativePosition(GameElement, GameElement)
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  name: GetRelativePosition(GameElement, Camera)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_Genesis_Core_GameElement_Genesis_Graphics_Camera_
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Graphics.Camera)
+  nameWithType: Utils.GetRelativePosition(GameElement, Camera)
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  name: GetRelativePosition(GameElement, Vec3)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_Genesis_Core_GameElement_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Math.Vec3)
+  nameWithType: Utils.GetRelativePosition(GameElement, Vec3)
+- uid: Genesis.Core.Utils.GetRelativePosition*
+  name: GetRelativePosition
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_
+  commentId: Overload:Genesis.Core.Utils.GetRelativePosition
+  fullName: Genesis.Core.Utils.GetRelativePosition
+  nameWithType: Utils.GetRelativePosition
 - uid: Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   name: GetStringBounds(Vec3, string, float, float)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_GetStringBounds_Genesis_Math_Vec3_System_String_System_Single_System_Single_
@@ -6922,6 +7684,15 @@ references:
   commentId: T:Genesis.Graphics.Animation3D.Animator
   fullName: Genesis.Graphics.Animation3D.Animator
   nameWithType: Animator
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor
+  name: Animator()
+  href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator__ctor
+  commentId: M:Genesis.Graphics.Animation3D.Animator.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator()
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New()
+  nameWithType: Animator.Animator()
+  nameWithType.vb: Animator.New()
 - uid: Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
   name: Animator(Animation)
   href: api/Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator__ctor_Genesis_Graphics_Animation3D_Animation_
@@ -12724,6 +13495,24 @@ references:
   commentId: Overload:Genesis.Math.Vec3.Forward
   fullName: Genesis.Math.Vec3.Forward
   nameWithType: Vec3.Forward
+- uid: Genesis.Math.Vec3.Half
+  name: Half()
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Half
+  commentId: M:Genesis.Math.Vec3.Half
+  fullName: Genesis.Math.Vec3.Half()
+  nameWithType: Vec3.Half()
+- uid: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  name: Half(Vec3)
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Half_Genesis_Math_Vec3_
+  commentId: M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  fullName: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  nameWithType: Vec3.Half(Vec3)
+- uid: Genesis.Math.Vec3.Half*
+  name: Half
+  href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Half_
+  commentId: Overload:Genesis.Math.Vec3.Half
+  fullName: Genesis.Math.Vec3.Half
+  nameWithType: Vec3.Half
 - uid: Genesis.Math.Vec3.Normalize
   name: Normalize()
   href: api/Genesis.Math.Vec3.html#Genesis_Math_Vec3_Normalize

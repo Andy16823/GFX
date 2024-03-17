@@ -25,6 +25,7 @@ items:
   - Genesis.Core.Utils.GetElementWorldLocation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldRotation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldScale(Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
   - Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
   - Genesis.Core.Utils.GetModelRotation(Genesis.Core.GameElement)
@@ -38,6 +39,9 @@ items:
   - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
   - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
   - Genesis.Core.Utils.GetRandomColor(System.Int32)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringHeight(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringWidth(System.String,System.Single,System.Single)
@@ -1321,13 +1325,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+  example: []
   syntax:
     content: public static mat4 ConvertToGlmMat4(Matrix4x4 matrix)
     parameters:
     - id: matrix
       type: Assimp.Matrix4x4
+      description: The Matrix4x4 to convert.
     return:
       type: GlmSharp.mat4
+      description: A mat4 representing the converted matrix.
     content.vb: Public Shared Function ConvertToGlmMat4(matrix As Matrix4x4) As mat4
   overload: Genesis.Core.Utils.ConvertToGlmMat4*
 - uid: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
@@ -1344,13 +1352,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Converts an Assimp Vector3D to a vec3 from GLM library.
+  example: []
   syntax:
     content: public static vec3 GetGLMVec(Vector3D vec)
     parameters:
     - id: vec
       type: Assimp.Vector3D
+      description: The Vector3D to convert.
     return:
       type: GlmSharp.vec3
+      description: A vec3 representing the converted vector.
     content.vb: Public Shared Function GetGLMVec(vec As Vector3D) As vec3
   overload: Genesis.Core.Utils.GetGLMVec*
 - uid: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
@@ -1367,15 +1379,136 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Converts an Assimp Quaternion to a quat from GLM library.
+  example: []
   syntax:
     content: public static quat GetGLMQuat(Quaternion pOrientation)
     parameters:
     - id: pOrientation
       type: Assimp.Quaternion
+      description: The Quaternion to convert.
     return:
       type: GlmSharp.quat
+      description: A quat representing the converted quaternion.
     content.vb: Public Shared Function GetGLMQuat(pOrientation As Quaternion) As quat
   overload: Genesis.Core.Utils.GetGLMQuat*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, GameElement)
+  nameWithType: Utils.GetRelativePosition(GameElement, GameElement)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a child GameElement with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, GameElement child)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: child
+      type: Genesis.Core.GameElement
+      description: The child GameElement.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the child.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, child As GameElement) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, Camera)
+  nameWithType: Utils.GetRelativePosition(GameElement, Camera)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Graphics.Camera)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a camera with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, Camera camera)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the camera.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, camera As Camera) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, Vec3)
+  nameWithType: Utils.GetRelativePosition(GameElement, Vec3)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a location with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, Vec3 location)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the location.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, location As Vec3) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  id: GetForwardDirection(Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetForwardDirection(Vec3)
+  nameWithType: Utils.GetForwardDirection(Vec3)
+  fullName: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Calculates the forward direction vector based on Euler angles.
+  example: []
+  syntax:
+    content: public static Vec3 GetForwardDirection(Vec3 eulerAngles)
+    parameters:
+    - id: eulerAngles
+      type: Genesis.Math.Vec3
+      description: The Euler angles representing rotation.
+    return:
+      type: Genesis.Math.Vec3
+      description: The forward direction vector.
+    content.vb: Public Shared Function GetForwardDirection(eulerAngles As Vec3) As Vec3
+  overload: Genesis.Core.Utils.GetForwardDirection*
 - uid: Genesis.Core.Utils.#ctor
   commentId: M:Genesis.Core.Utils.#ctor
   id: '#ctor'
@@ -2194,6 +2327,20 @@ references:
   name: Quaternion
   nameWithType: Quaternion
   fullName: Assimp.Quaternion
+- uid: Genesis.Core.Utils.GetRelativePosition*
+  commentId: Overload:Genesis.Core.Utils.GetRelativePosition
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_Genesis_Core_GameElement_Genesis_Core_GameElement_
+  name: GetRelativePosition
+  nameWithType: Utils.GetRelativePosition
+  fullName: Genesis.Core.Utils.GetRelativePosition
+- uid: Genesis.Core.Utils.GetForwardDirection*
+  commentId: Overload:Genesis.Core.Utils.GetForwardDirection
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetForwardDirection_Genesis_Math_Vec3_
+  name: GetForwardDirection
+  nameWithType: Utils.GetForwardDirection
+  fullName: Genesis.Core.Utils.GetForwardDirection
 - uid: Genesis.Core.Utils.#ctor*
   commentId: Overload:Genesis.Core.Utils.#ctor
   isExternal: true

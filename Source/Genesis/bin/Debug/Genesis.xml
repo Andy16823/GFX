@@ -98,6 +98,129 @@
             </summary>
             <returns>The path to the resource directory.</returns>
         </member>
+        <member name="T:Genesis.Core.Behaviors._3D.Stance">
+            <summary>
+            Defines the stance of the character.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController">
+            <summary>
+            Controls the behavior of a third-person character in a game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider">
+            <summary>
+            Gets or sets the collider for the character.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed">
+            <summary>
+            Gets or sets the speed of walking.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed">
+            <summary>
+            Gets or sets the speed of running.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed">
+            <summary>
+            Gets or sets the speed of jumping.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning">
+            <summary>
+            Gets or sets a value indicating whether the character is running.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding">
+            <summary>
+            Gets or sets a value indicating whether the character is colliding.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation">
+            <summary>
+            Gets or sets the name of the walking animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation">
+            <summary>
+            Gets or sets the name of the idle animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation">
+            <summary>
+            Gets or sets the name of the running animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse">
+            <summary>
+            Gets or sets a value indicating whether the mouse movement is inverted.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance">
+            <summary>
+            Gets or sets the stance of the character.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates the physics for the character.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="radius">The radius.</param>
+            <param name="height">The height.</param>
+            <param name="mass">The mass.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates the physics for the character.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="offset">The offset.</param>
+            <param name="radius">The radius.</param>
+            <param name="height">The height.</param>
+            <param name="mass">The mass.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element is destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element should be rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element should be updated.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn">
+            <summary>
+            Determines whether the character is airborne.
+            </summary>
+            <returns><c>true</c> if the character is airborne; otherwise, <c>false</c>.</returns>
+        </member>
         <member name="T:Genesis.Core.Behaviors.AnimationBehavior">
             <summary>
             Represents a behavior that enables sprite animations in the Genesis framework.

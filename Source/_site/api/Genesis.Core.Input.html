@@ -195,13 +195,35 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html" title="ConvexHullBehavior" class="">ConvexHullBehavior</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html" title="QubeConvexHull" class="">QubeConvexHull</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.SphereCollider.html" title="SphereCollider" class="">SphereCollider</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html" title="StaticMeshBehavior" class="">StaticMeshBehavior</a>
+                          </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Genesis.Core.Behaviors._3D.html" title="Genesis.Core.Behaviors._3D" class="">Genesis.Core.Behaviors._3D</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors._3D.Stance.html" title="Stance" class="">Stance</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html" title="ThirdpersonCharacterController" class="">ThirdpersonCharacterController</a>
                           </li>
                         </ul>
                     </li>
@@ -897,6 +919,17 @@
   </table>
 
 
+  <a id="Genesis_Core_Input_HideCursor_" data-uid="Genesis.Core.Input.HideCursor*"></a>
+  <h4 id="Genesis_Core_Input_HideCursor" data-uid="Genesis.Core.Input.HideCursor">HideCursor()</h4>
+  <div class="markdown level1 summary"><p>Hides the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HideCursor()</code></pre>
+  </div>
+
+
   <a id="Genesis_Core_Input_IsKeyDown_" data-uid="Genesis.Core.Input.IsKeyDown*"></a>
   <h4 id="Genesis_Core_Input_IsKeyDown_System_Windows_Forms_Keys_" data-uid="Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">IsKeyDown(Keys)</h4>
   <div class="markdown level1 summary"><p>Checks if the specified key is currently pressed.</p>
@@ -940,6 +973,141 @@
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Genesis_Core_Input_SetCursorPos_" data-uid="Genesis.Core.Input.SetCursorPos*"></a>
+  <h4 id="Genesis_Core_Input_SetCursorPos_Genesis_Math_Vec3_System_IntPtr_" data-uid="Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)">SetCursorPos(Vec3, IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor position on the screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetCursorPos(Vec3 pos, IntPtr handle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">pos</span></td>
+        <td><p>The new position of the cursor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">handle</span></td>
+        <td><p>The handle of the control where the cursor position will be set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Input_SetCursorPos_" data-uid="Genesis.Core.Input.SetCursorPos*"></a>
+  <h4 id="Genesis_Core_Input_SetCursorPos_System_Int32_System_Int32_" data-uid="Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)">SetCursorPos(int, int)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor position on the screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static extern bool SetCursorPos(int X, int Y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">X</span></td>
+        <td><p>The new x-coordinate of the cursor position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">Y</span></td>
+        <td><p>The new y-coordinate of the cursor position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Input_SetCursorPos_" data-uid="Genesis.Core.Input.SetCursorPos*"></a>
+  <h4 id="Genesis_Core_Input_SetCursorPos_System_Int32_System_Int32_System_IntPtr_" data-uid="Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)">SetCursorPos(int, int, IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Sets the cursor position on the screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetCursorPos(int x, int y, IntPtr handle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">handle</span></td>
+        <td><p>The handle of the control where the cursor position will be set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Input_ShowCursor_" data-uid="Genesis.Core.Input.ShowCursor*"></a>
+  <h4 id="Genesis_Core_Input_ShowCursor" data-uid="Genesis.Core.Input.ShowCursor">ShowCursor()</h4>
+  <div class="markdown level1 summary"><p>Shows the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ShowCursor()</code></pre>
+  </div>
 
 </article>
           </div>

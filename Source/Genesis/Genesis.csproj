@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AssetManager.cs" />
+    <Compile Include="Core\Behaviors\3D\ThirdpersonCharacterController.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
     <Compile Include="Core\Behaviors\CharacterController2D.cs" />

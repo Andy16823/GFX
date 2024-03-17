@@ -5,6 +5,7 @@ items:
   id: Animator
   parent: Genesis.Graphics.Animation3D
   children:
+  - Genesis.Graphics.Animation3D.Animator.#ctor
   - Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
   - Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
   - Genesis.Graphics.Animation3D.Animator.CurrentAnimation
@@ -67,6 +68,27 @@ items:
   nameWithType.vb: Animator.New(Animation)
   fullName.vb: Genesis.Graphics.Animation3D.Animator.New(Genesis.Graphics.Animation3D.Animation)
   name.vb: New(Animation)
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor
+  commentId: M:Genesis.Graphics.Animation3D.Animator.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: Animator()
+  nameWithType: Animator.Animator()
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  syntax:
+    content: public Animator()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Animation3D.Animator.#ctor*
+  nameWithType.vb: Animator.New()
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New()
+  name.vb: New()
 - uid: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
   commentId: M:Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
   id: UpdateAnimation(System.Single)
