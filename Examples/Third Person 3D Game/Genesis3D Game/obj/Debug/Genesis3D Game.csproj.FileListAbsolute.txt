@@ -1,0 +1,22 @@
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\Genesis3D Game.exe.config
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\Genesis3D Game.exe
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\Genesis3D Game.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\BulletSharp.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\Genesis.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\GlmSharp.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\NetGL.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\OpenObjectLoader.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\BulletSharp.dll.config
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\Genesis.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\GlmSharp.xml
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\NetGL.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\Debug\OpenObjectLoader.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.csproj.AssemblyReference.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.csproj.SuggestedBindingRedirects.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D_Game.Form1.resources
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D_Game.Properties.Resources.resources
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.csproj.GenerateResource.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.csproj.CoreCompileInputs.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.csproj.CopyComplete
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.exe
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\Debug\Genesis3D Game.pdb

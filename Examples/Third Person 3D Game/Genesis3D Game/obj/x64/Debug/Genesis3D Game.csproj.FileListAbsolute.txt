@@ -1,0 +1,39 @@
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis3D Game.exe.config
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis3D Game.exe
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis3D Game.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\BulletSharp.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\GlmSharp.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\NetGL.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\OpenObjectLoader.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\GlmSharp.xml
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\NetGL.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\OpenObjectLoader.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.csproj.AssemblyReference.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D_Game.Form1.resources
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D_Game.Properties.Resources.resources
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.csproj.GenerateResource.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.csproj.CoreCompileInputs.cache
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.csproj.CopyComplete
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.exe
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\obj\x64\Debug\Genesis3D Game.pdb
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.exr
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Skydome1\skydome.mtl
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Skydome1\skydome.obj
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Genesis.xml
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\AssimpNet.dll
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\AssimpNet.xml
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1001_Diffuse.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1001_Glossiness.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1001_Normal.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1001_Specular.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1002_Diffuse.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1002_Emissive.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1002_Glossiness.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1002_Normal.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbm\Ch15_1002_Specular.png
+C:\Users\andy1\source\repos\Genesis3D Game\Genesis3D Game\bin\x64\Debug\Resources\Assets\Animation\Human.fbx

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis3D Game", "Genesis3D Game\Genesis3D Game.csproj", "{9D4C5A7E-9E6E-428D-9634-182DE32860CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Debug|x64.ActiveCfg = Debug|x64
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Debug|x64.Build.0 = Debug|x64
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Release|x64.ActiveCfg = Release|x64
+		{9D4C5A7E-9E6E-428D-9634-182DE32860CE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF7ABBC9-33FA-4CB0-B925-CC25F5181B83}
+	EndGlobalSection
+EndGlobal
