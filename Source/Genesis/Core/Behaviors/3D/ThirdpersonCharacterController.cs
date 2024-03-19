@@ -1,4 +1,5 @@
-﻿using BulletSharp.Math;
+﻿using BulletSharp;
+using BulletSharp.Math;
 using Genesis.Core.Behaviors.Physics3D;
 using Genesis.Core.GameElements;
 using Genesis.Graphics;
@@ -46,7 +47,7 @@ namespace Genesis.Core.Behaviors._3D
         /// <summary>
         /// Gets or sets the speed of jumping.
         /// </summary>
-        public float JumpSpeed { get; set; } = 1f;
+        public float JumpSpeed { get; set; } = 7.5f;
 
         /// <summary>
         /// Gets or sets a value indicating whether the character is running.
@@ -83,6 +84,7 @@ namespace Genesis.Core.Behaviors._3D
         /// </summary>
         public Stance Stance { get; set; }
 
+        private Vec3 inputVector;
         private long jumpCooldown = 250;
         private long lastJump = 0;
 
@@ -120,9 +122,13 @@ namespace Genesis.Core.Behaviors._3D
             this.Parent.AddBehavior(this.Collider);
             this.Collider.CreateRigidBody(handler, offset, radius, height, mass);
             this.Collider.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
-            Collider.OnCollide += (sce, game, collisionObject) =>
+            Collider.OnCollide += (sce, game, co) =>
             {
-                IsColliding = true;
+                var btCollisionObject = (CollisionObject)co;
+                if (btCollisionObject.GetType() != typeof(GhostObject))
+                {
+                    IsColliding = true;
+                }
             };
         }
 
@@ -157,6 +163,18 @@ namespace Genesis.Core.Behaviors._3D
         }
 
         /// <summary>
+        /// Sets the input vector for the character.
+        /// </summary>
+        /// <param name="inputVector">The input vector to set for the character.</param>
+        /// <remarks>
+        /// This method assigns the provided input vector to the 'inputVector' property of the character.
+        /// </remarks>
+        public void SetInput(Vec3 inputVector)
+        {
+            this.inputVector = inputVector;
+        }
+
+        /// <summary>
         /// Called when the game element should be updated.
         /// </summary>
         /// <param name="game">The game instance.</param>
@@ -185,7 +203,7 @@ namespace Genesis.Core.Behaviors._3D
             PerspectiveCamera camera = (PerspectiveCamera)game.SelectedScene.Camera;
             camera.Location = Utils.GetRelativePosition(model, new Vec3(0f, 2.5f, -4f));
             camera.Rotation.X = -20f;
-            Utils.LookAt(camera, model.Location + new Vec3(0, 1, 0));
+            camera.LookAt(model.Location + new Vec3(0, 1, 0));
 
 
             // Setup the Velocity for the player movement.
@@ -235,7 +253,7 @@ namespace Genesis.Core.Behaviors._3D
                 var now = Utils.GetCurrentTimeMillis();
                 if ((now > lastJump + jumpCooldown) && !this.IsAirborn())
                 {
-                    float jumpSpeed = (float)game.DeltaTime * this.JumpSpeed;
+                    float jumpSpeed = this.JumpSpeed;
                     velocity.Y += jumpSpeed;
                     lastJump = now;
                 }
@@ -268,6 +286,13 @@ namespace Genesis.Core.Behaviors._3D
                         model.PlayAnimation(IdleAnimation);
                     }
                     break;
+            }
+
+            // Add the input vector to the velocity
+            if(this.inputVector != null)
+            {
+                velocity += inputVector.ToBulletVec3();
+                inputVector = null;
             }
 
             // Set data for the next frame

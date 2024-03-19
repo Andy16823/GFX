@@ -85,13 +85,13 @@ namespace Genesis.Physics
         }
 
         /// <summary>
-        /// Manages a physics behavior element by adding its RigidBody to the physics world.
+        /// Manages a physics behavior element by adding its collision object to the physics world.
         /// </summary>
-        /// <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
-        public override void ManageElement(PhysicsBehavior rigidBody)
+        /// <param name="collisionObjec">The PhysicsBehavior representing the rigid body element.</param>
+        public override void ManageElement(PhysicsBehavior collisionObjec)
         {
-            base.ManageElement(rigidBody);
-            PhysicsWorld.AddRigidBody((RigidBody) rigidBody.GetPhysicsObject());
+            base.ManageElement(collisionObjec);
+            PhysicsWorld.AddCollisionObject((CollisionObject)collisionObjec.GetPhysicsObject());
         }
     }
 }

@@ -79,6 +79,7 @@
     <Compile Include="Core\Behaviors\Physics2D\PhysicsPolygon2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
     <Compile Include="Core\Behaviors\Physics3D\BoxCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\BoxTrigger.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CapsuleCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
     <Compile Include="Core\Behaviors\Physics3D\SphereCollider.cs" />

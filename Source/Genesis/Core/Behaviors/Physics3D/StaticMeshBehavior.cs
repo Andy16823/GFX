@@ -58,15 +58,6 @@ namespace Genesis.Core.Behaviors.Physics3D
         }
 
         /// <summary>
-        /// Handles collision events for the StaticMeshBehavior.
-        /// </summary>
-        public override void Collide(Scene scene, Game game, BulletSharp.RigidBody collisionObject)
-        {
-            base.Collide(scene, game, collisionObject);
-
-        }
-
-        /// <summary>
         /// Updates the RigidBody's position and scaling based on the associated parent element.
         /// </summary>
         public void UpdateRigidBody()

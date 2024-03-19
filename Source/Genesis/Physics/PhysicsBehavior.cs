@@ -1,4 +1,5 @@
-﻿using Genesis.Core;
+﻿using BulletSharp;
+using Genesis.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Genesis.Physics
         /// <param name="scene">The scene where the collision occurred</param>
         /// <param name="game">The game associated with the collision</param>
         /// <param name="collisionObject">The collision object involved in the event</param>
-        public virtual void Collide(Scene scene, Game game, BulletSharp.RigidBody collisionObject)
+        public virtual void Collide(Scene scene, Game game, CollisionObject collisionObject)
         {
             if(this.OnCollide != null)
             {

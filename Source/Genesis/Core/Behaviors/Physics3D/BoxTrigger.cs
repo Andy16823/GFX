@@ -1,5 +1,4 @@
 ﻿using BulletSharp;
-using BulletSharp.SoftBody;
 using Genesis.Math;
 using Genesis.Physics;
 using System;
@@ -11,27 +10,24 @@ using System.Threading.Tasks;
 namespace Genesis.Core.Behaviors.Physics3D
 {
     /// <summary>
-    /// Defines a box collider behavior for 3D physics simulations.
+    /// Defines a box trigger behavior for 3D physics simulations.
     /// </summary>
-
-    public class BoxCollider : PhysicsBehavior
+    public class BoxTrigger : PhysicsBehavior
     {
         /// <summary>
-        /// Gets or sets the rigid body associated with this box collider.
+        /// Gets or sets the ghost object associated with this box trigger.
         /// </summary>
-        public RigidBody RigidBody { get; set; }
+        public GhostObject GhostObject { get; set; }
 
         /// <summary>
-        /// Creates a box collider with the specified parameters.
+        /// Creates a box trigger with the specified parameters.
         /// </summary>
-        /// <param name="handler">The physics handler managing this collider.</param>
-        /// <param name="boxHalfExtends">The half extends of the box collider.</param>
-        /// <param name="mass">The mass of the box collider.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 boxHalfExtends, float mass)
+        /// <param name="handler">The physics handler managing this trigger.</param>
+        /// <param name="boxHalfExtends">The half extends of the box trigger.</param>
+        public void CreateCollider(PhysicHandler handler, Vec3 boxHalfExtends)
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
-            RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, boxShape, boxShape.CalculateLocalInertia(mass));
 
             Vec3 location = Utils.GetElementWorldLocation(element);
             Vec3 rotation = Utils.GetElementWorldRotation(element);
@@ -40,71 +36,71 @@ namespace Genesis.Core.Behaviors.Physics3D
             var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
             var btStartTransform = btTranslation * btRotation;
 
-            info.MotionState = new DefaultMotionState(btStartTransform);
-            RigidBody = new RigidBody(info);
-            RigidBody.UserObject = element;
-            RigidBody.ApplyGravity();
-            
+            GhostObject = new GhostObject();
+            GhostObject.CollisionShape = boxShape;
+            GhostObject.WorldTransform = btStartTransform;
+            GhostObject.CollisionFlags = CollisionFlags.NoContactResponse;
+
             handler.ManageElement(this);
         }
 
         /// <summary>
-        /// Retrieves the physics object associated with this box collider.
+        /// Retrieves the physics object associated with this box trigger.
         /// </summary>
-        /// <returns>The physics object associated with this collider.</returns>
+        /// <returns>The physics object associated with this trigger.</returns>
         public override object GetPhysicsObject()
         {
-            return RigidBody;
+            return GhostObject;
         }
 
         /// <summary>
-        /// Retrieves the physics object associated with this box collider, cast to the specified type.
+        /// Retrieves the physics object associated with this box trigger, cast to the specified type.
         /// </summary>
         /// <typeparam name="T">The type to cast the physics object to.</typeparam>
-        /// <returns>The physics object associated with this collider, cast to the specified type.</returns>
+        /// <returns>The physics object associated with this trigger, cast to the specified type.</returns>
         public override T GetPhysicsObject<T>()
         {
-            return (T)(object)RigidBody;
+            return (T)(object)GhostObject;
         }
 
         /// <summary>
-        /// Called when the collider is destroyed.
+        /// Called when the trigger is destroyed.
         /// </summary>
         /// <param name="game">The current game instance.</param>
         /// <param name="parent">The parent game element.</param>
         public override void OnDestroy(Game game, GameElement parent)
         {
-            
+
         }
 
         /// <summary>
-        /// Called when the collider is initialized.
+        /// Called when the trigger is initialized.
         /// </summary>
         /// <param name="game">The current game instance.</param>
         /// <param name="parent">The parent game element.</param>
         public override void OnInit(Game game, GameElement parent)
         {
-            
+
         }
 
         /// <summary>
-        /// Called when the collider needs to be rendered.
+        /// Called when the trigger needs to be rendered.
         /// </summary>
         /// <param name="game">The current game instance.</param>
         /// <param name="parent">The parent game element.</param>
         public override void OnRender(Game game, GameElement parent)
         {
-            
+
         }
 
         /// <summary>
-        /// Called when the collider needs to be updated.
+        /// Called when the trigger needs to be updated.
         /// </summary>
         /// <param name="game">The current game instance.</param>
         /// <param name="parent">The parent game element.</param>
         public override void OnUpdate(Game game, GameElement parent)
         {
-            
+
         }
     }
 }

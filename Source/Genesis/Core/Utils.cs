@@ -502,6 +502,28 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Adjusts the camera's rotation to look at a specified position along the X-axis.
+        /// </summary>
+        /// <param name="camera">The camera to adjust.</param>
+        /// <param name="targetPosition">The position to look at.</param>
+        public static void LookAtX(Camera camera, Vec3 targetPosition)
+        {
+            //camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
+            camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
+        }
+
+        /// <summary>
+        /// Adjusts the camera's rotation to look at a specified position along the Y-axis.
+        /// </summary>
+        /// <param name="camera">The camera to adjust.</param>
+        /// <param name="targetPosition">The position to look at.</param>
+        public static void LookAtY(Camera camera, Vec3 targetPosition)
+        {
+            camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
+            //camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
+        }
+
+        /// <summary>
         /// Calculates the yaw angle from point1 to point2.
         /// </summary>
         /// <param name="point1">The starting point.</param>

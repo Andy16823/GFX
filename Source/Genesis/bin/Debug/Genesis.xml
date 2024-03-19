@@ -208,6 +208,15 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent game element.</param>
         </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)">
+            <summary>
+            Sets the input vector for the character.
+            </summary>
+            <param name="inputVector">The input vector to set for the character.</param>
+            <remarks>
+            This method assigns the provided input vector to the 'inputVector' property of the character.
+            </remarks>
+        </member>
         <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
             <summary>
             Called when the game element should be updated.
@@ -756,6 +765,123 @@
             <typeparam name="T">The type to which the physics object is cast.</typeparam>
             <returns>The RigidBody physics object cast to the specified type.</returns>
         </member>
+        <member name="T:Genesis.Core.Behaviors.Physics3D.BoxCollider">
+            <summary>
+            Defines a box collider behavior for 3D physics simulations.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody">
+            <summary>
+            Gets or sets the rigid body associated with this box collider.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Creates a box collider with the specified parameters.
+            </summary>
+            <param name="handler">The physics handler managing this collider.</param>
+            <param name="boxHalfExtends">The half extends of the box collider.</param>
+            <param name="mass">The mass of the box collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject">
+            <summary>
+            Retrieves the physics object associated with this box collider.
+            </summary>
+            <returns>The physics object associated with this collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject``1">
+            <summary>
+            Retrieves the physics object associated with this box collider, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The physics object associated with this collider, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider needs to be rendered.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider needs to be updated.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.Physics3D.BoxTrigger">
+            <summary>
+            Defines a box trigger behavior for 3D physics simulations.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject">
+            <summary>
+            Gets or sets the ghost object associated with this box trigger.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+            <summary>
+            Creates a box trigger with the specified parameters.
+            </summary>
+            <param name="handler">The physics handler managing this trigger.</param>
+            <param name="boxHalfExtends">The half extends of the box trigger.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject">
+            <summary>
+            Retrieves the physics object associated with this box trigger.
+            </summary>
+            <returns>The physics object associated with this trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject``1">
+            <summary>
+            Retrieves the physics object associated with this box trigger, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The physics object associated with this trigger, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger needs to be rendered.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger needs to be updated.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull">
             <summary>
             Represents a Physics behavior for a 3D cube with a convex hull shape.
@@ -772,11 +898,6 @@
             </summary>
             <param name="handler">Physics handler responsible for managing elements.</param>
             <param name="mass">Mass of the rigid body.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the QubeConvexHull behavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody">
             <summary>
@@ -831,11 +952,6 @@
             <param name="mass">Mass of the rigid body.</param>
             <param name="mesh">Mesh data for creating the collision shape.</param>
             <exception cref="T:System.InvalidOperationException">Thrown when the parent element is not of type Element3D.</exception>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the StaticMeshBehavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.UpdateRigidBody">
             <summary>
@@ -900,11 +1016,6 @@
             </summary>
             <param name="handler">Physics handler responsible for managing elements.</param>
             <param name="mass">Mass of the rigid body.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the ConvexHullBehavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody">
             <summary>
@@ -2924,6 +3035,20 @@
             <param name="camera">The camera.</param>
             <param name="targetPosition">The target position.</param>
         </member>
+        <member name="M:Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)">
+            <summary>
+            Adjusts the camera's rotation to look at a specified position along the X-axis.
+            </summary>
+            <param name="camera">The camera to adjust.</param>
+            <param name="targetPosition">The position to look at.</param>
+        </member>
+        <member name="M:Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)">
+            <summary>
+            Adjusts the camera's rotation to look at a specified position along the Y-axis.
+            </summary>
+            <param name="camera">The camera to adjust.</param>
+            <param name="targetPosition">The position to look at.</param>
+        </member>
         <member name="M:Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Calculates the yaw angle from point1 to point2.
@@ -4122,6 +4247,12 @@
             <param name="renderer">The render device.</param>
             <param name="renderTarget">The ID of the render target.</param>
             <param name="resolution">The resolution of the rendered texture.</param>
+        </member>
+        <member name="M:Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)">
+            <summary>
+            Adjusts the camera's orientation to look at a specified position.
+            </summary>
+            <param name="vec3">The position to look at.</param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)">
             <summary>
@@ -5422,9 +5553,9 @@
         </member>
         <member name="M:Genesis.Physics.PhysicsHandler3D.ManageElement(Genesis.Physics.PhysicsBehavior)">
             <summary>
-            Manages a physics behavior element by adding its RigidBody to the physics world.
+            Manages a physics behavior element by adding its collision object to the physics world.
             </summary>
-            <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
+            <param name="collisionObjec">The PhysicsBehavior representing the rigid body element.</param>
         </member>
         <member name="T:Genesis.Physics.PhysicsBehaviorEvent">
             <summary>
@@ -5444,7 +5575,7 @@
             Event triggered when a collision occurs.
             </summary>
         </member>
-        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
+        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)">
             <summary>
             Handles the collision event, invoking the OnCollide event if subscribed.
             </summary>
