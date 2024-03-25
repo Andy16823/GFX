@@ -29,10 +29,10 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="mass">Mass of the rigid body.</param>
         public void CreateRigidBody(PhysicHandler handler, float mass)
         {
-            if (this.Parent.GetType() == typeof(Qube))
+            if (this.Parent.GetType() == typeof(Cube))
             {
                 //Create the shape 
-                Qube element = (Qube)this.Parent;
+                Cube element = (Cube)this.Parent;
                 ConvexHullShape shape = new ConvexHullShape(element.Shape.GetShape());
                 RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, shape, shape.CalculateLocalInertia(mass));
                 //Create the start matrix

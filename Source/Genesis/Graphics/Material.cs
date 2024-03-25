@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -71,6 +72,46 @@ namespace Genesis.Graphics
         public Material()
         {
             this.Propeterys = new Dictionary<String, Object>();
+            this.DiffuseColor = Color.White;
+        }
+
+        /// <summary>
+        /// Constructor for the Material class. Initializes properties and the dictionary for user-defined properties.
+        /// </summary>
+        public Material(String name, Color DiffuseColor)
+        {
+            this.Propeterys = new Dictionary<String, Object>();
+            this.Name = name;
+            this.DiffuseColor = DiffuseColor;
+        }
+
+        /// <summary>
+        /// Serializes the material object into a JSON string.
+        /// </summary>
+        /// <returns>Serialized JSON string of the material.</returns>
+        public string Serialize()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
+
+        /// <summary>
+        /// Saves the material object to a JSON file.
+        /// </summary>
+        /// <param name="filename">The path to save the material JSON file.</param>
+        public void SaveMaterial(String filename)
+        {
+            File.WriteAllText(filename, this.Serialize());
+        }
+
+        /// <summary>
+        /// Loads a material from a JSON file.
+        /// </summary>
+        /// <param name="filename">The path to the JSON file containing the material data.</param>
+        /// <returns>The loaded material object.</returns>
+        public static Material LoadMaterial(String filename)
+        {
+            var json = File.ReadAllText(filename);
+            return JsonConvert.DeserializeObject<Material>(json);
         }
     }
 }

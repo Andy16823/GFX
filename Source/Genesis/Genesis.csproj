@@ -103,7 +103,7 @@
     <Compile Include="Core\Scene3D.cs" />
     <Compile Include="Core\GameElements\Element3D.cs" />
     <Compile Include="Core\GameElements\Empty.cs" />
-    <Compile Include="Core\GameElements\Qube.cs" />
+    <Compile Include="Core\GameElements\Cube.cs" />
     <Compile Include="Core\GameElements\RectElement.cs" />
     <Compile Include="Core\GameElements\Sprite.cs" />
     <Compile Include="Core\GameElements\Terrain2D.cs" />
@@ -123,6 +123,7 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\RenderDevice\Experimental.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
     <Compile Include="Physics\Aabb.cs" />

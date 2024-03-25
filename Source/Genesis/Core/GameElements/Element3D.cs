@@ -13,6 +13,8 @@ using BulletSharp.Math;
 using System.Xml.Linq;
 using System.Drawing;
 using System.Reflection;
+using Assimp.Unmanaged;
+using Genesis.Graphics.Animation3D;
 
 namespace Genesis.Core.GameElements
 {
@@ -102,8 +104,24 @@ namespace Genesis.Core.GameElements
                     gMesh.Vericies.Add(mesh.Vertices[index].Y);
                     gMesh.Vericies.Add(mesh.Vertices[index].Z);
 
-                    gMesh.TextureCords.Add(mesh.TextureCoordinateChannels[0][index].X);
-                    gMesh.TextureCords.Add(mesh.TextureCoordinateChannels[0][index].Y);
+                    if (mesh.TextureCoordinateChannels[0] != null)
+                    {
+                        if (mesh.TextureCoordinateChannels[0].Count > index)
+                        {
+                            gMesh.TextureCords.Add(mesh.TextureCoordinateChannels[0][index].X);
+                            gMesh.TextureCords.Add(mesh.TextureCoordinateChannels[0][index].Y);
+                        }
+                        else
+                        {
+                            gMesh.TextureCords.Add(0f);
+                            gMesh.TextureCords.Add(0f);
+                        }
+                    }
+                    else
+                    {
+                        gMesh.TextureCords.Add(0f);
+                        gMesh.TextureCords.Add(0f);
+                    }
 
                     gMesh.Normals.Add(mesh.Normals[index].X);
                     gMesh.Normals.Add(mesh.Normals[index].Y);
