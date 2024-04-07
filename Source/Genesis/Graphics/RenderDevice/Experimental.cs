@@ -81,7 +81,6 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("ScreenShader", new Shaders.OpenGL.ScreenShader());
             this.ShaderPrograms.Add("SpriteShader", new Shaders.OpenGL.SpriteShader());
             this.ShaderPrograms.Add("TerrainShader", new Shaders.OpenGL.TerrainShader());
-
             this.ShaderPrograms.Add("ParticleShader", new Shaders.OpenGL.ParticleShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
@@ -326,31 +325,11 @@ namespace Genesis.Graphics.RenderDevice
         {
             if(element.GetType() == typeof(BufferedSprite))
             {
-                BufferedSprite bufferedSprite = (BufferedSprite)element;
-                float[] verticies = bufferedSprite.Verticies.ToArray();
-                int vbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
-                gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("vbo", vbo);
-                
-                float[] color = bufferedSprite.Colors.ToArray();
-                int cbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-                gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("cbo", cbo);
-
-                float[] texCoords = bufferedSprite.TexCoords.ToArray();
-                int tex = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, tex);
-                gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("tbo", tex);
-
-                bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
+                InitBufferedSprite((BufferedSprite)element);                
             }
             else if(element.GetType() == typeof(Cube))
             {
-                Cube cube = (Cube)element;
-                InitCube(cube);
+                InitCube((Cube) element);
             }
             else if (element.GetType() == typeof(Terrain3D))
             {
@@ -364,6 +343,29 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.InitModel((Core.GameElements.Model)element);
             }
+        }
+
+        private void InitBufferedSprite(BufferedSprite bufferedSprite)
+        {
+            float[] verticies = bufferedSprite.Verticies.ToArray();
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("vbo", vbo);
+
+            float[] color = bufferedSprite.Colors.ToArray();
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("cbo", cbo);
+
+            float[] texCoords = bufferedSprite.TexCoords.ToArray();
+            int tex = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tex);
+            gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("tbo", tex);
+
+            bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
         }
 
         /// <summary>
