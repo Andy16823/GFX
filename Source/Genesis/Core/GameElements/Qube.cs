@@ -23,6 +23,11 @@ namespace Genesis.Core.GameElements
         public ShaderProgram Shader { get; set; }
 
         /// <summary>
+        /// Gets or sets the material for this cube
+        /// </summary>
+        public Material Material { get; set; }
+
+        /// <summary>
         /// Gets or sets the cube shape definition.
         /// </summary>
         public QubeShape Shape { get; set; }
@@ -30,10 +35,13 @@ namespace Genesis.Core.GameElements
         /// <summary>
         /// Gets or sets the color of the cube.
         /// </summary>
-        public Color Color { get; set; }
+        public Color Color {
+            get => Material.DiffuseColor;
+            set => Material.DiffuseColor = value;
+        }
 
         /// <summary>
-        /// Initializes a new instance of the Qube class with default settings.
+        /// Initializes a new instance of the cube class with default settings.
         /// </summary>
         /// <param name="name">The name of the cube.</param>
         /// <param name="location">The initial location of the cube.</param>
@@ -45,11 +53,11 @@ namespace Genesis.Core.GameElements
             this.Rotation = Vec3.Zero();
             this.Shape = new QubeShape();
             this.Shader = new DiffuseSolidShader();
-            this.Color = Color.White;
+            this.Material = new Material();
         }
 
         /// <summary>
-        /// Initializes a new instance of the Qube class with specified size.
+        /// Initializes a new instance of the cube class with specified size.
         /// </summary>
         /// <param name="name">The name of the cube.</param>
         /// <param name="location">The initial location of the cube.</param>
@@ -62,11 +70,11 @@ namespace Genesis.Core.GameElements
             this.Rotation = Vec3.Zero();
             this.Shape = new QubeShape();
             this.Shader = new DiffuseSolidShader();
-            this.Color = Color.White;
+            this.Material = new Material();
         }
 
         /// <summary>
-        /// Initializes a new instance of the Qube class with specified size and rotation.
+        /// Initializes a new instance of the cube class with specified size and rotation.
         /// </summary>
         /// <param name="name">The name of the cube.</param>
         /// <param name="location">The initial location of the cube.</param>
@@ -80,7 +88,7 @@ namespace Genesis.Core.GameElements
             this.Rotation = rotation;
             this.Shape = new QubeShape();
             this.Shader = new DiffuseSolidShader();
-            this.Color = Color.White;
+            this.Material = new Material();
         }
 
         /// <summary>
@@ -166,6 +174,12 @@ namespace Genesis.Core.GameElements
         {
             base.OnRender(game, renderDevice);
             renderDevice.DrawGameElement(this);
+        }
+
+        public override void OnDestroy(Game game)
+        {
+            base.OnDestroy(game);
+            game.RenderDevice.DisposeElement(this);
         }
     }
 }

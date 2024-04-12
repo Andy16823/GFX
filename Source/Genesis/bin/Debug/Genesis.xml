@@ -1987,39 +1987,39 @@
             Initializes a new instance of the Empty class.
             </summary>
         </member>
-        <member name="T:Genesis.Core.GameElements.Cube">
+        <member name="T:Genesis.Core.GameElements.Qube">
             <summary>
             Represents a cube-shaped game element with customizable appearance.
             </summary>
         </member>
-        <member name="P:Genesis.Core.GameElements.Cube.Shader">
+        <member name="P:Genesis.Core.GameElements.Qube.Shader">
             <summary>
             Gets or sets the shader program associated with this cube.
             </summary>
         </member>
-        <member name="P:Genesis.Core.GameElements.Cube.Material">
+        <member name="P:Genesis.Core.GameElements.Qube.Material">
             <summary>
             Gets or sets the material for this cube
             </summary>
         </member>
-        <member name="P:Genesis.Core.GameElements.Cube.Shape">
+        <member name="P:Genesis.Core.GameElements.Qube.Shape">
             <summary>
             Gets or sets the cube shape definition.
             </summary>
         </member>
-        <member name="P:Genesis.Core.GameElements.Cube.Color">
+        <member name="P:Genesis.Core.GameElements.Qube.Color">
             <summary>
             Gets or sets the color of the cube.
             </summary>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.#ctor(System.String,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3)">
             <summary>
             Initializes a new instance of the cube class with default settings.
             </summary>
             <param name="name">The name of the cube.</param>
             <param name="location">The initial location of the cube.</param>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Initializes a new instance of the cube class with specified size.
             </summary>
@@ -2027,7 +2027,7 @@
             <param name="location">The initial location of the cube.</param>
             <param name="size">The size of the cube.</param>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Initializes a new instance of the cube class with specified size and rotation.
             </summary>
@@ -2036,21 +2036,21 @@
             <param name="size">The size of the cube.</param>
             <param name="rotation">The initial rotation of the cube.</param>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.GetColors(System.Drawing.Color)">
+        <member name="M:Genesis.Core.GameElements.Qube.GetColors(System.Drawing.Color)">
             <summary>
             Gets an array of color values based on the specified color.
             </summary>
             <param name="color">The color for the cube faces.</param>
             <returns>An array of color values for the cube faces.</returns>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+        <member name="M:Genesis.Core.GameElements.Qube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
             Initializes the game element.
             </summary>
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
         </member>
-        <member name="M:Genesis.Core.GameElements.Cube.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+        <member name="M:Genesis.Core.GameElements.Qube.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
             Renders the game element.
             </summary>
@@ -4381,7 +4381,13 @@
             </summary>
             <param name="element"></param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.Experimental.InitCube(Genesis.Core.GameElements.Cube)">
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.InitBufferedSprite(Genesis.Core.GameElements.BufferedSprite)">
+            <summary>
+            Init the buffered sprite
+            </summary>
+            <param name="bufferedSprite"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.InitCube(Genesis.Core.GameElements.Qube)">
             <summary>
             Initializes a cube object by setting up its associated shader program and loading vertex, color, and normal data into the GPU buffers.
             </summary>
@@ -4783,7 +4789,7 @@
             </summary>
             <param name="framebuffer">The framebuffer id for the rendering</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.Experimental.DrawCube(Genesis.Core.GameElements.Cube)">
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.DrawCube(Genesis.Core.GameElements.Qube)">
             <summary>
             Renders an qube
             </summary>
@@ -5318,7 +5324,7 @@
             </summary>
             <param name="framebuffer">The framebuffer id for the rendering</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderQube(Genesis.Core.GameElements.Cube)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderQube(Genesis.Core.GameElements.Qube)">
             <summary>
             Renders an qube
             </summary>
@@ -5955,7 +5961,7 @@
             <summary>
             Manages a physics behavior element by adding its RigidBody to the physics world.
             </summary>
-            <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
+            <param name="physicsBehavior">The PhysicsBehavior representing the collision object.</param>
         </member>
         <member name="T:Genesis.Physics.MatrixSet">
             <summary>

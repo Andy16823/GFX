@@ -327,9 +327,9 @@ namespace Genesis.Graphics.RenderDevice
             {
                 InitBufferedSprite((BufferedSprite)element);                
             }
-            else if(element.GetType() == typeof(Cube))
+            else if(element.GetType() == typeof(Qube))
             {
-                InitCube((Cube) element);
+                InitCube((Qube) element);
             }
             else if (element.GetType() == typeof(Terrain3D))
             {
@@ -345,6 +345,10 @@ namespace Genesis.Graphics.RenderDevice
             }
         }
 
+        /// <summary>
+        /// Init the buffered sprite
+        /// </summary>
+        /// <param name="bufferedSprite"></param>
         private void InitBufferedSprite(BufferedSprite bufferedSprite)
         {
             float[] verticies = bufferedSprite.Verticies.ToArray();
@@ -372,7 +376,7 @@ namespace Genesis.Graphics.RenderDevice
         /// Initializes a cube object by setting up its associated shader program and loading vertex, color, and normal data into the GPU buffers.
         /// </summary>
         /// <param name="cube">The cube object to initialize.</param>
-        private void InitCube(Cube cube)
+        private void InitCube(Qube cube)
         {
             // 1. Check if the shader already exist. 
             cube.Propertys.Add("ShaderID", this.InitShader(cube.Shader));
@@ -394,7 +398,7 @@ namespace Genesis.Graphics.RenderDevice
             cube.Propertys.Add("vbo", vbo);
 
             // 3. Load colors into the gpu
-            float[] color = Cube.GetColors(cube.Material.DiffuseColor);
+            float[] color = Qube.GetColors(cube.Material.DiffuseColor);
             int cbo = gl.GenBuffer(1);
             gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
             gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
@@ -648,9 +652,9 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="element"></param>
         public void DrawGameElement(GameElement element)
         {
-            if(element.GetType() == typeof(Cube))
+            if(element.GetType() == typeof(Qube))
             {
-                this.DrawCube((Cube)element);
+                this.DrawCube((Qube)element);
             }
             else if(element.GetType() == typeof(Terrain3D))
             {
@@ -1787,7 +1791,7 @@ namespace Genesis.Graphics.RenderDevice
         /// Renders an qube
         /// </summary>
         /// <param name="qube">The qube to render</param>
-        private void DrawCube(Cube cube)
+        private void DrawCube(Qube cube)
         {
             // Build the matrices
             mat4 mt_mat = mat4.Translate(cube.Location.ToGlmVec3());
@@ -2140,9 +2144,9 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="element">The element to dispose</param>
         public void DisposeElement(GameElement element)
         {
-            if (element.GetType() == typeof(Cube))
+            if (element.GetType() == typeof(Qube))
             {
-                this.DisposeCube((Cube)element);
+                this.DisposeCube((Qube)element);
             }
             else if (element.GetType() == typeof(ParticleEmitter))
             {
@@ -2154,7 +2158,7 @@ namespace Genesis.Graphics.RenderDevice
             }
         }
 
-        private void DisposeCube(Cube cube)
+        private void DisposeCube(Qube cube)
         {
             Console.WriteLine("Disposing " + cube.Name);
             gl.DeleteVertexArrays(1, (int)cube.Propertys["vao"]);

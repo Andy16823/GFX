@@ -305,9 +305,9 @@ namespace Genesis.Graphics.RenderDevice
 
                 bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
             }
-            else if(element.GetType() == typeof(Cube))
+            else if(element.GetType() == typeof(Qube))
             {
-                Cube qube = (Cube)element;
+                Qube qube = (Qube)element;
 
                 // 1. Check if the shader already exist. 
                 var preBuildShader = this.GetShaderProgram(qube.Shader);
@@ -332,7 +332,7 @@ namespace Genesis.Graphics.RenderDevice
                 qube.Propertys.Add("vbo", vbo);
 
                 // 3. Load colors into the gpu
-                float[] color = Cube.GetColors(qube.Color);
+                float[] color = Qube.GetColors(qube.Color);
                 int cbo = gl.GenBuffer(1);
                 gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
                 gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
@@ -584,9 +584,9 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="element"></param>
         public void DrawGameElement(GameElement element)
         {
-            if(element.GetType() == typeof(Cube))
+            if(element.GetType() == typeof(Qube))
             {
-                this.RenderQube((Cube)element);
+                this.RenderQube((Qube)element);
             }
             else if(element.GetType() == typeof(Terrain3D))
             {
@@ -1733,7 +1733,7 @@ namespace Genesis.Graphics.RenderDevice
         /// Renders an qube
         /// </summary>
         /// <param name="qube">The qube to render</param>
-        private void RenderQube(Cube qube)
+        private void RenderQube(Qube qube)
         {
             mat4 mt_mat = mat4.Translate(qube.Location.ToGlmVec3());
             mat4 mr_mat = mat4.RotateX(qube.Rotation.X) * mat4.RotateY(qube.Rotation.Y) * mat4.RotateZ(qube.Rotation.Z);
