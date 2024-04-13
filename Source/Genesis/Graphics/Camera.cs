@@ -3,6 +3,7 @@ using Genesis.Math;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,6 +101,21 @@ namespace Genesis.Graphics
         public Rect GetRect()
         {
             return new Rect(Location.X - (Size.X / 2), Location.Y - (Size.Y / 2), Size.X, Size.Y);
+        }
+
+        /// <summary>
+        /// Projects the mouse coords into screen coords
+        /// </summary>
+        /// <param name="camera">The camera</param>
+        /// <param name="viewport">The viewport</param>
+        /// <param name="mouseX">the screen x coordinate</param>
+        /// <param name="mouseY">the screen y coordinate</param>
+        /// <returns></returns>
+        public static Vec3 ProjectMouse2D(Camera camera, Viewport viewport, int mouseX, int mouseY)
+        {
+            var x = mouseX - (viewport.Width / 2) + camera.Location.X;
+            var y = mouseY - (viewport.Height / 2) + camera.Location.Y;
+            return new Vec3(x, y);
         }
 
     }

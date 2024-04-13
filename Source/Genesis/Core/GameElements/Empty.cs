@@ -18,6 +18,11 @@ namespace Genesis.Core.GameElements
         public Empty() { 
         }
 
+        /// <summary>
+        /// Initializes a new instance of the Empty class.
+        /// </summary>
+        /// <param name="name">The name of the game element</param>
+        /// <param name="location">The location of the game element</param>
         public Empty(String name, Vec3 location)
         {
             this.Name = name;

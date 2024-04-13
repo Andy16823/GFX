@@ -476,6 +476,64 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent GameElement of the behavior.</param>
         </member>
+        <member name="T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D">
+            <summary>
+            Represents a 2D box trigger for physics interactions.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger">
+            <summary>
+            Gets or sets the ghost object representing the trigger.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+            <summary>
+            Creates a collider for the box trigger.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="halfExtends">Half extends of the box.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The ghost object representing the trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast to.</typeparam>
+            <returns>The ghost object representing the trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior needs to render something.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior needs to update its state.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
             <summary>
             Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
@@ -1986,6 +2044,13 @@
             <summary>
             Initializes a new instance of the Empty class.
             </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the Empty class.
+            </summary>
+            <param name="name">The name of the game element</param>
+            <param name="location">The location of the game element</param>
         </member>
         <member name="T:Genesis.Core.GameElements.Qube">
             <summary>
@@ -5866,6 +5931,16 @@
             Gets the rectangular region represented by the camera's location and size.
             </summary>
             <returns>A <see cref="T:Genesis.Math.Rect"/> object representing the camera's view region.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)">
+            <summary>
+            Projects the mouse coords into screen coords
+            </summary>
+            <param name="camera">The camera</param>
+            <param name="viewport">The viewport</param>
+            <param name="mouseX">the screen x coordinate</param>
+            <param name="mouseY">the screen y coordinate</param>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Physics.Aabb">
             <summary>

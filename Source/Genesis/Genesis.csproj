@@ -101,6 +101,7 @@
     <Compile Include="Core\GameElements\BufferedSprite.cs" />
     <Compile Include="Core\GameElements\CameraElement.cs" />
     <Compile Include="Core\GameElements\Terrain3D.cs" />
+    <Compile Include="Core\Light2D.cs" />
     <Compile Include="Core\Scene3D.cs" />
     <Compile Include="Core\GameElements\Element3D.cs" />
     <Compile Include="Core\GameElements\Empty.cs" />
