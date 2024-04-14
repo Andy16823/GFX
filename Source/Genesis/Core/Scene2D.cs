@@ -15,6 +15,9 @@ namespace Genesis.Core
         public float LightmapIntensity { get; set; } = 0.7f;
         public List<Light2D> Lights { get; set; }
 
+        public event SceneEventHandler BeforeLightmapPreparation;
+        public event SceneEventHandler AfterLightmapRendering;
+
         public Scene2D()
         {
             Lights = new List<Light2D>();
@@ -75,14 +78,21 @@ namespace Genesis.Core
 
             renderDevice.FinishSceneRendering(this);
 
+
             if(this.RenderLightmap)
             {
+                if(this.BeforeLightmapPreparation != null)
+                    this.BeforeLightmapPreparation(this, game, renderDevice);
+
                 renderDevice.PrepareLightmap2D(this, this.Framebuffer);
                 foreach (var light in Lights)
                 {
                     light.OnRender(game, renderDevice);
                 }
                 renderDevice.FinishLightmap2D(this, this.Framebuffer);
+
+                if(this.AfterLightmapRendering != null)
+                    this.AfterLightmapRendering(this, game, renderDevice);
             }
 
             // Canvas canvas preperation

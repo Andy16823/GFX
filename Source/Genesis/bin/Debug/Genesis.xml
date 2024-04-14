@@ -1345,6 +1345,19 @@
             </summary>
             <param name="name">The name of the scene to be loaded.</param>
         </member>
+        <member name="M:Genesis.Core.Game.LoadScene(Genesis.Core.Scene)">
+            <summary>
+            Loads a scene
+            </summary>
+            <param name="scene">The scene to be loaded.</param>
+        </member>
+        <member name="M:Genesis.Core.Game.FindScene(System.String)">
+            <summary>
+            Search for the scene with the given name
+            </summary>
+            <param name="name">The name for the scene</param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Core.GameElement">
             <summary>
             Represents a base class for game elements in the Genesis framework.
@@ -4898,6 +4911,7 @@
         <member name="M:Genesis.Graphics.RenderDevice.Experimental.InitLight2D(Genesis.Core.Light2D)">
             <summary>
             Initial an 2D light
+            Unused because of the instance shape
             </summary>
             <param name="light"></param>
         </member>

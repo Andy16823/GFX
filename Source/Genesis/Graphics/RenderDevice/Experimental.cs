@@ -350,7 +350,7 @@ namespace Genesis.Graphics.RenderDevice
             }
             else if(element.GetType() == typeof(Genesis.Core.Light2D))
             {
-                this.InitLight2D((Light2D)element);
+                //this.InitLight2D((Light2D)element); Using the instanced shape
             }
         }
 
@@ -1734,6 +1734,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.Enable(OpenGL.Blend);
             gl.BlendFunc(OpenGL.DstColor, OpenGL.OneMinusSrcAlpha); // Hier evtl fehler 
             DrawFramebuffer(framebuffer.Texture);
+
+            //Test
+            gl.BlendFunc(OpenGL.One, OpenGL.OneMinusSrcAlpha);
+
             gl.Enable(OpenGL.DepthTest);
         }
 
@@ -2120,6 +2124,7 @@ namespace Genesis.Graphics.RenderDevice
 
         /// <summary>
         /// Initial an 2D light
+        /// Unused because of the instance shape
         /// </summary>
         /// <param name="light"></param>
         private void InitLight2D(Light2D light)
@@ -2173,7 +2178,6 @@ namespace Genesis.Graphics.RenderDevice
             gl.Enable(NetGL.OpenGL.Texture2D);
 
             var shader = ShaderPrograms["Light2DShader"].ProgramID;
-
             gl.UseProgram(ShaderPrograms["Light2DShader"].ProgramID);
             gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
             gl.Uniform3f(gl.GetUniformLocation(shader, "color"), lightColor[0], lightColor[1], lightColor[2]);
@@ -2183,12 +2187,18 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindTexture(NetGL.OpenGL.Texture2D, light.LightShape.RenderID);
             gl.Uniform1I(gl.GetUniformLocation(shader, "textureSampler"), 0);
 
-            // Render the light
-            gl.BindVertexArray((int)light.Propertys["vao"]);
-            gl.DrawArrays(OpenGL.Triangles, 0, 6);
-            gl.BindVertexArray(0);
+            int vbo = this.InstancedShapes["Light2DShape"].vbo;
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
 
             //Draw the sprite
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+
             gl.Disable(NetGL.OpenGL.Texture2D);
             gl.Enable(OpenGL.DepthTest);
         }
@@ -2206,8 +2216,9 @@ namespace Genesis.Graphics.RenderDevice
 
             foreach (var item in InstancedShapes)
             {
-                Console.WriteLine("Dispose " + item.Key + " vbo");
+                Console.WriteLine("Dispose " + item.Key);
                 gl.DeleteBuffers(1, item.Value.vbo);
+                Console.WriteLine("Disposed " + item.Key + " with error " + gl.GetError());
             }
         }
 
@@ -2267,7 +2278,7 @@ namespace Genesis.Graphics.RenderDevice
             }
             else if(element.GetType() == typeof(Light2D))
             {
-                this.DisposeLight2D((Light2D)element);
+                //this.DisposeLight2D((Light2D)element); Using instance shape
             }
         }
 

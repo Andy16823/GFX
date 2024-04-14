@@ -219,5 +219,11 @@ namespace Genesis.Core.GameElements
         {
             base.OnUpdate(game, renderDevice);
         }
+
+        public override void OnDestroy(Game game)
+        {
+            base.OnDestroy(game);
+            game.RenderDevice.DisposeElement(this);
+        }
     }
 }
