@@ -131,6 +131,7 @@
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\Light2DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
+    <Compile Include="Graphics\Shapes\Light2DShape.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\ClassicGL.cs" />

@@ -19,6 +19,18 @@ namespace Genesis.Core
         {
             Lights = new List<Light2D>();
         }
+
+        public void AddLight(Light2D light)
+        {
+            this.Lights.Add(light);
+        }
+
+        public void RemoveLight(Game game, Light2D light)
+        {
+            this.Lights.Remove(light);
+            light.OnDestroy(game);
+        }
+
         public override void Init(Game game, IRenderDevice renderDevice)
         {
             base.Init(game, renderDevice);
@@ -94,5 +106,14 @@ namespace Genesis.Core
             renderDevice.FinishCanvasRendering(this, null);
         }
 
+        public override void OnDestroy(Game game)
+        {
+            base.OnDestroy(game);
+            for(int i = Lights.Count -1; i >= 0; i--)
+            {
+                var light = Lights[i];
+                this.RemoveLight(game, light);
+            }
+        }
     }
 }

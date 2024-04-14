@@ -39,6 +39,12 @@ namespace Genesis.Core
             base.OnRender(game, renderDevice);
         }
 
+        public override void OnDestroy(Game game)
+        {
+            base.OnDestroy(game);
+            game.RenderDevice.DisposeElement(this);
+        }
+
         public Vec3 GetColor()
         {
             var colors = Utils.ConvertColor(LightColor);

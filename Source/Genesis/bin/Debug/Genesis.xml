@@ -5477,64 +5477,6 @@
             </summary>
             <param name="emitter"></param>
         </member>
-        <member name="T:Genesis.Graphics.Shader">
-            <summary>
-            Represents a shader used in graphics rendering.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.Shader.ShaderID">
-            <summary>
-            Gets or sets the ID of the shader.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.Shader.Source">
-            <summary>
-            Gets or sets the source code of the shader.
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.Shader.#ctor">
-            <summary>
-            Default constructor for the Shader class.
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.Shader.#ctor(System.String)">
-            <summary>
-            Constructor for the Shader class that initializes the source code.
-            </summary>
-            <param name="source">The source code of the shader.</param>
-        </member>
-        <member name="M:Genesis.Graphics.Shader.FromFile(System.String)">
-            <summary>
-            Creates a Shader object by reading the source code from a file.
-            </summary>
-            <param name="filename">The path to the file containing the shader source code.</param>
-            <returns>A Shader object with the source code read from the file.</returns>
-        </member>
-        <member name="T:Genesis.Graphics.ShaderProgram">
-            <summary>
-            Represents a shader program consisting of a vertex shader and a fragment shader.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.ProgramID">
-            <summary>
-            Gets or sets the ID of the shader program.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.VertexShader">
-            <summary>
-            Gets or sets the vertex shader associated with the program.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.FragmentShader">
-            <summary>
-            Gets or sets the fragment shader associated with the program.
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.ShaderProgram.#ctor">
-            <summary>
-            Default constructor for the ShaderProgram class.
-            </summary>
-        </member>
         <member name="T:Genesis.Graphics.Shapes.FrameShape">
             <summary>
             Represents a shape that defines a frame or rectangle.
@@ -5698,6 +5640,64 @@
             - Colors (r, g, b)
             - Texture coordinates (u, v)
             </remarks>
+        </member>
+        <member name="T:Genesis.Graphics.Shader">
+            <summary>
+            Represents a shader used in graphics rendering.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shader.ShaderID">
+            <summary>
+            Gets or sets the ID of the shader.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shader.Source">
+            <summary>
+            Gets or sets the source code of the shader.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.#ctor">
+            <summary>
+            Default constructor for the Shader class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.#ctor(System.String)">
+            <summary>
+            Constructor for the Shader class that initializes the source code.
+            </summary>
+            <param name="source">The source code of the shader.</param>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.FromFile(System.String)">
+            <summary>
+            Creates a Shader object by reading the source code from a file.
+            </summary>
+            <param name="filename">The path to the file containing the shader source code.</param>
+            <returns>A Shader object with the source code read from the file.</returns>
+        </member>
+        <member name="T:Genesis.Graphics.ShaderProgram">
+            <summary>
+            Represents a shader program consisting of a vertex shader and a fragment shader.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.ProgramID">
+            <summary>
+            Gets or sets the ID of the shader program.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.VertexShader">
+            <summary>
+            Gets or sets the vertex shader associated with the program.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.FragmentShader">
+            <summary>
+            Gets or sets the fragment shader associated with the program.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.ShaderProgram.#ctor">
+            <summary>
+            Default constructor for the ShaderProgram class.
+            </summary>
         </member>
         <member name="T:Genesis.Graphics.TexCoords">
             <summary>

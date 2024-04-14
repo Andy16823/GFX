@@ -97,9 +97,12 @@ namespace Genesis.Graphics.RenderDevice
             this.InstancedShapes.Add("GlypheShape", new Shapes.GlypheShape());
             this.InstancedShapes.Add("LineShape", new Shapes.LineShape());
             this.InstancedShapes.Add("FrameShape", new Shapes.FrameShape());
+            this.InstancedShapes.Add("Light2DShape", new Light2DShape());
             foreach (KeyValuePair<string, Shapes.Shape> item in this.InstancedShapes)
             {
+                Console.WriteLine("Building Shape " + item.Key.ToString());
                 this.BuildShape(item.Value);
+                Console.WriteLine("Builded Shape " + item.Key.ToString() + " with error " + gl.GetError());
             }
 
             this.sceneBuffer = this.BuildFramebuffer(100, 100);
@@ -2262,6 +2265,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.DisposeModel((Genesis.Core.GameElements.Model) element);
             }
+            else if(element.GetType() == typeof(Light2D))
+            {
+                this.DisposeLight2D((Light2D)element);
+            }
         }
 
         private void DisposeCube(Qube cube)
@@ -2309,6 +2316,18 @@ namespace Genesis.Graphics.RenderDevice
                 gl.DeleteTextures(1, (int)mesh.Material.Propeterys["DiffuseTextureID"]);
                 Console.WriteLine("Disposed Mesh with error " + gl.GetError());
             }
+        }
+
+        private void DisposeLight2D(Light2D light2D)
+        {
+            int vao = (int)light2D.Propertys["vao"];
+            int vbo = (int)light2D.Propertys["vbo"];
+            int tbo = (int)light2D.Propertys["tbo"];
+            Console.WriteLine("Dispose Light2D " + light2D.UUID);
+            gl.DeleteVertexArrays(1, vao);
+            gl.DeleteBuffers(1, vbo);
+            gl.DeleteBuffers(1, tbo);
+            Console.WriteLine("Disposed Light2D " + light2D.UUID + " with error " + gl.GetError());
         }
     }
 }
