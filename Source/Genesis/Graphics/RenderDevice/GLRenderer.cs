@@ -2125,5 +2125,15 @@ namespace Genesis.Graphics.RenderDevice
                 Console.WriteLine("Disposed Mesh with error " + gl.GetError());
             }
         }
+
+        public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            
+        }
+
+        public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            
+        }
     }
 }

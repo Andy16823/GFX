@@ -27,6 +27,7 @@ using System.Runtime.InteropServices;
 using static System.Windows.Forms.AxHost;
 using BulletSharp;
 using BulletSharp.SoftBody;
+using Newtonsoft.Json.Linq;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -82,6 +83,7 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("SpriteShader", new Shaders.OpenGL.SpriteShader());
             this.ShaderPrograms.Add("TerrainShader", new Shaders.OpenGL.TerrainShader());
             this.ShaderPrograms.Add("ParticleShader", new Shaders.OpenGL.ParticleShader());
+            this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -342,6 +344,10 @@ namespace Genesis.Graphics.RenderDevice
             else if(element.GetType() == typeof(Genesis.Core.GameElements.Model))
             {
                 this.InitModel((Core.GameElements.Model)element);
+            }
+            else if(element.GetType() == typeof(Genesis.Core.Light2D))
+            {
+                this.InitLight2D((Light2D)element);
             }
         }
 
@@ -667,6 +673,10 @@ namespace Genesis.Graphics.RenderDevice
             else if (element.GetType() == typeof(Genesis.Core.GameElements.Model))
             {
                 this.DrawModel((Genesis.Core.GameElements.Model)element);
+            }
+            else if (element.GetType() == typeof(Genesis.Core.Light2D))
+            {
+                this.RenderLight2D((Light2D)element);
             }
         }
 
@@ -1703,6 +1713,27 @@ namespace Genesis.Graphics.RenderDevice
             gl.Enable(OpenGL.DepthTest);
         }
 
+        public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            Scene2D scene2D = (Scene2D)scene;
+            this.UpdateFramebufferSize(framebuffer, (int)camera.Size.X, (int)camera.Size.Y);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer.FramebufferID);
+            gl.Enable(OpenGL.DepthTest);
+            gl.Enable(OpenGL.Blend);
+            gl.ClearColor(0, 0, 0, scene2D.LightmapIntensity);
+            gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
+        }
+
+        public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
+            gl.Disable(OpenGL.DepthTest);
+            gl.Enable(OpenGL.Blend);
+            gl.BlendFunc(OpenGL.DstColor, OpenGL.OneMinusSrcAlpha); // Hier evtl fehler 
+            DrawFramebuffer(framebuffer.Texture);
+            gl.Enable(OpenGL.DepthTest);
+        }
+
         /// <summary>
         /// Prepares the renderer for the canvas rendering
         /// </summary>
@@ -2082,6 +2113,81 @@ namespace Genesis.Graphics.RenderDevice
                 gl.DrawElements(OpenGL.Triangles, mesh.Indices.Count, OpenGL.UnsignedInt);
                 gl.BindVertexArray(0);
             }
+        }
+
+        /// <summary>
+        /// Initial an 2D light
+        /// </summary>
+        /// <param name="light"></param>
+        private void InitLight2D(Light2D light)
+        {
+            var vao = gl.GenVertexArrays(1);
+            gl.BindVertexArray(vao);
+
+            var verticies = Light2D.GetVericies();
+            var texCords = Light2D.GetTexCoords();
+
+            var vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+
+            var tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+
+            light.Propertys.Add("vao", vao);
+            light.Propertys.Add("vbo", vbo);
+            light.Propertys.Add("tbo", tbo);
+            light.Propertys.Add("tris", 6);
+
+            gl.BindVertexArray(0);
+        }
+
+        /// <summary>
+        /// Renders an 2D light
+        /// </summary>
+        /// <param name="light"></param>
+        private void RenderLight2D(Light2D light)
+        {
+            var lightColor = Utils.ConvertColor(light.LightColor);
+
+            gl.Disable(OpenGL.DepthTest);
+            //Create the modelview matrix
+            mat4 mt_mat = mat4.Translate(light.Location.X, light.Location.Y, light.Location.Z);
+            mat4 mr_mat = mat4.Identity;
+            mat4 ms_mat = mat4.Scale(light.Size.X, light.Size.Y, light.Size.Z);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            //Create the mvp matrix
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Load the shader program and set the mvp matrix
+            gl.Enable(NetGL.OpenGL.Texture2D);
+
+            var shader = ShaderPrograms["Light2DShader"].ProgramID;
+
+            gl.UseProgram(ShaderPrograms["Light2DShader"].ProgramID);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform3f(gl.GetUniformLocation(shader, "color"), lightColor[0], lightColor[1], lightColor[2]);
+
+            //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(NetGL.OpenGL.Texture2D, light.LightShape.RenderID);
+            gl.Uniform1I(gl.GetUniformLocation(shader, "textureSampler"), 0);
+
+            // Render the light
+            gl.BindVertexArray((int)light.Propertys["vao"]);
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+            gl.BindVertexArray(0);
+
+            //Draw the sprite
+            gl.Disable(NetGL.OpenGL.Texture2D);
+            gl.Enable(OpenGL.DepthTest);
         }
 
         /// <summary>

@@ -3895,6 +3895,18 @@
             </summary>
             <param name="scene">The 2D scene to finish rendering.</param>
         </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">
+            <summary>
+            Prepares the render for the 2D lightmap
+            </summary>
+            <param name="scene"></param>
+        </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">
+            <summary>
+            Finish the lightmap 2D rendering
+            </summary>
+            <param name="scene"></param>
+        </member>
         <member name="M:Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>
             Prepares the rendering for a canvas within a 2D scene.
@@ -4882,6 +4894,18 @@
             <summary>
             Draws the particle emitter
             </summary>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.InitLight2D(Genesis.Core.Light2D)">
+            <summary>
+            Initial an 2D light
+            </summary>
+            <param name="light"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.RenderLight2D(Genesis.Core.Light2D)">
+            <summary>
+            Renders an 2D light
+            </summary>
+            <param name="light"></param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.Experimental.Dispose">
             <summary>

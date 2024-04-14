@@ -102,6 +102,7 @@
     <Compile Include="Core\GameElements\CameraElement.cs" />
     <Compile Include="Core\GameElements\Terrain3D.cs" />
     <Compile Include="Core\Light2D.cs" />
+    <Compile Include="Core\Scene2D.cs" />
     <Compile Include="Core\Scene3D.cs" />
     <Compile Include="Core\GameElements\Element3D.cs" />
     <Compile Include="Core\GameElements\Empty.cs" />
@@ -127,6 +128,8 @@
     <Compile Include="Graphics\PerspectiveCamera.cs" />
     <Compile Include="Graphics\RenderDevice\Experimental.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\Light2DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
