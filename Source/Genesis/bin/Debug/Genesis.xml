@@ -1848,6 +1848,12 @@
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
         </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Clears the GPU memory
+            </summary>
+            <param name="game"></param>
+        </member>
         <member name="T:Genesis.Core.GameElements.CameraElement">
             <summary>
             Represents a game element that serves as a camera within the game world.

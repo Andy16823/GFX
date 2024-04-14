@@ -2268,6 +2268,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.DisposeCube((Qube)element);
             }
+            else if(element.GetType() == typeof(BufferedSprite))
+            {
+                this.DisposeBufferedSprite((BufferedSprite)element);
+            }
             else if (element.GetType() == typeof(ParticleEmitter))
             {
                 this.DisposeParticleEmitter((ParticleEmitter)element);
@@ -2280,6 +2284,15 @@ namespace Genesis.Graphics.RenderDevice
             {
                 //this.DisposeLight2D((Light2D)element); Using instance shape
             }
+        }
+
+        private void DisposeBufferedSprite(BufferedSprite sprite)
+        {
+            Console.WriteLine("Disposing buffered sprite " + sprite.UUID);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["vbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["cbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["tbo"]);
+            Console.WriteLine("Disposed buffered sprite with error " + gl.GetError());
         }
 
         private void DisposeCube(Qube cube)
