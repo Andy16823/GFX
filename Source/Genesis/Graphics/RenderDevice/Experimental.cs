@@ -46,13 +46,16 @@ namespace Genesis.Graphics.RenderDevice
         private NetGL.OpenGL gl;
         private IntPtr hwnd;
         private Light lightSource;
+
+        private RenderSettings m_renderSettings;
         
         public Framebuffer sceneBuffer;
         private Framebuffer uiBuffer;
 
-        public Experimental(IntPtr hwnd)
+        public Experimental(IntPtr hwnd, RenderSettings settings)
         {
             this.hwnd = hwnd;
+            m_renderSettings = settings;
         }
 
         /// <summary>
@@ -72,17 +75,18 @@ namespace Genesis.Graphics.RenderDevice
 
             ///Initial the prebuild shaders
             this.ShaderPrograms = new Dictionary<String, ShaderProgram>();
-            this.ShaderPrograms.Add("BasicShader", new Shaders.OpenGL.BasicShader());
-            this.ShaderPrograms.Add("MVPShader", new Shaders.OpenGL.MVPShader());
-            this.ShaderPrograms.Add("MVPSolidShader", new Shaders.OpenGL.MVPSolidShader());
-            this.ShaderPrograms.Add("MVPRectShader", new Shaders.OpenGL.MVPRectShader());
-            this.ShaderPrograms.Add("DiffuseShader", new Shaders.OpenGL.DiffuseShader());
-            this.ShaderPrograms.Add("DiffuseNormalShader", new Shaders.OpenGL.DiffuseNormalShader());
-            this.ShaderPrograms.Add("WireframeShader", new Shaders.OpenGL.WireframeShader());
-            this.ShaderPrograms.Add("ScreenShader", new Shaders.OpenGL.ScreenShader());
-            this.ShaderPrograms.Add("SpriteShader", new Shaders.OpenGL.SpriteShader());
-            this.ShaderPrograms.Add("TerrainShader", new Shaders.OpenGL.TerrainShader());
-            this.ShaderPrograms.Add("ParticleShader", new Shaders.OpenGL.ParticleShader());
+            this.ShaderPrograms.Add("BasicShader", new BasicShader());
+            this.ShaderPrograms.Add("MVPShader", new MVPShader());
+            this.ShaderPrograms.Add("MVPSolidShader", new MVPSolidShader());
+            this.ShaderPrograms.Add("MVPRectShader", new MVPRectShader());
+            this.ShaderPrograms.Add("DiffuseShader", new DiffuseShader());
+            this.ShaderPrograms.Add("DiffuseNormalShader", new DiffuseNormalShader());
+            this.ShaderPrograms.Add("WireframeShader", new WireframeShader());
+            this.ShaderPrograms.Add("ScreenShader", new ScreenShader());
+            this.ShaderPrograms.Add("SceneShader", new SceneShader());
+            this.ShaderPrograms.Add("SpriteShader", new SpriteShader());
+            this.ShaderPrograms.Add("TerrainShader", new TerrainShader());
+            this.ShaderPrograms.Add("ParticleShader", new ParticleShader());
             this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
@@ -731,6 +735,7 @@ namespace Genesis.Graphics.RenderDevice
             gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
 
             //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(NetGL.OpenGL.Texture2D, texture.RenderID);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
@@ -892,6 +897,7 @@ namespace Genesis.Graphics.RenderDevice
             gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
 
             //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(NetGL.OpenGL.Texture2D, bufferedSprite.Texture.RenderID);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
@@ -1706,12 +1712,13 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
 
+            gl.Enable(OpenGL.FramebufferSRGB);
             if(scene.BackgroundTexture != null)
             {
-                DrawFramebuffer(scene.BackgroundTexture.RenderID);
+                DrawFramebuffer(scene.BackgroundTexture.RenderID, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
             }
-
-            DrawFramebuffer(sceneBuffer.Texture);
+            DrawFramebuffer(sceneBuffer.Texture, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
+            gl.Disable(OpenGL.FramebufferSRGB);
 
             gl.Enable(OpenGL.DepthTest);
         }
@@ -1786,6 +1793,38 @@ namespace Genesis.Graphics.RenderDevice
             gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(OpenGL.Texture2D, textureID);
             gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+
+            // bind vertex buffer
+            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
+
+            // define verticies
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            // define texture coords
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+
+            // render vertex buffer
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+        }
+
+        /// <summary>
+        /// Draw the framebuffer with another shader programm and gamma
+        /// </summary>
+        /// <param name="textureID"></param>
+        /// <param name="shaderProgramm"></param>
+        /// <param name="gamma"></param>
+        private void DrawFramebuffer(int textureID, int shaderProgramm, float gamma = 0.0f)
+        {
+            // load shader
+            gl.UseProgram(shaderProgramm);
+
+            // send texture to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, textureID);
+            gl.Uniform1I(gl.GetUniformLocation(shaderProgramm, "screenTexture"), 0);
+            gl.Uniform1f(gl.GetUniformLocation(shaderProgramm, "gamma"), gamma);
 
             // bind vertex buffer
             gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);

@@ -12,6 +12,22 @@ using System.Windows.Forms;
 namespace Genesis.UI
 {
     /// <summary>
+    /// Enum for the widget position
+    /// </summary>
+    public enum WidgetAnchor
+    {
+        TOP_LEFT,
+        TOP_MID,
+        TOP_RIGHT,
+        MID_LEFT,
+        MID_MID,
+        MID_RIGHT,
+        BOTTOM_LEFT,
+        BOTTOM_MID,
+        BOTTOM_RIGHT,
+    }
+
+    /// <summary>
     /// Delegate for handling UI events.
     /// </summary>
     /// <param name="entity">The widget triggering the event.</param>
@@ -59,6 +75,11 @@ namespace Genesis.UI
         /// Gets or sets a value indicating whether debug mode is enabled for the widget.
         /// </summary>
         public bool Debug { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets the anchor value for the widget
+        /// </summary>
+        public WidgetAnchor Anchor { get; set; } = WidgetAnchor.BOTTOM_LEFT;
 
         /// <summary>
         /// Event triggered when the mouse enters the widget.
@@ -188,6 +209,7 @@ namespace Genesis.UI
             }
             loc.X += Location.X + (Size.X / 2);
             loc.Y += Location.Y + (Size.Y / 2);
+
             return loc;
         }
 
@@ -216,8 +238,11 @@ namespace Genesis.UI
         public Rect GetRelativeBounds2D(Canvas canvas)
         {
             Vec3 relativeLocation = this.GetRelativePos(canvas);
+            var source = new Rect(relativeLocation.X - Size.X / 2, relativeLocation.Y - Size.Y / 2, Size.X, Size.Y);
+
+
             //return new Rect(relativeLocation.X, relativeLocation.Y, Size.X, Size.Y);
-            return new Rect(relativeLocation.X - Size.X / 2, relativeLocation.Y - Size.Y / 2, Size.X, Size.Y);
+            return TransformBounds(source, this.Anchor);
         }
 
         /// <summary>
@@ -234,7 +259,6 @@ namespace Genesis.UI
 
             if (rect.Contains(mouse.X, mouse.Y))
             {
-                Console.WriteLine(this.Name + " " + rect);
                 return true;
             }
             return false;
@@ -261,6 +285,48 @@ namespace Genesis.UI
                 }
             }
             return widget;
+        }
+
+        /// <summary>
+        /// Transform the bounds from the bottom left point to any anchor position
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="anchor"></param>
+        /// <returns></returns>
+        public static Rect TransformBounds(Rect source, WidgetAnchor anchor)
+        {
+            switch (anchor)
+            {
+                case WidgetAnchor.TOP_LEFT:
+                    return new Rect(source.X, source.Y - source.Height, source.Width, source.Height);
+                case WidgetAnchor.TOP_MID:
+                    return new Rect(source.X - (source.Width / 2), source.Y - source.Height, source.Width, source.Height);
+                case WidgetAnchor.TOP_RIGHT:
+                    return new Rect(source.X - source.Width, source.Y - source.Height, source.Width, source.Height);
+                case WidgetAnchor.MID_LEFT:
+                    return new Rect(source.X, source.Y - (source.Height / 2), source.Width, source.Height);
+                case WidgetAnchor.MID_MID:
+                    return new Rect(source.X - (source.Width / 2), source.Y - (source.Height / 2), source.Width, source.Height);
+                case WidgetAnchor.MID_RIGHT:
+                    return new Rect(source.X - source.Width, source.Y - (source.Height / 2), source.Width, source.Height);
+                case WidgetAnchor.BOTTOM_LEFT:
+                    return source;
+                case WidgetAnchor.BOTTOM_MID:
+                    return new Rect(source.X - (source.Width / 2), source.Y, source.Width, source.Height);
+                case WidgetAnchor.BOTTOM_RIGHT:
+                    return new Rect(source.X - source.Width, source.Y, source.Width, source.Height);
+                default:
+                    return source;
+            }
+        }
+
+        /// <summary>
+        /// Checks if the widget is hovered
+        /// </summary>
+        /// <returns></returns>
+        public bool Hovered()
+        {
+            return _isHover;
         }
 
     }

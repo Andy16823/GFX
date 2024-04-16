@@ -55,6 +55,21 @@ namespace Genesis.UI
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProgressBar"/> class with the specified name, location, and size.
+        /// </summary>
+        /// <param name="name">The name of the progress bar.</param>
+        /// <param name="location">The location of the progress bar.</param>
+        /// <param name="size">The size of the progress bar.</param>
+        /// <param name="anchor">The anchor for the progress bar</param>
+        public ProgressBar(String name, Vec3 location, Vec3 size, WidgetAnchor anchor)
+        {
+            this.Name = name;
+            this.Location = location;
+            this.Size = size;
+            this.Anchor = anchor;
+        }
+
+        /// <summary>
         /// Renders the progress bar with its background, bar, and border.
         /// </summary>
         /// <param name="game">The game instance.</param>
@@ -64,7 +79,9 @@ namespace Genesis.UI
         public override void OnRender(Game game, IRenderDevice renderDevice, Scene scene, Canvas canvas)
         {
             base.OnRender(game, renderDevice, scene, canvas);
-            Vec3 loc = GetRelativePos(canvas);
+            var bounds = TransformBounds(new Rect(GetRelativePos(canvas), this.Size), this.Anchor);
+            Vec3 loc = bounds.GetLocation();
+
 
             float hpct = Value / MaxValue * 100;
             float barWidth = this.Size.X * hpct / 100;

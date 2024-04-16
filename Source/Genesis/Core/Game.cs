@@ -314,7 +314,7 @@ namespace Genesis.Core
             {
                 if(scene.Name.Equals(name))
                 {
-                    this.SelectedScene = scene;
+                    this.LoadScene(scene);
                 }
             }
         }
@@ -340,6 +340,19 @@ namespace Genesis.Core
                 if (scene.Name.Equals(name))
                 {
                     return scene;
+                }
+            }
+            return null;
+        }
+
+
+        public T GetScene<T>() where T : Scene
+        {
+            foreach (var scene in Scenes)
+            {
+                if (scene.GetType().Equals(typeof(T)))
+                {
+                    return (T)scene;
                 }
             }
             return null;
