@@ -6,6 +6,7 @@ items:
   parent: Genesis.Core
   children:
   - Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3)
+  - Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)
   - Genesis.Core.Light.GetLightColor
   - Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)
   - Genesis.Core.Light.Intensity
@@ -88,6 +89,39 @@ items:
   nameWithType.vb: Light.New(String, Vec3)
   fullName.vb: Genesis.Core.Light.New(String, Genesis.Math.Vec3)
   name.vb: New(String, Vec3)
+- uid: Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)
+  commentId: M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)
+  id: '#ctor(System.String,Genesis.Math.Vec3,System.Single)'
+  parent: Genesis.Core.Light
+  langs:
+  - csharp
+  - vb
+  name: Light(string, Vec3, float)
+  nameWithType: Light.Light(string, Vec3, float)
+  fullName: Genesis.Core.Light.Light(string, Genesis.Math.Vec3, float)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Creates a new instance of the Light class with the specified name, location and intensity.
+  example: []
+  syntax:
+    content: public Light(string name, Vec3 location, float intensity)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the light.
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The 3D location of the light.
+    - id: intensity
+      type: System.Single
+      description: The intensity of the light.
+    content.vb: Public Sub New(name As String, location As Vec3, intensity As Single)
+  overload: Genesis.Core.Light.#ctor*
+  nameWithType.vb: Light.New(String, Vec3, Single)
+  fullName.vb: Genesis.Core.Light.New(String, Genesis.Math.Vec3, Single)
+  name.vb: New(String, Vec3, Single)
 - uid: Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)
   commentId: M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)
   id: GetLightDirection(Genesis.Graphics.Camera)
@@ -990,6 +1024,17 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: Genesis.Core.Light.GetLightDirection*
   commentId: Overload:Genesis.Core.Light.GetLightDirection
   isExternal: true
@@ -1088,14 +1133,3 @@ references:
   name: Intensity
   nameWithType: Light.Intensity
   fullName: Genesis.Core.Light.Intensity
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single

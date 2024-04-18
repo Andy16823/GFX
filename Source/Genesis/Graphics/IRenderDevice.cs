@@ -294,6 +294,11 @@ namespace Genesis.Graphics
         /// <param name="borderWidth">The width of the rectangle border.</param>
         void DrawRect(Rect rect, Color color, float borderWidth);
 
+
+        void FillCircle(Vec3 center, float radius, Color color);
+
+        void DrawCircle(Vec3 center, float radius, Color color, float borderWidth);
+
         /// <summary>
         /// Fills a colored rectangle with specified position and size in the current rendering context.
         /// </summary>

@@ -37,6 +37,7 @@ items:
   - Genesis.Graphics.RenderDevice.ClassicGL.End
   - Genesis.Graphics.RenderDevice.ClassicGL.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.ClassicGL.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.ClassicGL.FinishSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)
@@ -51,6 +52,7 @@ items:
   - Genesis.Graphics.RenderDevice.ClassicGL.ModelViewMatrix
   - Genesis.Graphics.RenderDevice.ClassicGL.PopMatrix
   - Genesis.Graphics.RenderDevice.ClassicGL.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.ClassicGL.PrepareSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.ClassicGL.ProjectionMatrix
   - Genesis.Graphics.RenderDevice.ClassicGL.PushMatrix
@@ -1858,6 +1860,62 @@ items:
   overload: Genesis.Graphics.RenderDevice.ClassicGL.DisposeElement*
   implements:
   - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.ClassicGL
+  langs:
+  - csharp
+  - vb
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: ClassicGL.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Prepares the render for the 2D lightmap
+  example: []
+  syntax:
+    content: public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.ClassicGL
+  langs:
+  - csharp
+  - vb
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: ClassicGL.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Finish the lightmap 2D rendering
+  example: []
+  syntax:
+    content: public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
 references:
 - uid: Genesis.Graphics.RenderDevice
   commentId: N:Genesis.Graphics.RenderDevice
@@ -5207,4 +5265,102 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D
+  nameWithType: ClassicGL.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D
+  nameWithType: ClassicGL.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
   - name: )

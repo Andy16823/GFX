@@ -34,6 +34,8 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  - Genesis.Graphics.Shaders.OpenGL.Light2DShader
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader

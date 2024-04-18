@@ -29,6 +29,7 @@ items:
   - Genesis.Graphics.Shapes.BufferedSpriteShape
   - Genesis.Graphics.Shapes.FrameShape
   - Genesis.Graphics.Shapes.GlypheShape
+  - Genesis.Graphics.Shapes.Light2DShape
   - Genesis.Graphics.Shapes.LineShape
   - Genesis.Graphics.Shapes.PlaneShape
   - Genesis.Graphics.Shapes.QubeShape

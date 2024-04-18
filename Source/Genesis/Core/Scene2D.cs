@@ -8,32 +8,74 @@ using System.Threading.Tasks;
 
 namespace Genesis.Core
 {
+    /// <summary>
+    /// Represents a 2D scene in the game.
+    /// </summary>
     public class Scene2D : Scene
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether to render the lightmap.
+        /// </summary>
         public bool RenderLightmap { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets the framebuffer used for rendering the lightmap.
+        /// </summary>
         public Framebuffer Framebuffer { get; set; }
+
+        /// <summary>
+        /// Gets or sets the intensity of the lightmap.
+        /// </summary>
         public float LightmapIntensity { get; set; } = 0.7f;
+
+        /// <summary>
+        /// Gets the list of 2D lights in the scene.
+        /// </summary>
         public List<Light2D> Lights { get; set; }
 
+        /// <summary>
+        /// Event that occurs before lightmap preparation.
+        /// </summary>
         public event SceneEventHandler BeforeLightmapPreparation;
+
+        /// <summary>
+        /// Event that occurs after lightmap rendering.
+        /// </summary>
         public event SceneEventHandler AfterLightmapRendering;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Scene2D"/> class.
+        /// </summary>
         public Scene2D()
         {
             Lights = new List<Light2D>();
         }
 
+        /// <summary>
+        /// Adds a 2D light to the scene.
+        /// </summary>
+        /// <param name="light">The light to add.</param>
         public void AddLight(Light2D light)
         {
             this.Lights.Add(light);
         }
 
+        /// <summary>
+        /// Removes a 2D light from the scene.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
+        /// <param name="light">The light to remove.</param>
         public void RemoveLight(Game game, Light2D light)
         {
             this.Lights.Remove(light);
             light.OnDestroy(game);
         }
 
+        /// <summary>
+        /// Initializes the scene.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
+        /// <param name="renderDevice">The render device.</param>
         public override void Init(Game game, IRenderDevice renderDevice)
         {
             base.Init(game, renderDevice);
@@ -44,6 +86,11 @@ namespace Genesis.Core
             this.Framebuffer = renderDevice.BuildFramebuffer(100, 100);
         }
 
+        /// <summary>
+        /// Called when the scene needs to update.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
+        /// <param name="renderDevice">The render device.</param>
         public override void OnUpdate(Game game, IRenderDevice renderDevice)
         {
             base.OnUpdate(game, renderDevice);
@@ -53,6 +100,11 @@ namespace Genesis.Core
             }
         }
 
+        /// <summary>
+        /// Called when the scene needs to render.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
+        /// <param name="renderDevice">The render device.</param>
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
             if (this.Camera != null)
@@ -116,6 +168,10 @@ namespace Genesis.Core
             renderDevice.FinishCanvasRendering(this, null);
         }
 
+        /// <summary>
+        /// Called when the scene is being destroyed.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
         public override void OnDestroy(Game game)
         {
             base.OnDestroy(game);

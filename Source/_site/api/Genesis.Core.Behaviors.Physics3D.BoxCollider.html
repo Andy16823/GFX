@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class BoxCollider | GFX ">
     
-    
+    <meta name="description" content="Defines a box collider behavior for 3D physics simulations.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -123,7 +123,13 @@
                             <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Light2D.html" title="Light2D" class="">Light2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene2D.html" title="Scene2D" class="">Scene2D</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
@@ -176,6 +182,9 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html" title="BoxTrigger2D" class="">BoxTrigger2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html" title="BufferedSpriteCollider" class="">BufferedSpriteCollider</a>
                           </li>
                           <li class="">
@@ -196,6 +205,9 @@
                         <ul class="nav level2">
                           <li class="active">
                             <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="active">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxTrigger.html" title="BoxTrigger" class="">BoxTrigger</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
@@ -396,6 +408,9 @@
                             <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.Experimental.html" title="Experimental" class="">Experimental</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -425,6 +440,12 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html" title="FXScreenSpaceShadowShader" class="">FXScreenSpaceShadowShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.Light2DShader.html" title="Light2DShader" class="">Light2DShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
@@ -468,6 +489,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Light2DShape.html" title="Light2DShape" class="">Light2DShape</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
@@ -613,7 +637,8 @@
 
 
   <h1 id="Genesis_Core_Behaviors_Physics3D_BoxCollider" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider" class="text-break">Class BoxCollider</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Defines a box collider behavior for 3D physics simulations.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -628,7 +653,7 @@
       <a class="xref" href="Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_OnCollide">PhysicsBehavior.OnCollide</a>
     </div>
     <div>
-      <a class="xref" href="Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_">PhysicsBehavior.Collide(Scene, Game, RigidBody)</a>
+      <a class="xref" href="Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_">PhysicsBehavior.Collide(Scene, Game, CollisionObject)</a>
     </div>
     <div>
       <a class="xref" href="Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_Parent">IGameBehavior.Parent</a>
@@ -679,7 +704,8 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_RigidBody_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_RigidBody" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody">RigidBody</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the rigid body associated with this box collider.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -706,7 +732,8 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_CreateCollider_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_CreateCollider_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_System_Single_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">CreateCollider(PhysicHandler, Vec3, float)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a box collider with the specified parameters.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -725,17 +752,20 @@
       <tr>
         <td><a class="xref" href="Genesis.Physics.PhysicHandler.html">PhysicHandler</a></td>
         <td><span class="parametername">handler</span></td>
-        <td></td>
+        <td><p>The physics handler managing this collider.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
         <td><span class="parametername">boxHalfExtends</span></td>
-        <td></td>
+        <td><p>The half extends of the box collider.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
         <td><span class="parametername">mass</span></td>
-        <td></td>
+        <td><p>The mass of the box collider.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -743,7 +773,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject">GetPhysicsObject()</h4>
-  <div class="markdown level1 summary"><p>Gets the physics object associated with this behavior.</p>
+  <div class="markdown level1 summary"><p>Retrieves the physics object associated with this box collider.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -761,7 +791,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>The physics object</p>
+        <td><p>The physics object associated with this collider.</p>
 </td>
       </tr>
     </tbody>
@@ -772,7 +802,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_GetPhysicsObject__1" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject``1">GetPhysicsObject&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"><p>Gets the physics object associated with this behavior, cast to type T.</p>
+  <div class="markdown level1 summary"><p>Retrieves the physics object associated with this box collider, cast to the specified type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -790,7 +820,7 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The physics object cast to type T</p>
+        <td><p>The physics object associated with this collider, cast to the specified type.</p>
 </td>
       </tr>
     </tbody>
@@ -806,7 +836,7 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td><p>Type to cast the physics object to</p>
+        <td><p>The type to cast the physics object to.</p>
 </td>
       </tr>
     </tbody>
@@ -817,7 +847,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnDestroy_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">OnDestroy(Game, GameElement)</h4>
-  <div class="markdown level1 summary"><p>Called when the game behavior is being destroyed.</p>
+  <div class="markdown level1 summary"><p>Called when the collider is destroyed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -837,7 +867,7 @@
       <tr>
         <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
         <td><span class="parametername">game</span></td>
-        <td><p>The game instance.</p>
+        <td><p>The current game instance.</p>
 </td>
       </tr>
       <tr>
@@ -854,7 +884,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnInit_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">OnInit(Game, GameElement)</h4>
-  <div class="markdown level1 summary"><p>Called when the game behavior is initialized.</p>
+  <div class="markdown level1 summary"><p>Called when the collider is initialized.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -874,7 +904,7 @@
       <tr>
         <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
         <td><span class="parametername">game</span></td>
-        <td><p>The game instance.</p>
+        <td><p>The current game instance.</p>
 </td>
       </tr>
       <tr>
@@ -891,7 +921,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnRender_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">OnRender(Game, GameElement)</h4>
-  <div class="markdown level1 summary"><p>Called when the game behavior is rendered.</p>
+  <div class="markdown level1 summary"><p>Called when the collider needs to be rendered.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -911,7 +941,7 @@
       <tr>
         <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
         <td><span class="parametername">game</span></td>
-        <td><p>The game instance.</p>
+        <td><p>The current game instance.</p>
 </td>
       </tr>
       <tr>
@@ -928,7 +958,7 @@
 
   <a id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnUpdate_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate*"></a>
   <h4 id="Genesis_Core_Behaviors_Physics3D_BoxCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">OnUpdate(Game, GameElement)</h4>
-  <div class="markdown level1 summary"><p>Called when the game behavior is updated.</p>
+  <div class="markdown level1 summary"><p>Called when the collider needs to be updated.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -948,7 +978,7 @@
       <tr>
         <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
         <td><span class="parametername">game</span></td>
-        <td><p>The game instance.</p>
+        <td><p>The current game instance.</p>
 </td>
       </tr>
       <tr>

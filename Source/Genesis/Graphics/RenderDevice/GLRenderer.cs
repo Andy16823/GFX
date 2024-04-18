@@ -90,6 +90,8 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("TerrainShader", new TerrainShader());
             this.ShaderPrograms.Add("ParticleShader", new ParticleShader());
             this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
+            this.ShaderPrograms.Add("SolidShapeShader", new SolidShapeShader());
+            this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -104,6 +106,7 @@ namespace Genesis.Graphics.RenderDevice
             this.InstancedShapes.Add("LineShape", new Shapes.LineShape());
             this.InstancedShapes.Add("FrameShape", new Shapes.FrameShape());
             this.InstancedShapes.Add("Light2DShape", new Light2DShape());
+            this.InstancedShapes.Add("CircleShape", new CircleShape());
             foreach (KeyValuePair<string, Shapes.Shape> item in this.InstancedShapes)
             {
                 Console.WriteLine("Building Shape " + item.Key.ToString());
@@ -633,6 +636,85 @@ namespace Genesis.Graphics.RenderDevice
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
             //Console.WriteLine(gl.GetError());
+        }
+
+        /// <summary>
+        /// Renders an filled circle
+        /// </summary>
+        /// <param name="center">Center of the circle</param>
+        /// <param name="radius">Radius of the circle</param>
+        /// <param name="color">Color of the circle</param>
+        public void FillCircle(Vec3 center, float radius, Color color)
+        {
+            var shader = ShaderPrograms["SolidShapeShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = (CircleShape) InstancedShapes["CircleShape"];
+
+            gl.Disable(OpenGL.DepthTest);
+
+            //Creates the modelview matrix
+            mat4 mt_mat = mat4.Translate(center.X, center.Y, 0.0f);
+            mat4 mr_mat = mat4.RotateZ(0);
+            mat4 ms_mat = mat4.Scale(radius * 2, radius * 2, 0.0f);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Send data to the shader progra,,
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
+
+            //Load the vertex buffer and binds them
+            gl.BindBuffer(OpenGL.ArrayBuffer, shape.vbo);
+
+            //Send the vertex data to the shader
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.DrawArrays(OpenGL.TriangleFan, 0, shape.Segments + 2);
+
+            gl.Enable(OpenGL.DepthTest);
+        }
+
+        /// <summary>
+        /// Draws an circle
+        /// </summary>
+        /// <param name="center">Location for the circle</param>
+        /// <param name="radius">Radius for the circle</param>
+        /// <param name="color">Color for the circle</param>
+        /// <param name="borderWidth">Border width for the circle</param>
+        public void DrawCircle(Vec3 center, float radius, Color color, float borderWidth)
+        {
+            var shader = ShaderPrograms["BorderCircleShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color);
+            var shape = (CircleShape)InstancedShapes["CircleShape"];
+
+            gl.Disable(OpenGL.DepthTest);
+
+            //Creates the modelview matrix
+            mat4 mt_mat = mat4.Translate(center.X, center.Y, 0.0f);
+            mat4 mr_mat = mat4.RotateZ(0);
+            mat4 ms_mat = mat4.Scale(radius * 2, radius * 2, 0.0f);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Send data to the shader progra,,
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "m_mat"), 1, false, m_mat.ToArray());
+            gl.Uniform3f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2]);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "radius"), radius);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "border_width"), borderWidth);
+
+            //Load the vertex buffer and binds them
+            gl.BindBuffer(OpenGL.ArrayBuffer, shape.vbo);
+
+            //Send the vertex data to the shader
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.DrawArrays(OpenGL.TriangleFan, 0, shape.Segments + 2);
+
+            gl.Enable(OpenGL.DepthTest);
         }
 
         /// <summary>

@@ -11,6 +11,8 @@ items:
   - Genesis.Core.GameElements.Qube.Color
   - Genesis.Core.GameElements.Qube.GetColors(System.Drawing.Color)
   - Genesis.Core.GameElements.Qube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElements.Qube.Material
+  - Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.Qube.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Qube.Shader
   - Genesis.Core.GameElements.Qube.Shape
@@ -34,7 +36,6 @@ items:
   - Genesis.Core.GameElement
   inheritedMembers:
   - Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
-  - Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElement.AddBehavior``1({T})
   - Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
   - Genesis.Core.GameElement.GetBehavior``1
@@ -74,7 +75,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.GameElements
-  summary: Initializes a new instance of the Qube class with default settings.
+  summary: Initializes a new instance of the cube class with default settings.
   example: []
   syntax:
     content: public Qube(string name, Vec3 location)
@@ -104,7 +105,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.GameElements
-  summary: Initializes a new instance of the Qube class with specified size.
+  summary: Initializes a new instance of the cube class with specified size.
   example: []
   syntax:
     content: public Qube(string Name, Vec3 location, Vec3 size)
@@ -136,7 +137,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.GameElements
-  summary: Initializes a new instance of the Qube class with specified size and rotation.
+  summary: Initializes a new instance of the cube class with specified size and rotation.
   example: []
   syntax:
     content: public Qube(string name, Vec3 location, Vec3 size, Vec3 rotation)
@@ -241,6 +242,31 @@ items:
     content.vb: Public Overrides Sub OnRender(game As Game, renderDevice As IRenderDevice)
   overridden: Genesis.Core.GameElement.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   overload: Genesis.Core.GameElements.Qube.OnRender*
+- uid: Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  commentId: M:Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  id: OnDestroy(Genesis.Core.Game)
+  parent: Genesis.Core.GameElements.Qube
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy(Game)
+  nameWithType: Qube.OnDestroy(Game)
+  fullName: Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Called when the game element is disposed.
+  example: []
+  syntax:
+    content: public override void OnDestroy(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    content.vb: Public Overrides Sub OnDestroy(game As Game)
+  overridden: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  overload: Genesis.Core.GameElements.Qube.OnDestroy*
 - uid: Genesis.Core.GameElements.Qube.Shader
   commentId: P:Genesis.Core.GameElements.Qube.Shader
   id: Shader
@@ -264,6 +290,29 @@ items:
       type: Genesis.Graphics.ShaderProgram
     content.vb: Public Property Shader As ShaderProgram
   overload: Genesis.Core.GameElements.Qube.Shader*
+- uid: Genesis.Core.GameElements.Qube.Material
+  commentId: P:Genesis.Core.GameElements.Qube.Material
+  id: Material
+  parent: Genesis.Core.GameElements.Qube
+  langs:
+  - csharp
+  - vb
+  name: Material
+  nameWithType: Qube.Material
+  fullName: Genesis.Core.GameElements.Qube.Material
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Gets or sets the material for this cube
+  example: []
+  syntax:
+    content: public Material Material { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Graphics.Material
+    content.vb: Public Property Material As Material
+  overload: Genesis.Core.GameElements.Qube.Material*
 - uid: Genesis.Core.GameElements.Qube.Shape
   commentId: P:Genesis.Core.GameElements.Qube.Shape
   id: Shape
@@ -408,36 +457,6 @@ references:
     name: IRenderDevice
     isExternal: true
     href: Genesis.Graphics.IRenderDevice.html
-  - name: )
-- uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  commentId: M:Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  parent: Genesis.Core.GameElement
-  isExternal: true
-  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  name: OnDestroy(Game)
-  nameWithType: GameElement.OnDestroy(Game)
-  fullName: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  spec.csharp:
-  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
   - name: )
 - uid: Genesis.Core.GameElement.AddBehavior``1({T})
   commentId: M:Genesis.Core.GameElement.AddBehavior``1(``0)
@@ -1275,6 +1294,43 @@ references:
   name: OnRender
   nameWithType: Qube.OnRender
   fullName: Genesis.Core.GameElements.Qube.OnRender
+- uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  commentId: M:Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  name: OnDestroy(Game)
+  nameWithType: GameElement.OnDestroy(Game)
+  fullName: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
+- uid: Genesis.Core.GameElements.Qube.OnDestroy*
+  commentId: Overload:Genesis.Core.GameElements.Qube.OnDestroy
+  isExternal: true
+  href: Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_OnDestroy_Genesis_Core_Game_
+  name: OnDestroy
+  nameWithType: Qube.OnDestroy
+  fullName: Genesis.Core.GameElements.Qube.OnDestroy
 - uid: Genesis.Core.GameElements.Qube.Shader*
   commentId: Overload:Genesis.Core.GameElements.Qube.Shader
   isExternal: true
@@ -1290,6 +1346,21 @@ references:
   name: ShaderProgram
   nameWithType: ShaderProgram
   fullName: Genesis.Graphics.ShaderProgram
+- uid: Genesis.Core.GameElements.Qube.Material*
+  commentId: Overload:Genesis.Core.GameElements.Qube.Material
+  isExternal: true
+  href: Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_Material
+  name: Material
+  nameWithType: Qube.Material
+  fullName: Genesis.Core.GameElements.Qube.Material
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
 - uid: Genesis.Core.GameElements.Qube.Shape*
   commentId: Overload:Genesis.Core.GameElements.Qube.Shape
   isExternal: true

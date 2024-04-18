@@ -92,6 +92,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.yml",
       "output": {
         ".html": {
@@ -146,6 +156,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html"
         }
       },
       "version": ""
@@ -552,10 +572,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Light2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Light2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Scene.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Scene.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Scene2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Scene2D.html"
         }
       },
       "version": ""
@@ -882,6 +922,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.RenderDevice.Experimental.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.RenderDevice.Experimental.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.RenderDevice.GLRenderer.yml",
       "output": {
         ".html": {
@@ -986,6 +1036,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html"
         }
       },
       "version": ""
@@ -1116,6 +1186,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shapes.GlypheShape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shapes.Light2DShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shapes.Light2DShape.html"
         }
       },
       "version": ""

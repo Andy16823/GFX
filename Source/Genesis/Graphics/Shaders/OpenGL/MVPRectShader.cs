@@ -48,7 +48,8 @@ namespace Genesis.Graphics.Shaders.OpenGL
                     float minY = -0.5 + bw;
 
                    if (position.x < maxX && position.x > minX && position.y < maxY && position.y > minY) {
-                        gl_FragColor = vec4(color, 0.0);
+                        //gl_FragColor = vec4(color, 0.0);
+                        discard;
                    } else {
                         gl_FragColor = vec4(color, 1.0);
                    }          

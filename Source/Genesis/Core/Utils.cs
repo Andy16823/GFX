@@ -569,12 +569,19 @@ namespace Genesis.Core
         /// Converts a System.Drawing.Color into a float array.
         /// </summary>
         /// <param name="color">The color.</param>
+        /// <param name="alpha">Checks if the alpha gets converted</param>
         /// <returns>The float array representing the color.</returns>
-        public static float[] ConvertColor(Color color)
+        public static float[] ConvertColor(Color color, bool alpha = false)
         {
             float r = (float)color.R / 255;
             float g = (float)color.G / 255;
             float b = (float)color.B / 255;
+            
+            if(alpha)
+            {
+                float a = (float)color.A / 255;
+                return new float[] { r, g, b, a};
+            }
 
             return new float[] { r, g, b };
         }
