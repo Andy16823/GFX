@@ -110,7 +110,9 @@
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameElement.cs" />
     <Compile Include="Core\GameElements\Model.cs" />
+    <Compile Include="Core\GameElements\NavMesh.cs" />
     <Compile Include="Core\GameElements\ParticleEmitter.cs" />
+    <Compile Include="Core\GameElements\Waypoint.cs" />
     <Compile Include="Core\GenesisWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,7 +148,7 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
-    <Compile Include="Graphics\RenderDevice\Experimental.cs" />
+    <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
@@ -157,7 +159,7 @@
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\ClassicGL.cs" />
-    <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
+    <Compile Include="Graphics\RenderDevice\OldGLRenderer.cs" />
     <Compile Include="Graphics\Shader.cs" />
     <Compile Include="Graphics\ShaderProgram.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\DiffuseNormalLightning.cs" />
