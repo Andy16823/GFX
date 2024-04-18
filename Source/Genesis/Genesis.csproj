@@ -64,7 +64,7 @@
     <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
     </Reference>
-    <Reference Include="NetGL, Version=1.0.8870.3398, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="NetGL, Version=1.0.8872.31560, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\NetGL - Kopie\x64\Release\NetGL.dll</HintPath>
     </Reference>
@@ -200,6 +200,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Canvas.cs" />
+    <Compile Include="UI\GridView.cs" />
+    <Compile Include="UI\Items\GridViewImageIcon.cs" />
+    <Compile Include="UI\Items\IItem.cs" />
     <Compile Include="UI\UIParser.cs" />
     <Compile Include="UI\Widget.cs" />
     <Compile Include="UI\ImageButton.cs" />

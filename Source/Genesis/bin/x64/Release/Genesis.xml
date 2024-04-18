@@ -7120,6 +7120,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+             Executes the click event for the current UI element.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="scene">The current scene instance.</param>
+            <param name="canvas">The canvas where the UI element resides.</param>
+        </member>
         <member name="T:Genesis.UI.ImageButton">
             <summary>
             Represents an image button widget in the UI.

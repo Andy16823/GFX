@@ -1775,7 +1775,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
 
-            DrawFramebuffer(uiBuffer.Texture);
+            // use the gamma correction also on the canvas.
+            gl.Enable(OpenGL.FramebufferSRGB);
+            DrawFramebuffer(uiBuffer.Texture, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
+            gl.Disable(OpenGL.FramebufferSRGB);
 
             gl.Enable(OpenGL.DepthTest);
         }

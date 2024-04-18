@@ -142,7 +142,7 @@ namespace Genesis.UI
             {
                 if(Input.IsKeyDown(Keys.LButton))
                 {
-                    if(Click != null) Click(this, game, scene, canvas);
+                    this.OnClick(game, scene, canvas);
                 }
                 if(!_isHover)
                 {
@@ -327,6 +327,17 @@ namespace Genesis.UI
         public bool Hovered()
         {
             return _isHover;
+        }
+
+        /// <summary>
+        ///  Executes the click event for the current UI element.
+        /// </summary>
+        /// <param name="game">The current game instance.</param>
+        /// <param name="scene">The current scene instance.</param>
+        /// <param name="canvas">The canvas where the UI element resides.</param>
+        public virtual void OnClick(Game game, Scene scene, Canvas canvas)
+        {
+            if (Click != null) Click(this, game, scene, canvas);
         }
 
     }

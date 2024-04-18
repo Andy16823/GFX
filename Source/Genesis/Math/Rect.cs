@@ -113,5 +113,10 @@ namespace Genesis.Math
         {
             return new Vec3(X, Y);
         }
+
+        public Vec3 GetSize()
+        {
+            return new Vec3(Width, Height);
+        }
     }
 }

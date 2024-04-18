@@ -4873,6 +4873,14 @@
             </summary>
             <param name="textureID">The framebuffer texture id</param>
         </member>
+        <member name="M:Genesis.Graphics.RenderDevice.Experimental.DrawFramebuffer(System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draw the framebuffer with another shader programm and gamma
+            </summary>
+            <param name="textureID"></param>
+            <param name="shaderProgramm"></param>
+            <param name="gamma"></param>
+        </member>
         <member name="M:Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(Genesis.Graphics.Framebuffer)">
             <summary>
             Sets an framebuffer as active render target
@@ -7112,6 +7120,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+             Executes the click event for the current UI element.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="scene">The current scene instance.</param>
+            <param name="canvas">The canvas where the UI element resides.</param>
+        </member>
         <member name="T:Genesis.UI.ImageButton">
             <summary>
             Represents an image button widget in the UI.
@@ -7190,6 +7206,17 @@
             <param name="text"></param>
             <param name="font"></param>
             <param name="color"></param>
+        </member>
+        <member name="M:Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)">
+            <summary>
+            Create a new instance of the label
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="text"></param>
+            <param name="font"></param>
+            <param name="color"></param>
+            <param name="anchor"></param>
         </member>
         <member name="M:Genesis.UI.Label.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>
@@ -7397,6 +7424,15 @@
             <param name="name">The name of the progress bar.</param>
             <param name="location">The location of the progress bar.</param>
             <param name="size">The size of the progress bar.</param>
+        </member>
+        <member name="M:Genesis.UI.ProgressBar.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.UI.WidgetAnchor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.UI.ProgressBar"/> class with the specified name, location, and size.
+            </summary>
+            <param name="name">The name of the progress bar.</param>
+            <param name="location">The location of the progress bar.</param>
+            <param name="size">The size of the progress bar.</param>
+            <param name="anchor">The anchor for the progress bar</param>
         </member>
         <member name="M:Genesis.UI.ProgressBar.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>
