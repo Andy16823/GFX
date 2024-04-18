@@ -219,5 +219,15 @@ namespace Genesis.Core.GameElements
         {
             base.OnUpdate(game, renderDevice);
         }
+
+        /// <summary>
+        /// Clears the GPU memory
+        /// </summary>
+        /// <param name="game"></param>
+        public override void OnDestroy(Game game)
+        {
+            base.OnDestroy(game);
+            game.RenderDevice.DisposeElement(this);
+        }
     }
 }

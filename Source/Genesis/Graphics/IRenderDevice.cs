@@ -120,6 +120,18 @@ namespace Genesis.Graphics
         void FinishSceneRendering(Scene scene);
 
         /// <summary>
+        /// Prepares the render for the 2D lightmap
+        /// </summary>
+        /// <param name="scene"></param>
+        void PrepareLightmap2D(Scene scene, Framebuffer framebuffer);
+
+        /// <summary>
+        /// Finish the lightmap 2D rendering
+        /// </summary>
+        /// <param name="scene"></param>
+        void FinishLightmap2D(Scene scene, Framebuffer framebuffer);
+
+        /// <summary>
         /// Prepares the rendering for a canvas within a 2D scene.
         /// </summary>
         /// <param name="scene">The 2D scene containing the canvas.</param>

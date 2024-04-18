@@ -630,5 +630,15 @@ namespace Genesis.Graphics.RenderDevice
         {
             throw new NotImplementedException();
         }
+
+        public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

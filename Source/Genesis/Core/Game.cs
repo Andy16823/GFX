@@ -314,10 +314,48 @@ namespace Genesis.Core
             {
                 if(scene.Name.Equals(name))
                 {
-                    this.SelectedScene = scene;
+                    this.LoadScene(scene);
                 }
             }
         }
 
+        /// <summary>
+        /// Loads a scene
+        /// </summary>
+        /// <param name="scene">The scene to be loaded.</param>
+        public void LoadScene(Scene scene)
+        {
+            this.SelectedScene = scene;
+        }
+
+        /// <summary>
+        /// Search for the scene with the given name
+        /// </summary>
+        /// <param name="name">The name for the scene</param>
+        /// <returns></returns>
+        public Scene FindScene(String name)
+        {
+            foreach (var scene in Scenes)
+            {
+                if (scene.Name.Equals(name))
+                {
+                    return scene;
+                }
+            }
+            return null;
+        }
+
+
+        public T GetScene<T>() where T : Scene
+        {
+            foreach (var scene in Scenes)
+            {
+                if (scene.GetType().Equals(typeof(T)))
+                {
+                    return (T)scene;
+                }
+            }
+            return null;
+        }
     }
 }

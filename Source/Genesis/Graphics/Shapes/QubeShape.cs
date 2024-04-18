@@ -120,5 +120,60 @@ namespace Genesis.Graphics.Shapes
             };
             return normals;
         }
+
+        /// <summary>
+        /// Gets the texture coordinates defining the cube shape.
+        /// </summary>
+        /// <returns>An array of floating-point values representing the texture coordinates of the cube.</returns>
+        /// <remarks>
+        /// The texture coordinates are defined in groups of two for each vertex.
+        /// </remarks>
+        public float[] GetTextureCoordinates()
+        {
+            float[] textureCoordinates = {
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f,
+
+                0.0f, 0.0f,
+                1.0f, 0.0f,
+                1.0f, 1.0f,
+                1.0f, 1.0f,
+                0.0f, 1.0f,
+                0.0f, 0.0f
+            };
+            return textureCoordinates;
+        }
     }
 }

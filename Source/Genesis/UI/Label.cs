@@ -31,6 +31,16 @@ namespace Genesis.UI
         public Color TextColor { get; set; }
 
         /// <summary>
+        /// Gets or sets the Hover color
+        /// </summary>
+        public Color HoverColor { get; set; } = Color.FromArgb(0, 108, 207);
+
+        /// <summary>
+        /// Gets or sets the value if hover is available
+        /// </summary>
+        public bool HoverAvailable { get; set; }
+
+        /// <summary>
         /// Gets or sets the font size of the label.
         /// </summary>
         public float FontSize { get; set; } = 18.0f;
@@ -54,6 +64,26 @@ namespace Genesis.UI
         }
 
         /// <summary>
+        /// Create a new instance of the label
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="location"></param>
+        /// <param name="text"></param>
+        /// <param name="font"></param>
+        /// <param name="color"></param>
+        /// <param name="anchor"></param>
+        public Label(String name, Vec3 location, String text, Graphics.Font font, Color color, WidgetAnchor anchor)
+        {
+            Name = name;
+            Location = location;
+            Text = text;
+            Font = font;
+            TextColor = color;
+            Size = new Vec3(GetStringWidht(), FontSize);
+            Anchor = anchor;
+        }
+
+        /// <summary>
         /// Renders the label
         /// </summary>
         /// <param name="game"></param>
@@ -63,14 +93,29 @@ namespace Genesis.UI
         public override void OnRender(Game game, IRenderDevice renderDevice, Scene scene, Canvas canvas)
         {
             base.OnRender(game, renderDevice, scene, canvas);
-            Size = new Vec3(Utils.GetStringWidth(Text, FontSize, 0.5f), Utils.GetStringHeight(Text, FontSize, 0f));
-            Vec3 loc = GetRelativePos(canvas);
 
+            // Calculate the new widget size and get the widget bounds
+            Size = new Vec3(Utils.GetStringWidth(Text, FontSize, 0.5f), Utils.GetStringHeight(Text, FontSize, 0f));
+            var bounds = TransformBounds(new Rect(GetRelativePos(canvas), this.Size), this.Anchor);
+
+            // set the text color
+            var textColor = TextColor;
+
+            // debug the background
             if(this.Debug)
             {
-                renderDevice.FillRect(new Rect(loc.X, loc.Y, Size.X, Size.Y), Color.Blue);
+                renderDevice.FillRect(bounds, Color.Blue);
             }
-            renderDevice.DrawString(Text, loc, FontSize, 0.5f,Font, TextColor);
+
+            // render the label
+            if(this.HoverAvailable)
+            {
+                if(this.Hovered())
+                {
+                    textColor = HoverColor;
+                }
+            }
+            renderDevice.DrawString(Text, new Vec3(bounds.X, bounds.Y), FontSize, 0.5f, Font, textColor);
         }
 
         /// <summary>

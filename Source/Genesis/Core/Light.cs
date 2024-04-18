@@ -26,6 +26,19 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Creates a new instance of the Light class with the specified name, location and intensity.
+        /// </summary>
+        /// <param name="name">The name of the light.</param>
+        /// <param name="location">The 3D location of the light.</param>
+        /// <param name="intensity">The intensity of the light.</param>
+        public Light(String name, Vec3 location, float intensity) 
+        {
+            this.Name=name;
+            this.Location = location;
+            this.Intensity = intensity;
+        }
+
+        /// <summary>
         /// Gets or sets the color of the light.
         /// </summary>
         public Color LightColor { get; set; } = Color.FromArgb(255, 255, 255);

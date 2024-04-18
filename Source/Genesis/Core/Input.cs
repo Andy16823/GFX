@@ -47,7 +47,8 @@ namespace Genesis.Core
         /// <returns>True if the key is down; otherwise, false.</returns>
         public static bool IsKeyDown(System.Windows.Forms.Keys vKey)
         {
-            short key = GetAsyncKeyState(vKey);
+            //short key = GetAsyncKeyState(vKey);
+            short key = (short)(GetAsyncKeyState(vKey) & 0x8000);
             return Convert.ToBoolean(key);
         }
 
