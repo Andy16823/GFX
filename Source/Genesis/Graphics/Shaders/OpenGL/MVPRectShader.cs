@@ -14,9 +14,7 @@ namespace Genesis.Graphics.Shaders.OpenGL
                 #version 330 core
 
                 layout(location = 0) in vec3 inPosition;
-                layout(location = 1) in vec3 inColor;
 
-                out vec3 color;
                 out vec3 position;
 
                 uniform mat4 mvp;
@@ -24,7 +22,6 @@ namespace Genesis.Graphics.Shaders.OpenGL
                 void main()
                 {
                     gl_Position = mvp * vec4(inPosition, 1.0);
-                    color = inColor;
                     position = inPosition;
                 }
             ");
@@ -32,12 +29,12 @@ namespace Genesis.Graphics.Shaders.OpenGL
             this.FragmentShader = new Graphics.Shader(@"
                 #version 330 core
 
-                in vec3 color;
                 in vec3 position;
 
                 out vec4 fragColor;
                 uniform float aspect;
                 uniform float border_width;
+                uniform vec4 color;
 
                 void main()
                 {
@@ -48,10 +45,9 @@ namespace Genesis.Graphics.Shaders.OpenGL
                     float minY = -0.5 + bw;
 
                    if (position.x < maxX && position.x > minX && position.y < maxY && position.y > minY) {
-                        //gl_FragColor = vec4(color, 0.0);
                         discard;
                    } else {
-                        gl_FragColor = vec4(color, 1.0);
+                        gl_FragColor = color;
                    }          
                 }
             ");

@@ -603,6 +603,10 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="borderWidth"></param>
         public void DrawRect(Rect rect, Color color, float borderWidth)
         {
+            var shader = ShaderPrograms["MVPRectShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = InstancedShapes["RectShape"];
+
             gl.Disable(OpenGL.DepthTest);
             //Creates the modelview matrix
             mat4 mt_mat = mat4.Translate(rect.X, rect.Y, 0.0f);
@@ -614,24 +618,19 @@ namespace Genesis.Graphics.RenderDevice
             mat4 mvp = p_mat * v_mat * m_mat;
 
             //Load the shader program and set the mvp matrix
-            gl.UseProgram(ShaderPrograms["MVPRectShader"].ProgramID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
-            gl.Uniform1f(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "aspect"), rect.Width / rect.Height);
-            gl.Uniform1f(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "border_width"), borderWidth);
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform1f(gl.GetUniformLocation(shader, "aspect"), rect.Width / rect.Height);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "border_width"), borderWidth);
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
 
             //Load the vertex buffer and binds them
-            int vertexBuffer = this.InstancedShapes["RectShape"].vbo;
+            int vertexBuffer = shape.vbo;
             gl.BindBuffer(OpenGL.ArrayBuffer, vertexBuffer);
 
             //Send the vertex data to the shader
             gl.EnableVertexAttribArray(0);
             gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            //Create the new colors and send them to the shader
-            float[] newColor = this.GetColorArray(color);
-            gl.BufferSubData(OpenGL.ArrayBuffer, 18 * sizeof(float), newColor.Length * sizeof(float), newColor);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 18 * sizeof(float));
 
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
@@ -1041,6 +1040,10 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="color"></param>
         public void FillRect(Rect rect, Color color)
         {
+            var shader = ShaderPrograms["SolidShapeShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = InstancedShapes["RectShape"];
+
             gl.Disable(OpenGL.DepthTest);
             //Creates the modelview matrix
             mat4 mt_mat = mat4.Translate(rect.X, rect.Y, 0.0f);
@@ -1052,22 +1055,17 @@ namespace Genesis.Graphics.RenderDevice
             mat4 mvp = p_mat * v_mat * m_mat;
 
             //Load the shader program and set the mvp matrix
-            gl.UseProgram(ShaderPrograms["MVPSolidShader"].ProgramID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["MVPSolidShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
 
             //Load the vertex buffer and binds them
-            int vertexBuffer = this.InstancedShapes["RectShape"].vbo;
+            int vertexBuffer = shape.vbo;
             gl.BindBuffer(OpenGL.ArrayBuffer, vertexBuffer);
 
             //Send the vertex data to the shader
             gl.EnableVertexAttribArray(0);
             gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            //Create the new colors and send them to the shader
-            float[] newColor = this.GetColorArray(color);
-            gl.BufferSubData(OpenGL.ArrayBuffer, 18 * sizeof(float), newColor.Length * sizeof(float), newColor);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 18 * sizeof(float));
 
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
@@ -2317,8 +2315,8 @@ namespace Genesis.Graphics.RenderDevice
             gl.EnableVertexAttribArray(0);
             gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
 
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
 
             //Draw the sprite
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
