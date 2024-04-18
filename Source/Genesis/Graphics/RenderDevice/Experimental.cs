@@ -72,6 +72,8 @@ namespace Genesis.Graphics.RenderDevice
             gl.DepthFunc(OpenGL.Less);
             gl.Enable(OpenGL.Blend);
             gl.BlendFunc(OpenGL.SrcAlpha, OpenGL.OneMinusSrcAlpha);
+            gl.Enable(OpenGL.AlphaTest);
+            gl.AlphaFunc(OpenGL.Greater, 0.1f);
 
             ///Initial the prebuild shaders
             this.ShaderPrograms = new Dictionary<String, ShaderProgram>();
@@ -1408,8 +1410,6 @@ namespace Genesis.Graphics.RenderDevice
         public int GenerateTexture(OpenGL gl, Bitmap texture)
         {
             int textureint = gl.GenTextures(1);
-            gl.Enable(OpenGL.AlphaTest);
-            gl.AlphaFunc(OpenGL.Greater, 0.1f);
             gl.BindTexture(OpenGL.Texture2D, textureint);
             int errorID = gl.GetError();
             if (errorID != 0)
