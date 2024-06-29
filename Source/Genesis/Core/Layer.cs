@@ -92,10 +92,10 @@ namespace Genesis.Core
         {
             if(this.UpdateElements)
             {
-                foreach (var item in Elements)
+                Parallel.ForEach(Elements, item =>
                 {
                     item.OnUpdate(game, renderDevice);
-                }
+                });
             }
         }
 
