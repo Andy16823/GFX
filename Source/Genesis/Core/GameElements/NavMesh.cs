@@ -54,6 +54,21 @@ namespace Genesis.Core.GameElements
         {
             return new Vec3(x, y);
         }
+
+        /// <summary>
+        /// Checks if the given grid cell is equal to the current
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equal(GridCell other)
+        {
+            if (other.x == x && other.y == y)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 
     /// <summary>
@@ -72,6 +87,9 @@ namespace Genesis.Core.GameElements
         public int cellY;
     }
 
+    /// <summary>
+    /// Represents a navigation mesh for pathfinding.
+    /// </summary>
     public class NavMesh : GameElement
     {
         /// <summary>
@@ -299,6 +317,22 @@ namespace Genesis.Core.GameElements
             GridCell gridCell = new GridCell();
             gridCell.x = -1;
             return gridCell;
+        }
+
+        public GridCell GetGridCellFromCoordinatesParallel(int x, int y)
+        {
+            GridCell cell = new GridCell();
+            cell.x = -1;
+
+            Parallel.ForEach(m_grid, item =>
+            {
+                if (item.ToRect().Contains(x + (item.width / 2), y + (item.height / 2)))
+                {
+                    cell = item;
+                }
+            });
+
+            return cell;
         }
 
         public int[] GetIndicesFromGridCell(GridCell cell)

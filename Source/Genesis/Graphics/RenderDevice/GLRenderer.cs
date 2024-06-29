@@ -2123,6 +2123,7 @@ namespace Genesis.Graphics.RenderDevice
 
             int cbo = (int)emitter.Propertys["cbo"];
             gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.colors.Length * sizeof(float), buffers.colors, OpenGL.DynamicDraw);
             gl.EnableVertexAttribArray(1);
             gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
 

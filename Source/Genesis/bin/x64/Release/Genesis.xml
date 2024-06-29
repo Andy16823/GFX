@@ -1652,6 +1652,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Genesis.Core.GameElements.GridCell.Equal(Genesis.Core.GameElements.GridCell)">
+            <summary>
+            Checks if the given grid cell is equal to the current
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Core.GameElements.Obstacle">
             <summary>
             Represents an obstacle in the navigation grid.
@@ -1665,6 +1672,11 @@
         <member name="F:Genesis.Core.GameElements.Obstacle.cellY">
             <summary>
             The row index of the cell where the obstacle is located.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.NavMesh">
+            <summary>
+            Represents a navigation mesh for pathfinding.
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.NavMesh.Location">
@@ -3755,6 +3767,15 @@
             </summary>
             <param name="eulerAngles">The Euler angles representing rotation.</param>
             <returns>The forward direction vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            Interpolates between an start and end color
+            </summary>
+            <param name="startColor">The color start</param>
+            <param name="endColor">The color end</param>
+            <param name="t">the time</param>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>
