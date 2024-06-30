@@ -1,49 +1,53 @@
-**Genesis Game Engine 0.1.0.1**
+**Genesis Game Engine 0.1.2**
 
-Welcome to the Genesis Game Engine, version 0.1.0.1!
+Welcome to the Genesis Game Engine, version 0.1.2!
 
 **Overview:**
-The Genesis Game Engine is a powerful framework built in C# for creating both 2D and 3D games. Designed with a focus on simplicity, it provides easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to facilitate seamless customization.
+Genesis Game Engine is a robust framework developed in C# for creating both 2D and 3D games. Designed with simplicity in mind, it facilitates easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to enable seamless customization.
 
 **Key Features:**
-- Streamlined scene rendering with a single active scene at a time.
-- Flexible layer system for adding game elements, including sprites, 3D objects, and empties.
-- Extensive customization through the use of "GameBehaviors" to implement game logic.
-- Support for custom GameBehaviors and game elements using abstract classes.
-- Default collection of essential elements included with the engine.
+- Streamlined scene rendering with focus on one active scene.
+- Flexible layer system for adding game elements: sprites, 3D objects, and empties.
+- Extensive customization using "GameBehaviors" for game logic implementation.
+- Support for custom GameBehaviors and game elements via abstract classes.
+- Default collection of essential elements included.
+- 2D lighting for enhanced game atmosphere.
+- 3D animations.
+- 2D particle emitter.
 
 **Rendering:**
-
-Genesis currently employs OpenGL 4.5 as the default rendering device, comparable to DirectX 11. Custom renderers can be implemented, and future plans include integration with Vulkan and DirectX 12. 3D format support includes Wavefront (.obj) files.
+Genesis uses OpenGL 4.5 as the default renderer, akin to DirectX 11. Custom renderers are possible, and future plans include Vulkan and DirectX 12 integration. Supported 3D formats include Wavefront, FBX, Collada, and GLTF files.
 
 **Physics:**
-
-Physics simulation within the game world is handled by PhysicHandlers, featuring PhysicHandler3D and PhysicHandler2D using BulletSharp, a Bullet Physics Wrapper. Custom PhysicHandlers can also be created.
+Physics simulation utilizes PhysicHandlers—PhysicHandler3D and PhysicHandler2D—leveraging BulletSharp, a Bullet Physics Wrapper. Custom PhysicHandlers can be developed as needed.
 
 **Supported Games:**
-
-Genesis is ideal for creating 2D games across various genres. While 3D support is under development in version 0.1.0.1, some features such as animations, loading FBX objects, and efficient shadow implementation are still pending. Future updates will address these aspects.
-
-**Current 3D Features:**
-
-Version 0.1.0.1 includes basic 3D functionality like loading and rendering Wavefront and FBX (.obj, .fbx) files and foundational physics simulation (collision, raycasts).
+Genesis is ideal for creating 2D games across various genres. The 3D functionalities in version 0.1.2 include basic features like loading and rendering Wavefront and FBX files. However, additional features such as shadow maps are planned for future updates.
 
 **Asset Loading:**
-
-Textures and fonts can be easily loaded by placing them in the Resources folder, automatically managed by the Asset Manager. Genesis supports archiving textures to avoid including RAR files with the project. Ensure proper configuration for file copying during the build process.
+Textures and fonts can be loaded easily by placing them in the Resources folder, managed automatically by the Asset Manager. Genesis supports texture archiving to streamline project management without the need for additional RAR files. Ensure proper configuration for file copying during the build process.
 
 **External Libraries:**
+Genesis integrates open-source libraries including:
+- **AssimpNet:** [AssimpNet Repository](https://bitbucket.org/Starnick/assimpnet/src/master/)
+- **BulletSharp:** [BulletSharp Repository](https://bitbucket.org/Starnick/assimpnet/src/master/)
+- **GlmSharp:** [GlmSharp Repository](https://github.com/Philip-Trettner/GlmSharp)
+- **NetGL:** [NetGL Repository](https://github.com/Andy16823/NetGL-2023)
+- **Newtonsoft.Json:** [Newtonsoft.Json Repository](https://github.com/JamesNK/Newtonsoft.Json)
 
-Genesis utilizes open-source libraries such as glmSharp, bulletSharp, NetGL, and OpenObjectLoader. Refer to the License folder for individual licenses; the project is licensed under MIT.
+See the License folder for individual licenses; the Genesis Game Engine itself is licensed under MIT.
+
+**Community and Resources:**
+- **Website:** [https://gfx-engine.org](https://gfx-engine.org)
+- **Forum:** [forum.gfx-engine.org](https://forum.gfx-engine.org)
+- **Documentation:** [docs.gfx-engine.org](https://docs.gfx-engine.org)
 
 **Getting Started:**
-
-Clone the repository and explore the extensive documentation in the Wiki to start building your games with Genesis.
+Clone the repository and consult the comprehensive documentation in the Wiki to begin developing your games with Genesis.
 
 **License:**
-
-Genesis Game Engine is licensed under the MIT License. See the License folder for details.
+Genesis Game Engine is licensed under the MIT License. Refer to the License folder for detailed terms.
 
 For the latest updates and community support, visit [Genesis Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.1).
 
-Let your creativity thrive with Genesis Game Engine 0.1.0.0!
+Let your creativity flourish with Genesis Game Engine 0.1.2!
