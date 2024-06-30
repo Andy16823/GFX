@@ -8,6 +8,7 @@ items:
   - Genesis.Core.Behaviors.CameraFlags
   - Genesis.Core.Behaviors.CharacterController2D
   - Genesis.Core.Behaviors.ControllerPreset
+  - Genesis.Core.Behaviors.MoveDirection
   - Genesis.Core.Behaviors.MovementFlags
   - Genesis.Core.Behaviors.SpriteMovementController
   langs:
@@ -51,6 +52,14 @@ references:
   name: ControllerPreset
   nameWithType: ControllerPreset
   fullName: Genesis.Core.Behaviors.ControllerPreset
+- uid: Genesis.Core.Behaviors.MoveDirection
+  commentId: T:Genesis.Core.Behaviors.MoveDirection
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MoveDirection.html
+  name: MoveDirection
+  nameWithType: MoveDirection
+  fullName: Genesis.Core.Behaviors.MoveDirection
 - uid: Genesis.Core.Behaviors.CharacterController2D
   commentId: T:Genesis.Core.Behaviors.CharacterController2D
   isExternal: true

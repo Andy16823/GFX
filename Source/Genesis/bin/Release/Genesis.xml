@@ -98,6 +98,138 @@
             </summary>
             <returns>The path to the resource directory.</returns>
         </member>
+        <member name="T:Genesis.Core.Behaviors._3D.Stance">
+            <summary>
+            Defines the stance of the character.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController">
+            <summary>
+            Controls the behavior of a third-person character in a game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider">
+            <summary>
+            Gets or sets the collider for the character.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed">
+            <summary>
+            Gets or sets the speed of walking.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed">
+            <summary>
+            Gets or sets the speed of running.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.JumpSpeed">
+            <summary>
+            Gets or sets the speed of jumping.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsRunning">
+            <summary>
+            Gets or sets a value indicating whether the character is running.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsColliding">
+            <summary>
+            Gets or sets a value indicating whether the character is colliding.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation">
+            <summary>
+            Gets or sets the name of the walking animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation">
+            <summary>
+            Gets or sets the name of the idle animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation">
+            <summary>
+            Gets or sets the name of the running animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.InvertMouse">
+            <summary>
+            Gets or sets a value indicating whether the mouse movement is inverted.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance">
+            <summary>
+            Gets or sets the stance of the character.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates the physics for the character.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="radius">The radius.</param>
+            <param name="height">The height.</param>
+            <param name="mass">The mass.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)">
+            <summary>
+            Creates the physics for the character.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="offset">The offset.</param>
+            <param name="radius">The radius.</param>
+            <param name="height">The height.</param>
+            <param name="mass">The mass.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element is destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element should be rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)">
+            <summary>
+            Sets the input vector for the character.
+            </summary>
+            <param name="inputVector">The input vector to set for the character.</param>
+            <remarks>
+            This method assigns the provided input vector to the 'inputVector' property of the character.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game element should be updated.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn">
+            <summary>
+            Determines whether the character is airborne.
+            </summary>
+            <returns><c>true</c> if the character is airborne; otherwise, <c>false</c>.</returns>
+        </member>
         <member name="T:Genesis.Core.Behaviors.AnimationBehavior">
             <summary>
             Represents a behavior that enables sprite animations in the Genesis framework.
@@ -193,6 +325,11 @@
             Enumeration for defining controller presets.
             </summary>
         </member>
+        <member name="T:Genesis.Core.Behaviors.MoveDirection">
+            <summary>
+            Enumeration for the move direction
+            </summary>
+        </member>
         <member name="T:Genesis.Core.Behaviors.CharacterController2D">
             <summary>
             Class representing a 2D character controller as a game behavior.
@@ -258,9 +395,24 @@
             Gets or sets the movement flags for character control.
             </summary>
         </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.MoveDirection">
+            <summary>
+            Gets the last movement direction from the character
+            </summary>
+        </member>
         <member name="P:Genesis.Core.Behaviors.CharacterController2D.Rigidbody">
             <summary>
             Gets or sets the Rigidbody2D component for character physics.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.ColliderRadius">
+            <summary>
+            Gets or sets the collider radius
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.CharacterController2D.ColliderHeight">
+            <summary>
+            Gets or sets the follider height
             </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.CharacterController2D.#ctor">
@@ -324,6 +476,64 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent GameElement of the behavior.</param>
         </member>
+        <member name="T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D">
+            <summary>
+            Represents a 2D box trigger for physics interactions.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger">
+            <summary>
+            Gets or sets the ghost object representing the trigger.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+            <summary>
+            Creates a collider for the box trigger.
+            </summary>
+            <param name="handler">The physics handler.</param>
+            <param name="halfExtends">Half extends of the box.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The ghost object representing the trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast to.</typeparam>
+            <returns>The ghost object representing the trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior needs to render something.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the behavior needs to update its state.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
             <summary>
             Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
@@ -384,6 +594,148 @@
             Placeholder for OnUpdate event. No implementation.
             </summary>
         </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.RigidBody">
+            <summary>
+            Gets or sets the RigidBody associated with this 2D physics behavior.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.LinearFactor">
+            <summary>
+            Gets or sets the linear factor for the RigidBody's motion.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.AngularFactor">
+            <summary>
+            Gets or sets the angular factor for the RigidBody's rotation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)">
+            <summary>
+            Creates a RigidBody with the specified mass using the provided PhysicHandler.
+            </summary>
+            <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
+            <param name="mass">The mass of the RigidBody.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.UpdateRigidBody">
+            <summary>
+            Updates the RigidBody's motion state based on the parent's location.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the associated game element is being destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the associated game element is being initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called during the rendering phase of the game update cycle.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Updates the behavior during the game's update cycle.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The RigidBody physics object.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to which the physics object is cast.</typeparam>
+            <returns>The RigidBody physics object cast to the specified type.</returns>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.RigidBody">
+            <summary>
+            Gets or sets the RigidBody associated with this 2D physics behavior.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.LinearFactor">
+            <summary>
+            Gets or sets the linear factor for the RigidBody's motion.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.AngularFactor">
+            <summary>
+            Gets or sets the angular factor for the RigidBody's rotation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.EnablePhysic">
+            <summary>
+            Gets or sets a value indicating whether physics is enabled for this behavior.
+            </summary>
+            <value><c>true</c> if physics is enabled; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single[])">
+            <summary>
+            Creates a RigidBody with the specified mass using the provided PhysicHandler.
+            </summary>
+            <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
+            <param name="mass">The mass of the RigidBody.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.UpdateRigidBody">
+            <summary>
+            Updates the RigidBody's motion state based on the parent's location.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the associated game element is being destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the associated game element is being initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called during the rendering phase of the game update cycle.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Updates the behavior during the game's update cycle.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element associated with this behavior.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The RigidBody physics object.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to which the physics object is cast.</typeparam>
+            <returns>The RigidBody physics object cast to the specified type.</returns>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D">
             <summary>
             Represents a 2D physics behavior for game elements.
@@ -404,9 +756,23 @@
             Gets or sets the angular factor for the RigidBody's rotation.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="P:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic">
+            <summary>
+            Gets or sets whether physics is enabled.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)">
             <summary>
             Creates a RigidBody with the specified mass using the provided PhysicHandler.
+            </summary>
+            <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
+            <param name="mass">The mass of the RigidBody.</param>
+            <param name="capsuleRadius">The radius of the capsule shape of the RigidBody.</param>
+            <param name="capsuleHeight">The height of the capsule shape of the RigidBody.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)">
+            <summary>
+            Creates a RigidBody with the specified mass using the provided PhysicHandler and default values for capsule radius and height.
             </summary>
             <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
             <param name="mass">The mass of the RigidBody.</param>
@@ -457,6 +823,123 @@
             <typeparam name="T">The type to which the physics object is cast.</typeparam>
             <returns>The RigidBody physics object cast to the specified type.</returns>
         </member>
+        <member name="T:Genesis.Core.Behaviors.Physics3D.BoxCollider">
+            <summary>
+            Defines a box collider behavior for 3D physics simulations.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody">
+            <summary>
+            Gets or sets the rigid body associated with this box collider.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Creates a box collider with the specified parameters.
+            </summary>
+            <param name="handler">The physics handler managing this collider.</param>
+            <param name="boxHalfExtends">The half extends of the box collider.</param>
+            <param name="mass">The mass of the box collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject">
+            <summary>
+            Retrieves the physics object associated with this box collider.
+            </summary>
+            <returns>The physics object associated with this collider.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.GetPhysicsObject``1">
+            <summary>
+            Retrieves the physics object associated with this box collider, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The physics object associated with this collider, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider needs to be rendered.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider needs to be updated.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.Physics3D.BoxTrigger">
+            <summary>
+            Defines a box trigger behavior for 3D physics simulations.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject">
+            <summary>
+            Gets or sets the ghost object associated with this box trigger.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+            <summary>
+            Creates a box trigger with the specified parameters.
+            </summary>
+            <param name="handler">The physics handler managing this trigger.</param>
+            <param name="boxHalfExtends">The half extends of the box trigger.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject">
+            <summary>
+            Retrieves the physics object associated with this box trigger.
+            </summary>
+            <returns>The physics object associated with this trigger.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject``1">
+            <summary>
+            Retrieves the physics object associated with this box trigger, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The physics object associated with this trigger, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is destroyed.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is initialized.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger needs to be rendered.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger needs to be updated.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull">
             <summary>
             Represents a Physics behavior for a 3D cube with a convex hull shape.
@@ -473,11 +956,6 @@
             </summary>
             <param name="handler">Physics handler responsible for managing elements.</param>
             <param name="mass">Mass of the rigid body.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the QubeConvexHull behavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody">
             <summary>
@@ -532,11 +1010,6 @@
             <param name="mass">Mass of the rigid body.</param>
             <param name="mesh">Mesh data for creating the collision shape.</param>
             <exception cref="T:System.InvalidOperationException">Thrown when the parent element is not of type Element3D.</exception>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the StaticMeshBehavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.UpdateRigidBody">
             <summary>
@@ -601,11 +1074,6 @@
             </summary>
             <param name="handler">Physics handler responsible for managing elements.</param>
             <param name="mass">Mass of the rigid body.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
-            <summary>
-            Handles collision events for the ConvexHullBehavior.
-            </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody">
             <summary>
@@ -877,6 +1345,19 @@
             </summary>
             <param name="name">The name of the scene to be loaded.</param>
         </member>
+        <member name="M:Genesis.Core.Game.LoadScene(Genesis.Core.Scene)">
+            <summary>
+            Loads a scene
+            </summary>
+            <param name="scene">The scene to be loaded.</param>
+        </member>
+        <member name="M:Genesis.Core.Game.FindScene(System.String)">
+            <summary>
+            Search for the scene with the given name
+            </summary>
+            <param name="name">The name for the scene</param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Core.GameElement">
             <summary>
             Represents a base class for game elements in the Genesis framework.
@@ -1014,196 +1495,602 @@
             </summary>
             <param name="element">The game element from which to copy properties.</param>
         </member>
-        <member name="T:Genesis.Core.IGameBehavior">
+        <member name="T:Genesis.Core.GameElements.Model">
             <summary>
-            Represents the base class for game behaviors in the Genesis framework.
+            Represents a 3D model in the game.
             </summary>
         </member>
-        <member name="P:Genesis.Core.IGameBehavior.Parent">
+        <member name="P:Genesis.Core.GameElements.Model.Shader">
             <summary>
-            Gets or sets the parent game element to which this behavior is attached.
+            Gets or sets the shader program used for rendering the model.
             </summary>
         </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+        <member name="P:Genesis.Core.GameElements.Model.Materials">
             <summary>
-            Called when the game behavior is initialized.
+            Gets or sets the list of materials used by the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.BoneInfoMap">
+            <summary>
+            Gets or sets the mapping of bone names to bone information.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Animations">
+            <summary>
+            Gets or sets the list of animations associated with the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.BoneCounter">
+            <summary>
+            Gets or sets the counter for bones in the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Meshes">
+            <summary>
+            Gets or sets the list of meshes composing the model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.FileDirectory">
+            <summary>
+            Gets or sets the directory of the model file.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.FileName">
+            <summary>
+            Gets or sets the name of the model file.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.AnimationSpeed">
+            <summary>
+            Gets or sets the speed of animation playback.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Model.Animator">
+            <summary>
+            Gets or sets the animator responsible for controlling animations.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Updates the model within the game environment.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Cleans up resources associated with the model when destroyed.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.#ctor(System.String,Genesis.Math.Vec3,System.String)">
+            <summary>
+            Constructs a new instance of the Model class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractMaterials(Assimp.Scene)">
+            <summary>
+            Extracts materials information from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractMeshes(Assimp.Scene)">
+            <summary>
+            Extracts mesh data from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)">
+            <summary>
+            Extracts animations from the imported model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.SetVertexBoneDataToDefault(Genesis.Graphics.Animation3D.vertex@)">
+            <summary>
+            Sets default bone data for a vertex.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.SetVertexBoneData(Genesis.Graphics.Animation3D.vertex@,System.Int32,System.Single)">
+            <summary>
+            Sets bone data for a vertex.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.ExtractBoneWeightForVertices(Assimp.Mesh,Assimp.Scene,Genesis.Graphics.Animation3D.ModelMesh)">
+            <summary>
+            Extracts bone weight information for vertices of a mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.PlayAnimation(System.String)">
+            <summary>
+            Plays the specified animation on the model.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.FindAnimation(System.String)">
+            <summary>
+            Finds an animation with the specified name.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.GridCell">
+            <summary>
+            Represents a cell in the navigation grid.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.GridCell.x">
+            <summary>
+            The x-coordinate of the cell.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.GridCell.y">
+            <summary>
+            The y-coordinate of the cell.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.GridCell.width">
+            <summary>
+            The width of the cell.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.GridCell.height">
+            <summary>
+            The height of the cell.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.GridCell.ToRect">
+            <summary>
+            Converts the grid cell to a rectangle.
+            </summary>
+            <returns>A rectangle representing the grid cell.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.GridCell.ToVec3">
+            <summary>
+            Converts the grid cell coordinates to an Vec3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.GridCell.Equal(Genesis.Core.GameElements.GridCell)">
+            <summary>
+            Checks if the given grid cell is equal to the current
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Genesis.Core.GameElements.Obstacle">
+            <summary>
+            Represents an obstacle in the navigation grid.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.Obstacle.cellX">
+            <summary>
+            The column index of the cell where the obstacle is located.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.Obstacle.cellY">
+            <summary>
+            The row index of the cell where the obstacle is located.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.NavMesh">
+            <summary>
+            Represents a navigation mesh for pathfinding.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.Location">
+            <summary>
+            The location of the navigation mesh in 3D space.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.CellWidth">
+            <summary>
+            The width of each cell in the grid.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.CellHeight">
+            <summary>
+            The height of each cell in the grid.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.CellsX">
+            <summary>
+            The number of cells in the X direction.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.CellsY">
+            <summary>
+            The number of cells in the Y direction.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.NavMesh.StraightCost">
+            <summary>
+            The cost of moving straight from one cell to another.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Genesis.Core.GameElements.NavMesh.UseDiagonal" -->
+        <member name="P:Genesis.Core.GameElements.NavMesh.Debug">
+            <summary>
+            Gets or sets the value if debug mode is used
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.NavMesh.m_grid">
+            <summary>
+            List of grid cells in the navigation mesh.
+            </summary>
+        </member>
+        <member name="F:Genesis.Core.GameElements.NavMesh.m_obstacles">
+            <summary>
+            List of obstacles in the navigation mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.#ctor(System.String,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.GameElements.NavMesh"/> class.
+            </summary>
+            <param name="location">The location of the navigation mesh.</param>
+            <param name="cellsX">The number of cells in the X direction.</param>
+            <param name="cellsY">The number of cells in the Y direction.</param>
+            <param name="cellSize">The size of each cell in the grid.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the navmesh
+            </summary>
+            <param name="game"></param>
+            <param name="renderDevice"></param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.AddObstacle(System.Int32,System.Int32)">
+            <summary>
+            Adds an obstacle to the navigation mesh.
+            </summary>
+            <param name="column">The column index of the cell where the obstacle is located.</param>
+            <param name="row">The row index of the cell where the obstacle is located.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.IsObstacle(System.Int32,System.Int32)">
+            <summary>
+            Checks if there is an obstacle at the specified cell coordinates.
+            </summary>
+            <param name="col">The column index of the cell to check.</param>
+            <param name="row">The row index of the cell to check.</param>
+            <returns>True if there is an obstacle at the specified cell, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.HasObstacle(Genesis.Core.GameElements.GridCell)">
+            <summary>
+            Checks if there is an obstacle at the specified grid cell.
+            </summary>
+            <param name="cell">The grid cell to check for obstacles.</param>
+            <returns>True if there is an obstacle at the specified grid cell, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.BuildGrid">
+            <summary>
+            Builds the grid of cells for the navigation mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.DrawGrid(Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Draws the grid cells of the navigation mesh.
+            </summary>
+            <param name="renderer">The renderer used to draw the grid cells.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.DrawPath(Genesis.Graphics.IRenderDevice,Genesis.Core.GameElements.Waypoint)">
+            <summary>
+            Draws the path on the navigation mesh.
+            </summary>
+            <param name="renderer">The renderer used to draw the path.</param>
+            <param name="end">The destination waypoint of the path.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetGridCell(System.Int32,System.Int32)">
+            <summary>
+            Get the gird cell at the given location
+            </summary>
+            <param name="col">The column index</param>
+            <param name="row">The row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetGridCellFromCoordinates(System.Int32,System.Int32)">
+            <summary>
+            Get the gridd cell from coordinats (workarround)
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.HasGridCell(System.Int32,System.Int32)">
+            <summary>
+            Checks if at the given column and row index is on the grid
+            </summary>
+            <param name="col">The column index</param>
+            <param name="row">The row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.HasGridCell(Genesis.Core.GameElements.Waypoint)">
+            <summary>
+            Checks if the given waypoint in on the grid
+            </summary>
+            <param name="waypoint">The waypoint to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetGridCellIndex(System.Int32,System.Int32)">
+            <summary>
+            Returns the cell index at the given indicies
+            </summary>
+            <param name="col">Column index</param>
+            <param name="row">Row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.CalculateHCost(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Calculates the huristic costs for the destination
+            </summary>
+            <param name="col">destination column index</param>
+            <param name="row">destination row index</param>
+            <param name="eCol">target column index</param>
+            <param name="eRow">target row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.CalculateHCost(Genesis.Core.GameElements.Waypoint,System.Int32,System.Int32)">
+            <summary>
+            Calculates the huristic cost for the waypoint
+            </summary>
+            <param name="waypoint">the destination waypoint</param>
+            <param name="eCol">target column index</param>
+            <param name="eRow">target row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.ContainsEnd(System.Collections.Generic.List{Genesis.Core.GameElements.Waypoint},System.Int32,System.Int32)">
+            <summary>
+            Checks if the end is within the list
+            </summary>
+            <param name="waypoints">list of the waypoints</param>
+            <param name="eCol">target column index</param>
+            <param name="rRow">target row index</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetEnd(System.Collections.Generic.Dictionary{System.Int32,Genesis.Core.GameElements.Waypoint},System.Int32,System.Int32)">
+            <summary>
+            Gets the end from the given dictonary
+            </summary>
+            <param name="waypoints">the waypoints dictionary</param>
+            <param name="eCol">target column</param>
+            <param name="eRwo">target row</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetEnd(System.Collections.Generic.List{Genesis.Core.GameElements.Waypoint},System.Int32,System.Int32)">
+            <summary>
+            Gets the end from the given list
+            </summary>
+            <param name="waypoints">List of waypoints</param>
+            <param name="eCol">target column</param>
+            <param name="eRwo">target row</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.FindPathAsync(System.Int32,System.Int32,System.Int32,System.Int32,Genesis.Core.GameElements.FindPathAsynchResult)">
+            <summary>
+            Finds a path from the starting cell to the ending cell on the navigation mesh.
+            </summary>
+            <param name="sCol">The column index of the starting cell.</param>
+            <param name="sRow">The row index of the starting cell.</param>
+            <param name="eCol">The column index of the ending cell.</param>
+            <param name="eRow">The row index of the ending cell.</param>
+            <returns>The destination waypoint of the path if found, otherwise null.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.FindPath(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Finds a path from the starting cell to the ending cell on the navigation mesh.
+            </summary>
+            <param name="sCol">The column index of the starting cell.</param>
+            <param name="sRow">The row index of the starting cell.</param>
+            <param name="eCol">The column index of the ending cell.</param>
+            <param name="eRow">The row index of the ending cell.</param>
+            <returns>The destination waypoint of the path if found, otherwise null.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.Navigate(Genesis.Core.GameElements.Waypoint,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.Int32,Genesis.Core.GameElements.Waypoint}@,System.Collections.Generic.Dictionary{System.Int32,Genesis.Core.GameElements.Waypoint}@)">
+            <summary>
+            Finds a path from the starting cell to the ending cell on the navigation mesh.
+            </summary>
+            <param name="waypoint">The current waypoint.</param>
+            <param name="eCol">The column index of the ending cell.</param>
+            <param name="eRow">The row index of the ending cell.</param>
+            <param name="closedList">The list of closed waypoints.</param>
+            <param name="openList">The list of open waypoints.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.NavMesh.GetStartVector">
+            <summary>
+            Calculates the starting position of the navigation mesh.
+            </summary>
+            <returns>The starting position of the navigation mesh.</returns>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleBuffers">
+            <summary>
+            Represents the buffers for particle data, including vertices, texture coordinates, colors, positions, rotations, and scales.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleDeffinition">
+            <summary>
+            Represents the definition of a particle, including location, rotation, size, delay, last update time, speed, rotation speed, and particle color.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Location">
+            <summary>
+            Gets or sets the location of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Rotation">
+            <summary>
+            Gets or sets the rotation of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Size">
+            <summary>
+            Gets or sets the size of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Delay">
+            <summary>
+            Gets or sets the delay before the particle becomes active.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.LastUpdate">
+            <summary>
+            Gets or sets the last update time of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.Speed">
+            <summary>
+            Gets or sets the speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.RotationSpeed">
+            <summary>
+            Gets or sets the rotation speed of the particle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleDeffinition.ParticleColor">
+            <summary>
+            Gets or sets the color of the particle.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.ParticleEmitter">
+            <summary>
+            Represents a particle emitter as a game element.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.Texture">
+            <summary>
+            Gets or sets the texture used for the particles.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection">
+            <summary>
+            Gets or sets the primary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDirection2">
+            <summary>
+            Gets or sets the secondary direction of particle movement.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDistance">
+            <summary>
+            Gets or sets the maximum distance a particle can travel before being reset.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleMask">
+            <summary>
+            Gets or sets the mask for the particles
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions">
+            <summary>
+            Gets or sets the list of particle definitions managed by the emitter.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the ParticleEmitter class with specified parameters.
+            </summary>
+            <param name="name">The name of the particle emitter.</param>
+            <param name="location">The initial location of the particle emitter.</param>
+            <param name="rotation">The initial rotation of the particle emitter.</param>
+            <param name="size">The initial size of the particle emitter.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3)">
+            <summary>
+            Generates particles with default settings, using the provided particle size.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with default settings, using the provided particle size and specified colors.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Generates particles with custom settings, including particle size, rotation, delay, speed, and rotation speed.
+            </summary>
+            <param name="numPartikel">The number of particles to create.</param>
+            <param name="particleSize">The size of each particle.</param>
+            <param name="minRotation">The minimum rotation of particles.</param>
+            <param name="maxRotation">The maximum rotation of particles.</param>
+            <param name="minDelay">The minimum delay before particles become active.</param>
+            <param name="maxDelay">The maximum delay before particles become active.</param>
+            <param name="minSpeed">The minimum speed of particles.</param>
+            <param name="maxSpeed">The maximum speed of particles.</param>
+            <param name="minRotationSpeed">The minimum rotation speed of particles.</param>
+            <param name="maxRotationSpeed">The maximum rotation speed of particles.</param>
+            <param name="colorA">The minimum color of particles.</param>
+            <param name="colorB">The maximum color of particles.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)" -->
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition,System.Int64)">
+            <summary>
+            Processes the movement and rotation of a particle based on its current state.
+            </summary>
+            <param name="particle">The particle definition to be processed.</param>
+            <param name="now">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers">
+            <summary>
+            Generates the buffer for the particles, including vertices, colors, texture coordinates, positions, rotations, and scales.
+            </summary>
+            <returns>Particle buffers containing vertices, colors, texture coordinates, positions, rotations, and scales.</returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the particle emitter is being destroyed in the game.
             </summary>
             <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
         </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+        <member name="M:Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
-            Called when the game behavior is updated.
+            Renders the particle emitter using the specified render device.
             </summary>
             <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
         </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+        <member name="F:Genesis.Core.GameElements.Waypoint.column">
             <summary>
-            Called when the game behavior is rendered.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the game behavior is being destroyed.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="T:Genesis.Core.Input">
-            <summary>
-            Provides utility methods for handling user input in the Genesis framework.
+            The column position of the waypoint.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Windows.Forms.Keys)">
+        <member name="F:Genesis.Core.GameElements.Waypoint.row">
             <summary>
-            Gets the state of the specified key.
-            </summary>
-            <param name="vKey">The virtual key code to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Int32)">
-            <summary>
-            Gets the state of the specified key.
-            </summary>
-            <param name="vKey">The virtual key code to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">
-            <summary>
-            Checks if the specified key is currently pressed.
-            </summary>
-            <param name="vKey">The virtual key to check.</param>
-            <returns>True if the key is down; otherwise, false.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetMousePos">
-            <summary>
-            Gets the current mouse position.
-            </summary>
-            <returns>A Vec3 representing the current mouse position.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)">
-            <summary>
-            Gets the mouse position relative to the specified control.
-            </summary>
-            <param name="control">The control relative to which the mouse position is obtained.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(System.IntPtr)">
-            <summary>
-            Gets the mouse position relative to the control associated with the specified handle.
-            </summary>
-            <param name="handle">The handle of the control.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="M:Genesis.Core.Input.GetRefMousePos(Genesis.Core.Game)">
-            <summary>
-            Gets the mouse position relative to the control associated with the specified game instance.
-            </summary>
-            <param name="game">The game instance.</param>
-            <returns>A Vec3 representing the mouse position relative to the control.</returns>
-        </member>
-        <member name="T:Genesis.Core.Layer">
-            <summary>
-            Represents a layer containing game elements in the Genesis framework.
+            The row position of the waypoint.
             </summary>
         </member>
-        <member name="P:Genesis.Core.Layer.Name">
+        <member name="F:Genesis.Core.GameElements.Waypoint.parent">
             <summary>
-            Gets or sets the name of the layer.
+            The parent waypoint in the navigation path.
             </summary>
         </member>
-        <member name="P:Genesis.Core.Layer.Elements">
+        <member name="F:Genesis.Core.GameElements.Waypoint.hCost">
             <summary>
-            Gets or sets the list of game elements within the layer.
+            The heuristic cost from this waypoint to the goal.
             </summary>
         </member>
-        <member name="P:Genesis.Core.Layer.UpdateElements">
+        <member name="F:Genesis.Core.GameElements.Waypoint.gCost">
             <summary>
-            Gets or sets a value indicating whether the elements within the layer should be updated.
+            The actual cost from the starting point to this waypoint.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Layer.#ctor">
+        <member name="F:Genesis.Core.GameElements.Waypoint.fCost">
             <summary>
-            Creates a new instance of the Layer class.
+            The total cost of the waypoint (fCost = gCost + hCost).
             </summary>
         </member>
-        <member name="M:Genesis.Core.Layer.#ctor(System.String)">
+        <member name="M:Genesis.Core.GameElements.Waypoint.CopyValues(Genesis.Core.GameElements.Waypoint)">
             <summary>
-            Creates a new instance of the Layer class with the specified name.
+            Copies the values of another waypoint.
             </summary>
-            <param name="name">The name of the layer.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.#ctor(System.String,System.Boolean)">
-            <summary>
-            Creates a new instance of the Layer class with the specified name and updateElements flag.
-            </summary>
-            <param name="name">The name of the layer.</param>
-            <param name="updateElements">Flag indicating whether the elements within the layer should be updated.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Initializes all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Renders all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
-            <summary>
-            Updates all game elements within the layer if the UpdateElements flag is true.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="renderDevice">The rendering device.</param>
-        </member>
-        <member name="M:Genesis.Core.Layer.OnDestroy(Genesis.Core.Game)">
-            <summary>
-            Destroys all game elements within the layer.
-            </summary>
-            <param name="game">The game instance.</param>
-        </member>
-        <member name="T:Genesis.Core.Light">
-            <summary>
-            Represents a light source in the Genesis framework.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3)">
-            <summary>
-            Creates a new instance of the Light class with the specified name and location.
-            </summary>
-            <param name="name">The name of the light.</param>
-            <param name="location">The 3D location of the light.</param>
-        </member>
-        <member name="P:Genesis.Core.Light.LightColor">
-            <summary>
-            Gets or sets the color of the light.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.Light.Intensity">
-            <summary>
-            Gets or sets the intensity of the light.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)">
-            <summary>
-            Returns the direction vector from the light to the camera.
-            </summary>
-            <param name="camera">The camera to which the direction is calculated.</param>
-            <returns>The normalized vector representing the light direction.</returns>
-        </member>
-        <member name="M:Genesis.Core.Light.GetLightColor">
-            <summary>
-            Returns the light color in RGB values normalized between 0 and 1.
-            </summary>
-            <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
+            <param name="waypoint">The waypoint to copy values from.</param>
         </member>
         <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
             <summary>
@@ -1283,6 +2170,12 @@
             </summary>
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Clears the GPU memory
+            </summary>
+            <param name="game"></param>
         </member>
         <member name="T:Genesis.Core.GameElements.CameraElement">
             <summary>
@@ -1429,6 +2322,11 @@
             Gets or sets the materials from the model
             </summary>
         </member>
+        <member name="P:Genesis.Core.GameElements.Element3D.HasTransparancy">
+            <summary>
+            Gets or sets a value indicating whether the object has transparency.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.GameElements.Element3D.#ctor(System.String,System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Initializes a new instance of the Element3D class with specified parameters.
@@ -1472,7 +2370,7 @@
             </summary>
             <returns>An array representing the shape data.</returns>
         </member>
-        <member name="M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(System.Int32)">
+        <member name="M:Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)">
             <summary>
             Gets the material buffers for a specific material index.
             </summary>
@@ -1489,6 +2387,13 @@
             Initializes a new instance of the Empty class.
             </summary>
         </member>
+        <member name="M:Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the Empty class.
+            </summary>
+            <param name="name">The name of the game element</param>
+            <param name="location">The location of the game element</param>
+        </member>
         <member name="T:Genesis.Core.GameElements.Qube">
             <summary>
             Represents a cube-shaped game element with customizable appearance.
@@ -1497,6 +2402,11 @@
         <member name="P:Genesis.Core.GameElements.Qube.Shader">
             <summary>
             Gets or sets the shader program associated with this cube.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.Qube.Material">
+            <summary>
+            Gets or sets the material for this cube
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.Qube.Shape">
@@ -1511,14 +2421,14 @@
         </member>
         <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3)">
             <summary>
-            Initializes a new instance of the Qube class with default settings.
+            Initializes a new instance of the cube class with default settings.
             </summary>
             <param name="name">The name of the cube.</param>
             <param name="location">The initial location of the cube.</param>
         </member>
         <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
-            Initializes a new instance of the Qube class with specified size.
+            Initializes a new instance of the cube class with specified size.
             </summary>
             <param name="name">The name of the cube.</param>
             <param name="location">The initial location of the cube.</param>
@@ -1526,7 +2436,7 @@
         </member>
         <member name="M:Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
-            Initializes a new instance of the Qube class with specified size and rotation.
+            Initializes a new instance of the cube class with specified size and rotation.
             </summary>
             <param name="name">The name of the cube.</param>
             <param name="location">The initial location of the cube.</param>
@@ -1755,6 +2665,391 @@
             <param name="game">The game instance.</param>
             <param name="renderDevice">The render device used for rendering.</param>
         </member>
+        <member name="T:Genesis.Core.IGameBehavior">
+            <summary>
+            Represents the base class for game behaviors in the Genesis framework.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.IGameBehavior.Parent">
+            <summary>
+            Gets or sets the parent game element to which this behavior is attached.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is updated.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the game behavior is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="T:Genesis.Core.Input">
+            <summary>
+            Provides utility methods for handling user input in the Genesis framework.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Windows.Forms.Keys)">
+            <summary>
+            Gets the state of the specified key.
+            </summary>
+            <param name="vKey">The virtual key code to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetAsyncKeyState(System.Int32)">
+            <summary>
+            Gets the state of the specified key.
+            </summary>
+            <param name="vKey">The virtual key code to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="X">The new x-coordinate of the cursor position.</param>
+            <param name="Y">The new y-coordinate of the cursor position.</param>
+        </member>
+        <member name="M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)">
+            <summary>
+            Checks if the specified key is currently pressed.
+            </summary>
+            <param name="vKey">The virtual key to check.</param>
+            <returns>True if the key is down; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetMousePos">
+            <summary>
+            Gets the current mouse position.
+            </summary>
+            <returns>A Vec3 representing the current mouse position.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)">
+            <summary>
+            Gets the mouse position relative to the specified control.
+            </summary>
+            <param name="control">The control relative to which the mouse position is obtained.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(System.IntPtr)">
+            <summary>
+            Gets the mouse position relative to the control associated with the specified handle.
+            </summary>
+            <param name="handle">The handle of the control.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.GetRefMousePos(Genesis.Core.Game)">
+            <summary>
+            Gets the mouse position relative to the control associated with the specified game instance.
+            </summary>
+            <param name="game">The game instance.</param>
+            <returns>A Vec3 representing the mouse position relative to the control.</returns>
+        </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="pos">The new position of the cursor.</param>
+            <param name="handle">The handle of the control where the cursor position will be set.</param>
+        </member>
+        <member name="M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)">
+            <summary>
+            Sets the cursor position on the screen.
+            </summary>
+            <param name="X">The new x-coordinate of the cursor position.</param>
+            <param name="Y">The new y-coordinate of the cursor position.</param>
+            /// <param name="handle">The handle of the control where the cursor position will be set.</param>
+        </member>
+        <member name="M:Genesis.Core.Input.ShowCursor">
+            <summary>
+            Shows the cursor.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Input.HideCursor">
+            <summary>
+            Hides the cursor.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Layer">
+            <summary>
+            Represents a layer containing game elements in the Genesis framework.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.Name">
+            <summary>
+            Gets or sets the name of the layer.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.Elements">
+            <summary>
+            Gets or sets the list of game elements within the layer.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Layer.UpdateElements">
+            <summary>
+            Gets or sets a value indicating whether the elements within the layer should be updated.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor">
+            <summary>
+            Creates a new instance of the Layer class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Layer class with the specified name.
+            </summary>
+            <param name="name">The name of the layer.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.#ctor(System.String,System.Boolean)">
+            <summary>
+            Creates a new instance of the Layer class with the specified name and updateElements flag.
+            </summary>
+            <param name="name">The name of the layer.</param>
+            <param name="updateElements">Flag indicating whether the elements within the layer should be updated.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Updates all game elements within the layer if the UpdateElements flag is true.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The rendering device.</param>
+        </member>
+        <member name="M:Genesis.Core.Layer.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Destroys all game elements within the layer.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="T:Genesis.Core.Light">
+            <summary>
+            Represents a light source in the Genesis framework.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3)">
+            <summary>
+            Creates a new instance of the Light class with the specified name and location.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The 3D location of the light.</param>
+        </member>
+        <member name="M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Creates a new instance of the Light class with the specified name, location and intensity.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The 3D location of the light.</param>
+            <param name="intensity">The intensity of the light.</param>
+        </member>
+        <member name="P:Genesis.Core.Light.LightColor">
+            <summary>
+            Gets or sets the color of the light.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light.Intensity">
+            <summary>
+            Gets or sets the intensity of the light.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)">
+            <summary>
+            Returns the direction vector from the light to the camera.
+            </summary>
+            <param name="camera">The camera to which the direction is calculated.</param>
+            <returns>The normalized vector representing the light direction.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightColor">
+            <summary>
+            Returns the light color in RGB values normalized between 0 and 1.
+            </summary>
+            <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
+        </member>
+        <member name="T:Genesis.Core.Light2D">
+            <summary>
+            Represents a 2D light element in the game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light2D.LightShape">
+            <summary>
+            Gets or sets the shape of the light.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light2D.LightColor">
+            <summary>
+            Gets or sets the color of the light.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light2D.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Light2D"/> class with the specified location and size.
+            </summary>
+            <param name="location">The location of the light.</param>
+            <param name="size">The size of the light.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Light2D"/> class with the specified name, location, size, and texture.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The location of the light.</param>
+            <param name="size">The size of the light.</param>
+            <param name="texture">The texture of the light.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Destroys the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetColor">
+            <summary>
+            Gets the color of the light.
+            </summary>
+            <returns>The color of the light as a vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetVericies">
+            <summary>
+            Gets the vertices for the light shape.
+            </summary>
+            <returns>An array of vertices defining the shape of the light.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetTexCoords">
+            <summary>
+            Gets the texture coordinates for the light shape.
+            </summary>
+            <returns>An array of texture coordinates corresponding to the light shape.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.TestLight2D">
+            <summary>
+            Tests the Light2D functionality.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Scene2D">
+            <summary>
+            Represents a 2D scene in the game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.RenderLightmap">
+            <summary>
+            Gets or sets a value indicating whether to render the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.Framebuffer">
+            <summary>
+            Gets or sets the framebuffer used for rendering the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.LightmapIntensity">
+            <summary>
+            Gets or sets the intensity of the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.Lights">
+            <summary>
+            Gets the list of 2D lights in the scene.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Scene2D.BeforeLightmapPreparation">
+            <summary>
+            Event that occurs before lightmap preparation.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Scene2D.AfterLightmapRendering">
+            <summary>
+            Event that occurs after lightmap rendering.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Scene2D"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)">
+            <summary>
+            Adds a 2D light to the scene.
+            </summary>
+            <param name="light">The light to add.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.RemoveLight(Genesis.Core.Game,Genesis.Core.Light2D)">
+            <summary>
+            Removes a 2D light from the scene.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="light">The light to remove.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the scene.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Called when the scene needs to update.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Called when the scene needs to render.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the scene is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
         <member name="T:Genesis.Core.Scene3D">
             <summary>
             Represents a 3D scene for rendering, including lighting and an optional skybox.
@@ -1867,6 +3162,11 @@
         <member name="P:Genesis.Core.Scene.OnSceneResize">
             <summary>
             Event handler triggered when the scene is resized.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene.BackgroundTexture">
+            <summary>
+            Set or gets the background texture for the scene
             </summary>
         </member>
         <member name="M:Genesis.Core.Scene.#ctor">
@@ -2028,6 +3328,21 @@
             Resizes the scene by invoking the event handler for scene resize.
             </summary>
             <param name="viewport">The viewport containing information about the new dimensions.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)">
+            <summary>
+            Loads the given scene file into this scene
+            </summary>
+            <param name="filename">The file name</param>
+            <param name="assetManager">The asset manager</param>
+        </member>
+        <member name="M:Genesis.Core.Scene.GetSceneFilePropetery(Newtonsoft.Json.Linq.JArray,System.String)">
+            <summary>
+            Gets a scene file proptery. 
+            </summary>
+            <param name="array">The propteries jarray</param>
+            <param name="key">The key for the propetery</param>
+            <returns>the jobject if the key exist. null if the key dont exist</returns>
         </member>
         <member name="T:Genesis.Core.Storage">
             <summary>
@@ -2294,6 +3609,20 @@
             <param name="camera">The camera.</param>
             <param name="targetPosition">The target position.</param>
         </member>
+        <member name="M:Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)">
+            <summary>
+            Adjusts the camera's rotation to look at a specified position along the X-axis.
+            </summary>
+            <param name="camera">The camera to adjust.</param>
+            <param name="targetPosition">The position to look at.</param>
+        </member>
+        <member name="M:Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)">
+            <summary>
+            Adjusts the camera's rotation to look at a specified position along the Y-axis.
+            </summary>
+            <param name="camera">The camera to adjust.</param>
+            <param name="targetPosition">The position to look at.</param>
+        </member>
         <member name="M:Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)">
             <summary>
             Calculates the yaw angle from point1 to point2.
@@ -2310,12 +3639,43 @@
             <param name="point2">The target point.</param>
             <returns>The pitch angle in degrees.</returns>
         </member>
-        <member name="M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color)">
+        <member name="M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color,System.Boolean)">
             <summary>
             Converts a System.Drawing.Color into a float array.
             </summary>
             <param name="color">The color.</param>
+            <param name="alpha">Checks if the alpha gets converted</param>
             <returns>The float array representing the color.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor">
+            <summary>
+            Generates an random color
+            </summary>
+            <returns>The color</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Int32)">
+            <summary>
+            Generates an random color from an seed
+            </summary>
+            <param name="seed">The seed for the randomizer</param>
+            <returns>The color</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Returns a random color between the given colors.
+            </summary>
+            <param name="colorA">The minimum color.</param>
+            <param name="colorB">The maximum color.</param>
+            <returns>A randomly generated color within the specified range.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            Returns a random color between the given colors using a specified seed for reproducibility.
+            </summary>
+            <param name="colorA">The minimum color.</param>
+            <param name="colorB">The maximum color.</param>
+            <param name="seed">The seed for the random number generator.</param>
+            <returns>A randomly generated color within the specified range and seed.</returns>
         </member>
         <member name="M:Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)">
             <summary>
@@ -2356,6 +3716,67 @@
             <param name="y">Y-coordinate on the screen.</param>
             <returns>Direction of the ray as a Vec3.</returns>
         </member>
+        <member name="M:Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)">
+            <summary>
+            Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+            </summary>
+            <param name="matrix">The Matrix4x4 to convert.</param>
+            <returns>A mat4 representing the converted matrix.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)">
+            <summary>
+            Converts an Assimp Vector3D to a vec3 from GLM library.
+            </summary>
+            <param name="vec">The Vector3D to convert.</param>
+            <returns>A vec3 representing the converted vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)">
+            <summary>
+            Converts an Assimp Quaternion to a quat from GLM library.
+            </summary>
+            <param name="pOrientation">The Quaternion to convert.</param>
+            <returns>A quat representing the converted quaternion.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)">
+            <summary>
+            Gets the relative position of a child GameElement with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="child">The child GameElement.</param>
+            <returns>A Vec3 representing the relative position of the child.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)">
+            <summary>
+            Gets the relative position of a camera with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="camera">The camera.</param>
+            <returns>A Vec3 representing the relative position of the camera.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)">
+            <summary>
+            Gets the relative position of a location with respect to a parent GameElement.
+            </summary>
+            <param name="parent">The parent GameElement.</param>
+            <param name="location">The location.</param>
+            <returns>A Vec3 representing the relative position of the location.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)">
+            <summary>
+            Calculates the forward direction vector based on Euler angles.
+            </summary>
+            <param name="eulerAngles">The Euler angles representing rotation.</param>
+            <returns>The forward direction vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            Interpolates between an start and end color
+            </summary>
+            <param name="startColor">The color start</param>
+            <param name="endColor">The color end</param>
+            <param name="t">the time</param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>
             Represents an animation definition with details such as name, starting cell, row, and number of frames.
@@ -2394,6 +3815,286 @@
             <param name="cell">The starting cell index of the animation.</param>
             <param name="row">The row index in the animation sheet.</param>
             <param name="frames">The number of frames in the animation.</param>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.AssimpNodeData">
+            <summary>
+            Represents data associated with a node in the Assimp scene hierarchy.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Animation">
+            <summary>
+            Represents an animation associated with a 3D model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Name">
+            <summary>
+            Name of the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Duration">
+            <summary>
+            Duration of the animation in ticks.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.TicksPerSecond">
+            <summary>
+            Number of ticks per second for the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.Bones">
+            <summary>
+            List of bones affected by the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.RootNode">
+            <summary>
+            Root node of the animation's scene hierarchy.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animation.BoneInfoMap">
+            <summary>
+            Mapping of bone names to bone information.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.#ctor(Assimp.Scene,Genesis.Core.GameElements.Model,System.Int32)">
+            <summary>
+            Initializes a new instance of the Animation class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.ReadHeirarchyData(Genesis.Graphics.Animation3D.AssimpNodeData@,Assimp.Node)">
+            <summary>
+            Reads hierarchy data from the Assimp scene node.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.ReadMissingBones(Assimp.Animation,Genesis.Core.GameElements.Model)">
+            <summary>
+            Reads bones engaged in the animation and their keyframes.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.FindBone(System.String)">
+            <summary>
+            Finds a bone with the specified name.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Animator">
+            <summary>
+            Controls the animation playback of a 3D model.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices">
+            <summary>
+            List of final bone transformation matrices.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.CurrentAnimation">
+            <summary>
+            Currently active animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.CurrentTime">
+            <summary>
+            Current time in the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.DeltaTime">
+            <summary>
+            Time elapsed since last frame.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.Play">
+            <summary>
+            Flag indicating whether the animation is playing.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.InterpolateFrames">
+            <summary>
+            Flag indicating whether to interpolate frames during animation playback.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Animator.Loop">
+            <summary>
+            Flag indicating whether to loop the animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)">
+            <summary>
+            Initializes a new instance of the Animator class with the specified animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)">
+            <summary>
+            Updates the animation based on the elapsed time since the last frame.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)">
+            <summary>
+            Loads a new animation.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)">
+            <summary>
+            Calculates bone transformations recursively based on the animation hierarchy.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyPosition">
+            <summary>
+            Represents a keyframe position in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyRotation">
+            <summary>
+            Represents a keyframe rotation in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.KeyScale">
+            <summary>
+            Represents a keyframe scale in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.Bone">
+            <summary>
+            Represents a bone in a skeletal animation system.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Positions">
+            <summary>
+            List of position keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumPositions">
+            <summary>
+            Number of position keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Rotations">
+            <summary>
+            List of rotation keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumRotations">
+            <summary>
+            Number of rotation keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Scales">
+            <summary>
+            List of scale keyframes for the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.NumScalings">
+            <summary>
+            Number of scale keyframes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.LocalTransform">
+            <summary>
+            Local transformation matrix of the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.Name">
+            <summary>
+            Name of the bone.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.Bone.ID">
+            <summary>
+            ID of the bone.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.#ctor(System.String,System.Int32,Assimp.NodeAnimationChannel)">
+            <summary>
+            Initializes a new instance of the Bone class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetPositionIndex(System.Single)">
+            <summary>
+            Gets the index of the position keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetRotationIndex(System.Single)">
+            <summary>
+            Gets the index of the rotation keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetScaleIndex(System.Single)">
+            <summary>
+            Gets the index of the scale keyframe at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.GetScaleFactor(System.Single,System.Single,System.Single)">
+            <summary>
+            Calculates the interpolation factor between two keyframes.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolatePosition(System.Single)">
+            <summary>
+            Interpolates position for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolateRotation(System.Single)">
+            <summary>
+            Interpolates rotation for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.InterpolateScaling(System.Single)">
+            <summary>
+            Interpolates scale for the bone at the specified animation time.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Bone.Update(System.Single,System.Boolean)">
+            <summary>
+            Updates the bone transformation based on the animation time.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.vertex">
+            <summary>
+            Represents a vertex in a 3D model mesh.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.boneinfo">
+            <summary>
+            Contains information about a bone.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.Animation3D.ModelMesh">
+            <summary>
+            Represents a mesh of a 3D model.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Animation3D.ModelMesh.MaxBoneInfluence">
+            <summary>
+            Maximum number of bones influencing a vertex.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Name">
+            <summary>
+            Name of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Vertices">
+            <summary>
+            List of vertices in the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Indices">
+            <summary>
+            List of indices defining the geometry of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Material">
+            <summary>
+            Material applied to the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Animation3D.ModelMesh.Propertys">
+            <summary>
+            Additional properties of the mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.ModelMesh.#ctor">
+            <summary>
+            Initializes a new instance of the ModelMesh class.
+            </summary>
         </member>
         <member name="T:Genesis.Graphics.Face">
             <summary>
@@ -2700,6 +4401,18 @@
             </summary>
             <param name="scene">The 2D scene to finish rendering.</param>
         </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">
+            <summary>
+            Prepares the render for the 2D lightmap
+            </summary>
+            <param name="scene"></param>
+        </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">
+            <summary>
+            Finish the lightmap 2D rendering
+            </summary>
+            <param name="scene"></param>
+        </member>
         <member name="M:Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>
             Prepares the rendering for a canvas within a 2D scene.
@@ -2931,6 +4644,12 @@
             </summary>
             <param name="font">The font to dispose.</param>
         </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)">
+            <summary>
+            Disposes the game element
+            </summary>
+            <param name="element">The element to dispose</param>
+        </member>
         <member name="M:Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)">
             <summary>
             Disposes the specified 3D element, freeing up resources.
@@ -3029,6 +4748,11 @@
             The path to the normal texture of the material.
             </summary>
         </member>
+        <member name="P:Genesis.Graphics.Material.Opacity">
+            <summary>
+            Gets or sets the opacity
+            </summary>
+        </member>
         <member name="P:Genesis.Graphics.Material.Propeterys">
             <summary>
             A collection of user-defined properties.
@@ -3038,6 +4762,30 @@
             <summary>
             Constructor for the Material class. Initializes properties and the dictionary for user-defined properties.
             </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)">
+            <summary>
+            Constructor for the Material class. Initializes properties and the dictionary for user-defined properties.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Material.Serialize">
+            <summary>
+            Serializes the material object into a JSON string.
+            </summary>
+            <returns>Serialized JSON string of the material.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Material.SaveMaterial(System.String)">
+            <summary>
+            Saves the material object to a JSON file.
+            </summary>
+            <param name="filename">The path to save the material JSON file.</param>
+        </member>
+        <member name="M:Genesis.Graphics.Material.LoadMaterial(System.String)">
+            <summary>
+            Loads a material from a JSON file.
+            </summary>
+            <param name="filename">The path to the JSON file containing the material data.</param>
+            <returns>The loaded material object.</returns>
         </member>
         <member name="T:Genesis.Graphics.PerspectiveCamera">
             <summary>
@@ -3120,21 +4868,11 @@
             <param name="renderTarget">The ID of the render target.</param>
             <param name="resolution">The resolution of the rendered texture.</param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)">
+        <member name="M:Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)">
             <summary>
-            Generates a texture
+            Adjusts the camera's orientation to look at a specified position.
             </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)">
-            <summary>
-            Generates a texture
-            </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
+            <param name="vec3">The position to look at.</param>
         </member>
         <member name="F:Genesis.Graphics.RenderDevice.GLRenderer.rot">
             <summary>
@@ -3176,23 +4914,43 @@
             <param name="height"></param>
             <returns></returns>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)">
             <summary>
-            Disposes the render device
+            Creates a new framebuffer
             </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new framebuffer
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)">
+            <summary>
+            Update the framebuffer size
+            </summary>
+            <param name="framebuffer"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(System.String,Genesis.Graphics.ShaderProgram)">
             <summary>
             Loads a shader program
             </summary>
             <param name="name"></param>
             <param name="program"></param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitShader(Genesis.Graphics.ShaderProgram)">
             <summary>
-            Deletes the shader program
+            Initializes a shader program, either by retrieving a pre-built instance if available or creating a new one.
             </summary>
-            <param name="program"></param>
+            <param name="shader">The shader program to initialize.</param>
+            <returns>The ID of the initialized shader program.</returns>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)">
             <summary>
@@ -3206,13 +4964,25 @@
             </summary>
             <param name="element"></param>
         </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitBufferedSprite(Genesis.Core.GameElements.BufferedSprite)">
+            <summary>
+            Init the buffered sprite
+            </summary>
+            <param name="bufferedSprite"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitCube(Genesis.Core.GameElements.Qube)">
+            <summary>
+            Initializes a cube object by setting up its associated shader program and loading vertex, color, and normal data into the GPU buffers.
+            </summary>
+            <param name="cube">The cube object to initialize.</param>
+        </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3D(Genesis.Core.GameElements.Element3D)">
             <summary>
             Inital an 3D element
             </summary>
             <param name="element"></param>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(System.String)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(System.String)">
             <summary>
             Initial the diffuse texture for the 3D model
             If the texture file isnt existing an empty 1x1 texture get created
@@ -3220,7 +4990,7 @@
             <param name="path"></param>
             <returns></returns>
         </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(System.String)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(System.String)">
             <summary>
             Inital the normal map for an 3D element
             if the normal map file isnt existing an empty 1x1 normal map get created
@@ -3232,18 +5002,6 @@
             <summary>
             Beginn to draw
             </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)">
-            <summary>
-            Disposes the texture
-            </summary>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)">
-            <summary>
-            Disposes the font
-            </summary>
-            <param name="font"></param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)">
             <summary>
@@ -3259,6 +5017,23 @@
             <param name="rect"></param>
             <param name="color"></param>
             <param name="borderWidth"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)">
+            <summary>
+            Renders an filled circle
+            </summary>
+            <param name="center">Center of the circle</param>
+            <param name="radius">Radius of the circle</param>
+            <param name="color">Color of the circle</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)">
+            <summary>
+            Draws an circle
+            </summary>
+            <param name="center">Location for the circle</param>
+            <param name="radius">Radius for the circle</param>
+            <param name="color">Color for the circle</param>
+            <param name="borderWidth">Border width for the circle</param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)">
             <summary>
@@ -3552,63 +5327,152 @@
             </summary>
             <param name="element"></param>
         </member>
-        <member name="T:Genesis.Graphics.Shader">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.GetRenderer">
             <summary>
-            Represents a shader used in graphics rendering.
+            Returns the native renderer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource(Genesis.Core.Light)">
+            <summary>
+            Sets an Lightsource
+            </summary>
+            <param name="light"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)">
+            <summary>
+            Draws an skybox
+            </summary>
+            <param name="skybox"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)">
+            <summary>
+            Prepares the renderer for scene rendering
+            </summary>
+            <param name="scene">The scene to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)">
+            <summary>
+            Finish the scene rendering
+            </summary>
+            <param name="scene">The scene which getted rendered</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+            Prepares the renderer for the canvas rendering
+            </summary>
+            <param name="scene">The scene from the canvas</param>
+            <param name="canvas">The canvas to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+            Finish the canvas rendering
+            </summary>
+            <param name="scene">The scene from the canvas</param>
+            <param name="canvas">The canvas to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawFramebuffer(System.Int32)">
+            <summary>
+            Draws an framebuffer
+            </summary>
+            <param name="textureID">The framebuffer texture id</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawFramebuffer(System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draw the framebuffer with another shader programm and gamma
+            </summary>
+            <param name="textureID"></param>
+            <param name="shaderProgramm"></param>
+            <param name="gamma"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Genesis.Graphics.Framebuffer)">
+            <summary>
+            Sets an framebuffer as active render target
+            </summary>
+            <param name="framebuffer">The framebuffer for the rendering</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(System.Int32)">
+            <summary>
+            Sets an framebuffer as active render target
+            </summary>
+            <param name="framebuffer">The framebuffer id for the rendering</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawCube(Genesis.Core.GameElements.Qube)">
+            <summary>
+            Renders an qube
+            </summary>
+            <param name="qube">The qube to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitTerrain3D(Genesis.Core.GameElements.Terrain3D)">
+            <summary>
+            Init an terrain3d
+            </summary>
+            <param name="terrain">The terrain to initalize</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderTerrain3D(Genesis.Core.GameElements.Terrain3D)">
+            <summary>
+            Renders an terrain3D
+            </summary>
+            <param name="terrain">The terrain to render</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
+            <summary>
+            Initial the particle emitter
+            </summary>
+            <param name="emitter">The emitter to initalize</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
+            <summary>
+            Draws the particle emitter
             </summary>
         </member>
-        <member name="P:Genesis.Graphics.Shader.ShaderID">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.InitLight2D(Genesis.Core.Light2D)">
             <summary>
-            Gets or sets the ID of the shader.
+            Initial an 2D light
+            Unused because of the instance shape
+            </summary>
+            <param name="light"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.RenderLight2D(Genesis.Core.Light2D)">
+            <summary>
+            Renders an 2D light
+            </summary>
+            <param name="light"></param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose">
+            <summary>
+            Disposes the render device
             </summary>
         </member>
-        <member name="P:Genesis.Graphics.Shader.Source">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)">
             <summary>
-            Gets or sets the source code of the shader.
+            Deletes the shader program
             </summary>
+            <param name="program"></param>
         </member>
-        <member name="M:Genesis.Graphics.Shader.#ctor">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)">
             <summary>
-            Default constructor for the Shader class.
+            Disposes the texture
             </summary>
+            <param name="texture"></param>
         </member>
-        <member name="M:Genesis.Graphics.Shader.#ctor(System.String)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)">
             <summary>
-            Constructor for the Shader class that initializes the source code.
+            Disposes the font
             </summary>
-            <param name="source">The source code of the shader.</param>
+            <param name="font"></param>
         </member>
-        <member name="M:Genesis.Graphics.Shader.FromFile(System.String)">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)">
             <summary>
-            Creates a Shader object by reading the source code from a file.
+            Disposes the element data from the gpu
             </summary>
-            <param name="filename">The path to the file containing the shader source code.</param>
-            <returns>A Shader object with the source code read from the file.</returns>
+            <param name="element">The element to dispose</param>
         </member>
-        <member name="T:Genesis.Graphics.ShaderProgram">
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
             <summary>
-            Represents a shader program consisting of a vertex shader and a fragment shader.
+            Disposes the particle emitter
             </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.ProgramID">
-            <summary>
-            Gets or sets the ID of the shader program.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.VertexShader">
-            <summary>
-            Gets or sets the vertex shader associated with the program.
-            </summary>
-        </member>
-        <member name="P:Genesis.Graphics.ShaderProgram.FragmentShader">
-            <summary>
-            Gets or sets the fragment shader associated with the program.
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.ShaderProgram.#ctor">
-            <summary>
-            Default constructor for the ShaderProgram class.
-            </summary>
+            <param name="emitter"></param>
         </member>
         <member name="T:Genesis.Graphics.Shapes.FrameShape">
             <summary>
@@ -3699,6 +5563,15 @@
             The normals are defined in groups of three for each triangle face.
             </remarks>
         </member>
+        <member name="M:Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates">
+            <summary>
+            Gets the texture coordinates defining the cube shape.
+            </summary>
+            <returns>An array of floating-point values representing the texture coordinates of the cube.</returns>
+            <remarks>
+            The texture coordinates are defined in groups of two for each vertex.
+            </remarks>
+        </member>
         <member name="T:Genesis.Graphics.Shapes.RectShape">
             <summary>
             Represents a shape that defines a rectangle in two-dimensional space.
@@ -3764,6 +5637,64 @@
             - Colors (r, g, b)
             - Texture coordinates (u, v)
             </remarks>
+        </member>
+        <member name="T:Genesis.Graphics.Shader">
+            <summary>
+            Represents a shader used in graphics rendering.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shader.ShaderID">
+            <summary>
+            Gets or sets the ID of the shader.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shader.Source">
+            <summary>
+            Gets or sets the source code of the shader.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.#ctor">
+            <summary>
+            Default constructor for the Shader class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.#ctor(System.String)">
+            <summary>
+            Constructor for the Shader class that initializes the source code.
+            </summary>
+            <param name="source">The source code of the shader.</param>
+        </member>
+        <member name="M:Genesis.Graphics.Shader.FromFile(System.String)">
+            <summary>
+            Creates a Shader object by reading the source code from a file.
+            </summary>
+            <param name="filename">The path to the file containing the shader source code.</param>
+            <returns>A Shader object with the source code read from the file.</returns>
+        </member>
+        <member name="T:Genesis.Graphics.ShaderProgram">
+            <summary>
+            Represents a shader program consisting of a vertex shader and a fragment shader.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.ProgramID">
+            <summary>
+            Gets or sets the ID of the shader program.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.VertexShader">
+            <summary>
+            Gets or sets the vertex shader associated with the program.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.ShaderProgram.FragmentShader">
+            <summary>
+            Gets or sets the fragment shader associated with the program.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.ShaderProgram.#ctor">
+            <summary>
+            Default constructor for the ShaderProgram class.
+            </summary>
         </member>
         <member name="T:Genesis.Graphics.TexCoords">
             <summary>
@@ -3919,7 +5850,7 @@
             Class representing a 3D mesh, including its geometry and material information.
             </summary>
         </member>
-        <member name="P:Genesis.Graphics.Mesh.MaterialIndex">
+        <member name="P:Genesis.Graphics.Mesh.Material">
             <summary>
             Index of the material associated with the mesh.
             </summary>
@@ -4022,6 +5953,16 @@
             </summary>
             <returns>A <see cref="T:Genesis.Math.Rect"/> object representing the camera's view region.</returns>
         </member>
+        <member name="M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)">
+            <summary>
+            Projects the mouse coords into screen coords
+            </summary>
+            <param name="camera">The camera</param>
+            <param name="viewport">The viewport</param>
+            <param name="mouseX">the screen x coordinate</param>
+            <param name="mouseY">the screen y coordinate</param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Physics.Aabb">
             <summary>
             Represents an Axis-Aligned Bounding Box (AABB) in 3D space.
@@ -4116,7 +6057,7 @@
             <summary>
             Manages a physics behavior element by adding its RigidBody to the physics world.
             </summary>
-            <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
+            <param name="physicsBehavior">The PhysicsBehavior representing the collision object.</param>
         </member>
         <member name="T:Genesis.Physics.MatrixSet">
             <summary>
@@ -4316,9 +6257,9 @@
         </member>
         <member name="M:Genesis.Physics.PhysicsHandler3D.ManageElement(Genesis.Physics.PhysicsBehavior)">
             <summary>
-            Manages a physics behavior element by adding its RigidBody to the physics world.
+            Manages a physics behavior element by adding its collision object to the physics world.
             </summary>
-            <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
+            <param name="collisionObjec">The PhysicsBehavior representing the rigid body element.</param>
         </member>
         <member name="T:Genesis.Physics.PhysicsBehaviorEvent">
             <summary>
@@ -4338,7 +6279,7 @@
             Event triggered when a collision occurs.
             </summary>
         </member>
-        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)">
+        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)">
             <summary>
             Handles the collision event, invoking the OnCollide event if subscribed.
             </summary>
@@ -4458,6 +6399,13 @@
             <param name="width">The width of the rectangle.</param>
             <param name="height">The height of the rectangle.</param>
         </member>
+        <member name="M:Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the Rect class with the specified location and size.
+            </summary>
+            <param name="location">The location of the rectangle.</param>
+            <param name="size">The size of the rectangle.</param>
+        </member>
         <member name="M:Genesis.Math.Rect.#ctor">
             <summary>
             Default constructor for the Rect class.
@@ -4483,6 +6431,12 @@
             Converts the rectangle to a string representation in the format "X;Y;Width;Height".
             </summary>
             <returns>A string representation of the rectangle.</returns>
+        </member>
+        <member name="M:Genesis.Math.Rect.GetLocation">
+            <summary>
+            Returns the location from the rect
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Math.Vec3">
             <summary>
@@ -4778,6 +6732,36 @@
             <param name="vec">The input Vec3 to be processed.</param>
             <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
         </member>
+        <member name="M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.
+            </summary>
+            <param name="vec">The <see cref="T:Genesis.Math.Vec3"/> instance to halve.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Half">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with the components of this instance halved.
+            </summary>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with the components halved.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)">
+            <summary>
+            Generates an rendom vector from min an max value with the given seed
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <param name="seed">The seed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Generates an rendom vector from min an max value
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <returns></returns>
+        </member>
         <member name="M:Genesis.Math.Vec3.ToString">
             <summary>
             Returns a string representation of the vector.
@@ -4936,6 +6920,11 @@
             Initializes a new instance of the <see cref="T:Genesis.UI.UIParser"/> class.
             </summary>
         </member>
+        <member name="T:Genesis.UI.WidgetAnchor">
+            <summary>
+            Enum for the widget position
+            </summary>
+        </member>
         <member name="T:Genesis.UI.UIEvent">
             <summary>
             Delegate for handling UI events.
@@ -4983,6 +6972,11 @@
         <member name="P:Genesis.UI.Widget.Debug">
             <summary>
             Gets or sets a value indicating whether debug mode is enabled for the widget.
+            </summary>
+        </member>
+        <member name="P:Genesis.UI.Widget.Anchor">
+            <summary>
+            Gets or sets the anchor value for the widget
             </summary>
         </member>
         <member name="E:Genesis.UI.Widget.MouseEnter">
@@ -5081,6 +7075,28 @@
             <param name="name">The name to search for.</param>
             <returns>The widget with the specified name, or null if not found.</returns>
         </member>
+        <member name="M:Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)">
+            <summary>
+            Transform the bounds from the bottom left point to any anchor position
+            </summary>
+            <param name="source"></param>
+            <param name="anchor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.UI.Widget.Hovered">
+            <summary>
+            Checks if the widget is hovered
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)">
+            <summary>
+             Executes the click event for the current UI element.
+            </summary>
+            <param name="game">The current game instance.</param>
+            <param name="scene">The current scene instance.</param>
+            <param name="canvas">The canvas where the UI element resides.</param>
+        </member>
         <member name="T:Genesis.UI.ImageButton">
             <summary>
             Represents an image button widget in the UI.
@@ -5135,6 +7151,16 @@
             Gets or sets the color of the text in the label.
             </summary>
         </member>
+        <member name="P:Genesis.UI.Label.HoverColor">
+            <summary>
+            Gets or sets the Hover color
+            </summary>
+        </member>
+        <member name="P:Genesis.UI.Label.HoverAvailable">
+            <summary>
+            Gets or sets the value if hover is available
+            </summary>
+        </member>
         <member name="P:Genesis.UI.Label.FontSize">
             <summary>
             Gets or sets the font size of the label.
@@ -5149,6 +7175,17 @@
             <param name="text"></param>
             <param name="font"></param>
             <param name="color"></param>
+        </member>
+        <member name="M:Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)">
+            <summary>
+            Create a new instance of the label
+            </summary>
+            <param name="name"></param>
+            <param name="location"></param>
+            <param name="text"></param>
+            <param name="font"></param>
+            <param name="color"></param>
+            <param name="anchor"></param>
         </member>
         <member name="M:Genesis.UI.Label.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>
@@ -5356,6 +7393,15 @@
             <param name="name">The name of the progress bar.</param>
             <param name="location">The location of the progress bar.</param>
             <param name="size">The size of the progress bar.</param>
+        </member>
+        <member name="M:Genesis.UI.ProgressBar.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.UI.WidgetAnchor)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.UI.ProgressBar"/> class with the specified name, location, and size.
+            </summary>
+            <param name="name">The name of the progress bar.</param>
+            <param name="location">The location of the progress bar.</param>
+            <param name="size">The size of the progress bar.</param>
+            <param name="anchor">The anchor for the progress bar</param>
         </member>
         <member name="M:Genesis.UI.ProgressBar.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)">
             <summary>

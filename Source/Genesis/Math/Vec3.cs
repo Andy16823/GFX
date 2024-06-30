@@ -512,6 +512,83 @@ namespace Genesis.Math
         }
 
         /// <summary>
+        /// Returns a new <see cref="Vec3"/> instance with each component halved.
+        /// </summary>
+        /// <param name="vec">The <see cref="Vec3"/> instance to halve.</param>
+        /// <returns>A new <see cref="Vec3"/> instance with each component halved.</returns>
+        public static Vec3 Half(Vec3 vec)
+        {
+            Vec3 newVec = new Vec3(vec.X / 2, vec.Y / 2, vec.Z / 2);
+            return newVec;
+        }
+
+        /// <summary>
+        /// Returns a new <see cref="Vec3"/> instance with the components of this instance halved.
+        /// </summary>
+        /// <returns>A new <see cref="Vec3"/> instance with the components halved.</returns>
+        public Vec3 Half()
+        {
+            return new Vec3(X / 2, Y / 2, Z / 2);
+        }
+
+        /// <summary>
+        /// Generates an rendom vector from min an max value with the given seed
+        /// </summary>
+        /// <param name="min">The min vector</param>
+        /// <param name="max">The max vector</param>
+        /// <param name="seed">The seed</param>
+        /// <returns></returns>
+        public static Vec3 Random(Vec3 min, Vec3 max, int seed)
+        {
+            // Min- und Max-Werte für jede Komponente
+            float minX = min.X;
+            float minY = min.Y;
+            float minZ = min.Z;
+
+            float maxX = max.X;
+            float maxY = max.Y;
+            float maxZ = max.Z;
+
+            // Zufallsgenerator initialisieren
+            Random random = new Random(seed);
+
+            // Zufällige Werte für jede Komponente generieren
+            float randomX = (float)(random.NextDouble() * (maxX - minX) + minX);
+            float randomY = (float)(random.NextDouble() * (maxY - minY) + minY);
+            float randomZ = (float)(random.NextDouble() * (maxZ - minZ) + minZ);
+
+            return new Vec3(randomX, randomY, randomZ);
+        }
+
+        /// <summary>
+        /// Generates an rendom vector from min an max value
+        /// </summary>
+        /// <param name="min">The min vector</param>
+        /// <param name="max">The max vector</param>
+        /// <returns></returns>
+        public static Vec3 Random(Vec3 min, Vec3 max)
+        {
+            // Min- und Max-Werte für jede Komponente
+            float minX = min.X;
+            float minY = min.Y;
+            float minZ = min.Z;
+
+            float maxX = max.X;
+            float maxY = max.Y;
+            float maxZ = max.Z;
+
+            // Zufallsgenerator initialisieren
+            Random random = new Random();
+
+            // Zufällige Werte für jede Komponente generieren
+            float randomX = (float)(random.NextDouble() * (maxX - minX) + minX);
+            float randomY = (float)(random.NextDouble() * (maxY - minY) + minY);
+            float randomZ = (float)(random.NextDouble() * (maxZ - minZ) + minZ);
+
+            return new Vec3(randomX, randomY, randomZ);
+        }
+
+        /// <summary>
         /// Returns a string representation of the vector.
         /// </summary>
         /// <returns>A string containing the X, Y, and Z coordinates of the vector.</returns>

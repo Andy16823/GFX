@@ -120,6 +120,18 @@ namespace Genesis.Graphics
         void FinishSceneRendering(Scene scene);
 
         /// <summary>
+        /// Prepares the render for the 2D lightmap
+        /// </summary>
+        /// <param name="scene"></param>
+        void PrepareLightmap2D(Scene scene, Framebuffer framebuffer);
+
+        /// <summary>
+        /// Finish the lightmap 2D rendering
+        /// </summary>
+        /// <param name="scene"></param>
+        void FinishLightmap2D(Scene scene, Framebuffer framebuffer);
+
+        /// <summary>
         /// Prepares the rendering for a canvas within a 2D scene.
         /// </summary>
         /// <param name="scene">The 2D scene containing the canvas.</param>
@@ -282,6 +294,11 @@ namespace Genesis.Graphics
         /// <param name="borderWidth">The width of the rectangle border.</param>
         void DrawRect(Rect rect, Color color, float borderWidth);
 
+
+        void FillCircle(Vec3 center, float radius, Color color);
+
+        void DrawCircle(Vec3 center, float radius, Color color, float borderWidth);
+
         /// <summary>
         /// Fills a colored rectangle with specified position and size in the current rendering context.
         /// </summary>
@@ -349,6 +366,12 @@ namespace Genesis.Graphics
         /// </summary>
         /// <param name="font">The font to dispose.</param>
         void DisposeFont(Font font);
+
+        /// <summary>
+        /// Disposes the game element
+        /// </summary>
+        /// <param name="element">The element to dispose</param>
+        void DisposeElement(GameElement element);
 
         /// <summary>
         /// Disposes the specified 3D element, freeing up resources.

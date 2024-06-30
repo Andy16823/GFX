@@ -12,7 +12,12 @@ items:
   - Genesis.Core.Input.GetRefMousePos(Genesis.Core.Game)
   - Genesis.Core.Input.GetRefMousePos(System.IntPtr)
   - Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)
+  - Genesis.Core.Input.HideCursor
   - Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)
+  - Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  - Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
+  - Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  - Genesis.Core.Input.ShowCursor
   langs:
   - csharp
   - vb
@@ -95,6 +100,38 @@ items:
   nameWithType.vb: Input.GetAsyncKeyState(Integer)
   fullName.vb: Genesis.Core.Input.GetAsyncKeyState(Integer)
   name.vb: GetAsyncKeyState(Integer)
+- uid: Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
+  id: SetCursorPos(System.Int32,System.Int32)
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: SetCursorPos(int, int)
+  nameWithType: Input.SetCursorPos(int, int)
+  fullName: Genesis.Core.Input.SetCursorPos(int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Sets the cursor position on the screen.
+  example: []
+  syntax:
+    content: public static extern bool SetCursorPos(int X, int Y)
+    parameters:
+    - id: X
+      type: System.Int32
+      description: The new x-coordinate of the cursor position.
+    - id: Y
+      type: System.Int32
+      description: The new y-coordinate of the cursor position.
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function SetCursorPos(X As Integer, Y As Integer) As Boolean
+  overload: Genesis.Core.Input.SetCursorPos*
+  nameWithType.vb: Input.SetCursorPos(Integer, Integer)
+  fullName.vb: Genesis.Core.Input.SetCursorPos(Integer, Integer)
+  name.vb: SetCursorPos(Integer, Integer)
 - uid: Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)
   commentId: M:Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)
   id: IsKeyDown(System.Windows.Forms.Keys)
@@ -226,6 +263,104 @@ items:
       description: A Vec3 representing the mouse position relative to the control.
     content.vb: Public Shared Function GetRefMousePos(game As Game) As Vec3
   overload: Genesis.Core.Input.GetRefMousePos*
+- uid: Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  commentId: M:Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  id: SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: SetCursorPos(Vec3, IntPtr)
+  nameWithType: Input.SetCursorPos(Vec3, IntPtr)
+  fullName: Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3, System.IntPtr)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Sets the cursor position on the screen.
+  example: []
+  syntax:
+    content: public static void SetCursorPos(Vec3 pos, IntPtr handle)
+    parameters:
+    - id: pos
+      type: Genesis.Math.Vec3
+      description: The new position of the cursor.
+    - id: handle
+      type: System.IntPtr
+      description: The handle of the control where the cursor position will be set.
+    content.vb: Public Shared Sub SetCursorPos(pos As Vec3, handle As IntPtr)
+  overload: Genesis.Core.Input.SetCursorPos*
+- uid: Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  commentId: M:Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  id: SetCursorPos(System.Int32,System.Int32,System.IntPtr)
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: SetCursorPos(int, int, IntPtr)
+  nameWithType: Input.SetCursorPos(int, int, IntPtr)
+  fullName: Genesis.Core.Input.SetCursorPos(int, int, System.IntPtr)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Sets the cursor position on the screen.
+  example: []
+  syntax:
+    content: public static void SetCursorPos(int x, int y, IntPtr handle)
+    parameters:
+    - id: x
+      type: System.Int32
+    - id: y
+      type: System.Int32
+    - id: handle
+      type: System.IntPtr
+      description: The handle of the control where the cursor position will be set.
+    content.vb: Public Shared Sub SetCursorPos(x As Integer, y As Integer, handle As IntPtr)
+  overload: Genesis.Core.Input.SetCursorPos*
+  nameWithType.vb: Input.SetCursorPos(Integer, Integer, IntPtr)
+  fullName.vb: Genesis.Core.Input.SetCursorPos(Integer, Integer, System.IntPtr)
+  name.vb: SetCursorPos(Integer, Integer, IntPtr)
+- uid: Genesis.Core.Input.ShowCursor
+  commentId: M:Genesis.Core.Input.ShowCursor
+  id: ShowCursor
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: ShowCursor()
+  nameWithType: Input.ShowCursor()
+  fullName: Genesis.Core.Input.ShowCursor()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Shows the cursor.
+  example: []
+  syntax:
+    content: public static void ShowCursor()
+    content.vb: Public Shared Sub ShowCursor()
+  overload: Genesis.Core.Input.ShowCursor*
+- uid: Genesis.Core.Input.HideCursor
+  commentId: M:Genesis.Core.Input.HideCursor
+  id: HideCursor
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: HideCursor()
+  nameWithType: Input.HideCursor()
+  fullName: Genesis.Core.Input.HideCursor()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Hides the cursor.
+  example: []
+  syntax:
+    content: public static void HideCursor()
+    content.vb: Public Shared Sub HideCursor()
+  overload: Genesis.Core.Input.HideCursor*
 - uid: Genesis.Core.Input.#ctor
   commentId: M:Genesis.Core.Input.#ctor
   id: '#ctor'
@@ -586,13 +721,13 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: Genesis.Core.Input.IsKeyDown*
-  commentId: Overload:Genesis.Core.Input.IsKeyDown
+- uid: Genesis.Core.Input.SetCursorPos*
+  commentId: Overload:Genesis.Core.Input.SetCursorPos
   isExternal: true
-  href: Genesis.Core.Input.html#Genesis_Core_Input_IsKeyDown_System_Windows_Forms_Keys_
-  name: IsKeyDown
-  nameWithType: Input.IsKeyDown
-  fullName: Genesis.Core.Input.IsKeyDown
+  href: Genesis.Core.Input.html#Genesis_Core_Input_SetCursorPos_System_Int32_System_Int32_
+  name: SetCursorPos
+  nameWithType: Input.SetCursorPos
+  fullName: Genesis.Core.Input.SetCursorPos
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -604,6 +739,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: Genesis.Core.Input.IsKeyDown*
+  commentId: Overload:Genesis.Core.Input.IsKeyDown
+  isExternal: true
+  href: Genesis.Core.Input.html#Genesis_Core_Input_IsKeyDown_System_Windows_Forms_Keys_
+  name: IsKeyDown
+  nameWithType: Input.IsKeyDown
+  fullName: Genesis.Core.Input.IsKeyDown
 - uid: Genesis.Core.Input.GetMousePos*
   commentId: Overload:Genesis.Core.Input.GetMousePos
   isExternal: true
@@ -677,6 +819,20 @@ references:
   name: Game
   nameWithType: Game
   fullName: Genesis.Core.Game
+- uid: Genesis.Core.Input.ShowCursor*
+  commentId: Overload:Genesis.Core.Input.ShowCursor
+  isExternal: true
+  href: Genesis.Core.Input.html#Genesis_Core_Input_ShowCursor
+  name: ShowCursor
+  nameWithType: Input.ShowCursor
+  fullName: Genesis.Core.Input.ShowCursor
+- uid: Genesis.Core.Input.HideCursor*
+  commentId: Overload:Genesis.Core.Input.HideCursor
+  isExternal: true
+  href: Genesis.Core.Input.html#Genesis_Core_Input_HideCursor
+  name: HideCursor
+  nameWithType: Input.HideCursor
+  fullName: Genesis.Core.Input.HideCursor
 - uid: Genesis.Core.Input.#ctor*
   commentId: Overload:Genesis.Core.Input.#ctor
   isExternal: true

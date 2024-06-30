@@ -10,6 +10,7 @@ items:
   - Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)
   - Genesis.Core.GameElements.BufferedSprite.Colors
   - Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.BufferedSprite.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.BufferedSprite.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions
@@ -35,7 +36,6 @@ items:
   - System.Object
   - Genesis.Core.GameElement
   inheritedMembers:
-  - Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElement.AddBehavior``1({T})
   - Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
   - Genesis.Core.GameElement.GetBehavior``1
@@ -235,6 +235,31 @@ items:
     content.vb: Public Overrides Sub OnUpdate(game As Game, renderDevice As IRenderDevice)
   overridden: Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   overload: Genesis.Core.GameElements.BufferedSprite.OnUpdate*
+- uid: Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  commentId: M:Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  id: OnDestroy(Genesis.Core.Game)
+  parent: Genesis.Core.GameElements.BufferedSprite
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy(Game)
+  nameWithType: BufferedSprite.OnDestroy(Game)
+  fullName: Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Clears the GPU memory
+  example: []
+  syntax:
+    content: public override void OnDestroy(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: ''
+    content.vb: Public Overrides Sub OnDestroy(game As Game)
+  overridden: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  overload: Genesis.Core.GameElements.BufferedSprite.OnDestroy*
 - uid: Genesis.Core.GameElements.BufferedSprite.Verticies
   commentId: P:Genesis.Core.GameElements.BufferedSprite.Verticies
   id: Verticies
@@ -407,36 +432,6 @@ references:
   name: GameElement
   nameWithType: GameElement
   fullName: Genesis.Core.GameElement
-- uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  commentId: M:Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  parent: Genesis.Core.GameElement
-  isExternal: true
-  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  name: OnDestroy(Game)
-  nameWithType: GameElement.OnDestroy(Game)
-  fullName: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-  spec.csharp:
-  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: )
 - uid: Genesis.Core.GameElement.AddBehavior``1({T})
   commentId: M:Genesis.Core.GameElement.AddBehavior``1(``0)
   parent: Genesis.Core.GameElement
@@ -1280,6 +1275,43 @@ references:
   name: OnUpdate
   nameWithType: BufferedSprite.OnUpdate
   fullName: Genesis.Core.GameElements.BufferedSprite.OnUpdate
+- uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  commentId: M:Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  name: OnDestroy(Game)
+  nameWithType: GameElement.OnDestroy(Game)
+  fullName: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
+- uid: Genesis.Core.GameElements.BufferedSprite.OnDestroy*
+  commentId: Overload:Genesis.Core.GameElements.BufferedSprite.OnDestroy
+  isExternal: true
+  href: Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_OnDestroy_Genesis_Core_Game_
+  name: OnDestroy
+  nameWithType: BufferedSprite.OnDestroy
+  fullName: Genesis.Core.GameElements.BufferedSprite.OnDestroy
 - uid: Genesis.Core.GameElements.BufferedSprite.Verticies*
   commentId: Overload:Genesis.Core.GameElements.BufferedSprite.Verticies
   isExternal: true

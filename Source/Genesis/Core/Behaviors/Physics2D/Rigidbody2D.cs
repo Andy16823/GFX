@@ -33,6 +33,9 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// </summary>
         public Vec3 AngularFactor { get; set; } = new Vec3(0, 1, 0);
 
+        /// <summary>
+        /// Gets or sets whether physics is enabled.
+        /// </summary>
         public bool EnablePhysic { get; set; } = true;
 
         /// <summary>
@@ -40,9 +43,14 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// </summary>
         /// <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
         /// <param name="mass">The mass of the RigidBody.</param>
-        public void CreateRigidbody(PhysicHandler handler, float mass)
+        /// <param name="capsuleRadius">The radius of the capsule shape of the RigidBody.</param>
+        /// <param name="capsuleHeight">The height of the capsule shape of the RigidBody.</param>
+        public void CreateRigidbody(PhysicHandler handler, float mass, float capsuleRadius, float capsuleHeight)
         {
-            var shape = new Box2DShape(Parent.Size.ToBulletVec3() / 2);
+            //var capsuleShape = new CapsuleShape(Parent.Size.X / 2, 1.1f);
+            var capsuleShape = new CapsuleShape(capsuleRadius, capsuleHeight);
+            var shape = new Convex2DShape(capsuleShape);
+            //var shape = new Box2DShape(Parent.Size.ToBulletVec3() / 2);
             RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, shape, shape.CalculateLocalInertia(mass));
 
             //Create the start matrix
@@ -58,6 +66,16 @@ namespace Genesis.Core.Behaviors.Physics2D
             RigidBody.UserObject = this.Parent;
             this.RigidBody.ApplyGravity();
             handler.ManageElement(this);
+        }
+
+        /// <summary>
+        /// Creates a RigidBody with the specified mass using the provided PhysicHandler and default values for capsule radius and height.
+        /// </summary>
+        /// <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
+        /// <param name="mass">The mass of the RigidBody.</param>
+        public void CreateRigidbody(PhysicHandler handler, float mass)
+        {
+            this.CreateRigidbody(handler, mass, Parent.Size.X / 2, 1.1f);
         }
 
         /// <summary>

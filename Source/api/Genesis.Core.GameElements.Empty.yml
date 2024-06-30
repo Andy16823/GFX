@@ -6,6 +6,7 @@ items:
   parent: Genesis.Core.GameElements
   children:
   - Genesis.Core.GameElements.Empty.#ctor
+  - Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)
   langs:
   - csharp
   - vb
@@ -77,6 +78,36 @@ items:
   nameWithType.vb: Empty.New()
   fullName.vb: Genesis.Core.GameElements.Empty.New()
   name.vb: New()
+- uid: Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)
+  id: '#ctor(System.String,Genesis.Math.Vec3)'
+  parent: Genesis.Core.GameElements.Empty
+  langs:
+  - csharp
+  - vb
+  name: Empty(string, Vec3)
+  nameWithType: Empty.Empty(string, Vec3)
+  fullName: Genesis.Core.GameElements.Empty.Empty(string, Genesis.Math.Vec3)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Initializes a new instance of the Empty class.
+  example: []
+  syntax:
+    content: public Empty(string name, Vec3 location)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the game element
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location of the game element
+    content.vb: Public Sub New(name As String, location As Vec3)
+  overload: Genesis.Core.GameElements.Empty.#ctor*
+  nameWithType.vb: Empty.New(String, Vec3)
+  fullName.vb: Genesis.Core.GameElements.Empty.New(String, Genesis.Math.Vec3)
+  name.vb: New(String, Vec3)
 references:
 - uid: Genesis.Core.GameElements
   commentId: N:Genesis.Core.GameElements
@@ -874,3 +905,49 @@ references:
   nameWithType.vb: Empty.New
   fullName.vb: Genesis.Core.GameElements.Empty.New
   name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html

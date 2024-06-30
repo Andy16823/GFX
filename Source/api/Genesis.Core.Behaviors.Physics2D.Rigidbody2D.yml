@@ -8,6 +8,7 @@ items:
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.AngularFactor
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
+  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject``1
@@ -39,7 +40,7 @@ items:
   - Genesis.Physics.PhysicsBehavior
   inheritedMembers:
   - Genesis.Physics.PhysicsBehavior.OnCollide
-  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   - Genesis.Core.IGameBehavior.Parent
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -48,6 +49,42 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  id: CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  langs:
+  - csharp
+  - vb
+  name: CreateRigidbody(PhysicHandler, float, float, float)
+  nameWithType: Rigidbody2D.CreateRigidbody(PhysicHandler, float, float, float)
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Creates a RigidBody with the specified mass using the provided PhysicHandler.
+  example: []
+  syntax:
+    content: public void CreateRigidbody(PhysicHandler handler, float mass, float capsuleRadius, float capsuleHeight)
+    parameters:
+    - id: handler
+      type: Genesis.Physics.PhysicHandler
+      description: The PhysicHandler responsible for managing physics elements.
+    - id: mass
+      type: System.Single
+      description: The mass of the RigidBody.
+    - id: capsuleRadius
+      type: System.Single
+      description: The radius of the capsule shape of the RigidBody.
+    - id: capsuleHeight
+      type: System.Single
+      description: The height of the capsule shape of the RigidBody.
+    content.vb: Public Sub CreateRigidbody(handler As PhysicHandler, mass As Single, capsuleRadius As Single, capsuleHeight As Single)
+  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
+  nameWithType.vb: Rigidbody2D.CreateRigidbody(PhysicHandler, Single, Single, Single)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, Single, Single, Single)
+  name.vb: CreateRigidbody(PhysicHandler, Single, Single, Single)
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
   commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
   id: CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
@@ -62,7 +99,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Creates a RigidBody with the specified mass using the provided PhysicHandler.
+  summary: Creates a RigidBody with the specified mass using the provided PhysicHandler and default values for capsule radius and height.
   example: []
   syntax:
     content: public void CreateRigidbody(PhysicHandler handler, float mass)
@@ -368,6 +405,8 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Gets or sets whether physics is enabled.
+  example: []
   syntax:
     content: public bool EnablePhysic { get; set; }
     parameters: []
@@ -458,19 +497,19 @@ references:
   name: OnCollide
   nameWithType: PhysicsBehavior.OnCollide
   fullName: Genesis.Physics.PhysicsBehavior.OnCollide
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   parent: Genesis.Physics.PhysicsBehavior
   isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
-  name: Collide(Scene, Game, RigidBody)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, RigidBody)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  name: Collide(Scene, Game, CollisionObject)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
   spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
     name: Collide
     isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
   - name: (
   - uid: Genesis.Core.Scene
     name: Scene
@@ -484,15 +523,15 @@ references:
     href: Genesis.Core.Game.html
   - name: ','
   - name: " "
-  - uid: BulletSharp.RigidBody
-    name: RigidBody
+  - uid: BulletSharp.CollisionObject
+    name: CollisionObject
     isExternal: true
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
     name: Collide
     isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
   - name: (
   - uid: Genesis.Core.Scene
     name: Scene
@@ -506,8 +545,8 @@ references:
     href: Genesis.Core.Game.html
   - name: ','
   - name: " "
-  - uid: BulletSharp.RigidBody
-    name: RigidBody
+  - uid: BulletSharp.CollisionObject
+    name: CollisionObject
     isExternal: true
   - name: )
 - uid: Genesis.Core.IGameBehavior.Parent
@@ -801,7 +840,7 @@ references:
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
   commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_CreateRigidbody_Genesis_Physics_PhysicHandler_System_Single_
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_CreateRigidbody_Genesis_Physics_PhysicHandler_System_Single_System_Single_System_Single_
   name: CreateRigidbody
   nameWithType: Rigidbody2D.CreateRigidbody
   fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody

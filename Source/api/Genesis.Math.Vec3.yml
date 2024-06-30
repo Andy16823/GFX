@@ -27,8 +27,12 @@ items:
   - Genesis.Math.Vec3.Dot(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
+  - Genesis.Math.Vec3.Half
+  - Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Normalize
   - Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
   - Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)
@@ -1189,6 +1193,122 @@ items:
       description: A new Vec3 with each component rounded to the nearest integer.
     content.vb: Public Shared Function Round(vec As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Round*
+- uid: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  id: Half(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Half(Vec3)
+  nameWithType: Vec3.Half(Vec3)
+  fullName: Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with each component halved.
+  example: []
+  syntax:
+    content: public static Vec3 Half(Vec3 vec)
+    parameters:
+    - id: vec
+      type: Genesis.Math.Vec3
+      description: The <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance to halve.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with each component halved.
+    content.vb: Public Shared Function Half(vec As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Half*
+- uid: Genesis.Math.Vec3.Half
+  commentId: M:Genesis.Math.Vec3.Half
+  id: Half
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Half()
+  nameWithType: Vec3.Half()
+  fullName: Genesis.Math.Vec3.Half()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns a new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with the components of this instance halved.
+  example: []
+  syntax:
+    content: public Vec3 Half()
+    return:
+      type: Genesis.Math.Vec3
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance with the components halved.
+    content.vb: Public Function Half() As Vec3
+  overload: Genesis.Math.Vec3.Half*
+- uid: Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
+  commentId: M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
+  id: Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Random(Vec3, Vec3, int)
+  nameWithType: Vec3.Random(Vec3, Vec3, int)
+  fullName: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Generates an rendom vector from min an max value with the given seed
+  example: []
+  syntax:
+    content: public static Vec3 Random(Vec3 min, Vec3 max, int seed)
+    parameters:
+    - id: min
+      type: Genesis.Math.Vec3
+      description: The min vector
+    - id: max
+      type: Genesis.Math.Vec3
+      description: The max vector
+    - id: seed
+      type: System.Int32
+      description: The seed
+    return:
+      type: Genesis.Math.Vec3
+      description: ''
+    content.vb: Public Shared Function Random(min As Vec3, max As Vec3, seed As Integer) As Vec3
+  overload: Genesis.Math.Vec3.Random*
+  nameWithType.vb: Vec3.Random(Vec3, Vec3, Integer)
+  fullName.vb: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3, Integer)
+  name.vb: Random(Vec3, Vec3, Integer)
+- uid: Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  id: Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Random(Vec3, Vec3)
+  nameWithType: Vec3.Random(Vec3, Vec3)
+  fullName: Genesis.Math.Vec3.Random(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Generates an rendom vector from min an max value
+  example: []
+  syntax:
+    content: public static Vec3 Random(Vec3 min, Vec3 max)
+    parameters:
+    - id: min
+      type: Genesis.Math.Vec3
+      description: The min vector
+    - id: max
+      type: Genesis.Math.Vec3
+      description: The max vector
+    return:
+      type: Genesis.Math.Vec3
+      description: ''
+    content.vb: Public Shared Function Random(min As Vec3, max As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.Random*
 - uid: Genesis.Math.Vec3.ToString
   commentId: M:Genesis.Math.Vec3.ToString
   id: ToString
@@ -1878,6 +1998,31 @@ references:
   name: Round
   nameWithType: Vec3.Round
   fullName: Genesis.Math.Vec3.Round
+- uid: Genesis.Math.Vec3.Half*
+  commentId: Overload:Genesis.Math.Vec3.Half
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Half_Genesis_Math_Vec3_
+  name: Half
+  nameWithType: Vec3.Half
+  fullName: Genesis.Math.Vec3.Half
+- uid: Genesis.Math.Vec3.Random*
+  commentId: Overload:Genesis.Math.Vec3.Random
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Random_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Int32_
+  name: Random
+  nameWithType: Vec3.Random
+  fullName: Genesis.Math.Vec3.Random
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

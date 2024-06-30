@@ -6,10 +6,16 @@ items:
   parent: Genesis.Graphics
   children:
   - Genesis.Graphics.Material.#ctor
+  - Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)
   - Genesis.Graphics.Material.DiffuseColor
   - Genesis.Graphics.Material.DiffuseTexture
+  - Genesis.Graphics.Material.LoadMaterial(System.String)
+  - Genesis.Graphics.Material.Name
   - Genesis.Graphics.Material.NormalTexture
+  - Genesis.Graphics.Material.Opacity
   - Genesis.Graphics.Material.Propeterys
+  - Genesis.Graphics.Material.SaveMaterial(System.String)
+  - Genesis.Graphics.Material.Serialize
   langs:
   - csharp
   - vb
@@ -58,6 +64,135 @@ items:
   nameWithType.vb: Material.New()
   fullName.vb: Genesis.Graphics.Material.New()
   name.vb: New()
+- uid: Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)
+  commentId: M:Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)
+  id: '#ctor(System.String,System.Drawing.Color)'
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Material(string, Color)
+  nameWithType: Material.Material(string, Color)
+  fullName: Genesis.Graphics.Material.Material(string, System.Drawing.Color)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Constructor for the Material class. Initializes properties and the dictionary for user-defined properties.
+  example: []
+  syntax:
+    content: public Material(string name, Color DiffuseColor)
+    parameters:
+    - id: name
+      type: System.String
+    - id: DiffuseColor
+      type: System.Drawing.Color
+    content.vb: Public Sub New(name As String, DiffuseColor As Color)
+  overload: Genesis.Graphics.Material.#ctor*
+  nameWithType.vb: Material.New(String, Color)
+  fullName.vb: Genesis.Graphics.Material.New(String, System.Drawing.Color)
+  name.vb: New(String, Color)
+- uid: Genesis.Graphics.Material.Serialize
+  commentId: M:Genesis.Graphics.Material.Serialize
+  id: Serialize
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Serialize()
+  nameWithType: Material.Serialize()
+  fullName: Genesis.Graphics.Material.Serialize()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Serializes the material object into a JSON string.
+  example: []
+  syntax:
+    content: public string Serialize()
+    return:
+      type: System.String
+      description: Serialized JSON string of the material.
+    content.vb: Public Function Serialize() As String
+  overload: Genesis.Graphics.Material.Serialize*
+- uid: Genesis.Graphics.Material.SaveMaterial(System.String)
+  commentId: M:Genesis.Graphics.Material.SaveMaterial(System.String)
+  id: SaveMaterial(System.String)
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: SaveMaterial(string)
+  nameWithType: Material.SaveMaterial(string)
+  fullName: Genesis.Graphics.Material.SaveMaterial(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Saves the material object to a JSON file.
+  example: []
+  syntax:
+    content: public void SaveMaterial(string filename)
+    parameters:
+    - id: filename
+      type: System.String
+      description: The path to save the material JSON file.
+    content.vb: Public Sub SaveMaterial(filename As String)
+  overload: Genesis.Graphics.Material.SaveMaterial*
+  nameWithType.vb: Material.SaveMaterial(String)
+  fullName.vb: Genesis.Graphics.Material.SaveMaterial(String)
+  name.vb: SaveMaterial(String)
+- uid: Genesis.Graphics.Material.LoadMaterial(System.String)
+  commentId: M:Genesis.Graphics.Material.LoadMaterial(System.String)
+  id: LoadMaterial(System.String)
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: LoadMaterial(string)
+  nameWithType: Material.LoadMaterial(string)
+  fullName: Genesis.Graphics.Material.LoadMaterial(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Loads a material from a JSON file.
+  example: []
+  syntax:
+    content: public static Material LoadMaterial(string filename)
+    parameters:
+    - id: filename
+      type: System.String
+      description: The path to the JSON file containing the material data.
+    return:
+      type: Genesis.Graphics.Material
+      description: The loaded material object.
+    content.vb: Public Shared Function LoadMaterial(filename As String) As Material
+  overload: Genesis.Graphics.Material.LoadMaterial*
+  nameWithType.vb: Material.LoadMaterial(String)
+  fullName.vb: Genesis.Graphics.Material.LoadMaterial(String)
+  name.vb: LoadMaterial(String)
+- uid: Genesis.Graphics.Material.Name
+  commentId: P:Genesis.Graphics.Material.Name
+  id: Name
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Material.Name
+  fullName: Genesis.Graphics.Material.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Graphics.Material.Name*
 - uid: Genesis.Graphics.Material.DiffuseColor
   commentId: P:Genesis.Graphics.Material.DiffuseColor
   id: DiffuseColor
@@ -127,6 +262,29 @@ items:
       type: System.String
     content.vb: Public Property NormalTexture As String
   overload: Genesis.Graphics.Material.NormalTexture*
+- uid: Genesis.Graphics.Material.Opacity
+  commentId: P:Genesis.Graphics.Material.Opacity
+  id: Opacity
+  parent: Genesis.Graphics.Material
+  langs:
+  - csharp
+  - vb
+  name: Opacity
+  nameWithType: Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the opacity
+  example: []
+  syntax:
+    content: public float Opacity { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Opacity As Single
+  overload: Genesis.Graphics.Material.Opacity*
 - uid: Genesis.Graphics.Material.Propeterys
   commentId: P:Genesis.Graphics.Material.Propeterys
   id: Propeterys
@@ -425,13 +583,17 @@ references:
   nameWithType.vb: Material.New
   fullName.vb: Genesis.Graphics.Material.New
   name.vb: New
-- uid: Genesis.Graphics.Material.DiffuseColor*
-  commentId: Overload:Genesis.Graphics.Material.DiffuseColor
+- uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
-  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_DiffuseColor
-  name: DiffuseColor
-  nameWithType: Material.DiffuseColor
-  fullName: Genesis.Graphics.Material.DiffuseColor
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Drawing.Color
   commentId: T:System.Drawing.Color
   parent: System.Drawing
@@ -467,6 +629,49 @@ references:
     name: Drawing
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.Graphics.Material.Serialize*
+  commentId: Overload:Genesis.Graphics.Material.Serialize
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_Serialize
+  name: Serialize
+  nameWithType: Material.Serialize
+  fullName: Genesis.Graphics.Material.Serialize
+- uid: Genesis.Graphics.Material.SaveMaterial*
+  commentId: Overload:Genesis.Graphics.Material.SaveMaterial
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_SaveMaterial_System_String_
+  name: SaveMaterial
+  nameWithType: Material.SaveMaterial
+  fullName: Genesis.Graphics.Material.SaveMaterial
+- uid: Genesis.Graphics.Material.LoadMaterial*
+  commentId: Overload:Genesis.Graphics.Material.LoadMaterial
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_LoadMaterial_System_String_
+  name: LoadMaterial
+  nameWithType: Material.LoadMaterial
+  fullName: Genesis.Graphics.Material.LoadMaterial
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
+- uid: Genesis.Graphics.Material.Name*
+  commentId: Overload:Genesis.Graphics.Material.Name
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_Name
+  name: Name
+  nameWithType: Material.Name
+  fullName: Genesis.Graphics.Material.Name
+- uid: Genesis.Graphics.Material.DiffuseColor*
+  commentId: Overload:Genesis.Graphics.Material.DiffuseColor
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_DiffuseColor
+  name: DiffuseColor
+  nameWithType: Material.DiffuseColor
+  fullName: Genesis.Graphics.Material.DiffuseColor
 - uid: Genesis.Graphics.Material.DiffuseTexture*
   commentId: Overload:Genesis.Graphics.Material.DiffuseTexture
   isExternal: true
@@ -474,17 +679,6 @@ references:
   name: DiffuseTexture
   nameWithType: Material.DiffuseTexture
   fullName: Genesis.Graphics.Material.DiffuseTexture
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: Genesis.Graphics.Material.NormalTexture*
   commentId: Overload:Genesis.Graphics.Material.NormalTexture
   isExternal: true
@@ -492,6 +686,24 @@ references:
   name: NormalTexture
   nameWithType: Material.NormalTexture
   fullName: Genesis.Graphics.Material.NormalTexture
+- uid: Genesis.Graphics.Material.Opacity*
+  commentId: Overload:Genesis.Graphics.Material.Opacity
+  isExternal: true
+  href: Genesis.Graphics.Material.html#Genesis_Graphics_Material_Opacity
+  name: Opacity
+  nameWithType: Material.Opacity
+  fullName: Genesis.Graphics.Material.Opacity
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: Genesis.Graphics.Material.Propeterys*
   commentId: Overload:Genesis.Graphics.Material.Propeterys
   isExternal: true

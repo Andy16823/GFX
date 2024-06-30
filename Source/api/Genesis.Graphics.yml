@@ -5,7 +5,6 @@ items:
   id: Genesis.Graphics
   children:
   - Genesis.Graphics.Animation
-  - Genesis.Graphics.Animation3D
   - Genesis.Graphics.Camera
   - Genesis.Graphics.CameraType
   - Genesis.Graphics.Face
@@ -40,13 +39,6 @@ references:
   name: Animation
   nameWithType: Animation
   fullName: Genesis.Graphics.Animation
-- uid: Genesis.Graphics.Animation3D
-  commentId: T:Genesis.Graphics.Animation3D
-  isExternal: true
-  href: Genesis.Graphics.Animation3D.html
-  name: Animation3D
-  nameWithType: Animation3D
-  fullName: Genesis.Graphics.Animation3D
 - uid: Genesis.Graphics.Face
   commentId: T:Genesis.Graphics.Face
   isExternal: true
@@ -96,6 +88,7 @@ references:
   fullName: Genesis.Graphics.MaterialBuffer
 - uid: Genesis.Graphics.Material
   commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
   isExternal: true
   href: Genesis.Graphics.Material.html
   name: Material

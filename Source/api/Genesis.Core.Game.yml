@@ -14,11 +14,13 @@ items:
   - Genesis.Core.Game.BeforeUpdate
   - Genesis.Core.Game.DeltaTime
   - Genesis.Core.Game.FPS
+  - Genesis.Core.Game.FindScene(System.String)
   - Genesis.Core.Game.GetElementCenterScreenLocation2D(Genesis.Core.GameElement)
   - Genesis.Core.Game.GetElementScreenLocation2D(Genesis.Core.GameElement)
   - Genesis.Core.Game.GetSceneCord(Genesis.Math.Vec3)
   - Genesis.Core.Game.InitGameElement(Genesis.Core.GameElement)
   - Genesis.Core.Game.LastFrame
+  - Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
   - Genesis.Core.Game.LoadScene(System.String)
   - Genesis.Core.Game.Loop
   - Genesis.Core.Game.OnDispose
@@ -309,6 +311,60 @@ items:
   nameWithType.vb: Game.LoadScene(String)
   fullName.vb: Genesis.Core.Game.LoadScene(String)
   name.vb: LoadScene(String)
+- uid: Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  commentId: M:Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  id: LoadScene(Genesis.Core.Scene)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: LoadScene(Scene)
+  nameWithType: Game.LoadScene(Scene)
+  fullName: Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Loads a scene
+  example: []
+  syntax:
+    content: public void LoadScene(Scene scene)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: The scene to be loaded.
+    content.vb: Public Sub LoadScene(scene As Scene)
+  overload: Genesis.Core.Game.LoadScene*
+- uid: Genesis.Core.Game.FindScene(System.String)
+  commentId: M:Genesis.Core.Game.FindScene(System.String)
+  id: FindScene(System.String)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: FindScene(string)
+  nameWithType: Game.FindScene(string)
+  fullName: Genesis.Core.Game.FindScene(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Search for the scene with the given name
+  example: []
+  syntax:
+    content: public Scene FindScene(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name for the scene
+    return:
+      type: Genesis.Core.Scene
+      description: ''
+    content.vb: Public Function FindScene(name As String) As Scene
+  overload: Genesis.Core.Game.FindScene*
+  nameWithType.vb: Game.FindScene(String)
+  fullName.vb: Genesis.Core.Game.FindScene(String)
+  name.vb: FindScene(String)
 - uid: Genesis.Core.Game.Run
   commentId: P:Genesis.Core.Game.Run
   id: Run
@@ -1194,6 +1250,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Genesis.Core.Game.FindScene*
+  commentId: Overload:Genesis.Core.Game.FindScene
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_FindScene_System_String_
+  name: FindScene
+  nameWithType: Game.FindScene
+  fullName: Genesis.Core.Game.FindScene
 - uid: Genesis.Core.Game.Run*
   commentId: Overload:Genesis.Core.Game.Run
   isExternal: true

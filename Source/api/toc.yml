@@ -21,8 +21,12 @@ items:
     name: Layer
   - uid: Genesis.Core.Light
     name: Light
+  - uid: Genesis.Core.Light2D
+    name: Light2D
   - uid: Genesis.Core.Scene
     name: Scene
+  - uid: Genesis.Core.Scene2D
+    name: Scene2D
   - uid: Genesis.Core.Scene3D
     name: Scene3D
   - uid: Genesis.Core.SceneEventHandler
@@ -44,6 +48,8 @@ items:
     name: CharacterController2D
   - uid: Genesis.Core.Behaviors.ControllerPreset
     name: ControllerPreset
+  - uid: Genesis.Core.Behaviors.MoveDirection
+    name: MoveDirection
   - uid: Genesis.Core.Behaviors.MovementFlags
     name: MovementFlags
   - uid: Genesis.Core.Behaviors.SpriteMovementController
@@ -51,19 +57,40 @@ items:
 - uid: Genesis.Core.Behaviors.Physics2D
   name: Genesis.Core.Behaviors.Physics2D
   items:
+  - uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+    name: BoxTrigger2D
   - uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
     name: BufferedSpriteCollider
+  - uid: Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
+    name: PhysicsBox2D
+  - uid: Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
+    name: PhysicsPolygon2D
   - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
     name: Rigidbody2D
 - uid: Genesis.Core.Behaviors.Physics3D
   name: Genesis.Core.Behaviors.Physics3D
   items:
+  - uid: Genesis.Core.Behaviors.Physics3D.BoxCollider
+    name: BoxCollider
+  - uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger
+    name: BoxTrigger
+  - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+    name: CapsuleCollider
   - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
     name: ConvexHullBehavior
   - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
     name: QubeConvexHull
+  - uid: Genesis.Core.Behaviors.Physics3D.SphereCollider
+    name: SphereCollider
   - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
     name: StaticMeshBehavior
+- uid: Genesis.Core.Behaviors._3D
+  name: Genesis.Core.Behaviors._3D
+  items:
+  - uid: Genesis.Core.Behaviors._3D.Stance
+    name: Stance
+  - uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+    name: ThirdpersonCharacterController
 - uid: Genesis.Core.GameElements
   name: Genesis.Core.GameElements
   items:
@@ -75,6 +102,14 @@ items:
     name: Element3D
   - uid: Genesis.Core.GameElements.Empty
     name: Empty
+  - uid: Genesis.Core.GameElements.Model
+    name: Model
+  - uid: Genesis.Core.GameElements.ParticleBuffers
+    name: ParticleBuffers
+  - uid: Genesis.Core.GameElements.ParticleDeffinition
+    name: ParticleDeffinition
+  - uid: Genesis.Core.GameElements.ParticleEmitter
+    name: ParticleEmitter
   - uid: Genesis.Core.GameElements.Qube
     name: Qube
   - uid: Genesis.Core.GameElements.RectElement
@@ -96,8 +131,6 @@ items:
   items:
   - uid: Genesis.Graphics.Animation
     name: Animation
-  - uid: Genesis.Graphics.Animation3D
-    name: Animation3D
   - uid: Genesis.Graphics.Camera
     name: Camera
   - uid: Genesis.Graphics.CameraType
@@ -130,6 +163,29 @@ items:
     name: Texture
   - uid: Genesis.Graphics.Viewport
     name: Viewport
+- uid: Genesis.Graphics.Animation3D
+  name: Genesis.Graphics.Animation3D
+  items:
+  - uid: Genesis.Graphics.Animation3D.Animation
+    name: Animation
+  - uid: Genesis.Graphics.Animation3D.Animator
+    name: Animator
+  - uid: Genesis.Graphics.Animation3D.AssimpNodeData
+    name: AssimpNodeData
+  - uid: Genesis.Graphics.Animation3D.Bone
+    name: Bone
+  - uid: Genesis.Graphics.Animation3D.KeyPosition
+    name: KeyPosition
+  - uid: Genesis.Graphics.Animation3D.KeyRotation
+    name: KeyRotation
+  - uid: Genesis.Graphics.Animation3D.KeyScale
+    name: KeyScale
+  - uid: Genesis.Graphics.Animation3D.ModelMesh
+    name: ModelMesh
+  - uid: Genesis.Graphics.Animation3D.boneinfo
+    name: boneinfo
+  - uid: Genesis.Graphics.Animation3D.vertex
+    name: vertex
 - uid: Genesis.Graphics.Physics
   name: Genesis.Graphics.Physics
   items:
@@ -140,11 +196,15 @@ items:
   items:
   - uid: Genesis.Graphics.RenderDevice.ClassicGL
     name: ClassicGL
+  - uid: Genesis.Graphics.RenderDevice.Experimental
+    name: Experimental
   - uid: Genesis.Graphics.RenderDevice.GLRenderer
     name: GLRenderer
 - uid: Genesis.Graphics.Shaders.OpenGL
   name: Genesis.Graphics.Shaders.OpenGL
   items:
+  - uid: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+    name: AnimatedModelShader
   - uid: Genesis.Graphics.Shaders.OpenGL.BasicShader
     name: BasicShader
   - uid: Genesis.Graphics.Shaders.OpenGL.DiffuseLightning
@@ -157,12 +217,18 @@ items:
     name: DiffuseShader
   - uid: Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
     name: DiffuseSolidShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+    name: FXScreenSpaceShadowShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+    name: Light2DShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPRectShader
     name: MVPRectShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPShader
     name: MVPShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
     name: MVPSolidShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
+    name: ParticleShader
   - uid: Genesis.Graphics.Shaders.OpenGL.ScreenShader
     name: ScreenShader
   - uid: Genesis.Graphics.Shaders.OpenGL.SkyboxShader
@@ -182,6 +248,8 @@ items:
     name: FrameShape
   - uid: Genesis.Graphics.Shapes.GlypheShape
     name: GlypheShape
+  - uid: Genesis.Graphics.Shapes.Light2DShape
+    name: Light2DShape
   - uid: Genesis.Graphics.Shapes.LineShape
     name: LineShape
   - uid: Genesis.Graphics.Shapes.PlaneShape

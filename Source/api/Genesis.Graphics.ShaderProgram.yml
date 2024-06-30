@@ -27,15 +27,19 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
   - Genesis.Graphics.Shaders.OpenGL.BasicShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  - Genesis.Graphics.Shaders.OpenGL.Light2DShader
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.ParticleShader
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader

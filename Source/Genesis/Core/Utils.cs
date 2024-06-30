@@ -502,6 +502,28 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Adjusts the camera's rotation to look at a specified position along the X-axis.
+        /// </summary>
+        /// <param name="camera">The camera to adjust.</param>
+        /// <param name="targetPosition">The position to look at.</param>
+        public static void LookAtX(Camera camera, Vec3 targetPosition)
+        {
+            //camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
+            camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
+        }
+
+        /// <summary>
+        /// Adjusts the camera's rotation to look at a specified position along the Y-axis.
+        /// </summary>
+        /// <param name="camera">The camera to adjust.</param>
+        /// <param name="targetPosition">The position to look at.</param>
+        public static void LookAtY(Camera camera, Vec3 targetPosition)
+        {
+            camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
+            //camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
+        }
+
+        /// <summary>
         /// Calculates the yaw angle from point1 to point2.
         /// </summary>
         /// <param name="point1">The starting point.</param>
@@ -547,14 +569,83 @@ namespace Genesis.Core
         /// Converts a System.Drawing.Color into a float array.
         /// </summary>
         /// <param name="color">The color.</param>
+        /// <param name="alpha">Checks if the alpha gets converted</param>
         /// <returns>The float array representing the color.</returns>
-        public static float[] ConvertColor(Color color)
+        public static float[] ConvertColor(Color color, bool alpha = false)
         {
             float r = (float)color.R / 255;
             float g = (float)color.G / 255;
             float b = (float)color.B / 255;
+            float a = 1.0f;
 
-            return new float[] { r, g, b };
+            if (alpha)
+            {
+                a = (float)color.A / 255;
+            }
+
+            return new float[] { r, g, b, a };
+        }
+
+        /// <summary>
+        /// Generates an random color
+        /// </summary>
+        /// <returns>The color</returns>
+        public static Color GetRandomColor()
+        {
+            Random rand = new Random();
+            int r = rand.Next(0, 255);
+            int g = rand.Next(0, 255);
+            int b = rand.Next(0, 255);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Generates an random color from an seed
+        /// </summary>
+        /// <param name="seed">The seed for the randomizer</param>
+        /// <returns>The color</returns>
+        public static Color GetRandomColor(int seed)
+        {
+            Random rand = new Random(seed);
+            int r = rand.Next(0, 255);
+            int g = rand.Next(0, 255);
+            int b = rand.Next(0, 255);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Returns a random color between the given colors.
+        /// </summary>
+        /// <param name="colorA">The minimum color.</param>
+        /// <param name="colorB">The maximum color.</param>
+        /// <returns>A randomly generated color within the specified range.</returns>
+        public static Color GetRandomColor(Color colorA, Color colorB)
+        {
+            Random rand = new Random();
+            int r = rand.Next(colorA.R, colorB.R);
+            int g = rand.Next(colorA.G, colorB.G);
+            int b = rand.Next(colorA.B, colorB.B);
+
+            return Color.FromArgb(r, g, b);
+        }
+
+        /// <summary>
+        /// Returns a random color between the given colors using a specified seed for reproducibility.
+        /// </summary>
+        /// <param name="colorA">The minimum color.</param>
+        /// <param name="colorB">The maximum color.</param>
+        /// <param name="seed">The seed for the random number generator.</param>
+        /// <returns>A randomly generated color within the specified range and seed.</returns>
+        public static Color GetRandomColor(Color colorA, Color colorB, int seed)
+        {
+            Random rand = new Random(seed);
+            int r = rand.Next(colorA.R, colorB.R);
+            int g = rand.Next(colorA.G, colorB.G);
+            int b = rand.Next(colorA.B, colorB.B);
+
+            return Color.FromArgb(r, g, b);
         }
 
         /// <summary>
@@ -688,6 +779,149 @@ namespace Genesis.Core
             vec3 rayDirection = glm.Normalized(new vec3(rayWorld.x, rayWorld.y, rayWorld.z));
 
             return new Vec3(rayDirection);
+        }
+
+        /// <summary>
+        /// Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+        /// </summary>
+        /// <param name="matrix">The Matrix4x4 to convert.</param>
+        /// <returns>A mat4 representing the converted matrix.</returns>
+        public static mat4 ConvertToGlmMat4(Assimp.Matrix4x4 matrix)
+        {
+            var mat = new mat4();
+            mat.m00 = matrix.A1; // col 0, row 0
+            mat.m01 = matrix.B1; // col 0, row 1
+            mat.m02 = matrix.C1; // col 0, row 2
+            mat.m03 = matrix.D1; // col 0, row 3
+
+            mat.m10 = matrix.A2; // col 1, row 0
+            mat.m11 = matrix.B2; // col 1, row 1
+            mat.m12 = matrix.C2; // col 1, row 2
+            mat.m13 = matrix.D2; // col 1, row 3
+
+            mat.m20 = matrix.A3; // col 2, row 0
+            mat.m21 = matrix.B3; // col 2, row 1
+            mat.m22 = matrix.C3; // col 2, row 2
+            mat.m23 = matrix.D3; // col 2, row 3
+
+            mat.m30 = matrix.A4; // col 3, row 0
+            mat.m31 = matrix.B4; // col 3, row 1
+            mat.m32 = matrix.C4; // col 3, row 2
+            mat.m33 = matrix.D4; // col 3, row 3
+
+            return mat;
+        }
+
+        /// <summary>
+        /// Converts an Assimp Vector3D to a vec3 from GLM library.
+        /// </summary>
+        /// <param name="vec">The Vector3D to convert.</param>
+        /// <returns>A vec3 representing the converted vector.</returns>
+        public static vec3 GetGLMVec(Assimp.Vector3D vec)
+        {
+            return new vec3(vec.X, vec.Y, vec.Z);
+        }
+
+        /// <summary>
+        /// Converts an Assimp Quaternion to a quat from GLM library.
+        /// </summary>
+        /// <param name="pOrientation">The Quaternion to convert.</param>
+        /// <returns>A quat representing the converted quaternion.</returns>
+        public static quat GetGLMQuat(Assimp.Quaternion pOrientation)
+        {
+            return new quat(pOrientation.X, pOrientation.Y, pOrientation.Z, pOrientation.W);
+        }
+
+        /// <summary>
+        /// Gets the relative position of a child GameElement with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="child">The child GameElement.</param>
+        /// <returns>A Vec3 representing the relative position of the child.</returns>
+        public static Vec3 GetRelativePosition(GameElement parent, GameElement child)
+        {
+            Vec3 currentPosition = child.Location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
+
+        /// <summary>
+        /// Gets the relative position of a camera with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="camera">The camera.</param>
+        /// <returns>A Vec3 representing the relative position of the camera.</returns>
+        public static Vec3 GetRelativePosition(GameElement parent, Camera camera)
+        {
+            Vec3 currentPosition = camera.Location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
+
+        /// <summary>
+        /// Gets the relative position of a location with respect to a parent GameElement.
+        /// </summary>
+        /// <param name="parent">The parent GameElement.</param>
+        /// <param name="location">The location.</param>
+        /// <returns>A Vec3 representing the relative position of the location.</returns>
+        public static Vec3 GetRelativePosition(GameElement parent, Vec3 location)
+        {
+            Vec3 currentPosition = location;
+
+            quat parentRotation = Utils.EulerToQuaternion(parent.Rotation);
+            vec3 rotatedPosition = parentRotation * currentPosition.ToGlmVec3();
+            currentPosition = new Vec3(rotatedPosition) + parent.Location;
+
+
+            return currentPosition;
+        }
+
+        /// <summary>
+        /// Calculates the forward direction vector based on Euler angles.
+        /// </summary>
+        /// <param name="eulerAngles">The Euler angles representing rotation.</param>
+        /// <returns>The forward direction vector.</returns>
+        public static Vec3 GetForwardDirection(Vec3 eulerAngles)
+        {
+            quat quatX = quat.FromAxisAngle(eulerAngles.X, new vec3(1, 0, 0));
+            quat quatY = quat.FromAxisAngle(eulerAngles.Y, new vec3(0, 1, 0));
+            quat quatZ = quat.FromAxisAngle(eulerAngles.Z, new vec3(0, 0, 1));
+            
+            var rotMat = mat4.RotateX(eulerAngles.X) * mat4.RotateY(eulerAngles.Y) * mat4.RotateZ(eulerAngles.Z);
+            quat rotation = quatX * quatY * quatZ;
+            vec3 forward = rotation * new vec3(0, 0, 1);
+            return new Vec3(forward);
+        }
+
+        /// <summary>
+        /// Interpolates between an start and end color
+        /// </summary>
+        /// <param name="startColor">The color start</param>
+        /// <param name="endColor">The color end</param>
+        /// <param name="t">the time</param>
+        /// <returns></returns>
+        public static float[] LerpColor(Color startColor, Color endColor, float t)
+        {
+            var startColorf = Utils.ConvertColor(startColor);
+            var endColorf = Utils.ConvertColor(endColor);
+
+            t = glm.Clamp(t, 0, 1); // Sicherstellen, dass t zwischen 0 und 1 liegt
+
+            float r = startColorf[0] + (endColorf[0] - startColorf[0]) * t;
+            float g = startColorf[1] + (endColorf[1] - startColorf[1]) * t;
+            float b = startColorf[2] + (endColorf[2] - startColorf[2]) * t;
+            float a = startColorf[3] + (endColorf[3] - startColorf[3]) * t;
+            return new float[] { r, g, b, a};
         }
     }
 }

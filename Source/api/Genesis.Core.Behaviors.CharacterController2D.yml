@@ -9,6 +9,8 @@ items:
   - Genesis.Core.Behaviors.CharacterController2D.AllowJump
   - Genesis.Core.Behaviors.CharacterController2D.CameraFlags
   - Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  - Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  - Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
   - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
   - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
   - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
@@ -18,6 +20,7 @@ items:
   - Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
   - Genesis.Core.Behaviors.CharacterController2D.LeftKey
   - Genesis.Core.Behaviors.CharacterController2D.Mass
+  - Genesis.Core.Behaviors.CharacterController2D.MoveDirection
   - Genesis.Core.Behaviors.CharacterController2D.MovementFlags
   - Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -576,6 +579,29 @@ items:
       type: Genesis.Core.Behaviors.MovementFlags
     content.vb: Public Property MovementFlags As MovementFlags
   overload: Genesis.Core.Behaviors.CharacterController2D.MovementFlags*
+- uid: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  id: MoveDirection
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: MoveDirection
+  nameWithType: CharacterController2D.MoveDirection
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets the last movement direction from the character
+  example: []
+  syntax:
+    content: public MoveDirection MoveDirection { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+    content.vb: Public Property MoveDirection As MoveDirection
+  overload: Genesis.Core.Behaviors.CharacterController2D.MoveDirection*
 - uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
   commentId: P:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
   id: Rigidbody
@@ -599,6 +625,52 @@ items:
       type: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
     content.vb: Public Property Rigidbody As Rigidbody2D
   overload: Genesis.Core.Behaviors.CharacterController2D.Rigidbody*
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  id: ColliderRadius
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: ColliderRadius
+  nameWithType: CharacterController2D.ColliderRadius
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the collider radius
+  example: []
+  syntax:
+    content: public float ColliderRadius { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ColliderRadius As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius*
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  id: ColliderHeight
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: ColliderHeight
+  nameWithType: CharacterController2D.ColliderHeight
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the follider height
+  example: []
+  syntax:
+    content: public float ColliderHeight { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ColliderHeight As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight*
 references:
 - uid: Genesis.Core.Behaviors
   commentId: N:Genesis.Core.Behaviors
@@ -1409,6 +1481,21 @@ references:
   name: MovementFlags
   nameWithType: MovementFlags
   fullName: Genesis.Core.Behaviors.MovementFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.MoveDirection*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_MoveDirection
+  name: MoveDirection
+  nameWithType: CharacterController2D.MoveDirection
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection
+  commentId: T:Genesis.Core.Behaviors.MoveDirection
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MoveDirection.html
+  name: MoveDirection
+  nameWithType: MoveDirection
+  fullName: Genesis.Core.Behaviors.MoveDirection
 - uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody*
   commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
   isExternal: true
@@ -1471,3 +1558,17 @@ references:
     name: Physics2D
     isExternal: true
     href: Genesis.Core.Behaviors.Physics2D.html
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_ColliderRadius
+  name: ColliderRadius
+  nameWithType: CharacterController2D.ColliderRadius
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_ColliderHeight
+  name: ColliderHeight
+  nameWithType: CharacterController2D.ColliderHeight
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight

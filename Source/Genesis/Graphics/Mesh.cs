@@ -15,7 +15,7 @@ namespace Genesis.Graphics
         /// <summary>
         /// Index of the material associated with the mesh.
         /// </summary>
-        public int MaterialIndex { get; set; }
+        public Material Material { get; set; }
 
         /// <summary>
         /// List of indices defining the mesh faces.

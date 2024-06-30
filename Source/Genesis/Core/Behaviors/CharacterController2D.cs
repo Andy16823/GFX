@@ -42,6 +42,17 @@ namespace Genesis.Core.Behaviors
     }
 
     /// <summary>
+    /// Enumeration for the move direction
+    /// </summary>
+    public enum MoveDirection
+    {
+        North,
+        East,
+        South,
+        West
+    }
+
+    /// <summary>
     /// Class representing a 2D character controller as a game behavior.
     /// </summary>
     public class CharacterController2D : IGameBehavior
@@ -107,9 +118,24 @@ namespace Genesis.Core.Behaviors
         public MovementFlags MovementFlags { get; set; } = MovementFlags.CharacterMoveVerticalAndHorizontal;
 
         /// <summary>
+        /// Gets the last movement direction from the character
+        /// </summary>
+        public MoveDirection MoveDirection { get; set; }
+
+        /// <summary>
         /// Gets or sets the Rigidbody2D component for character physics.
         /// </summary>
         public Rigidbody2D Rigidbody { get; set; }
+
+        /// <summary>
+        /// Gets or sets the collider radius
+        /// </summary>
+        public float ColliderRadius { get; set; }
+
+        /// <summary>
+        /// Gets or sets the follider height
+        /// </summary>
+        public float ColliderHeight { get; set; }
 
         private Sprite m_player;
         private bool m_collide = false;
@@ -154,11 +180,10 @@ namespace Genesis.Core.Behaviors
                     break;
                 case ControllerPreset.SideScrollerController:
                     this.MovementFlags = MovementFlags.CharacterMoveHorizontal;
-                    this.Mass = 1;
                     this.AllowJump = true;
                     this.JumpSpeed = 50f;
                     this.Speed = 15f;
-                    this.CreatePhysics(physicsHandler, new Vec3(0, 1, 0), new Vec3(0, 0, 0), true);
+                    this.CreatePhysics(physicsHandler, new Vec3(1, 1, 0), new Vec3(0, 0, 0), true);
                     break;
             }
         }
@@ -181,11 +206,20 @@ namespace Genesis.Core.Behaviors
         /// <param name="enablePhysics">Specifies whether physics should be enabled initially.</param>
         public void CreatePhysics(PhysicHandler physicHandler, Vec3 linearFactor, Vec3 angularFactor, bool enablePhysics)
         {
+            if(this.ColliderRadius == 0)
+            {
+                this.ColliderRadius = Parent.Size.X / 2;
+            }
+            if(this.ColliderHeight == 0)
+            {
+                this.ColliderHeight = 1.1f;
+            }
+
             this.Parent.AddBehavior(Rigidbody);
             this.Rigidbody.LinearFactor = linearFactor;
             this.Rigidbody.AngularFactor = angularFactor;
             this.Rigidbody.EnablePhysic = enablePhysics;
-            Rigidbody.CreateRigidbody(physicHandler, this.Mass);
+            Rigidbody.CreateRigidbody(physicHandler, this.Mass, ColliderRadius, ColliderHeight);
             Rigidbody.OnCollide += (s, g, objB) =>
             {
                 if (!m_collide)
@@ -217,16 +251,6 @@ namespace Genesis.Core.Behaviors
             float vY = btRigidBody.LinearVelocity.Y;
             float vZ = 0f;
 
-            if (!m_collide)
-            {
-                m_lastPosition = new Vec3(this.Parent.Location.X, this.Parent.Location.Y);
-            }
-            else
-            {
-                //this.Parent.Location = new Vec3(m_lastPosition.X, m_lastPosition.Y);
-                //this.Rigidbody.UpdateRigidBody();
-            }
-
             switch (this.MovementFlags)
             {
                 case MovementFlags.CharacterMoveHorizontal:
@@ -234,10 +258,12 @@ namespace Genesis.Core.Behaviors
                         if (Input.IsKeyDown(this.LeftKey))
                         {
                             vX = -speed;
+                            this.MoveDirection = MoveDirection.West;
                         }
                         else if (Input.IsKeyDown(this.RightKey))
                         {
                             vX = speed;
+                            this.MoveDirection = MoveDirection.East;
                         }
                         break;
                     }
@@ -246,10 +272,12 @@ namespace Genesis.Core.Behaviors
                         if (Input.IsKeyDown(this.UpKey))
                         {
                             vY = speed;
+                            this.MoveDirection = MoveDirection.North;
                         }
                         else if (Input.IsKeyDown(this.DownKey))
                         {
                             vY = -speed;
+                            this.MoveDirection = MoveDirection.South;
                         }
                         break;
                     }
@@ -259,18 +287,22 @@ namespace Genesis.Core.Behaviors
                         if (Input.IsKeyDown(this.LeftKey))
                         {
                             vX = -speed;
+                            this.MoveDirection = MoveDirection.West;
                         }
                         else if (Input.IsKeyDown(this.RightKey))
                         {
                             vX = speed;
+                            this.MoveDirection = MoveDirection.East;
                         }
                         else if (Input.IsKeyDown(this.UpKey))
                         {
                             vY = speed;
+                            this.MoveDirection = MoveDirection.North;
                         }
                         else if (Input.IsKeyDown(this.DownKey))
                         {
                             vY = -speed;
+                            this.MoveDirection = MoveDirection.South;
                         }
                         break;
                     }

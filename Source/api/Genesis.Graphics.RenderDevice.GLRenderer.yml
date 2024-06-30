@@ -13,16 +13,18 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)
   - Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer(System.Single[])
   - Genesis.Graphics.RenderDevice.GLRenderer.CreateStaticVertexBuffer(System.Single[])
-  - Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.Dispose
+  - Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
+  - Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawGameElement(Genesis.Core.GameElement)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)
+  - Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color,System.Single)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)
@@ -38,6 +40,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.End
   - Genesis.Graphics.RenderDevice.GLRenderer.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.GLRenderer.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)
@@ -57,6 +60,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.ModelViewMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PopMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.GLRenderer.ProjectionMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PushMatrix
@@ -307,23 +311,22 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Builds a framebuffer with the specified width, height, and texture.
+  summary: Creates a new framebuffer
   example: []
   syntax:
     content: public Framebuffer BuildFramebuffer(int width, int height, Texture texture)
     parameters:
     - id: width
       type: System.Int32
-      description: The width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The height of the framebuffer.
+      description: ''
     - id: texture
       type: Genesis.Graphics.Texture
-      description: The texture associated with the framebuffer.
     return:
       type: Genesis.Graphics.Framebuffer
-      description: The built framebuffer.
+      description: ''
     content.vb: Public Function BuildFramebuffer(width As Integer, height As Integer, texture As Texture) As Framebuffer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*
   implements:
@@ -345,23 +348,22 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Builds a framebuffer with the specified width, height, and texture ID.
+  summary: Creates a new framebuffer
   example: []
   syntax:
     content: public Framebuffer BuildFramebuffer(int width, int height, int texture)
     parameters:
     - id: width
       type: System.Int32
-      description: The width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The height of the framebuffer.
+      description: ''
     - id: texture
       type: System.Int32
-      description: The ID of the texture associated with the framebuffer.
     return:
       type: Genesis.Graphics.Framebuffer
-      description: The built framebuffer.
+      description: ''
     content.vb: Public Function BuildFramebuffer(width As Integer, height As Integer, texture As Integer) As Framebuffer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*
   implements:
@@ -383,20 +385,20 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Updates the size of the specified framebuffer.
+  summary: Update the framebuffer size
   example: []
   syntax:
     content: public void UpdateFramebufferSize(Framebuffer framebuffer, int width, int height)
     parameters:
     - id: framebuffer
       type: Genesis.Graphics.Framebuffer
-      description: The framebuffer to update.
+      description: ''
     - id: width
       type: System.Int32
-      description: The new width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The new height of the framebuffer.
+      description: ''
     content.vb: Public Sub UpdateFramebufferSize(framebuffer As Framebuffer, width As Integer, height As Integer)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize*
   implements:
@@ -404,28 +406,6 @@ items:
   nameWithType.vb: GLRenderer.UpdateFramebufferSize(Framebuffer, Integer, Integer)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize(Genesis.Graphics.Framebuffer, Integer, Integer)
   name.vb: UpdateFramebufferSize(Framebuffer, Integer, Integer)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
-  id: Dispose
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: Dispose()
-  nameWithType: GLRenderer.Dispose()
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Dispose()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Disposes the render device
-  example: []
-  syntax:
-    content: public void Dispose()
-    content.vb: Public Sub Dispose()
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.Dispose*
-  implements:
-  - Genesis.Graphics.IRenderDevice.Dispose
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)
   id: LoadShader(System.String,Genesis.Graphics.ShaderProgram)
@@ -440,46 +420,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Loads a shader program
-  example: []
   syntax:
     content: public void LoadShader(string name, ShaderProgram program)
     parameters:
     - id: name
       type: System.String
-      description: ''
     - id: program
       type: Genesis.Graphics.ShaderProgram
-      description: ''
     content.vb: Public Sub LoadShader(name As String, program As ShaderProgram)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*
   nameWithType.vb: GLRenderer.LoadShader(String, ShaderProgram)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(String, Genesis.Graphics.ShaderProgram)
   name.vb: LoadShader(String, ShaderProgram)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
-  id: DisoseShader(Genesis.Graphics.ShaderProgram)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: DisoseShader(ShaderProgram)
-  nameWithType: GLRenderer.DisoseShader(ShaderProgram)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader(Genesis.Graphics.ShaderProgram)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Deletes the shader program
-  example: []
-  syntax:
-    content: public void DisoseShader(ShaderProgram program)
-    parameters:
-    - id: program
-      type: Genesis.Graphics.ShaderProgram
-      description: ''
-    content.vb: Public Sub DisoseShader(program As ShaderProgram)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader*
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)
   id: InitSprite(Genesis.Core.GameElements.Sprite)
@@ -572,20 +524,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: >-
-    Initial the diffuse texture for the 3D model
-
-    If the texture file isnt existing an empty 1x1 texture get created
-  example: []
   syntax:
     content: public int InitElement3DTexture(string path)
     parameters:
     - id: path
       type: System.String
-      description: ''
     return:
       type: System.Int32
-      description: ''
     content.vb: Public Function InitElement3DTexture(path As String) As Integer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture*
   nameWithType.vb: GLRenderer.InitElement3DTexture(String)
@@ -605,20 +550,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: >-
-    Inital the normal map for an 3D element
-
-    if the normal map file isnt existing an empty 1x1 normal map get created
-  example: []
   syntax:
     content: public int InitElement3DNormalMap(string path)
     parameters:
     - id: path
       type: System.String
-      description: ''
     return:
       type: System.Int32
-      description: ''
     content.vb: Public Function InitElement3DNormalMap(path As String) As Integer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap*
   nameWithType.vb: GLRenderer.InitElement3DNormalMap(String)
@@ -646,58 +584,6 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.Begin*
   implements:
   - Genesis.Graphics.IRenderDevice.Begin
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
-  id: DisposeTexture(Genesis.Graphics.Texture)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: DisposeTexture(Texture)
-  nameWithType: GLRenderer.DisposeTexture(Texture)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Disposes the texture
-  example: []
-  syntax:
-    content: public void DisposeTexture(Texture texture)
-    parameters:
-    - id: texture
-      type: Genesis.Graphics.Texture
-      description: ''
-    content.vb: Public Sub DisposeTexture(texture As Texture)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture*
-  implements:
-  - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
-  id: DisposeFont(Genesis.Graphics.Font)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: DisposeFont(Font)
-  nameWithType: GLRenderer.DisposeFont(Font)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Disposes the font
-  example: []
-  syntax:
-    content: public void DisposeFont(Font font)
-    parameters:
-    - id: font
-      type: Genesis.Graphics.Font
-      description: ''
-    content.vb: Public Sub DisposeFont(font As Font)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont*
-  implements:
-  - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
   id: DrawRect(Genesis.Math.Rect,System.Drawing.Color)
@@ -1838,10 +1724,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
+  summary: Returns the native renderer
+  example: []
   syntax:
     content: public OpenGL GetRenderer()
     return:
       type: NetGL.OpenGL
+      description: ''
     content.vb: Public Function GetRenderer() As OpenGL
   overload: Genesis.Graphics.RenderDevice.GLRenderer.GetRenderer*
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource(Genesis.Core.Light)
@@ -1858,14 +1747,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Sets the light source for rendering.
+  summary: Sets an Lightsource
   example: []
   syntax:
     content: public void SetLightSource(Light light)
     parameters:
     - id: light
       type: Genesis.Core.Light
-      description: The light source to set.
+      description: ''
     content.vb: Public Sub SetLightSource(light As Light)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource*
   implements:
@@ -1884,14 +1773,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Draws a skybox in the current rendering context.
+  summary: Draws an skybox
   example: []
   syntax:
     content: public void DrawSkyBox(Skybox skybox)
     parameters:
     - id: skybox
       type: Genesis.Core.GameElements.Skybox
-      description: The skybox to draw.
+      description: ''
     content.vb: Public Sub DrawSkyBox(skybox As Skybox)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.DrawSkyBox*
   implements:
@@ -1910,14 +1799,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Prepares the rendering for a 2D scene.
+  summary: Prepares the renderer for scene rendering
   example: []
   syntax:
     content: public void PrepareSceneRendering(Scene scene)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
-      description: The 2D scene to prepare.
+      description: The scene to render
     content.vb: Public Sub PrepareSceneRendering(scene As Scene)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering*
   implements:
@@ -1936,14 +1825,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Finishes the rendering for a 2D scene.
+  summary: Finish the scene rendering
   example: []
   syntax:
     content: public void FinishSceneRendering(Scene scene)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
-      description: The 2D scene to finish rendering.
+      description: The scene which getted rendered
     content.vb: Public Sub FinishSceneRendering(scene As Scene)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering*
   implements:
@@ -1962,17 +1851,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Prepares the rendering for a canvas within a 2D scene.
+  summary: Prepares the renderer for the canvas rendering
   example: []
   syntax:
     content: public void PrepareCanvasRendering(Scene scene, Canvas canvas)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
-      description: The 2D scene containing the canvas.
+      description: The scene from the canvas
     - id: canvas
       type: Genesis.UI.Canvas
-      description: The canvas to prepare rendering for.
+      description: The canvas to render
     content.vb: Public Sub PrepareCanvasRendering(scene As Scene, canvas As Canvas)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering*
   implements:
@@ -1991,17 +1880,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Finishes the rendering for a canvas within a 2D scene.
+  summary: Finish the canvas rendering
   example: []
   syntax:
     content: public void FinishCanvasRendering(Scene scene, Canvas canvas)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
-      description: The 2D scene containing the canvas.
+      description: The scene from the canvas
     - id: canvas
       type: Genesis.UI.Canvas
-      description: The canvas to finish rendering.
+      description: The canvas to render
     content.vb: Public Sub FinishCanvasRendering(scene As Scene, canvas As Canvas)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering*
   implements:
@@ -2020,14 +1909,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Sets the active framebuffer using its ID.
+  summary: Sets an framebuffer as active render target
   example: []
   syntax:
     content: public void SetFramebuffer(Framebuffer framebuffer)
     parameters:
     - id: framebuffer
       type: Genesis.Graphics.Framebuffer
-      description: The ID of the framebuffer to set as active.
+      description: The framebuffer for the rendering
     content.vb: Public Sub SetFramebuffer(framebuffer As Framebuffer)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer*
   implements:
@@ -2046,14 +1935,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Sets the active framebuffer using the specified framebuffer object.
+  summary: Sets an framebuffer as active render target
   example: []
   syntax:
     content: public void SetFramebuffer(int framebuffer)
     parameters:
     - id: framebuffer
       type: System.Int32
-      description: The framebuffer to set as active.
+      description: The framebuffer id for the rendering
     content.vb: Public Sub SetFramebuffer(framebuffer As Integer)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer*
   implements:
@@ -2061,6 +1950,209 @@ items:
   nameWithType.vb: GLRenderer.SetFramebuffer(Integer)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Integer)
   name.vb: SetFramebuffer(Integer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  id: DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawParticleEmitter(ParticleEmitter)
+  nameWithType: GLRenderer.DrawParticleEmitter(ParticleEmitter)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Draws the particle emitter
+  example: []
+  syntax:
+    content: public void DrawParticleEmitter(ParticleEmitter emitter)
+    parameters:
+    - id: emitter
+      type: Genesis.Core.GameElements.ParticleEmitter
+    content.vb: Public Sub DrawParticleEmitter(emitter As ParticleEmitter)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
+  id: Dispose
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: GLRenderer.Dispose()
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Dispose()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Disposes the render device
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.Dispose*
+  implements:
+  - Genesis.Graphics.IRenderDevice.Dispose
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  id: DisposeShader(Genesis.Graphics.ShaderProgram)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DisposeShader(ShaderProgram)
+  nameWithType: GLRenderer.DisposeShader(ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Deletes the shader program
+  example: []
+  syntax:
+    content: public void DisposeShader(ShaderProgram program)
+    parameters:
+    - id: program
+      type: Genesis.Graphics.ShaderProgram
+      description: ''
+    content.vb: Public Sub DisposeShader(program As ShaderProgram)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader*
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
+  id: DisposeTexture(Genesis.Graphics.Texture)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DisposeTexture(Texture)
+  nameWithType: GLRenderer.DisposeTexture(Texture)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Disposes the texture
+  example: []
+  syntax:
+    content: public void DisposeTexture(Texture texture)
+    parameters:
+    - id: texture
+      type: Genesis.Graphics.Texture
+      description: ''
+    content.vb: Public Sub DisposeTexture(texture As Texture)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture*
+  implements:
+  - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
+  id: DisposeFont(Genesis.Graphics.Font)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DisposeFont(Font)
+  nameWithType: GLRenderer.DisposeFont(Font)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont(Genesis.Graphics.Font)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Disposes the font
+  example: []
+  syntax:
+    content: public void DisposeFont(Font font)
+    parameters:
+    - id: font
+      type: Genesis.Graphics.Font
+      description: ''
+    content.vb: Public Sub DisposeFont(font As Font)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont*
+  implements:
+  - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  id: DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DisposeElement(GameElement)
+  nameWithType: GLRenderer.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Disposes the element data from the gpu
+  example: []
+  syntax:
+    content: public void DisposeElement(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The element to dispose
+    content.vb: Public Sub DisposeElement(element As GameElement)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*
+  implements:
+  - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Prepares the render for the 2D lightmap
+  example: []
+  syntax:
+    content: public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Finish the lightmap 2D rendering
+  example: []
+  syntax:
+    content: public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
 references:
 - uid: Genesis.Graphics.RenderDevice
   commentId: N:Genesis.Graphics.RenderDevice
@@ -2838,35 +2930,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_Dispose
-  name: Dispose
-  nameWithType: GLRenderer.Dispose
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
-- uid: Genesis.Graphics.IRenderDevice.Dispose
-  commentId: M:Genesis.Graphics.IRenderDevice.Dispose
-  parent: Genesis.Graphics.IRenderDevice
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
-  name: Dispose()
-  nameWithType: IRenderDevice.Dispose()
-  fullName: Genesis.Graphics.IRenderDevice.Dispose()
-  spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.Dispose
-    name: Dispose
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.Dispose
-    name: Dispose
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
-  - name: (
-  - name: )
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader
   isExternal: true
@@ -2893,13 +2956,6 @@ references:
   name: ShaderProgram
   nameWithType: ShaderProgram
   fullName: Genesis.Graphics.ShaderProgram
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisoseShader_Genesis_Graphics_ShaderProgram_
-  name: DisoseShader
-  nameWithType: GLRenderer.DisoseShader
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisoseShader
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.InitSprite*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.InitSprite
   isExternal: true
@@ -3142,88 +3198,6 @@ references:
     href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Begin
   - name: (
   - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeTexture_Genesis_Graphics_Texture_
-  name: DisposeTexture
-  nameWithType: GLRenderer.DisposeTexture
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture
-- uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-  commentId: M:Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-  parent: Genesis.Graphics.IRenderDevice
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
-  name: DisposeTexture(Texture)
-  nameWithType: IRenderDevice.DisposeTexture(Texture)
-  fullName: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-  spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-    name: DisposeTexture
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
-  - name: (
-  - uid: Genesis.Graphics.Texture
-    name: Texture
-    isExternal: true
-    href: Genesis.Graphics.Texture.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
-    name: DisposeTexture
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
-  - name: (
-  - uid: Genesis.Graphics.Texture
-    name: Texture
-    isExternal: true
-    href: Genesis.Graphics.Texture.html
-  - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeFont_Genesis_Graphics_Font_
-  name: DisposeFont
-  nameWithType: GLRenderer.DisposeFont
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
-- uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
-  commentId: M:Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
-  parent: Genesis.Graphics.IRenderDevice
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
-  name: DisposeFont(Font)
-  nameWithType: IRenderDevice.DisposeFont(Font)
-  fullName: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
-  spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
-    name: DisposeFont
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
-  - name: (
-  - uid: Genesis.Graphics.Font
-    name: Font
-    isExternal: true
-    href: Genesis.Graphics.Font.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
-    name: DisposeFont
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
-  - name: (
-  - uid: Genesis.Graphics.Font
-    name: Font
-    isExternal: true
-    href: Genesis.Graphics.Font.html
-  - name: )
-- uid: Genesis.Graphics.Font
-  commentId: T:Genesis.Graphics.Font
-  parent: Genesis.Graphics
-  isExternal: true
-  href: Genesis.Graphics.Font.html
-  name: Font
-  nameWithType: Font
-  fullName: Genesis.Graphics.Font
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawRect*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawRect
   isExternal: true
@@ -4102,6 +4076,14 @@ references:
     isExternal: true
     href: Genesis.Graphics.Font.html
   - name: )
+- uid: Genesis.Graphics.Font
+  commentId: T:Genesis.Graphics.Font
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Font.html
+  name: Font
+  nameWithType: Font
+  fullName: Genesis.Graphics.Font
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.ModelViewMatrix*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.ModelViewMatrix
   isExternal: true
@@ -5475,4 +5457,264 @@ references:
     name: Integer
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawParticleEmitter_Genesis_Core_GameElements_ParticleEmitter_
+  name: DrawParticleEmitter
+  nameWithType: GLRenderer.DrawParticleEmitter
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawParticleEmitter
+- uid: Genesis.Core.GameElements.ParticleEmitter
+  commentId: T:Genesis.Core.GameElements.ParticleEmitter
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleEmitter.html
+  name: ParticleEmitter
+  nameWithType: ParticleEmitter
+  fullName: Genesis.Core.GameElements.ParticleEmitter
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.Dispose*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Dispose
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_Dispose
+  name: Dispose
+  nameWithType: GLRenderer.Dispose
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Dispose
+- uid: Genesis.Graphics.IRenderDevice.Dispose
+  commentId: M:Genesis.Graphics.IRenderDevice.Dispose
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
+  name: Dispose()
+  nameWithType: IRenderDevice.Dispose()
+  fullName: Genesis.Graphics.IRenderDevice.Dispose()
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.Dispose
+    name: Dispose
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.Dispose
+    name: Dispose
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Dispose
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeShader_Genesis_Graphics_ShaderProgram_
+  name: DisposeShader
+  nameWithType: GLRenderer.DisposeShader
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeTexture_Genesis_Graphics_Texture_
+  name: DisposeTexture
+  nameWithType: GLRenderer.DisposeTexture
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture
+- uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
+  name: DisposeTexture(Texture)
+  nameWithType: IRenderDevice.DisposeTexture(Texture)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+    name: DisposeTexture
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
+  - name: (
+  - uid: Genesis.Graphics.Texture
+    name: Texture
+    isExternal: true
+    href: Genesis.Graphics.Texture.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
+    name: DisposeTexture
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeTexture_Genesis_Graphics_Texture_
+  - name: (
+  - uid: Genesis.Graphics.Texture
+    name: Texture
+    isExternal: true
+    href: Genesis.Graphics.Texture.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeFont_Genesis_Graphics_Font_
+  name: DisposeFont
+  nameWithType: GLRenderer.DisposeFont
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeFont
+- uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
+  name: DisposeFont(Font)
+  nameWithType: IRenderDevice.DisposeFont(Font)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+    name: DisposeFont
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
+  - name: (
+  - uid: Genesis.Graphics.Font
+    name: Font
+    isExternal: true
+    href: Genesis.Graphics.Font.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+    name: DisposeFont
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeFont_Genesis_Graphics_Font_
+  - name: (
+  - uid: Genesis.Graphics.Font
+    name: Font
+    isExternal: true
+    href: Genesis.Graphics.Font.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement
+  nameWithType: GLRenderer.DisposeElement
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement(GameElement)
+  nameWithType: IRenderDevice.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+    name: DisposeElement
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+    name: DisposeElement
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D
+  nameWithType: GLRenderer.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D
+  nameWithType: GLRenderer.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
   - name: )

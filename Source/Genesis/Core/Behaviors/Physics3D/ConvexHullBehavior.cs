@@ -61,15 +61,6 @@ namespace Genesis.Core.Behaviors.Physics3D
         }
 
         /// <summary>
-        /// Handles collision events for the ConvexHullBehavior.
-        /// </summary>
-        public override void Collide(Scene scene, Game game, RigidBody collisionObject)
-        {
-            base.Collide(scene, game, collisionObject);
-
-        }
-
-        /// <summary>
         /// Updates the RigidBody's position, rotation, and scale based on the associated parent element.
         /// </summary>
         public void UpdateRigidBody()

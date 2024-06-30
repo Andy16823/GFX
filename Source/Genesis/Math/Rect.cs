@@ -47,6 +47,19 @@ namespace Genesis.Math
         }
 
         /// <summary>
+        /// Initializes a new instance of the Rect class with the specified location and size.
+        /// </summary>
+        /// <param name="location">The location of the rectangle.</param>
+        /// <param name="size">The size of the rectangle.</param>
+        public Rect(Vec3 location, Vec3 size)
+        {
+            X = location.X;
+            Y = location.Y;
+            Width = size.X;
+            Height = size.Y;
+        }
+
+        /// <summary>
         /// Default constructor for the Rect class.
         /// </summary>
         public Rect()
@@ -92,5 +105,18 @@ namespace Genesis.Math
             return X.ToString() + ";" + Y.ToString() + ";" + Width.ToString() + ";" + Height.ToString();
         }
 
+        /// <summary>
+        /// Returns the location from the rect
+        /// </summary>
+        /// <returns></returns>
+        public Vec3 GetLocation()
+        {
+            return new Vec3(X, Y);
+        }
+
+        public Vec3 GetSize()
+        {
+            return new Vec3(Width, Height);
+        }
     }
 }

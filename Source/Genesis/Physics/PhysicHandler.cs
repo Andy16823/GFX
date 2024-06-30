@@ -1,4 +1,5 @@
-﻿using Genesis.Core;
+﻿using BulletSharp;
+using Genesis.Core;
 using Genesis.Graphics;
 using System;
 using System.Collections.Generic;
@@ -61,7 +62,7 @@ namespace Genesis.Physics
         {
             this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, cObj) =>
             {
-                physicsBehavior.Collide(scene, game, (BulletSharp.RigidBody)cObj);
+                physicsBehavior.Collide(scene, game, (CollisionObject)cObj);
             });
         }
     }

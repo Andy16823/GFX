@@ -140,15 +140,15 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Physics
-  summary: Manages a physics behavior element by adding its RigidBody to the physics world.
+  summary: Manages a physics behavior element by adding its collision object to the physics world.
   example: []
   syntax:
-    content: public override void ManageElement(PhysicsBehavior rigidBody)
+    content: public override void ManageElement(PhysicsBehavior collisionObjec)
     parameters:
-    - id: rigidBody
+    - id: collisionObjec
       type: Genesis.Physics.PhysicsBehavior
       description: The PhysicsBehavior representing the rigid body element.
-    content.vb: Public Overrides Sub ManageElement(rigidBody As PhysicsBehavior)
+    content.vb: Public Overrides Sub ManageElement(collisionObjec As PhysicsBehavior)
   overridden: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
   overload: Genesis.Physics.PhysicsHandler3D.ManageElement*
 - uid: Genesis.Physics.PhysicsHandler3D.PhysicsWorld

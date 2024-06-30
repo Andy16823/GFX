@@ -114,12 +114,12 @@ items:
   summary: Manages a physics behavior element by adding its RigidBody to the physics world.
   example: []
   syntax:
-    content: public override void ManageElement(PhysicsBehavior rigidBody)
+    content: public override void ManageElement(PhysicsBehavior physicsBehavior)
     parameters:
-    - id: rigidBody
+    - id: physicsBehavior
       type: Genesis.Physics.PhysicsBehavior
-      description: The PhysicsBehavior representing the rigid body element.
-    content.vb: Public Overrides Sub ManageElement(rigidBody As PhysicsBehavior)
+      description: The PhysicsBehavior representing the collision object.
+    content.vb: Public Overrides Sub ManageElement(physicsBehavior As PhysicsBehavior)
   overridden: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
   overload: Genesis.Physics.PhysicsHandler2D.ManageElement*
 - uid: Genesis.Physics.PhysicsHandler2D.PhysicsWorld

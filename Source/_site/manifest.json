@@ -72,6 +72,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.MoveDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.MoveDirection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.MovementFlags.yml",
       "output": {
         ".html": {
@@ -82,10 +92,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.html"
         }
       },
       "version": ""
@@ -112,6 +152,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.yml",
       "output": {
         ".html": {
@@ -126,6 +196,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.SphereCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html"
         }
       },
       "version": ""
@@ -156,6 +236,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.SpriteMovementController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors._3D.Stance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors._3D.Stance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors._3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors._3D.html"
         }
       },
       "version": ""
@@ -226,6 +336,46 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.GameElements.Empty.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.Model.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.ParticleEmitter.html"
         }
       },
       "version": ""
@@ -322,6 +472,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.ParticleEmitter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.GameEventHandler.yml",
       "output": {
         ".html": {
@@ -382,10 +572,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Light2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Light2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Scene.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Scene.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Scene2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Scene2D.html"
         }
       },
       "version": ""
@@ -456,6 +666,106 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Animation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Animation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Animator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Animator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.AssimpNodeData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.AssimpNodeData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.Bone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.Bone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyPosition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyRotation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyRotation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.KeyScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.KeyScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.ModelMesh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.ModelMesh.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.boneinfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.boneinfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Animation3D.vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Animation3D.vertex.html"
         }
       },
       "version": ""
@@ -612,6 +922,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.RenderDevice.Experimental.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.RenderDevice.Experimental.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.RenderDevice.GLRenderer.yml",
       "output": {
         ".html": {
@@ -646,6 +966,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.ShaderProgram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader.html"
         }
       },
       "version": ""
@@ -712,6 +1042,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.MVPRectShader.yml",
       "output": {
         ".html": {
@@ -736,6 +1086,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.MVPSolidShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.ParticleShader.html"
         }
       },
       "version": ""
@@ -826,6 +1186,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shapes.GlypheShape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shapes.Light2DShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shapes.Light2DShape.html"
         }
       },
       "version": ""

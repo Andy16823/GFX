@@ -21,6 +21,13 @@ using Genesis.Graphics.Shaders.OpenGL;
 using System.CodeDom;
 using Genesis.UI;
 using Genesis.Graphics.Shapes;
+using System.Runtime.CompilerServices;
+using Genesis.Graphics.Animation3D;
+using System.Runtime.InteropServices;
+using static System.Windows.Forms.AxHost;
+using BulletSharp;
+using BulletSharp.SoftBody;
+using Newtonsoft.Json.Linq;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -39,13 +46,16 @@ namespace Genesis.Graphics.RenderDevice
         private NetGL.OpenGL gl;
         private IntPtr hwnd;
         private Light lightSource;
+
+        private RenderSettings m_renderSettings;
         
         public Framebuffer sceneBuffer;
         private Framebuffer uiBuffer;
 
-        public GLRenderer(IntPtr hwnd)
+        public GLRenderer(IntPtr hwnd, RenderSettings settings)
         {
             this.hwnd = hwnd;
+            m_renderSettings = settings;
         }
 
         /// <summary>
@@ -62,23 +72,30 @@ namespace Genesis.Graphics.RenderDevice
             gl.DepthFunc(OpenGL.Less);
             gl.Enable(OpenGL.Blend);
             gl.BlendFunc(OpenGL.SrcAlpha, OpenGL.OneMinusSrcAlpha);
+            gl.Enable(OpenGL.AlphaTest);
+            gl.AlphaFunc(OpenGL.Greater, 0.1f);
 
             ///Initial the prebuild shaders
             this.ShaderPrograms = new Dictionary<String, ShaderProgram>();
-            this.ShaderPrograms.Add("BasicShader", new Shaders.OpenGL.BasicShader());
-            this.ShaderPrograms.Add("MVPShader", new Shaders.OpenGL.MVPShader());
-            this.ShaderPrograms.Add("MVPSolidShader", new Shaders.OpenGL.MVPSolidShader());
-            this.ShaderPrograms.Add("MVPRectShader", new Shaders.OpenGL.MVPRectShader());
-            this.ShaderPrograms.Add("DiffuseShader", new Shaders.OpenGL.DiffuseShader());
-            this.ShaderPrograms.Add("DiffuseNormalShader", new Shaders.OpenGL.DiffuseNormalShader());
-            this.ShaderPrograms.Add("WireframeShader", new Shaders.OpenGL.WireframeShader());
-            this.ShaderPrograms.Add("ScreenShader", new Shaders.OpenGL.ScreenShader());
-            this.ShaderPrograms.Add("SpriteShader", new Shaders.OpenGL.SpriteShader());
-            this.ShaderPrograms.Add("TerrainShader", new Shaders.OpenGL.TerrainShader());
+            this.ShaderPrograms.Add("BasicShader", new BasicShader());
+            this.ShaderPrograms.Add("MVPShader", new MVPShader());
+            this.ShaderPrograms.Add("MVPSolidShader", new MVPSolidShader());
+            this.ShaderPrograms.Add("MVPRectShader", new MVPRectShader());
+            this.ShaderPrograms.Add("DiffuseShader", new DiffuseShader());
+            this.ShaderPrograms.Add("DiffuseNormalShader", new DiffuseNormalShader());
+            this.ShaderPrograms.Add("WireframeShader", new WireframeShader());
+            this.ShaderPrograms.Add("ScreenShader", new ScreenShader());
+            this.ShaderPrograms.Add("SceneShader", new SceneShader());
+            this.ShaderPrograms.Add("SpriteShader", new SpriteShader());
+            this.ShaderPrograms.Add("TerrainShader", new TerrainShader());
+            this.ShaderPrograms.Add("ParticleShader", new ParticleShader());
+            this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
+            this.ShaderPrograms.Add("SolidShapeShader", new SolidShapeShader());
+            this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
-                this.LoadShader(item.Key, item.Value);
+                this.CreateShader(item.Key, item.Value);
             }
 
             ///Initial the pre build shapes
@@ -88,9 +105,13 @@ namespace Genesis.Graphics.RenderDevice
             this.InstancedShapes.Add("GlypheShape", new Shapes.GlypheShape());
             this.InstancedShapes.Add("LineShape", new Shapes.LineShape());
             this.InstancedShapes.Add("FrameShape", new Shapes.FrameShape());
+            this.InstancedShapes.Add("Light2DShape", new Light2DShape());
+            this.InstancedShapes.Add("CircleShape", new CircleShape());
             foreach (KeyValuePair<string, Shapes.Shape> item in this.InstancedShapes)
             {
+                Console.WriteLine("Building Shape " + item.Key.ToString());
                 this.BuildShape(item.Value);
+                Console.WriteLine("Builded Shape " + item.Key.ToString() + " with error " + gl.GetError());
             }
 
             this.sceneBuffer = this.BuildFramebuffer(100, 100);
@@ -101,7 +122,7 @@ namespace Genesis.Graphics.RenderDevice
         /// Creates an buffer for the shape
         /// </summary>
         /// <param name="shape"></param>
-        public void BuildShape(Shapes.Shape shape)
+        private void BuildShape(Shapes.Shape shape)
         {
             float[] verticies = shape.GetShape();
             shape.vbo = gl.GenBuffer(1);
@@ -179,11 +200,23 @@ namespace Genesis.Graphics.RenderDevice
             return buffer;
         }
 
+        /// <summary>
+        /// Creates a new framebuffer
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public Framebuffer BuildFramebuffer(int width, int height, Texture texture)
         {
             return this.BuildFramebuffer(width, height, texture.RenderID);
         }
 
+        /// <summary>
+        /// Creates a new framebuffer
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public Framebuffer BuildFramebuffer(int width, int height, int texture)
         {
             int framebuffer = gl.GenFramebuffers(1);
@@ -219,6 +252,12 @@ namespace Genesis.Graphics.RenderDevice
             return buffer;
         }
 
+        /// <summary>
+        /// Update the framebuffer size
+        /// </summary>
+        /// <param name="framebuffer"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
         public void UpdateFramebufferSize(Framebuffer framebuffer, int width, int height)
         {
             gl.BindTexture(OpenGL.Texture2D, framebuffer.Texture);
@@ -229,28 +268,11 @@ namespace Genesis.Graphics.RenderDevice
         }
 
         /// <summary>
-        /// Disposes the render device
-        /// </summary>
-        public void Dispose()
-        {
-            foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
-            {
-                Console.WriteLine("Dispose " +  item.Key);
-                this.DisoseShader(item.Value);
-            }
-
-            foreach(var item in InstancedShapes) {
-                Console.WriteLine("Dispose " + item.Key + " vbo");
-                gl.DeleteBuffers(1, item.Value.vbo);
-            }
-        }
-
-        /// <summary>
         /// Loads a shader program
         /// </summary>
         /// <param name="name"></param>
         /// <param name="program"></param>
-        public void LoadShader(String name, ShaderProgram program)
+        public void CreateShader(String name, ShaderProgram program)
         {
             Console.WriteLine("Loading " + name + " Shader Program");
             //Creating the vertex shader from the program
@@ -279,12 +301,25 @@ namespace Genesis.Graphics.RenderDevice
         }
 
         /// <summary>
-        /// Deletes the shader program
+        /// Initializes a shader program, either by retrieving a pre-built instance if available or creating a new one.
         /// </summary>
-        /// <param name="program"></param>
-        public void DisoseShader(ShaderProgram program)
+        /// <param name="shader">The shader program to initialize.</param>
+        /// <returns>The ID of the initialized shader program.</returns>
+        private int InitShader(ShaderProgram shader)
         {
-            gl.DeleteProgram(program.ProgramID);
+            var preBuildShader = this.GetShaderProgram(shader);
+            if (preBuildShader != null)
+            {
+                Console.WriteLine("Shader " + shader.GetType().Name + " found");
+                return preBuildShader.ProgramID;
+            }
+            else
+            {
+                Console.WriteLine("Shader " + shader.GetType().Name + " created");
+                this.CreateShader(shader.GetType().Name, shader);
+                this.ShaderPrograms.Add(shader.GetType().Name, shader);
+                return shader.ProgramID;
+            }
         }
 
         /// <summary>
@@ -304,72 +339,111 @@ namespace Genesis.Graphics.RenderDevice
         {
             if(element.GetType() == typeof(BufferedSprite))
             {
-                BufferedSprite bufferedSprite = (BufferedSprite)element;
-                float[] verticies = bufferedSprite.Verticies.ToArray();
-                int vbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
-                gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("vbo", vbo);
-                
-                float[] color = bufferedSprite.Colors.ToArray();
-                int cbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-                gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("cbo", cbo);
-
-                float[] texCoords = bufferedSprite.TexCoords.ToArray();
-                int tex = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, tex);
-                gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
-                bufferedSprite.Propertys.Add("tbo", tex);
-
-                bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
+                InitBufferedSprite((BufferedSprite)element);                
             }
             else if(element.GetType() == typeof(Qube))
             {
-                Qube qube = (Qube)element;
-
-                // 1. Check if the shader already exist. 
-                var preBuildShader = this.GetShaderProgram(qube.Shader);
-                if (preBuildShader != null)
-                {
-                    qube.Propertys.Add("ShaderID", preBuildShader.ProgramID);
-                    Console.WriteLine("Qube Shader Found");
-                }
-                else
-                {
-                    this.LoadShader(qube.Shader.GetType().Name, qube.Shader);
-                    this.ShaderPrograms.Add(qube.Shader.GetType().Name, qube.Shader);
-                    element.Propertys.Add("ShaderID", qube.Shader.ProgramID);
-                    Console.WriteLine("Qube Shader not Found");
-                }
-                
-                // 2. Load verticies into the gpu
-                float[] verticies = qube.Shape.GetShape();
-                int vbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, vbo); 
-                gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
-                qube.Propertys.Add("vbo", vbo);
-
-                // 3. Load colors into the gpu
-                float[] color = Qube.GetColors(qube.Color);
-                int cbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-                gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
-                qube.Propertys.Add("cbo", cbo);
-
-                float[] normals = qube.Shape.GetNormals();
-                int nbo = gl.GenBuffer(1);
-                gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
-                gl.BufferData(OpenGL.ArrayBuffer, normals.Length * sizeof(float), normals, OpenGL.DynamicDraw);
-                qube.Propertys.Add("nbo", nbo);
-
-                qube.Propertys.Add("tris", (verticies.Length / 3));
+                InitCube((Qube) element);
             }
             else if (element.GetType() == typeof(Terrain3D))
             {
                 this.InitTerrain3D((Terrain3D)element);
             }
+            else if(element.GetType() == typeof(ParticleEmitter))
+            {
+                this.InitParticleEmitter((ParticleEmitter)element);
+            }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.InitModel((Core.GameElements.Model)element);
+            }
+            else if(element.GetType() == typeof(Genesis.Core.Light2D))
+            {
+                //this.InitLight2D((Light2D)element); Using the instanced shape
+            }
+        }
+
+        /// <summary>
+        /// Init the buffered sprite
+        /// </summary>
+        /// <param name="bufferedSprite"></param>
+        private void InitBufferedSprite(BufferedSprite bufferedSprite)
+        {
+            float[] verticies = bufferedSprite.Verticies.ToArray();
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("vbo", vbo);
+
+            float[] color = bufferedSprite.Colors.ToArray();
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("cbo", cbo);
+
+            float[] texCoords = bufferedSprite.TexCoords.ToArray();
+            int tex = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tex);
+            gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("tbo", tex);
+
+            bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
+        }
+
+        /// <summary>
+        /// Initializes a cube object by setting up its associated shader program and loading vertex, color, and normal data into the GPU buffers.
+        /// </summary>
+        /// <param name="cube">The cube object to initialize.</param>
+        private void InitCube(Qube cube)
+        {
+            // 1. Check if the shader already exist. 
+            cube.Propertys.Add("ShaderID", this.InitShader(cube.Shader));
+
+            // 2. Init the texures
+            cube.Material.Propeterys.Add("tex_id", this.InitTexture(cube.Material.DiffuseTexture));
+            cube.Material.Propeterys.Add("normal_id", this.InitNormalMap(cube.Material.NormalTexture));
+
+            int VAO = gl.GenVertexArrays(1);
+            gl.BindVertexArray(VAO);
+
+            // 2. Load verticies into the gpu
+            float[] verticies = cube.Shape.GetShape();
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            cube.Propertys.Add("vbo", vbo);
+
+            // 3. Load colors into the gpu
+            float[] color = Qube.GetColors(cube.Material.DiffuseColor);
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+            cube.Propertys.Add("cbo", cbo);
+
+            // 4. Load the texcoords
+            float[] texCords = cube.Shape.GetTextureCoordinates();
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+            cube.Propertys.Add("tbo", tbo);
+
+            float[] normals = cube.Shape.GetNormals();
+            int nbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+            gl.BufferData(OpenGL.ArrayBuffer, normals.Length * sizeof(float), normals, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+            cube.Propertys.Add("nbo", nbo);
+
+            cube.Propertys.Add("vao", VAO);
+            cube.Propertys.Add("tris", (verticies.Length / 3));
+            gl.BindVertexArray(0);
         }
 
         /// <summary>
@@ -379,58 +453,58 @@ namespace Genesis.Graphics.RenderDevice
         public void InitElement3D(Element3D element)
         {
             //Checks if a shader is set
+
             if(element.Shader == null)
             {
                 element.Propertys.Add("ShaderID", ShaderPrograms["DiffuseShader"].ProgramID);
             }
             else
             {
-                //Checks if a prebuild shader allready exist
-                var preBuildShader = this.GetShaderProgram(element.Shader);
-                if(preBuildShader != null)
-                {
-                    element.Propertys.Add("ShaderID", preBuildShader.ProgramID);
-                    Console.WriteLine("Shader found");
-                }
-                else
-                {
-                    this.LoadShader(element.Shader.GetType().Name, element.Shader);
-                    this.ShaderPrograms.Add(element.Shader.GetType().Name, element.Shader);
-                    element.Propertys.Add("ShaderID", element.Shader.ProgramID);
-                    Console.WriteLine("Shader was not found, added it into the shaders list");
-                }
+                element.Propertys.Add("ShaderID", this.InitShader(element.Shader));
             }
 
             //Inital the Materials
             for (int i = 0; i < element.Materials.Count; i++)
             {
                 var material = element.Materials[i];
-                var buffers = element.GetMaterialBuffers(i);
+                var buffers = element.GetMaterialBuffers(material);
                 if(buffers.HasData)
                 {
-                    material.Propeterys.Add("tex_id", this.InitElement3DTexture(element.Propertys["path"] + "\\" + material.DiffuseTexture));
-                    material.Propeterys.Add("normal_id", this.InitElement3DNormalMap(element.Propertys["path"] + "\\" + material.NormalTexture));
+                    material.Propeterys.Add("tex_id", this.InitTexture(element.Propertys["path"] + "\\" + material.DiffuseTexture));
+                    material.Propeterys.Add("normal_id", this.InitNormalMap(element.Propertys["path"] + "\\" + material.NormalTexture));
+
+                    int vao = gl.GenVertexArrays(1);
+                    gl.BindVertexArray(vao);
 
                     float[] verticies = buffers.Verticies;
                     int vbo = gl.GenBuffer(1);
                     gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
                     gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
-                    material.Propeterys.Add("vbo", vbo);
+                    gl.EnableVertexAttribArray(0);
+                    gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+                    material.Propeterys.Add("vbo", vbo);                    
 
+                    gl.DisableVertexAttribArray(1);
+  
                     float[] texCoords = buffers.Texcords;
                     int tbo = gl.GenBuffer(1);
                     gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
                     gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
+                    gl.EnableVertexAttribArray(2);
+                    gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
                     material.Propeterys.Add("tbo", tbo);
-
 
                     float[] normals = buffers.Normals;
                     int nbo = gl.GenBuffer(1);
                     gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
                     gl.BufferData(OpenGL.ArrayBuffer, normals.Length * sizeof(float), normals, OpenGL.DynamicDraw);
+                    gl.EnableVertexAttribArray(3);
+                    gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
                     material.Propeterys.Add("nbo", nbo);
 
+                    material.Propeterys.Add("vao", vao);
                     material.Propeterys.Add("tris", verticies.Length / 3);
+                    gl.BindVertexArray(0);
                 }
             }
         }
@@ -441,7 +515,7 @@ namespace Genesis.Graphics.RenderDevice
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public int InitElement3DTexture(String path)
+        public int InitTexture(String path)
         {
             Bitmap bitmap;
             if(File.Exists(path))
@@ -474,7 +548,7 @@ namespace Genesis.Graphics.RenderDevice
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public int InitElement3DNormalMap(String path)
+        public int InitNormalMap(String path)
         {
             Bitmap bitmap;
             if (File.Exists(path))
@@ -512,33 +586,6 @@ namespace Genesis.Graphics.RenderDevice
         }
 
         /// <summary>
-        /// Disposes the texture
-        /// </summary>
-        /// <param name="texture"></param>
-        public void DisposeTexture(Texture texture)
-        {
-            if (texture.RenderID != 0)
-            {
-                gl.DeleteTextures(1, texture.RenderID);
-                texture.RenderID = 0;
-                Console.WriteLine("Texture " + texture.Name + " disposed");
-            }
-        }
-
-        /// <summary>
-        /// Disposes the font
-        /// </summary>
-        /// <param name="font"></param>
-        public void DisposeFont(Font font)
-        {
-            if (font.RenderID != 0)
-            {
-                gl.DeleteTextures(1, font.RenderID);
-                font.RenderID = 0;
-            }
-        }
-
-        /// <summary>
         /// Draws a rect with no fill
         /// </summary>
         /// <param name="rect"></param>
@@ -556,6 +603,10 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="borderWidth"></param>
         public void DrawRect(Rect rect, Color color, float borderWidth)
         {
+            var shader = ShaderPrograms["MVPRectShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = InstancedShapes["RectShape"];
+
             gl.Disable(OpenGL.DepthTest);
             //Creates the modelview matrix
             mat4 mt_mat = mat4.Translate(rect.X, rect.Y, 0.0f);
@@ -567,28 +618,102 @@ namespace Genesis.Graphics.RenderDevice
             mat4 mvp = p_mat * v_mat * m_mat;
 
             //Load the shader program and set the mvp matrix
-            gl.UseProgram(ShaderPrograms["MVPRectShader"].ProgramID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
-            gl.Uniform1f(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "aspect"), rect.Width / rect.Height);
-            gl.Uniform1f(gl.GetUniformLocation(ShaderPrograms["MVPRectShader"].ProgramID, "border_width"), borderWidth);
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform1f(gl.GetUniformLocation(shader, "aspect"), rect.Width / rect.Height);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "border_width"), borderWidth);
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
 
             //Load the vertex buffer and binds them
-            int vertexBuffer = this.InstancedShapes["RectShape"].vbo;
+            int vertexBuffer = shape.vbo;
             gl.BindBuffer(OpenGL.ArrayBuffer, vertexBuffer);
 
             //Send the vertex data to the shader
             gl.EnableVertexAttribArray(0);
             gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
 
-            //Create the new colors and send them to the shader
-            float[] newColor = this.GetColorArray(color);
-            gl.BufferSubData(OpenGL.ArrayBuffer, 18 * sizeof(float), newColor.Length * sizeof(float), newColor);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 18 * sizeof(float));
-
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
             //Console.WriteLine(gl.GetError());
+        }
+
+        /// <summary>
+        /// Renders an filled circle
+        /// </summary>
+        /// <param name="center">Center of the circle</param>
+        /// <param name="radius">Radius of the circle</param>
+        /// <param name="color">Color of the circle</param>
+        public void FillCircle(Vec3 center, float radius, Color color)
+        {
+            var shader = ShaderPrograms["SolidShapeShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = (CircleShape) InstancedShapes["CircleShape"];
+
+            gl.Disable(OpenGL.DepthTest);
+
+            //Creates the modelview matrix
+            mat4 mt_mat = mat4.Translate(center.X, center.Y, 0.0f);
+            mat4 mr_mat = mat4.RotateZ(0);
+            mat4 ms_mat = mat4.Scale(radius * 2, radius * 2, 0.0f);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Send data to the shader progra,,
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
+
+            //Load the vertex buffer and binds them
+            gl.BindBuffer(OpenGL.ArrayBuffer, shape.vbo);
+
+            //Send the vertex data to the shader
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.DrawArrays(OpenGL.TriangleFan, 0, shape.Segments + 2);
+
+            gl.Enable(OpenGL.DepthTest);
+        }
+
+        /// <summary>
+        /// Draws an circle
+        /// </summary>
+        /// <param name="center">Location for the circle</param>
+        /// <param name="radius">Radius for the circle</param>
+        /// <param name="color">Color for the circle</param>
+        /// <param name="borderWidth">Border width for the circle</param>
+        public void DrawCircle(Vec3 center, float radius, Color color, float borderWidth)
+        {
+            var shader = ShaderPrograms["BorderCircleShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color);
+            var shape = (CircleShape)InstancedShapes["CircleShape"];
+
+            gl.Disable(OpenGL.DepthTest);
+
+            //Creates the modelview matrix
+            mat4 mt_mat = mat4.Translate(center.X, center.Y, 0.0f);
+            mat4 mr_mat = mat4.RotateZ(0);
+            mat4 ms_mat = mat4.Scale(radius * 2, radius * 2, 0.0f);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Send data to the shader progra,,
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "m_mat"), 1, false, m_mat.ToArray());
+            gl.Uniform3f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2]);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "radius"), radius);
+            gl.Uniform1f(gl.GetUniformLocation(shader, "border_width"), borderWidth);
+
+            //Load the vertex buffer and binds them
+            gl.BindBuffer(OpenGL.ArrayBuffer, shape.vbo);
+
+            //Send the vertex data to the shader
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.DrawArrays(OpenGL.TriangleFan, 0, shape.Segments + 2);
+
+            gl.Enable(OpenGL.DepthTest);
         }
 
         /// <summary>
@@ -625,11 +750,23 @@ namespace Genesis.Graphics.RenderDevice
         {
             if(element.GetType() == typeof(Qube))
             {
-                this.RenderQube((Qube)element);
+                this.DrawCube((Qube)element);
             }
             else if(element.GetType() == typeof(Terrain3D))
             {
                 this.RenderTerrain3D((Terrain3D)element);
+            }
+            else if(element.GetType() == typeof(ParticleEmitter))
+            {
+                this.DrawParticleEmitter((ParticleEmitter)element);
+            }
+            else if (element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.DrawModel((Genesis.Core.GameElements.Model)element);
+            }
+            else if (element.GetType() == typeof(Genesis.Core.Light2D))
+            {
+                this.RenderLight2D((Light2D)element);
             }
         }
 
@@ -681,6 +818,7 @@ namespace Genesis.Graphics.RenderDevice
             gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
 
             //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(NetGL.OpenGL.Texture2D, texture.RenderID);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
@@ -842,6 +980,7 @@ namespace Genesis.Graphics.RenderDevice
             gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
 
             //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(NetGL.OpenGL.Texture2D, bufferedSprite.Texture.RenderID);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
@@ -901,6 +1040,10 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="color"></param>
         public void FillRect(Rect rect, Color color)
         {
+            var shader = ShaderPrograms["SolidShapeShader"].ProgramID;
+            var fcolor = Utils.ConvertColor(color, true);
+            var shape = InstancedShapes["RectShape"];
+
             gl.Disable(OpenGL.DepthTest);
             //Creates the modelview matrix
             mat4 mt_mat = mat4.Translate(rect.X, rect.Y, 0.0f);
@@ -912,22 +1055,17 @@ namespace Genesis.Graphics.RenderDevice
             mat4 mvp = p_mat * v_mat * m_mat;
 
             //Load the shader program and set the mvp matrix
-            gl.UseProgram(ShaderPrograms["MVPSolidShader"].ProgramID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["MVPSolidShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
+            gl.UseProgram(shader);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform4f(gl.GetUniformLocation(shader, "color"), fcolor[0], fcolor[1], fcolor[2], fcolor[3]);
 
             //Load the vertex buffer and binds them
-            int vertexBuffer = this.InstancedShapes["RectShape"].vbo;
+            int vertexBuffer = shape.vbo;
             gl.BindBuffer(OpenGL.ArrayBuffer, vertexBuffer);
 
             //Send the vertex data to the shader
             gl.EnableVertexAttribArray(0);
             gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            //Create the new colors and send them to the shader
-            float[] newColor = this.GetColorArray(color);
-            gl.BufferSubData(OpenGL.ArrayBuffer, 18 * sizeof(float), newColor.Length * sizeof(float), newColor);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 18 * sizeof(float));
 
             gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
@@ -1352,8 +1490,6 @@ namespace Genesis.Graphics.RenderDevice
         public int GenerateTexture(OpenGL gl, Bitmap texture)
         {
             int textureint = gl.GenTextures(1);
-            gl.Enable(OpenGL.AlphaTest);
-            gl.AlphaFunc(OpenGL.Greater, 0.1f);
             gl.BindTexture(OpenGL.Texture2D, textureint);
             int errorID = gl.GetError();
             if (errorID != 0)
@@ -1507,19 +1643,9 @@ namespace Genesis.Graphics.RenderDevice
                     gl.BindTexture(OpenGL.Texture2D, (int)material.Propeterys["normal_id"]);
                     gl.Uniform1I(gl.GetUniformLocation(elementShaderID, "normalMap"), 1);
 
-                    gl.EnableVertexAttribArray(0);
-                    gl.BindBuffer(OpenGL.ArrayBuffer, (int)material.Propeterys["vbo"]);
-                    gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-                    gl.EnableVertexAttribArray(2);
-                    gl.BindBuffer(OpenGL.ArrayBuffer, (int)material.Propeterys["tbo"]);
-                    gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
-
-                    gl.EnableVertexAttribArray(3);
-                    gl.BindBuffer(OpenGL.ArrayBuffer, (int)material.Propeterys["nbo"]);
-                    gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
-
+                    gl.BindVertexArray((int)material.Propeterys["vao"]);
                     gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
+                    gl.BindVertexArray(0);
                 }
             }
             gl.ActiveTexture(OpenGL.Texture0);
@@ -1567,16 +1693,28 @@ namespace Genesis.Graphics.RenderDevice
             Console.WriteLine("Element3D: " + element.Name + " Disposed");
         }
 
+        /// <summary>
+        /// Returns the native renderer
+        /// </summary>
+        /// <returns></returns>
         public OpenGL GetRenderer()
         {
             return this.gl;
         }
 
+        /// <summary>
+        /// Sets an Lightsource
+        /// </summary>
+        /// <param name="light"></param>
         public void SetLightSource(Light light)
         {
             this.lightSource = light;
         }
 
+        /// <summary>
+        /// Draws an skybox
+        /// </summary>
+        /// <param name="skybox"></param>
         public void DrawSkyBox(Skybox skybox)
         {
             int elementShaderID = (int)skybox.Propertys["ShaderID"];
@@ -1631,6 +1769,10 @@ namespace Genesis.Graphics.RenderDevice
             gl.Disable(OpenGL.Texture2D);
         }
 
+        /// <summary>
+        /// Prepares the renderer for scene rendering
+        /// </summary>
+        /// <param name="scene">The scene to render</param>
         public void PrepareSceneRendering(Scene scene)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, sceneBuffer.FramebufferID);
@@ -1641,26 +1783,56 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
+        /// <summary>
+        /// Finish the scene rendering
+        /// </summary>
+        /// <param name="scene">The scene which getted rendered</param>
         public void FinishSceneRendering(Scene scene)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
-            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
 
-            gl.ActiveTexture(OpenGL.Texture0);
-            gl.BindTexture(OpenGL.Texture2D, sceneBuffer.Texture);
-            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
-            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+            gl.Enable(OpenGL.FramebufferSRGB);
+            if(scene.BackgroundTexture != null)
+            {
+                DrawFramebuffer(scene.BackgroundTexture.RenderID, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
+            }
+            DrawFramebuffer(sceneBuffer.Texture, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
+            gl.Disable(OpenGL.FramebufferSRGB);
 
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
-            gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
         }
 
+        public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            Scene2D scene2D = (Scene2D)scene;
+            this.UpdateFramebufferSize(framebuffer, (int)camera.Size.X, (int)camera.Size.Y);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer.FramebufferID);
+            gl.Enable(OpenGL.DepthTest);
+            gl.Enable(OpenGL.Blend);
+            gl.ClearColor(0, 0, 0, scene2D.LightmapIntensity);
+            gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
+        }
+
+        public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+        {
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
+            gl.Disable(OpenGL.DepthTest);
+            gl.Enable(OpenGL.Blend);
+            gl.BlendFunc(OpenGL.DstColor, OpenGL.OneMinusSrcAlpha); // Hier evtl fehler 
+            DrawFramebuffer(framebuffer.Texture);
+
+            //Test
+            gl.BlendFunc(OpenGL.One, OpenGL.OneMinusSrcAlpha);
+
+            gl.Enable(OpenGL.DepthTest);
+        }
+
+        /// <summary>
+        /// Prepares the renderer for the canvas rendering
+        /// </summary>
+        /// <param name="scene">The scene from the canvas</param>
+        /// <param name="canvas">The canvas to render</param>
         public void PrepareCanvasRendering(Scene scene, Canvas canvas)
         {
             SetUIMatrices();
@@ -1672,32 +1844,99 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
+        /// <summary>
+        /// Finish the canvas rendering
+        /// </summary>
+        /// <param name="scene">The scene from the canvas</param>
+        /// <param name="canvas">The canvas to render</param>
         public void FinishCanvasRendering(Scene scene, Canvas canvas)
         {
             SetCamera(this.camera);
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
             gl.Disable(OpenGL.DepthTest);
-            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
 
-            gl.ActiveTexture(OpenGL.Texture0);
-            gl.BindTexture(OpenGL.Texture2D, uiBuffer.Texture);
-            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
-            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+            // use the gamma correction also on the canvas.
+            gl.Enable(OpenGL.FramebufferSRGB);
+            DrawFramebuffer(uiBuffer.Texture, ShaderPrograms["SceneShader"].ProgramID, m_renderSettings.gamma);
+            gl.Disable(OpenGL.FramebufferSRGB);
 
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
-            gl.DrawArrays(OpenGL.Triangles, 0, 6);
             gl.Enable(OpenGL.DepthTest);
         }
 
+        /// <summary>
+        /// Draws an framebuffer
+        /// </summary>
+        /// <param name="textureID">The framebuffer texture id</param>
+        private void DrawFramebuffer(int textureID)
+        {
+            // load shader
+            gl.UseProgram(ShaderPrograms["ScreenShader"].ProgramID);
+
+            // send texture to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, textureID);
+            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["ScreenShader"].ProgramID, "screenTexture"), 0);
+
+            // bind vertex buffer
+            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
+
+            // define verticies
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            // define texture coords
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+
+            // render vertex buffer
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+        }
+
+        /// <summary>
+        /// Draw the framebuffer with another shader programm and gamma
+        /// </summary>
+        /// <param name="textureID"></param>
+        /// <param name="shaderProgramm"></param>
+        /// <param name="gamma"></param>
+        private void DrawFramebuffer(int textureID, int shaderProgramm, float gamma = 0.0f)
+        {
+            // load shader
+            gl.UseProgram(shaderProgramm);
+
+            // send texture to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, textureID);
+            gl.Uniform1I(gl.GetUniformLocation(shaderProgramm, "screenTexture"), 0);
+            gl.Uniform1f(gl.GetUniformLocation(shaderProgramm, "gamma"), gamma);
+
+            // bind vertex buffer
+            gl.BindBuffer(OpenGL.ArrayBuffer, InstancedShapes["FrameShape"].vbo);
+
+            // define verticies
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            // define texture coords
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+
+            // render vertex buffer
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+        }
+
+        /// <summary>
+        /// Sets an framebuffer as active render target
+        /// </summary>
+        /// <param name="framebuffer">The framebuffer for the rendering</param>
         public void SetFramebuffer(Framebuffer framebuffer)
         {
             this.SetFramebuffer(framebuffer.FramebufferID);
         }
 
+        /// <summary>
+        /// Sets an framebuffer as active render target
+        /// </summary>
+        /// <param name="framebuffer">The framebuffer id for the rendering</param>
         public void SetFramebuffer(int framebuffer)
         {
             gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer);
@@ -1708,18 +1947,33 @@ namespace Genesis.Graphics.RenderDevice
             gl.Clear(NetGL.OpenGL.ColorBufferBit | NetGL.OpenGL.DepthBufferBit);
         }
 
-        private void RenderQube(Qube qube)
+        /// <summary>
+        /// Renders an qube
+        /// </summary>
+        /// <param name="qube">The qube to render</param>
+        private void DrawCube(Qube cube)
         {
-            mat4 mt_mat = mat4.Translate(qube.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(qube.Rotation.X) * mat4.RotateY(qube.Rotation.Y) * mat4.RotateZ(qube.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(qube.Size.ToGlmVec3());
+            // Build the matrices
+            mat4 mt_mat = mat4.Translate(cube.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(cube.Rotation.X) * mat4.RotateY(cube.Rotation.Y) * mat4.RotateZ(cube.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(cube.Size.ToGlmVec3());
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
-            int shaderID = (int)qube.Propertys["ShaderID"];
+            // Assign the matrices to the shader
+            int shaderID = (int)cube.Propertys["ShaderID"];
             gl.UseProgram(shaderID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
-            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
-            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+
+            if(gl.GetUniformLocation(shaderID, "mvp") != -1)
+            {
+                mat4 mvp = p_mat * v_mat * m_mat;
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "mvp"), 1, false, mvp.ToArray());
+            }
+            else
+            {
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+            }
 
             if (this.lightSource != null)
             {
@@ -1730,24 +1984,23 @@ namespace Genesis.Graphics.RenderDevice
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
             }
 
-            int vbo = (int)qube.Propertys["vbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, (int)cube.Material.Propeterys["tex_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
 
-            int cbo = (int)qube.Propertys["cbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+            gl.ActiveTexture(OpenGL.Texture1);
+            gl.BindTexture(OpenGL.Texture2D, (int)cube.Material.Propeterys["normal_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
 
-            int nbo = (int)qube.Propertys["nbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
-            gl.EnableVertexAttribArray(2);
-            gl.VertexAttribPointer(2, 3, OpenGL.Float, false, 0, 0);
-
-            gl.DrawArrays(OpenGL.Triangles, 0, (int)qube.Propertys["tris"]);
+            gl.BindVertexArray((int)cube.Propertys["vao"]);
+            gl.DrawArrays(OpenGL.Triangles, 0, (int)cube.Propertys["tris"]);
+            gl.BindVertexArray(0);
         }
 
+        /// <summary>
+        /// Init an terrain3d
+        /// </summary>
+        /// <param name="terrain">The terrain to initalize</param>
         private void InitTerrain3D(Terrain3D terrain)
         {
             // 2. Load verticies into the gpu
@@ -1766,6 +2019,10 @@ namespace Genesis.Graphics.RenderDevice
             terrain.Propertys.Add("ShaderID", ShaderPrograms["TerrainShader"].ProgramID);
         }
 
+        /// <summary>
+        /// Renders an terrain3D
+        /// </summary>
+        /// <param name="terrain">The terrain to render</param>
         private void RenderTerrain3D(Terrain3D terrain)
         {
             mat4 mt_mat = mat4.Translate(terrain.Location.ToGlmVec3());
@@ -1793,6 +2050,431 @@ namespace Genesis.Graphics.RenderDevice
             gl.DrawArrays(OpenGL.Triangles, 0, terrain.TerrainData.tris);
             
             Console.WriteLine("redered terrain3d");
+        }
+
+        /// <summary>
+        /// Initial the particle emitter
+        /// </summary>
+        /// <param name="emitter">The emitter to initalize</param>
+        private void InitParticleEmitter(ParticleEmitter emitter)
+        {
+            ParticleBuffers buffers = emitter.GetParticleBuffers();
+
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.verticies.Length * sizeof(float), buffers.verticies, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("vbo", vbo);
+
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.colors.Length * sizeof(float), buffers.colors, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("cbo", cbo);
+
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.texCords.Length * sizeof(float), buffers.texCords, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("tbo", tbo);
+
+            int pbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, pbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.positions.Length * sizeof(float), buffers.positions, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("pbo", pbo);
+
+            int rbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, rbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.rotations.Length * sizeof(float), buffers.rotations, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("rbo", rbo);
+
+            int sbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, sbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.scales.Length * sizeof(float), buffers.scales, OpenGL.DynamicDraw);
+            emitter.Propertys.Add("sbo", sbo);
+
+            emitter.Propertys.Add("ShaderID", this.ShaderPrograms["ParticleShader"].ProgramID);
+        }
+
+        /// <summary>
+        /// Draws the particle emitter
+        /// </summary>
+        public void DrawParticleEmitter(ParticleEmitter emitter)
+        {
+            ParticleBuffers buffers = emitter.GetParticleBuffers();
+
+            mat4 mt_mat = mat4.Translate(emitter.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(emitter.Rotation.X) * mat4.RotateY(emitter.Rotation.Y) * mat4.RotateZ(emitter.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(emitter.Size.ToGlmVec3());
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            int shaderID = (int)emitter.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+            Console.WriteLine(gl.GetError());
+
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, emitter.ParticleMask.RenderID);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+            int vbo = (int)emitter.Propertys["vbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            int cbo = (int)emitter.Propertys["cbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.colors.Length * sizeof(float), buffers.colors, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+
+            int tbo = (int)emitter.Propertys["tbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+
+            int pbo = (int)emitter.Propertys["pbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, pbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.positions.Length * sizeof(float), buffers.positions, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+
+            int rbo = (int)emitter.Propertys["rbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, rbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.rotations.Length * sizeof(float), buffers.rotations, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(4);
+            gl.VertexAttribPointer(4, 3, OpenGL.Float, false, 0, 0);
+
+            int sbo = (int)emitter.Propertys["sbo"];
+            gl.BindBuffer(OpenGL.ArrayBuffer, sbo);
+            gl.BufferData(OpenGL.ArrayBuffer, buffers.scales.Length * sizeof(float), buffers.scales, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(5);
+            gl.VertexAttribPointer(5, 3, OpenGL.Float, false, 0, 0);
+
+            gl.DrawArrays(OpenGL.Triangles, 0, emitter.ParticleDeffinitions.Count * 6);
+        }
+
+        private void InitModel(Core.GameElements.Model model)
+        {
+            var preBuildShader = this.GetShaderProgram(model.Shader);
+            if (preBuildShader != null)
+            {
+                model.Propertys.Add("ShaderID", preBuildShader.ProgramID);
+                Console.WriteLine("Shader found");
+            }
+            else
+            {
+                this.CreateShader(model.Shader.GetType().Name, model.Shader);
+                this.ShaderPrograms.Add(model.Shader.GetType().Name, model.Shader);
+                model.Propertys.Add("ShaderID", model.Shader.ProgramID);
+                Console.WriteLine("Shader was not found, added it into the shaders list");
+            }
+
+            foreach (var mesh in model.Meshes)
+            {
+                mesh.Material.Propeterys["DiffuseTextureID"] = InitTexture(mesh.Material.DiffuseTexture);
+
+                var verices = mesh.Vertices.ToArray();
+                var vertexSize = Marshal.SizeOf<vertex>();
+                var indices = mesh.Indices.ToArray();
+
+                int VAO = gl.GenVertexArrays(1);
+                int VBO = gl.GenBuffer(1);
+                int EBO = gl.GenBuffer(1);
+
+                gl.BindVertexArray(VAO);
+
+                gl.BindBuffer(OpenGL.ArrayBuffer, VBO);
+                gl.BufferData(OpenGL.ArrayBuffer, verices.Length * vertexSize, verices, OpenGL.StaticDraw);
+
+                gl.BindBuffer(OpenGL.ElementArrayBuffer, EBO);
+                gl.BufferData(OpenGL.ElementArrayBuffer, indices.Length * sizeof(int), indices, OpenGL.StaticDraw);
+
+                gl.EnableVertexAttribArray(0);
+                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, vertexSize, IntPtr.Zero);
+
+                gl.EnableVertexAttribArray(2);
+                gl.VertexAttribPointer(2, 2, OpenGL.Float, false, vertexSize, Marshal.OffsetOf<vertex>("textcoords"));
+
+                gl.EnableVertexAttribArray(3);
+                gl.VertexAtrribIPointer(3, 4, OpenGL.Int, vertexSize, Marshal.OffsetOf<vertex>("BoneIDs"));
+
+                // weights
+                gl.EnableVertexAttribArray(4);
+                gl.VertexAttribPointer(4, 4, OpenGL.Float, false, vertexSize, Marshal.OffsetOf<vertex>("BoneWeights"));
+
+                gl.BindVertexArray(0);
+
+                mesh.Propertys.Add("vao", VAO);
+                mesh.Propertys.Add("vbo", VBO);
+                mesh.Propertys.Add("ebo", EBO);
+
+            }
+        }
+
+        private void DrawModel(Core.GameElements.Model model)
+        {
+            mat4 mt_mat = mat4.Translate(model.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(model.Rotation.X) * mat4.RotateY(model.Rotation.Y) * mat4.RotateZ(model.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(model.Size.ToGlmVec3());
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            foreach (var mesh in model.Meshes)
+            {
+                int vao = (int)mesh.Propertys["vao"];
+                int ebo = (int)mesh.Propertys["ebo"];
+
+                var program = (int)model.Propertys["ShaderID"];
+                gl.UseProgram(program);
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "projection"), 1, false, p_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "view"), 1, false, v_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(program, "model"), 1, false, m_mat.ToArray());
+
+                for (int i = 0; i < 100; i++)
+                {
+                    gl.UniformMatrix4fv(gl.GetUniformLocation(program, "finalBonesMatrices[" + i.ToString() + "]"), 1, false, model.Animator.FinalBoneMatrices[i].ToArray());
+                }
+
+                gl.ActiveTexture(OpenGL.Texture0);
+                gl.BindTexture(OpenGL.Texture2D, (int) mesh.Material.Propeterys["DiffuseTextureID"]);
+                gl.Uniform1I(gl.GetUniformLocation(program, "textureSampler"), 0);
+
+                gl.BindVertexArray(vao);
+                gl.BindBuffer(OpenGL.ElementArrayBuffer, ebo);
+                gl.DrawElements(OpenGL.Triangles, mesh.Indices.Count, OpenGL.UnsignedInt);
+                gl.BindVertexArray(0);
+            }
+        }
+
+        /// <summary>
+        /// Initial an 2D light
+        /// Unused because of the instance shape
+        /// </summary>
+        /// <param name="light"></param>
+        private void InitLight2D(Light2D light)
+        {
+            var vao = gl.GenVertexArrays(1);
+            gl.BindVertexArray(vao);
+
+            var verticies = Light2D.GetVericies();
+            var texCords = Light2D.GetTexCoords();
+
+            var vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+
+            var tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+
+            light.Propertys.Add("vao", vao);
+            light.Propertys.Add("vbo", vbo);
+            light.Propertys.Add("tbo", tbo);
+            light.Propertys.Add("tris", 6);
+
+            gl.BindVertexArray(0);
+        }
+
+        /// <summary>
+        /// Renders an 2D light
+        /// </summary>
+        /// <param name="light"></param>
+        private void RenderLight2D(Light2D light)
+        {
+            var lightColor = Utils.ConvertColor(light.LightColor);
+
+            gl.Disable(OpenGL.DepthTest);
+            //Create the modelview matrix
+            mat4 mt_mat = mat4.Translate(light.Location.X, light.Location.Y, light.Location.Z);
+            mat4 mr_mat = mat4.Identity;
+            mat4 ms_mat = mat4.Scale(light.Size.X, light.Size.Y, light.Size.Z);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            //Create the mvp matrix
+            mat4 mvp = p_mat * v_mat * m_mat;
+
+            //Load the shader program and set the mvp matrix
+            gl.Enable(NetGL.OpenGL.Texture2D);
+
+            var shader = ShaderPrograms["Light2DShader"].ProgramID;
+            gl.UseProgram(ShaderPrograms["Light2DShader"].ProgramID);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shader, "mvp"), 1, false, mvp.ToArray());
+            gl.Uniform3f(gl.GetUniformLocation(shader, "color"), lightColor[0], lightColor[1], lightColor[2]);
+
+            //Load the texture and send it to the shader
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(NetGL.OpenGL.Texture2D, light.LightShape.RenderID);
+            gl.Uniform1I(gl.GetUniformLocation(shader, "textureSampler"), 0);
+
+            int vbo = this.InstancedShapes["Light2DShape"].vbo;
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 18 * sizeof(float));
+
+            //Draw the sprite
+            gl.DrawArrays(OpenGL.Triangles, 0, 6);
+
+            gl.Disable(NetGL.OpenGL.Texture2D);
+            gl.Enable(OpenGL.DepthTest);
+        }
+
+        /// <summary>
+        /// Disposes the render device
+        /// </summary>
+        public void Dispose()
+        {
+            foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
+            {
+                Console.WriteLine("Dispose " + item.Key);
+                this.DisposeShader(item.Value);
+            }
+
+            foreach (var item in InstancedShapes)
+            {
+                Console.WriteLine("Dispose " + item.Key);
+                gl.DeleteBuffers(1, item.Value.vbo);
+                Console.WriteLine("Disposed " + item.Key + " with error " + gl.GetError());
+            }
+        }
+
+        /// <summary>
+        /// Deletes the shader program
+        /// </summary>
+        /// <param name="program"></param>
+        public void DisposeShader(ShaderProgram program)
+        {
+            gl.DeleteProgram(program.ProgramID);
+        }
+
+        /// <summary>
+        /// Disposes the texture
+        /// </summary>
+        /// <param name="texture"></param>
+        public void DisposeTexture(Texture texture)
+        {
+            if (texture.RenderID != 0)
+            {
+                gl.DeleteTextures(1, texture.RenderID);
+                texture.RenderID = 0;
+                Console.WriteLine("Texture " + texture.Name + " disposed");
+            }
+        }
+
+        /// <summary>
+        /// Disposes the font
+        /// </summary>
+        /// <param name="font"></param>
+        public void DisposeFont(Font font)
+        {
+            if (font.RenderID != 0)
+            {
+                gl.DeleteTextures(1, font.RenderID);
+                font.RenderID = 0;
+            }
+        }
+
+        /// <summary>
+        /// Disposes the element data from the gpu
+        /// </summary>
+        /// <param name="element">The element to dispose</param>
+        public void DisposeElement(GameElement element)
+        {
+            if (element.GetType() == typeof(Qube))
+            {
+                this.DisposeCube((Qube)element);
+            }
+            else if(element.GetType() == typeof(BufferedSprite))
+            {
+                this.DisposeBufferedSprite((BufferedSprite)element);
+            }
+            else if (element.GetType() == typeof(ParticleEmitter))
+            {
+                this.DisposeParticleEmitter((ParticleEmitter)element);
+            }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Model))
+            {
+                this.DisposeModel((Genesis.Core.GameElements.Model) element);
+            }
+            else if(element.GetType() == typeof(Light2D))
+            {
+                //this.DisposeLight2D((Light2D)element); Using instance shape
+            }
+        }
+
+        private void DisposeBufferedSprite(BufferedSprite sprite)
+        {
+            Console.WriteLine("Disposing buffered sprite " + sprite.UUID);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["vbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["cbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["tbo"]);
+            Console.WriteLine("Disposed buffered sprite with error " + gl.GetError());
+        }
+
+        private void DisposeCube(Qube cube)
+        {
+            Console.WriteLine("Disposing " + cube.Name);
+            gl.DeleteVertexArrays(1, (int)cube.Propertys["vao"]);
+            gl.DeleteBuffers(1, (int)cube.Propertys["vbo"]);
+            gl.DeleteBuffers(1, (int)cube.Propertys["cbo"]);
+            gl.DeleteBuffers(1, (int)cube.Propertys["tbo"]);
+            gl.DeleteBuffers(1, (int)cube.Propertys["nbo"]);
+            Console.WriteLine(cube.Name + " Disposed!");
+        } 
+
+        /// <summary>
+        /// Disposes the particle emitter
+        /// </summary>
+        /// <param name="emitter"></param>
+        private void DisposeParticleEmitter(ParticleEmitter emitter)
+        {
+            if(emitter.Propertys.ContainsKey("vbo")) 
+            {
+                Console.WriteLine("Disposing " + emitter.Name);
+                gl.DeleteBuffers(1, (int) emitter.Propertys["vbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["cbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["tbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["pbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["rbo"]);
+                gl.DeleteBuffers(1, (int)emitter.Propertys["sbo"]);
+                Console.WriteLine(emitter.Name + " Disposed!");
+            }
+        }
+
+        private void DisposeModel(Genesis.Core.GameElements.Model model)
+        {
+            foreach (var mesh in model.Meshes)
+            {
+                int vao = (int)mesh.Propertys["vao"];
+                int ebo = (int)mesh.Propertys["ebo"];
+                int vbo = (int)mesh.Propertys["vbo"];
+
+                Console.WriteLine("Disposing Mesh " + mesh.Name);
+                gl.DeleteBuffers(1, vbo);
+                gl.DeleteBuffers(1, ebo);
+                gl.DeleteVertexArrays(1, vao);
+                gl.DeleteTextures(1, (int)mesh.Material.Propeterys["DiffuseTextureID"]);
+                Console.WriteLine("Disposed Mesh with error " + gl.GetError());
+            }
+        }
+
+        private void DisposeLight2D(Light2D light2D)
+        {
+            int vao = (int)light2D.Propertys["vao"];
+            int vbo = (int)light2D.Propertys["vbo"];
+            int tbo = (int)light2D.Propertys["tbo"];
+            Console.WriteLine("Dispose Light2D " + light2D.UUID);
+            gl.DeleteVertexArrays(1, vao);
+            gl.DeleteBuffers(1, vbo);
+            gl.DeleteBuffers(1, tbo);
+            Console.WriteLine("Disposed Light2D " + light2D.UUID + " with error " + gl.GetError());
         }
     }
 }

@@ -12,6 +12,7 @@ items:
   - Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.Dispose
+  - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
   - Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
   - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
@@ -35,6 +36,7 @@ items:
   - Genesis.Graphics.IRenderDevice.End
   - Genesis.Graphics.IRenderDevice.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.FinishSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.IRenderDevice.GetError
   - Genesis.Graphics.IRenderDevice.GetHandle
@@ -47,6 +49,7 @@ items:
   - Genesis.Graphics.IRenderDevice.ModelViewMatrix
   - Genesis.Graphics.IRenderDevice.PopMatrix
   - Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.PrepareSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.IRenderDevice.ProjectionMatrix
   - Genesis.Graphics.IRenderDevice.PushMatrix
@@ -504,6 +507,58 @@ items:
       description: The 2D scene to finish rendering.
     content.vb: Sub FinishSceneRendering(scene As Scene)
   overload: Genesis.Graphics.IRenderDevice.FinishSceneRendering*
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Prepares the render for the 2D lightmap
+  example: []
+  syntax:
+    content: void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.IRenderDevice.PrepareLightmap2D*
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Finish the lightmap 2D rendering
+  example: []
+  syntax:
+    content: void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.IRenderDevice.FinishLightmap2D*
 - uid: Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   commentId: M:Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   id: PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
@@ -1411,6 +1466,30 @@ items:
       description: The font to dispose.
     content.vb: Sub DisposeFont(font As Font)
   overload: Genesis.Graphics.IRenderDevice.DisposeFont*
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  id: DisposeElement(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: DisposeElement(GameElement)
+  nameWithType: IRenderDevice.DisposeElement(GameElement)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Disposes the game element
+  example: []
+  syntax:
+    content: void DisposeElement(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The element to dispose
+    content.vb: Sub DisposeElement(element As GameElement)
+  overload: Genesis.Graphics.IRenderDevice.DisposeElement*
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   id: DisposeElement3D(Genesis.Core.GameElements.Element3D)
@@ -1893,6 +1972,20 @@ references:
   name: FinishSceneRendering
   nameWithType: IRenderDevice.FinishSceneRendering
   fullName: Genesis.Graphics.IRenderDevice.FinishSceneRendering
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.PrepareLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D
+  nameWithType: IRenderDevice.PrepareLightmap2D
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.FinishLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D
+  nameWithType: IRenderDevice.FinishLightmap2D
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D
 - uid: Genesis.Graphics.IRenderDevice.PrepareCanvasRendering*
   commentId: Overload:Genesis.Graphics.IRenderDevice.PrepareCanvasRendering
   isExternal: true
@@ -2282,6 +2375,13 @@ references:
   name: DisposeFont
   nameWithType: IRenderDevice.DisposeFont
   fullName: Genesis.Graphics.IRenderDevice.DisposeFont
+- uid: Genesis.Graphics.IRenderDevice.DisposeElement*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeElement_Genesis_Core_GameElement_
+  name: DisposeElement
+  nameWithType: IRenderDevice.DisposeElement
+  fullName: Genesis.Graphics.IRenderDevice.DisposeElement
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement3D*
   commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement3D
   isExternal: true

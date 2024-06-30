@@ -34,6 +34,26 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Genesis.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Genesis.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\Genesis.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssimpNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
       <HintPath>..\packages\AssimpNet.4.1.0\lib\net40\AssimpNet.dll</HintPath>
@@ -44,9 +64,9 @@
     <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
     </Reference>
-    <Reference Include="NetGL, Version=1.0.8542.25412, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="NetGL, Version=1.0.8872.31560, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\NetGL - Kopie\x64\Debug\NetGL.dll</HintPath>
+      <HintPath>..\..\..\NetGL - Kopie\x64\Release\NetGL.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -70,17 +90,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AssetManager.cs" />
+    <Compile Include="Core\Behaviors\3D\ThirdpersonCharacterController.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
     <Compile Include="Core\Behaviors\CharacterController2D.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\BoxTrigger2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BufferedSpriteCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\PhysicsBox2D.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\PhysicsPolygon2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\BoxCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\BoxTrigger.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\CapsuleCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\SphereCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\StaticMeshBehavior.cs" />
     <Compile Include="Core\Behaviors\Physics3D\ConvexHullBehavior.cs" />
     <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameElement.cs" />
+    <Compile Include="Core\GameElements\Model.cs" />
+    <Compile Include="Core\GameElements\NavMesh.cs" />
+    <Compile Include="Core\GameElements\ParticleEmitter.cs" />
+    <Compile Include="Core\GameElements\Waypoint.cs" />
     <Compile Include="Core\GenesisWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,22 +120,27 @@
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\Layer.cs" />
     <Compile Include="Core\Light.cs" />
-    <Compile Include="Core\GameElments\BufferedSprite.cs" />
-    <Compile Include="Core\GameElments\CameraElement.cs" />
-    <Compile Include="Core\GameElments\Terrain3D.cs" />
+    <Compile Include="Core\GameElements\BufferedSprite.cs" />
+    <Compile Include="Core\GameElements\CameraElement.cs" />
+    <Compile Include="Core\GameElements\Terrain3D.cs" />
+    <Compile Include="Core\Light2D.cs" />
+    <Compile Include="Core\Scene2D.cs" />
     <Compile Include="Core\Scene3D.cs" />
-    <Compile Include="Core\GameElments\Element3D.cs" />
-    <Compile Include="Core\GameElments\Empty.cs" />
-    <Compile Include="Core\GameElments\Qube.cs" />
-    <Compile Include="Core\GameElments\RectElement.cs" />
-    <Compile Include="Core\GameElments\Sprite.cs" />
-    <Compile Include="Core\GameElments\Terrain2D.cs" />
+    <Compile Include="Core\GameElements\Element3D.cs" />
+    <Compile Include="Core\GameElements\Empty.cs" />
+    <Compile Include="Core\GameElements\Qube.cs" />
+    <Compile Include="Core\GameElements\RectElement.cs" />
+    <Compile Include="Core\GameElements\Sprite.cs" />
+    <Compile Include="Core\GameElements\Terrain2D.cs" />
     <Compile Include="Core\Scene.cs" />
-    <Compile Include="Core\GameElments\Skybox.cs" />
+    <Compile Include="Core\GameElements\Skybox.cs" />
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\Utils.cs" />
     <Compile Include="Graphics\Animation.cs" />
-    <Compile Include="Graphics\Animation3D.cs" />
+    <Compile Include="Graphics\Animation3D\Animation.cs" />
+    <Compile Include="Graphics\Animation3D\Animator.cs" />
+    <Compile Include="Graphics\Animation3D\Bone.cs" />
+    <Compile Include="Graphics\Animation3D\ModelMesh.cs" />
     <Compile Include="Graphics\Face.cs" />
     <Compile Include="Graphics\Font.cs" />
     <Compile Include="Graphics\Framebuffer.cs" />
@@ -111,10 +148,19 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
+    <Compile Include="Graphics\RenderSettings.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\BorderCircleShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\Light2DShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\SceneShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\SolidShapeShader.cs" />
+    <Compile Include="Graphics\Shapes\CircleShape.cs" />
+    <Compile Include="Graphics\Shapes\Light2DShape.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
-    <Compile Include="Graphics\RenderDevice\ClassicGL.cs" />
-    <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\Shader.cs" />
     <Compile Include="Graphics\ShaderProgram.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\DiffuseNormalLightning.cs" />
@@ -155,7 +201,11 @@
     <Compile Include="Physics\PhysicsHandler3D.cs" />
     <Compile Include="Physics\PhysicsBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Canvas.cs" />
+    <Compile Include="UI\GridView.cs" />
+    <Compile Include="UI\Items\GridViewImageIcon.cs" />
+    <Compile Include="UI\Items\IItem.cs" />
     <Compile Include="UI\UIParser.cs" />
     <Compile Include="UI\Widget.cs" />
     <Compile Include="UI\ImageButton.cs" />

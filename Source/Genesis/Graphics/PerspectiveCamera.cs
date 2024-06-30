@@ -142,5 +142,14 @@ namespace Genesis.Graphics
                 renderer.SetCamera(game.SelectedScene.Camera);
             }
         }
+
+        /// <summary>
+        /// Adjusts the camera's orientation to look at a specified position.
+        /// </summary>
+        /// <param name="vec3">The position to look at.</param>
+        public void LookAt(Vec3 vec3)
+        {
+            Utils.LookAt(this, vec3);
+        }
     }
 }

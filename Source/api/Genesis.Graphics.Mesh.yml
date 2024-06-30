@@ -8,7 +8,7 @@ items:
   - Genesis.Graphics.Mesh.#ctor
   - Genesis.Graphics.Mesh.Faces
   - Genesis.Graphics.Mesh.Indicies
-  - Genesis.Graphics.Mesh.MaterialIndex
+  - Genesis.Graphics.Mesh.Material
   - Genesis.Graphics.Mesh.Normals
   - Genesis.Graphics.Mesh.Propeterys
   - Genesis.Graphics.Mesh.TextureCords
@@ -61,16 +61,16 @@ items:
   nameWithType.vb: Mesh.New()
   fullName.vb: Genesis.Graphics.Mesh.New()
   name.vb: New()
-- uid: Genesis.Graphics.Mesh.MaterialIndex
-  commentId: P:Genesis.Graphics.Mesh.MaterialIndex
-  id: MaterialIndex
+- uid: Genesis.Graphics.Mesh.Material
+  commentId: P:Genesis.Graphics.Mesh.Material
+  id: Material
   parent: Genesis.Graphics.Mesh
   langs:
   - csharp
   - vb
-  name: MaterialIndex
-  nameWithType: Mesh.MaterialIndex
-  fullName: Genesis.Graphics.Mesh.MaterialIndex
+  name: Material
+  nameWithType: Mesh.Material
+  fullName: Genesis.Graphics.Mesh.Material
   type: Property
   assemblies:
   - Genesis
@@ -78,12 +78,12 @@ items:
   summary: Index of the material associated with the mesh.
   example: []
   syntax:
-    content: public int MaterialIndex { get; set; }
+    content: public Material Material { get; set; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public Property MaterialIndex As Integer
-  overload: Genesis.Graphics.Mesh.MaterialIndex*
+      type: Genesis.Graphics.Material
+    content.vb: Public Property Material As Material
+  overload: Genesis.Graphics.Mesh.Material*
 - uid: Genesis.Graphics.Mesh.Indicies
   commentId: P:Genesis.Graphics.Mesh.Indicies
   id: Indicies
@@ -497,24 +497,21 @@ references:
   nameWithType.vb: Mesh.New
   fullName.vb: Genesis.Graphics.Mesh.New
   name.vb: New
-- uid: Genesis.Graphics.Mesh.MaterialIndex*
-  commentId: Overload:Genesis.Graphics.Mesh.MaterialIndex
+- uid: Genesis.Graphics.Mesh.Material*
+  commentId: Overload:Genesis.Graphics.Mesh.Material
   isExternal: true
-  href: Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_MaterialIndex
-  name: MaterialIndex
-  nameWithType: Mesh.MaterialIndex
-  fullName: Genesis.Graphics.Mesh.MaterialIndex
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
+  href: Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_Material
+  name: Material
+  nameWithType: Mesh.Material
+  fullName: Genesis.Graphics.Mesh.Material
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
 - uid: Genesis.Graphics.Mesh.Indicies*
   commentId: Overload:Genesis.Graphics.Mesh.Indicies
   isExternal: true

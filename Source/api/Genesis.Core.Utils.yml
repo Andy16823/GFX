@@ -16,6 +16,7 @@ items:
   - Genesis.Core.Utils.ConvertBitmapToBase64(System.Drawing.Bitmap)
   - Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
   - Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
+  - Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
   - Genesis.Core.Utils.CreateEmptyNormalMap(System.Int32,System.Int32)
   - Genesis.Core.Utils.CreateEmptyTexture(System.Int32,System.Int32)
   - Genesis.Core.Utils.EulerToQuaternion(Genesis.Math.Vec3)
@@ -24,6 +25,9 @@ items:
   - Genesis.Core.Utils.GetElementWorldLocation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldRotation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldScale(Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  - Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  - Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
   - Genesis.Core.Utils.GetModelRotation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetModelScale(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetModelSpaceLocation(Genesis.Core.GameElement,Genesis.Math.Vec3)
@@ -31,12 +35,21 @@ items:
   - Genesis.Core.Utils.GetModelSpaceScale(Genesis.Core.GameElement,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetModelTransformation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetParentModelView(Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetRandomColor
+  - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  - Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  - Genesis.Core.Utils.GetRandomColor(System.Int32)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  - Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringHeight(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringWidth(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetVMirroredPosition(Genesis.Math.Vec3,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.GetVMirroredPosition(System.Single,System.Single,System.Single,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.LookAt(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Core.Utils.ToDegrees(System.Single)
   - Genesis.Core.Utils.ToRadians(System.Single)
@@ -941,6 +954,60 @@ items:
       description: The target position.
     content.vb: Public Shared Sub LookAt(camera As Camera, targetPosition As Vec3)
   overload: Genesis.Core.Utils.LookAt*
+- uid: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  id: LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: LookAtX(Camera, Vec3)
+  nameWithType: Utils.LookAtX(Camera, Vec3)
+  fullName: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adjusts the camera's rotation to look at a specified position along the X-axis.
+  example: []
+  syntax:
+    content: public static void LookAtX(Camera camera, Vec3 targetPosition)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera to adjust.
+    - id: targetPosition
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Shared Sub LookAtX(camera As Camera, targetPosition As Vec3)
+  overload: Genesis.Core.Utils.LookAtX*
+- uid: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  id: LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: LookAtY(Camera, Vec3)
+  nameWithType: Utils.LookAtY(Camera, Vec3)
+  fullName: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adjusts the camera's rotation to look at a specified position along the Y-axis.
+  example: []
+  syntax:
+    content: public static void LookAtY(Camera camera, Vec3 targetPosition)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera to adjust.
+    - id: targetPosition
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Shared Sub LookAtY(camera As Camera, targetPosition As Vec3)
+  overload: Genesis.Core.Utils.LookAtY*
 - uid: Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
   commentId: M:Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
   id: CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
@@ -1015,19 +1082,134 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
-  summary: Converts a System.Drawing.Color into a float array.
-  example: []
   syntax:
     content: public static float[] ConvertColor(Color color)
     parameters:
     - id: color
       type: System.Drawing.Color
-      description: The color.
     return:
       type: System.Single[]
-      description: The float array representing the color.
     content.vb: Public Shared Function ConvertColor(color As Color) As Single()
   overload: Genesis.Core.Utils.ConvertColor*
+- uid: Genesis.Core.Utils.GetRandomColor
+  commentId: M:Genesis.Core.Utils.GetRandomColor
+  id: GetRandomColor
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor()
+  nameWithType: Utils.GetRandomColor()
+  fullName: Genesis.Core.Utils.GetRandomColor()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Generates an random color
+  example: []
+  syntax:
+    content: public static Color GetRandomColor()
+    return:
+      type: System.Drawing.Color
+      description: The color
+    content.vb: Public Shared Function GetRandomColor() As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+- uid: Genesis.Core.Utils.GetRandomColor(System.Int32)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Int32)
+  id: GetRandomColor(System.Int32)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(int)
+  nameWithType: Utils.GetRandomColor(int)
+  fullName: Genesis.Core.Utils.GetRandomColor(int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Generates an random color from an seed
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(int seed)
+    parameters:
+    - id: seed
+      type: System.Int32
+      description: The seed for the randomizer
+    return:
+      type: System.Drawing.Color
+      description: The color
+    content.vb: Public Shared Function GetRandomColor(seed As Integer) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+  nameWithType.vb: Utils.GetRandomColor(Integer)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(Integer)
+  name.vb: GetRandomColor(Integer)
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  id: GetRandomColor(System.Drawing.Color,System.Drawing.Color)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(Color, Color)
+  nameWithType: Utils.GetRandomColor(Color, Color)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns a random color between the given colors.
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(Color colorA, Color colorB)
+    parameters:
+    - id: colorA
+      type: System.Drawing.Color
+      description: The minimum color.
+    - id: colorB
+      type: System.Drawing.Color
+      description: The maximum color.
+    return:
+      type: System.Drawing.Color
+      description: A randomly generated color within the specified range.
+    content.vb: Public Shared Function GetRandomColor(colorA As Color, colorB As Color) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+- uid: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  commentId: M:Genesis.Core.Utils.GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  id: GetRandomColor(System.Drawing.Color,System.Drawing.Color,System.Int32)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRandomColor(Color, Color, int)
+  nameWithType: Utils.GetRandomColor(Color, Color, int)
+  fullName: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns a random color between the given colors using a specified seed for reproducibility.
+  example: []
+  syntax:
+    content: public static Color GetRandomColor(Color colorA, Color colorB, int seed)
+    parameters:
+    - id: colorA
+      type: System.Drawing.Color
+      description: The minimum color.
+    - id: colorB
+      type: System.Drawing.Color
+      description: The maximum color.
+    - id: seed
+      type: System.Int32
+      description: The seed for the random number generator.
+    return:
+      type: System.Drawing.Color
+      description: A randomly generated color within the specified range and seed.
+    content.vb: Public Shared Function GetRandomColor(colorA As Color, colorB As Color, seed As Integer) As Color
+  overload: Genesis.Core.Utils.GetRandomColor*
+  nameWithType.vb: Utils.GetRandomColor(Color, Color, Integer)
+  fullName.vb: Genesis.Core.Utils.GetRandomColor(System.Drawing.Color, System.Drawing.Color, Integer)
+  name.vb: GetRandomColor(Color, Color, Integer)
 - uid: Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
   commentId: M:Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
   id: ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
@@ -1181,6 +1363,204 @@ items:
   nameWithType.vb: Utils.RayDirection(Camera, Viewport, Single, Single)
   fullName.vb: Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Single, Single)
   name.vb: RayDirection(Camera, Viewport, Single, Single)
+- uid: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  commentId: M:Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  id: ConvertToGlmMat4(Assimp.Matrix4x4)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: ConvertToGlmMat4(Matrix4x4)
+  nameWithType: Utils.ConvertToGlmMat4(Matrix4x4)
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Converts a Matrix4x4 from the Assimp library to a mat4 from GLM library.
+  example: []
+  syntax:
+    content: public static mat4 ConvertToGlmMat4(Matrix4x4 matrix)
+    parameters:
+    - id: matrix
+      type: Assimp.Matrix4x4
+      description: The Matrix4x4 to convert.
+    return:
+      type: GlmSharp.mat4
+      description: A mat4 representing the converted matrix.
+    content.vb: Public Shared Function ConvertToGlmMat4(matrix As Matrix4x4) As mat4
+  overload: Genesis.Core.Utils.ConvertToGlmMat4*
+- uid: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  commentId: M:Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  id: GetGLMVec(Assimp.Vector3D)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetGLMVec(Vector3D)
+  nameWithType: Utils.GetGLMVec(Vector3D)
+  fullName: Genesis.Core.Utils.GetGLMVec(Assimp.Vector3D)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Converts an Assimp Vector3D to a vec3 from GLM library.
+  example: []
+  syntax:
+    content: public static vec3 GetGLMVec(Vector3D vec)
+    parameters:
+    - id: vec
+      type: Assimp.Vector3D
+      description: The Vector3D to convert.
+    return:
+      type: GlmSharp.vec3
+      description: A vec3 representing the converted vector.
+    content.vb: Public Shared Function GetGLMVec(vec As Vector3D) As vec3
+  overload: Genesis.Core.Utils.GetGLMVec*
+- uid: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  commentId: M:Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  id: GetGLMQuat(Assimp.Quaternion)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetGLMQuat(Quaternion)
+  nameWithType: Utils.GetGLMQuat(Quaternion)
+  fullName: Genesis.Core.Utils.GetGLMQuat(Assimp.Quaternion)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Converts an Assimp Quaternion to a quat from GLM library.
+  example: []
+  syntax:
+    content: public static quat GetGLMQuat(Quaternion pOrientation)
+    parameters:
+    - id: pOrientation
+      type: Assimp.Quaternion
+      description: The Quaternion to convert.
+    return:
+      type: GlmSharp.quat
+      description: A quat representing the converted quaternion.
+    content.vb: Public Shared Function GetGLMQuat(pOrientation As Quaternion) As quat
+  overload: Genesis.Core.Utils.GetGLMQuat*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Core.GameElement)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, GameElement)
+  nameWithType: Utils.GetRelativePosition(GameElement, GameElement)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a child GameElement with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, GameElement child)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: child
+      type: Genesis.Core.GameElement
+      description: The child GameElement.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the child.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, child As GameElement) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Graphics.Camera)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, Camera)
+  nameWithType: Utils.GetRelativePosition(GameElement, Camera)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Graphics.Camera)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a camera with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, Camera camera)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the camera.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, camera As Camera) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  id: GetRelativePosition(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetRelativePosition(GameElement, Vec3)
+  nameWithType: Utils.GetRelativePosition(GameElement, Vec3)
+  fullName: Genesis.Core.Utils.GetRelativePosition(Genesis.Core.GameElement, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the relative position of a location with respect to a parent GameElement.
+  example: []
+  syntax:
+    content: public static Vec3 GetRelativePosition(GameElement parent, Vec3 location)
+    parameters:
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement.
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 representing the relative position of the location.
+    content.vb: Public Shared Function GetRelativePosition(parent As GameElement, location As Vec3) As Vec3
+  overload: Genesis.Core.Utils.GetRelativePosition*
+- uid: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  id: GetForwardDirection(Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetForwardDirection(Vec3)
+  nameWithType: Utils.GetForwardDirection(Vec3)
+  fullName: Genesis.Core.Utils.GetForwardDirection(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Calculates the forward direction vector based on Euler angles.
+  example: []
+  syntax:
+    content: public static Vec3 GetForwardDirection(Vec3 eulerAngles)
+    parameters:
+    - id: eulerAngles
+      type: Genesis.Math.Vec3
+      description: The Euler angles representing rotation.
+    return:
+      type: Genesis.Math.Vec3
+      description: The forward direction vector.
+    content.vb: Public Shared Function GetForwardDirection(eulerAngles As Vec3) As Vec3
+  overload: Genesis.Core.Utils.GetForwardDirection*
 - uid: Genesis.Core.Utils.#ctor
   commentId: M:Genesis.Core.Utils.#ctor
   id: '#ctor'
@@ -1848,6 +2228,20 @@ references:
   name: LookAt
   nameWithType: Utils.LookAt
   fullName: Genesis.Core.Utils.LookAt
+- uid: Genesis.Core.Utils.LookAtX*
+  commentId: Overload:Genesis.Core.Utils.LookAtX
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtX_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  name: LookAtX
+  nameWithType: Utils.LookAtX
+  fullName: Genesis.Core.Utils.LookAtX
+- uid: Genesis.Core.Utils.LookAtY*
+  commentId: Overload:Genesis.Core.Utils.LookAtY
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtY_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  name: LookAtY
+  nameWithType: Utils.LookAtY
+  fullName: Genesis.Core.Utils.LookAtY
 - uid: Genesis.Core.Utils.CalculateYaw*
   commentId: Overload:Genesis.Core.Utils.CalculateYaw
   isExternal: true
@@ -1900,6 +2294,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: (
   - name: )
+- uid: Genesis.Core.Utils.GetRandomColor*
+  commentId: Overload:Genesis.Core.Utils.GetRandomColor
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetRandomColor
+  name: GetRandomColor
+  nameWithType: Utils.GetRandomColor
+  fullName: Genesis.Core.Utils.GetRandomColor
 - uid: Genesis.Core.Utils.ConvertDrawingColor*
   commentId: Overload:Genesis.Core.Utils.ConvertDrawingColor
   isExternal: true
@@ -1937,6 +2338,75 @@ references:
   name: RayDirection
   nameWithType: Utils.RayDirection
   fullName: Genesis.Core.Utils.RayDirection
+- uid: Genesis.Core.Utils.ConvertToGlmMat4*
+  commentId: Overload:Genesis.Core.Utils.ConvertToGlmMat4
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertToGlmMat4_Assimp_Matrix4x4_
+  name: ConvertToGlmMat4
+  nameWithType: Utils.ConvertToGlmMat4
+  fullName: Genesis.Core.Utils.ConvertToGlmMat4
+- uid: Assimp.Matrix4x4
+  commentId: T:Assimp.Matrix4x4
+  parent: Assimp
+  isExternal: true
+  name: Matrix4x4
+  nameWithType: Matrix4x4
+  fullName: Assimp.Matrix4x4
+- uid: Assimp
+  commentId: N:Assimp
+  isExternal: true
+  name: Assimp
+  nameWithType: Assimp
+  fullName: Assimp
+- uid: Genesis.Core.Utils.GetGLMVec*
+  commentId: Overload:Genesis.Core.Utils.GetGLMVec
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMVec_Assimp_Vector3D_
+  name: GetGLMVec
+  nameWithType: Utils.GetGLMVec
+  fullName: Genesis.Core.Utils.GetGLMVec
+- uid: Assimp.Vector3D
+  commentId: T:Assimp.Vector3D
+  parent: Assimp
+  isExternal: true
+  name: Vector3D
+  nameWithType: Vector3D
+  fullName: Assimp.Vector3D
+- uid: GlmSharp.vec3
+  commentId: T:GlmSharp.vec3
+  parent: GlmSharp
+  isExternal: true
+  name: vec3
+  nameWithType: vec3
+  fullName: GlmSharp.vec3
+- uid: Genesis.Core.Utils.GetGLMQuat*
+  commentId: Overload:Genesis.Core.Utils.GetGLMQuat
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetGLMQuat_Assimp_Quaternion_
+  name: GetGLMQuat
+  nameWithType: Utils.GetGLMQuat
+  fullName: Genesis.Core.Utils.GetGLMQuat
+- uid: Assimp.Quaternion
+  commentId: T:Assimp.Quaternion
+  parent: Assimp
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: Assimp.Quaternion
+- uid: Genesis.Core.Utils.GetRelativePosition*
+  commentId: Overload:Genesis.Core.Utils.GetRelativePosition
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetRelativePosition_Genesis_Core_GameElement_Genesis_Core_GameElement_
+  name: GetRelativePosition
+  nameWithType: Utils.GetRelativePosition
+  fullName: Genesis.Core.Utils.GetRelativePosition
+- uid: Genesis.Core.Utils.GetForwardDirection*
+  commentId: Overload:Genesis.Core.Utils.GetForwardDirection
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetForwardDirection_Genesis_Math_Vec3_
+  name: GetForwardDirection
+  nameWithType: Utils.GetForwardDirection
+  fullName: Genesis.Core.Utils.GetForwardDirection
 - uid: Genesis.Core.Utils.#ctor*
   commentId: Overload:Genesis.Core.Utils.#ctor
   isExternal: true

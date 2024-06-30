@@ -58,6 +58,7 @@ namespace Genesis.Physics
             if(this.ProcessPhysics && this.PhysicsWorld != null)
             {
                 this.PhysicsWorld.StepSimulation((float)(game.DeltaTime / TickRate), Substepps);
+                //this.PhysicsWorld.StepSimulation(1.0f / 60.0f, 10);
                 int numManifolds = PhysicsWorld.Dispatcher.NumManifolds;
                 for (int i = 0; i < numManifolds; i++)
                 {
@@ -81,11 +82,11 @@ namespace Genesis.Physics
         /// <summary>
         /// Manages a physics behavior element by adding its RigidBody to the physics world.
         /// </summary>
-        /// <param name="rigidBody">The PhysicsBehavior representing the rigid body element.</param>
-        public override void ManageElement(PhysicsBehavior rigidBody)
+        /// <param name="physicsBehavior">The PhysicsBehavior representing the collision object.</param>
+        public override void ManageElement(PhysicsBehavior physicsBehavior)
         {
-            base.ManageElement(rigidBody);
-            PhysicsWorld.AddRigidBody((RigidBody)rigidBody.GetPhysicsObject());
+            base.ManageElement(physicsBehavior);
+            PhysicsWorld.AddCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject());
         }
     }
 }
