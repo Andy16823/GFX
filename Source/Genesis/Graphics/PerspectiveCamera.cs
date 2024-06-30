@@ -130,16 +130,16 @@ namespace Genesis.Graphics
                 {
                     _frameBuffer = renderer.BuildFramebuffer((int)resolution.X, (int)resolution.Y, renderTarget);
                 }
-                renderer.Viewport(game.Viewport.X, game.Viewport.Y, (int)resolution.X, (int)resolution.Y);
-                renderer.SetCamera(this);
+                renderer.SetViewport(game.Viewport);
+                renderer.SetCamera(game.Viewport, this);
                 renderer.UpdateFramebufferSize(_frameBuffer, (int)resolution.X, (int)resolution.Y);
                 renderer.SetFramebuffer(_frameBuffer);
                 foreach (var layer in game.SelectedScene.Layer)
                 {
                     layer.OnRender(game, renderer);
                 }
-                renderer.Viewport(game.Viewport.X, game.Viewport.Y, game.Viewport.Width, game.Viewport.Height);
-                renderer.SetCamera(game.SelectedScene.Camera);
+                renderer.SetViewport(game.Viewport);
+                renderer.SetCamera(game.Viewport, game.SelectedScene.Camera);
             }
         }
 

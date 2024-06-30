@@ -97,7 +97,15 @@ namespace Genesis.Core.GameElements
         /// Gets or sets the mask for the particles
         /// </summary>
         public Texture ParticleMask { get; set; }
+
+        /// <summary>
+        /// The start color for the partciles
+        /// </summary>
         public Color StartColor { get; set; }
+
+        /// <summary>
+        /// The end color for the particles
+        /// </summary>
         public Color EndColor { get; set; }
 
 

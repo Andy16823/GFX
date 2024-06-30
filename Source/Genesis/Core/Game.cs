@@ -182,7 +182,7 @@ namespace Genesis.Core
                         BeforeRender(this, RenderDevice);
                     }
                     //Render
-                    RenderDevice.Viewport(Viewport.X, Viewport.Y, Viewport.Width, Viewport.Height);
+                    RenderDevice.SetViewport(Viewport);
                     RenderDevice.Begin();
                     if (OnRenderBeginn != null)
                     {

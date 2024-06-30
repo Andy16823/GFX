@@ -31,7 +31,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Genesis.Graphics.RenderDevice
 {
-    public class GLRenderer : IRenderDevice
+    public class BetaRenderer : IRenderDevice
     {
         /// <summary>
         /// Struct for the viewport
@@ -51,9 +51,10 @@ namespace Genesis.Graphics.RenderDevice
         
         public Framebuffer sceneBuffer;
         private Framebuffer uiBuffer;
+
         private Viewport m_viewport;
 
-        public GLRenderer(IntPtr hwnd, RenderSettings settings)
+        public BetaRenderer(IntPtr hwnd, RenderSettings settings)
         {
             this.hwnd = hwnd;
             m_renderSettings = settings;
@@ -1173,7 +1174,7 @@ namespace Genesis.Graphics.RenderDevice
             UpdateFramebufferSize(this.sceneBuffer, (int)viewport.Width, (int)viewport.Height);
             UpdateFramebufferSize(this.uiBuffer, (int)viewport.Width, (int)viewport.Height);
 
-            if (m_viewport == null || m_viewport != viewport)
+            if(m_viewport == null || m_viewport != viewport)
             {
                 m_viewport = viewport;
             }
@@ -1185,22 +1186,28 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="camera"></param>
         public void SetCamera(Viewport viewport, Camera camera)
         {
-            if(camera.Type == CameraType.Ortho)
-            {
-                float x = camera.Location.X - (camera.Size.X / 2);
-                float y = camera.Location.Y - (camera.Size.Y / 2);
-                float top = y + camera.Size.Y;
-                float right = x + camera.Size.X;
+            float correction = Utils.CalculateScreenCorrection(viewport.Width, viewport.Height, camera.Size.X, camera.Size.Y);
 
-                p_mat = mat4.Ortho(x, right, y, top, 0.0f, 100.0f);
+            if (camera.Type == CameraType.Ortho)
+            {
+                float halfWidth = (viewport.Width / 2) / correction;
+                float halfHeight = (viewport.Height / 2) / correction;
+
+                float left = camera.Location.X - halfWidth;
+                float right = camera.Location.X + halfWidth;
+                float bottom = camera.Location.Y - halfHeight;
+                float top = camera.Location.Y + halfHeight;
+
+                p_mat = mat4.Ortho(left, right, bottom, top, 0.1f, 100.0f);
                 v_mat = mat4.LookAt(new vec3(0f, 0f, 1f), new vec3(0f, 0f, 0f), new vec3(0f, 1f, 0f));
             }
             else
             {
+                float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
                 vec3 cameraPosition = camera.Location.ToGlmVec3();
                 Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
 
-                p_mat = mat4.Perspective(Utils.ToRadians(45.0f), camera.Size.X / camera.Size.Y, camera.Near, camera.Far);
+                p_mat = mat4.Perspective(Utils.ToRadians(45.0f), aspectRatio, camera.Near, camera.Far);
                 v_mat =  mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
             }
 
@@ -1217,8 +1224,8 @@ namespace Genesis.Graphics.RenderDevice
         {
             float x = 0;
             float y = 0;
-            float top = y + camera.Size.Y;
-            float right = x + camera.Size.X;
+            float top = y + m_viewport.Height;
+            float right = x + m_viewport.Width;
 
             p_mat = mat4.Ortho(x, right, y, top, 0.0f, 100.0f);
             v_mat = mat4.LookAt(new vec3(0f, 0f, 1f), new vec3(0f, 0f, 0f), new vec3(0f, 1f, 0f));

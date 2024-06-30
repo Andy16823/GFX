@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Genesis.Math;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace Genesis.Graphics
     public struct RenderSettings
     {
         public float gamma;
+        public Vec3 VirtualResolution;
     }
 }

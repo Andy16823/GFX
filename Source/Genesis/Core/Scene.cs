@@ -243,7 +243,7 @@ namespace Genesis.Core
         public virtual void OnRender(Game game, IRenderDevice renderDevice)
         {
             if(this.Camera != null)
-                renderDevice.SetCamera(this.Camera);
+                renderDevice.SetCamera(game.Viewport, this.Camera);
 
             // Before scene preperation even
             if (this.BeforeScenePreperation != null) 

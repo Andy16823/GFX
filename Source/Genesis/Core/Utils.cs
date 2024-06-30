@@ -923,5 +923,23 @@ namespace Genesis.Core
             float a = startColorf[3] + (endColorf[3] - startColorf[3]) * t;
             return new float[] { r, g, b, a};
         }
+
+        public static float CalculateScreenCorrection(float screenWidth, float screenHeight, float virtualWidth, float virtualHeight)
+        {
+            return System.Math.Min(screenWidth / virtualWidth, screenHeight / virtualHeight);
+            //float screenAspectRatio = screenWidth / screenHeight;
+            //float virtualAspectRatio = virtualWidth / virtualHeight;
+            //float xCorrection = screenWidth / virtualWidth;
+            //float yCorrection = screenHeight / virtualHeight;
+
+            //if (virtualAspectRatio < screenAspectRatio)
+            //{
+            //    return yCorrection;
+            //}
+            //else
+            //{
+            //    return xCorrection;
+            //}
+        }
     }
 }
