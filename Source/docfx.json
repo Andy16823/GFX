@@ -1,8 +1,13 @@
 {
   "nav": [
     {
-      "href": "https://gfx.676-games.de/",
+      "href": "https://gfx-engine.org/",
       "name": "Website",
+      "target": "_blank"
+    },
+    {
+      "href": "https://forum.gfx-engine.org/",
+      "name": "Forum",
       "target": "_blank"
     }
   ],

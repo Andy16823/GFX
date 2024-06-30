@@ -1982,6 +1982,16 @@
             Gets or sets the mask for the particles
             </summary>
         </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.StartColor">
+            <summary>
+            The start color for the partciles
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.ParticleEmitter.EndColor">
+            <summary>
+            The end color for the particles
+            </summary>
+        </member>
         <member name="P:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions">
             <summary>
             Gets or sets the list of particle definitions managed by the emitter.
