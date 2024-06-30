@@ -6,7 +6,6 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull.#ctor
-  - Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull.GetPhysicsObject
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull.GetPhysicsObject``1
@@ -37,6 +36,7 @@ items:
   - Genesis.Physics.PhysicsBehavior
   inheritedMembers:
   - Genesis.Physics.PhysicsBehavior.OnCollide
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   - Genesis.Core.IGameBehavior.Parent
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -75,34 +75,6 @@ items:
   nameWithType.vb: QubeConvexHull.CreateRigidBody(PhysicHandler, Single)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.CreateRigidBody(Genesis.Physics.PhysicHandler, Single)
   name.vb: CreateRigidBody(PhysicHandler, Single)
-- uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  id: Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  parent: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
-  langs:
-  - csharp
-  - vb
-  name: Collide(Scene, Game, RigidBody)
-  nameWithType: QubeConvexHull.Collide(Scene, Game, RigidBody)
-  fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Handles collision events for the QubeConvexHull behavior.
-  example: []
-  syntax:
-    content: public override void Collide(Scene scene, Game game, RigidBody collisionObject)
-    parameters:
-    - id: scene
-      type: Genesis.Core.Scene
-    - id: game
-      type: Genesis.Core.Game
-    - id: collisionObject
-      type: BulletSharp.RigidBody
-    content.vb: Public Overrides Sub Collide(scene As Scene, game As Game, collisionObject As RigidBody)
-  overridden: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  overload: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide*
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody
   commentId: M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody
   id: UpdateRigidBody
@@ -405,6 +377,58 @@ references:
   name: OnCollide
   nameWithType: PhysicsBehavior.OnCollide
   fullName: Genesis.Physics.PhysicsBehavior.OnCollide
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  name: Collide(Scene, Game, CollisionObject)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.CollisionObject
+    name: CollisionObject
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.CollisionObject
+    name: CollisionObject
+    isExternal: true
+  - name: )
 - uid: Genesis.Core.IGameBehavior.Parent
   commentId: P:Genesis.Core.IGameBehavior.Parent
   parent: Genesis.Core.IGameBehavior
@@ -719,94 +743,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
-  name: Collide(Scene, Game, RigidBody)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, RigidBody)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.RigidBody
-    name: RigidBody
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.RigidBody
-    name: RigidBody
-    isExternal: true
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html#Genesis_Core_Behaviors_Physics3D_QubeConvexHull_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
-  name: Collide
-  nameWithType: QubeConvexHull.Collide
-  fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide
-- uid: Genesis.Core.Scene
-  commentId: T:Genesis.Core.Scene
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Scene.html
-  name: Scene
-  nameWithType: Scene
-  fullName: Genesis.Core.Scene
-- uid: Genesis.Core.Game
-  commentId: T:Genesis.Core.Game
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Game.html
-  name: Game
-  nameWithType: Game
-  fullName: Genesis.Core.Game
-- uid: BulletSharp.RigidBody
-  commentId: T:BulletSharp.RigidBody
-  parent: BulletSharp
-  isExternal: true
-  name: RigidBody
-  nameWithType: RigidBody
-  fullName: BulletSharp.RigidBody
-- uid: BulletSharp
-  commentId: N:BulletSharp
-  isExternal: true
-  name: BulletSharp
-  nameWithType: BulletSharp
-  fullName: BulletSharp
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.UpdateRigidBody
   isExternal: true
@@ -935,6 +871,14 @@ references:
   name: OnDestroy
   nameWithType: QubeConvexHull.OnDestroy
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.OnDestroy
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
 - uid: Genesis.Core.GameElement
   commentId: T:Genesis.Core.GameElement
   parent: Genesis.Core
@@ -1107,3 +1051,16 @@ references:
   name: RigidBody
   nameWithType: QubeConvexHull.RigidBody
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.RigidBody
+- uid: BulletSharp.RigidBody
+  commentId: T:BulletSharp.RigidBody
+  parent: BulletSharp
+  isExternal: true
+  name: RigidBody
+  nameWithType: RigidBody
+  fullName: BulletSharp.RigidBody
+- uid: BulletSharp
+  commentId: N:BulletSharp
+  isExternal: true
+  name: BulletSharp
+  nameWithType: BulletSharp
+  fullName: BulletSharp

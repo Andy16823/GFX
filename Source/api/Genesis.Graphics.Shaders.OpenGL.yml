@@ -11,6 +11,8 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  - Genesis.Graphics.Shaders.OpenGL.Light2DShader
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
@@ -37,6 +39,20 @@ references:
   name: AnimatedModelShader
   nameWithType: AnimatedModelShader
   fullName: Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
+- uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html
+  name: FXScreenSpaceShadowShader
+  nameWithType: FXScreenSpaceShadowShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+- uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.Light2DShader.html
+  name: Light2DShader
+  nameWithType: Light2DShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.Light2DShader
 - uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
   commentId: T:Genesis.Graphics.Shaders.OpenGL.ParticleShader
   isExternal: true

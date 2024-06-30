@@ -569,14 +569,21 @@ namespace Genesis.Core
         /// Converts a System.Drawing.Color into a float array.
         /// </summary>
         /// <param name="color">The color.</param>
+        /// <param name="alpha">Checks if the alpha gets converted</param>
         /// <returns>The float array representing the color.</returns>
-        public static float[] ConvertColor(Color color)
+        public static float[] ConvertColor(Color color, bool alpha = false)
         {
             float r = (float)color.R / 255;
             float g = (float)color.G / 255;
             float b = (float)color.B / 255;
+            float a = 1.0f;
 
-            return new float[] { r, g, b };
+            if (alpha)
+            {
+                a = (float)color.A / 255;
+            }
+
+            return new float[] { r, g, b, a };
         }
 
         /// <summary>
@@ -894,6 +901,27 @@ namespace Genesis.Core
             quat rotation = quatX * quatY * quatZ;
             vec3 forward = rotation * new vec3(0, 0, 1);
             return new Vec3(forward);
+        }
+
+        /// <summary>
+        /// Interpolates between an start and end color
+        /// </summary>
+        /// <param name="startColor">The color start</param>
+        /// <param name="endColor">The color end</param>
+        /// <param name="t">the time</param>
+        /// <returns></returns>
+        public static float[] LerpColor(Color startColor, Color endColor, float t)
+        {
+            var startColorf = Utils.ConvertColor(startColor);
+            var endColorf = Utils.ConvertColor(endColor);
+
+            t = glm.Clamp(t, 0, 1); // Sicherstellen, dass t zwischen 0 und 1 liegt
+
+            float r = startColorf[0] + (endColorf[0] - startColorf[0]) * t;
+            float g = startColorf[1] + (endColorf[1] - startColorf[1]) * t;
+            float b = startColorf[2] + (endColorf[2] - startColorf[2]) * t;
+            float a = startColorf[3] + (endColorf[3] - startColorf[3]) * t;
+            return new float[] { r, g, b, a};
         }
     }
 }

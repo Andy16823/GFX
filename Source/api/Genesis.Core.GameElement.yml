@@ -58,6 +58,7 @@ items:
   - Genesis.Core.GameElements.Terrain2D
   - Genesis.Core.GameElements.Terrain3D
   - Genesis.Core.Light
+  - Genesis.Core.Light2D
   inheritedMembers:
   - System.Object.ToString
   - System.Object.Equals(System.Object)

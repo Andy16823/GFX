@@ -21,6 +21,7 @@ items:
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
+  - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkAnimation
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
@@ -233,6 +234,31 @@ items:
     content.vb: Public Overrides Sub OnRender(game As Game, parent As GameElement)
   overridden: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
   overload: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender*
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  id: SetInput(Genesis.Math.Vec3)
+  parent: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  langs:
+  - csharp
+  - vb
+  name: SetInput(Vec3)
+  nameWithType: ThirdpersonCharacterController.SetInput(Vec3)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors._3D
+  summary: Sets the input vector for the character.
+  remarks: This method assigns the provided input vector to the 'inputVector' property of the character.
+  example: []
+  syntax:
+    content: public void SetInput(Vec3 inputVector)
+    parameters:
+    - id: inputVector
+      type: Genesis.Math.Vec3
+      description: The input vector to set for the character.
+    content.vb: Public Sub SetInput(inputVector As Vec3)
+  overload: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput*
 - uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -1133,6 +1159,13 @@ references:
   name: OnRender
   nameWithType: ThirdpersonCharacterController.OnRender
   fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput*
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput
+  isExternal: true
+  href: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_SetInput_Genesis_Math_Vec3_
+  name: SetInput
+  nameWithType: ThirdpersonCharacterController.SetInput
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput
 - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   parent: Genesis.Core.IGameBehavior

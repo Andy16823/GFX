@@ -21,8 +21,12 @@ items:
     name: Layer
   - uid: Genesis.Core.Light
     name: Light
+  - uid: Genesis.Core.Light2D
+    name: Light2D
   - uid: Genesis.Core.Scene
     name: Scene
+  - uid: Genesis.Core.Scene2D
+    name: Scene2D
   - uid: Genesis.Core.Scene3D
     name: Scene3D
   - uid: Genesis.Core.SceneEventHandler
@@ -53,6 +57,8 @@ items:
 - uid: Genesis.Core.Behaviors.Physics2D
   name: Genesis.Core.Behaviors.Physics2D
   items:
+  - uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+    name: BoxTrigger2D
   - uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
     name: BufferedSpriteCollider
   - uid: Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
@@ -66,6 +72,8 @@ items:
   items:
   - uid: Genesis.Core.Behaviors.Physics3D.BoxCollider
     name: BoxCollider
+  - uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger
+    name: BoxTrigger
   - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
     name: CapsuleCollider
   - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
@@ -188,6 +196,8 @@ items:
   items:
   - uid: Genesis.Graphics.RenderDevice.ClassicGL
     name: ClassicGL
+  - uid: Genesis.Graphics.RenderDevice.Experimental
+    name: Experimental
   - uid: Genesis.Graphics.RenderDevice.GLRenderer
     name: GLRenderer
 - uid: Genesis.Graphics.Shaders.OpenGL
@@ -207,6 +217,10 @@ items:
     name: DiffuseShader
   - uid: Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
     name: DiffuseSolidShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+    name: FXScreenSpaceShadowShader
+  - uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+    name: Light2DShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPRectShader
     name: MVPRectShader
   - uid: Genesis.Graphics.Shaders.OpenGL.MVPShader
@@ -234,6 +248,8 @@ items:
     name: FrameShape
   - uid: Genesis.Graphics.Shapes.GlypheShape
     name: GlypheShape
+  - uid: Genesis.Graphics.Shapes.Light2DShape
+    name: Light2DShape
   - uid: Genesis.Graphics.Shapes.LineShape
     name: LineShape
   - uid: Genesis.Graphics.Shapes.PlaneShape

@@ -123,7 +123,13 @@
                             <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Light2D.html" title="Light2D" class="">Light2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene2D.html" title="Scene2D" class="">Scene2D</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
@@ -176,6 +182,9 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html" title="BoxTrigger2D" class="">BoxTrigger2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html" title="BufferedSpriteCollider" class="">BufferedSpriteCollider</a>
                           </li>
                           <li class="">
@@ -196,6 +205,9 @@
                         <ul class="nav level2">
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxTrigger.html" title="BoxTrigger" class="">BoxTrigger</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
@@ -395,6 +407,9 @@
                           <li class="">
                             <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
                           </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.Experimental.html" title="Experimental" class="">Experimental</a>
+                          </li>
                           <li class="active">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="active">GLRenderer</a>
                           </li>
@@ -425,6 +440,12 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html" title="FXScreenSpaceShadowShader" class="">FXScreenSpaceShadowShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.Light2DShader.html" title="Light2DShader" class="">Light2DShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
@@ -468,6 +489,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Light2DShape.html" title="Light2DShape" class="">Light2DShape</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
@@ -774,7 +798,7 @@
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_BuildFramebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_BuildFramebuffer_System_Int32_System_Int32_Genesis_Graphics_Texture_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)">BuildFramebuffer(int, int, Texture)</h4>
-  <div class="markdown level1 summary"><p>Builds a framebuffer with the specified width, height, and texture.</p>
+  <div class="markdown level1 summary"><p>Creates a new framebuffer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -794,20 +818,17 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">width</span></td>
-        <td><p>The width of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">height</span></td>
-        <td><p>The height of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Texture.html">Texture</a></td>
         <td><span class="parametername">texture</span></td>
-        <td><p>The texture associated with the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -822,8 +843,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
-        <td><p>The built framebuffer.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -831,7 +851,7 @@
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_BuildFramebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_BuildFramebuffer_System_Int32_System_Int32_System_Int32_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,System.Int32)">BuildFramebuffer(int, int, int)</h4>
-  <div class="markdown level1 summary"><p>Builds a framebuffer with the specified width, height, and texture ID.</p>
+  <div class="markdown level1 summary"><p>Creates a new framebuffer</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -851,20 +871,17 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">width</span></td>
-        <td><p>The width of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">height</span></td>
-        <td><p>The height of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">texture</span></td>
-        <td><p>The ID of the texture associated with the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -879,8 +896,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
-        <td><p>The built framebuffer.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1903,6 +1919,39 @@ LegacyGL</p>
   </table>
 
 
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">FinishLightmap2D(Scene, Framebuffer)</h4>
+  <div class="markdown level1 summary"><p>Finish the lightmap 2D rendering</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
+        <td><span class="parametername">framebuffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_FinishSceneRendering_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_FinishSceneRendering_Genesis_Core_Scene_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)">FinishSceneRendering(Scene)</h4>
   <div class="markdown level1 summary"><p>Finish the scene rendering</p>
@@ -2191,9 +2240,7 @@ Returns null is no program found</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DNormalMap_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DNormalMap_System_String_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(System.String)">InitElement3DNormalMap(string)</h4>
-  <div class="markdown level1 summary"><p>Inital the normal map for an 3D element
-if the normal map file isnt existing an empty 1x1 normal map get created</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -2235,9 +2282,7 @@ if the normal map file isnt existing an empty 1x1 normal map get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DTexture_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DTexture_System_String_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(System.String)">InitElement3DTexture(string)</h4>
-  <div class="markdown level1 summary"><p>Initial the diffuse texture for the 3D model
-If the texture file isnt existing an empty 1x1 texture get created</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -2363,8 +2408,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_LoadShader_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_LoadShader_System_String_Genesis_Graphics_ShaderProgram_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)">LoadShader(string, ShaderProgram)</h4>
-  <div class="markdown level1 summary"><p>Loads a shader program</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -2474,6 +2518,39 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
         <td><span class="parametername">canvas</span></td>
         <td><p>The canvas to render</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*"></a>
+  <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)">PrepareLightmap2D(Scene, Framebuffer)</h4>
+  <div class="markdown level1 summary"><p>Prepares the render for the 2D lightmap</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Scene.html">Scene</a></td>
+        <td><span class="parametername">scene</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
+        <td><span class="parametername">framebuffer</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -2789,7 +2866,7 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
 
   <a id="Genesis_Graphics_RenderDevice_GLRenderer_UpdateFramebufferSize_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize*"></a>
   <h4 id="Genesis_Graphics_RenderDevice_GLRenderer_UpdateFramebufferSize_Genesis_Graphics_Framebuffer_System_Int32_System_Int32_" data-uid="Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)">UpdateFramebufferSize(Framebuffer, int, int)</h4>
-  <div class="markdown level1 summary"><p>Updates the size of the specified framebuffer.</p>
+  <div class="markdown level1 summary"><p>Update the framebuffer size</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2809,20 +2886,17 @@ If the texture file isnt existing an empty 1x1 texture get created</p>
       <tr>
         <td><a class="xref" href="Genesis.Graphics.Framebuffer.html">Framebuffer</a></td>
         <td><span class="parametername">framebuffer</span></td>
-        <td><p>The framebuffer to update.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">width</span></td>
-        <td><p>The new width of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">height</span></td>
-        <td><p>The new height of the framebuffer.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

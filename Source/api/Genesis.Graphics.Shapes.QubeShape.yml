@@ -8,6 +8,7 @@ items:
   - Genesis.Graphics.Shapes.QubeShape.#ctor
   - Genesis.Graphics.Shapes.QubeShape.GetNormals
   - Genesis.Graphics.Shapes.QubeShape.GetShape
+  - Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
   langs:
   - csharp
   - vb
@@ -84,6 +85,30 @@ items:
       description: An array of floating-point values representing the normals of the cube faces.
     content.vb: Public Function GetNormals() As Single()
   overload: Genesis.Graphics.Shapes.QubeShape.GetNormals*
+- uid: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  commentId: M:Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  id: GetTextureCoordinates
+  parent: Genesis.Graphics.Shapes.QubeShape
+  langs:
+  - csharp
+  - vb
+  name: GetTextureCoordinates()
+  nameWithType: QubeShape.GetTextureCoordinates()
+  fullName: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Gets the texture coordinates defining the cube shape.
+  remarks: The texture coordinates are defined in groups of two for each vertex.
+  example: []
+  syntax:
+    content: public float[] GetTextureCoordinates()
+    return:
+      type: System.Single[]
+      description: An array of floating-point values representing the texture coordinates of the cube.
+    content.vb: Public Function GetTextureCoordinates() As Single()
+  overload: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates*
 - uid: Genesis.Graphics.Shapes.QubeShape.#ctor
   commentId: M:Genesis.Graphics.Shapes.QubeShape.#ctor
   id: '#ctor'
@@ -455,6 +480,13 @@ references:
   name: GetNormals
   nameWithType: QubeShape.GetNormals
   fullName: Genesis.Graphics.Shapes.QubeShape.GetNormals
+- uid: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates*
+  commentId: Overload:Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  isExternal: true
+  href: Genesis.Graphics.Shapes.QubeShape.html#Genesis_Graphics_Shapes_QubeShape_GetTextureCoordinates
+  name: GetTextureCoordinates
+  nameWithType: QubeShape.GetTextureCoordinates
+  fullName: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
 - uid: Genesis.Graphics.Shapes.QubeShape.#ctor*
   commentId: Overload:Genesis.Graphics.Shapes.QubeShape.#ctor
   isExternal: true

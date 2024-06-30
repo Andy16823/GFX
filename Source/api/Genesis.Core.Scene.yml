@@ -61,6 +61,7 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - Genesis.Core.Scene2D
   - Genesis.Core.Scene3D
   inheritedMembers:
   - System.Object.ToString

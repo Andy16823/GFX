@@ -1652,6 +1652,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Genesis.Core.GameElements.GridCell.Equal(Genesis.Core.GameElements.GridCell)">
+            <summary>
+            Checks if the given grid cell is equal to the current
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
         <member name="T:Genesis.Core.GameElements.Obstacle">
             <summary>
             Represents an obstacle in the navigation grid.
@@ -1665,6 +1672,11 @@
         <member name="F:Genesis.Core.GameElements.Obstacle.cellY">
             <summary>
             The row index of the cell where the obstacle is located.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.GameElements.NavMesh">
+            <summary>
+            Represents a navigation mesh for pathfinding.
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.NavMesh.Location">
@@ -2884,6 +2896,160 @@
             </summary>
             <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
         </member>
+        <member name="T:Genesis.Core.Light2D">
+            <summary>
+            Represents a 2D light element in the game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light2D.LightShape">
+            <summary>
+            Gets or sets the shape of the light.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Light2D.LightColor">
+            <summary>
+            Gets or sets the color of the light.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Light2D.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Light2D"/> class with the specified location and size.
+            </summary>
+            <param name="location">The location of the light.</param>
+            <param name="size">The size of the light.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Light2D"/> class with the specified name, location, size, and texture.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The location of the light.</param>
+            <param name="size">The size of the light.</param>
+            <param name="texture">The texture of the light.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Destroys the light element.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetColor">
+            <summary>
+            Gets the color of the light.
+            </summary>
+            <returns>The color of the light as a vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetVericies">
+            <summary>
+            Gets the vertices for the light shape.
+            </summary>
+            <returns>An array of vertices defining the shape of the light.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.GetTexCoords">
+            <summary>
+            Gets the texture coordinates for the light shape.
+            </summary>
+            <returns>An array of texture coordinates corresponding to the light shape.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light2D.TestLight2D">
+            <summary>
+            Tests the Light2D functionality.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Scene2D">
+            <summary>
+            Represents a 2D scene in the game.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.RenderLightmap">
+            <summary>
+            Gets or sets a value indicating whether to render the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.Framebuffer">
+            <summary>
+            Gets or sets the framebuffer used for rendering the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.LightmapIntensity">
+            <summary>
+            Gets or sets the intensity of the lightmap.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Scene2D.Lights">
+            <summary>
+            Gets the list of 2D lights in the scene.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Scene2D.BeforeLightmapPreparation">
+            <summary>
+            Event that occurs before lightmap preparation.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Scene2D.AfterLightmapRendering">
+            <summary>
+            Event that occurs after lightmap rendering.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Scene2D"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)">
+            <summary>
+            Adds a 2D light to the scene.
+            </summary>
+            <param name="light">The light to add.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.RemoveLight(Genesis.Core.Game,Genesis.Core.Light2D)">
+            <summary>
+            Removes a 2D light from the scene.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="light">The light to remove.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the scene.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Called when the scene needs to update.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Called when the scene needs to render.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device.</param>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Called when the scene is being destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
         <member name="T:Genesis.Core.Scene3D">
             <summary>
             Represents a 3D scene for rendering, including lighting and an optional skybox.
@@ -3473,11 +3639,12 @@
             <param name="point2">The target point.</param>
             <returns>The pitch angle in degrees.</returns>
         </member>
-        <member name="M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color)">
+        <member name="M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color,System.Boolean)">
             <summary>
             Converts a System.Drawing.Color into a float array.
             </summary>
             <param name="color">The color.</param>
+            <param name="alpha">Checks if the alpha gets converted</param>
             <returns>The float array representing the color.</returns>
         </member>
         <member name="M:Genesis.Core.Utils.GetRandomColor">
@@ -3600,6 +3767,15 @@
             </summary>
             <param name="eulerAngles">The Euler angles representing rotation.</param>
             <returns>The forward direction vector.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            Interpolates between an start and end color
+            </summary>
+            <param name="startColor">The color start</param>
+            <param name="endColor">The color end</param>
+            <param name="t">the time</param>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>
@@ -4842,6 +5018,23 @@
             <param name="color"></param>
             <param name="borderWidth"></param>
         </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)">
+            <summary>
+            Renders an filled circle
+            </summary>
+            <param name="center">Center of the circle</param>
+            <param name="radius">Radius of the circle</param>
+            <param name="color">Color of the circle</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)">
+            <summary>
+            Draws an circle
+            </summary>
+            <param name="center">Location for the circle</param>
+            <param name="radius">Radius for the circle</param>
+            <param name="color">Color for the circle</param>
+            <param name="borderWidth">Border width for the circle</param>
+        </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)">
             <summary>
             Draws a line
@@ -5276,541 +5469,6 @@
             <param name="element">The element to dispose</param>
         </member>
         <member name="M:Genesis.Graphics.RenderDevice.GLRenderer.DisposeParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
-            <summary>
-            Disposes the particle emitter
-            </summary>
-            <param name="emitter"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)">
-            <summary>
-            Generates a texture
-            </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.ClassicGL.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)">
-            <summary>
-            Generates a texture
-            </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
-        </member>
-        <member name="F:Genesis.Graphics.RenderDevice.OldGLRenderer.rot">
-            <summary>
-            Struct for the viewport
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Init">
-            <summary>
-            Initial the moderngl render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)">
-            <summary>
-            Creates an buffer for the shape
-            </summary>
-            <param name="shape"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.CreateDynamicVertexBuffer(System.Single[])">
-            <summary>
-            Creates a dynamic vertex buffer in OpenGL and initializes it with the specified vertices.
-            Dynamic buffers are suitable for frequently changing data, like dynamic vertex updates.
-            </summary>
-            <param name="verticies">The array of vertices to be stored in the buffer.</param>
-            <returns>The OpenGL handle (ID) of the created dynamic vertex buffer.</returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.CreateStaticVertexBuffer(System.Single[])">
-            <summary>
-            Creates a static vertex buffer in OpenGL and initializes it with the specified vertices.
-            Static buffers are suitable for infrequently changing data, like static geometry.
-            </summary>
-            <param name="verticies">The array of vertices to be stored in the buffer.</param>
-            <returns>The OpenGL handle (ID) of the created static vertex buffer.</returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.BuildFramebuffer(System.Int32,System.Int32)">
-            <summary>
-            Creates a new framebuffer
-            </summary>
-            <param name="width"></param>
-            <param name="height"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)">
-            <summary>
-            Loads a shader program
-            </summary>
-            <param name="name"></param>
-            <param name="program"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)">
-            <summary>
-            Initial the sprite
-            </summary>
-            <param name="sprite"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitGameElement(Genesis.Core.GameElement)">
-            <summary>
-            Inits the game element
-            </summary>
-            <param name="element"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitElement3D(Genesis.Core.GameElements.Element3D)">
-            <summary>
-            Inital an 3D element
-            </summary>
-            <param name="element"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitElement3DTexture(System.String)">
-            <summary>
-            Initial the diffuse texture for the 3D model
-            If the texture file isnt existing an empty 1x1 texture get created
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitElement3DNormalMap(System.String)">
-            <summary>
-            Inital the normal map for an 3D element
-            if the normal map file isnt existing an empty 1x1 normal map get created
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Begin">
-            <summary>
-            Beginn to draw
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color)">
-            <summary>
-            Draws a rect with no fill
-            </summary>
-            <param name="rect"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawRect(Genesis.Math.Rect,System.Drawing.Color,System.Single)">
-            <summary>
-            Draws a rect with no fill
-            </summary>
-            <param name="rect"></param>
-            <param name="color"></param>
-            <param name="borderWidth"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)">
-            <summary>
-            Draws a line
-            </summary>
-            <param name="from"></param>
-            <param name="to"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawGameElement(Genesis.Core.GameElement)">
-            <summary>
-            Renders the GameElement
-            </summary>
-            <param name="element"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
-            <summary>
-            Draws a sprite
-            </summary>
-            <param name="location"></param>
-            <param name="size"></param>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)">
-            <summary>
-            Draws a sprite
-            </summary>
-            <param name="location"></param>
-            <param name="size"></param>
-            <param name="texture"></param>
-            <param name="texCoords"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture)">
-            <summary>
-            Renders a sprite
-            </summary>
-            <param name="location"></param>
-            <param name="size"></param>
-            <param name="color"></param>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSprite(Genesis.Core.GameElements.Sprite)">
-            <summary>
-            Renders a sprite with modern gl
-            </summary>
-            <param name="sprite"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)">
-            <summary>
-            Draws a Sprite
-            </summary>
-            <param name="location"></param>
-            <param name="size"></param>
-            <param name="color"></param>
-            <param name="texture"></param>
-            <param name="texCoords"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)">
-            <summary>
-            Draws the vector array
-            </summary>
-            <param name="vecs"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.End">
-            <summary>
-            Ends the rendering
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.FillRect(Genesis.Math.Rect,System.Drawing.Color)">
-            <summary>
-            Fills a rectangle with the given color. 
-            LegacyGL
-            </summary>
-            <param name="rect"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.LoadTexture(Genesis.Graphics.Texture)">
-            <summary>
-            Loads a texture into the vram
-            </summary>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.LoadFont(Genesis.Graphics.Font)">
-            <summary>
-            Loads the the font
-            </summary>
-            <param name="font"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.ModelViewMatrix">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.PopMatrix">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.ProjectionMatrix">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.PushMatrix">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Rotate(System.Single,Genesis.Math.Vec3)">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Viewport(System.Single,System.Single,System.Single,System.Single)">
-            <summary>
-            Sets the viewport for the rendering
-            </summary>
-            <param name="x"></param>
-            <param name="y"></param>
-            <param name="width"></param>
-            <param name="height"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.SetCamera(Genesis.Graphics.Camera)">
-            <summary>
-            Set the Projection and view matrices
-            </summary>
-            <param name="camera"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.SetUIMatrices">
-            <summary>
-            Sets the mvp matrix for ui rendering
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Translate(Genesis.Math.Vec3)">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Translate(System.Single,System.Single,System.Single)">
-            <summary>
-            This function will not be used within this render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.TextureRepeatT">
-            <summary>
-            Sets the texture repeatT
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.TextureRepeatS">
-            <summary>
-            Sets the texture repeatS
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.TextureClampT">
-            <summary>
-            Sets the texture clampT
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.TextureClampS">
-            <summary>
-            Sets the texture clampS
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)">
-            <summary>
-            Draws a texture
-            </summary>
-            <param name="location"></param>
-            <param name="size"></param>
-            <param name="repeateX"></param>
-            <param name="repeatY"></param>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawString(System.String,Genesis.Math.Vec3,System.Single,Genesis.Graphics.Font,System.Drawing.Color)">
-            <summary>
-            Renders a String
-            </summary>
-            <param name="text"></param>
-            <param name="location"></param>
-            <param name="fontSize"></param>
-            <param name="font"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawString(System.String,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Font,System.Drawing.Color)">
-            <summary>
-            Renders a string
-            </summary>
-            <param name="text"></param>
-            <param name="location"></param>
-            <param name="fontSize"></param>
-            <param name="spacing"></param>
-            <param name="font"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.RenderGlyphe(Genesis.Math.Vec3,Genesis.Graphics.Font,System.Single,System.Char,System.Drawing.Color)">
-            <summary>
-            Renders a glyphe from a string
-            </summary>
-            <param name="location"></param>
-            <param name="font"></param>
-            <param name="size"></param>
-            <param name="character"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)">
-            <summary>
-            Draws a mesh
-            </summary>
-            <param name="mesh"></param>
-            <param name="color"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetError">
-            <summary>
-            Returns an error code from the render device
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetHandle">
-            <summary>
-            Returns the handle of the render target
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)">
-            <summary>
-            Generates a texture
-            </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)">
-            <summary>
-            Generates a texture
-            </summary>
-            <param name="gl"></param>
-            <param name="texture"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetColorArray(System.Drawing.Color)">
-            <summary>
-            Returns an color array
-            </summary>
-            <param name="color"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetSpriteColor(Genesis.Core.GameElements.Sprite)">
-            <summary>
-            Returns an array with the color data for a sprite
-            </summary>
-            <param name="sprite"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetSpriteTexCords(Genesis.Core.GameElements.Sprite)">
-            <summary>
-            Returns the texture coords from the given sprite
-            </summary>
-            <param name="sprite"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetTexCords(Genesis.Graphics.TexCoords)">
-            <summary>
-            Gets an array with the texture coords
-            </summary>
-            <param name="cords"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetSpriteBaseTexCoords">
-            <summary>
-            Returns the basic shape tex coords for a sprite
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawElement3D(Genesis.Core.GameElements.Element3D)">
-            <summary>
-            Draws an 3D element within the scene
-            </summary>
-            <param name="element"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetShaderProgram(Genesis.Graphics.ShaderProgram)">
-            <summary>
-            Returns the shader programm with the typeof the refProgram. 
-            Returns null is no program found
-            </summary>
-            <param name="refProgram"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeElement3D(Genesis.Core.GameElements.Element3D)">
-            <summary>
-            Dispose the 3D element
-            </summary>
-            <param name="element"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.GetRenderer">
-            <summary>
-            Returns the native renderer
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.SetLightSource(Genesis.Core.Light)">
-            <summary>
-            Sets an Lightsource
-            </summary>
-            <param name="light"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawSkyBox(Genesis.Core.GameElements.Skybox)">
-            <summary>
-            Draws an skybox
-            </summary>
-            <param name="skybox"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.PrepareSceneRendering(Genesis.Core.Scene)">
-            <summary>
-            Prepares the renderer for scene rendering
-            </summary>
-            <param name="scene">The scene to render</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.FinishSceneRendering(Genesis.Core.Scene)">
-            <summary>
-            Finish the scene rendering
-            </summary>
-            <param name="scene">The scene which getted rendered</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
-            <summary>
-            Prepares the renderer for the canvas rendering
-            </summary>
-            <param name="scene">The scene from the canvas</param>
-            <param name="canvas">The canvas to render</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)">
-            <summary>
-            Finish the canvas rendering
-            </summary>
-            <param name="scene">The scene from the canvas</param>
-            <param name="canvas">The canvas to render</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawFramebuffer(System.Int32)">
-            <summary>
-            Draws an framebuffer
-            </summary>
-            <param name="textureID">The framebuffer texture id</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.SetFramebuffer(Genesis.Graphics.Framebuffer)">
-            <summary>
-            Sets an framebuffer as active render target
-            </summary>
-            <param name="framebuffer">The framebuffer for the rendering</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.SetFramebuffer(System.Int32)">
-            <summary>
-            Sets an framebuffer as active render target
-            </summary>
-            <param name="framebuffer">The framebuffer id for the rendering</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.RenderQube(Genesis.Core.GameElements.Qube)">
-            <summary>
-            Renders an qube
-            </summary>
-            <param name="qube">The qube to render</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitTerrain3D(Genesis.Core.GameElements.Terrain3D)">
-            <summary>
-            Init an terrain3d
-            </summary>
-            <param name="terrain">The terrain to initalize</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.RenderTerrain3D(Genesis.Core.GameElements.Terrain3D)">
-            <summary>
-            Renders an terrain3D
-            </summary>
-            <param name="terrain">The terrain to render</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.InitParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
-            <summary>
-            Initial the particle emitter
-            </summary>
-            <param name="emitter">The emitter to initalize</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
-            <summary>
-            Draws the particle emitter
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.Dispose">
-            <summary>
-            Disposes the render device
-            </summary>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)">
-            <summary>
-            Deletes the shader program
-            </summary>
-            <param name="program"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeTexture(Genesis.Graphics.Texture)">
-            <summary>
-            Disposes the texture
-            </summary>
-            <param name="texture"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeFont(Genesis.Graphics.Font)">
-            <summary>
-            Disposes the font
-            </summary>
-            <param name="font"></param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeElement(Genesis.Core.GameElement)">
-            <summary>
-            Disposes the element data from the gpu
-            </summary>
-            <param name="element">The element to dispose</param>
-        </member>
-        <member name="M:Genesis.Graphics.RenderDevice.OldGLRenderer.DisposeParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)">
             <summary>
             Disposes the particle emitter
             </summary>

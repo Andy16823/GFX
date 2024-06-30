@@ -13,7 +13,9 @@ items:
   - Genesis.Core.Input
   - Genesis.Core.Layer
   - Genesis.Core.Light
+  - Genesis.Core.Light2D
   - Genesis.Core.Scene
+  - Genesis.Core.Scene2D
   - Genesis.Core.Scene3D
   - Genesis.Core.SceneEventHandler
   - Genesis.Core.SceneSizeEvenHandler
@@ -99,6 +101,21 @@ references:
   name: Light
   nameWithType: Light
   fullName: Genesis.Core.Light
+- uid: Genesis.Core.Light2D
+  commentId: T:Genesis.Core.Light2D
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Light2D.html
+  name: Light2D
+  nameWithType: Light2D
+  fullName: Genesis.Core.Light2D
+- uid: Genesis.Core.Scene2D
+  commentId: T:Genesis.Core.Scene2D
+  isExternal: true
+  href: Genesis.Core.Scene2D.html
+  name: Scene2D
+  nameWithType: Scene2D
+  fullName: Genesis.Core.Scene2D
 - uid: Genesis.Core.Scene3D
   commentId: T:Genesis.Core.Scene3D
   isExternal: true

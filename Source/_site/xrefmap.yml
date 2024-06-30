@@ -862,6 +862,123 @@ references:
   commentId: N:Genesis.Core.Behaviors.Physics2D
   fullName: Genesis.Core.Behaviors.Physics2D
   nameWithType: Genesis.Core.Behaviors.Physics2D
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+  name: BoxTrigger2D
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+  nameWithType: BoxTrigger2D
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
+  name: BoxTrigger2D()
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D()
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New()
+  nameWithType: BoxTrigger2D.BoxTrigger2D()
+  nameWithType.vb: BoxTrigger2D.New()
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor*
+  name: BoxTrigger2D
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New
+  nameWithType: BoxTrigger2D.BoxTrigger2D
+  nameWithType.vb: BoxTrigger2D.New
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
+  name: CreateCollider(PhysicHandler, Vec3)
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_CreateCollider_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3)
+  nameWithType: BoxTrigger2D.CreateCollider(PhysicHandler, Vec3)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider*
+  name: CreateCollider
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_CreateCollider_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider
+  nameWithType: BoxTrigger2D.CreateCollider
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject()
+  nameWithType: BoxTrigger2D.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
+  nameWithType: BoxTrigger2D.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject(Of T)()
+  nameWithType: BoxTrigger2D.GetPhysicsObject<T>()
+  nameWithType.vb: BoxTrigger2D.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger2D.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy
+  nameWithType: BoxTrigger2D.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger2D.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit
+  nameWithType: BoxTrigger2D.OnInit
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger2D.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender
+  nameWithType: BoxTrigger2D.OnRender
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger2D.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate
+  nameWithType: BoxTrigger2D.OnUpdate
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  name: Trigger
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_Trigger
+  commentId: P:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  nameWithType: BoxTrigger2D.Trigger
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger*
+  name: Trigger
+  href: api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_Trigger_
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  nameWithType: BoxTrigger2D.Trigger
 - uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
   name: BufferedSpriteCollider
   href: api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html
@@ -1645,6 +1762,123 @@ references:
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
   fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider.RigidBody
   nameWithType: BoxCollider.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger
+  name: BoxTrigger
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html
+  commentId: T:Genesis.Core.Behaviors.Physics3D.BoxTrigger
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger
+  nameWithType: BoxTrigger
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor
+  name: BoxTrigger()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger__ctor
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.BoxTrigger()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.New()
+  nameWithType: BoxTrigger.BoxTrigger()
+  nameWithType.vb: BoxTrigger.New()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor*
+  name: BoxTrigger
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger__ctor_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.BoxTrigger
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.New
+  nameWithType: BoxTrigger.BoxTrigger
+  nameWithType.vb: BoxTrigger.New
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
+  name: CreateCollider(PhysicHandler, Vec3)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_CreateCollider_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3)
+  nameWithType: BoxTrigger.CreateCollider(PhysicHandler, Vec3)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider*
+  name: CreateCollider
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_CreateCollider_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateCollider
+  nameWithType: BoxTrigger.CreateCollider
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject
+  name: GetPhysicsObject()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_GetPhysicsObject
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject()
+  nameWithType: BoxTrigger.GetPhysicsObject()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject*
+  name: GetPhysicsObject
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_GetPhysicsObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject
+  nameWithType: BoxTrigger.GetPhysicsObject
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject``1
+  name: GetPhysicsObject<T>()
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_GetPhysicsObject__1
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject``1
+  name.vb: GetPhysicsObject(Of T)()
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject<T>()
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GetPhysicsObject(Of T)()
+  nameWithType: BoxTrigger.GetPhysicsObject<T>()
+  nameWithType.vb: BoxTrigger.GetPhysicsObject(Of T)()
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject
+  name: GhostObject
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_GhostObject
+  commentId: P:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject
+  nameWithType: BoxTrigger.GhostObject
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject*
+  name: GhostObject
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_GhostObject_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.GhostObject
+  nameWithType: BoxTrigger.GhostObject
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnDestroy(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger.OnDestroy(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnDestroy_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnDestroy
+  nameWithType: BoxTrigger.OnDestroy
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnInit(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger.OnInit(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit*
+  name: OnInit
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnInit_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnInit
+  nameWithType: BoxTrigger.OnInit
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnRender(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger.OnRender(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnRender_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnRender
+  nameWithType: BoxTrigger.OnRender
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  name: OnUpdate(Game, GameElement)
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  nameWithType: BoxTrigger.OnUpdate(Game, GameElement)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_OnUpdate_
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.OnUpdate
+  nameWithType: BoxTrigger.OnUpdate
 - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   name: CapsuleCollider
   href: api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html
@@ -1812,13 +2046,13 @@ references:
   nameWithType.vb: ConvexHullBehavior.New
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   name: Collide(Scene, Game, RigidBody)
-  href: api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
   commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
   nameWithType: ConvexHullBehavior.Collide(Scene, Game, RigidBody)
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide*
   name: Collide
-  href: api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_Collide_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_Collide_
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide
   fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.Collide
   nameWithType: ConvexHullBehavior.Collide
@@ -1956,13 +2190,13 @@ references:
   nameWithType.vb: QubeConvexHull.New
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   name: Collide(Scene, Game, RigidBody)
-  href: api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html#Genesis_Core_Behaviors_Physics3D_QubeConvexHull_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html#Genesis_Core_Behaviors_Physics3D_QubeConvexHull_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
   commentId: M:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
   nameWithType: QubeConvexHull.Collide(Scene, Game, RigidBody)
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide*
   name: Collide
-  href: api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html#Genesis_Core_Behaviors_Physics3D_QubeConvexHull_Collide_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html#Genesis_Core_Behaviors_Physics3D_QubeConvexHull_Collide_
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide
   fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.Collide
   nameWithType: QubeConvexHull.Collide
@@ -2241,13 +2475,13 @@ references:
   nameWithType.vb: StaticMeshBehavior.New
 - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   name: Collide(Scene, Game, RigidBody)
-  href: api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html#Genesis_Core_Behaviors_Physics3D_StaticMeshBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html#Genesis_Core_Behaviors_Physics3D_StaticMeshBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
   commentId: M:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   fullName: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
   nameWithType: StaticMeshBehavior.Collide(Scene, Game, RigidBody)
 - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide*
   name: Collide
-  href: api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html#Genesis_Core_Behaviors_Physics3D_StaticMeshBehavior_Collide_
+  href: obj/api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html#Genesis_Core_Behaviors_Physics3D_StaticMeshBehavior_Collide_
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide
   fullName: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.Collide
   nameWithType: StaticMeshBehavior.Collide
@@ -2737,6 +2971,18 @@ references:
   commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
   fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
   nameWithType: ThirdpersonCharacterController.RunSpeed
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  name: SetInput(Vec3)
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_SetInput_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
+  nameWithType: ThirdpersonCharacterController.SetInput(Vec3)
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput*
+  name: SetInput
+  href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_SetInput_
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput
+  nameWithType: ThirdpersonCharacterController.SetInput
 - uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Stance
   name: Stance
   href: api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Stance
@@ -2869,6 +3115,21 @@ references:
   commentId: Overload:Genesis.Core.Game.FPS
   fullName: Genesis.Core.Game.FPS
   nameWithType: Game.FPS
+- uid: Genesis.Core.Game.FindScene(System.String)
+  name: FindScene(string)
+  href: api/Genesis.Core.Game.html#Genesis_Core_Game_FindScene_System_String_
+  commentId: M:Genesis.Core.Game.FindScene(System.String)
+  name.vb: FindScene(String)
+  fullName: Genesis.Core.Game.FindScene(string)
+  fullName.vb: Genesis.Core.Game.FindScene(String)
+  nameWithType: Game.FindScene(string)
+  nameWithType.vb: Game.FindScene(String)
+- uid: Genesis.Core.Game.FindScene*
+  name: FindScene
+  href: api/Genesis.Core.Game.html#Genesis_Core_Game_FindScene_
+  commentId: Overload:Genesis.Core.Game.FindScene
+  fullName: Genesis.Core.Game.FindScene
+  nameWithType: Game.FindScene
 - uid: Genesis.Core.Game.GetElementCenterScreenLocation2D(Genesis.Core.GameElement)
   name: GetElementCenterScreenLocation2D(GameElement)
   href: api/Genesis.Core.Game.html#Genesis_Core_Game_GetElementCenterScreenLocation2D_Genesis_Core_GameElement_
@@ -2929,6 +3190,12 @@ references:
   commentId: Overload:Genesis.Core.Game.LastFrame
   fullName: Genesis.Core.Game.LastFrame
   nameWithType: Game.LastFrame
+- uid: Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  name: LoadScene(Scene)
+  href: api/Genesis.Core.Game.html#Genesis_Core_Game_LoadScene_Genesis_Core_Scene_
+  commentId: M:Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  fullName: Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
+  nameWithType: Game.LoadScene(Scene)
 - uid: Genesis.Core.Game.LoadScene(System.String)
   name: LoadScene(string)
   href: api/Genesis.Core.Game.html#Genesis_Core_Game_LoadScene_System_String_
@@ -3457,6 +3724,18 @@ references:
   commentId: Overload:Genesis.Core.GameElements.BufferedSprite.Init
   fullName: Genesis.Core.GameElements.BufferedSprite.Init
   nameWithType: BufferedSprite.Init
+- uid: Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)
+  nameWithType: BufferedSprite.OnDestroy(Game)
+- uid: Genesis.Core.GameElements.BufferedSprite.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_OnDestroy_
+  commentId: Overload:Genesis.Core.GameElements.BufferedSprite.OnDestroy
+  fullName: Genesis.Core.GameElements.BufferedSprite.OnDestroy
+  nameWithType: BufferedSprite.OnDestroy
 - uid: Genesis.Core.GameElements.BufferedSprite.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   name: OnRender(Game, IRenderDevice)
   href: api/Genesis.Core.GameElements.BufferedSprite.html#Genesis_Core_GameElements_BufferedSprite_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
@@ -3778,6 +4057,15 @@ references:
   fullName.vb: Genesis.Core.GameElements.Empty.New()
   nameWithType: Empty.Empty()
   nameWithType.vb: Empty.New()
+- uid: Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)
+  name: Empty(string, Vec3)
+  href: api/Genesis.Core.GameElements.Empty.html#Genesis_Core_GameElements_Empty__ctor_System_String_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.GameElements.Empty.#ctor(System.String,Genesis.Math.Vec3)
+  name.vb: New(String, Vec3)
+  fullName: Genesis.Core.GameElements.Empty.Empty(string, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Core.GameElements.Empty.New(String, Genesis.Math.Vec3)
+  nameWithType: Empty.Empty(string, Vec3)
+  nameWithType.vb: Empty.New(String, Vec3)
 - uid: Genesis.Core.GameElements.Empty.#ctor*
   name: Empty
   href: api/Genesis.Core.GameElements.Empty.html#Genesis_Core_GameElements_Empty__ctor_
@@ -4474,6 +4762,30 @@ references:
   commentId: Overload:Genesis.Core.GameElements.Qube.Init
   fullName: Genesis.Core.GameElements.Qube.Init
   nameWithType: Qube.Init
+- uid: Genesis.Core.GameElements.Qube.Material
+  name: Material
+  href: api/Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_Material
+  commentId: P:Genesis.Core.GameElements.Qube.Material
+  fullName: Genesis.Core.GameElements.Qube.Material
+  nameWithType: Qube.Material
+- uid: Genesis.Core.GameElements.Qube.Material*
+  name: Material
+  href: api/Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_Material_
+  commentId: Overload:Genesis.Core.GameElements.Qube.Material
+  fullName: Genesis.Core.GameElements.Qube.Material
+  nameWithType: Qube.Material
+- uid: Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
+  nameWithType: Qube.OnDestroy(Game)
+- uid: Genesis.Core.GameElements.Qube.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_OnDestroy_
+  commentId: Overload:Genesis.Core.GameElements.Qube.OnDestroy
+  fullName: Genesis.Core.GameElements.Qube.OnDestroy
+  nameWithType: Qube.OnDestroy
 - uid: Genesis.Core.GameElements.Qube.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   name: OnRender(Game, IRenderDevice)
   href: api/Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
@@ -6037,6 +6349,15 @@ references:
   fullName.vb: Genesis.Core.Light.New(String, Genesis.Math.Vec3)
   nameWithType: Light.Light(string, Vec3)
   nameWithType.vb: Light.New(String, Vec3)
+- uid: Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)
+  name: Light(string, Vec3, float)
+  href: api/Genesis.Core.Light.html#Genesis_Core_Light__ctor_System_String_Genesis_Math_Vec3_System_Single_
+  commentId: M:Genesis.Core.Light.#ctor(System.String,Genesis.Math.Vec3,System.Single)
+  name.vb: New(String, Vec3, Single)
+  fullName: Genesis.Core.Light.Light(string, Genesis.Math.Vec3, float)
+  fullName.vb: Genesis.Core.Light.New(String, Genesis.Math.Vec3, Single)
+  nameWithType: Light.Light(string, Vec3, float)
+  nameWithType.vb: Light.New(String, Vec3, Single)
 - uid: Genesis.Core.Light.#ctor*
   name: Light
   href: api/Genesis.Core.Light.html#Genesis_Core_Light__ctor_
@@ -6094,6 +6415,147 @@ references:
   commentId: Overload:Genesis.Core.Light.LightColor
   fullName: Genesis.Core.Light.LightColor
   nameWithType: Light.LightColor
+- uid: Genesis.Core.Light2D
+  name: Light2D
+  href: api/Genesis.Core.Light2D.html
+  commentId: T:Genesis.Core.Light2D
+  fullName: Genesis.Core.Light2D
+  nameWithType: Light2D
+- uid: Genesis.Core.Light2D.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  name: Light2D(Vec3, Vec3)
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D__ctor_Genesis_Math_Vec3_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Light2D.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  name.vb: New(Vec3, Vec3)
+  fullName: Genesis.Core.Light2D.Light2D(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Core.Light2D.New(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  nameWithType: Light2D.Light2D(Vec3, Vec3)
+  nameWithType.vb: Light2D.New(Vec3, Vec3)
+- uid: Genesis.Core.Light2D.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name: Light2D(string, Vec3, Vec3, Texture)
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D__ctor_System_String_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Core.Light2D.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name.vb: New(String, Vec3, Vec3, Texture)
+  fullName: Genesis.Core.Light2D.Light2D(string, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  fullName.vb: Genesis.Core.Light2D.New(String, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  nameWithType: Light2D.Light2D(string, Vec3, Vec3, Texture)
+  nameWithType.vb: Light2D.New(String, Vec3, Vec3, Texture)
+- uid: Genesis.Core.Light2D.#ctor*
+  name: Light2D
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D__ctor_
+  commentId: Overload:Genesis.Core.Light2D.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Light2D.Light2D
+  fullName.vb: Genesis.Core.Light2D.New
+  nameWithType: Light2D.Light2D
+  nameWithType.vb: Light2D.New
+- uid: Genesis.Core.Light2D.GetColor
+  name: GetColor()
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetColor
+  commentId: M:Genesis.Core.Light2D.GetColor
+  fullName: Genesis.Core.Light2D.GetColor()
+  nameWithType: Light2D.GetColor()
+- uid: Genesis.Core.Light2D.GetColor*
+  name: GetColor
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetColor_
+  commentId: Overload:Genesis.Core.Light2D.GetColor
+  fullName: Genesis.Core.Light2D.GetColor
+  nameWithType: Light2D.GetColor
+- uid: Genesis.Core.Light2D.GetTexCoords
+  name: GetTexCoords()
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetTexCoords
+  commentId: M:Genesis.Core.Light2D.GetTexCoords
+  fullName: Genesis.Core.Light2D.GetTexCoords()
+  nameWithType: Light2D.GetTexCoords()
+- uid: Genesis.Core.Light2D.GetTexCoords*
+  name: GetTexCoords
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetTexCoords_
+  commentId: Overload:Genesis.Core.Light2D.GetTexCoords
+  fullName: Genesis.Core.Light2D.GetTexCoords
+  nameWithType: Light2D.GetTexCoords
+- uid: Genesis.Core.Light2D.GetVericies
+  name: GetVericies()
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetVericies
+  commentId: M:Genesis.Core.Light2D.GetVericies
+  fullName: Genesis.Core.Light2D.GetVericies()
+  nameWithType: Light2D.GetVericies()
+- uid: Genesis.Core.Light2D.GetVericies*
+  name: GetVericies
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_GetVericies_
+  commentId: Overload:Genesis.Core.Light2D.GetVericies
+  fullName: Genesis.Core.Light2D.GetVericies
+  nameWithType: Light2D.GetVericies
+- uid: Genesis.Core.Light2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: Init(Game, IRenderDevice)
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.Light2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.Light2D.Init(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Light2D.Init(Game, IRenderDevice)
+- uid: Genesis.Core.Light2D.Init*
+  name: Init
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_Init_
+  commentId: Overload:Genesis.Core.Light2D.Init
+  fullName: Genesis.Core.Light2D.Init
+  nameWithType: Light2D.Init
+- uid: Genesis.Core.Light2D.LightColor
+  name: LightColor
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_LightColor
+  commentId: P:Genesis.Core.Light2D.LightColor
+  fullName: Genesis.Core.Light2D.LightColor
+  nameWithType: Light2D.LightColor
+- uid: Genesis.Core.Light2D.LightColor*
+  name: LightColor
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_LightColor_
+  commentId: Overload:Genesis.Core.Light2D.LightColor
+  fullName: Genesis.Core.Light2D.LightColor
+  nameWithType: Light2D.LightColor
+- uid: Genesis.Core.Light2D.LightShape
+  name: LightShape
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_LightShape
+  commentId: P:Genesis.Core.Light2D.LightShape
+  fullName: Genesis.Core.Light2D.LightShape
+  nameWithType: Light2D.LightShape
+- uid: Genesis.Core.Light2D.LightShape*
+  name: LightShape
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_LightShape_
+  commentId: Overload:Genesis.Core.Light2D.LightShape
+  fullName: Genesis.Core.Light2D.LightShape
+  nameWithType: Light2D.LightShape
+- uid: Genesis.Core.Light2D.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.Light2D.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.Light2D.OnDestroy(Genesis.Core.Game)
+  nameWithType: Light2D.OnDestroy(Game)
+- uid: Genesis.Core.Light2D.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_OnDestroy_
+  commentId: Overload:Genesis.Core.Light2D.OnDestroy
+  fullName: Genesis.Core.Light2D.OnDestroy
+  nameWithType: Light2D.OnDestroy
+- uid: Genesis.Core.Light2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnRender(Game, IRenderDevice)
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.Light2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.Light2D.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Light2D.OnRender(Game, IRenderDevice)
+- uid: Genesis.Core.Light2D.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_OnRender_
+  commentId: Overload:Genesis.Core.Light2D.OnRender
+  fullName: Genesis.Core.Light2D.OnRender
+  nameWithType: Light2D.OnRender
+- uid: Genesis.Core.Light2D.TestLight2D
+  name: TestLight2D()
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_TestLight2D
+  commentId: M:Genesis.Core.Light2D.TestLight2D
+  fullName: Genesis.Core.Light2D.TestLight2D()
+  nameWithType: Light2D.TestLight2D()
+- uid: Genesis.Core.Light2D.TestLight2D*
+  name: TestLight2D
+  href: api/Genesis.Core.Light2D.html#Genesis_Core_Light2D_TestLight2D_
+  commentId: Overload:Genesis.Core.Light2D.TestLight2D
+  fullName: Genesis.Core.Light2D.TestLight2D
+  nameWithType: Light2D.TestLight2D
 - uid: Genesis.Core.Scene
   name: Scene
   href: api/Genesis.Core.Scene.html
@@ -6568,6 +7030,162 @@ references:
   commentId: Overload:Genesis.Core.Scene.ResizeScene
   fullName: Genesis.Core.Scene.ResizeScene
   nameWithType: Scene.ResizeScene
+- uid: Genesis.Core.Scene2D
+  name: Scene2D
+  href: api/Genesis.Core.Scene2D.html
+  commentId: T:Genesis.Core.Scene2D
+  fullName: Genesis.Core.Scene2D
+  nameWithType: Scene2D
+- uid: Genesis.Core.Scene2D.#ctor
+  name: Scene2D()
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D__ctor
+  commentId: M:Genesis.Core.Scene2D.#ctor
+  name.vb: New()
+  fullName: Genesis.Core.Scene2D.Scene2D()
+  fullName.vb: Genesis.Core.Scene2D.New()
+  nameWithType: Scene2D.Scene2D()
+  nameWithType.vb: Scene2D.New()
+- uid: Genesis.Core.Scene2D.#ctor*
+  name: Scene2D
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D__ctor_
+  commentId: Overload:Genesis.Core.Scene2D.#ctor
+  name.vb: New
+  fullName: Genesis.Core.Scene2D.Scene2D
+  fullName.vb: Genesis.Core.Scene2D.New
+  nameWithType: Scene2D.Scene2D
+  nameWithType.vb: Scene2D.New
+- uid: Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
+  name: AddLight(Light2D)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_AddLight_Genesis_Core_Light2D_
+  commentId: M:Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
+  fullName: Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
+  nameWithType: Scene2D.AddLight(Light2D)
+- uid: Genesis.Core.Scene2D.AddLight*
+  name: AddLight
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_AddLight_
+  commentId: Overload:Genesis.Core.Scene2D.AddLight
+  fullName: Genesis.Core.Scene2D.AddLight
+  nameWithType: Scene2D.AddLight
+- uid: Genesis.Core.Scene2D.AfterLightmapRendering
+  name: AfterLightmapRendering
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_AfterLightmapRendering
+  commentId: E:Genesis.Core.Scene2D.AfterLightmapRendering
+  fullName: Genesis.Core.Scene2D.AfterLightmapRendering
+  nameWithType: Scene2D.AfterLightmapRendering
+- uid: Genesis.Core.Scene2D.BeforeLightmapPreparation
+  name: BeforeLightmapPreparation
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_BeforeLightmapPreparation
+  commentId: E:Genesis.Core.Scene2D.BeforeLightmapPreparation
+  fullName: Genesis.Core.Scene2D.BeforeLightmapPreparation
+  nameWithType: Scene2D.BeforeLightmapPreparation
+- uid: Genesis.Core.Scene2D.Framebuffer
+  name: Framebuffer
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Framebuffer
+  commentId: P:Genesis.Core.Scene2D.Framebuffer
+  fullName: Genesis.Core.Scene2D.Framebuffer
+  nameWithType: Scene2D.Framebuffer
+- uid: Genesis.Core.Scene2D.Framebuffer*
+  name: Framebuffer
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Framebuffer_
+  commentId: Overload:Genesis.Core.Scene2D.Framebuffer
+  fullName: Genesis.Core.Scene2D.Framebuffer
+  nameWithType: Scene2D.Framebuffer
+- uid: Genesis.Core.Scene2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: Init(Game, IRenderDevice)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.Scene2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.Scene2D.Init(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Scene2D.Init(Game, IRenderDevice)
+- uid: Genesis.Core.Scene2D.Init*
+  name: Init
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Init_
+  commentId: Overload:Genesis.Core.Scene2D.Init
+  fullName: Genesis.Core.Scene2D.Init
+  nameWithType: Scene2D.Init
+- uid: Genesis.Core.Scene2D.LightmapIntensity
+  name: LightmapIntensity
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_LightmapIntensity
+  commentId: P:Genesis.Core.Scene2D.LightmapIntensity
+  fullName: Genesis.Core.Scene2D.LightmapIntensity
+  nameWithType: Scene2D.LightmapIntensity
+- uid: Genesis.Core.Scene2D.LightmapIntensity*
+  name: LightmapIntensity
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_LightmapIntensity_
+  commentId: Overload:Genesis.Core.Scene2D.LightmapIntensity
+  fullName: Genesis.Core.Scene2D.LightmapIntensity
+  nameWithType: Scene2D.LightmapIntensity
+- uid: Genesis.Core.Scene2D.Lights
+  name: Lights
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Lights
+  commentId: P:Genesis.Core.Scene2D.Lights
+  fullName: Genesis.Core.Scene2D.Lights
+  nameWithType: Scene2D.Lights
+- uid: Genesis.Core.Scene2D.Lights*
+  name: Lights
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_Lights_
+  commentId: Overload:Genesis.Core.Scene2D.Lights
+  fullName: Genesis.Core.Scene2D.Lights
+  nameWithType: Scene2D.Lights
+- uid: Genesis.Core.Scene2D.OnDestroy(Genesis.Core.Game)
+  name: OnDestroy(Game)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnDestroy_Genesis_Core_Game_
+  commentId: M:Genesis.Core.Scene2D.OnDestroy(Genesis.Core.Game)
+  fullName: Genesis.Core.Scene2D.OnDestroy(Genesis.Core.Game)
+  nameWithType: Scene2D.OnDestroy(Game)
+- uid: Genesis.Core.Scene2D.OnDestroy*
+  name: OnDestroy
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnDestroy_
+  commentId: Overload:Genesis.Core.Scene2D.OnDestroy
+  fullName: Genesis.Core.Scene2D.OnDestroy
+  nameWithType: Scene2D.OnDestroy
+- uid: Genesis.Core.Scene2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnRender(Game, IRenderDevice)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.Scene2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.Scene2D.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Scene2D.OnRender(Game, IRenderDevice)
+- uid: Genesis.Core.Scene2D.OnRender*
+  name: OnRender
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnRender_
+  commentId: Overload:Genesis.Core.Scene2D.OnRender
+  fullName: Genesis.Core.Scene2D.OnRender
+  nameWithType: Scene2D.OnRender
+- uid: Genesis.Core.Scene2D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  name: OnUpdate(Game, IRenderDevice)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnUpdate_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  commentId: M:Genesis.Core.Scene2D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  fullName: Genesis.Core.Scene2D.OnUpdate(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  nameWithType: Scene2D.OnUpdate(Game, IRenderDevice)
+- uid: Genesis.Core.Scene2D.OnUpdate*
+  name: OnUpdate
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_OnUpdate_
+  commentId: Overload:Genesis.Core.Scene2D.OnUpdate
+  fullName: Genesis.Core.Scene2D.OnUpdate
+  nameWithType: Scene2D.OnUpdate
+- uid: Genesis.Core.Scene2D.RemoveLight(Genesis.Core.Game,Genesis.Core.Light2D)
+  name: RemoveLight(Game, Light2D)
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_RemoveLight_Genesis_Core_Game_Genesis_Core_Light2D_
+  commentId: M:Genesis.Core.Scene2D.RemoveLight(Genesis.Core.Game,Genesis.Core.Light2D)
+  fullName: Genesis.Core.Scene2D.RemoveLight(Genesis.Core.Game, Genesis.Core.Light2D)
+  nameWithType: Scene2D.RemoveLight(Game, Light2D)
+- uid: Genesis.Core.Scene2D.RemoveLight*
+  name: RemoveLight
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_RemoveLight_
+  commentId: Overload:Genesis.Core.Scene2D.RemoveLight
+  fullName: Genesis.Core.Scene2D.RemoveLight
+  nameWithType: Scene2D.RemoveLight
+- uid: Genesis.Core.Scene2D.RenderLightmap
+  name: RenderLightmap
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_RenderLightmap
+  commentId: P:Genesis.Core.Scene2D.RenderLightmap
+  fullName: Genesis.Core.Scene2D.RenderLightmap
+  nameWithType: Scene2D.RenderLightmap
+- uid: Genesis.Core.Scene2D.RenderLightmap*
+  name: RenderLightmap
+  href: api/Genesis.Core.Scene2D.html#Genesis_Core_Scene2D_RenderLightmap_
+  commentId: Overload:Genesis.Core.Scene2D.RenderLightmap
+  fullName: Genesis.Core.Scene2D.RenderLightmap
+  nameWithType: Scene2D.RenderLightmap
 - uid: Genesis.Core.Scene3D
   name: Scene3D
   href: api/Genesis.Core.Scene3D.html
@@ -7378,6 +7996,30 @@ references:
   commentId: Overload:Genesis.Core.Utils.LookAt
   fullName: Genesis.Core.Utils.LookAt
   nameWithType: Utils.LookAt
+- uid: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  name: LookAtX(Camera, Vec3)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtX_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  fullName: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  nameWithType: Utils.LookAtX(Camera, Vec3)
+- uid: Genesis.Core.Utils.LookAtX*
+  name: LookAtX
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtX_
+  commentId: Overload:Genesis.Core.Utils.LookAtX
+  fullName: Genesis.Core.Utils.LookAtX
+  nameWithType: Utils.LookAtX
+- uid: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  name: LookAtY(Camera, Vec3)
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtY_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  commentId: M:Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  fullName: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  nameWithType: Utils.LookAtY(Camera, Vec3)
+- uid: Genesis.Core.Utils.LookAtY*
+  name: LookAtY
+  href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtY_
+  commentId: Overload:Genesis.Core.Utils.LookAtY
+  fullName: Genesis.Core.Utils.LookAtY
+  nameWithType: Utils.LookAtY
 - uid: Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single,System.Single)
   name: RayDirection(Camera, Viewport, float, float)
   href: api/Genesis.Core.Utils.html#Genesis_Core_Utils_RayDirection_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Single_System_Single_
@@ -8359,6 +9001,21 @@ references:
   commentId: Overload:Genesis.Graphics.Camera.Near
   fullName: Genesis.Graphics.Camera.Near
   nameWithType: Camera.Near
+- uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  name: ProjectMouse2D(Camera, Viewport, int, int)
+  href: api/Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  name.vb: ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, int, int)
+  fullName.vb: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
+  nameWithType: Camera.ProjectMouse2D(Camera, Viewport, int, int)
+  nameWithType.vb: Camera.ProjectMouse2D(Camera, Viewport, Integer, Integer)
+- uid: Genesis.Graphics.Camera.ProjectMouse2D*
+  name: ProjectMouse2D
+  href: api/Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_
+  commentId: Overload:Genesis.Graphics.Camera.ProjectMouse2D
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D
+  nameWithType: Camera.ProjectMouse2D
 - uid: Genesis.Graphics.Camera.Rotation
   name: Rotation
   href: api/Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Rotation
@@ -9196,6 +9853,18 @@ references:
   commentId: Overload:Genesis.Graphics.IRenderDevice.FinishCanvasRendering
   fullName: Genesis.Graphics.IRenderDevice.FinishCanvasRendering
   nameWithType: IRenderDevice.FinishCanvasRendering
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: FinishLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D*
+  name: FinishLightmap2D
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_
+  commentId: Overload:Genesis.Graphics.IRenderDevice.FinishLightmap2D
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D
+  nameWithType: IRenderDevice.FinishLightmap2D
 - uid: Genesis.Graphics.IRenderDevice.FinishSceneRendering(Genesis.Core.Scene)
   name: FinishSceneRendering(Scene)
   href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishSceneRendering_Genesis_Core_Scene_
@@ -9340,6 +10009,18 @@ references:
   commentId: Overload:Genesis.Graphics.IRenderDevice.PrepareCanvasRendering
   fullName: Genesis.Graphics.IRenderDevice.PrepareCanvasRendering
   nameWithType: IRenderDevice.PrepareCanvasRendering
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D*
+  name: PrepareLightmap2D
+  href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_
+  commentId: Overload:Genesis.Graphics.IRenderDevice.PrepareLightmap2D
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D
+  nameWithType: IRenderDevice.PrepareLightmap2D
 - uid: Genesis.Graphics.IRenderDevice.PrepareSceneRendering(Genesis.Core.Scene)
   name: PrepareSceneRendering(Scene)
   href: api/Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareSceneRendering_Genesis_Core_Scene_
@@ -9550,6 +10231,15 @@ references:
   fullName.vb: Genesis.Graphics.Material.New()
   nameWithType: Material.Material()
   nameWithType.vb: Material.New()
+- uid: Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)
+  name: Material(string, Color)
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material__ctor_System_String_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)
+  name.vb: New(String, Color)
+  fullName: Genesis.Graphics.Material.Material(string, System.Drawing.Color)
+  fullName.vb: Genesis.Graphics.Material.New(String, System.Drawing.Color)
+  nameWithType: Material.Material(string, Color)
+  nameWithType.vb: Material.New(String, Color)
 - uid: Genesis.Graphics.Material.#ctor*
   name: Material
   href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material__ctor_
@@ -9583,6 +10273,21 @@ references:
   commentId: Overload:Genesis.Graphics.Material.DiffuseTexture
   fullName: Genesis.Graphics.Material.DiffuseTexture
   nameWithType: Material.DiffuseTexture
+- uid: Genesis.Graphics.Material.LoadMaterial(System.String)
+  name: LoadMaterial(string)
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_LoadMaterial_System_String_
+  commentId: M:Genesis.Graphics.Material.LoadMaterial(System.String)
+  name.vb: LoadMaterial(String)
+  fullName: Genesis.Graphics.Material.LoadMaterial(string)
+  fullName.vb: Genesis.Graphics.Material.LoadMaterial(String)
+  nameWithType: Material.LoadMaterial(string)
+  nameWithType.vb: Material.LoadMaterial(String)
+- uid: Genesis.Graphics.Material.LoadMaterial*
+  name: LoadMaterial
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_LoadMaterial_
+  commentId: Overload:Genesis.Graphics.Material.LoadMaterial
+  fullName: Genesis.Graphics.Material.LoadMaterial
+  nameWithType: Material.LoadMaterial
 - uid: Genesis.Graphics.Material.Name
   name: Name
   href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Name
@@ -9631,6 +10336,33 @@ references:
   commentId: Overload:Genesis.Graphics.Material.Propeterys
   fullName: Genesis.Graphics.Material.Propeterys
   nameWithType: Material.Propeterys
+- uid: Genesis.Graphics.Material.SaveMaterial(System.String)
+  name: SaveMaterial(string)
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_SaveMaterial_System_String_
+  commentId: M:Genesis.Graphics.Material.SaveMaterial(System.String)
+  name.vb: SaveMaterial(String)
+  fullName: Genesis.Graphics.Material.SaveMaterial(string)
+  fullName.vb: Genesis.Graphics.Material.SaveMaterial(String)
+  nameWithType: Material.SaveMaterial(string)
+  nameWithType.vb: Material.SaveMaterial(String)
+- uid: Genesis.Graphics.Material.SaveMaterial*
+  name: SaveMaterial
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_SaveMaterial_
+  commentId: Overload:Genesis.Graphics.Material.SaveMaterial
+  fullName: Genesis.Graphics.Material.SaveMaterial
+  nameWithType: Material.SaveMaterial
+- uid: Genesis.Graphics.Material.Serialize
+  name: Serialize()
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Serialize
+  commentId: M:Genesis.Graphics.Material.Serialize
+  fullName: Genesis.Graphics.Material.Serialize()
+  nameWithType: Material.Serialize()
+- uid: Genesis.Graphics.Material.Serialize*
+  name: Serialize
+  href: api/Genesis.Graphics.Material.html#Genesis_Graphics_Material_Serialize_
+  commentId: Overload:Genesis.Graphics.Material.Serialize
+  fullName: Genesis.Graphics.Material.Serialize
+  nameWithType: Material.Serialize
 - uid: Genesis.Graphics.MaterialBuffer
   name: MaterialBuffer
   href: api/Genesis.Graphics.MaterialBuffer.html
@@ -9832,6 +10564,18 @@ references:
   commentId: Overload:Genesis.Graphics.PerspectiveCamera.Forward
   fullName: Genesis.Graphics.PerspectiveCamera.Forward
   nameWithType: PerspectiveCamera.Forward
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  name: LookAt(Vec3)
+  href: api/Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_LookAt_Genesis_Math_Vec3_
+  commentId: M:Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  nameWithType: PerspectiveCamera.LookAt(Vec3)
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt*
+  name: LookAt
+  href: api/Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_LookAt_
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.LookAt
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt
+  nameWithType: PerspectiveCamera.LookAt
 - uid: Genesis.Graphics.PerspectiveCamera.MoveBackward(System.Single)
   name: MoveBackward(float)
   href: api/Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveBackward_System_Single_
@@ -10414,6 +11158,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.FinishCanvasRendering
   fullName: Genesis.Graphics.RenderDevice.ClassicGL.FinishCanvasRendering
   nameWithType: ClassicGL.FinishCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: FinishLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: ClassicGL.FinishLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D*
+  name: FinishLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_FinishLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.FinishLightmap2D
+  nameWithType: ClassicGL.FinishLightmap2D
 - uid: Genesis.Graphics.RenderDevice.ClassicGL.FinishSceneRendering(Genesis.Core.Scene)
   name: FinishSceneRendering(Scene)
   href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_FinishSceneRendering_Genesis_Core_Scene_
@@ -10576,6 +11332,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.PrepareCanvasRendering
   fullName: Genesis.Graphics.RenderDevice.ClassicGL.PrepareCanvasRendering
   nameWithType: ClassicGL.PrepareCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: ClassicGL.PrepareLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D*
+  name: PrepareLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_PrepareLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.ClassicGL.PrepareLightmap2D
+  nameWithType: ClassicGL.PrepareLightmap2D
 - uid: Genesis.Graphics.RenderDevice.ClassicGL.PrepareSceneRendering(Genesis.Core.Scene)
   name: PrepareSceneRendering(Scene)
   href: api/Genesis.Graphics.RenderDevice.ClassicGL.html#Genesis_Graphics_RenderDevice_ClassicGL_PrepareSceneRendering_Genesis_Core_Scene_
@@ -10771,6 +11539,864 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.ClassicGL.Viewport
   fullName: Genesis.Graphics.RenderDevice.ClassicGL.Viewport
   nameWithType: ClassicGL.Viewport
+- uid: Genesis.Graphics.RenderDevice.Experimental
+  name: Experimental
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html
+  commentId: T:Genesis.Graphics.RenderDevice.Experimental
+  fullName: Genesis.Graphics.RenderDevice.Experimental
+  nameWithType: Experimental
+- uid: Genesis.Graphics.RenderDevice.Experimental.#ctor(System.IntPtr)
+  name: Experimental(IntPtr)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental__ctor_System_IntPtr_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.#ctor(System.IntPtr)
+  name.vb: New(IntPtr)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Experimental(System.IntPtr)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.New(System.IntPtr)
+  nameWithType: Experimental.Experimental(IntPtr)
+  nameWithType.vb: Experimental.New(IntPtr)
+- uid: Genesis.Graphics.RenderDevice.Experimental.#ctor*
+  name: Experimental
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental__ctor_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Experimental
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.New
+  nameWithType: Experimental.Experimental
+  nameWithType.vb: Experimental.New
+- uid: Genesis.Graphics.RenderDevice.Experimental.Begin
+  name: Begin()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Begin
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Begin
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Begin()
+  nameWithType: Experimental.Begin()
+- uid: Genesis.Graphics.RenderDevice.Experimental.Begin*
+  name: Begin
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Begin_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Begin
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Begin
+  nameWithType: Experimental.Begin
+- uid: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32)
+  name: BuildFramebuffer(int, int)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_BuildFramebuffer_System_Int32_System_Int32_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32)
+  name.vb: BuildFramebuffer(Integer, Integer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(int, int)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(Integer, Integer)
+  nameWithType: Experimental.BuildFramebuffer(int, int)
+  nameWithType.vb: Experimental.BuildFramebuffer(Integer, Integer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)
+  name: BuildFramebuffer(int, int, Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_BuildFramebuffer_System_Int32_System_Int32_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)
+  name.vb: BuildFramebuffer(Integer, Integer, Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(int, int, Genesis.Graphics.Texture)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(Integer, Integer, Genesis.Graphics.Texture)
+  nameWithType: Experimental.BuildFramebuffer(int, int, Texture)
+  nameWithType.vb: Experimental.BuildFramebuffer(Integer, Integer, Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32,System.Int32)
+  name: BuildFramebuffer(int, int, int)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_BuildFramebuffer_System_Int32_System_Int32_System_Int32_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(System.Int32,System.Int32,System.Int32)
+  name.vb: BuildFramebuffer(Integer, Integer, Integer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(int, int, int)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer(Integer, Integer, Integer)
+  nameWithType: Experimental.BuildFramebuffer(int, int, int)
+  nameWithType.vb: Experimental.BuildFramebuffer(Integer, Integer, Integer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer*
+  name: BuildFramebuffer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_BuildFramebuffer_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.BuildFramebuffer
+  nameWithType: Experimental.BuildFramebuffer
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer(System.Single[])
+  name: CreateDynamicVertexBuffer(float[])
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateDynamicVertexBuffer_System_Single___
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer(System.Single[])
+  name.vb: CreateDynamicVertexBuffer(Single())
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer(float[])
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer(Single())
+  nameWithType: Experimental.CreateDynamicVertexBuffer(float[])
+  nameWithType.vb: Experimental.CreateDynamicVertexBuffer(Single())
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer*
+  name: CreateDynamicVertexBuffer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateDynamicVertexBuffer_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateDynamicVertexBuffer
+  nameWithType: Experimental.CreateDynamicVertexBuffer
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateShader(System.String,Genesis.Graphics.ShaderProgram)
+  name: CreateShader(string, ShaderProgram)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateShader_System_String_Genesis_Graphics_ShaderProgram_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.CreateShader(System.String,Genesis.Graphics.ShaderProgram)
+  name.vb: CreateShader(String, ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateShader(string, Genesis.Graphics.ShaderProgram)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.CreateShader(String, Genesis.Graphics.ShaderProgram)
+  nameWithType: Experimental.CreateShader(string, ShaderProgram)
+  nameWithType.vb: Experimental.CreateShader(String, ShaderProgram)
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateShader*
+  name: CreateShader
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateShader_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.CreateShader
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateShader
+  nameWithType: Experimental.CreateShader
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer(System.Single[])
+  name: CreateStaticVertexBuffer(float[])
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateStaticVertexBuffer_System_Single___
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer(System.Single[])
+  name.vb: CreateStaticVertexBuffer(Single())
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer(float[])
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer(Single())
+  nameWithType: Experimental.CreateStaticVertexBuffer(float[])
+  nameWithType.vb: Experimental.CreateStaticVertexBuffer(Single())
+- uid: Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer*
+  name: CreateStaticVertexBuffer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_CreateStaticVertexBuffer_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.CreateStaticVertexBuffer
+  nameWithType: Experimental.CreateStaticVertexBuffer
+- uid: Genesis.Graphics.RenderDevice.Experimental.Dispose
+  name: Dispose()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Dispose
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Dispose
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Dispose()
+  nameWithType: Experimental.Dispose()
+- uid: Genesis.Graphics.RenderDevice.Experimental.Dispose*
+  name: Dispose
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Dispose_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Dispose
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Dispose
+  nameWithType: Experimental.Dispose
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeElement(Genesis.Core.GameElement)
+  name: DisposeElement(GameElement)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DisposeElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeElement(Genesis.Core.GameElement)
+  nameWithType: Experimental.DisposeElement(GameElement)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeElement*
+  name: DisposeElement
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeElement_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DisposeElement
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeElement
+  nameWithType: Experimental.DisposeElement
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D(Genesis.Core.GameElements.Element3D)
+  name: DisposeElement3D(Element3D)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeElement3D_Genesis_Core_GameElements_Element3D_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D(Genesis.Core.GameElements.Element3D)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D(Genesis.Core.GameElements.Element3D)
+  nameWithType: Experimental.DisposeElement3D(Element3D)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D*
+  name: DisposeElement3D
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeElement3D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeElement3D
+  nameWithType: Experimental.DisposeElement3D
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeFont(Genesis.Graphics.Font)
+  name: DisposeFont(Font)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeFont_Genesis_Graphics_Font_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DisposeFont(Genesis.Graphics.Font)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeFont(Genesis.Graphics.Font)
+  nameWithType: Experimental.DisposeFont(Font)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeFont*
+  name: DisposeFont
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeFont_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DisposeFont
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeFont
+  nameWithType: Experimental.DisposeFont
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeShader(Genesis.Graphics.ShaderProgram)
+  name: DisposeShader(ShaderProgram)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeShader_Genesis_Graphics_ShaderProgram_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DisposeShader(Genesis.Graphics.ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeShader(Genesis.Graphics.ShaderProgram)
+  nameWithType: Experimental.DisposeShader(ShaderProgram)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeShader*
+  name: DisposeShader
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeShader_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DisposeShader
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeShader
+  nameWithType: Experimental.DisposeShader
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeTexture(Genesis.Graphics.Texture)
+  name: DisposeTexture(Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeTexture_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DisposeTexture(Genesis.Graphics.Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeTexture(Genesis.Graphics.Texture)
+  nameWithType: Experimental.DisposeTexture(Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DisposeTexture*
+  name: DisposeTexture
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DisposeTexture_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DisposeTexture
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DisposeTexture
+  nameWithType: Experimental.DisposeTexture
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
+  name: DrawBufferedSprite(BufferedSprite)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawBufferedSprite_Genesis_Core_GameElements_BufferedSprite_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
+  nameWithType: Experimental.DrawBufferedSprite(BufferedSprite)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite*
+  name: DrawBufferedSprite
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawBufferedSprite_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawBufferedSprite
+  nameWithType: Experimental.DrawBufferedSprite
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawElement3D(Genesis.Core.GameElements.Element3D)
+  name: DrawElement3D(Element3D)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawElement3D_Genesis_Core_GameElements_Element3D_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawElement3D(Genesis.Core.GameElements.Element3D)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawElement3D(Genesis.Core.GameElements.Element3D)
+  nameWithType: Experimental.DrawElement3D(Element3D)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawElement3D*
+  name: DrawElement3D
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawElement3D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawElement3D
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawElement3D
+  nameWithType: Experimental.DrawElement3D
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawGameElement(Genesis.Core.GameElement)
+  name: DrawGameElement(GameElement)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawGameElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawGameElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawGameElement(Genesis.Core.GameElement)
+  nameWithType: Experimental.DrawGameElement(GameElement)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawGameElement*
+  name: DrawGameElement
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawGameElement_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawGameElement
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawGameElement
+  nameWithType: Experimental.DrawGameElement
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
+  name: DrawLine(Vec3, Vec3, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawLine_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawLine(Genesis.Math.Vec3, Genesis.Math.Vec3, System.Drawing.Color)
+  nameWithType: Experimental.DrawLine(Vec3, Vec3, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawLine*
+  name: DrawLine
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawLine_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawLine
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawLine
+  nameWithType: Experimental.DrawLine
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)
+  name: DrawMesh(Mesh, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawMesh_Genesis_Graphics_Mesh_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawMesh(Genesis.Graphics.Mesh, System.Drawing.Color)
+  nameWithType: Experimental.DrawMesh(Mesh, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawMesh*
+  name: DrawMesh
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawMesh_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawMesh
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawMesh
+  nameWithType: Experimental.DrawMesh
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  name: DrawParticleEmitter(ParticleEmitter)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawParticleEmitter_Genesis_Core_GameElements_ParticleEmitter_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter(Genesis.Core.GameElements.ParticleEmitter)
+  nameWithType: Experimental.DrawParticleEmitter(ParticleEmitter)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter*
+  name: DrawParticleEmitter
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawParticleEmitter_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawParticleEmitter
+  nameWithType: Experimental.DrawParticleEmitter
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
+  name: DrawRect(Rect, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawRect_Genesis_Math_Rect_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect, System.Drawing.Color)
+  nameWithType: Experimental.DrawRect(Rect, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect,System.Drawing.Color,System.Single)
+  name: DrawRect(Rect, Color, float)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawRect_Genesis_Math_Rect_System_Drawing_Color_System_Single_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect,System.Drawing.Color,System.Single)
+  name.vb: DrawRect(Rect, Color, Single)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect, System.Drawing.Color, float)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.DrawRect(Genesis.Math.Rect, System.Drawing.Color, Single)
+  nameWithType: Experimental.DrawRect(Rect, Color, float)
+  nameWithType.vb: Experimental.DrawRect(Rect, Color, Single)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawRect*
+  name: DrawRect
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawRect_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawRect
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawRect
+  nameWithType: Experimental.DrawRect
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox(Genesis.Core.GameElements.Skybox)
+  name: DrawSkyBox(Skybox)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSkyBox_Genesis_Core_GameElements_Skybox_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox(Genesis.Core.GameElements.Skybox)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox(Genesis.Core.GameElements.Skybox)
+  nameWithType: Experimental.DrawSkyBox(Skybox)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox*
+  name: DrawSkyBox
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSkyBox_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSkyBox
+  nameWithType: Experimental.DrawSkyBox
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Core.GameElements.Sprite)
+  name: DrawSprite(Sprite)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_Genesis_Core_GameElements_Sprite_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Core.GameElements.Sprite)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Core.GameElements.Sprite)
+  nameWithType: Experimental.DrawSprite(Sprite)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  name: DrawSprite(Vec3, Vec3, Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
+  nameWithType: Experimental.DrawSprite(Vec3, Vec3, Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)
+  name: DrawSprite(Vec3, Vec3, Texture, TexCoords)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Graphics_Texture_Genesis_Graphics_TexCoords_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture, Genesis.Graphics.TexCoords)
+  nameWithType: Experimental.DrawSprite(Vec3, Vec3, Texture, TexCoords)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture)
+  name: DrawSprite(Vec3, Vec3, Color, Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Drawing_Color_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3, Genesis.Math.Vec3, System.Drawing.Color, Genesis.Graphics.Texture)
+  nameWithType: Experimental.DrawSprite(Vec3, Vec3, Color, Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)
+  name: DrawSprite(Vec3, Vec3, Color, Texture, TexCoords)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Drawing_Color_Genesis_Graphics_Texture_Genesis_Graphics_TexCoords_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Graphics.Texture,Genesis.Graphics.TexCoords)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite(Genesis.Math.Vec3, Genesis.Math.Vec3, System.Drawing.Color, Genesis.Graphics.Texture, Genesis.Graphics.TexCoords)
+  nameWithType: Experimental.DrawSprite(Vec3, Vec3, Color, Texture, TexCoords)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawSprite*
+  name: DrawSprite
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawSprite_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawSprite
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawSprite
+  nameWithType: Experimental.DrawSprite
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawString(System.String,Genesis.Math.Vec3,System.Single,Genesis.Graphics.Font,System.Drawing.Color)
+  name: DrawString(string, Vec3, float, Font, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawString_System_String_Genesis_Math_Vec3_System_Single_Genesis_Graphics_Font_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawString(System.String,Genesis.Math.Vec3,System.Single,Genesis.Graphics.Font,System.Drawing.Color)
+  name.vb: DrawString(String, Vec3, Single, Font, Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawString(string, Genesis.Math.Vec3, float, Genesis.Graphics.Font, System.Drawing.Color)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.DrawString(String, Genesis.Math.Vec3, Single, Genesis.Graphics.Font, System.Drawing.Color)
+  nameWithType: Experimental.DrawString(string, Vec3, float, Font, Color)
+  nameWithType.vb: Experimental.DrawString(String, Vec3, Single, Font, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawString(System.String,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Font,System.Drawing.Color)
+  name: DrawString(string, Vec3, float, float, Font, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawString_System_String_Genesis_Math_Vec3_System_Single_System_Single_Genesis_Graphics_Font_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawString(System.String,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Font,System.Drawing.Color)
+  name.vb: DrawString(String, Vec3, Single, Single, Font, Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawString(string, Genesis.Math.Vec3, float, float, Genesis.Graphics.Font, System.Drawing.Color)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.DrawString(String, Genesis.Math.Vec3, Single, Single, Genesis.Graphics.Font, System.Drawing.Color)
+  nameWithType: Experimental.DrawString(string, Vec3, float, float, Font, Color)
+  nameWithType.vb: Experimental.DrawString(String, Vec3, Single, Single, Font, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawString*
+  name: DrawString
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawString_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawString
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawString
+  nameWithType: Experimental.DrawString
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)
+  name: DrawTexture(Vec3, Vec3, float, float, Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawTexture_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Single_System_Single_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)
+  name.vb: DrawTexture(Vec3, Vec3, Single, Single, Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawTexture(Genesis.Math.Vec3, Genesis.Math.Vec3, float, float, Genesis.Graphics.Texture)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.DrawTexture(Genesis.Math.Vec3, Genesis.Math.Vec3, Single, Single, Genesis.Graphics.Texture)
+  nameWithType: Experimental.DrawTexture(Vec3, Vec3, float, float, Texture)
+  nameWithType.vb: Experimental.DrawTexture(Vec3, Vec3, Single, Single, Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawTexture*
+  name: DrawTexture
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawTexture_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawTexture
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawTexture
+  nameWithType: Experimental.DrawTexture
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)
+  name: DrawVectors(Vec3[], Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawVectors_Genesis_Math_Vec3___System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)
+  name.vb: DrawVectors(Vec3(), Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawVectors(Genesis.Math.Vec3[], System.Drawing.Color)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.DrawVectors(Genesis.Math.Vec3(), System.Drawing.Color)
+  nameWithType: Experimental.DrawVectors(Vec3[], Color)
+  nameWithType.vb: Experimental.DrawVectors(Vec3(), Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.DrawVectors*
+  name: DrawVectors
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_DrawVectors_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.DrawVectors
+  fullName: Genesis.Graphics.RenderDevice.Experimental.DrawVectors
+  nameWithType: Experimental.DrawVectors
+- uid: Genesis.Graphics.RenderDevice.Experimental.End
+  name: End()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_End
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.End
+  fullName: Genesis.Graphics.RenderDevice.Experimental.End()
+  nameWithType: Experimental.End()
+- uid: Genesis.Graphics.RenderDevice.Experimental.End*
+  name: End
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_End_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.End
+  fullName: Genesis.Graphics.RenderDevice.Experimental.End
+  nameWithType: Experimental.End
+- uid: Genesis.Graphics.RenderDevice.Experimental.FillRect(Genesis.Math.Rect,System.Drawing.Color)
+  name: FillRect(Rect, Color)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FillRect_Genesis_Math_Rect_System_Drawing_Color_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.FillRect(Genesis.Math.Rect,System.Drawing.Color)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FillRect(Genesis.Math.Rect, System.Drawing.Color)
+  nameWithType: Experimental.FillRect(Rect, Color)
+- uid: Genesis.Graphics.RenderDevice.Experimental.FillRect*
+  name: FillRect
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FillRect_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.FillRect
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FillRect
+  nameWithType: Experimental.FillRect
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  name: FinishCanvasRendering(Scene, Canvas)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishCanvasRendering_Genesis_Core_Scene_Genesis_UI_Canvas_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering(Genesis.Core.Scene, Genesis.UI.Canvas)
+  nameWithType: Experimental.FinishCanvasRendering(Scene, Canvas)
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering*
+  name: FinishCanvasRendering
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishCanvasRendering_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishCanvasRendering
+  nameWithType: Experimental.FinishCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: FinishLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: Experimental.FinishLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D*
+  name: FinishLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishLightmap2D
+  nameWithType: Experimental.FinishLightmap2D
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering(Genesis.Core.Scene)
+  name: FinishSceneRendering(Scene)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishSceneRendering_Genesis_Core_Scene_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering(Genesis.Core.Scene)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering(Genesis.Core.Scene)
+  nameWithType: Experimental.FinishSceneRendering(Scene)
+- uid: Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering*
+  name: FinishSceneRendering
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_FinishSceneRendering_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering
+  fullName: Genesis.Graphics.RenderDevice.Experimental.FinishSceneRendering
+  nameWithType: Experimental.FinishSceneRendering
+- uid: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)
+  name: GenerateTexture(OpenGL, Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GenerateTexture_NetGL_OpenGL_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL, Genesis.Graphics.Texture)
+  nameWithType: Experimental.GenerateTexture(OpenGL, Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)
+  name: GenerateTexture(OpenGL, Bitmap)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GenerateTexture_NetGL_OpenGL_System_Drawing_Bitmap_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture(NetGL.OpenGL, System.Drawing.Bitmap)
+  nameWithType: Experimental.GenerateTexture(OpenGL, Bitmap)
+- uid: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture*
+  name: GenerateTexture
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GenerateTexture_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.GenerateTexture
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GenerateTexture
+  nameWithType: Experimental.GenerateTexture
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetError
+  name: GetError()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetError
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GetError
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetError()
+  nameWithType: Experimental.GetError()
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetError*
+  name: GetError
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetError_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.GetError
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetError
+  nameWithType: Experimental.GetError
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetHandle
+  name: GetHandle()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetHandle
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GetHandle
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetHandle()
+  nameWithType: Experimental.GetHandle()
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetHandle*
+  name: GetHandle
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetHandle_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.GetHandle
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetHandle
+  nameWithType: Experimental.GetHandle
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetRenderer
+  name: GetRenderer()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetRenderer
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GetRenderer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetRenderer()
+  nameWithType: Experimental.GetRenderer()
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetRenderer*
+  name: GetRenderer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetRenderer_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.GetRenderer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetRenderer
+  nameWithType: Experimental.GetRenderer
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram(Genesis.Graphics.ShaderProgram)
+  name: GetShaderProgram(ShaderProgram)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetShaderProgram_Genesis_Graphics_ShaderProgram_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram(Genesis.Graphics.ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram(Genesis.Graphics.ShaderProgram)
+  nameWithType: Experimental.GetShaderProgram(ShaderProgram)
+- uid: Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram*
+  name: GetShaderProgram
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_GetShaderProgram_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram
+  fullName: Genesis.Graphics.RenderDevice.Experimental.GetShaderProgram
+  nameWithType: Experimental.GetShaderProgram
+- uid: Genesis.Graphics.RenderDevice.Experimental.Init
+  name: Init()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Init
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Init
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Init()
+  nameWithType: Experimental.Init()
+- uid: Genesis.Graphics.RenderDevice.Experimental.Init*
+  name: Init
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Init_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Init
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Init
+  nameWithType: Experimental.Init
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitElement3D(Genesis.Core.GameElements.Element3D)
+  name: InitElement3D(Element3D)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitElement3D_Genesis_Core_GameElements_Element3D_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.InitElement3D(Genesis.Core.GameElements.Element3D)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitElement3D(Genesis.Core.GameElements.Element3D)
+  nameWithType: Experimental.InitElement3D(Element3D)
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitElement3D*
+  name: InitElement3D
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitElement3D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.InitElement3D
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitElement3D
+  nameWithType: Experimental.InitElement3D
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitGameElement(Genesis.Core.GameElement)
+  name: InitGameElement(GameElement)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitGameElement_Genesis_Core_GameElement_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.InitGameElement(Genesis.Core.GameElement)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitGameElement(Genesis.Core.GameElement)
+  nameWithType: Experimental.InitGameElement(GameElement)
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitGameElement*
+  name: InitGameElement
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitGameElement_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.InitGameElement
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitGameElement
+  nameWithType: Experimental.InitGameElement
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitNormalMap(System.String)
+  name: InitNormalMap(string)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitNormalMap_System_String_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.InitNormalMap(System.String)
+  name.vb: InitNormalMap(String)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitNormalMap(string)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.InitNormalMap(String)
+  nameWithType: Experimental.InitNormalMap(string)
+  nameWithType.vb: Experimental.InitNormalMap(String)
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitNormalMap*
+  name: InitNormalMap
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitNormalMap_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.InitNormalMap
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitNormalMap
+  nameWithType: Experimental.InitNormalMap
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitSprite(Genesis.Core.GameElements.Sprite)
+  name: InitSprite(Sprite)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitSprite_Genesis_Core_GameElements_Sprite_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.InitSprite(Genesis.Core.GameElements.Sprite)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitSprite(Genesis.Core.GameElements.Sprite)
+  nameWithType: Experimental.InitSprite(Sprite)
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitSprite*
+  name: InitSprite
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitSprite_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.InitSprite
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitSprite
+  nameWithType: Experimental.InitSprite
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitTexture(System.String)
+  name: InitTexture(string)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitTexture_System_String_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.InitTexture(System.String)
+  name.vb: InitTexture(String)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitTexture(string)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.InitTexture(String)
+  nameWithType: Experimental.InitTexture(string)
+  nameWithType.vb: Experimental.InitTexture(String)
+- uid: Genesis.Graphics.RenderDevice.Experimental.InitTexture*
+  name: InitTexture
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_InitTexture_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.InitTexture
+  fullName: Genesis.Graphics.RenderDevice.Experimental.InitTexture
+  nameWithType: Experimental.InitTexture
+- uid: Genesis.Graphics.RenderDevice.Experimental.LoadFont(Genesis.Graphics.Font)
+  name: LoadFont(Font)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_LoadFont_Genesis_Graphics_Font_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.LoadFont(Genesis.Graphics.Font)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.LoadFont(Genesis.Graphics.Font)
+  nameWithType: Experimental.LoadFont(Font)
+- uid: Genesis.Graphics.RenderDevice.Experimental.LoadFont*
+  name: LoadFont
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_LoadFont_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.LoadFont
+  fullName: Genesis.Graphics.RenderDevice.Experimental.LoadFont
+  nameWithType: Experimental.LoadFont
+- uid: Genesis.Graphics.RenderDevice.Experimental.LoadTexture(Genesis.Graphics.Texture)
+  name: LoadTexture(Texture)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_LoadTexture_Genesis_Graphics_Texture_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.LoadTexture(Genesis.Graphics.Texture)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.LoadTexture(Genesis.Graphics.Texture)
+  nameWithType: Experimental.LoadTexture(Texture)
+- uid: Genesis.Graphics.RenderDevice.Experimental.LoadTexture*
+  name: LoadTexture
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_LoadTexture_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.LoadTexture
+  fullName: Genesis.Graphics.RenderDevice.Experimental.LoadTexture
+  nameWithType: Experimental.LoadTexture
+- uid: Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix
+  name: ModelViewMatrix()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_ModelViewMatrix
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix()
+  nameWithType: Experimental.ModelViewMatrix()
+- uid: Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix*
+  name: ModelViewMatrix
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_ModelViewMatrix_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.ModelViewMatrix
+  nameWithType: Experimental.ModelViewMatrix
+- uid: Genesis.Graphics.RenderDevice.Experimental.PopMatrix
+  name: PopMatrix()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PopMatrix
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.PopMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PopMatrix()
+  nameWithType: Experimental.PopMatrix()
+- uid: Genesis.Graphics.RenderDevice.Experimental.PopMatrix*
+  name: PopMatrix
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PopMatrix_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.PopMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PopMatrix
+  nameWithType: Experimental.PopMatrix
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  name: PrepareCanvasRendering(Scene, Canvas)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareCanvasRendering_Genesis_Core_Scene_Genesis_UI_Canvas_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering(Genesis.Core.Scene, Genesis.UI.Canvas)
+  nameWithType: Experimental.PrepareCanvasRendering(Scene, Canvas)
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering*
+  name: PrepareCanvasRendering
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareCanvasRendering_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareCanvasRendering
+  nameWithType: Experimental.PrepareCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: Experimental.PrepareLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D*
+  name: PrepareLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareLightmap2D
+  nameWithType: Experimental.PrepareLightmap2D
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering(Genesis.Core.Scene)
+  name: PrepareSceneRendering(Scene)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareSceneRendering_Genesis_Core_Scene_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering(Genesis.Core.Scene)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering(Genesis.Core.Scene)
+  nameWithType: Experimental.PrepareSceneRendering(Scene)
+- uid: Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering*
+  name: PrepareSceneRendering
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PrepareSceneRendering_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PrepareSceneRendering
+  nameWithType: Experimental.PrepareSceneRendering
+- uid: Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix
+  name: ProjectionMatrix()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_ProjectionMatrix
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix()
+  nameWithType: Experimental.ProjectionMatrix()
+- uid: Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix*
+  name: ProjectionMatrix
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_ProjectionMatrix_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.ProjectionMatrix
+  nameWithType: Experimental.ProjectionMatrix
+- uid: Genesis.Graphics.RenderDevice.Experimental.PushMatrix
+  name: PushMatrix()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PushMatrix
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.PushMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PushMatrix()
+  nameWithType: Experimental.PushMatrix()
+- uid: Genesis.Graphics.RenderDevice.Experimental.PushMatrix*
+  name: PushMatrix
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_PushMatrix_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.PushMatrix
+  fullName: Genesis.Graphics.RenderDevice.Experimental.PushMatrix
+  nameWithType: Experimental.PushMatrix
+- uid: Genesis.Graphics.RenderDevice.Experimental.Rotate(System.Single,Genesis.Math.Vec3)
+  name: Rotate(float, Vec3)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Rotate_System_Single_Genesis_Math_Vec3_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Rotate(System.Single,Genesis.Math.Vec3)
+  name.vb: Rotate(Single, Vec3)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Rotate(float, Genesis.Math.Vec3)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.Rotate(Single, Genesis.Math.Vec3)
+  nameWithType: Experimental.Rotate(float, Vec3)
+  nameWithType.vb: Experimental.Rotate(Single, Vec3)
+- uid: Genesis.Graphics.RenderDevice.Experimental.Rotate*
+  name: Rotate
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Rotate_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Rotate
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Rotate
+  nameWithType: Experimental.Rotate
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetCamera(Genesis.Graphics.Camera)
+  name: SetCamera(Camera)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetCamera_Genesis_Graphics_Camera_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.SetCamera(Genesis.Graphics.Camera)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetCamera(Genesis.Graphics.Camera)
+  nameWithType: Experimental.SetCamera(Camera)
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetCamera*
+  name: SetCamera
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetCamera_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.SetCamera
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetCamera
+  nameWithType: Experimental.SetCamera
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(Genesis.Graphics.Framebuffer)
+  name: SetFramebuffer(Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetFramebuffer_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(Genesis.Graphics.Framebuffer)
+  nameWithType: Experimental.SetFramebuffer(Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(System.Int32)
+  name: SetFramebuffer(int)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetFramebuffer_System_Int32_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(System.Int32)
+  name.vb: SetFramebuffer(Integer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(int)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer(Integer)
+  nameWithType: Experimental.SetFramebuffer(int)
+  nameWithType.vb: Experimental.SetFramebuffer(Integer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer*
+  name: SetFramebuffer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetFramebuffer_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetFramebuffer
+  nameWithType: Experimental.SetFramebuffer
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetLightSource(Genesis.Core.Light)
+  name: SetLightSource(Light)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetLightSource_Genesis_Core_Light_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.SetLightSource(Genesis.Core.Light)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetLightSource(Genesis.Core.Light)
+  nameWithType: Experimental.SetLightSource(Light)
+- uid: Genesis.Graphics.RenderDevice.Experimental.SetLightSource*
+  name: SetLightSource
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_SetLightSource_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.SetLightSource
+  fullName: Genesis.Graphics.RenderDevice.Experimental.SetLightSource
+  nameWithType: Experimental.SetLightSource
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureClampS
+  name: TextureClampS()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureClampS
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.TextureClampS
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureClampS()
+  nameWithType: Experimental.TextureClampS()
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureClampS*
+  name: TextureClampS
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureClampS_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.TextureClampS
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureClampS
+  nameWithType: Experimental.TextureClampS
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureClampT
+  name: TextureClampT()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureClampT
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.TextureClampT
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureClampT()
+  nameWithType: Experimental.TextureClampT()
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureClampT*
+  name: TextureClampT
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureClampT_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.TextureClampT
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureClampT
+  nameWithType: Experimental.TextureClampT
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS
+  name: TextureRepeatS()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureRepeatS
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS()
+  nameWithType: Experimental.TextureRepeatS()
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS*
+  name: TextureRepeatS
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureRepeatS_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatS
+  nameWithType: Experimental.TextureRepeatS
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT
+  name: TextureRepeatT()
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureRepeatT
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT()
+  nameWithType: Experimental.TextureRepeatT()
+- uid: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT*
+  name: TextureRepeatT
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_TextureRepeatT_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT
+  fullName: Genesis.Graphics.RenderDevice.Experimental.TextureRepeatT
+  nameWithType: Experimental.TextureRepeatT
+- uid: Genesis.Graphics.RenderDevice.Experimental.Translate(Genesis.Math.Vec3)
+  name: Translate(Vec3)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Translate_Genesis_Math_Vec3_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Translate(Genesis.Math.Vec3)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Translate(Genesis.Math.Vec3)
+  nameWithType: Experimental.Translate(Vec3)
+- uid: Genesis.Graphics.RenderDevice.Experimental.Translate(System.Single,System.Single,System.Single)
+  name: Translate(float, float, float)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Translate_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Translate(System.Single,System.Single,System.Single)
+  name.vb: Translate(Single, Single, Single)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Translate(float, float, float)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.Translate(Single, Single, Single)
+  nameWithType: Experimental.Translate(float, float, float)
+  nameWithType.vb: Experimental.Translate(Single, Single, Single)
+- uid: Genesis.Graphics.RenderDevice.Experimental.Translate*
+  name: Translate
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Translate_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Translate
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Translate
+  nameWithType: Experimental.Translate
+- uid: Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)
+  name: UpdateFramebufferSize(Framebuffer, int, int)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_UpdateFramebufferSize_Genesis_Graphics_Framebuffer_System_Int32_System_Int32_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)
+  name.vb: UpdateFramebufferSize(Framebuffer, Integer, Integer)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize(Genesis.Graphics.Framebuffer, int, int)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize(Genesis.Graphics.Framebuffer, Integer, Integer)
+  nameWithType: Experimental.UpdateFramebufferSize(Framebuffer, int, int)
+  nameWithType.vb: Experimental.UpdateFramebufferSize(Framebuffer, Integer, Integer)
+- uid: Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize*
+  name: UpdateFramebufferSize
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_UpdateFramebufferSize_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize
+  fullName: Genesis.Graphics.RenderDevice.Experimental.UpdateFramebufferSize
+  nameWithType: Experimental.UpdateFramebufferSize
+- uid: Genesis.Graphics.RenderDevice.Experimental.Viewport(System.Single,System.Single,System.Single,System.Single)
+  name: Viewport(float, float, float, float)
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Viewport_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Graphics.RenderDevice.Experimental.Viewport(System.Single,System.Single,System.Single,System.Single)
+  name.vb: Viewport(Single, Single, Single, Single)
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Viewport(float, float, float, float)
+  fullName.vb: Genesis.Graphics.RenderDevice.Experimental.Viewport(Single, Single, Single, Single)
+  nameWithType: Experimental.Viewport(float, float, float, float)
+  nameWithType.vb: Experimental.Viewport(Single, Single, Single, Single)
+- uid: Genesis.Graphics.RenderDevice.Experimental.Viewport*
+  name: Viewport
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_Viewport_
+  commentId: Overload:Genesis.Graphics.RenderDevice.Experimental.Viewport
+  fullName: Genesis.Graphics.RenderDevice.Experimental.Viewport
+  nameWithType: Experimental.Viewport
+- uid: Genesis.Graphics.RenderDevice.Experimental.sceneBuffer
+  name: sceneBuffer
+  href: api/Genesis.Graphics.RenderDevice.Experimental.html#Genesis_Graphics_RenderDevice_Experimental_sceneBuffer
+  commentId: F:Genesis.Graphics.RenderDevice.Experimental.sceneBuffer
+  fullName: Genesis.Graphics.RenderDevice.Experimental.sceneBuffer
+  nameWithType: Experimental.sceneBuffer
 - uid: Genesis.Graphics.RenderDevice.GLRenderer
   name: GLRenderer
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html
@@ -11197,6 +12823,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering
   nameWithType: GLRenderer.FinishCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: FinishLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: GLRenderer.FinishLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  name: FinishLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+  nameWithType: GLRenderer.FinishLightmap2D
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)
   name: FinishSceneRendering(Scene)
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishSceneRendering_Genesis_Core_Scene_
@@ -11428,6 +13066,18 @@ references:
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering
   nameWithType: GLRenderer.PrepareCanvasRendering
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  nameWithType: GLRenderer.PrepareLightmap2D(Scene, Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  name: PrepareLightmap2D
+  href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+  nameWithType: GLRenderer.PrepareLightmap2D
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)
   name: PrepareSceneRendering(Scene)
   href: api/Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareSceneRendering_Genesis_Core_Scene_
@@ -11935,6 +13585,54 @@ references:
   fullName.vb: Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.New
   nameWithType: DiffuseSolidShader.DiffuseSolidShader
   nameWithType.vb: DiffuseSolidShader.New
+- uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  name: FXScreenSpaceShadowShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  nameWithType: FXScreenSpaceShadowShader
+- uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.#ctor
+  name: FXScreenSpaceShadowShader()
+  href: api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html#Genesis_Graphics_Shaders_OpenGL_FXScreenSpaceShadowShader__ctor
+  commentId: M:Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.FXScreenSpaceShadowShader()
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.New()
+  nameWithType: FXScreenSpaceShadowShader.FXScreenSpaceShadowShader()
+  nameWithType.vb: FXScreenSpaceShadowShader.New()
+- uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.#ctor*
+  name: FXScreenSpaceShadowShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html#Genesis_Graphics_Shaders_OpenGL_FXScreenSpaceShadowShader__ctor_
+  commentId: Overload:Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.FXScreenSpaceShadowShader
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.New
+  nameWithType: FXScreenSpaceShadowShader.FXScreenSpaceShadowShader
+  nameWithType.vb: FXScreenSpaceShadowShader.New
+- uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  name: Light2DShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  nameWithType: Light2DShader
+- uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader.#ctor
+  name: Light2DShader()
+  href: api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html#Genesis_Graphics_Shaders_OpenGL_Light2DShader__ctor
+  commentId: M:Genesis.Graphics.Shaders.OpenGL.Light2DShader.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Shaders.OpenGL.Light2DShader.Light2DShader()
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.Light2DShader.New()
+  nameWithType: Light2DShader.Light2DShader()
+  nameWithType.vb: Light2DShader.New()
+- uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader.#ctor*
+  name: Light2DShader
+  href: api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html#Genesis_Graphics_Shaders_OpenGL_Light2DShader__ctor_
+  commentId: Overload:Genesis.Graphics.Shaders.OpenGL.Light2DShader.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Shaders.OpenGL.Light2DShader.Light2DShader
+  fullName.vb: Genesis.Graphics.Shaders.OpenGL.Light2DShader.New
+  nameWithType: Light2DShader.Light2DShader
+  nameWithType.vb: Light2DShader.New
 - uid: Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   name: MVPRectShader
   href: api/Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html
@@ -12265,6 +13963,42 @@ references:
   commentId: Overload:Genesis.Graphics.Shapes.GlypheShape.GetShape
   fullName: Genesis.Graphics.Shapes.GlypheShape.GetShape
   nameWithType: GlypheShape.GetShape
+- uid: Genesis.Graphics.Shapes.Light2DShape
+  name: Light2DShape
+  href: api/Genesis.Graphics.Shapes.Light2DShape.html
+  commentId: T:Genesis.Graphics.Shapes.Light2DShape
+  fullName: Genesis.Graphics.Shapes.Light2DShape
+  nameWithType: Light2DShape
+- uid: Genesis.Graphics.Shapes.Light2DShape.#ctor
+  name: Light2DShape()
+  href: api/Genesis.Graphics.Shapes.Light2DShape.html#Genesis_Graphics_Shapes_Light2DShape__ctor
+  commentId: M:Genesis.Graphics.Shapes.Light2DShape.#ctor
+  name.vb: New()
+  fullName: Genesis.Graphics.Shapes.Light2DShape.Light2DShape()
+  fullName.vb: Genesis.Graphics.Shapes.Light2DShape.New()
+  nameWithType: Light2DShape.Light2DShape()
+  nameWithType.vb: Light2DShape.New()
+- uid: Genesis.Graphics.Shapes.Light2DShape.#ctor*
+  name: Light2DShape
+  href: api/Genesis.Graphics.Shapes.Light2DShape.html#Genesis_Graphics_Shapes_Light2DShape__ctor_
+  commentId: Overload:Genesis.Graphics.Shapes.Light2DShape.#ctor
+  name.vb: New
+  fullName: Genesis.Graphics.Shapes.Light2DShape.Light2DShape
+  fullName.vb: Genesis.Graphics.Shapes.Light2DShape.New
+  nameWithType: Light2DShape.Light2DShape
+  nameWithType.vb: Light2DShape.New
+- uid: Genesis.Graphics.Shapes.Light2DShape.GetShape
+  name: GetShape()
+  href: api/Genesis.Graphics.Shapes.Light2DShape.html#Genesis_Graphics_Shapes_Light2DShape_GetShape
+  commentId: M:Genesis.Graphics.Shapes.Light2DShape.GetShape
+  fullName: Genesis.Graphics.Shapes.Light2DShape.GetShape()
+  nameWithType: Light2DShape.GetShape()
+- uid: Genesis.Graphics.Shapes.Light2DShape.GetShape*
+  name: GetShape
+  href: api/Genesis.Graphics.Shapes.Light2DShape.html#Genesis_Graphics_Shapes_Light2DShape_GetShape_
+  commentId: Overload:Genesis.Graphics.Shapes.Light2DShape.GetShape
+  fullName: Genesis.Graphics.Shapes.Light2DShape.GetShape
+  nameWithType: Light2DShape.GetShape
 - uid: Genesis.Graphics.Shapes.LineShape
   name: LineShape
   href: api/Genesis.Graphics.Shapes.LineShape.html
@@ -12385,6 +14119,18 @@ references:
   commentId: Overload:Genesis.Graphics.Shapes.QubeShape.GetShape
   fullName: Genesis.Graphics.Shapes.QubeShape.GetShape
   nameWithType: QubeShape.GetShape
+- uid: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  name: GetTextureCoordinates()
+  href: api/Genesis.Graphics.Shapes.QubeShape.html#Genesis_Graphics_Shapes_QubeShape_GetTextureCoordinates
+  commentId: M:Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  fullName: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates()
+  nameWithType: QubeShape.GetTextureCoordinates()
+- uid: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates*
+  name: GetTextureCoordinates
+  href: api/Genesis.Graphics.Shapes.QubeShape.html#Genesis_Graphics_Shapes_QubeShape_GetTextureCoordinates_
+  commentId: Overload:Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  fullName: Genesis.Graphics.Shapes.QubeShape.GetTextureCoordinates
+  nameWithType: QubeShape.GetTextureCoordinates
 - uid: Genesis.Graphics.Shapes.RectShape
   name: RectShape
   href: api/Genesis.Graphics.Shapes.RectShape.html
@@ -14179,9 +15925,15 @@ references:
   fullName.vb: Genesis.Physics.PhysicsBehavior.New
   nameWithType: PhysicsBehavior.PhysicsBehavior
   nameWithType.vb: PhysicsBehavior.New
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  name: Collide(Scene, Game, CollisionObject)
+  href: api/Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
 - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   name: Collide(Scene, Game, RigidBody)
-  href: api/Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
+  href: obj/api/Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_RigidBody_
   commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.RigidBody)
   fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.RigidBody)
   nameWithType: PhysicsBehavior.Collide(Scene, Game, RigidBody)

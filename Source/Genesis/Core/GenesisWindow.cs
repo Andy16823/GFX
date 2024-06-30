@@ -20,7 +20,11 @@ namespace Genesis.Core
         {
             this.Width = 800;
             this.Height = 600;
-            this.Game = new Game(new ClassicGL(Handle), new Viewport(this.ClientSize.Width, this.ClientSize.Height));
+
+            RenderSettings settings = new RenderSettings();
+            settings.gamma = 0.4f;
+
+            this.Game = new Game(new GLRenderer(Handle, settings), new Viewport(this.ClientSize.Width, this.ClientSize.Height));
             this.Game.OnUpdate += (game, renderer) =>
             {
                 this.Update(game);

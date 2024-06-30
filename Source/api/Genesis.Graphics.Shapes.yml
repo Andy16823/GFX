@@ -7,6 +7,7 @@ items:
   - Genesis.Graphics.Shapes.BufferedSpriteShape
   - Genesis.Graphics.Shapes.FrameShape
   - Genesis.Graphics.Shapes.GlypheShape
+  - Genesis.Graphics.Shapes.Light2DShape
   - Genesis.Graphics.Shapes.LineShape
   - Genesis.Graphics.Shapes.PlaneShape
   - Genesis.Graphics.Shapes.QubeShape
@@ -23,6 +24,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Graphics.Shapes.Light2DShape
+  commentId: T:Genesis.Graphics.Shapes.Light2DShape
+  isExternal: true
+  href: Genesis.Graphics.Shapes.Light2DShape.html
+  name: Light2DShape
+  nameWithType: Light2DShape
+  fullName: Genesis.Graphics.Shapes.Light2DShape
 - uid: Genesis.Graphics.Shapes.FrameShape
   commentId: T:Genesis.Graphics.Shapes.FrameShape
   isExternal: true

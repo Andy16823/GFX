@@ -5,6 +5,7 @@ items:
   id: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.BoxCollider
+  - Genesis.Core.Behaviors.Physics3D.BoxTrigger
   - Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull
@@ -27,6 +28,13 @@ references:
   name: BoxCollider
   nameWithType: BoxCollider
   fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger
+  commentId: T:Genesis.Core.Behaviors.Physics3D.BoxTrigger
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.BoxTrigger.html
+  name: BoxTrigger
+  nameWithType: BoxTrigger
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger
 - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   parent: Genesis.Core.Behaviors.Physics3D

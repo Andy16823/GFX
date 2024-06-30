@@ -40,6 +40,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.End
   - Genesis.Graphics.RenderDevice.GLRenderer.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.GLRenderer.GenerateTexture(NetGL.OpenGL,Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.GenerateTexture(NetGL.OpenGL,System.Drawing.Bitmap)
@@ -59,6 +60,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.ModelViewMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PopMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
+  - Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.GLRenderer.PrepareSceneRendering(Genesis.Core.Scene)
   - Genesis.Graphics.RenderDevice.GLRenderer.ProjectionMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PushMatrix
@@ -309,23 +311,22 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Builds a framebuffer with the specified width, height, and texture.
+  summary: Creates a new framebuffer
   example: []
   syntax:
     content: public Framebuffer BuildFramebuffer(int width, int height, Texture texture)
     parameters:
     - id: width
       type: System.Int32
-      description: The width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The height of the framebuffer.
+      description: ''
     - id: texture
       type: Genesis.Graphics.Texture
-      description: The texture associated with the framebuffer.
     return:
       type: Genesis.Graphics.Framebuffer
-      description: The built framebuffer.
+      description: ''
     content.vb: Public Function BuildFramebuffer(width As Integer, height As Integer, texture As Texture) As Framebuffer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*
   implements:
@@ -347,23 +348,22 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Builds a framebuffer with the specified width, height, and texture ID.
+  summary: Creates a new framebuffer
   example: []
   syntax:
     content: public Framebuffer BuildFramebuffer(int width, int height, int texture)
     parameters:
     - id: width
       type: System.Int32
-      description: The width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The height of the framebuffer.
+      description: ''
     - id: texture
       type: System.Int32
-      description: The ID of the texture associated with the framebuffer.
     return:
       type: Genesis.Graphics.Framebuffer
-      description: The built framebuffer.
+      description: ''
     content.vb: Public Function BuildFramebuffer(width As Integer, height As Integer, texture As Integer) As Framebuffer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer*
   implements:
@@ -385,20 +385,20 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Updates the size of the specified framebuffer.
+  summary: Update the framebuffer size
   example: []
   syntax:
     content: public void UpdateFramebufferSize(Framebuffer framebuffer, int width, int height)
     parameters:
     - id: framebuffer
       type: Genesis.Graphics.Framebuffer
-      description: The framebuffer to update.
+      description: ''
     - id: width
       type: System.Int32
-      description: The new width of the framebuffer.
+      description: ''
     - id: height
       type: System.Int32
-      description: The new height of the framebuffer.
+      description: ''
     content.vb: Public Sub UpdateFramebufferSize(framebuffer As Framebuffer, width As Integer, height As Integer)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize*
   implements:
@@ -420,17 +420,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: Loads a shader program
-  example: []
   syntax:
     content: public void LoadShader(string name, ShaderProgram program)
     parameters:
     - id: name
       type: System.String
-      description: ''
     - id: program
       type: Genesis.Graphics.ShaderProgram
-      description: ''
     content.vb: Public Sub LoadShader(name As String, program As ShaderProgram)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*
   nameWithType.vb: GLRenderer.LoadShader(String, ShaderProgram)
@@ -528,20 +524,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: >-
-    Initial the diffuse texture for the 3D model
-
-    If the texture file isnt existing an empty 1x1 texture get created
-  example: []
   syntax:
     content: public int InitElement3DTexture(string path)
     parameters:
     - id: path
       type: System.String
-      description: ''
     return:
       type: System.Int32
-      description: ''
     content.vb: Public Function InitElement3DTexture(path As String) As Integer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture*
   nameWithType.vb: GLRenderer.InitElement3DTexture(String)
@@ -561,20 +550,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
-  summary: >-
-    Inital the normal map for an 3D element
-
-    if the normal map file isnt existing an empty 1x1 normal map get created
-  example: []
   syntax:
     content: public int InitElement3DNormalMap(string path)
     parameters:
     - id: path
       type: System.String
-      description: ''
     return:
       type: System.Int32
-      description: ''
     content.vb: Public Function InitElement3DNormalMap(path As String) As Integer
   overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap*
   nameWithType.vb: GLRenderer.InitElement3DNormalMap(String)
@@ -2115,6 +2097,62 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*
   implements:
   - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Prepares the render for the 2D lightmap
+  example: []
+  syntax:
+    content: public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Finish the lightmap 2D rendering
+  example: []
+  syntax:
+    content: public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
 references:
 - uid: Genesis.Graphics.RenderDevice
   commentId: N:Genesis.Graphics.RenderDevice
@@ -5581,4 +5619,102 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D
+  nameWithType: GLRenderer.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D
+  nameWithType: GLRenderer.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
   - name: )

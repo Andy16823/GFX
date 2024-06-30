@@ -8,6 +8,7 @@ items:
   - Genesis.Graphics.PerspectiveCamera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)
   - Genesis.Graphics.PerspectiveCamera.CameraFront
   - Genesis.Graphics.PerspectiveCamera.Forward(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
   - Genesis.Graphics.PerspectiveCamera.MoveBackward(System.Single)
   - Genesis.Graphics.PerspectiveCamera.MoveDown(System.Single)
   - Genesis.Graphics.PerspectiveCamera.MoveForward(System.Single)
@@ -38,6 +39,7 @@ items:
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
   - Genesis.Graphics.Camera.GetRect
+  - Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   - Genesis.Graphics.Camera.Location
   - Genesis.Graphics.Camera.Size
   - Genesis.Graphics.Camera.Rotation
@@ -371,6 +373,30 @@ items:
   nameWithType.vb: PerspectiveCamera.RenderToTexture(Game, IRenderDevice, Integer, Vec3)
   fullName.vb: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, Integer, Genesis.Math.Vec3)
   name.vb: RenderToTexture(Game, IRenderDevice, Integer, Vec3)
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  id: LookAt(Genesis.Math.Vec3)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: LookAt(Vec3)
+  nameWithType: PerspectiveCamera.LookAt(Vec3)
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Adjusts the camera's orientation to look at a specified position.
+  example: []
+  syntax:
+    content: public void LookAt(Vec3 vec3)
+    parameters:
+    - id: vec3
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Sub LookAt(vec3 As Vec3)
+  overload: Genesis.Graphics.PerspectiveCamera.LookAt*
 references:
 - uid: Genesis.Graphics
   commentId: N:Genesis.Graphics
@@ -514,6 +540,75 @@ references:
     isExternal: true
     href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetRect
   - name: (
+  - name: )
+- uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  name: ProjectMouse2D(Camera, Viewport, int, int)
+  nameWithType: Camera.ProjectMouse2D(Camera, Viewport, int, int)
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, int, int)
+  nameWithType.vb: Camera.ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  fullName.vb: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
+  name.vb: ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+    name: ProjectMouse2D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+    name: ProjectMouse2D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Graphics.Camera.Location
   commentId: P:Genesis.Graphics.Camera.Location
@@ -970,3 +1065,10 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.LookAt
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_LookAt_Genesis_Math_Vec3_
+  name: LookAt
+  nameWithType: PerspectiveCamera.LookAt
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt

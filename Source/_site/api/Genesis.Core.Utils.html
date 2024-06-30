@@ -123,7 +123,13 @@
                             <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Light2D.html" title="Light2D" class="">Light2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene2D.html" title="Scene2D" class="">Scene2D</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
@@ -176,6 +182,9 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html" title="BoxTrigger2D" class="">BoxTrigger2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html" title="BufferedSpriteCollider" class="">BufferedSpriteCollider</a>
                           </li>
                           <li class="">
@@ -196,6 +205,9 @@
                         <ul class="nav level2">
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxTrigger.html" title="BoxTrigger" class="">BoxTrigger</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
@@ -396,6 +408,9 @@
                             <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.Experimental.html" title="Experimental" class="">Experimental</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -425,6 +440,12 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html" title="FXScreenSpaceShadowShader" class="">FXScreenSpaceShadowShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.Light2DShader.html" title="Light2DShader" class="">Light2DShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
@@ -468,6 +489,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Light2DShape.html" title="Light2DShape" class="">Light2DShape</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
@@ -1059,8 +1083,7 @@
 
   <a id="Genesis_Core_Utils_ConvertColor_" data-uid="Genesis.Core.Utils.ConvertColor*"></a>
   <h4 id="Genesis_Core_Utils_ConvertColor_System_Drawing_Color_" data-uid="Genesis.Core.Utils.ConvertColor(System.Drawing.Color)">ConvertColor(Color)</h4>
-  <div class="markdown level1 summary"><p>Converts a System.Drawing.Color into a float array.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1079,8 +1102,7 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
         <td><span class="parametername">color</span></td>
-        <td><p>The color.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1095,8 +1117,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[]</td>
-        <td><p>The float array representing the color.</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -2696,6 +2717,76 @@
         <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
         <td><span class="parametername">targetPosition</span></td>
         <td><p>The target position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_LookAtX_" data-uid="Genesis.Core.Utils.LookAtX*"></a>
+  <h4 id="Genesis_Core_Utils_LookAtX_Genesis_Graphics_Camera_Genesis_Math_Vec3_" data-uid="Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)">LookAtX(Camera, Vec3)</h4>
+  <div class="markdown level1 summary"><p>Adjusts the camera's rotation to look at a specified position along the X-axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LookAtX(Camera camera, Vec3 targetPosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Camera.html">Camera</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The camera to adjust.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">targetPosition</span></td>
+        <td><p>The position to look at.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Utils_LookAtY_" data-uid="Genesis.Core.Utils.LookAtY*"></a>
+  <h4 id="Genesis_Core_Utils_LookAtY_Genesis_Graphics_Camera_Genesis_Math_Vec3_" data-uid="Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)">LookAtY(Camera, Vec3)</h4>
+  <div class="markdown level1 summary"><p>Adjusts the camera's rotation to look at a specified position along the Y-axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LookAtY(Camera camera, Vec3 targetPosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Camera.html">Camera</a></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>The camera to adjust.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">targetPosition</span></td>
+        <td><p>The position to look at.</p>
 </td>
       </tr>
     </tbody>

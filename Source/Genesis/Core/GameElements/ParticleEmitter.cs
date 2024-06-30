@@ -2,6 +2,7 @@
 using Genesis.Math;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,7 +65,7 @@ namespace Genesis.Core.GameElements
         /// <summary>
         /// Gets or sets the color of the particle.
         /// </summary>
-        public Color ParticleColor { get; set; }
+        public float[] ParticleColor { get; set; }
     }
 
     /// <summary>
@@ -96,6 +97,9 @@ namespace Genesis.Core.GameElements
         /// Gets or sets the mask for the particles
         /// </summary>
         public Texture ParticleMask { get; set; }
+        public Color StartColor { get; set; }
+        public Color EndColor { get; set; }
+
 
         /// <summary>
         /// Gets or sets the list of particle definitions managed by the emitter.
@@ -180,6 +184,9 @@ namespace Genesis.Core.GameElements
         /// <param name="colorB">The maximum color of particles.</param>
         public void CreateParticles(int numPartikel, Vec3 particleSizeMax, Vec3 particleSizeMin, Vec3 minRotation, Vec3 maxRotation, int minDelay, int maxDelay, float minSpeed, float maxSpeed, float minRotationSpeed, float maxRotationSpeed, Color colorA, Color colorB)
         {
+            this.StartColor = colorA;
+            this.EndColor = colorB;
+
             Random random = new Random();
             for (int i = 0; i < numPartikel; i++)
             {
@@ -195,8 +202,8 @@ namespace Genesis.Core.GameElements
                 particleDeffinition.LastUpdate = Utils.GetCurrentTimeMillis();
                 particleDeffinition.Speed = (float)(random.NextDouble() * (maxSpeed - minSpeed) + maxSpeed);
                 particleDeffinition.RotationSpeed = (float)(random.NextDouble() * (maxRotationSpeed - minRotationSpeed) + maxRotationSpeed);
-                particleDeffinition.ParticleColor = Utils.GetRandomColor(colorA, colorB, i);
-
+                particleDeffinition.ParticleColor = Utils.ConvertColor(StartColor);
+                //particleDeffinition.ParticleColor = Utils.ConvertColor(Utils.GetRandomColor(colorA, colorB, i));
                 this.ParticleDeffinitions.Add(particleDeffinition);
             }
         }
@@ -210,11 +217,17 @@ namespace Genesis.Core.GameElements
         {
             if(now > particle.LastUpdate + particle.Delay)
             {
-                particle.Location +=  Vec3.Random(this.ParticleDirection, this.ParticleDirection2) * particle.Speed;
-                if(this.Location.Distance(particle.Location) > this.ParticleDistance)
+                particle.Location += Vec3.Random(this.ParticleDirection, this.ParticleDirection2) * particle.Speed;
+                var distance = this.Location.Distance(particle.Location);
+                float progress = distance / this.ParticleDistance;
+                var color = Utils.LerpColor(StartColor, EndColor, progress);
+                particle.ParticleColor = color;
+
+                if (distance > this.ParticleDistance)
                 {
                     particle.Location = this.Location + new Vec3(0, 0, 0);
                     particle.Rotation.Z += particle.RotationSpeed;
+                    particle.ParticleColor = Utils.ConvertColor(StartColor);
                 }
                 particle.LastUpdate = now;
             }
@@ -250,7 +263,7 @@ namespace Genesis.Core.GameElements
                 };
                 verticiesList.AddRange(verticies);
 
-                float[] ptColor = Utils.ConvertColor(item.ParticleColor);
+                float[] ptColor = item.ParticleColor;
                 float[] colors =
                 {
                     ptColor[0], ptColor[1], ptColor[2],

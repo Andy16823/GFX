@@ -12,6 +12,7 @@ items:
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
   - Genesis.Graphics.Camera.Near
+  - Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   - Genesis.Graphics.Camera.Rotation
   - Genesis.Graphics.Camera.Size
   - Genesis.Graphics.Camera.Type
@@ -155,6 +156,45 @@ items:
       description: A <xref href="Genesis.Math.Rect" data-throw-if-not-resolved="false"></xref> object representing the camera's view region.
     content.vb: Public Function GetRect() As Rect
   overload: Genesis.Graphics.Camera.GetRect*
+- uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  id: ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: ProjectMouse2D(Camera, Viewport, int, int)
+  nameWithType: Camera.ProjectMouse2D(Camera, Viewport, int, int)
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Projects the mouse coords into screen coords
+  example: []
+  syntax:
+    content: public static Vec3 ProjectMouse2D(Camera camera, Viewport viewport, int mouseX, int mouseY)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport
+    - id: mouseX
+      type: System.Int32
+      description: the screen x coordinate
+    - id: mouseY
+      type: System.Int32
+      description: the screen y coordinate
+    return:
+      type: Genesis.Math.Vec3
+      description: ''
+    content.vb: Public Shared Function ProjectMouse2D(camera As Camera, viewport As Viewport, mouseX As Integer, mouseY As Integer) As Vec3
+  overload: Genesis.Graphics.Camera.ProjectMouse2D*
+  nameWithType.vb: Camera.ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  fullName.vb: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
+  name.vb: ProjectMouse2D(Camera, Viewport, Integer, Integer)
 - uid: Genesis.Graphics.Camera.Location
   commentId: P:Genesis.Graphics.Camera.Location
   id: Location
@@ -690,6 +730,32 @@ references:
   name: GetRect
   nameWithType: Camera.GetRect
   fullName: Genesis.Graphics.Camera.GetRect
+- uid: Genesis.Graphics.Camera.ProjectMouse2D*
+  commentId: Overload:Genesis.Graphics.Camera.ProjectMouse2D
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  name: ProjectMouse2D
+  nameWithType: Camera.ProjectMouse2D
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Graphics.Camera.Location*
   commentId: Overload:Genesis.Graphics.Camera.Location
   isExternal: true

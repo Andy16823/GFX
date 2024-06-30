@@ -123,7 +123,13 @@
                             <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Light2D.html" title="Light2D" class="">Light2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene2D.html" title="Scene2D" class="">Scene2D</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
@@ -176,6 +182,9 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html" title="BoxTrigger2D" class="">BoxTrigger2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html" title="BufferedSpriteCollider" class="">BufferedSpriteCollider</a>
                           </li>
                           <li class="">
@@ -196,6 +205,9 @@
                         <ul class="nav level2">
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxTrigger.html" title="BoxTrigger" class="">BoxTrigger</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
@@ -396,6 +408,9 @@
                             <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.Experimental.html" title="Experimental" class="">Experimental</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -425,6 +440,12 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html" title="FXScreenSpaceShadowShader" class="">FXScreenSpaceShadowShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.Light2DShader.html" title="Light2DShader" class="">Light2DShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
@@ -468,6 +489,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Light2DShape.html" title="Light2DShape" class="">Light2DShape</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
@@ -624,9 +648,6 @@
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_">GameElement.OnDestroy(Game)</a>
-    </div>
     <div>
       <a class="xref" href="Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddBehavior__1___0_">GameElement.AddBehavior&lt;T&gt;(T)</a>
     </div>
@@ -999,6 +1020,36 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Genesis.Core.GameElement.html#Genesis_Core_GameElement_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_">GameElement.Init(Game, IRenderDevice)</a></div>
+
+
+  <a id="Genesis_Core_GameElements_BufferedSprite_OnDestroy_" data-uid="Genesis.Core.GameElements.BufferedSprite.OnDestroy*"></a>
+  <h4 id="Genesis_Core_GameElements_BufferedSprite_OnDestroy_Genesis_Core_Game_" data-uid="Genesis.Core.GameElements.BufferedSprite.OnDestroy(Genesis.Core.Game)">OnDestroy(Game)</h4>
+  <div class="markdown level1 summary"><p>Clears the GPU memory</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDestroy(Game game)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_">GameElement.OnDestroy(Game)</a></div>
 
 
   <a id="Genesis_Core_GameElements_BufferedSprite_OnRender_" data-uid="Genesis.Core.GameElements.BufferedSprite.OnRender*"></a>

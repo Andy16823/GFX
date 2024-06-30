@@ -123,7 +123,13 @@
                             <a href="Genesis.Core.Light.html" title="Light" class="">Light</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Core.Light2D.html" title="Light2D" class="">Light2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Scene.html" title="Scene" class="">Scene</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Scene2D.html" title="Scene2D" class="">Scene2D</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Scene3D.html" title="Scene3D" class="">Scene3D</a>
@@ -176,6 +182,9 @@
 
                         <ul class="nav level2">
                           <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html" title="BoxTrigger2D" class="">BoxTrigger2D</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html" title="BufferedSpriteCollider" class="">BufferedSpriteCollider</a>
                           </li>
                           <li class="">
@@ -196,6 +205,9 @@
                         <ul class="nav level2">
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.BoxCollider.html" title="BoxCollider" class="">BoxCollider</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Core.Behaviors.Physics3D.BoxTrigger.html" title="BoxTrigger" class="">BoxTrigger</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html" title="CapsuleCollider" class="">CapsuleCollider</a>
@@ -396,6 +408,9 @@
                             <a href="Genesis.Graphics.RenderDevice.ClassicGL.html" title="ClassicGL" class="">ClassicGL</a>
                           </li>
                           <li class="">
+                            <a href="Genesis.Graphics.RenderDevice.Experimental.html" title="Experimental" class="">Experimental</a>
+                          </li>
+                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -425,6 +440,12 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader.html" title="DiffuseSolidShader" class="">DiffuseSolidShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.html" title="FXScreenSpaceShadowShader" class="">FXScreenSpaceShadowShader</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shaders.OpenGL.Light2DShader.html" title="Light2DShader" class="">Light2DShader</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shaders.OpenGL.MVPRectShader.html" title="MVPRectShader" class="">MVPRectShader</a>
@@ -468,6 +489,9 @@
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.GlypheShape.html" title="GlypheShape" class="">GlypheShape</a>
+                          </li>
+                          <li class="">
+                            <a href="Genesis.Graphics.Shapes.Light2DShape.html" title="Light2DShape" class="">Light2DShape</a>
                           </li>
                           <li class="">
                             <a href="Genesis.Graphics.Shapes.LineShape.html" title="LineShape" class="">LineShape</a>
@@ -664,6 +688,39 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Material()</code></pre>
   </div>
+
+
+  <a id="Genesis_Graphics_Material__ctor_" data-uid="Genesis.Graphics.Material.#ctor*"></a>
+  <h4 id="Genesis_Graphics_Material__ctor_System_String_System_Drawing_Color_" data-uid="Genesis.Graphics.Material.#ctor(System.String,System.Drawing.Color)">Material(string, Color)</h4>
+  <div class="markdown level1 summary"><p>Constructor for the Material class. Initializes properties and the dictionary for user-defined properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Material(string name, Color DiffuseColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.drawing.color">Color</a></td>
+        <td><span class="parametername">DiffuseColor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
 </h3>
 
@@ -818,6 +875,109 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Genesis_Graphics_Material_LoadMaterial_" data-uid="Genesis.Graphics.Material.LoadMaterial*"></a>
+  <h4 id="Genesis_Graphics_Material_LoadMaterial_System_String_" data-uid="Genesis.Graphics.Material.LoadMaterial(System.String)">LoadMaterial(string)</h4>
+  <div class="markdown level1 summary"><p>Loads a material from a JSON file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Material LoadMaterial(string filename)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">filename</span></td>
+        <td><p>The path to the JSON file containing the material data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.Material.html">Material</a></td>
+        <td><p>The loaded material object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Material_SaveMaterial_" data-uid="Genesis.Graphics.Material.SaveMaterial*"></a>
+  <h4 id="Genesis_Graphics_Material_SaveMaterial_System_String_" data-uid="Genesis.Graphics.Material.SaveMaterial(System.String)">SaveMaterial(string)</h4>
+  <div class="markdown level1 summary"><p>Saves the material object to a JSON file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SaveMaterial(string filename)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">filename</span></td>
+        <td><p>The path to save the material JSON file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Material_Serialize_" data-uid="Genesis.Graphics.Material.Serialize*"></a>
+  <h4 id="Genesis_Graphics_Material_Serialize" data-uid="Genesis.Graphics.Material.Serialize">Serialize()</h4>
+  <div class="markdown level1 summary"><p>Serializes the material object into a JSON string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Serialize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>Serialized JSON string of the material.</p>
+</td>
       </tr>
     </tbody>
   </table>

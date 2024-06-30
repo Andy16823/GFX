@@ -48,6 +48,8 @@ items:
   - Genesis.Core.Utils.GetVMirroredPosition(Genesis.Math.Vec3,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.GetVMirroredPosition(System.Single,System.Single,System.Single,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.LookAt(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Core.Utils.ToDegrees(System.Single)
   - Genesis.Core.Utils.ToRadians(System.Single)
@@ -952,6 +954,60 @@ items:
       description: The target position.
     content.vb: Public Shared Sub LookAt(camera As Camera, targetPosition As Vec3)
   overload: Genesis.Core.Utils.LookAt*
+- uid: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  id: LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: LookAtX(Camera, Vec3)
+  nameWithType: Utils.LookAtX(Camera, Vec3)
+  fullName: Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adjusts the camera's rotation to look at a specified position along the X-axis.
+  example: []
+  syntax:
+    content: public static void LookAtX(Camera camera, Vec3 targetPosition)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera to adjust.
+    - id: targetPosition
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Shared Sub LookAtX(camera As Camera, targetPosition As Vec3)
+  overload: Genesis.Core.Utils.LookAtX*
+- uid: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  id: LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: LookAtY(Camera, Vec3)
+  nameWithType: Utils.LookAtY(Camera, Vec3)
+  fullName: Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adjusts the camera's rotation to look at a specified position along the Y-axis.
+  example: []
+  syntax:
+    content: public static void LookAtY(Camera camera, Vec3 targetPosition)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera to adjust.
+    - id: targetPosition
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Shared Sub LookAtY(camera As Camera, targetPosition As Vec3)
+  overload: Genesis.Core.Utils.LookAtY*
 - uid: Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
   commentId: M:Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
   id: CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
@@ -1026,17 +1082,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
-  summary: Converts a System.Drawing.Color into a float array.
-  example: []
   syntax:
     content: public static float[] ConvertColor(Color color)
     parameters:
     - id: color
       type: System.Drawing.Color
-      description: The color.
     return:
       type: System.Single[]
-      description: The float array representing the color.
     content.vb: Public Shared Function ConvertColor(color As Color) As Single()
   overload: Genesis.Core.Utils.ConvertColor*
 - uid: Genesis.Core.Utils.GetRandomColor
@@ -2176,6 +2228,20 @@ references:
   name: LookAt
   nameWithType: Utils.LookAt
   fullName: Genesis.Core.Utils.LookAt
+- uid: Genesis.Core.Utils.LookAtX*
+  commentId: Overload:Genesis.Core.Utils.LookAtX
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtX_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  name: LookAtX
+  nameWithType: Utils.LookAtX
+  fullName: Genesis.Core.Utils.LookAtX
+- uid: Genesis.Core.Utils.LookAtY*
+  commentId: Overload:Genesis.Core.Utils.LookAtY
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_LookAtY_Genesis_Graphics_Camera_Genesis_Math_Vec3_
+  name: LookAtY
+  nameWithType: Utils.LookAtY
+  fullName: Genesis.Core.Utils.LookAtY
 - uid: Genesis.Core.Utils.CalculateYaw*
   commentId: Overload:Genesis.Core.Utils.CalculateYaw
   isExternal: true
