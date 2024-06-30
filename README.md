@@ -1,9 +1,9 @@
-**Genesis Game Engine 0.1.2**
+**GFX Game Engine 0.1.2**
 
-Welcome to the Genesis Game Engine, version 0.1.2!
+Welcome to the GFX Game Engine, version 0.1.2!
 
 **Overview:**
-Genesis Game Engine is a robust framework developed in C# for creating both 2D and 3D games. Designed with simplicity in mind, it facilitates easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to enable seamless customization.
+GFX Game Engine is a robust framework developed in C# for creating both 2D and 3D games. Designed with simplicity in mind, it facilitates easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to enable seamless customization.
 
 **Key Features:**
 - Streamlined scene rendering with focus on one active scene.
@@ -16,26 +16,26 @@ Genesis Game Engine is a robust framework developed in C# for creating both 2D a
 - 2D particle emitter.
 
 **Rendering:**
-Genesis uses OpenGL 4.5 as the default renderer, akin to DirectX 11. Custom renderers are possible, and future plans include Vulkan and DirectX 12 integration. Supported 3D formats include Wavefront, FBX, Collada, and GLTF files.
+GFX uses OpenGL 4.5 as the default renderer, akin to DirectX 11. Custom renderers are possible, and future plans include Vulkan and DirectX 12 integration. Supported 3D formats include Wavefront, FBX, Collada, and GLTF files.
 
 **Physics:**
 Physics simulation utilizes PhysicHandlers—PhysicHandler3D and PhysicHandler2D—leveraging BulletSharp, a Bullet Physics Wrapper. Custom PhysicHandlers can be developed as needed.
 
 **Supported Games:**
-Genesis is ideal for creating 2D games across various genres. The 3D functionalities in version 0.1.2 include basic features like loading and rendering Wavefront and FBX files. However, additional features such as shadow maps are planned for future updates.
+GFX is ideal for creating 2D games across various genres. The 3D functionalities in version 0.1.2 include basic features like loading and rendering Wavefront and FBX files. However, additional features such as shadow maps are planned for future updates.
 
 **Asset Loading:**
-Textures and fonts can be loaded easily by placing them in the Resources folder, managed automatically by the Asset Manager. Genesis supports texture archiving to streamline project management without the need for additional RAR files. Ensure proper configuration for file copying during the build process.
+Textures and fonts can be loaded easily by placing them in the Resources folder, managed automatically by the Asset Manager. GFX supports texture archiving to streamline project management without the need for additional RAR files. Ensure proper configuration for file copying during the build process.
 
 **External Libraries:**
-Genesis integrates open-source libraries including:
+GFX integrates open-source libraries including:
 - **AssimpNet:** [AssimpNet Repository](https://bitbucket.org/Starnick/assimpnet/src/master/)
 - **BulletSharp:** [BulletSharp Repository](https://bitbucket.org/Starnick/assimpnet/src/master/)
 - **GlmSharp:** [GlmSharp Repository](https://github.com/Philip-Trettner/GlmSharp)
 - **NetGL:** [NetGL Repository](https://github.com/Andy16823/NetGL-2023)
 - **Newtonsoft.Json:** [Newtonsoft.Json Repository](https://github.com/JamesNK/Newtonsoft.Json)
 
-See the License folder for individual licenses; the Genesis Game Engine itself is licensed under MIT.
+See the License folder for individual licenses; the GFX Game Engine itself is licensed under MIT.
 
 **Community and Resources:**
 - **Website:** [https://gfx-engine.org](https://gfx-engine.org)
@@ -43,11 +43,11 @@ See the License folder for individual licenses; the Genesis Game Engine itself i
 - **Documentation:** [docs.gfx-engine.org](https://docs.gfx-engine.org)
 
 **Getting Started:**
-Clone the repository and consult the comprehensive documentation in the Wiki to begin developing your games with Genesis.
+Clone the repository and consult the comprehensive documentation in the Wiki to begin developing your games with GFX.
 
 **License:**
-Genesis Game Engine is licensed under the MIT License. Refer to the License folder for detailed terms.
+GFX Game Engine is licensed under the MIT License. Refer to the License folder for detailed terms.
 
-For the latest updates and community support, visit [Genesis Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.1).
+For the latest updates and community support, visit [GFX Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.1).
 
-Let your creativity flourish with Genesis Game Engine 0.1.2!
+Let your creativity flourish with GFX Game Engine 0.1.2!
