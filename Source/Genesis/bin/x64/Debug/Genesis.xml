@@ -6544,6 +6544,14 @@
             <param name="near">The distance to the near clipping plane of the camera.</param>
             <param name="far">The distance to the far clipping plane of the camera.</param>
         </member>
+        <member name="M:Genesis.Graphics.Camera.#ctor(Genesis.Graphics.Viewport,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.Camera"/> class with the specified location, size, near and far distances.
+            </summary>
+            <param name="viewport">The viewport for the location and resoulution.</param>
+            <param name="near">The distance to the near clipping plane of the camera.</param>
+            <param name="far">The distance to the far clipping plane of the camera.</param>
+        </member>
         <member name="M:Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)">
             <summary>
             Adjusts the camera to look at the specified game element (only 2D).
@@ -6562,6 +6570,29 @@
             Gets the rectangular region represented by the camera's location and size.
             </summary>
             <returns>A <see cref="T:Genesis.Math.Rect"/> object representing the camera's view region.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)">
+            <summary>
+            Calculates the screen correction factor.
+            </summary>
+            <param name="screenWidth">The width of the screen.</param>
+            <param name="screenHeight">The height of the screen.</param>
+            <returns>
+            The correction factor to be applied to the screen size,
+            based on the smaller ratio of screen width to desired width (Size.X)
+            and screen height to desired height (Size.Y).
+            </returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)">
+            <summary>
+            Calculates the screen correction factor using the dimensions of a viewport.
+            </summary>
+            <param name="viewport">The viewport containing the screen dimensions.</param>
+            <returns>
+            The correction factor to be applied to the screen size,
+            based on the smaller ratio of viewport width to desired width (Size.X)
+            and viewport height to desired height (Size.Y).
+            </returns>
         </member>
         <member name="M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)">
             <summary>

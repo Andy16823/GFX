@@ -67,6 +67,21 @@ namespace Genesis.Graphics
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Camera"/> class with the specified location, size, near and far distances.
+        /// </summary>
+        /// <param name="viewport">The viewport for the location and resoulution.</param>
+        /// <param name="near">The distance to the near clipping plane of the camera.</param>
+        /// <param name="far">The distance to the far clipping plane of the camera.</param>
+        public Camera(Viewport viewport, float near, float far)
+        {
+            Location = new Vec3(viewport.X, viewport.Y);
+            Size = new Vec3(viewport.Width, viewport.Height);
+            Near = near;
+            Far = far;
+            this.Rotation = Vec3.Zero();
+        }
+
+        /// <summary>
         /// Adjusts the camera to look at the specified game element (only 2D).
         /// </summary>
         /// <param name="element">The game element to look at.</param>
@@ -104,6 +119,35 @@ namespace Genesis.Graphics
         }
 
         /// <summary>
+        /// Calculates the screen correction factor.
+        /// </summary>
+        /// <param name="screenWidth">The width of the screen.</param>
+        /// <param name="screenHeight">The height of the screen.</param>
+        /// <returns>
+        /// The correction factor to be applied to the screen size,
+        /// based on the smaller ratio of screen width to desired width (Size.X)
+        /// and screen height to desired height (Size.Y).
+        /// </returns>
+        public float CalculateScreenCorrection(float screenWidth, float screenHeight)
+        {
+            return System.Math.Min(screenWidth / Size.X, screenHeight / Size.Y);
+        }
+
+        /// <summary>
+        /// Calculates the screen correction factor using the dimensions of a viewport.
+        /// </summary>
+        /// <param name="viewport">The viewport containing the screen dimensions.</param>
+        /// <returns>
+        /// The correction factor to be applied to the screen size,
+        /// based on the smaller ratio of viewport width to desired width (Size.X)
+        /// and viewport height to desired height (Size.Y).
+        /// </returns>
+        public float CalculateScreenCorrection(Viewport viewport)
+        {
+            return CalculateScreenCorrection(viewport.Width, viewport.Height);
+        }
+
+        /// <summary>
         /// Projects the mouse coords into screen coords
         /// </summary>
         /// <param name="camera">The camera</param>
@@ -117,6 +161,5 @@ namespace Genesis.Graphics
             var y = mouseY - (viewport.Height / 2) + camera.Location.Y;
             return new Vec3(x, y);
         }
-
     }
 }

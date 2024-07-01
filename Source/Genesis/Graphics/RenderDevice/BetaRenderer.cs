@@ -1186,7 +1186,7 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="camera"></param>
         public void SetCamera(Viewport viewport, Camera camera)
         {
-            float correction = Utils.CalculateScreenCorrection(viewport.Width, viewport.Height, camera.Size.X, camera.Size.Y);
+            float correction = camera.CalculateScreenCorrection(viewport);
 
             if (camera.Type == CameraType.Ortho)
             {
