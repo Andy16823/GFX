@@ -1819,7 +1819,7 @@ namespace Genesis.Graphics.RenderDevice
         public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
         {
             Scene2D scene2D = (Scene2D)scene;
-            this.UpdateFramebufferSize(framebuffer, (int)camera.Size.X, (int)camera.Size.Y);
+            this.UpdateFramebufferSize(framebuffer, (int)m_viewport.Width, (int)m_viewport.Height);
             gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer.FramebufferID);
             gl.Enable(OpenGL.DepthTest);
             gl.Enable(OpenGL.Blend);
