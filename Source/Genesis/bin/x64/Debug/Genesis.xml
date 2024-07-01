@@ -1300,6 +1300,41 @@
             Main game loop. Handles updates and rendering.
             </summary>
         </member>
+        <member name="M:Genesis.Core.Game.InitGame">
+            <summary>
+            Initialize the game
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Game.NextFrame(System.Int64)">
+            <summary>
+            Determines if it's time to proceed to the next frame based on the target FPS.
+            </summary>
+            <param name="currentFrame">The current time in milliseconds.</param>
+            <returns>True if enough time has passed to proceed to the next frame, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Game.UpdateFrame(System.Int64)">
+            <summary>
+            Updates the game state for the current frame.
+            </summary>
+            <param name="currentFrame">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.Game.RenderFrame(System.Int64)">
+            <summary>
+            Renders the current frame.
+            </summary>
+            <param name="currentFrame">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.Game.EndFrame(System.Int64)">
+            <summary>
+            Ends the current frame by processing storage and updating timing information.
+            </summary>
+            <param name="currentFrame">The current time in milliseconds.</param>
+        </member>
+        <member name="M:Genesis.Core.Game.StopGame">
+            <summary>
+            Stops the game and cleans up resources.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.Game.Stop">
             <summary>
             Stops the main game loop.
@@ -3786,6 +3821,76 @@
             <param name="endColor">The color end</param>
             <param name="t">the time</param>
             <returns></returns>
+        </member>
+        <member name="T:Genesis.Core.Window">
+            <summary>
+            Represents a window with specified properties and events.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Window.WNDCLASSEX">
+            <summary>
+            Represents extended window class information.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Window.MSG">
+            <summary>
+            Represents a Windows message.
+            </summary>
+        </member>
+        <member name="T:Genesis.Core.Window.WindowEventHandler">
+            <summary>
+            Delegate for window event handlers.
+            </summary>
+            <param name="window">The window associated with the event.</param>
+        </member>
+        <member name="P:Genesis.Core.Window.Handle">
+            <summary>
+            Gets or sets the handle to the window.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Window.Viewport">
+            <summary>
+            Gets or sets the viewport associated with the window.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Window.Close">
+            <summary>
+            Event triggered when the window is closed.
+            </summary>
+        </member>
+        <member name="E:Genesis.Core.Window.OnSizeChange">
+            <summary>
+            Event triggered when the window size changes.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Window.WindowProc(System.IntPtr,System.UInt32,System.IntPtr,System.IntPtr)">
+            <summary>
+            Callback function for processing window messages.
+            </summary>
+            <param name="hWnd">Handle to the window.</param>
+            <param name="msg">The message received.</param>
+            <param name="wParam">Additional message information.</param>
+            <param name="lParam">Additional message information.</param>
+            <returns>Result of the message processing.</returns>
+        </member>
+        <member name="M:Genesis.Core.Window.CreateWindowHandle(System.String,Genesis.Graphics.Viewport)">
+            <summary>
+            Creates a new window with specified title and viewport size.
+            </summary>
+            <param name="title">Title of the window.</param>
+            <param name="viewport">Initial viewport size.</param>
+            <returns>Handle to the created window.</returns>
+        </member>
+        <member name="M:Genesis.Core.Window.RunGame(Genesis.Core.Game)">
+            <summary>
+            Shows the window and starts the game loop.
+            </summary>
+            <param name="game">The game instance associated with the window.</param>
+        </member>
+        <member name="M:Genesis.Core.Window.CloseWindow">
+            <summary>
+            Closes the window and stops the associated game.
+            </summary>
         </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>

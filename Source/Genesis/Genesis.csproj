@@ -113,9 +113,6 @@
     <Compile Include="Core\GameElements\NavMesh.cs" />
     <Compile Include="Core\GameElements\ParticleEmitter.cs" />
     <Compile Include="Core\GameElements\Waypoint.cs" />
-    <Compile Include="Core\GenesisWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Core\IGameBehavior.cs" />
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\Layer.cs" />
@@ -136,6 +133,7 @@
     <Compile Include="Core\GameElements\Skybox.cs" />
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\Utils.cs" />
+    <Compile Include="Core\Window.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animator.cs" />
