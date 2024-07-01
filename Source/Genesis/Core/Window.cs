@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,8 @@ namespace Genesis.Core
         private const int WM_CLOSE = 0x0010;
         private const int WM_SIZE = 0x0005;
         private const uint WM_QUIT = 0x0012;
+
+        private static WndProc s_windowProcDelegate;
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern IntPtr CreateWindowEx(
@@ -130,6 +133,7 @@ namespace Genesis.Core
 
         private bool m_isWindowClosed = false;
         private Game m_game;
+        private object m_lock = new object();
 
 
         /// <summary>
@@ -173,11 +177,12 @@ namespace Genesis.Core
         /// <returns>Handle to the created window.</returns>
         public IntPtr CreateWindowHandle(String title, Viewport viewport)
         {
+            s_windowProcDelegate = WindowProc;
             WNDCLASSEX wNDCLASSEX = new WNDCLASSEX
             {
                 cbSize = (uint)Marshal.SizeOf(typeof(WNDCLASSEX)),
                 style = 0,
-                lpfnWndProc = WindowProc,
+                lpfnWndProc = s_windowProcDelegate,
                 cbClsExtra = 0,
                 cbWndExtra = 0,
                 hInstance = GetModuleHandle(null),
@@ -241,6 +246,7 @@ namespace Genesis.Core
             m_game.Stop();
             m_game.GameThread.Join();
             DestroyWindow(Handle);
+            s_windowProcDelegate = null;
         }
     }
 }
