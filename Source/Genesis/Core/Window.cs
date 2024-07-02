@@ -1,4 +1,6 @@
 ﻿using Genesis.Graphics;
+using Genesis.Math;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -115,10 +117,7 @@ namespace Genesis.Core
         /// </summary>
         public IntPtr Handle { get; set; }
 
-        /// <summary>
-        /// Gets or sets the viewport associated with the window.
-        /// </summary>
-        public Viewport Viewport { get; set; }
+        public Vec3 WindowSize { get; set; }
 
         /// <summary>
         /// Event triggered when the window is closed.
@@ -151,7 +150,8 @@ namespace Genesis.Core
                 case WM_SIZE:
                     int width = lParam.ToInt32() & 0xFFFF;
                     int height = (lParam.ToInt32() >> 16) & 0xFFFF;
-                    if(m_game != null)
+                    this.WindowSize = new Vec3(width, height);
+                    if (m_game != null)
                     {
                         m_game.Viewport.Width = width;
                         m_game.Viewport.Height = height;
@@ -229,6 +229,8 @@ namespace Genesis.Core
         public void RunGame(Game game)
         {
             m_game = game;
+            m_game.Viewport.Width = WindowSize.X;
+            m_game.Viewport.Height = WindowSize.Y;
             m_game.Start();
             while(!m_isWindowClosed)
             {
@@ -252,5 +254,31 @@ namespace Genesis.Core
             DestroyWindow(Handle);
             s_windowProcDelegate = null;
         }
+
+        /// <summary>
+        /// Returns an vector with the window client size
+        /// </summary>
+        /// <returns></returns>
+        public Vec3 GetClientSize()
+        {
+            WindowUtilities.RECT rect;
+            WindowUtilities.GetClientRect(Handle, out rect);
+
+            WindowUtilities.POINT topLeft;
+            topLeft.X = rect.Left;
+            topLeft.Y = rect.Top;
+            WindowUtilities.ClientToScreen(Handle, ref topLeft);
+
+            WindowUtilities.POINT btmRight;
+            btmRight.X = rect.Right;
+            btmRight.Y = rect.Bottom;
+            WindowUtilities.ClientToScreen(Handle, ref btmRight);
+
+            int width = btmRight.X - topLeft.X;
+            int height = btmRight.Y - topLeft.Y;
+
+            return new Vec3(width, height);
+        }
+
     }
 }

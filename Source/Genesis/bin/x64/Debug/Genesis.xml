@@ -2781,6 +2781,22 @@
             <param name="vKey">The virtual key to check.</param>
             <returns>True if the key is down; otherwise, false.</returns>
         </member>
+        <member name="M:Genesis.Core.Input.IsKeyDown(Genesis.Core.Input.Keys)">
+            <summary>
+            Checks whether the specified key is currently pressed.
+            </summary>
+            <param name="vKey">The virtual key to check.</param>
+            <returns><c>true</c> if the key is currently down; otherwise, <c>false</c>.</returns>
+            <example>
+            This example demonstrates how to use IsKeyDown method:
+            <code>
+            if (Input.IsKeyDown(Input.Keys.A))
+            {
+                Console.WriteLine("Key A is pressed.");
+            }
+            </code>
+            </example>
+        </member>
         <member name="M:Genesis.Core.Input.GetMousePos">
             <summary>
             Gets the current mouse position.
@@ -3848,11 +3864,6 @@
             Gets or sets the handle to the window.
             </summary>
         </member>
-        <member name="P:Genesis.Core.Window.Viewport">
-            <summary>
-            Gets or sets the viewport associated with the window.
-            </summary>
-        </member>
         <member name="E:Genesis.Core.Window.Close">
             <summary>
             Event triggered when the window is closed.
@@ -3891,6 +3902,12 @@
             <summary>
             Closes the window and stops the associated game.
             </summary>
+        </member>
+        <member name="M:Genesis.Core.Window.GetClientSize">
+            <summary>
+            Returns an vector with the window client size
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Graphics.Animation">
             <summary>

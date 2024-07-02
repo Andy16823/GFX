@@ -1,5 +1,7 @@
-﻿using Genesis.Core;
+﻿using Assimp;
+using Genesis.Core;
 using Genesis.Math;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -162,16 +164,33 @@ namespace Genesis.Graphics
         /// </remarks>
         public Vec3 ConvertScreenToWorldOrtho(Viewport viewport, float x, float y)
         {
-            float correctionX = viewport.Width / this.Size.X;
-            float correctionY = viewport.Height / this.Size.Y;
+            float correction = this.CalculateScreenCorrection(viewport);
+            float halfWidth = (viewport.Width / 2) / correction;
+            float halfHeight = (viewport.Height / 2) / correction;
 
-            float normalizedX = (x / viewport.Width) * 2.0f - 1.0f;
-            float normalizedY = (y / viewport.Height) * 2.0f - 1.0f;
+            float left = this.Location.X - halfWidth;
+            float right = this.Location.X + halfWidth;
+            float bottom = this.Location.Y - halfHeight;
+            float top = this.Location.Y + halfHeight;
 
-            float worldX = this.Location.X + (normalizedX * (this.Size.X / 2.0f)) / correctionX;
-            float worldY = this.Location.Y + (normalizedY * (this.Size.Y / 2.0f)) / correctionY;
+            var p_mat = mat4.Ortho(left, right, bottom, top, 0.1f, 100.0f);
+            var ivmat = p_mat.Inverse;
 
-            return new Vec3(worldX, -worldY);
+            // Normalisierung der Bildschirmkoordinaten (0 bis 1)
+            float normalizedX = (x - viewport.X) / viewport.Width;
+            float normalizedY = (y - viewport.Y) / viewport.Height;
+
+            // Umwandlung der normalisierten Koordinaten in den Bereich (-1 bis 1)
+            float ndcX = normalizedX * 2 - 1;
+            float ndcY = 1 - normalizedY * 2; // Y-Achse invertiert (oben nach unten)
+
+            // Erstellen eines Vektors in NDC-Koordinaten
+            vec4 ndcPosition = new vec4(ndcX, ndcY, 0, 1);
+
+            // Transformation in Weltkoordinaten
+            vec4 worldPosition = ivmat * ndcPosition;
+
+            return new Vec3(worldPosition.x, worldPosition.y, worldPosition.z);
         }
 
         /// <summary>
