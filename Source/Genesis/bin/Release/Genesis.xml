@@ -6699,6 +6699,21 @@
             and viewport height to desired height (Size.Y).
             </returns>
         </member>
+        <member name="M:Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)">
+            <summary>
+            Converts screen coordinates to world coordinates using an orthographic projection.
+            </summary>
+            <param name="viewport">The viewport object that defines the dimensions of the screen space.</param>
+            <param name="x">The x-coordinate of the screen position to convert.</param>
+            <param name="y">The y-coordinate of the screen position to convert.</param>
+            <returns>A Vec3 object representing the corresponding world coordinates.</returns>
+            <remarks>
+            This method assumes an orthographic projection and calculates the world coordinates
+            based on the screen position, the camera's position, and the size of the viewport.
+            The screen coordinates are first normalized to a range of [-1, 1], then adjusted
+            according to the camera's position and size.
+            </remarks>
+        </member>
         <member name="M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)">
             <summary>
             Projects the mouse coords into screen coords

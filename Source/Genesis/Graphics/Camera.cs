@@ -148,6 +148,33 @@ namespace Genesis.Graphics
         }
 
         /// <summary>
+        /// Converts screen coordinates to world coordinates using an orthographic projection.
+        /// </summary>
+        /// <param name="viewport">The viewport object that defines the dimensions of the screen space.</param>
+        /// <param name="x">The x-coordinate of the screen position to convert.</param>
+        /// <param name="y">The y-coordinate of the screen position to convert.</param>
+        /// <returns>A Vec3 object representing the corresponding world coordinates.</returns>
+        /// <remarks>
+        /// This method assumes an orthographic projection and calculates the world coordinates
+        /// based on the screen position, the camera's position, and the size of the viewport.
+        /// The screen coordinates are first normalized to a range of [-1, 1], then adjusted
+        /// according to the camera's position and size.
+        /// </remarks>
+        public Vec3 ConvertScreenToWorldOrtho(Viewport viewport, float x, float y)
+        {
+            float correctionX = viewport.Width / this.Size.X;
+            float correctionY = viewport.Height / this.Size.Y;
+
+            float normalizedX = (x / viewport.Width) * 2.0f - 1.0f;
+            float normalizedY = (y / viewport.Height) * 2.0f - 1.0f;
+
+            float worldX = this.Location.X + (normalizedX * (this.Size.X / 2.0f)) / correctionX;
+            float worldY = this.Location.Y + (normalizedY * (this.Size.Y / 2.0f)) / correctionY;
+
+            return new Vec3(worldX, -worldY);
+        }
+
+        /// <summary>
         /// Projects the mouse coords into screen coords
         /// </summary>
         /// <param name="camera">The camera</param>

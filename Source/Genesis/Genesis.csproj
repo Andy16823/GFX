@@ -134,6 +134,7 @@
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\Utils.cs" />
     <Compile Include="Core\Window.cs" />
+    <Compile Include="Core\WindowUtilities.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animator.cs" />

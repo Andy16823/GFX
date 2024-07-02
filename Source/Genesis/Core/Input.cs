@@ -40,6 +40,8 @@ namespace Genesis.Core
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool SetCursorPos(int X, int Y);
 
+        
+
         /// <summary>
         /// Checks if the specified key is currently pressed.
         /// </summary>
@@ -97,7 +99,26 @@ namespace Genesis.Core
         /// <returns>A Vec3 representing the mouse position relative to the control.</returns>
         public static Vec3 GetRefMousePos(IntPtr handle)
         {
-            return Input.GetRefMousePos(Control.FromHandle(handle));
+            WindowUtilities.RECT rect;
+            WindowUtilities.GetClientRect(handle, out rect);
+
+            WindowUtilities.POINT topLeft;
+            topLeft.X = rect.Left;
+            topLeft.Y = rect.Top;
+            WindowUtilities.ClientToScreen(handle, ref topLeft);
+
+            int windowX = topLeft.X;
+            int windowY = topLeft.Y;
+
+            WindowUtilities.POINT point;
+            WindowUtilities.GetCursorPos(out  point);
+            
+            var mouseX = point.X - windowX;
+            var mouseY = point.Y - windowY;
+
+            return new Vec3(mouseX, mouseY);
+
+            //return Input.GetRefMousePos(Control.FromHandle(handle)); alte funktion
         }
 
         /// <summary>

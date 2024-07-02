@@ -155,6 +155,10 @@ namespace Genesis.Core
                     {
                         m_game.Viewport.Width = width;
                         m_game.Viewport.Height = height;
+                        if(m_game.SelectedScene != null)
+                        {
+                            m_game.SelectedScene.ResizeScene(m_game.Viewport);
+                        }
                         OnSizeChange?.Invoke(this);
                     }
                     return IntPtr.Zero;
