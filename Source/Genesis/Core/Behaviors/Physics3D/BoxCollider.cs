@@ -37,7 +37,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
 
-            Vec3 location = Utils.GetElementWorldLocation(element);
+            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
             Vec3 rotation = Utils.GetElementWorldRotation(element);
 
             var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());            

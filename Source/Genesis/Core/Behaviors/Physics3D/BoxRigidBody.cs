@@ -39,7 +39,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
             RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, boxShape, boxShape.CalculateLocalInertia(mass));
 
-            Vec3 location = Utils.GetElementWorldLocation(element);
+            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
             Vec3 rotation = Utils.GetElementWorldRotation(element);
 
             var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
