@@ -32,7 +32,7 @@ namespace Genesis.Core.Behaviors._3D
         /// <summary>
         /// Gets or sets the collider for the character.
         /// </summary>
-        public CapsuleCollider Collider { get; set; }
+        public CapsuleRigidBody RigidBody { get; set; }
 
         /// <summary>
         /// Gets or sets the speed of walking.
@@ -118,11 +118,11 @@ namespace Genesis.Core.Behaviors._3D
         /// <param name="mass">The mass.</param>
         public void CreatePhysics(PhysicHandler handler, Vec3 offset, float radius, float height, float mass)
         {
-            this.Collider = new CapsuleCollider();
-            this.Parent.AddBehavior(this.Collider);
-            this.Collider.CreateRigidBody(handler, offset, radius, height, mass);
-            this.Collider.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
-            Collider.OnCollide += (sce, game, co) =>
+            this.RigidBody = new CapsuleRigidBody();
+            this.Parent.AddBehavior(this.RigidBody);
+            this.RigidBody.CreateRigidBody(handler, radius, height, mass, offset);
+            this.RigidBody.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
+            RigidBody.OnCollide += (sce, game, co) =>
             {
                 var btCollisionObject = (CollisionObject)co;
                 if (btCollisionObject.GetType() != typeof(GhostObject))
@@ -207,7 +207,7 @@ namespace Genesis.Core.Behaviors._3D
 
 
             // Setup the Velocity for the player movement.
-            Vector3 velocity = new Vector3(0, Collider.RigidBody.LinearVelocity.Y, 0f);
+            Vector3 velocity = new Vector3(0, RigidBody.RigidBody.LinearVelocity.Y, 0f);
 
             // Setup the movement speed
             float speed = (float)game.DeltaTime * WalkSpeed;
@@ -296,8 +296,8 @@ namespace Genesis.Core.Behaviors._3D
             }
 
             // Set data for the next frame
-            Collider.RigidBody.Activate(true);
-            Collider.RigidBody.LinearVelocity = velocity;
+            RigidBody.RigidBody.Activate(true);
+            RigidBody.RigidBody.LinearVelocity = velocity;
             IsRunning = false;
             IsColliding = false;
         }

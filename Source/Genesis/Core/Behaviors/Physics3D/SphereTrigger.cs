@@ -12,36 +12,36 @@ using System.Threading.Tasks;
 namespace Genesis.Core.Behaviors.Physics3D
 {
     /// <summary>
-    /// Represents a Sphere Collider behavior for 3D physics.
+    /// Represents a Sphere trigger behavior for 3D physics.
     /// </summary>
-    public class SphereCollider : ColliderBehavior3D
+    public class SphereTrigger : TriggerBehavior3D
     {
         /// <summary>
-        /// Creates a collider with a sphere shape using the default radius (half of the parent's size).
+        /// Creates a trigger with a sphere shape using the default radius (half of the parent's size).
         /// </summary>
         /// <param name="physicHandler">The physics handler to manage this element.</param>
-        public override void CreateCollider(PhysicHandler physicHandler)
+        public override void CreateTrigger(PhysicHandler physicHandler)
         {
-            this.CreateCollider(physicHandler, this.Parent.Size.X / 2);
+            this.CreateTrigger(physicHandler, this.Parent.Size.X / 2);
         }
 
         /// <summary>
-        /// Creates a collider with a sphere shape at the origin.
+        /// Creates a trigger with a sphere shape at the origin.
         /// </summary>
         /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateCollider(PhysicHandler handler, float radius)
+        public void CreateTrigger(PhysicHandler handler, float radius)
         {
-            this.CreateCollider(handler, Vec3.Zero(), radius);
+            this.CreateTrigger(handler, Vec3.Zero(), radius);
         }
 
         /// <summary>
-        /// Creates a collider with a sphere shape at the specified offset.
+        /// Creates a trigger with a sphere shape at the specified offset.
         /// </summary>
         /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 offset, float radius)
+        public void CreateTrigger(PhysicHandler handler, Vec3 offset, float radius)
         {
             this.Offset = offset;
 
@@ -55,10 +55,10 @@ namespace Genesis.Core.Behaviors.Physics3D
             var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
             var btStartTransform = btTranslation * btRotation;
 
-            Collider = new CollisionObject();
-            Collider.UserObject = element;
-            Collider.CollisionShape = sphereShape;
-            Collider.WorldTransform = btStartTransform;
+            Trigger = new GhostObject();
+            Trigger.UserObject = element;
+            Trigger.CollisionShape = sphereShape;
+            Trigger.WorldTransform = btStartTransform;
             handler.ManageElement(this);
         }
     }

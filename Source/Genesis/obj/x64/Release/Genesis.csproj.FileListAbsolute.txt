@@ -10,7 +10,6 @@ E:\Own Games\Genesis\Genesis\bin\x64\Release\BulletSharp.dll
 E:\Own Games\Genesis\Genesis\bin\x64\Release\GlmSharp.dll
 E:\Own Games\Genesis\Genesis\bin\x64\Release\NetGL.dll
 E:\Own Games\Genesis\Genesis\bin\x64\Release\Newtonsoft.Json.dll
-E:\Own Games\Genesis\Genesis\bin\x64\Release\OpenObjectLoader.dll
 E:\Own Games\Genesis\Genesis\bin\x64\Release\System.ValueTuple.dll
 E:\Own Games\Genesis\Genesis\bin\x64\Release\AssimpNet.xml
 E:\Own Games\Genesis\Genesis\bin\x64\Release\GlmSharp.xml
@@ -20,8 +19,8 @@ E:\Own Games\Genesis\Genesis\bin\x64\Release\OpenObjectLoader.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\System.ValueTuple.xml
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.AssemblyReference.cache
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.CoreCompileInputs.cache
-E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.CopyComplete
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.dll
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\Genesis.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\Genesis.xml
+E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.Up2Date
