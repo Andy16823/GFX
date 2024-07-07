@@ -476,6 +476,12 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent GameElement of the behavior.</param>
         </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Creates a collider using the provided PhysicHandler.
+            </summary>
+            <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
+        </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D">
             <summary>
             Represents a 2D box trigger for physics interactions.
