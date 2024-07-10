@@ -15,7 +15,6 @@ E:\Own Games\Genesis\Genesis\bin\x64\Release\AssimpNet.xml
 E:\Own Games\Genesis\Genesis\bin\x64\Release\GlmSharp.xml
 E:\Own Games\Genesis\Genesis\bin\x64\Release\NetGL.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\Newtonsoft.Json.xml
-E:\Own Games\Genesis\Genesis\bin\x64\Release\OpenObjectLoader.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\System.ValueTuple.xml
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.AssemblyReference.cache
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.CoreCompileInputs.cache
