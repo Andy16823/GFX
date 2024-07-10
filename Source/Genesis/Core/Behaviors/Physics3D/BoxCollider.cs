@@ -17,14 +17,21 @@ namespace Genesis.Core.Behaviors.Physics3D
 
     public class BoxCollider : ColliderBehavior3D
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BoxCollider"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this box collider.</param>
+        public BoxCollider(PhysicHandler physicHandler) : base(physicHandler)
+        {
+        }
 
         /// <summary>
         /// Creates a box collider with default half extends.
         /// </summary>
         /// <param name="handler">The physics handler to manage this collider.</param>
-        public override void CreateCollider(PhysicHandler handler)
+        public override void CreateCollider()
         {
-            this.CreateCollider(handler, this.Parent.Size.Half());
+            this.CreateCollider(this.Parent.Size.Half());
         }
 
         /// <summary>
@@ -32,7 +39,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// </summary>
         /// <param name="handler">The physics handler to manage this collider.</param>
         /// <param name="boxHalfExtends">Half extends of the box collider.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 boxHalfExtends)
+        public void CreateCollider(Vec3 boxHalfExtends)
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
@@ -49,7 +56,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             Collider.CollisionShape = boxShape;
             Collider.WorldTransform = btStartTransform;
 
-            handler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }

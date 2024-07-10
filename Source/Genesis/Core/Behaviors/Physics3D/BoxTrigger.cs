@@ -14,17 +14,27 @@ namespace Genesis.Core.Behaviors.Physics3D
     /// </summary>
     public class BoxTrigger : TriggerBehavior3D
     {
-        public override void CreateTrigger(PhysicHandler handler)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BoxTrigger"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this box trigger.</param>
+        public BoxTrigger(PhysicHandler physicHandler) : base(physicHandler)
         {
-            this.CreateTrigger(handler, Parent.Size.Half());
+        }
+
+        /// <summary>
+        /// Creates the trigger using the parent's size half extents.
+        /// </summary>
+        public override void CreateTrigger()
+        {
+            this.CreateTrigger(Parent.Size.Half());
         }
 
         /// <summary>
         /// Creates a box trigger with the specified parameters.
         /// </summary>
-        /// <param name="handler">The physics handler managing this trigger.</param>
         /// <param name="boxHalfExtends">The half extends of the box trigger.</param>
-        public void CreateTrigger(PhysicHandler handler, Vec3 boxHalfExtends)
+        public void CreateTrigger(Vec3 boxHalfExtends)
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
@@ -41,7 +51,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             Trigger.WorldTransform = btStartTransform;
             Trigger.CollisionFlags = CollisionFlags.NoContactResponse;
 
-            handler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }

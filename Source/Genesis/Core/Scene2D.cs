@@ -52,6 +52,15 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Scene2D"/> class.
+        /// </summary>
+        public Scene2D(String name)
+        {
+            this.Name = name;
+            Lights = new List<Light2D>();
+        }
+
+        /// <summary>
         /// Adds a 2D light to the scene.
         /// </summary>
         /// <param name="light">The light to add.</param>

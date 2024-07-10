@@ -13,23 +13,37 @@ namespace Genesis.Core.Behaviors.Physics2D
     /// <summary>
     /// Represents a 2D box trigger for physics interactions.
     /// </summary>
-    public class BoxTrigger2D : PhysicsBehavior
+    /// <remarks>
+    /// Provides functionality to create and manage a box-shaped trigger for detecting collisions in a 2D physics world.
+    /// </remarks>
+    public class BoxTrigger2D : TriggerBehavior2D
     {
         /// <summary>
-        /// Gets or sets the ghost object representing the trigger.
+        /// Initializes a new instance of the <see cref="BoxTrigger2D"/> class with the specified physics handler.
         /// </summary>
-        public GhostObject Trigger { get; set; }
+        /// <param name="handler">The physics handler to associate with this box trigger.</param>
+        public BoxTrigger2D(PhysicHandler handler) : base(handler)
+        {
+
+        }
 
         /// <summary>
-        /// Creates a collider for the box trigger.
+        /// Creates the trigger using the parent's size half extents.
         /// </summary>
-        /// <param name="handler">The physics handler.</param>
-        /// <param name="halfExtends">Half extends of the box.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 halfExtends)
+        public override void CreateTrigger()
+        {
+            this.CreateTrigger(Parent.Size.Half());
+        }
+
+        /// <summary>
+        /// Creates the trigger with the specified half extents.
+        /// </summary>
+        /// <param name="halfExtends">The half extents of the box trigger.</param>
+        public void CreateTrigger(Vec3 halfExtends)
         {
             Box2DShape box2DShape = new Box2DShape(halfExtends.ToBulletVec3());
 
-            Vec3 location = this.Parent.Location;
+            Vec3 location = this.Parent.Location + this.Offset;
             Vec3 rotation = this.Parent.Rotation;
 
             var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
@@ -42,66 +56,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             this.Trigger.CollisionFlags = CollisionFlags.NoContactResponse;
             this.Trigger.UserObject = this.Parent;
 
-            handler.ManageElement(this);
-        }
-
-        /// <summary>
-        /// Gets the physics object associated with this behavior.
-        /// </summary>
-        /// <returns>The ghost object representing the trigger.</returns>
-        public override object GetPhysicsObject()
-        {
-            return Trigger;
-        }
-
-        /// <summary>
-        /// Gets the physics object associated with this behavior, cast to the specified type.
-        /// </summary>
-        /// <typeparam name="T">The type to cast to.</typeparam>
-        /// <returns>The ghost object representing the trigger.</returns>
-        public override T GetPhysicsObject<T>()
-        {
-            return (T)(object)Trigger;
-        }
-
-        /// <summary>
-        /// Called when the behavior is being destroyed.
-        /// </summary>
-        /// <param name="game">The game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnDestroy(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the behavior is initialized.
-        /// </summary>
-        /// <param name="game">The game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnInit(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the behavior needs to render something.
-        /// </summary>
-        /// <param name="game">The game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnRender(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the behavior needs to update its state.
-        /// </summary>
-        /// <param name="game">The game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnUpdate(Game game, GameElement parent)
-        {
-            
+            this.PhysicHandler.ManageElement(this);
         }
     }
 }

@@ -35,6 +35,11 @@ namespace Genesis.Core.Behaviors.Physics2D
         public Vec3 AngularFactor { get; set; } = new Vec3(0, 0, 0);
 
         /// <summary>
+        /// Gets or sets the physic handler for this collider
+        /// </summary>
+        public PhysicHandler PhysicHandler { get; set; }
+
+        /// <summary>
         /// Gets the physics object associated with the collider.
         /// </summary>
         /// <returns>The rigid body associated with the collider.</returns>
@@ -62,6 +67,8 @@ namespace Genesis.Core.Behaviors.Physics2D
         {
             if (this.Parent.GetType() == typeof(BufferedSprite))
             {
+                this.PhysicHandler = handler;
+
                 var bufferedSprite = (BufferedSprite)this.Parent;
                 CompoundShape compoundShape = new CompoundShape(true);
 
@@ -95,7 +102,10 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// </summary>
         public override void OnDestroy(Game game, GameElement parent)
         {
-            
+            if(PhysicHandler != null)
+            {
+                PhysicHandler.RemoveElement(this);
+            }
         }
 
         /// <summary>

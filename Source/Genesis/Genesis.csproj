@@ -209,6 +209,7 @@
     <Compile Include="Physics\PhysicsHandler3D.cs" />
     <Compile Include="Physics\PhysicsBehavior.cs" />
     <Compile Include="Physics\RigidBodyBehavior3D.cs" />
+    <Compile Include="Physics\TriggerBehavior2D.cs" />
     <Compile Include="Physics\TriggerBehavior3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\Button.cs" />

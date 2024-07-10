@@ -10,9 +10,26 @@ using System.Threading.Tasks;
 
 namespace Genesis.Core.Behaviors.Physics3D
 {
+    /// <summary>
+    /// Represents a 3D convex hull collider behavior for physics interactions.
+    /// </summary>
+    /// <remarks>
+    /// Provides functionality to create and manage a convex hull-shaped collider for detecting collisions in a 3D physics world.
+    /// </remarks>
     public class ConvexHullCollider : ColliderBehavior3D
     {
-        public override void CreateCollider(PhysicHandler physicHandler) 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConvexHullCollider"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this convex hull collider.</param>
+        public ConvexHullCollider(PhysicHandler physicHandler) : base(physicHandler)
+        {
+        }
+
+        /// <summary>
+        /// Creates the convex hull collider based on the parent's shape.
+        /// </summary>
+        public override void CreateCollider() 
         {
             if (this.Parent.GetType() == typeof(Element3D))
             {
@@ -33,15 +50,12 @@ namespace Genesis.Core.Behaviors.Physics3D
                 this.Collider.WorldTransform = btworldTransform;
                 this.Collider.CollisionShape.LocalScaling = scale.ToBulletVec3();
 
-                physicHandler.ManageElement(this);
+                PhysicHandler.ManageElement(this);
             }
             else
             {
                 throw new InvalidOperationException("Invalid element for this Behavior");
             }
         }
-
-
-
     }
 }

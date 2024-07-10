@@ -476,7 +476,21 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent GameElement of the behavior.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler)">
+        <member name="T:Genesis.Core.Behaviors.Physics2D.BoxCollider">
+            <summary>
+            Represents a box-shaped collider behavior in 2D for a physics object.
+            </summary>
+            <remarks>
+            This class extends <see cref="T:Genesis.Physics.ColliderBehavior2D"/> to provide specific functionality for box-shaped colliders.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics2D.BoxCollider"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this box collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.CreateCollider">
             <summary>
             Creates a collider using the provided PhysicHandler.
             </summary>
@@ -486,59 +500,26 @@
             <summary>
             Represents a 2D box trigger for physics interactions.
             </summary>
+            <remarks>
+            Provides functionality to create and manage a box-shaped trigger for detecting collisions in a 2D physics world.
+            </remarks>
         </member>
-        <member name="P:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor(Genesis.Physics.PhysicHandler)">
             <summary>
-            Gets or sets the ghost object representing the trigger.
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D"/> class with the specified physics handler.
+            </summary>
+            <param name="handler">The physics handler to associate with this box trigger.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger">
+            <summary>
+            Creates the trigger using the parent's size half extents.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)">
             <summary>
-            Creates a collider for the box trigger.
+            Creates the trigger with the specified half extents.
             </summary>
-            <param name="handler">The physics handler.</param>
-            <param name="halfExtends">Half extends of the box.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject">
-            <summary>
-            Gets the physics object associated with this behavior.
-            </summary>
-            <returns>The ghost object representing the trigger.</returns>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1">
-            <summary>
-            Gets the physics object associated with this behavior, cast to the specified type.
-            </summary>
-            <typeparam name="T">The type to cast to.</typeparam>
-            <returns>The ghost object representing the trigger.</returns>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the behavior is being destroyed.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the behavior is initialized.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the behavior needs to render something.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Called when the behavior needs to update its state.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
+            <param name="halfExtends">The half extents of the box trigger.</param>
         </member>
         <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
             <summary>
@@ -558,6 +539,11 @@
         <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.AngularFactor">
             <summary>
             Gets or sets the angular factor for the RigidBody's rotation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.PhysicHandler">
+            <summary>
+            Gets or sets the physic handler for this collider
             </summary>
         </member>
         <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.GetPhysicsObject">
@@ -834,13 +820,19 @@
             Defines a box collider behavior for 3D physics simulations.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics3D.BoxCollider"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this box collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider">
             <summary>
             Creates a box collider with default half extends.
             </summary>
             <param name="handler">The physics handler to manage this collider.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxCollider.CreateCollider(Genesis.Math.Vec3)">
             <summary>
             Creates a box collider with specified half extends.
             </summary>
@@ -872,11 +864,21 @@
             Defines a box trigger behavior for 3D physics simulations.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics3D.BoxTrigger"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this box trigger.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger">
+            <summary>
+            Creates the trigger using the parent's size half extents.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3)">
             <summary>
             Creates a box trigger with the specified parameters.
             </summary>
-            <param name="handler">The physics handler managing this trigger.</param>
             <param name="boxHalfExtends">The half extends of the box trigger.</param>
         </member>
         <member name="T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider">
@@ -884,25 +886,28 @@
             Represents a Capsule Collider behavior for 3D physics.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider(Genesis.Physics.PhysicHandler)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this capsule collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider">
             <summary>
             Creates a collider with a capsule shape using default dimensions.
             </summary>
-            <param name="physicHandler">The physics handler to manage this element.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider(Genesis.Physics.PhysicHandler,System.Single,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider(System.Single,System.Single)">
             <summary>
             Creates a collider with a capsule shape at the origin.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="radius">The radius of the capsule.</param>
             <param name="height">The height of the capsule.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleCollider.CreateCollider(Genesis.Math.Vec3,System.Single,System.Single)">
             <summary>
             Creates a collider with a capsule shape at the specified offset.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="offset">The offset from the parent element's location.</param>
             <param name="radius">The radius of the capsule.</param>
             <param name="height">The height of the capsule.</param>
@@ -928,6 +933,25 @@
             <param name="height">The height of the capsule.</param>
             <param name="mass">The mass of the capsule.</param>
             <param name="offset">The offset of the capsule. Default is Vec3.Zero().</param>
+        </member>
+        <member name="T:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider">
+            <summary>
+            Represents a 3D convex hull collider behavior for physics interactions.
+            </summary>
+            <remarks>
+            Provides functionality to create and manage a convex hull-shaped collider for detecting collisions in a 3D physics world.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this convex hull collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider">
+            <summary>
+            Creates the convex hull collider based on the parent's shape.
+            </summary>
         </member>
         <member name="T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull">
             <summary>
@@ -986,20 +1010,26 @@
             Represents a Sphere Collider behavior for 3D physics.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Physics.PhysicHandler)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Behaviors.Physics3D.SphereCollider"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this sphere collider.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider">
             <summary>
             Creates a collider with a sphere shape using the default radius (half of the parent's size).
             </summary>
             <param name="physicHandler">The physics handler to manage this element.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)">
             <summary>
             Creates a collider with a sphere shape at the origin.
             </summary>
             <param name="handler">The physics handler to manage this element.</param>
             <param name="radius">The radius of the sphere.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)">
             <summary>
             Creates a collider with a sphere shape at the specified offset.
             </summary>
@@ -1041,24 +1071,22 @@
             Represents a Sphere trigger behavior for 3D physics.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Physics.PhysicHandler)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger">
             <summary>
             Creates a trigger with a sphere shape using the default radius (half of the parent's size).
             </summary>
             <param name="physicHandler">The physics handler to manage this element.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single)">
             <summary>
             Creates a trigger with a sphere shape at the origin.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="radius">The radius of the sphere.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single)">
             <summary>
             Creates a trigger with a sphere shape at the specified offset.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="offset">The offset from the parent element's location.</param>
             <param name="radius">The radius of the sphere.</param>
         </member>
@@ -3137,6 +3165,11 @@
             </summary>
         </member>
         <member name="M:Genesis.Core.Scene2D.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.Scene2D"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.Scene2D.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:Genesis.Core.Scene2D"/> class.
             </summary>
@@ -6862,7 +6895,107 @@
             <param name="aabbMax">Maximum corner of the AABB</param>
             <returns>True if the ray intersects with the AABB, otherwise false</returns>
         </member>
-        <member name="M:Genesis.Physics.ColliderBehavior3D.CreateCollider(Genesis.Physics.PhysicHandler)">
+        <member name="T:Genesis.Physics.ColliderBehavior2D">
+            <summary>
+            Represents a 2D collider behavior for a physics object in the Genesis game engine.
+            </summary>
+            <remarks>
+            Provides methods for creating and manipulating a collider object, including translation and rotation.
+            </remarks>
+        </member>
+        <member name="P:Genesis.Physics.ColliderBehavior2D.Collider">
+            <summary>
+            Gets or sets the collision object associated with this collider behavior.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.ColliderBehavior2D.Offset">
+            <summary>
+            Gets or sets the offset position for the collider.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.ColliderBehavior2D.PhysicHandler">
+            <summary>
+            Gets or sets the physics handler associated with this collider behavior.
+            </summary>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Physics.ColliderBehavior2D"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this collider behavior.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.CreateCollider">
+            <summary>
+            Creates the collider object.
+            </summary>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)">
+            <summary>
+            Translates the collider by the specified vector.
+            </summary>
+            <param name="value">The vector specifying the translation values.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)">
+            <summary>
+            Translates the collider by the specified x and y values.
+            </summary>
+            <param name="x">The translation value along the x-axis.</param>
+            <param name="y">The translation value along the y-axis.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)">
+            <summary>
+            Rotates the collider by the specified vector.
+            </summary>
+            <param name="value">The vector specifying the rotation values.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)">
+            <summary>
+            Rotates the collider by the specified z value.
+            </summary>
+            <param name="z">The rotation value around the z-axis.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The collision object representing the collider.</returns>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The collision object representing the collider, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the collider is rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Updates the collider's position and rotation each frame.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.ColliderBehavior3D.CreateCollider">
             <summary>
             Abstract method to create the collider.
             Implement this method in derived classes to define the specific behavior for creating a collider.
@@ -6985,6 +7118,15 @@
             Manages a physics behavior element by adding its RigidBody to the physics world.
             </summary>
             <param name="physicsBehavior">The PhysicsBehavior representing the collision object.</param>
+        </member>
+        <member name="M:Genesis.Physics.PhysicsHandler2D.RemoveElement(Genesis.Physics.PhysicsBehavior)">
+            <summary>
+            Removes the specified physics behavior from the physics world.
+            </summary>
+            <param name="physicsBehavior">The physics behavior to be removed.</param>
+            <remarks>
+            This method removes the collision object associated with the provided physics behavior from the physics world.
+            </remarks>
         </member>
         <member name="T:Genesis.Physics.MatrixSet">
             <summary>
@@ -7146,6 +7288,15 @@
             </summary>
             <param name="physicsBehavior">The physics behavior to manage</param>
         </member>
+        <member name="M:Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)">
+            <summary>
+            Removes the specified physics behavior from the physics world.
+            </summary>
+            <param name="physicsBehavior">The physics behavior to be removed.</param>
+            <remarks>
+            This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
+            </remarks>
+        </member>
         <member name="T:Genesis.Physics.PhysicsHandler3D">
             <summary>
             Represents a 3D physics handler responsible for managing physics simulation in a game.
@@ -7187,6 +7338,15 @@
             Manages a physics behavior element by adding its collision object to the physics world.
             </summary>
             <param name="collisionObjec">The PhysicsBehavior representing the rigid body element.</param>
+        </member>
+        <member name="M:Genesis.Physics.PhysicsHandler3D.RemoveElement(Genesis.Physics.PhysicsBehavior)">
+            <summary>
+            Removes the specified physics behavior from the physics world.
+            </summary>
+            <param name="physicsBehavior">The physics behavior to be removed.</param>
+            <remarks>
+            This method removes the collision object associated with the provided physics behavior from the physics world.
+            </remarks>
         </member>
         <member name="T:Genesis.Physics.PhysicsBehaviorEvent">
             <summary>
@@ -7334,6 +7494,101 @@
             <param name="game">The game instance.</param>
             <param name="parent">The parent game element.</param>
         </member>
+        <member name="T:Genesis.Physics.TriggerBehavior2D">
+            <summary>
+            Abstract base class for 2D trigger behaviors in the physics system.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.TriggerBehavior2D.Offset">
+            <summary>
+            Gets or sets the offset position for the trigger.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.TriggerBehavior2D.Trigger">
+            <summary>
+            Gets or sets the ghost object representing the trigger.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.TriggerBehavior2D.PhysicHandler">
+            <summary>
+            Gets or sets the physics handler associated with this trigger behavior.
+            </summary>
+            <value>
+            The <see cref="P:Genesis.Physics.TriggerBehavior2D.PhysicHandler"/> instance associated with this trigger behavior.
+            </value>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Physics.TriggerBehavior2D"/> class with the specified physics handler.
+            </summary>
+            <param name="handler">The physics handler to associate with this trigger behavior.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.CreateTrigger">
+            <summary>
+            Creates the trigger object using the specified physics handler.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)" -->
+        <member name="M:Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)">
+            <summary>
+            Translates the trigger by the specified x and y values.
+            </summary>
+            <param name="x">The translation value along the x-axis.</param>
+            <param name="y">The translation value along the y-axis.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)">
+            <summary>
+            Rotates the trigger by the specified vector.
+            </summary>
+            <param name="value">The vector specifying the rotation values.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)">
+            <summary>
+            Rotates the trigger by the specified z value.
+            </summary>
+            <param name="z">The rotation value around the z-axis.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.GetPhysicsObject">
+            <summary>
+            Gets the physics object associated with this behavior.
+            </summary>
+            <returns>The ghost object representing the trigger.</returns>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1">
+            <summary>
+            Gets the physics object associated with this behavior, cast to the specified type.
+            </summary>
+            <typeparam name="T">The type to cast the physics object to.</typeparam>
+            <returns>The ghost object representing the trigger, cast to the specified type.</returns>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Updates the trigger's position and rotation each frame.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is initialized.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Called when the trigger is rendered.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
         <member name="T:Genesis.Physics.TriggerBehavior3D">
             <summary>
             Abstract base class for defining trigger behaviors in 3D physics simulations.
@@ -7349,7 +7604,21 @@
             Gets or sets the offset of the trigger from its parent's location.
             </summary>
         </member>
-        <member name="M:Genesis.Physics.TriggerBehavior3D.CreateTrigger(Genesis.Physics.PhysicHandler)">
+        <member name="P:Genesis.Physics.TriggerBehavior3D.PhysicHandler">
+            <summary>
+            Gets or sets the physics handler associated with this 3D trigger behavior.
+            </summary>
+            <value>
+            The <see cref="P:Genesis.Physics.TriggerBehavior3D.PhysicHandler"/> instance associated with this 3D trigger behavior.
+            </value>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior3D.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Physics.TriggerBehavior3D"/> class with the specified physics handler.
+            </summary>
+            <param name="physicHandler">The physics handler to associate with this 3D trigger behavior.</param>
+        </member>
+        <member name="M:Genesis.Physics.TriggerBehavior3D.CreateTrigger">
             <summary>
             Creates the trigger associated with this behavior.
             </summary>

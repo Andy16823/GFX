@@ -27,10 +27,27 @@ namespace Genesis.Physics
         public Vec3 Offset { get; set; } = Vec3.Zero();
 
         /// <summary>
+        /// Gets or sets the physics handler associated with this 3D trigger behavior.
+        /// </summary>
+        /// <value>
+        /// The <see cref="PhysicHandler"/> instance associated with this 3D trigger behavior.
+        /// </value>
+        public PhysicHandler PhysicHandler { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerBehavior3D"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this 3D trigger behavior.</param>
+        public TriggerBehavior3D(PhysicHandler physicHandler)
+        {
+            this.PhysicHandler = physicHandler;
+        }
+
+        /// <summary>
         /// Creates the trigger associated with this behavior.
         /// </summary>
         /// <param name="handler">The physics handler to manage this trigger.</param>
-        public abstract void CreateTrigger(PhysicHandler handler);
+        public abstract void CreateTrigger();
 
         /// <summary>
         /// Retrieves the physics object associated with this trigger.
@@ -138,7 +155,7 @@ namespace Genesis.Physics
         /// <param name="parent">The parent game element.</param>
         public override void OnDestroy(Game game, GameElement parent)
         {
-            
+            PhysicHandler.RemoveElement(this);
         }
 
         /// <summary>

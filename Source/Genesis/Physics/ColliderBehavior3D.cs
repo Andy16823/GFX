@@ -15,13 +15,19 @@ namespace Genesis.Physics
     {
         public CollisionObject Collider { get; set; }
         public Vec3 Offset { get; set; } = Vec3.Zero();
+        public PhysicHandler PhysicHandler { get; set; }
+
+        protected ColliderBehavior3D(PhysicHandler physicHandler)
+        {
+            this.PhysicHandler = physicHandler; 
+        }
 
         /// <summary>
         /// Abstract method to create the collider.
         /// Implement this method in derived classes to define the specific behavior for creating a collider.
         /// </summary>
         /// <param name="physicHandler">The physics handler responsible for managing physics-related tasks.</param>
-        public abstract void CreateCollider(PhysicHandler physicHandler);
+        public abstract void CreateCollider();
 
         /// <summary>
         /// Translates the collider by the specified vector.
@@ -152,7 +158,7 @@ namespace Genesis.Physics
         /// <param name="parent">The parent game element.</param>
         public override void OnDestroy(Game game, GameElement parent)
         {
-            
+            PhysicHandler.RemoveElement(this);
         }
     }
 }

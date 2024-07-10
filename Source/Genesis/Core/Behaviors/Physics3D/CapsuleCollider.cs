@@ -16,32 +16,37 @@ namespace Genesis.Core.Behaviors.Physics3D
     public class CapsuleCollider : ColliderBehavior3D
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="CapsuleCollider"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this capsule collider.</param>
+        public CapsuleCollider(PhysicHandler physicHandler) : base(physicHandler)
+        {
+        }
+
+        /// <summary>
         /// Creates a collider with a capsule shape using default dimensions.
         /// </summary>
-        /// <param name="physicHandler">The physics handler to manage this element.</param>
-        public override void CreateCollider(PhysicHandler physicHandler)
+        public override void CreateCollider()
         {
-            this.CreateCollider(physicHandler, 1.0f, 2.0f);
+            this.CreateCollider(1.0f, 2.0f);
         }
         /// <summary>
         /// Creates a collider with a capsule shape at the origin.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="radius">The radius of the capsule.</param>
         /// <param name="height">The height of the capsule.</param>
-        public void CreateCollider(PhysicHandler handler, float radius, float height)
+        public void CreateCollider(float radius, float height)
         {
-            this.CreateCollider(handler, Vec3.Zero(), radius, height);
+            this.CreateCollider(Vec3.Zero(), radius, height);
         }
 
         /// <summary>
         /// Creates a collider with a capsule shape at the specified offset.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the capsule.</param>
         /// <param name="height">The height of the capsule.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 offset, float radius, float height)
+        public void CreateCollider(Vec3 offset, float radius, float height)
         {
             this.Offset = offset;
             var element = this.Parent;
@@ -59,7 +64,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             Collider.CollisionShape = capsuleShape;
             Collider.WorldTransform = btStartTransform;
 
-            handler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }
