@@ -118,9 +118,9 @@ namespace Genesis.Core.Behaviors._3D
         /// <param name="mass">The mass.</param>
         public void CreatePhysics(PhysicHandler handler, Vec3 offset, float radius, float height, float mass)
         {
-            this.RigidBody = new CapsuleRigidBody();
+            this.RigidBody = new CapsuleRigidBody(handler);
             this.Parent.AddBehavior(this.RigidBody);
-            this.RigidBody.CreateRigidBody(handler, radius, height, mass, offset);
+            this.RigidBody.CreateRigidBody(radius, height, mass, offset);
             this.RigidBody.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
             RigidBody.OnCollide += (sce, game, co) =>
             {

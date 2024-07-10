@@ -17,34 +17,39 @@ namespace Genesis.Core.Behaviors.Physics3D
     public class SphereRigidBody : RigidBodyBehavior3D
     {
         /// <summary>
+        /// Constructor for creating a SphereRigidBody behavior.
+        /// </summary>
+        /// <param name="handler">The physics handler managing this rigid body.</param>
+        public SphereRigidBody(PhysicHandler handler) : base(handler)
+        {
+        }
+
+        /// <summary>
         /// Creates a rigid body with a sphere shape using the default radius (half of the parent's size).
         /// </summary>
-        /// <param name="physicHandler">The physics handler to manage this element.</param>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public override void CreateRigidBody(PhysicHandler physicHandler, float mass)
+        public override void CreateRigidBody(float mass)
         {
-            this.CreateRigidBody(physicHandler, this.Parent.Size.X / 2, mass);
+            this.CreateRigidBody(this.Parent.Size.X / 2, mass);
         }
 
         /// <summary>
         /// Creates a rigid body with a sphere shape at the origin.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="radius">The radius of the sphere.</param>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public void CreateRigidBody(PhysicHandler handler, float radius, float mass)
+        public void CreateRigidBody(float radius, float mass)
         {
-            this.CreateRigidBody(handler, Vec3.Zero(), radius, mass);
+            this.CreateRigidBody(Vec3.Zero(), radius, mass);
         }
 
         /// <summary>
         /// Creates a rigid body with a sphere shape at the specified offset.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the sphere.</param>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public void CreateRigidBody(PhysicHandler handler, Vec3 offset, float radius, float mass)
+        public void CreateRigidBody(Vec3 offset, float radius, float mass)
         {
             this.Offset = offset;
 
@@ -65,7 +70,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.UserObject = element;
             RigidBody.ApplyGravity();
 
-            handler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }

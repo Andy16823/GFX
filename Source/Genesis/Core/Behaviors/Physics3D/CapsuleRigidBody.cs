@@ -17,24 +17,30 @@ namespace Genesis.Core.Behaviors.Physics3D
     public class CapsuleRigidBody : Physics.RigidBodyBehavior3D
     {
         /// <summary>
+        /// Constructor for creating a CapsuleRigidBody behavior.
+        /// </summary>
+        /// <param name="handler">The physics handler managing this rigid body.</param>
+        public CapsuleRigidBody(PhysicHandler handler) : base(handler)
+        {
+        }
+
+        /// <summary>
         /// Creates a RigidBody with default capsule dimensions.
         /// </summary>
-        /// <param name="physicHandler">The physics handler to manage this element.</param>
         /// <param name="mass">The mass of the capsule.</param>
-        public override void CreateRigidBody(PhysicHandler physicHandler, float mass)
+        public override void CreateRigidBody(float mass)
         {
-            this.CreateRigidBody(physicHandler, 1.0f, 2.0f, mass);
+            this.CreateRigidBody(1.0f, 2.0f, mass);
         }
 
         /// <summary>
         /// Creates a RigidBody with a capsule shape.
         /// </summary>
-        /// <param name="physicsHandler">The physics handler to manage this element.</param>
         /// <param name="radius">The radius of the capsule.</param>
         /// <param name="height">The height of the capsule.</param>
         /// <param name="mass">The mass of the capsule.</param>
         /// <param name="offset">The offset of the capsule. Default is Vec3.Zero().</param>
-        public void CreateRigidBody(PhysicHandler physicsHandler, float radius, float height, float mass, Vec3 offset = null)
+        public void CreateRigidBody(float radius, float height, float mass, Vec3 offset = null)
         {
             if (offset == null)
             {
@@ -58,7 +64,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.UserObject = Parent;
             RigidBody.ApplyGravity();
 
-            physicsHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }

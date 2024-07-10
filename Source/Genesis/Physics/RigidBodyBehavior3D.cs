@@ -11,17 +11,40 @@ using static BulletSharp.Dbvt;
 
 namespace Genesis.Physics
 {
+    /// <summary>
+    /// Abstract base class for defining behaviors of 3D rigid bodies in a physics simulation.
+    /// </summary>
     public abstract class RigidBodyBehavior3D : PhysicsBehavior
     {
+        /// <summary>
+        /// The BulletSharp RigidBody associated with this behavior.
+        /// </summary>
         public RigidBody RigidBody { get; set; }
+
+        /// <summary>
+        /// Offset from the parent element's location to apply to the rigid body.
+        /// </summary>
         public Vec3 Offset { get; set; } = Vec3.Zero();
+
+        /// <summary>
+        /// The physics handler responsible for managing this rigid body.
+        /// </summary>
+        public PhysicHandler PhysicHandler { get; set; }
+
+        /// <summary>
+        /// Constructor for initializing the RigidBodyBehavior3D.
+        /// </summary>
+        /// <param name="handler">The physics handler managing this rigid body.</param>
+        public RigidBodyBehavior3D(PhysicHandler handler)
+        {
+            this.PhysicHandler = handler;
+        }
 
         /// <summary>
         /// Abstract method to create the rigid body. 
         /// Implement this method in derived classes to define the specific behavior for creating a rigid body.
         /// </summary>
-        /// <param name="physicHandler">The physics handler responsible for managing physics-related tasks.</param>
-        public abstract void CreateRigidBody(PhysicHandler physicHandler, float mass);
+        public abstract void CreateRigidBody(float mass);
 
         /// <summary>
         /// Rotates the rigid body by the specified vector of Euler angles.
@@ -163,6 +186,17 @@ namespace Genesis.Physics
         }
 
         /// <summary>
+        /// Cleanup method called when the behavior is destroyed.
+        /// Override this method to provide custom cleanup logic.
+        /// </summary>
+        /// <param name="game">The game instance.</param>
+        /// <param name="parent">The parent game element.</param>
+        public override void OnDestroy(Game game, GameElement parent)
+        {
+            PhysicHandler.RemoveElement(this);
+        }
+
+        /// <summary>
         /// Initialization method called when the behavior is initialized.
         /// Override this method to provide custom initialization logic.
         /// </summary>
@@ -171,17 +205,6 @@ namespace Genesis.Physics
         public override void OnInit(Game game, GameElement parent)
         {
             
-        }
-
-        /// <summary>
-        /// Cleanup method called when the behavior is destroyed.
-        /// Override this method to provide custom cleanup logic.
-        /// </summary>
-        /// <param name="game">The game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnDestroy(Game game, GameElement parent)
-        {
-
         }
 
         /// <summary>

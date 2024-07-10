@@ -844,18 +844,22 @@
             Defines a box-shaped rigid body behavior for 3D physics simulations.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxRigidBody.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Constructor for creating a BoxRigidBody behavior.
+            </summary>
+            <param name="handler">The physics handler managing this rigid body.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxRigidBody.CreateRigidBody(System.Single)">
             <summary>
             Creates a box-shaped rigid body using the parent's size and the specified mass.
             </summary>
-            <param name="physicHandler">The physics handler to manage this rigid body.</param>
             <param name="mass">The mass of the rigid body.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.BoxRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single)">
             <summary>
             Creates a box-shaped rigid body with the specified half extends, mass, and physics handler.
             </summary>
-            <param name="handler">The physics handler to manage this rigid body.</param>
             <param name="boxHalfExtends">Half extends of the box rigid body.</param>
             <param name="mass">Mass of the rigid body.</param>
         </member>
@@ -917,18 +921,22 @@
             Represents a Capsule RigidBody behavior for 3D physics.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Constructor for creating a CapsuleRigidBody behavior.
+            </summary>
+            <param name="handler">The physics handler managing this rigid body.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.CreateRigidBody(System.Single)">
             <summary>
             Creates a RigidBody with default capsule dimensions.
             </summary>
-            <param name="physicHandler">The physics handler to manage this element.</param>
             <param name="mass">The mass of the capsule.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.CreateRigidBody(System.Single,System.Single,System.Single,Genesis.Math.Vec3)">
             <summary>
             Creates a RigidBody with a capsule shape.
             </summary>
-            <param name="physicsHandler">The physics handler to manage this element.</param>
             <param name="radius">The radius of the capsule.</param>
             <param name="height">The height of the capsule.</param>
             <param name="mass">The mass of the capsule.</param>
@@ -1042,26 +1050,29 @@
             Represents a Sphere RigidBody behavior for 3D physics.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Constructor for creating a SphereRigidBody behavior.
+            </summary>
+            <param name="handler">The physics handler managing this rigid body.</param>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single)">
             <summary>
             Creates a rigid body with a sphere shape using the default radius (half of the parent's size).
             </summary>
-            <param name="physicHandler">The physics handler to manage this element.</param>
             <param name="mass">The mass of the sphere rigid body.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single)">
             <summary>
             Creates a rigid body with a sphere shape at the origin.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="radius">The radius of the sphere.</param>
             <param name="mass">The mass of the sphere rigid body.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single)">
             <summary>
             Creates a rigid body with a sphere shape at the specified offset.
             </summary>
-            <param name="handler">The physics handler to manage this element.</param>
             <param name="offset">The offset from the parent element's location.</param>
             <param name="radius">The radius of the sphere.</param>
             <param name="mass">The mass of the sphere rigid body.</param>
@@ -7387,12 +7398,37 @@
             <typeparam name="T">Type to cast the physics object to</typeparam>
             <returns>The physics object cast to type T</returns>
         </member>
-        <member name="M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="T:Genesis.Physics.RigidBodyBehavior3D">
+            <summary>
+            Abstract base class for defining behaviors of 3D rigid bodies in a physics simulation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.RigidBodyBehavior3D.RigidBody">
+            <summary>
+            The BulletSharp RigidBody associated with this behavior.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.RigidBodyBehavior3D.Offset">
+            <summary>
+            Offset from the parent element's location to apply to the rigid body.
+            </summary>
+        </member>
+        <member name="P:Genesis.Physics.RigidBodyBehavior3D.PhysicHandler">
+            <summary>
+            The physics handler responsible for managing this rigid body.
+            </summary>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.#ctor(Genesis.Physics.PhysicHandler)">
+            <summary>
+            Constructor for initializing the RigidBodyBehavior3D.
+            </summary>
+            <param name="handler">The physics handler managing this rigid body.</param>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)">
             <summary>
             Abstract method to create the rigid body. 
             Implement this method in derived classes to define the specific behavior for creating a rigid body.
             </summary>
-            <param name="physicHandler">The physics handler responsible for managing physics-related tasks.</param>
         </member>
         <member name="M:Genesis.Physics.RigidBodyBehavior3D.Rotate(Genesis.Math.Vec3)">
             <summary>
@@ -7470,18 +7506,18 @@
             <typeparam name="T">The type to cast the physics object to.</typeparam>
             <returns>The rigid body associated with this behavior, cast to the specified type.</returns>
         </member>
-        <member name="M:Genesis.Physics.RigidBodyBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
-            <summary>
-            Initialization method called when the behavior is initialized.
-            Override this method to provide custom initialization logic.
-            </summary>
-            <param name="game">The game instance.</param>
-            <param name="parent">The parent game element.</param>
-        </member>
         <member name="M:Genesis.Physics.RigidBodyBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">
             <summary>
             Cleanup method called when the behavior is destroyed.
             Override this method to provide custom cleanup logic.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="parent">The parent game element.</param>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">
+            <summary>
+            Initialization method called when the behavior is initialized.
+            Override this method to provide custom initialization logic.
             </summary>
             <param name="game">The game instance.</param>
             <param name="parent">The parent game element.</param>

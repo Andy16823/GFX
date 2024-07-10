@@ -18,22 +18,28 @@ namespace Genesis.Core.Behaviors.Physics3D
     public class BoxRigidBody : RigidBodyBehavior3D
     {
         /// <summary>
+        /// Constructor for creating a BoxRigidBody behavior.
+        /// </summary>
+        /// <param name="handler">The physics handler managing this rigid body.</param>
+        public BoxRigidBody(PhysicHandler handler) : base(handler)
+        {
+        }
+
+        /// <summary>
         /// Creates a box-shaped rigid body using the parent's size and the specified mass.
         /// </summary>
-        /// <param name="physicHandler">The physics handler to manage this rigid body.</param>
         /// <param name="mass">The mass of the rigid body.</param>
-        public override void CreateRigidBody(PhysicHandler physicHandler, float mass)
+        public override void CreateRigidBody(float mass)
         {
-            this.CreateRigidBody(physicHandler, this.Parent.Size.Half(), mass);
+            this.CreateRigidBody(this.Parent.Size.Half(), mass);
         }
 
         /// <summary>
         /// Creates a box-shaped rigid body with the specified half extends, mass, and physics handler.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this rigid body.</param>
         /// <param name="boxHalfExtends">Half extends of the box rigid body.</param>
         /// <param name="mass">Mass of the rigid body.</param>
-        public void CreateRigidBody(PhysicHandler handler, Vec3 boxHalfExtends, float mass)
+        public void CreateRigidBody(Vec3 boxHalfExtends, float mass)
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
@@ -51,7 +57,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.UserObject = element;
             RigidBody.ApplyGravity();
             
-            handler.ManageElement(this);
+            PhysicHandler.ManageElement(this);
         }
     }
 }
