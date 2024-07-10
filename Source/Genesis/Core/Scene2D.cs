@@ -52,6 +52,15 @@ namespace Genesis.Core
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Scene2D"/> class.
+        /// </summary>
+        public Scene2D(String name)
+        {
+            this.Name = name;
+            Lights = new List<Light2D>();
+        }
+
+        /// <summary>
         /// Adds a 2D light to the scene.
         /// </summary>
         /// <param name="light">The light to add.</param>
@@ -108,7 +117,7 @@ namespace Genesis.Core
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
             if (this.Camera != null)
-                renderDevice.SetCamera(this.Camera);
+                renderDevice.SetCamera(game.Viewport, this.Camera);
 
             // Before scene preperation even
             if (this.BeforeScenePreperation != null)

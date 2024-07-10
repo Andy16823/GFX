@@ -2,6 +2,7 @@
 using BulletSharp.SoftBody;
 using Genesis.Math;
 using Genesis.Physics;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,97 +15,48 @@ namespace Genesis.Core.Behaviors.Physics3D
     /// Defines a box collider behavior for 3D physics simulations.
     /// </summary>
 
-    public class BoxCollider : PhysicsBehavior
+    public class BoxCollider : ColliderBehavior3D
     {
         /// <summary>
-        /// Gets or sets the rigid body associated with this box collider.
+        /// Initializes a new instance of the <see cref="BoxCollider"/> class with the specified physics handler.
         /// </summary>
-        public RigidBody RigidBody { get; set; }
+        /// <param name="physicHandler">The physics handler to associate with this box collider.</param>
+        public BoxCollider(PhysicHandler physicHandler) : base(physicHandler)
+        {
+        }
 
         /// <summary>
-        /// Creates a box collider with the specified parameters.
+        /// Creates a box collider with default half extends.
         /// </summary>
-        /// <param name="handler">The physics handler managing this collider.</param>
-        /// <param name="boxHalfExtends">The half extends of the box collider.</param>
-        /// <param name="mass">The mass of the box collider.</param>
-        public void CreateCollider(PhysicHandler handler, Vec3 boxHalfExtends, float mass)
+        /// <param name="handler">The physics handler to manage this collider.</param>
+        public override void CreateCollider()
+        {
+            this.CreateCollider(this.Parent.Size.Half());
+        }
+
+        /// <summary>
+        /// Creates a box collider with specified half extends.
+        /// </summary>
+        /// <param name="handler">The physics handler to manage this collider.</param>
+        /// <param name="boxHalfExtends">Half extends of the box collider.</param>
+        public void CreateCollider(Vec3 boxHalfExtends)
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
-            RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, boxShape, boxShape.CalculateLocalInertia(mass));
 
-            Vec3 location = Utils.GetElementWorldLocation(element);
+            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
             Vec3 rotation = Utils.GetElementWorldRotation(element);
 
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
+            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());            
             var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
             var btStartTransform = btTranslation * btRotation;
 
-            info.MotionState = new DefaultMotionState(btStartTransform);
-            RigidBody = new RigidBody(info);
-            RigidBody.UserObject = element;
-            RigidBody.ApplyGravity();
-            
-            handler.ManageElement(this);
-        }
+            Collider = new CollisionObject();
+            Collider.UserObject = element;
+            Collider.CollisionShape = boxShape;
+            Collider.WorldTransform = btStartTransform;
 
-        /// <summary>
-        /// Retrieves the physics object associated with this box collider.
-        /// </summary>
-        /// <returns>The physics object associated with this collider.</returns>
-        public override object GetPhysicsObject()
-        {
-            return RigidBody;
-        }
-
-        /// <summary>
-        /// Retrieves the physics object associated with this box collider, cast to the specified type.
-        /// </summary>
-        /// <typeparam name="T">The type to cast the physics object to.</typeparam>
-        /// <returns>The physics object associated with this collider, cast to the specified type.</returns>
-        public override T GetPhysicsObject<T>()
-        {
-            return (T)(object)RigidBody;
-        }
-
-        /// <summary>
-        /// Called when the collider is destroyed.
-        /// </summary>
-        /// <param name="game">The current game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnDestroy(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the collider is initialized.
-        /// </summary>
-        /// <param name="game">The current game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnInit(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the collider needs to be rendered.
-        /// </summary>
-        /// <param name="game">The current game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnRender(Game game, GameElement parent)
-        {
-            
-        }
-
-        /// <summary>
-        /// Called when the collider needs to be updated.
-        /// </summary>
-        /// <param name="game">The current game instance.</param>
-        /// <param name="parent">The parent game element.</param>
-        public override void OnUpdate(Game game, GameElement parent)
-        {
-            
+            PhysicHandler.ManageElement(this);
         }
     }
 }

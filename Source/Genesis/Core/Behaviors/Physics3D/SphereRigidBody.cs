@@ -12,49 +12,50 @@ using System.Threading.Tasks;
 namespace Genesis.Core.Behaviors.Physics3D
 {
     /// <summary>
-    /// Represents a Sphere Collider behavior for 3D physics.
+    /// Represents a Sphere RigidBody behavior for 3D physics.
     /// </summary>
-    public class SphereCollider : ColliderBehavior3D
+    public class SphereRigidBody : RigidBodyBehavior3D
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SphereCollider"/> class with the specified physics handler.
+        /// Constructor for creating a SphereRigidBody behavior.
         /// </summary>
-        /// <param name="physicHandler">The physics handler to associate with this sphere collider.</param>
-        public SphereCollider(PhysicHandler physicHandler) : base(physicHandler)
+        /// <param name="handler">The physics handler managing this rigid body.</param>
+        public SphereRigidBody(PhysicHandler handler) : base(handler)
         {
         }
 
         /// <summary>
-        /// Creates a collider with a sphere shape using the default radius (half of the parent's size).
+        /// Creates a rigid body with a sphere shape using the default radius (half of the parent's size).
         /// </summary>
-        /// <param name="physicHandler">The physics handler to manage this element.</param>
-        public override void CreateCollider()
+        /// <param name="mass">The mass of the sphere rigid body.</param>
+        public override void CreateRigidBody(float mass)
         {
-            this.CreateCollider(this.Parent.Size.X / 2);
+            this.CreateRigidBody(this.Parent.Size.X / 2, mass);
         }
 
         /// <summary>
-        /// Creates a collider with a sphere shape at the origin.
+        /// Creates a rigid body with a sphere shape at the origin.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateCollider(float radius)
+        /// <param name="mass">The mass of the sphere rigid body.</param>
+        public void CreateRigidBody(float radius, float mass)
         {
-            this.CreateCollider(Vec3.Zero(), radius);
+            this.CreateRigidBody(Vec3.Zero(), radius, mass);
         }
 
         /// <summary>
-        /// Creates a collider with a sphere shape at the specified offset.
+        /// Creates a rigid body with a sphere shape at the specified offset.
         /// </summary>
-        /// <param name="handler">The physics handler to manage this element.</param>
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateCollider(Vec3 offset, float radius)
+        /// <param name="mass">The mass of the sphere rigid body.</param>
+        public void CreateRigidBody(Vec3 offset, float radius, float mass)
         {
             this.Offset = offset;
 
             var element = this.Parent;
             SphereShape sphereShape = new SphereShape(radius);
+            RigidBodyConstructionInfo constructionInfo = new RigidBodyConstructionInfo(mass, null, sphereShape);
 
             Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
             Vec3 rotation = Utils.GetElementWorldRotation(element);
@@ -63,10 +64,12 @@ namespace Genesis.Core.Behaviors.Physics3D
             var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
             var btStartTransform = btTranslation * btRotation;
 
-            Collider = new CollisionObject();
-            Collider.UserObject = element;
-            Collider.CollisionShape = sphereShape;
-            Collider.WorldTransform = btStartTransform;
+            constructionInfo.MotionState = new DefaultMotionState(btStartTransform);
+
+            RigidBody = new RigidBody(constructionInfo);
+            RigidBody.UserObject = element;
+            RigidBody.ApplyGravity();
+
             PhysicHandler.ManageElement(this);
         }
     }

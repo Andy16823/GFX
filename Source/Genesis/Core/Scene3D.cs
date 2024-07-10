@@ -71,7 +71,7 @@ namespace Genesis.Core
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
             if(this.Camera != null)
-               renderDevice.SetCamera(this.Camera);
+               renderDevice.SetCamera(game.Viewport, this.Camera);
 
             if (this.Skybox != null)
                 renderDevice.DrawSkyBox(this.Skybox);

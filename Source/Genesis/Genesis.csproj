@@ -94,16 +94,22 @@
     <Compile Include="Core\Behaviors\AnimationBehavior.cs" />
     <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
     <Compile Include="Core\Behaviors\CharacterController2D.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\BoxCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BoxTrigger2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BufferedSpriteCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\PhysicsBox2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\PhysicsPolygon2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
     <Compile Include="Core\Behaviors\Physics3D\BoxCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\BoxRigidBody.cs" />
     <Compile Include="Core\Behaviors\Physics3D\BoxTrigger.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CapsuleCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\CapsuleRigidBody.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\ConvexHullCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
     <Compile Include="Core\Behaviors\Physics3D\SphereCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\SphereRigidBody.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\SphereTrigger.cs" />
     <Compile Include="Core\Behaviors\Physics3D\StaticMeshBehavior.cs" />
     <Compile Include="Core\Behaviors\Physics3D\ConvexHullBehavior.cs" />
     <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
@@ -113,9 +119,6 @@
     <Compile Include="Core\GameElements\NavMesh.cs" />
     <Compile Include="Core\GameElements\ParticleEmitter.cs" />
     <Compile Include="Core\GameElements\Waypoint.cs" />
-    <Compile Include="Core\GenesisWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Core\IGameBehavior.cs" />
     <Compile Include="Core\Input.cs" />
     <Compile Include="Core\Layer.cs" />
@@ -136,6 +139,8 @@
     <Compile Include="Core\GameElements\Skybox.cs" />
     <Compile Include="Core\Storage.cs" />
     <Compile Include="Core\Utils.cs" />
+    <Compile Include="Core\Window.cs" />
+    <Compile Include="Core\WindowUtilities.cs" />
     <Compile Include="Graphics\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animation.cs" />
     <Compile Include="Graphics\Animation3D\Animator.cs" />
@@ -148,6 +153,7 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\RenderDevice\BetaRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
@@ -194,12 +200,17 @@
     <Compile Include="Math\PerlinNoise.cs" />
     <Compile Include="Math\Rect.cs" />
     <Compile Include="Math\Vec3.cs" />
+    <Compile Include="Physics\ColliderBehavior2D.cs" />
+    <Compile Include="Physics\ColliderBehavior3D.cs" />
     <Compile Include="Physics\PhysicsHandler2D.cs" />
     <Compile Include="Physics\Raycast.cs" />
     <Compile Include="Physics\MouseRay2.cs" />
     <Compile Include="Physics\PhysicHandler.cs" />
     <Compile Include="Physics\PhysicsHandler3D.cs" />
     <Compile Include="Physics\PhysicsBehavior.cs" />
+    <Compile Include="Physics\RigidBodyBehavior3D.cs" />
+    <Compile Include="Physics\TriggerBehavior2D.cs" />
+    <Compile Include="Physics\TriggerBehavior3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\Button.cs" />
     <Compile Include="UI\Canvas.cs" />

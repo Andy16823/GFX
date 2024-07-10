@@ -923,5 +923,52 @@ namespace Genesis.Core
             float a = startColorf[3] + (endColorf[3] - startColorf[3]) * t;
             return new float[] { r, g, b, a};
         }
+
+        public static float CalculateScreenCorrection(float screenWidth, float screenHeight, float virtualWidth, float virtualHeight)
+        {
+            return System.Math.Min(screenWidth / virtualWidth, screenHeight / virtualHeight);
+            //float screenAspectRatio = screenWidth / screenHeight;
+            //float virtualAspectRatio = virtualWidth / virtualHeight;
+            //float xCorrection = screenWidth / virtualWidth;
+            //float yCorrection = screenHeight / virtualHeight;
+
+            //if (virtualAspectRatio < screenAspectRatio)
+            //{
+            //    return yCorrection;
+            //}
+            //else
+            //{
+            //    return xCorrection;
+            //}
+        }
+
+        public static Vector3 ExtractScaleFromMatrix(BulletSharp.Math.Matrix matrix)
+        {
+            float scaleX = new Vector3(matrix.M11, matrix.M12, matrix.M13).Length;
+            float scaleY = new Vector3(matrix.M21, matrix.M22, matrix.M23).Length;
+            float scaleZ = new Vector3(matrix.M31, matrix.M32, matrix.M33).Length;
+
+            return new Vector3(scaleX, scaleY, scaleZ);
+        }
+
+        public static BulletSharp.Math.Matrix BuildPhysicsMatrix(Vector3 location, Vector3 rotation, Vector3 scale)
+        {
+            BulletSharp.Math.Matrix translationMatrix = BulletSharp.Math.Matrix.Translation(location);
+            BulletSharp.Math.Matrix rotaionMatrx = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
+            BulletSharp.Math.Matrix scaleMatrix;
+            BulletSharp.Math.Matrix.Scaling(ref scale, out scaleMatrix);
+
+            return translationMatrix * rotaionMatrx * scaleMatrix;
+        }
+
+        public static BulletSharp.Math.Matrix BuildPhysicsMatrix(Vector3 location, Quaternion rotation, Vector3 scale)
+        {
+            BulletSharp.Math.Matrix translationMatrix = BulletSharp.Math.Matrix.Translation(location);
+            BulletSharp.Math.Matrix rotaionMatrx = BulletSharp.Math.Matrix.RotationQuaternion(rotation);
+            BulletSharp.Math.Matrix scaleMatrix;
+            BulletSharp.Math.Matrix.Scaling(ref scale, out scaleMatrix);
+
+            return translationMatrix * rotaionMatrx * scaleMatrix;
+        }
     }
 }

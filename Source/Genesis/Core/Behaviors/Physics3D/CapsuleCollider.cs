@@ -1,7 +1,7 @@
 ﻿using BulletSharp;
-using BulletSharp.Math;
 using Genesis.Math;
 using Genesis.Physics;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,71 +10,61 @@ using System.Threading.Tasks;
 
 namespace Genesis.Core.Behaviors.Physics3D
 {
-    public class CapsuleCollider : PhysicsBehavior
+    /// <summary>
+    /// Represents a Capsule Collider behavior for 3D physics.
+    /// </summary>
+    public class CapsuleCollider : ColliderBehavior3D
     {
-        public RigidBody RigidBody { get; set; }
-        public Vec3 Offset { get; set; }
-
-        public void CreateRigidBody(PhysicHandler handler, float radius, float height, float mass)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CapsuleCollider"/> class with the specified physics handler.
+        /// </summary>
+        /// <param name="physicHandler">The physics handler to associate with this capsule collider.</param>
+        public CapsuleCollider(PhysicHandler physicHandler) : base(physicHandler)
         {
-            this.CreateRigidBody(handler, Vec3.Zero(), radius, height, mass);
         }
 
-        public void CreateRigidBody(PhysicHandler handler, Vec3 offset, float radius, float height, float mass)
+        /// <summary>
+        /// Creates a collider with a capsule shape using default dimensions.
+        /// </summary>
+        public override void CreateCollider()
+        {
+            this.CreateCollider(1.0f, 2.0f);
+        }
+        /// <summary>
+        /// Creates a collider with a capsule shape at the origin.
+        /// </summary>
+        /// <param name="radius">The radius of the capsule.</param>
+        /// <param name="height">The height of the capsule.</param>
+        public void CreateCollider(float radius, float height)
+        {
+            this.CreateCollider(Vec3.Zero(), radius, height);
+        }
+
+        /// <summary>
+        /// Creates a collider with a capsule shape at the specified offset.
+        /// </summary>
+        /// <param name="offset">The offset from the parent element's location.</param>
+        /// <param name="radius">The radius of the capsule.</param>
+        /// <param name="height">The height of the capsule.</param>
+        public void CreateCollider(Vec3 offset, float radius, float height)
         {
             this.Offset = offset;
             var element = this.Parent;
             CapsuleShape capsuleShape = new CapsuleShape(radius, height);
-            RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, capsuleShape, capsuleShape.CalculateLocalInertia(mass));
 
-            Vec3 location = Utils.GetElementWorldLocation(element);
+            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
             Vec3 rotation = Utils.GetElementWorldRotation(element);
 
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3() + Offset.ToBulletVec3());
+            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
             var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
             var btStartTransform = btTranslation * btRotation;
 
-            info.MotionState = new DefaultMotionState(btStartTransform);
-            RigidBody = new RigidBody(info);
-            RigidBody.UserObject = element;
-            RigidBody.ApplyGravity();
+            Collider = new CollisionObject();
+            Collider.UserObject = element;
+            Collider.CollisionShape = capsuleShape;
+            Collider.WorldTransform = btStartTransform;
 
-            handler.ManageElement(this);
-        }
-
-        public override object GetPhysicsObject()
-        {
-            return RigidBody;
-        }
-
-        public override T GetPhysicsObject<T>()
-        {
-            return (T)(object)RigidBody;
-        }
-
-        public override void OnDestroy(Game game, GameElement parent)
-        {
-            
-        }
-
-        public override void OnInit(Game game, GameElement parent)
-        {
-            
-        }
-
-        public override void OnRender(Game game, GameElement parent)
-        {
-            
-        }
-
-        public override void OnUpdate(Game game, GameElement parent)
-        {
-            if (RigidBody.InvMass > 0)
-            {
-                Vector3 position = RigidBody.WorldTransform.Origin;
-                Vec3 newLocation = Utils.GetModelSpaceLocation(Parent, new Vec3(position.X, position.Y, position.Z));
-                parent.Location = newLocation - Offset;
-            }
+            PhysicHandler.ManageElement(this);
         }
     }
 }

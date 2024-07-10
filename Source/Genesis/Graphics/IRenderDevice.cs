@@ -161,7 +161,7 @@ namespace Genesis.Graphics
         /// Sets the camera for rendering.
         /// </summary>
         /// <param name="camera">The camera to set.</param>
-        void SetCamera(Camera camera);
+        void SetCamera(Viewport viewport, Camera camera);
 
         /// <summary>
         /// Sets the light source for rendering.
@@ -186,7 +186,7 @@ namespace Genesis.Graphics
         /// <param name="y">The y-coordinate of the viewport.</param>
         /// <param name="width">The width of the viewport.</param>
         /// <param name="height">The height of the viewport.</param>
-        void Viewport(float x, float y, float width, float height);
+        void SetViewport(Viewport viewport);
 
         /// <summary>
         /// Rotates the matrix by the specified angle around the given vector.

@@ -88,5 +88,17 @@ namespace Genesis.Physics
             base.ManageElement(physicsBehavior);
             PhysicsWorld.AddCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject());
         }
+
+        /// <summary>
+        /// Removes the specified physics behavior from the physics world.
+        /// </summary>
+        /// <param name="physicsBehavior">The physics behavior to be removed.</param>
+        /// <remarks>
+        /// This method removes the collision object associated with the provided physics behavior from the physics world.
+        /// </remarks>
+        public override void RemoveElement(PhysicsBehavior physicsBehavior)
+        {
+            PhysicsWorld.RemoveCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject());
+        }
     }
 }

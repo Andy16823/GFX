@@ -65,5 +65,14 @@ namespace Genesis.Physics
                 physicsBehavior.Collide(scene, game, (CollisionObject)cObj);
             });
         }
+
+        /// <summary>
+        /// Removes the specified physics behavior from the physics world.
+        /// </summary>
+        /// <param name="physicsBehavior">The physics behavior to be removed.</param>
+        /// <remarks>
+        /// This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
+        /// </remarks>
+        public abstract void RemoveElement(PhysicsBehavior physicsBehavior);
     }
 }

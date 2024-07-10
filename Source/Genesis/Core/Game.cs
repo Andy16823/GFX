@@ -71,6 +71,9 @@ namespace Genesis.Core
         /// </summary>
         public Storage Storage { get; set; }
 
+        public Thread GameThread { get; set; }
+
+
         /// <summary>
         /// Event triggered when the game initializes.
         /// </summary>
@@ -136,8 +139,8 @@ namespace Genesis.Core
         public void Start()
         {
             this.Run = true;
-            Thread thread = new Thread(() => { this.Loop(); });
-            thread.Start();
+            GameThread = new Thread(() => { this.Loop(); });
+            GameThread.Start();
         }
 
         /// <summary>
@@ -145,79 +148,152 @@ namespace Genesis.Core
         /// </summary>
         public void Loop()
         {
-            long timestamp = Utils.GetCurrentTimeMillis() / 1000;
+            this.InitGame();
 
+            while(Run)
+            {
+                long currentFrame = Utils.GetCurrentTimeMillis();
+
+                if(NextFrame(currentFrame))
+                {
+                    this.UpdateFrame(currentFrame);
+                    this.RenderFrame(currentFrame);
+                    this.EndFrame(currentFrame);
+                }
+            }
+            this.StopGame();
+        }
+
+        /// <summary>
+        /// Initialize the game
+        /// </summary>
+        public void InitGame()
+        {
             RenderDevice.Init();
             AssetManager.Init(RenderDevice);
             foreach (var scene in this.Scenes)
             {
                 scene.Init(this, RenderDevice);
             }
-            if(OnInit != null)
+            if (OnInit != null)
             {
                 OnInit(this, RenderDevice);
             }
             LastFrame = Utils.GetCurrentTimeMillis();
-            while(Run)
+        }
+
+        /// <summary>
+        /// Determines if it's time to proceed to the next frame based on the target FPS.
+        /// </summary>
+        /// <param name="currentFrame">The current time in milliseconds.</param>
+        /// <returns>True if enough time has passed to proceed to the next frame, otherwise false.</returns>
+        public bool NextFrame(long currentFrame)
+        {
+            long currentTime = currentFrame / 1000;
+            double frameTime = 1000 / (double)TargetFPS;
+
+            if (currentFrame > LastFrame + frameTime)
             {
-                long currentFrame = Utils.GetCurrentTimeMillis();
-                long currentTime = currentFrame / 1000;
-                double frameTime = 1000 / (double) TargetFPS;
+                return true;
+            }
+            return false;
+        }
 
-                if(currentFrame > LastFrame + frameTime)
+        /// <summary>
+        /// Updates the game state for the current frame.
+        /// </summary>
+        /// <param name="currentFrame">The current time in milliseconds.</param>
+        public void UpdateFrame(long currentFrame)
+        {
+            // Update
+            if (this.SelectedScene != null)
+            {
+                if (OnUpdate != null)
                 {
-                    // Update
-                    if (this.SelectedScene != null)
-                    {
-                        if (OnUpdate != null)
-                        {
-                            OnUpdate(this, RenderDevice);
-                        }
-                        this.SelectedScene.OnUpdate(this, RenderDevice);
-                        if(AfterUpdate != null) AfterUpdate(this, RenderDevice);
-                    }
-                    // Rise before render event
-                    if (BeforeRender != null)
-                    {
-                        BeforeRender(this, RenderDevice);
-                    }
-                    //Render
-                    RenderDevice.Viewport(Viewport.X, Viewport.Y, Viewport.Width, Viewport.Height);
-                    RenderDevice.Begin();
-                    if (OnRenderBeginn != null)
-                    {
-                        OnRenderBeginn(this, RenderDevice);
-                    }
-                    if (this.SelectedScene != null)
-                    {
-                        this.SelectedScene.OnRender(this, RenderDevice);
-                    }
-                    if(OnRenderEnd != null)
-                    {
-                        OnRenderEnd(this, RenderDevice);
-                    }
-                    RenderDevice.End();
-                    // Call after render event
-                    if (AfterRender != null)
-                    {
-                        AfterRender(this, RenderDevice);
-                    }
+                    OnUpdate(this, RenderDevice);
+                }
 
-                    this.Storage.Process(this, SelectedScene);
+                this.SelectedScene.OnUpdate(this, RenderDevice);
 
-                    long deltaTimeLong = currentFrame - LastFrame;
-                    DeltaTime = (double) deltaTimeLong;
-
-                    FPS = 1000 / DeltaTime;
-                    LastFrame = currentFrame;
+                if (AfterUpdate != null)
+                {
+                    AfterUpdate(this, RenderDevice);
                 }
             }
+        }
+
+        /// <summary>
+        /// Renders the current frame.
+        /// </summary>
+        /// <param name="currentFrame">The current time in milliseconds.</param>
+        public void RenderFrame(long currentFrame)
+        {
+            // Rise before render event
+            if (BeforeRender != null)
+            {
+                BeforeRender(this, RenderDevice);
+            }
+            //Pass viewport and start rendering
+            RenderDevice.SetViewport(Viewport);
+            RenderDevice.Begin();
+
+            // Raise the on render beginn event
+            if (OnRenderBeginn != null)
+            {
+                OnRenderBeginn(this, RenderDevice);
+            }
+
+            // Render the selected scene
+            if (this.SelectedScene != null)
+            {
+                this.SelectedScene.OnRender(this, RenderDevice);
+            }
+
+            // Raise the on render end event
+            if (OnRenderEnd != null)
+            {
+                OnRenderEnd(this, RenderDevice);
+            }
+
+            // End the rendering
+            RenderDevice.End();
+            
+            // Raise the after render event
+            if (AfterRender != null)
+            {
+                AfterRender(this, RenderDevice);
+            }
+        }
+
+        /// <summary>
+        /// Ends the current frame by processing storage and updating timing information.
+        /// </summary>
+        /// <param name="currentFrame">The current time in milliseconds.</param>
+        public void EndFrame(long currentFrame)
+        {
+            // Process the managed storage
+            this.Storage.Process(this, SelectedScene);
+
+            // Calculate the delta time
+            long deltaTimeLong = currentFrame - LastFrame;
+            DeltaTime = (double)deltaTimeLong;
+
+            // Calculate the FPS and set the last Frame
+            FPS = 1000 / DeltaTime;
+            LastFrame = currentFrame;
+        }
+
+        /// <summary>
+        /// Stops the game and cleans up resources.
+        /// </summary>
+        public void StopGame()
+        {
             this.AssetManager.DisposeTextures(this);
             foreach (var item in Scenes)
             {
                 item.OnDestroy(this);
             }
-            if(this.OnDispose != null)
+            if (this.OnDispose != null)
             {
                 this.OnDispose(this, RenderDevice);
             }
