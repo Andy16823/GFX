@@ -62,7 +62,7 @@ namespace Genesis.Physics
         {
             this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, cObj) =>
             {
-                physicsBehavior.Collide(scene, game, (CollisionObject)cObj);
+                physicsBehavior.Collide(scene, game, (GameElement) cObj);
             });
         }
 

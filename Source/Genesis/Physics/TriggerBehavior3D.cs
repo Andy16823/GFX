@@ -94,7 +94,7 @@ namespace Genesis.Physics
             BulletSharp.Math.Matrix rotationMatrix;
             BulletSharp.Math.Matrix.RotationYawPitchRoll(x, y, z, out rotationMatrix);
 
-            this.Trigger.WorldTransform = translationMatrix * rotationMatrix;
+            this.Trigger.WorldTransform = rotationMatrix * translationMatrix;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Genesis.Physics
             BulletSharp.Math.Matrix rotationMatrix;
             BulletSharp.Math.Matrix.RotationQuaternion(ref rotation, out rotationMatrix);
 
-            this.Trigger.WorldTransform = translationMatrix * rotationMatrix;
+            this.Trigger.WorldTransform = rotationMatrix * translationMatrix;
         }
 
         /// <summary>

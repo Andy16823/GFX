@@ -95,6 +95,7 @@
     <Compile Include="Core\Behaviors\AnimationBehavior3D.cs" />
     <Compile Include="Core\Behaviors\CharacterController2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BoxCollider.cs" />
+    <Compile Include="Core\Behaviors\Physics2D\BoxRigidBody.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BoxTrigger2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BufferedSpriteCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\PhysicsBox2D.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Physics\PhysicHandler.cs" />
     <Compile Include="Physics\PhysicsHandler3D.cs" />
     <Compile Include="Physics\PhysicsBehavior.cs" />
+    <Compile Include="Physics\RigidBodyBehavior2D.cs" />
     <Compile Include="Physics\RigidBodyBehavior3D.cs" />
     <Compile Include="Physics\TriggerBehavior2D.cs" />
     <Compile Include="Physics\TriggerBehavior3D.cs" />

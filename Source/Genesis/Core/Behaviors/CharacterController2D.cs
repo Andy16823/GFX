@@ -147,7 +147,7 @@ namespace Genesis.Core.Behaviors
         /// </summary>
         public CharacterController2D()
         {
-            this.Rigidbody = new Rigidbody2D();
+         
         }
 
         /// <summary>
@@ -206,7 +206,9 @@ namespace Genesis.Core.Behaviors
         /// <param name="enablePhysics">Specifies whether physics should be enabled initially.</param>
         public void CreatePhysics(PhysicHandler physicHandler, Vec3 linearFactor, Vec3 angularFactor, bool enablePhysics)
         {
-            if(this.ColliderRadius == 0)
+            this.Rigidbody = new Rigidbody2D(physicHandler);
+
+            if (this.ColliderRadius == 0)
             {
                 this.ColliderRadius = Parent.Size.X / 2;
             }
@@ -219,7 +221,7 @@ namespace Genesis.Core.Behaviors
             this.Rigidbody.LinearFactor = linearFactor;
             this.Rigidbody.AngularFactor = angularFactor;
             this.Rigidbody.EnablePhysic = enablePhysics;
-            Rigidbody.CreateRigidbody(physicHandler, this.Mass, ColliderRadius, ColliderHeight);
+            Rigidbody.CreateRigidbody(this.Mass, ColliderRadius, ColliderHeight);
             Rigidbody.OnCollide += (s, g, objB) =>
             {
                 if (!m_collide)

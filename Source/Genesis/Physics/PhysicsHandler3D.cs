@@ -72,12 +72,12 @@ namespace Genesis.Physics
 
                     if(Callbacks.ContainsKey(obA))
                     {
-                        Callbacks[obA](scene, game, obB);
+                        Callbacks[obA](scene, game, obB.UserObject);
                     }
 
                     if (Callbacks.ContainsKey(obB))
                     {
-                        Callbacks[obB](scene, game, obA);
+                        Callbacks[obB](scene, game, obA.UserObject);
                     }
                 }
             }

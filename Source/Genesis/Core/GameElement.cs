@@ -185,13 +185,13 @@ namespace Genesis.Core
         /// </summary>
         /// <typeparam name="T">The type of the behavior.</typeparam>
         /// <returns>The first game behavior of type T, or null if not found.</returns>
-        public IGameBehavior GetBehavior<T>()
+        public T GetBehavior<T>() where T : IGameBehavior
         {
             foreach (var item in this.Behaviors)
             {
-                if(item.GetType() == typeof(T))
+                if (typeof(T).IsAssignableFrom(item.GetType()))
                 {
-                    return item;
+                    return item as T;
                 }
             }
             return null;
