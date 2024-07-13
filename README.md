@@ -38,8 +38,8 @@ GFX integrates open-source libraries including:
 See the License folder for individual licenses; the GFX Game Engine itself is licensed under MIT.
 
 **Community and Resources:**
-- **Website:** [https://gfx-engine.org](https://gfx-engine.org)
-- **Forum:** [forum.gfx-engine.org](https://forum.gfx-engine.org)
+- **Website:** [gfx-engine.org](https://gfx-engine.org)
+- **Forum:** [community.gfx-engine.org](https://community.gfx-engine.org)
 - **Documentation:** [docs.gfx-engine.org](https://docs.gfx-engine.org)
 
 **Getting Started:**
