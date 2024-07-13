@@ -52,6 +52,25 @@ namespace Genesis.Core.GameElements
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Sprite"/> class.
+        /// </summary>
+        /// <param name="name">The name of the sprite.</param>
+        /// <param name="location">The location of the sprite.</param>
+        /// <param name="size">The size of the sprite.</param>
+        /// <param name="spriteSheet">The sprite sheet from which this sprite is sourced.</param>
+        /// <param name="col">The column index of the sprite in the sprite sheet.</param>
+        /// <param name="row">The row index of the sprite in the sprite sheet.</param>
+        public Sprite(String name, Vec3 location, Vec3 size, SpriteSheet spriteSheet, int col, int row)
+        {
+            this.Name = name;
+            this.Location = location;
+            this.Size = size;
+            this.Texture = spriteSheet.Texture;
+            this.OcclusionCulling = true;
+            this.TexCoords = spriteSheet.GetSprite(col, row);
+        }
+
+        /// <summary>
         /// Initializes the sprite element.
         /// </summary>
         /// <param name="game">The game instance.</param>

@@ -12,7 +12,6 @@ using GlmSharp;
 using System.Security.Policy;
 using Microsoft.Win32.SafeHandles;
 using System.Linq.Expressions;
-using OpenObjectLoader;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
@@ -862,7 +861,7 @@ namespace Genesis.Graphics.RenderDevice
             gl.Disable(OpenGL.DepthTest);
             //Create the modelview matrix
             mat4 mt_mat = mat4.Translate(sprite.Location.X, sprite.Location.Y, sprite.Location.Z);
-            mat4 mr_mat = mat4.RotateZ(sprite.Rotation.Z);
+            mat4 mr_mat = mat4.RotateZ(Utils.ToRadians(sprite.Rotation.Z));
             mat4 ms_mat = mat4.Scale(sprite.Size.X, sprite.Size.Y, sprite.Size.Z);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 

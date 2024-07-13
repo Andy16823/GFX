@@ -523,8 +523,8 @@ namespace Genesis.Core
                         var isCollider = propetery.Value<bool>();
                         if (isCollider)
                         {
-                            var collider = bufferedSprite.AddBehavior(new BufferedSpriteCollider());
-                            collider.CreateRigidBody(0f, (PhysicsHandler2D) this.PhysicHandler);
+                            var collider = bufferedSprite.AddBehavior(new BufferedSpriteCollider(this.PhysicHandler));
+                            collider.CreateCollider();
                         }
                         
                     }

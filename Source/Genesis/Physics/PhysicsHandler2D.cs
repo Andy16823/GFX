@@ -1,6 +1,5 @@
 ﻿using BulletSharp;
 using Genesis.Core;
-using OpenObjectLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +31,7 @@ namespace Genesis.Physics
         /// <summary>
         /// Gets ore sets the substepps for physic simulation
         /// </summary>
-        public int Substepps { get; set; } = 32;
+        public int Substepps { get; set; } = 10;
 
         /// <summary>
         /// Initializes a new instance of the PhysicsHandler2D class with specified gravity values.
@@ -68,12 +67,12 @@ namespace Genesis.Physics
 
                     if(Callbacks.ContainsKey(obA))
                     {
-                        Callbacks[obA](scene, game, obB);
+                        Callbacks[obA](scene, game, obB.UserObject);
                     }
 
                     if(Callbacks.ContainsKey(obB))
                     {
-                        Callbacks[obB](scene, game, obA);
+                        Callbacks[obB](scene, game, obA.UserObject);
                     }
                 }
             }

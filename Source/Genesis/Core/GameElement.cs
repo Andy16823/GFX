@@ -185,13 +185,13 @@ namespace Genesis.Core
         /// </summary>
         /// <typeparam name="T">The type of the behavior.</typeparam>
         /// <returns>The first game behavior of type T, or null if not found.</returns>
-        public IGameBehavior GetBehavior<T>()
+        public T GetBehavior<T>() where T : IGameBehavior
         {
             foreach (var item in this.Behaviors)
             {
-                if(item.GetType() == typeof(T))
+                if (typeof(T).IsAssignableFrom(item.GetType()))
                 {
-                    return item;
+                    return item as T;
                 }
             }
             return null;
@@ -232,6 +232,25 @@ namespace Genesis.Core
         public virtual void GetInstance(GameElement element)
         {
             element.Propertys = this.Propertys.ToDictionary(entry => entry.Key, entry => entry.Value);
+        }
+
+        /// <summary>
+        /// Determines whether the current object has a tag that matches the specified value.
+        /// </summary>
+        /// <param name="value">The tag value to compare with the current object's tag.</param>
+        /// <returns>
+        /// <c>true</c> if the current object's tag matches the specified value (case-insensitive); otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasTag(String value)
+        {
+            if (this.Tag != null)
+            {
+                if (this.Tag.Equals(value, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

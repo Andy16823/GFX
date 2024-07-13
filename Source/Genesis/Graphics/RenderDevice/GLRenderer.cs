@@ -12,7 +12,6 @@ using GlmSharp;
 using System.Security.Policy;
 using Microsoft.Win32.SafeHandles;
 using System.Linq.Expressions;
-using OpenObjectLoader;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using static System.Runtime.CompilerServices.RuntimeHelpers;

@@ -124,7 +124,8 @@ namespace Genesis.Core.Behaviors._3D
             this.RigidBody.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
             RigidBody.OnCollide += (sce, game, co) =>
             {
-                var btCollisionObject = (CollisionObject)co;
+                var physicsBehavior = co.GetBehavior<PhysicsBehavior>();
+                var btCollisionObject = (CollisionObject) physicsBehavior.GetPhysicsObject();
                 if (btCollisionObject.GetType() != typeof(GhostObject))
                 {
                     IsColliding = true;
