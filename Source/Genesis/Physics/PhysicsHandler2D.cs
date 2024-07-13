@@ -31,7 +31,7 @@ namespace Genesis.Physics
         /// <summary>
         /// Gets ore sets the substepps for physic simulation
         /// </summary>
-        public int Substepps { get; set; } = 32;
+        public int Substepps { get; set; } = 10;
 
         /// <summary>
         /// Initializes a new instance of the PhysicsHandler2D class with specified gravity values.

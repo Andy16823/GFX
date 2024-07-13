@@ -233,5 +233,24 @@ namespace Genesis.Core
         {
             element.Propertys = this.Propertys.ToDictionary(entry => entry.Key, entry => entry.Value);
         }
+
+        /// <summary>
+        /// Determines whether the current object has a tag that matches the specified value.
+        /// </summary>
+        /// <param name="value">The tag value to compare with the current object's tag.</param>
+        /// <returns>
+        /// <c>true</c> if the current object's tag matches the specified value (case-insensitive); otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasTag(String value)
+        {
+            if (this.Tag != null)
+            {
+                if (this.Tag.Equals(value, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

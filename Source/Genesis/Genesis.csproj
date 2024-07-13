@@ -166,6 +166,7 @@
     <Compile Include="Graphics\Shaders\OpenGL\SolidShapeShader.cs" />
     <Compile Include="Graphics\Shapes\CircleShape.cs" />
     <Compile Include="Graphics\Shapes\Light2DShape.cs" />
+    <Compile Include="Graphics\SpriteSheet.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
     <Compile Include="Graphics\Shader.cs" />
@@ -204,11 +205,13 @@
     <Compile Include="Physics\ColliderBehavior2D.cs" />
     <Compile Include="Physics\ColliderBehavior3D.cs" />
     <Compile Include="Physics\PhysicsHandler2D.cs" />
+    <Compile Include="Physics\Ray2D.cs" />
     <Compile Include="Physics\Raycast.cs" />
     <Compile Include="Physics\MouseRay2.cs" />
     <Compile Include="Physics\PhysicHandler.cs" />
     <Compile Include="Physics\PhysicsHandler3D.cs" />
     <Compile Include="Physics\PhysicsBehavior.cs" />
+    <Compile Include="Physics\Raycast2D.cs" />
     <Compile Include="Physics\RigidBodyBehavior2D.cs" />
     <Compile Include="Physics\RigidBodyBehavior3D.cs" />
     <Compile Include="Physics\TriggerBehavior2D.cs" />
