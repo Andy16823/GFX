@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class AnimationBehavior | GFX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class AnimationBehavior | GFX ">
+    
+    <meta name="description" content="Represents a behavior that enables sprite animations in the Genesis framework.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="GFX">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../../../docs/introduction.html" title="Docs">Docs</a>
+                      </li>
+                      <li>
+                          <a href="../../../../api/Genesis.Core.html" title="API">API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Genesis.Core.Behaviors.AnimationBehavior">
+
+
+
+  <h1 id="Genesis_Core_Behaviors_AnimationBehavior" data-uid="Genesis.Core.Behaviors.AnimationBehavior" class="text-break">Class AnimationBehavior</h1>
+  <div class="markdown level0 summary"><p>Represents a behavior that enables sprite animations in the Genesis framework.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="../../api/Genesis.Core.IGameBehavior.html">IGameBehavior</a></div>
+    <div class="level2"><span class="xref">AnimationBehavior</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_Parent">IGameBehavior.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Genesis.html">Genesis</a>.<a class="xref" href="Genesis.Core.html">Core</a>.<a class="xref" href="Genesis.Core.Behaviors.html">Behaviors</a></h6>
+  <h6><strong>Assembly</strong>: Genesis.dll</h6>
+  <h5 id="Genesis_Core_Behaviors_AnimationBehavior_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AnimationBehavior : IGameBehavior</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior__ctor_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.#ctor*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior__ctor" data-uid="Genesis.Core.Behaviors.AnimationBehavior.#ctor">AnimationBehavior()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the AnimationBehavior class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationBehavior()</code></pre>
+  </div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior__ctor_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.#ctor*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior__ctor_System_Single_System_Single_System_Int64_Genesis_Graphics_Texture_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.#ctor(System.Single,System.Single,System.Int64,Genesis.Graphics.Texture)">AnimationBehavior(float, float, long, Texture)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the AnimationBehavior class with specified parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AnimationBehavior(float cells, float rows, long frameTime, Texture animationSheet)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">cells</span></td>
+        <td><p>The number of cells (frames) in a row in the animation sheet.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>The number of rows in the animation sheet.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">frameTime</span></td>
+        <td><p>The time in milliseconds between animation frames.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Texture.html">Texture</a></td>
+        <td><span class="parametername">animationSheet</span></td>
+        <td><p>The texture containing the animation frames.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_AnimationSheet_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_AnimationSheet" data-uid="Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet">AnimationSheet</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the texture containing the animation frames.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture AnimationSheet { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Texture.html">Texture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_Animations_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Animations*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_Animations" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Animations">Animations</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of animations available for this behavior.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Animation&gt; Animations { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Graphics.Animation.html">Animation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_Cells_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Cells*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_Cells" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Cells">Cells</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of cells (frames) in a row in the animation sheet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Cells { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_FrameTime_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.FrameTime*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_FrameTime" data-uid="Genesis.Core.Behaviors.AnimationBehavior.FrameTime">FrameTime</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the time in milliseconds between animation frames.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long FrameTime { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_Rows_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Rows*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_Rows" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Rows">Rows</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of rows in the animation sheet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Rows { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_SelectedAnimation_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.SelectedAnimation*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_SelectedAnimation" data-uid="Genesis.Core.Behaviors.AnimationBehavior.SelectedAnimation">SelectedAnimation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the currently selected animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Animation SelectedAnimation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Animation.html">Animation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_AddAnimation_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.AddAnimation*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_AddAnimation_Genesis_Graphics_Animation_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.AddAnimation(Genesis.Graphics.Animation)">AddAnimation(Animation)</h4>
+  <div class="markdown level1 summary"><p>Adds an animation to the list of available animations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAnimation(Animation animation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Animation.html">Animation</a></td>
+        <td><span class="parametername">animation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_LoadAnimation_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.LoadAnimation*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_LoadAnimation_System_String_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.LoadAnimation(System.String)">LoadAnimation(string)</h4>
+  <div class="markdown level1 summary"><p>Loads the specified animation by name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadAnimation(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the animation to load.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_OnDestroy_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnDestroy*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)">OnDestroy(Game, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Called when the game behavior is being destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDestroy(Game game, GameElement parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td><p>The game instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>The parent game element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_">IGameBehavior.OnDestroy(Game, GameElement)</a></div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_OnInit_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnInit*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)">OnInit(Game, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Called when the game element is initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnInit(Game game, GameElement parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_">IGameBehavior.OnInit(Game, GameElement)</a></div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_OnRender_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnRender*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)">OnRender(Game, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Called when the game behavior is rendered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnRender(Game game, GameElement parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td><p>The game instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>The parent game element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_">IGameBehavior.OnRender(Game, GameElement)</a></div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_OnUpdate_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnUpdate*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">OnUpdate(Game, GameElement)</h4>
+  <div class="markdown level1 summary"><p>Called when the game element is updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnUpdate(Game game, GameElement parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.GameElement.html">GameElement</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_">IGameBehavior.OnUpdate(Game, GameElement)</a></div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_Play_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Play*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_Play" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Play">Play()</h4>
+  <div class="markdown level1 summary"><p>Starts playing the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Play()</code></pre>
+  </div>
+
+
+  <a id="Genesis_Core_Behaviors_AnimationBehavior_Stop_" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Stop*"></a>
+  <h4 id="Genesis_Core_Behaviors_AnimationBehavior_Stop" data-uid="Genesis.Core.Behaviors.AnimationBehavior.Stop">Stop()</h4>
+  <div class="markdown level1 summary"><p>Stops playing the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

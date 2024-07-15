@@ -12,6 +12,566 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Class1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.AssetManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.AssetManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.AnimationBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.AnimationBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.CameraFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.CameraFlags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.CharacterController2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.CharacterController2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.ControllerPreset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.ControllerPreset.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.MoveDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.MoveDirection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.MovementFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.MovementFlags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.BoxCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.BoxCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.BoxTrigger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.SphereCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.SphereCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.Physics3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.SpriteMovementController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.SpriteMovementController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.Stance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.Stance.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors._3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Behaviors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Behaviors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Game.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Game.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.BufferedSprite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.BufferedSprite.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.CameraElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.CameraElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Element3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Element3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Empty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Empty.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Model.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.ParticleEmitter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Qube.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Qube.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.RectElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.RectElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Skybox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Skybox.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Sprite.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Sprite.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.SpriteShapeDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.SpriteShapeDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Terrain2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Terrain2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.Terrain3D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.Terrain3D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.TerrainData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.TerrainData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElements.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleBuffers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleBuffers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleDeffinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleDeffinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleEmitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElments.ParticleEmitter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameElments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameElments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GameEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GameEventHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.GenesisWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.GenesisWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.IGameBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.IGameBehavior.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Input.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Layer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Layer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "Genesis/api/Genesis.Core.Light.yml",
+      "output": {
+        ".html": {
+          "relative_path": "Genesis/api/Genesis.Core.Light.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Class1.yml",
       "output": {
         ".html": {

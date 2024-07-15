@@ -265,6 +265,11 @@
             Gets or sets the currently selected animation.
             </summary>
         </member>
+        <member name="P:Genesis.Core.Behaviors.AnimationBehavior.Callbacks">
+            <summary>
+            Gets or sets the callbacks for the animation
+            </summary>
+        </member>
         <member name="M:Genesis.Core.Behaviors.AnimationBehavior.#ctor">
             <summary>
             Initializes a new instance of the AnimationBehavior class.
@@ -309,6 +314,14 @@
             <summary>
             Called when the game element is updated.
             </summary>
+        </member>
+        <member name="M:Genesis.Core.Behaviors.AnimationBehavior.AddCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)">
+            <summary>
+            Adds an new animation callback to the animation behavior
+            </summary>
+            <param name="animation">The name from the animation</param>
+            <param name="frame">The frame when the callback gets rised</param>
+            <param name="animationEvent">The animation event</param>
         </member>
         <member name="T:Genesis.Core.Behaviors.MovementFlags">
             <summary>
@@ -4293,6 +4306,46 @@
             <summary>
             Initializes a new instance of the ModelMesh class.
             </summary>
+        </member>
+        <member name="T:Genesis.Graphics.AnimationCallback">
+            <summary>
+            Represents a callback for a specific frame in an animation.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.AnimationCallback.AnimationEvent">
+            <summary>
+            Delegate for the animation event callback.
+            </summary>
+            <param name="game">The game instance triggering the event.</param>
+            <param name="element">The game element associated with the event.</param>
+        </member>
+        <member name="P:Genesis.Graphics.AnimationCallback.AnimationName">
+            <summary>
+            Gets or sets the name of the animation.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.AnimationCallback.Frame">
+            <summary>
+            Gets or sets the frame number at which the callback is triggered.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.AnimationCallback.Callback">
+            <summary>
+            Gets or sets the callback method to be invoked.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.AnimationCallback.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.AnimationCallback"/> class.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.AnimationCallback.#ctor(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.AnimationCallback"/> class with specified animation name, frame, and callback.
+            </summary>
+            <param name="animationName">The name of the animation.</param>
+            <param name="frame">The frame number at which the callback is triggered.</param>
+            <param name="callback">The callback method to be invoked.</param>
         </member>
         <member name="T:Genesis.Graphics.Face">
             <summary>

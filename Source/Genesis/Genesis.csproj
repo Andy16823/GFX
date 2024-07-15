@@ -147,6 +147,7 @@
     <Compile Include="Graphics\Animation3D\Animator.cs" />
     <Compile Include="Graphics\Animation3D\Bone.cs" />
     <Compile Include="Graphics\Animation3D\ModelMesh.cs" />
+    <Compile Include="Graphics\AnimationCallback.cs" />
     <Compile Include="Graphics\Face.cs" />
     <Compile Include="Graphics\Font.cs" />
     <Compile Include="Graphics\Framebuffer.cs" />
