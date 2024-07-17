@@ -5,6 +5,8 @@ items:
   id: Genesis.Physics
   children:
   - Genesis.Physics.Aabb
+  - Genesis.Physics.ColliderBehavior2D
+  - Genesis.Physics.ColliderBehavior3D
   - Genesis.Physics.HitResult
   - Genesis.Physics.MatrixSet
   - Genesis.Physics.MouseRay2
@@ -15,7 +17,13 @@ items:
   - Genesis.Physics.PhysicsBehaviorEvent
   - Genesis.Physics.PhysicsHandler2D
   - Genesis.Physics.PhysicsHandler3D
+  - Genesis.Physics.Ray2D
   - Genesis.Physics.Raycast
+  - Genesis.Physics.Raycast2D
+  - Genesis.Physics.RigidBodyBehavior2D
+  - Genesis.Physics.RigidBodyBehavior3D
+  - Genesis.Physics.TriggerBehavior2D
+  - Genesis.Physics.TriggerBehavior3D
   langs:
   - csharp
   - vb
@@ -34,6 +42,22 @@ references:
   name: Aabb
   nameWithType: Aabb
   fullName: Genesis.Physics.Aabb
+- uid: Genesis.Physics.ColliderBehavior2D
+  commentId: T:Genesis.Physics.ColliderBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html
+  name: ColliderBehavior2D
+  nameWithType: ColliderBehavior2D
+  fullName: Genesis.Physics.ColliderBehavior2D
+- uid: Genesis.Physics.ColliderBehavior3D
+  commentId: T:Genesis.Physics.ColliderBehavior3D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html
+  name: ColliderBehavior3D
+  nameWithType: ColliderBehavior3D
+  fullName: Genesis.Physics.ColliderBehavior3D
 - uid: Genesis.Physics.PhysicsHandler2D
   commentId: T:Genesis.Physics.PhysicsHandler2D
   isExternal: true
@@ -41,6 +65,14 @@ references:
   name: PhysicsHandler2D
   nameWithType: PhysicsHandler2D
   fullName: Genesis.Physics.PhysicsHandler2D
+- uid: Genesis.Physics.Ray2D
+  commentId: T:Genesis.Physics.Ray2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.Ray2D.html
+  name: Ray2D
+  nameWithType: Ray2D
+  fullName: Genesis.Physics.Ray2D
 - uid: Genesis.Physics.MatrixSet
   commentId: T:Genesis.Physics.MatrixSet
   parent: Genesis.Physics
@@ -117,6 +149,45 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.Raycast2D
+  commentId: T:Genesis.Physics.Raycast2D
+  isExternal: true
+  href: Genesis.Physics.Raycast2D.html
+  name: Raycast2D
+  nameWithType: Raycast2D
+  fullName: Genesis.Physics.Raycast2D
+- uid: Genesis.Physics.RigidBodyBehavior2D
+  commentId: T:Genesis.Physics.RigidBodyBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html
+  name: RigidBodyBehavior2D
+  nameWithType: RigidBodyBehavior2D
+  fullName: Genesis.Physics.RigidBodyBehavior2D
+- uid: Genesis.Physics.RigidBodyBehavior3D
+  commentId: T:Genesis.Physics.RigidBodyBehavior3D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html
+  name: RigidBodyBehavior3D
+  nameWithType: RigidBodyBehavior3D
+  fullName: Genesis.Physics.RigidBodyBehavior3D
+- uid: Genesis.Physics.TriggerBehavior2D
+  commentId: T:Genesis.Physics.TriggerBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html
+  name: TriggerBehavior2D
+  nameWithType: TriggerBehavior2D
+  fullName: Genesis.Physics.TriggerBehavior2D
+- uid: Genesis.Physics.TriggerBehavior3D
+  commentId: T:Genesis.Physics.TriggerBehavior3D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior3D.html
+  name: TriggerBehavior3D
+  nameWithType: TriggerBehavior3D
+  fullName: Genesis.Physics.TriggerBehavior3D
 - uid: Genesis.Physics
   commentId: N:Genesis.Physics
   isExternal: true

@@ -6,8 +6,11 @@ items:
   parent: Genesis.Math
   children:
   - Genesis.Math.Rect.#ctor
+  - Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Math.Rect.#ctor(System.Single,System.Single,System.Single,System.Single)
   - Genesis.Math.Rect.Contains(System.Single,System.Single)
+  - Genesis.Math.Rect.GetLocation
+  - Genesis.Math.Rect.GetSize
   - Genesis.Math.Rect.Height
   - Genesis.Math.Rect.Intersects(Genesis.Math.Rect)
   - Genesis.Math.Rect.ToString
@@ -74,6 +77,36 @@ items:
   nameWithType.vb: Rect.New(Single, Single, Single, Single)
   fullName.vb: Genesis.Math.Rect.New(Single, Single, Single, Single)
   name.vb: New(Single, Single, Single, Single)
+- uid: Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  id: '#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)'
+  parent: Genesis.Math.Rect
+  langs:
+  - csharp
+  - vb
+  name: Rect(Vec3, Vec3)
+  nameWithType: Rect.Rect(Vec3, Vec3)
+  fullName: Genesis.Math.Rect.Rect(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Initializes a new instance of the Rect class with the specified location and size.
+  example: []
+  syntax:
+    content: public Rect(Vec3 location, Vec3 size)
+    parameters:
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location of the rectangle.
+    - id: size
+      type: Genesis.Math.Vec3
+      description: The size of the rectangle.
+    content.vb: Public Sub New(location As Vec3, size As Vec3)
+  overload: Genesis.Math.Rect.#ctor*
+  nameWithType.vb: Rect.New(Vec3, Vec3)
+  fullName.vb: Genesis.Math.Rect.New(Genesis.Math.Vec3, Genesis.Math.Vec3)
+  name.vb: New(Vec3, Vec3)
 - uid: Genesis.Math.Rect.#ctor
   commentId: M:Genesis.Math.Rect.#ctor
   id: '#ctor'
@@ -181,6 +214,49 @@ items:
     content.vb: Public Overrides Function ToString() As String
   overridden: System.Object.ToString
   overload: Genesis.Math.Rect.ToString*
+- uid: Genesis.Math.Rect.GetLocation
+  commentId: M:Genesis.Math.Rect.GetLocation
+  id: GetLocation
+  parent: Genesis.Math.Rect
+  langs:
+  - csharp
+  - vb
+  name: GetLocation()
+  nameWithType: Rect.GetLocation()
+  fullName: Genesis.Math.Rect.GetLocation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns the location from the rect
+  example: []
+  syntax:
+    content: public Vec3 GetLocation()
+    return:
+      type: Genesis.Math.Vec3
+      description: ''
+    content.vb: Public Function GetLocation() As Vec3
+  overload: Genesis.Math.Rect.GetLocation*
+- uid: Genesis.Math.Rect.GetSize
+  commentId: M:Genesis.Math.Rect.GetSize
+  id: GetSize
+  parent: Genesis.Math.Rect
+  langs:
+  - csharp
+  - vb
+  name: GetSize()
+  nameWithType: Rect.GetSize()
+  fullName: Genesis.Math.Rect.GetSize()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public Vec3 GetSize()
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function GetSize() As Vec3
+  overload: Genesis.Math.Rect.GetSize*
 - uid: Genesis.Math.Rect.X
   commentId: P:Genesis.Math.Rect.X
   id: X
@@ -535,6 +611,14 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
 - uid: Genesis.Math.Rect.Contains*
   commentId: Overload:Genesis.Math.Rect.Contains
   isExternal: true
@@ -610,6 +694,20 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Genesis.Math.Rect.GetLocation*
+  commentId: Overload:Genesis.Math.Rect.GetLocation
+  isExternal: true
+  href: Genesis.Math.Rect.html#Genesis_Math_Rect_GetLocation
+  name: GetLocation
+  nameWithType: Rect.GetLocation
+  fullName: Genesis.Math.Rect.GetLocation
+- uid: Genesis.Math.Rect.GetSize*
+  commentId: Overload:Genesis.Math.Rect.GetSize
+  isExternal: true
+  href: Genesis.Math.Rect.html#Genesis_Math_Rect_GetSize
+  name: GetSize
+  nameWithType: Rect.GetSize
+  fullName: Genesis.Math.Rect.GetSize
 - uid: Genesis.Math.Rect.X*
   commentId: Overload:Genesis.Math.Rect.X
   isExternal: true

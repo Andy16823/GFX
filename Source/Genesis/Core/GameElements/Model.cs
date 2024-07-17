@@ -69,6 +69,17 @@ namespace Genesis.Core.GameElements
         public Animator Animator { get; set; }
 
         /// <summary>
+        /// Gets or sets the list of animation callbacks.
+        /// </summary>
+        /// <value>
+        /// A list of <see cref="AnimationCallback"/> objects representing the callbacks to be triggered at specific frames of animations.
+        /// </value>
+        /// <remarks>
+        /// This property holds the callbacks that are associated with specific frames of animations. These callbacks are checked and potentially triggered during the animation update process.
+        /// </remarks>
+        public List<AnimationCallback> AnimationCallbacks { get; set; }
+
+        /// <summary>
         /// Initializes the model within the game environment.
         /// </summary>
         public override void Init(Game game, IRenderDevice renderDevice)
@@ -92,6 +103,21 @@ namespace Genesis.Core.GameElements
         {
             base.OnUpdate(game, renderDevice);
             Animator.UpdateAnimation(AnimationSpeed);
+            if (Animator.CurrentAnimation != null && Animator.Play)
+            {
+                foreach (var callback in AnimationCallbacks)
+                {
+                    if (callback.AnimationName.Equals(Animator.CurrentAnimation.Name) && Animator.CurrentAnimation.GetKeyFrameIndex(Animator.CurrentTime) == callback.Frame && !callback.CallbackRised)
+                    {
+                        callback.Callback(game, this);
+                        callback.CallbackRised = true;
+                    }
+                    else if (callback.CallbackRised && Animator.CurrentAnimation.GetKeyFrameIndex(Animator.CurrentTime) != callback.Frame)
+                    {
+                        callback.CallbackRised = false;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -108,6 +134,7 @@ namespace Genesis.Core.GameElements
         /// </summary>
         public Model(String name, Vec3 location, String filename)
         {
+            this.AnimationCallbacks = new List<AnimationCallback>(); 
             this.Name = name;
             this.Location = location;
             this.Rotation = new Vec3(0f);
@@ -282,6 +309,58 @@ namespace Genesis.Core.GameElements
                 return animation;
             }
             return null;
+        }
+
+        /// <summary>
+        /// Gets the keyframe length of the specified animation by its name.
+        /// </summary>
+        /// <param name="name">The name of the animation.</param>
+        /// <returns>
+        /// The keyframe length of the specified animation if it exists; otherwise, returns -1.
+        /// </returns>
+        /// <remarks>
+        /// This method searches for an animation by its name and returns its keyframe length.
+        /// </remarks>
+        public int GetAnimationLength(string name)
+        {
+            var animation = this.FindAnimation(name);
+            if (animation != null)
+            {
+                return animation.AnimationLength();
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Gets the current keyframe index of the animation being played by the animator.
+        /// </summary>
+        /// <returns>
+        /// The current keyframe index if an animation is being played; otherwise, returns -1.
+        /// </returns>
+        /// <remarks>
+        /// This method checks if there is a current animation being played by the animator and retrieves the keyframe index based on the current time of the animation.
+        /// </remarks>
+        public int GetCurrentAnimationFrame()
+        {
+            if (this.Animator.CurrentAnimation != null && this.Animator.Play)
+            {
+                return this.Animator.CurrentAnimation.GetKeyFrameIndex(this.Animator.CurrentTime);
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// Adds a callback to be triggered at a specific frame of a specified animation.
+        /// </summary>
+        /// <param name="name">The name of the animation to which the callback should be added.</param>
+        /// <param name="frame">The frame at which the callback should be triggered.</param>
+        /// <param name="callback">The callback event to be triggered at the specified frame.</param>
+        /// <remarks>
+        /// This method registers a new animation callback by adding it to the list of animation callbacks.
+        /// </remarks>
+        public void AddAnimationCallback(String name, int frame, AnimationCallback.AnimationEvent callback)
+        {
+            this.AnimationCallbacks.Add(new AnimationCallback(name, frame, callback));
         }
     }
 }

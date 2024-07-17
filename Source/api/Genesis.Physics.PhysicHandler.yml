@@ -9,6 +9,7 @@ items:
   - Genesis.Physics.PhysicHandler.Callbacks
   - Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
   - Genesis.Physics.PhysicHandler.Process(Genesis.Core.Scene,Genesis.Core.Game)
+  - Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   langs:
   - csharp
   - vb
@@ -111,6 +112,31 @@ items:
       description: The physics behavior to manage
     content.vb: Public Overridable Sub ManageElement(physicsBehavior As PhysicsBehavior)
   overload: Genesis.Physics.PhysicHandler.ManageElement*
+- uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  commentId: M:Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  id: RemoveElement(Genesis.Physics.PhysicsBehavior)
+  parent: Genesis.Physics.PhysicHandler
+  langs:
+  - csharp
+  - vb
+  name: RemoveElement(PhysicsBehavior)
+  nameWithType: PhysicHandler.RemoveElement(PhysicsBehavior)
+  fullName: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Removes the specified physics behavior from the physics world.
+  remarks: This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
+  example: []
+  syntax:
+    content: public abstract void RemoveElement(PhysicsBehavior physicsBehavior)
+    parameters:
+    - id: physicsBehavior
+      type: Genesis.Physics.PhysicsBehavior
+      description: The physics behavior to be removed.
+    content.vb: Public MustOverride Sub RemoveElement(physicsBehavior As PhysicsBehavior)
+  overload: Genesis.Physics.PhysicHandler.RemoveElement*
 - uid: Genesis.Physics.PhysicHandler.Callbacks
   commentId: P:Genesis.Physics.PhysicHandler.Callbacks
   id: Callbacks
@@ -482,6 +508,13 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.PhysicHandler.RemoveElement*
+  commentId: Overload:Genesis.Physics.PhysicHandler.RemoveElement
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_RemoveElement_Genesis_Physics_PhysicsBehavior_
+  name: RemoveElement
+  nameWithType: PhysicHandler.RemoveElement
+  fullName: Genesis.Physics.PhysicHandler.RemoveElement
 - uid: Genesis.Physics.PhysicHandler.Callbacks*
   commentId: Overload:Genesis.Physics.PhysicHandler.Callbacks
   isExternal: true

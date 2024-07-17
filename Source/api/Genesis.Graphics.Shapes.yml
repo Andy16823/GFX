@@ -5,6 +5,7 @@ items:
   id: Genesis.Graphics.Shapes
   children:
   - Genesis.Graphics.Shapes.BufferedSpriteShape
+  - Genesis.Graphics.Shapes.CircleShape
   - Genesis.Graphics.Shapes.FrameShape
   - Genesis.Graphics.Shapes.GlypheShape
   - Genesis.Graphics.Shapes.Light2DShape
@@ -24,6 +25,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Graphics.Shapes.CircleShape
+  commentId: T:Genesis.Graphics.Shapes.CircleShape
+  isExternal: true
+  href: Genesis.Graphics.Shapes.CircleShape.html
+  name: CircleShape
+  nameWithType: CircleShape
+  fullName: Genesis.Graphics.Shapes.CircleShape
 - uid: Genesis.Graphics.Shapes.Light2DShape
   commentId: T:Genesis.Graphics.Shapes.Light2DShape
   isExternal: true

@@ -1648,6 +1648,17 @@
             Gets or sets the animator responsible for controlling animations.
             </summary>
         </member>
+        <member name="P:Genesis.Core.GameElements.Model.AnimationCallbacks">
+            <summary>
+            Gets or sets the list of animation callbacks.
+            </summary>
+            <value>
+            A list of <see cref="T:Genesis.Graphics.AnimationCallback"/> objects representing the callbacks to be triggered at specific frames of animations.
+            </value>
+            <remarks>
+            This property holds the callbacks that are associated with specific frames of animations. These callbacks are checked and potentially triggered during the animation update process.
+            </remarks>
+        </member>
         <member name="M:Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
             Initializes the model within the game environment.
@@ -1712,6 +1723,40 @@
             <summary>
             Finds an animation with the specified name.
             </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.GetAnimationLength(System.String)">
+            <summary>
+            Gets the keyframe length of the specified animation by its name.
+            </summary>
+            <param name="name">The name of the animation.</param>
+            <returns>
+            The keyframe length of the specified animation if it exists; otherwise, returns -1.
+            </returns>
+            <remarks>
+            This method searches for an animation by its name and returns its keyframe length.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.GetCurrentAnimationFrame">
+            <summary>
+            Gets the current keyframe index of the animation being played by the animator.
+            </summary>
+            <returns>
+            The current keyframe index if an animation is being played; otherwise, returns -1.
+            </returns>
+            <remarks>
+            This method checks if there is a current animation being played by the animator and retrieves the keyframe index based on the current time of the animation.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)">
+            <summary>
+            Adds a callback to be triggered at a specific frame of a specified animation.
+            </summary>
+            <param name="name">The name of the animation to which the callback should be added.</param>
+            <param name="frame">The frame at which the callback should be triggered.</param>
+            <param name="callback">The callback event to be triggered at the specified frame.</param>
+            <remarks>
+            This method registers a new animation callback by adding it to the list of animation callbacks.
+            </remarks>
         </member>
         <member name="T:Genesis.Core.GameElements.GridCell">
             <summary>
@@ -4087,6 +4132,30 @@
             Finds a bone with the specified name.
             </summary>
         </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.AnimationLength">
+            <summary>
+            Calculates the keyframe length of the animation based on the maximum number of position, rotation, and scaling keyframes among all bones.
+            </summary>
+            <returns>
+            The maximum number of keyframes (positions, rotations, or scalings) among all bones; if no bones are present, returns -1.
+            </returns>
+            <remarks>
+            This method iterates through all bones to determine the maximum keyframe length.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)">
+            <summary>
+            Gets the keyframe index at a specific animation time based on the first bone.
+            </summary>
+            <param name="animationTime">The time within the animation to find the keyframe index for.</param>
+            <returns>
+            The highest keyframe index (position, rotation, or scale) at the specified animation time.
+            </returns>
+            <remarks>
+            This method assumes that all keyframe lists (positions, rotations, scales) are synchronized and have the same number of keyframes.
+            It calculates the keyframe index for the first bone in the list.
+            </remarks>
+        </member>
         <member name="T:Genesis.Graphics.Animation3D.Animator">
             <summary>
             Controls the animation playback of a 3D model.
@@ -4328,6 +4397,14 @@
             <summary>
             Gets or sets the frame number at which the callback is triggered.
             </summary>
+        </member>
+        <member name="P:Genesis.Graphics.AnimationCallback.CallbackRised">
+            <summary>
+            Gets or sets a value indicating whether an animation callback has been triggered.
+            </summary>
+            <value>
+            <c>true</c> if a callback has been triggered; otherwise, <c>false</c>.
+            </value>
         </member>
         <member name="P:Genesis.Graphics.AnimationCallback.Callback">
             <summary>

@@ -17,6 +17,7 @@ items:
   - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
   - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
+  - Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
   - Genesis.Graphics.IRenderDevice.DrawElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.DrawGameElement(Genesis.Core.GameElement)
   - Genesis.Graphics.IRenderDevice.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
@@ -34,6 +35,7 @@ items:
   - Genesis.Graphics.IRenderDevice.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.End
+  - Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
@@ -54,10 +56,11 @@ items:
   - Genesis.Graphics.IRenderDevice.ProjectionMatrix
   - Genesis.Graphics.IRenderDevice.PushMatrix
   - Genesis.Graphics.IRenderDevice.Rotate(System.Single,Genesis.Math.Vec3)
-  - Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  - Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   - Genesis.Graphics.IRenderDevice.SetFramebuffer(Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.SetFramebuffer(System.Int32)
   - Genesis.Graphics.IRenderDevice.SetLightSource(Genesis.Core.Light)
+  - Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
   - Genesis.Graphics.IRenderDevice.TextureClampS
   - Genesis.Graphics.IRenderDevice.TextureClampT
   - Genesis.Graphics.IRenderDevice.TextureRepeatS
@@ -65,7 +68,6 @@ items:
   - Genesis.Graphics.IRenderDevice.Translate(Genesis.Math.Vec3)
   - Genesis.Graphics.IRenderDevice.Translate(System.Single,System.Single,System.Single)
   - Genesis.Graphics.IRenderDevice.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)
-  - Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
   langs:
   - csharp
   - vb
@@ -661,16 +663,16 @@ items:
       description: The font to load.
     content.vb: Sub LoadFont(font As Font)
   overload: Genesis.Graphics.IRenderDevice.LoadFont*
-- uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
-  commentId: M:Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
-  id: SetCamera(Genesis.Graphics.Camera)
+- uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
+  id: SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   parent: Genesis.Graphics.IRenderDevice
   langs:
   - csharp
   - vb
-  name: SetCamera(Camera)
-  nameWithType: IRenderDevice.SetCamera(Camera)
-  fullName: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  name: SetCamera(Viewport, Camera)
+  nameWithType: IRenderDevice.SetCamera(Viewport, Camera)
+  fullName: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport, Genesis.Graphics.Camera)
   type: Method
   assemblies:
   - Genesis
@@ -678,12 +680,14 @@ items:
   summary: Sets the camera for rendering.
   example: []
   syntax:
-    content: void SetCamera(Camera camera)
+    content: void SetCamera(Viewport viewport, Camera camera)
     parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
     - id: camera
       type: Genesis.Graphics.Camera
       description: The camera to set.
-    content.vb: Sub SetCamera(camera As Camera)
+    content.vb: Sub SetCamera(viewport As Viewport, camera As Camera)
   overload: Genesis.Graphics.IRenderDevice.SetCamera*
 - uid: Genesis.Graphics.IRenderDevice.SetLightSource(Genesis.Core.Light)
   commentId: M:Genesis.Graphics.IRenderDevice.SetLightSource(Genesis.Core.Light)
@@ -749,16 +753,16 @@ items:
     content: void PopMatrix()
     content.vb: Sub PopMatrix()
   overload: Genesis.Graphics.IRenderDevice.PopMatrix*
-- uid: Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
-  commentId: M:Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
-  id: Viewport(System.Single,System.Single,System.Single,System.Single)
+- uid: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+  id: SetViewport(Genesis.Graphics.Viewport)
   parent: Genesis.Graphics.IRenderDevice
   langs:
   - csharp
   - vb
-  name: Viewport(float, float, float, float)
-  nameWithType: IRenderDevice.Viewport(float, float, float, float)
-  fullName: Genesis.Graphics.IRenderDevice.Viewport(float, float, float, float)
+  name: SetViewport(Viewport)
+  nameWithType: IRenderDevice.SetViewport(Viewport)
+  fullName: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
   type: Method
   assemblies:
   - Genesis
@@ -766,25 +770,12 @@ items:
   summary: Sets the viewport for rendering.
   example: []
   syntax:
-    content: void Viewport(float x, float y, float width, float height)
+    content: void SetViewport(Viewport viewport)
     parameters:
-    - id: x
-      type: System.Single
-      description: The x-coordinate of the viewport.
-    - id: y
-      type: System.Single
-      description: The y-coordinate of the viewport.
-    - id: width
-      type: System.Single
-      description: The width of the viewport.
-    - id: height
-      type: System.Single
-      description: The height of the viewport.
-    content.vb: Sub Viewport(x As Single, y As Single, width As Single, height As Single)
-  overload: Genesis.Graphics.IRenderDevice.Viewport*
-  nameWithType.vb: IRenderDevice.Viewport(Single, Single, Single, Single)
-  fullName.vb: Genesis.Graphics.IRenderDevice.Viewport(Single, Single, Single, Single)
-  name.vb: Viewport(Single, Single, Single, Single)
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+    content.vb: Sub SetViewport(viewport As Viewport)
+  overload: Genesis.Graphics.IRenderDevice.SetViewport*
 - uid: Genesis.Graphics.IRenderDevice.Rotate(System.Single,Genesis.Math.Vec3)
   commentId: M:Genesis.Graphics.IRenderDevice.Rotate(System.Single,Genesis.Math.Vec3)
   id: Rotate(System.Single,Genesis.Math.Vec3)
@@ -1199,6 +1190,64 @@ items:
   nameWithType.vb: IRenderDevice.DrawRect(Rect, Color, Single)
   fullName.vb: Genesis.Graphics.IRenderDevice.DrawRect(Genesis.Math.Rect, System.Drawing.Color, Single)
   name.vb: DrawRect(Rect, Color, Single)
+- uid: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  commentId: M:Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  id: FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: FillCircle(Vec3, float, Color)
+  nameWithType: IRenderDevice.FillCircle(Vec3, float, Color)
+  fullName: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3, float, System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void FillCircle(Vec3 center, float radius, Color color)
+    parameters:
+    - id: center
+      type: Genesis.Math.Vec3
+    - id: radius
+      type: System.Single
+    - id: color
+      type: System.Drawing.Color
+    content.vb: Sub FillCircle(center As Vec3, radius As Single, color As Color)
+  overload: Genesis.Graphics.IRenderDevice.FillCircle*
+  nameWithType.vb: IRenderDevice.FillCircle(Vec3, Single, Color)
+  fullName.vb: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3, Single, System.Drawing.Color)
+  name.vb: FillCircle(Vec3, Single, Color)
+- uid: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  commentId: M:Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  id: DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: DrawCircle(Vec3, float, Color, float)
+  nameWithType: IRenderDevice.DrawCircle(Vec3, float, Color, float)
+  fullName: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3, float, System.Drawing.Color, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void DrawCircle(Vec3 center, float radius, Color color, float borderWidth)
+    parameters:
+    - id: center
+      type: Genesis.Math.Vec3
+    - id: radius
+      type: System.Single
+    - id: color
+      type: System.Drawing.Color
+    - id: borderWidth
+      type: System.Single
+    content.vb: Sub DrawCircle(center As Vec3, radius As Single, color As Color, borderWidth As Single)
+  overload: Genesis.Graphics.IRenderDevice.DrawCircle*
+  nameWithType.vb: IRenderDevice.DrawCircle(Vec3, Single, Color, Single)
+  fullName.vb: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3, Single, System.Drawing.Color, Single)
+  name.vb: DrawCircle(Vec3, Single, Color, Single)
 - uid: Genesis.Graphics.IRenderDevice.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   commentId: M:Genesis.Graphics.IRenderDevice.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   id: FillRect(Genesis.Math.Rect,System.Drawing.Color)
@@ -2060,10 +2109,18 @@ references:
 - uid: Genesis.Graphics.IRenderDevice.SetCamera*
   commentId: Overload:Genesis.Graphics.IRenderDevice.SetCamera
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Camera_
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Viewport_Genesis_Graphics_Camera_
   name: SetCamera
   nameWithType: IRenderDevice.SetCamera
   fullName: Genesis.Graphics.IRenderDevice.SetCamera
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
 - uid: Genesis.Graphics.Camera
   commentId: T:Genesis.Graphics.Camera
   parent: Genesis.Graphics
@@ -2101,13 +2158,20 @@ references:
   name: PopMatrix
   nameWithType: IRenderDevice.PopMatrix
   fullName: Genesis.Graphics.IRenderDevice.PopMatrix
-- uid: Genesis.Graphics.IRenderDevice.Viewport*
-  commentId: Overload:Genesis.Graphics.IRenderDevice.Viewport
+- uid: Genesis.Graphics.IRenderDevice.SetViewport*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.SetViewport
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Viewport_System_Single_System_Single_System_Single_System_Single_
-  name: Viewport
-  nameWithType: IRenderDevice.Viewport
-  fullName: Genesis.Graphics.IRenderDevice.Viewport
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetViewport_Genesis_Graphics_Viewport_
+  name: SetViewport
+  nameWithType: IRenderDevice.SetViewport
+  fullName: Genesis.Graphics.IRenderDevice.SetViewport
+- uid: Genesis.Graphics.IRenderDevice.Rotate*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.Rotate
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Rotate_System_Single_Genesis_Math_Vec3_
+  name: Rotate
+  nameWithType: IRenderDevice.Rotate
+  fullName: Genesis.Graphics.IRenderDevice.Rotate
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -2119,13 +2183,6 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: Genesis.Graphics.IRenderDevice.Rotate*
-  commentId: Overload:Genesis.Graphics.IRenderDevice.Rotate
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Rotate_System_Single_Genesis_Math_Vec3_
-  name: Rotate
-  nameWithType: IRenderDevice.Rotate
-  fullName: Genesis.Graphics.IRenderDevice.Rotate
 - uid: Genesis.Math.Vec3
   commentId: T:Genesis.Math.Vec3
   parent: Genesis.Math
@@ -2269,6 +2326,20 @@ references:
   name: Rect
   nameWithType: Rect
   fullName: Genesis.Math.Rect
+- uid: Genesis.Graphics.IRenderDevice.FillCircle*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.FillCircle
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FillCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_
+  name: FillCircle
+  nameWithType: IRenderDevice.FillCircle
+  fullName: Genesis.Graphics.IRenderDevice.FillCircle
+- uid: Genesis.Graphics.IRenderDevice.DrawCircle*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DrawCircle
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DrawCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_System_Single_
+  name: DrawCircle
+  nameWithType: IRenderDevice.DrawCircle
+  fullName: Genesis.Graphics.IRenderDevice.DrawCircle
 - uid: Genesis.Graphics.IRenderDevice.FillRect*
   commentId: Overload:Genesis.Graphics.IRenderDevice.FillRect
   isExternal: true

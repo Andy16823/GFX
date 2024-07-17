@@ -29,6 +29,7 @@ items:
   derivedClasses:
   - Genesis.Graphics.Shaders.OpenGL.AnimatedModelShader
   - Genesis.Graphics.Shaders.OpenGL.BasicShader
+  - Genesis.Graphics.Shaders.OpenGL.BorderCircleShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalLightning
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
@@ -42,6 +43,7 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.ParticleShader
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
+  - Genesis.Graphics.Shaders.OpenGL.SolidShapeShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader
   - Genesis.Graphics.Shaders.OpenGL.TerrainShader
   - Genesis.Graphics.Shaders.OpenGL.WireframeShader

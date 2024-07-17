@@ -8,7 +8,11 @@ items:
   - Genesis.Core.GameElements.CameraElement
   - Genesis.Core.GameElements.Element3D
   - Genesis.Core.GameElements.Empty
+  - Genesis.Core.GameElements.FindPathAsynchResult
+  - Genesis.Core.GameElements.GridCell
   - Genesis.Core.GameElements.Model
+  - Genesis.Core.GameElements.NavMesh
+  - Genesis.Core.GameElements.Obstacle
   - Genesis.Core.GameElements.ParticleBuffers
   - Genesis.Core.GameElements.ParticleDeffinition
   - Genesis.Core.GameElements.ParticleEmitter
@@ -20,6 +24,7 @@ items:
   - Genesis.Core.GameElements.Terrain2D
   - Genesis.Core.GameElements.Terrain3D
   - Genesis.Core.GameElements.TerrainData
+  - Genesis.Core.GameElements.Waypoint
   langs:
   - csharp
   - vb
@@ -38,6 +43,36 @@ references:
   name: Model
   nameWithType: Model
   fullName: Genesis.Core.GameElements.Model
+- uid: Genesis.Core.GameElements.FindPathAsynchResult
+  commentId: T:Genesis.Core.GameElements.FindPathAsynchResult
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.FindPathAsynchResult.html
+  name: FindPathAsynchResult
+  nameWithType: FindPathAsynchResult
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult
+- uid: Genesis.Core.GameElements.GridCell
+  commentId: T:Genesis.Core.GameElements.GridCell
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.GridCell.html
+  name: GridCell
+  nameWithType: GridCell
+  fullName: Genesis.Core.GameElements.GridCell
+- uid: Genesis.Core.GameElements.Obstacle
+  commentId: T:Genesis.Core.GameElements.Obstacle
+  isExternal: true
+  href: Genesis.Core.GameElements.Obstacle.html
+  name: Obstacle
+  nameWithType: Obstacle
+  fullName: Genesis.Core.GameElements.Obstacle
+- uid: Genesis.Core.GameElements.NavMesh
+  commentId: T:Genesis.Core.GameElements.NavMesh
+  isExternal: true
+  href: Genesis.Core.GameElements.NavMesh.html
+  name: NavMesh
+  nameWithType: NavMesh
+  fullName: Genesis.Core.GameElements.NavMesh
 - uid: Genesis.Core.GameElements.ParticleBuffers
   commentId: T:Genesis.Core.GameElements.ParticleBuffers
   parent: Genesis.Core.GameElements
@@ -62,6 +97,14 @@ references:
   name: ParticleEmitter
   nameWithType: ParticleEmitter
   fullName: Genesis.Core.GameElements.ParticleEmitter
+- uid: Genesis.Core.GameElements.Waypoint
+  commentId: T:Genesis.Core.GameElements.Waypoint
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Waypoint.html
+  name: Waypoint
+  nameWithType: Waypoint
+  fullName: Genesis.Core.GameElements.Waypoint
 - uid: Genesis.Core.GameElements.SpriteShapeDeffinition
   commentId: T:Genesis.Core.GameElements.SpriteShapeDeffinition
   isExternal: true

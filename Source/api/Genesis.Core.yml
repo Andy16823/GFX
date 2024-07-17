@@ -8,9 +8,9 @@ items:
   - Genesis.Core.Game
   - Genesis.Core.GameElement
   - Genesis.Core.GameEventHandler
-  - Genesis.Core.GenesisWindow
   - Genesis.Core.IGameBehavior
   - Genesis.Core.Input
+  - Genesis.Core.Input.Keys
   - Genesis.Core.Layer
   - Genesis.Core.Light
   - Genesis.Core.Light2D
@@ -21,6 +21,11 @@ items:
   - Genesis.Core.SceneSizeEvenHandler
   - Genesis.Core.Storage
   - Genesis.Core.Utils
+  - Genesis.Core.Window
+  - Genesis.Core.Window.WindowEventHandler
+  - Genesis.Core.WindowUtilities
+  - Genesis.Core.WindowUtilities.POINT
+  - Genesis.Core.WindowUtilities.RECT
   langs:
   - csharp
   - vb
@@ -63,13 +68,6 @@ references:
   name: GameElement
   nameWithType: GameElement
   fullName: Genesis.Core.GameElement
-- uid: Genesis.Core.GenesisWindow
-  commentId: T:Genesis.Core.GenesisWindow
-  isExternal: true
-  href: Genesis.Core.GenesisWindow.html
-  name: GenesisWindow
-  nameWithType: GenesisWindow
-  fullName: Genesis.Core.GenesisWindow
 - uid: Genesis.Core.IGameBehavior
   commentId: T:Genesis.Core.IGameBehavior
   parent: Genesis.Core
@@ -85,6 +83,34 @@ references:
   name: Input
   nameWithType: Input
   fullName: Genesis.Core.Input
+- uid: Genesis.Core.Input.Keys
+  commentId: T:Genesis.Core.Input.Keys
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Input.html
+  name: Input.Keys
+  nameWithType: Input.Keys
+  fullName: Genesis.Core.Input.Keys
+  spec.csharp:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html
+  spec.vb:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html
 - uid: Genesis.Core.Layer
   commentId: T:Genesis.Core.Layer
   parent: Genesis.Core
@@ -162,6 +188,105 @@ references:
   name: Utils
   nameWithType: Utils
   fullName: Genesis.Core.Utils
+- uid: Genesis.Core.Window
+  commentId: T:Genesis.Core.Window
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Window.html
+  name: Window
+  nameWithType: Window
+  fullName: Genesis.Core.Window
+- uid: Genesis.Core.Window.WindowEventHandler
+  commentId: T:Genesis.Core.Window.WindowEventHandler
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Window.html
+  name: Window.WindowEventHandler
+  nameWithType: Window.WindowEventHandler
+  fullName: Genesis.Core.Window.WindowEventHandler
+  spec.csharp:
+  - uid: Genesis.Core.Window
+    name: Window
+    isExternal: true
+    href: Genesis.Core.Window.html
+  - name: .
+  - uid: Genesis.Core.Window.WindowEventHandler
+    name: WindowEventHandler
+    isExternal: true
+    href: Genesis.Core.Window.WindowEventHandler.html
+  spec.vb:
+  - uid: Genesis.Core.Window
+    name: Window
+    isExternal: true
+    href: Genesis.Core.Window.html
+  - name: .
+  - uid: Genesis.Core.Window.WindowEventHandler
+    name: WindowEventHandler
+    isExternal: true
+    href: Genesis.Core.Window.WindowEventHandler.html
+- uid: Genesis.Core.WindowUtilities
+  commentId: T:Genesis.Core.WindowUtilities
+  isExternal: true
+  href: Genesis.Core.WindowUtilities.html
+  name: WindowUtilities
+  nameWithType: WindowUtilities
+  fullName: Genesis.Core.WindowUtilities
+- uid: Genesis.Core.WindowUtilities.RECT
+  commentId: T:Genesis.Core.WindowUtilities.RECT
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.WindowUtilities.html
+  name: WindowUtilities.RECT
+  nameWithType: WindowUtilities.RECT
+  fullName: Genesis.Core.WindowUtilities.RECT
+  spec.csharp:
+  - uid: Genesis.Core.WindowUtilities
+    name: WindowUtilities
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.html
+  - name: .
+  - uid: Genesis.Core.WindowUtilities.RECT
+    name: RECT
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.RECT.html
+  spec.vb:
+  - uid: Genesis.Core.WindowUtilities
+    name: WindowUtilities
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.html
+  - name: .
+  - uid: Genesis.Core.WindowUtilities.RECT
+    name: RECT
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.RECT.html
+- uid: Genesis.Core.WindowUtilities.POINT
+  commentId: T:Genesis.Core.WindowUtilities.POINT
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.WindowUtilities.html
+  name: WindowUtilities.POINT
+  nameWithType: WindowUtilities.POINT
+  fullName: Genesis.Core.WindowUtilities.POINT
+  spec.csharp:
+  - uid: Genesis.Core.WindowUtilities
+    name: WindowUtilities
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.html
+  - name: .
+  - uid: Genesis.Core.WindowUtilities.POINT
+    name: POINT
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.POINT.html
+  spec.vb:
+  - uid: Genesis.Core.WindowUtilities
+    name: WindowUtilities
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.html
+  - name: .
+  - uid: Genesis.Core.WindowUtilities.POINT
+    name: POINT
+    isExternal: true
+    href: Genesis.Core.WindowUtilities.POINT.html
 - uid: Genesis.Core
   commentId: N:Genesis.Core
   isExternal: true

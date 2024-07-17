@@ -136,7 +136,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Gets the index of the position keyframe at the specified animation time.
         /// </summary>
-        private int GetPositionIndex(float animationTime)
+        public int GetPositionIndex(float animationTime)
         {
             for (int index = 0; index < NumPositions - 1; ++index)
             {
@@ -150,7 +150,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Gets the index of the rotation keyframe at the specified animation time.
         /// </summary>
-        private int GetRotationIndex(float animationTime)
+        public int GetRotationIndex(float animationTime)
         {
             for (int index = 0; index < NumRotations - 1; ++index)
             {
@@ -164,7 +164,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Gets the index of the scale keyframe at the specified animation time.
         /// </summary>
-        private int GetScaleIndex(float animationTime)
+        public int GetScaleIndex(float animationTime)
         {
             for (int index = 0; index < NumScalings - 1; ++index)
             {
@@ -178,7 +178,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Calculates the interpolation factor between two keyframes.
         /// </summary>
-        private float GetScaleFactor(float lastTimeStamp, float nextTimeStamp, float animationTime)
+        public float GetScaleFactor(float lastTimeStamp, float nextTimeStamp, float animationTime)
         {
             float scaleFactor = 0.0f;
             float midWayLength = animationTime - lastTimeStamp;
@@ -190,7 +190,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Interpolates position for the bone at the specified animation time.
         /// </summary>
-        private mat4 InterpolatePosition(float animationTime)
+        public mat4 InterpolatePosition(float animationTime)
         {
             if (1 == NumPositions)
                 return mat4.Identity * mat4.Translate(Positions[0].position);
@@ -205,7 +205,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Interpolates rotation for the bone at the specified animation time.
         /// </summary>
-        private mat4 InterpolateRotation(float animationTime)
+        public mat4 InterpolateRotation(float animationTime)
         {
             if (1 == NumRotations)
             {
@@ -231,7 +231,7 @@ namespace Genesis.Graphics.Animation3D
         /// <summary>
         /// Interpolates scale for the bone at the specified animation time.
         /// </summary>
-        private mat4 InterpolateScaling(float animationTime)
+        public mat4 InterpolateScaling(float animationTime)
         {
             if (1 == NumScalings)
                 return mat4.Identity * mat4.Scale(Scales[0].scale);

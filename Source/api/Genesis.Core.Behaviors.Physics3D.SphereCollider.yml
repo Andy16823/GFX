@@ -5,17 +5,10 @@ items:
   id: SphereCollider
   parent: Genesis.Core.Behaviors.Physics3D
   children:
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject``1
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor(Genesis.Physics.PhysicHandler)
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
   langs:
   - csharp
   - vb
@@ -26,16 +19,32 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics3D
+  summary: Represents a Sphere Collider behavior for 3D physics.
+  example: []
   syntax:
-    content: 'public class SphereCollider : PhysicsBehavior'
-    content.vb: Public Class SphereCollider Inherits PhysicsBehavior
+    content: 'public class SphereCollider : ColliderBehavior3D'
+    content.vb: Public Class SphereCollider Inherits ColliderBehavior3D
   inheritance:
   - System.Object
   - Genesis.Core.IGameBehavior
   - Genesis.Physics.PhysicsBehavior
+  - Genesis.Physics.ColliderBehavior3D
   inheritedMembers:
+  - Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+  - Genesis.Physics.ColliderBehavior3D.Translate(System.Single,System.Single,System.Single)
+  - Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+  - Genesis.Physics.ColliderBehavior3D.Rotate(System.Single,System.Single,System.Single)
+  - Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
+  - Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
+  - Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior3D.Collider
+  - Genesis.Physics.ColliderBehavior3D.Offset
+  - Genesis.Physics.ColliderBehavior3D.PhysicHandler
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Physics.PhysicsBehavior.OnCollide
-  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   - Genesis.Core.IGameBehavior.Parent
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -44,293 +53,111 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
-  id: CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Single)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor(Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor(Genesis.Physics.PhysicHandler)
+  id: '#ctor(Genesis.Physics.PhysicHandler)'
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(PhysicHandler, float, float)
-  nameWithType: SphereCollider.CreateRigidBody(PhysicHandler, float, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, float, float)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  syntax:
-    content: public void CreateRigidBody(PhysicHandler handler, float radius, float mass)
-    parameters:
-    - id: handler
-      type: Genesis.Physics.PhysicHandler
-    - id: radius
-      type: System.Single
-    - id: mass
-      type: System.Single
-    content.vb: Public Sub CreateRigidBody(handler As PhysicHandler, radius As Single, mass As Single)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody*
-  nameWithType.vb: SphereCollider.CreateRigidBody(PhysicHandler, Single, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Single, Single)
-  name.vb: CreateRigidBody(PhysicHandler, Single, Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
-  id: CreateRigidBody(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single)
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: CreateRigidBody(PhysicHandler, Vec3, float, float)
-  nameWithType: SphereCollider.CreateRigidBody(PhysicHandler, Vec3, float, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, float, float)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  syntax:
-    content: public void CreateRigidBody(PhysicHandler handler, Vec3 offset, float radius, float mass)
-    parameters:
-    - id: handler
-      type: Genesis.Physics.PhysicHandler
-    - id: offset
-      type: Genesis.Math.Vec3
-    - id: radius
-      type: System.Single
-    - id: mass
-      type: System.Single
-    content.vb: Public Sub CreateRigidBody(handler As PhysicHandler, offset As Vec3, radius As Single, mass As Single)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody*
-  nameWithType.vb: SphereCollider.CreateRigidBody(PhysicHandler, Vec3, Single, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Single, Single)
-  name.vb: CreateRigidBody(PhysicHandler, Vec3, Single, Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
-  id: GetPhysicsObject
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject()
-  nameWithType: SphereCollider.GetPhysicsObject()
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Gets the physics object associated with this behavior.
-  example: []
-  syntax:
-    content: public override object GetPhysicsObject()
-    return:
-      type: System.Object
-      description: The physics object
-    content.vb: Public Overrides Function GetPhysicsObject() As Object
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject``1
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject``1
-  id: GetPhysicsObject``1
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject<T>()
-  nameWithType: SphereCollider.GetPhysicsObject<T>()
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject<T>()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Gets the physics object associated with this behavior, cast to type T.
-  example: []
-  syntax:
-    content: public override T GetPhysicsObject<T>()
-    typeParameters:
-    - id: T
-      description: Type to cast the physics object to
-    return:
-      type: '{T}'
-      description: The physics object cast to type T
-    content.vb: Public Overrides Function GetPhysicsObject(Of T)() As T
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject*
-  nameWithType.vb: SphereCollider.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy(Game, GameElement)
-  nameWithType: SphereCollider.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Called when the game behavior is being destroyed.
-  example: []
-  syntax:
-    content: public override void OnDestroy(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnDestroy(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: OnInit(Game, GameElement)
-  nameWithType: SphereCollider.OnInit(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Called when the game behavior is initialized.
-  example: []
-  syntax:
-    content: public override void OnInit(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnInit(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: OnRender(Game, GameElement)
-  nameWithType: SphereCollider.OnRender(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Called when the game behavior is rendered.
-  example: []
-  syntax:
-    content: public override void OnRender(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnRender(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: OnUpdate(Game, GameElement)
-  nameWithType: SphereCollider.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics3D
-  summary: Called when the game behavior is updated.
-  example: []
-  syntax:
-    content: public override void OnUpdate(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
-  id: '#ctor'
-  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
-  langs:
-  - csharp
-  - vb
-  name: SphereCollider()
-  nameWithType: SphereCollider.SphereCollider()
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider()
+  name: SphereCollider(PhysicHandler)
+  nameWithType: SphereCollider.SphereCollider(PhysicHandler)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider(Genesis.Physics.PhysicHandler)
   type: Constructor
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics3D
+  summary: Initializes a new instance of the <xref href="Genesis.Core.Behaviors.Physics3D.SphereCollider" data-throw-if-not-resolved="false"></xref> class with the specified physics handler.
+  example: []
   syntax:
-    content: public SphereCollider()
-    content.vb: Public Sub New()
+    content: public SphereCollider(PhysicHandler physicHandler)
+    parameters:
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler to associate with this sphere collider.
+    content.vb: Public Sub New(physicHandler As PhysicHandler)
   overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor*
-  nameWithType.vb: SphereCollider.New()
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New()
-  name.vb: New()
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
-  commentId: P:Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
-  id: RigidBody
+  nameWithType.vb: SphereCollider.New(PhysicHandler)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New(Genesis.Physics.PhysicHandler)
+  name.vb: New(PhysicHandler)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
+  id: CreateCollider
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: RigidBody
-  nameWithType: SphereCollider.RigidBody
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
-  type: Property
+  name: CreateCollider()
+  nameWithType: SphereCollider.CreateCollider()
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider()
+  type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics3D
+  summary: Creates a collider with a sphere shape using the default radius (half of the parent's size).
+  example: []
   syntax:
-    content: public RigidBody RigidBody { get; set; }
-    parameters: []
-    return:
-      type: BulletSharp.RigidBody
-    content.vb: Public Property RigidBody As RigidBody
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
-  commentId: P:Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
-  id: Offset
+    content: public override void CreateCollider()
+    content.vb: Public Overrides Sub CreateCollider()
+  overridden: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
+  id: CreateCollider(System.Single)
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: Offset
-  nameWithType: SphereCollider.Offset
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
-  type: Property
+  name: CreateCollider(float)
+  nameWithType: SphereCollider.CreateCollider(float)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(float)
+  type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics3D
+  summary: Creates a collider with a sphere shape at the origin.
+  example: []
   syntax:
-    content: public Vec3 Offset { get; set; }
-    parameters: []
-    return:
+    content: public void CreateCollider(float radius)
+    parameters:
+    - id: radius
+      type: System.Single
+      description: The radius of the sphere.
+    content.vb: Public Sub CreateCollider(radius As Single)
+  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
+  nameWithType.vb: SphereCollider.CreateCollider(Single)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Single)
+  name.vb: CreateCollider(Single)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
+  id: CreateCollider(Genesis.Math.Vec3,System.Single)
+  parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
+  langs:
+  - csharp
+  - vb
+  name: CreateCollider(Vec3, float)
+  nameWithType: SphereCollider.CreateCollider(Vec3, float)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics3D
+  summary: Creates a collider with a sphere shape at the specified offset.
+  example: []
+  syntax:
+    content: public void CreateCollider(Vec3 offset, float radius)
+    parameters:
+    - id: offset
       type: Genesis.Math.Vec3
-    content.vb: Public Property Offset As Vec3
-  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset*
+      description: The offset from the parent element's location.
+    - id: radius
+      type: System.Single
+      description: The radius of the sphere.
+    content.vb: Public Sub CreateCollider(offset As Vec3, radius As Single)
+  overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
+  nameWithType.vb: SphereCollider.CreateCollider(Vec3, Single)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, Single)
+  name.vb: CreateCollider(Vec3, Single)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -406,66 +233,497 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.ColliderBehavior3D
+  commentId: T:Genesis.Physics.ColliderBehavior3D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html
+  name: ColliderBehavior3D
+  nameWithType: ColliderBehavior3D
+  fullName: Genesis.Physics.ColliderBehavior3D
+- uid: Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_Genesis_Math_Vec3_
+  name: Translate(Vec3)
+  nameWithType: ColliderBehavior3D.Translate(Vec3)
+  fullName: Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.Translate(System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.Translate(System.Single,System.Single,System.Single)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_System_Single_System_Single_System_Single_
+  name: Translate(float, float, float)
+  nameWithType: ColliderBehavior3D.Translate(float, float, float)
+  fullName: Genesis.Physics.ColliderBehavior3D.Translate(float, float, float)
+  nameWithType.vb: ColliderBehavior3D.Translate(Single, Single, Single)
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.Translate(Single, Single, Single)
+  name.vb: Translate(Single, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.Translate(System.Single,System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_System_Single_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.Translate(System.Single,System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Translate_System_Single_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_Genesis_Math_Vec3_
+  name: Rotate(Vec3)
+  nameWithType: ColliderBehavior3D.Rotate(Vec3)
+  fullName: Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.Rotate(System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.Rotate(System.Single,System.Single,System.Single)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_System_Single_System_Single_System_Single_
+  name: Rotate(float, float, float)
+  nameWithType: ColliderBehavior3D.Rotate(float, float, float)
+  fullName: Genesis.Physics.ColliderBehavior3D.Rotate(float, float, float)
+  nameWithType.vb: ColliderBehavior3D.Rotate(Single, Single, Single)
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.Rotate(Single, Single, Single)
+  name.vb: Rotate(Single, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.Rotate(System.Single,System.Single,System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_System_Single_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.Rotate(System.Single,System.Single,System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Rotate_System_Single_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate(Game, GameElement)
+  nameWithType: ColliderBehavior3D.OnUpdate(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
+  commentId: M:Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject
+  name: GetPhysicsObject()
+  nameWithType: ColliderBehavior3D.GetPhysicsObject()
+  fullName: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject
+  - name: (
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
+  commentId: M:Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject__1
+  name: GetPhysicsObject<T>()
+  nameWithType: ColliderBehavior3D.GetPhysicsObject<T>()
+  fullName: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject<T>()
+  nameWithType.vb: ColliderBehavior3D.GetPhysicsObject(Of T)()
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject(Of T)()
+  name.vb: GetPhysicsObject(Of T)()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_GetPhysicsObject__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit(Game, GameElement)
+  nameWithType: ColliderBehavior3D.OnInit(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender(Game, GameElement)
+  nameWithType: ColliderBehavior3D.OnRender(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy(Game, GameElement)
+  nameWithType: ColliderBehavior3D.OnDestroy(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior3D.Collider
+  commentId: P:Genesis.Physics.ColliderBehavior3D.Collider
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Collider
+  name: Collider
+  nameWithType: ColliderBehavior3D.Collider
+  fullName: Genesis.Physics.ColliderBehavior3D.Collider
+- uid: Genesis.Physics.ColliderBehavior3D.Offset
+  commentId: P:Genesis.Physics.ColliderBehavior3D.Offset
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_Offset
+  name: Offset
+  nameWithType: ColliderBehavior3D.Offset
+  fullName: Genesis.Physics.ColliderBehavior3D.Offset
+- uid: Genesis.Physics.ColliderBehavior3D.PhysicHandler
+  commentId: P:Genesis.Physics.ColliderBehavior3D.PhysicHandler
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_PhysicHandler
+  name: PhysicHandler
+  nameWithType: ColliderBehavior3D.PhysicHandler
+  fullName: Genesis.Physics.ColliderBehavior3D.PhysicHandler
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: Collide(Scene, Game, GameElement)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
 - uid: Genesis.Physics.PhysicsBehavior.OnCollide
-  commentId: F:Genesis.Physics.PhysicsBehavior.OnCollide
+  commentId: E:Genesis.Physics.PhysicsBehavior.OnCollide
   parent: Genesis.Physics.PhysicsBehavior
   isExternal: true
   href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_OnCollide
   name: OnCollide
   nameWithType: PhysicsBehavior.OnCollide
   fullName: Genesis.Physics.PhysicsBehavior.OnCollide
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  name: Collide(Scene, Game, CollisionObject)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
 - uid: Genesis.Core.IGameBehavior.Parent
   commentId: P:Genesis.Core.IGameBehavior.Parent
   parent: Genesis.Core.IGameBehavior
@@ -754,13 +1012,23 @@ references:
     name: Physics
     isExternal: true
     href: Genesis.Physics.html
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider
+  commentId: T:Genesis.Core.Behaviors.Physics3D.SphereCollider
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateRigidBody_Genesis_Physics_PhysicHandler_System_Single_System_Single_
-  name: CreateRigidBody
-  nameWithType: SphereCollider.CreateRigidBody
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateRigidBody
+  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html
+  name: SphereCollider
+  nameWithType: SphereCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor*
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider__ctor_Genesis_Physics_PhysicHandler_
+  name: SphereCollider
+  nameWithType: SphereCollider.SphereCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider
+  nameWithType.vb: SphereCollider.New
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New
+  name.vb: New
 - uid: Genesis.Physics.PhysicHandler
   commentId: T:Genesis.Physics.PhysicHandler
   parent: Genesis.Physics
@@ -769,6 +1037,35 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider
+  parent: Genesis.Physics.ColliderBehavior3D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+  name: CreateCollider()
+  nameWithType: ColliderBehavior3D.CreateCollider()
+  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+    name: CreateCollider
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+    name: CreateCollider
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+  - name: (
+  - name: )
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
+  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateCollider
+  name: CreateCollider
+  nameWithType: SphereCollider.CreateCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -815,324 +1112,3 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  name: GetPhysicsObject()
-  nameWithType: PhysicsBehavior.GetPhysicsObject()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_GetPhysicsObject
-  name: GetPhysicsObject
-  nameWithType: SphereCollider.GetPhysicsObject
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.GetPhysicsObject
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  name: GetPhysicsObject<T>()
-  nameWithType: PhysicsBehavior.GetPhysicsObject<T>()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject<T>()
-  nameWithType.vb: PhysicsBehavior.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Physics.PhysicsBehavior.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy(Game, GameElement)
-  nameWithType: IGameBehavior.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy
-  nameWithType: SphereCollider.OnDestroy
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnDestroy
-- uid: Genesis.Core.Game
-  commentId: T:Genesis.Core.Game
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Game.html
-  name: Game
-  nameWithType: Game
-  fullName: Genesis.Core.Game
-- uid: Genesis.Core.GameElement
-  commentId: T:Genesis.Core.GameElement
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.GameElement.html
-  name: GameElement
-  nameWithType: GameElement
-  fullName: Genesis.Core.GameElement
-- uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit(Game, GameElement)
-  nameWithType: IGameBehavior.OnInit(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit
-  nameWithType: SphereCollider.OnInit
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnInit
-- uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender(Game, GameElement)
-  nameWithType: IGameBehavior.OnRender(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender
-  nameWithType: SphereCollider.OnRender
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnRender
-- uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate(Game, GameElement)
-  nameWithType: IGameBehavior.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate
-  nameWithType: SphereCollider.OnUpdate
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.OnUpdate
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider__ctor
-  name: SphereCollider
-  nameWithType: SphereCollider.SphereCollider
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.SphereCollider
-  nameWithType.vb: SphereCollider.New
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New
-  name.vb: New
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_RigidBody
-  name: RigidBody
-  nameWithType: SphereCollider.RigidBody
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.RigidBody
-- uid: BulletSharp.RigidBody
-  commentId: T:BulletSharp.RigidBody
-  parent: BulletSharp
-  isExternal: true
-  name: RigidBody
-  nameWithType: RigidBody
-  fullName: BulletSharp.RigidBody
-- uid: BulletSharp
-  commentId: N:BulletSharp
-  isExternal: true
-  name: BulletSharp
-  nameWithType: BulletSharp
-  fullName: BulletSharp
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset*
-  commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_Offset
-  name: Offset
-  nameWithType: SphereCollider.Offset
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.Offset

@@ -133,5 +133,52 @@ namespace Genesis.Graphics.Animation3D
             }
             return null;
         }
+
+        /// <summary>
+        /// Calculates the keyframe length of the animation based on the maximum number of position, rotation, and scaling keyframes among all bones.
+        /// </summary>
+        /// <returns>
+        /// The maximum number of keyframes (positions, rotations, or scalings) among all bones; if no bones are present, returns -1.
+        /// </returns>
+        /// <remarks>
+        /// This method iterates through all bones to determine the maximum keyframe length.
+        /// </remarks>
+        public int AnimationLength()
+        {
+            var length = -1;
+
+            foreach (var bone in Bones)
+            {
+                var boneKeyframes = System.Math.Max(bone.NumPositions, System.Math.Max(bone.NumRotations, bone.NumScalings));
+                if (boneKeyframes > length)
+                {
+                    length = boneKeyframes;
+                }
+            }
+
+            return length;
+        }
+
+        /// <summary>
+        /// Gets the keyframe index at a specific animation time based on the first bone.
+        /// </summary>
+        /// <param name="animationTime">The time within the animation to find the keyframe index for.</param>
+        /// <returns>
+        /// The highest keyframe index (position, rotation, or scale) at the specified animation time.
+        /// </returns>
+        /// <remarks>
+        /// This method assumes that all keyframe lists (positions, rotations, scales) are synchronized and have the same number of keyframes.
+        /// It calculates the keyframe index for the first bone in the list.
+        /// </remarks>
+        public int GetKeyFrameIndex(float animationTime)
+        {
+            var bone = this.Bones[0];
+            int positionIndex = bone.GetPositionIndex(animationTime);
+            int rotationIndex = bone.GetRotationIndex(animationTime);
+            int scaleIndex = bone.GetScaleIndex(animationTime);
+
+            // Assuming all keyframe lists (positions, rotations, scales) are synchronized and have the same number of keyframes
+            return System.Math.Max(positionIndex, System.Math.Max(rotationIndex, scaleIndex));
+        }
     }
 }

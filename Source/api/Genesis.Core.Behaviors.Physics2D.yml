@@ -4,6 +4,8 @@ items:
   commentId: N:Genesis.Core.Behaviors.Physics2D
   id: Genesis.Core.Behaviors.Physics2D
   children:
+  - Genesis.Core.Behaviors.Physics2D.BoxCollider
+  - Genesis.Core.Behaviors.Physics2D.BoxRigidBody
   - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
   - Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
@@ -19,6 +21,20 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.Core.Behaviors.Physics2D.BoxCollider
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BoxCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BoxCollider.html
+  name: BoxCollider
+  nameWithType: BoxCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxCollider
+- uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BoxRigidBody
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.html
+  name: BoxRigidBody
+  nameWithType: BoxRigidBody
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody
 - uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   commentId: T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   isExternal: true

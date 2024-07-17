@@ -30,6 +30,14 @@ namespace Genesis.Graphics
         public int Frame { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether an animation callback has been triggered.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if a callback has been triggered; otherwise, <c>false</c>.
+        /// </value>
+        public bool CallbackRised { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the callback method to be invoked.
         /// </summary>
         public AnimationEvent Callback { get; set; }

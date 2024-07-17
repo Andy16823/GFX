@@ -7,6 +7,7 @@ items:
   children:
   - Genesis.Physics.Aabb.#ctor
   - Genesis.Physics.Aabb.#ctor(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  - Genesis.Physics.Aabb.#ctor(Genesis.Core.GameElement)
   - Genesis.Physics.Aabb.Contains(Genesis.Math.Vec3)
   - Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
   - Genesis.Physics.Aabb.IntersectRay(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
@@ -90,6 +91,33 @@ items:
   nameWithType.vb: Aabb.New(Vector3, Vector3)
   fullName.vb: Genesis.Physics.Aabb.New(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
   name.vb: New(Vector3, Vector3)
+- uid: Genesis.Physics.Aabb.#ctor(Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.Aabb.#ctor(Genesis.Core.GameElement)
+  id: '#ctor(Genesis.Core.GameElement)'
+  parent: Genesis.Physics.Aabb
+  langs:
+  - csharp
+  - vb
+  name: Aabb(GameElement)
+  nameWithType: Aabb.Aabb(GameElement)
+  fullName: Genesis.Physics.Aabb.Aabb(Genesis.Core.GameElement)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Creates an new Aabb for an game element using the elements dimensions
+  example: []
+  syntax:
+    content: public Aabb(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The element for the Aabb
+    content.vb: Public Sub New(element As GameElement)
+  overload: Genesis.Physics.Aabb.#ctor*
+  nameWithType.vb: Aabb.New(GameElement)
+  fullName.vb: Genesis.Physics.Aabb.New(Genesis.Core.GameElement)
+  name.vb: New(GameElement)
 - uid: Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
   commentId: M:Genesis.Physics.Aabb.FromBulletRigidBody(BulletSharp.RigidBody)
   id: FromBulletRigidBody(BulletSharp.RigidBody)
@@ -530,6 +558,41 @@ references:
   - uid: BulletSharp.Math
     name: Math
     isExternal: true
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
 - uid: Genesis.Physics.Aabb.FromBulletRigidBody*
   commentId: Overload:Genesis.Physics.Aabb.FromBulletRigidBody
   isExternal: true

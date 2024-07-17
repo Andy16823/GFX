@@ -6,8 +6,11 @@ items:
   parent: Genesis.UI
   children:
   - Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color)
+  - Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)
   - Genesis.UI.Label.Font
   - Genesis.UI.Label.FontSize
+  - Genesis.UI.Label.HoverAvailable
+  - Genesis.UI.Label.HoverColor
   - Genesis.UI.Label.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Label.Text
   - Genesis.UI.Label.TextColor
@@ -39,6 +42,9 @@ items:
   - Genesis.UI.Widget.GetRelativeBounds2D(Genesis.UI.Canvas)
   - Genesis.UI.Widget.IsHover(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.FindChildren(System.String)
+  - Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  - Genesis.UI.Widget.Hovered
+  - Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.Name
   - Genesis.UI.Widget.Location
   - Genesis.UI.Widget.Size
@@ -46,6 +52,7 @@ items:
   - Genesis.UI.Widget.Children
   - Genesis.UI.Widget.Enabled
   - Genesis.UI.Widget.Debug
+  - Genesis.UI.Widget.Anchor
   - Genesis.UI.Widget.MouseEnter
   - Genesis.UI.Widget.MouseLeave
   - Genesis.UI.Widget.Click
@@ -95,6 +102,48 @@ items:
   nameWithType.vb: Label.New(String, Vec3, String, Font, Color)
   fullName.vb: Genesis.UI.Label.New(String, Genesis.Math.Vec3, String, Genesis.Graphics.Font, System.Drawing.Color)
   name.vb: New(String, Vec3, String, Font, Color)
+- uid: Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)
+  commentId: M:Genesis.UI.Label.#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)
+  id: '#ctor(System.String,Genesis.Math.Vec3,System.String,Genesis.Graphics.Font,System.Drawing.Color,Genesis.UI.WidgetAnchor)'
+  parent: Genesis.UI.Label
+  langs:
+  - csharp
+  - vb
+  name: Label(string, Vec3, string, Font, Color, WidgetAnchor)
+  nameWithType: Label.Label(string, Vec3, string, Font, Color, WidgetAnchor)
+  fullName: Genesis.UI.Label.Label(string, Genesis.Math.Vec3, string, Genesis.Graphics.Font, System.Drawing.Color, Genesis.UI.WidgetAnchor)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Create a new instance of the label
+  example: []
+  syntax:
+    content: public Label(string name, Vec3 location, string text, Font font, Color color, WidgetAnchor anchor)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: location
+      type: Genesis.Math.Vec3
+      description: ''
+    - id: text
+      type: System.String
+      description: ''
+    - id: font
+      type: Genesis.Graphics.Font
+      description: ''
+    - id: color
+      type: System.Drawing.Color
+      description: ''
+    - id: anchor
+      type: Genesis.UI.WidgetAnchor
+      description: ''
+    content.vb: Public Sub New(name As String, location As Vec3, text As String, font As Font, color As Color, anchor As WidgetAnchor)
+  overload: Genesis.UI.Label.#ctor*
+  nameWithType.vb: Label.New(String, Vec3, String, Font, Color, WidgetAnchor)
+  fullName.vb: Genesis.UI.Label.New(String, Genesis.Math.Vec3, String, Genesis.Graphics.Font, System.Drawing.Color, Genesis.UI.WidgetAnchor)
+  name.vb: New(String, Vec3, String, Font, Color, WidgetAnchor)
 - uid: Genesis.UI.Label.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   commentId: M:Genesis.UI.Label.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   id: OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
@@ -198,6 +247,52 @@ items:
       type: System.Drawing.Color
     content.vb: Public Property TextColor As Color
   overload: Genesis.UI.Label.TextColor*
+- uid: Genesis.UI.Label.HoverColor
+  commentId: P:Genesis.UI.Label.HoverColor
+  id: HoverColor
+  parent: Genesis.UI.Label
+  langs:
+  - csharp
+  - vb
+  name: HoverColor
+  nameWithType: Label.HoverColor
+  fullName: Genesis.UI.Label.HoverColor
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Gets or sets the Hover color
+  example: []
+  syntax:
+    content: public Color HoverColor { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Property HoverColor As Color
+  overload: Genesis.UI.Label.HoverColor*
+- uid: Genesis.UI.Label.HoverAvailable
+  commentId: P:Genesis.UI.Label.HoverAvailable
+  id: HoverAvailable
+  parent: Genesis.UI.Label
+  langs:
+  - csharp
+  - vb
+  name: HoverAvailable
+  nameWithType: Label.HoverAvailable
+  fullName: Genesis.UI.Label.HoverAvailable
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Gets or sets the value if hover is available
+  example: []
+  syntax:
+    content: public bool HoverAvailable { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HoverAvailable As Boolean
+  overload: Genesis.UI.Label.HoverAvailable*
 - uid: Genesis.UI.Label.FontSize
   commentId: P:Genesis.UI.Label.FontSize
   id: FontSize
@@ -640,6 +735,124 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  commentId: M:Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  name: TransformBounds(Rect, WidgetAnchor)
+  nameWithType: Widget.TransformBounds(Rect, WidgetAnchor)
+  fullName: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect, Genesis.UI.WidgetAnchor)
+  spec.csharp:
+  - uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+    name: TransformBounds
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  - name: (
+  - uid: Genesis.Math.Rect
+    name: Rect
+    isExternal: true
+    href: Genesis.Math.Rect.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.WidgetAnchor
+    name: WidgetAnchor
+    isExternal: true
+    href: Genesis.UI.WidgetAnchor.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+    name: TransformBounds
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  - name: (
+  - uid: Genesis.Math.Rect
+    name: Rect
+    isExternal: true
+    href: Genesis.Math.Rect.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.WidgetAnchor
+    name: WidgetAnchor
+    isExternal: true
+    href: Genesis.UI.WidgetAnchor.html
+  - name: )
+- uid: Genesis.UI.Widget.Hovered
+  commentId: M:Genesis.UI.Widget.Hovered
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  name: Hovered()
+  nameWithType: Widget.Hovered()
+  fullName: Genesis.UI.Widget.Hovered()
+  spec.csharp:
+  - uid: Genesis.UI.Widget.Hovered
+    name: Hovered
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.Hovered
+    name: Hovered
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  - name: (
+  - name: )
+- uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  commentId: M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  name: OnClick(Game, Scene, Canvas)
+  nameWithType: Widget.OnClick(Game, Scene, Canvas)
+  fullName: Genesis.UI.Widget.OnClick(Genesis.Core.Game, Genesis.Core.Scene, Genesis.UI.Canvas)
+  spec.csharp:
+  - uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+    name: OnClick
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.Canvas
+    name: Canvas
+    isExternal: true
+    href: Genesis.UI.Canvas.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+    name: OnClick
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.Canvas
+    name: Canvas
+    isExternal: true
+    href: Genesis.UI.Canvas.html
+  - name: )
 - uid: Genesis.UI.Widget.Name
   commentId: P:Genesis.UI.Widget.Name
   parent: Genesis.UI.Widget
@@ -696,6 +909,14 @@ references:
   name: Debug
   nameWithType: Widget.Debug
   fullName: Genesis.UI.Widget.Debug
+- uid: Genesis.UI.Widget.Anchor
+  commentId: P:Genesis.UI.Widget.Anchor
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Anchor
+  name: Anchor
+  nameWithType: Widget.Anchor
+  fullName: Genesis.UI.Widget.Anchor
 - uid: Genesis.UI.Widget.MouseEnter
   commentId: E:Genesis.UI.Widget.MouseEnter
   parent: Genesis.UI.Widget
@@ -1072,6 +1293,14 @@ references:
     name: Drawing
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.UI.WidgetAnchor
+  commentId: T:Genesis.UI.WidgetAnchor
+  parent: Genesis.UI
+  isExternal: true
+  href: Genesis.UI.WidgetAnchor.html
+  name: WidgetAnchor
+  nameWithType: WidgetAnchor
+  fullName: Genesis.UI.WidgetAnchor
 - uid: Genesis.UI.Widget.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   commentId: M:Genesis.UI.Widget.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   parent: Genesis.UI.Widget
@@ -1225,6 +1454,31 @@ references:
   name: TextColor
   nameWithType: Label.TextColor
   fullName: Genesis.UI.Label.TextColor
+- uid: Genesis.UI.Label.HoverColor*
+  commentId: Overload:Genesis.UI.Label.HoverColor
+  isExternal: true
+  href: Genesis.UI.Label.html#Genesis_UI_Label_HoverColor
+  name: HoverColor
+  nameWithType: Label.HoverColor
+  fullName: Genesis.UI.Label.HoverColor
+- uid: Genesis.UI.Label.HoverAvailable*
+  commentId: Overload:Genesis.UI.Label.HoverAvailable
+  isExternal: true
+  href: Genesis.UI.Label.html#Genesis_UI_Label_HoverAvailable
+  name: HoverAvailable
+  nameWithType: Label.HoverAvailable
+  fullName: Genesis.UI.Label.HoverAvailable
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Genesis.UI.Label.FontSize*
   commentId: Overload:Genesis.UI.Label.FontSize
   isExternal: true

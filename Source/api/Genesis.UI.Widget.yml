@@ -7,6 +7,7 @@ items:
   children:
   - Genesis.UI.Widget.#ctor
   - Genesis.UI.Widget.AddChildren(Genesis.UI.Widget)
+  - Genesis.UI.Widget.Anchor
   - Genesis.UI.Widget.Children
   - Genesis.UI.Widget.Click
   - Genesis.UI.Widget.Debug
@@ -15,17 +16,20 @@ items:
   - Genesis.UI.Widget.GetChildren(System.String)
   - Genesis.UI.Widget.GetRelativeBounds2D(Genesis.UI.Canvas)
   - Genesis.UI.Widget.GetRelativePos(Genesis.UI.Canvas)
+  - Genesis.UI.Widget.Hovered
   - Genesis.UI.Widget.IsHover(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.Location
   - Genesis.UI.Widget.MouseEnter
   - Genesis.UI.Widget.MouseLeave
   - Genesis.UI.Widget.Name
+  - Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.OnDispose(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.OnInit(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.OnUpdate(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.Parent
   - Genesis.UI.Widget.Size
+  - Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
   langs:
   - csharp
   - vb
@@ -44,6 +48,8 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
+  - Genesis.UI.Button
+  - Genesis.UI.GridView
   - Genesis.UI.ImageButton
   - Genesis.UI.Label
   - Genesis.UI.ListSelector
@@ -374,6 +380,89 @@ items:
   nameWithType.vb: Widget.FindChildren(String)
   fullName.vb: Genesis.UI.Widget.FindChildren(String)
   name.vb: FindChildren(String)
+- uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  commentId: M:Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  id: TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  parent: Genesis.UI.Widget
+  langs:
+  - csharp
+  - vb
+  name: TransformBounds(Rect, WidgetAnchor)
+  nameWithType: Widget.TransformBounds(Rect, WidgetAnchor)
+  fullName: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect, Genesis.UI.WidgetAnchor)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Transform the bounds from the bottom left point to any anchor position
+  example: []
+  syntax:
+    content: public static Rect TransformBounds(Rect source, WidgetAnchor anchor)
+    parameters:
+    - id: source
+      type: Genesis.Math.Rect
+      description: ''
+    - id: anchor
+      type: Genesis.UI.WidgetAnchor
+      description: ''
+    return:
+      type: Genesis.Math.Rect
+      description: ''
+    content.vb: Public Shared Function TransformBounds(source As Rect, anchor As WidgetAnchor) As Rect
+  overload: Genesis.UI.Widget.TransformBounds*
+- uid: Genesis.UI.Widget.Hovered
+  commentId: M:Genesis.UI.Widget.Hovered
+  id: Hovered
+  parent: Genesis.UI.Widget
+  langs:
+  - csharp
+  - vb
+  name: Hovered()
+  nameWithType: Widget.Hovered()
+  fullName: Genesis.UI.Widget.Hovered()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Checks if the widget is hovered
+  example: []
+  syntax:
+    content: public bool Hovered()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function Hovered() As Boolean
+  overload: Genesis.UI.Widget.Hovered*
+- uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  commentId: M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  id: OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  parent: Genesis.UI.Widget
+  langs:
+  - csharp
+  - vb
+  name: OnClick(Game, Scene, Canvas)
+  nameWithType: Widget.OnClick(Game, Scene, Canvas)
+  fullName: Genesis.UI.Widget.OnClick(Genesis.Core.Game, Genesis.Core.Scene, Genesis.UI.Canvas)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Executes the click event for the current UI element.
+  example: []
+  syntax:
+    content: public virtual void OnClick(Game game, Scene scene, Canvas canvas)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The current game instance.
+    - id: scene
+      type: Genesis.Core.Scene
+      description: The current scene instance.
+    - id: canvas
+      type: Genesis.UI.Canvas
+      description: The canvas where the UI element resides.
+    content.vb: Public Overridable Sub OnClick(game As Game, scene As Scene, canvas As Canvas)
+  overload: Genesis.UI.Widget.OnClick*
 - uid: Genesis.UI.Widget.Name
   commentId: P:Genesis.UI.Widget.Name
   id: Name
@@ -535,6 +624,29 @@ items:
       type: System.Boolean
     content.vb: Public Property Debug As Boolean
   overload: Genesis.UI.Widget.Debug*
+- uid: Genesis.UI.Widget.Anchor
+  commentId: P:Genesis.UI.Widget.Anchor
+  id: Anchor
+  parent: Genesis.UI.Widget
+  langs:
+  - csharp
+  - vb
+  name: Anchor
+  nameWithType: Widget.Anchor
+  fullName: Genesis.UI.Widget.Anchor
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Gets or sets the anchor value for the widget
+  example: []
+  syntax:
+    content: public WidgetAnchor Anchor { get; set; }
+    parameters: []
+    return:
+      type: Genesis.UI.WidgetAnchor
+    content.vb: Public Property Anchor As WidgetAnchor
+  overload: Genesis.UI.Widget.Anchor*
 - uid: Genesis.UI.Widget.MouseEnter
   commentId: E:Genesis.UI.Widget.MouseEnter
   id: MouseEnter
@@ -1102,6 +1214,35 @@ references:
   name: FindChildren
   nameWithType: Widget.FindChildren
   fullName: Genesis.UI.Widget.FindChildren
+- uid: Genesis.UI.Widget.TransformBounds*
+  commentId: Overload:Genesis.UI.Widget.TransformBounds
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  name: TransformBounds
+  nameWithType: Widget.TransformBounds
+  fullName: Genesis.UI.Widget.TransformBounds
+- uid: Genesis.UI.WidgetAnchor
+  commentId: T:Genesis.UI.WidgetAnchor
+  parent: Genesis.UI
+  isExternal: true
+  href: Genesis.UI.WidgetAnchor.html
+  name: WidgetAnchor
+  nameWithType: WidgetAnchor
+  fullName: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.Widget.Hovered*
+  commentId: Overload:Genesis.UI.Widget.Hovered
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  name: Hovered
+  nameWithType: Widget.Hovered
+  fullName: Genesis.UI.Widget.Hovered
+- uid: Genesis.UI.Widget.OnClick*
+  commentId: Overload:Genesis.UI.Widget.OnClick
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  name: OnClick
+  nameWithType: Widget.OnClick
+  fullName: Genesis.UI.Widget.OnClick
 - uid: Genesis.UI.Widget.Name*
   commentId: Overload:Genesis.UI.Widget.Name
   isExternal: true
@@ -1251,6 +1392,13 @@ references:
   name: Debug
   nameWithType: Widget.Debug
   fullName: Genesis.UI.Widget.Debug
+- uid: Genesis.UI.Widget.Anchor*
+  commentId: Overload:Genesis.UI.Widget.Anchor
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Anchor
+  name: Anchor
+  nameWithType: Widget.Anchor
+  fullName: Genesis.UI.Widget.Anchor
 - uid: Genesis.UI.UIEvent
   commentId: T:Genesis.UI.UIEvent
   parent: Genesis.UI

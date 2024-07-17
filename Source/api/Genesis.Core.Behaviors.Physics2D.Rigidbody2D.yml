@@ -5,20 +5,12 @@ items:
   id: Rigidbody2D
   parent: Genesis.Core.Behaviors.Physics2D
   children:
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
+  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.AngularFactor
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(System.Single)
+  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(System.Single,System.Single,System.Single)
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.EnablePhysic
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject``1
   - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.LinearFactor
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody
   langs:
   - csharp
   - vb
@@ -32,15 +24,33 @@ items:
   summary: Represents a 2D physics behavior for game elements.
   example: []
   syntax:
-    content: 'public class Rigidbody2D : PhysicsBehavior'
-    content.vb: Public Class Rigidbody2D Inherits PhysicsBehavior
+    content: 'public class Rigidbody2D : RigidBodyBehavior2D'
+    content.vb: Public Class Rigidbody2D Inherits RigidBodyBehavior2D
   inheritance:
   - System.Object
   - Genesis.Core.IGameBehavior
   - Genesis.Physics.PhysicsBehavior
+  - Genesis.Physics.RigidBodyBehavior2D
   inheritedMembers:
+  - Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+  - Genesis.Physics.RigidBodyBehavior2D.Rotate(System.Single)
+  - Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+  - Genesis.Physics.RigidBodyBehavior2D.Translate(System.Single,System.Single)
+  - Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
+  - Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+  - Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(System.Single,System.Single)
+  - Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+  - Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
+  - Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
+  - Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.RigidBodyBehavior2D.RigidBody
+  - Genesis.Physics.RigidBodyBehavior2D.Offset
+  - Genesis.Physics.RigidBodyBehavior2D.PhysicHandler
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Physics.PhysicsBehavior.OnCollide
-  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   - Genesis.Core.IGameBehavior.Parent
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -49,302 +59,94 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
-  id: CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor(Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor(Genesis.Physics.PhysicHandler)
+  id: '#ctor(Genesis.Physics.PhysicHandler)'
   parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   langs:
   - csharp
   - vb
-  name: CreateRigidbody(PhysicHandler, float, float, float)
-  nameWithType: Rigidbody2D.CreateRigidbody(PhysicHandler, float, float, float)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, float, float, float)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Creates a RigidBody with the specified mass using the provided PhysicHandler.
-  example: []
-  syntax:
-    content: public void CreateRigidbody(PhysicHandler handler, float mass, float capsuleRadius, float capsuleHeight)
-    parameters:
-    - id: handler
-      type: Genesis.Physics.PhysicHandler
-      description: The PhysicHandler responsible for managing physics elements.
-    - id: mass
-      type: System.Single
-      description: The mass of the RigidBody.
-    - id: capsuleRadius
-      type: System.Single
-      description: The radius of the capsule shape of the RigidBody.
-    - id: capsuleHeight
-      type: System.Single
-      description: The height of the capsule shape of the RigidBody.
-    content.vb: Public Sub CreateRigidbody(handler As PhysicHandler, mass As Single, capsuleRadius As Single, capsuleHeight As Single)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
-  nameWithType.vb: Rigidbody2D.CreateRigidbody(PhysicHandler, Single, Single, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, Single, Single, Single)
-  name.vb: CreateRigidbody(PhysicHandler, Single, Single, Single)
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
-  id: CreateRigidbody(Genesis.Physics.PhysicHandler,System.Single)
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: CreateRigidbody(PhysicHandler, float)
-  nameWithType: Rigidbody2D.CreateRigidbody(PhysicHandler, float)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, float)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Creates a RigidBody with the specified mass using the provided PhysicHandler and default values for capsule radius and height.
-  example: []
-  syntax:
-    content: public void CreateRigidbody(PhysicHandler handler, float mass)
-    parameters:
-    - id: handler
-      type: Genesis.Physics.PhysicHandler
-      description: The PhysicHandler responsible for managing physics elements.
-    - id: mass
-      type: System.Single
-      description: The mass of the RigidBody.
-    content.vb: Public Sub CreateRigidbody(handler As PhysicHandler, mass As Single)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
-  nameWithType.vb: Rigidbody2D.CreateRigidbody(PhysicHandler, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Genesis.Physics.PhysicHandler, Single)
-  name.vb: CreateRigidbody(PhysicHandler, Single)
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody
-  id: UpdateRigidBody
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: UpdateRigidBody()
-  nameWithType: Rigidbody2D.UpdateRigidBody()
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Updates the RigidBody's motion state based on the parent's location.
-  example: []
-  syntax:
-    content: public void UpdateRigidBody()
-    content.vb: Public Sub UpdateRigidBody()
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy(Game, GameElement)
-  nameWithType: Rigidbody2D.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the associated game element is being destroyed.
-  example: []
-  syntax:
-    content: public override void OnDestroy(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The current game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element associated with this behavior.
-    content.vb: Public Overrides Sub OnDestroy(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: OnInit(Game, GameElement)
-  nameWithType: Rigidbody2D.OnInit(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the associated game element is being initialized.
-  example: []
-  syntax:
-    content: public override void OnInit(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The current game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element associated with this behavior.
-    content.vb: Public Overrides Sub OnInit(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: OnRender(Game, GameElement)
-  nameWithType: Rigidbody2D.OnRender(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called during the rendering phase of the game update cycle.
-  example: []
-  syntax:
-    content: public override void OnRender(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The current game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element associated with this behavior.
-    content.vb: Public Overrides Sub OnRender(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: OnUpdate(Game, GameElement)
-  nameWithType: Rigidbody2D.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Updates the behavior during the game's update cycle.
-  example: []
-  syntax:
-    content: public override void OnUpdate(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The current game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element associated with this behavior.
-    content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
-  id: GetPhysicsObject
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject()
-  nameWithType: Rigidbody2D.GetPhysicsObject()
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets the physics object associated with this behavior.
-  example: []
-  syntax:
-    content: public override object GetPhysicsObject()
-    return:
-      type: System.Object
-      description: The RigidBody physics object.
-    content.vb: Public Overrides Function GetPhysicsObject() As Object
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject*
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject``1
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject``1
-  id: GetPhysicsObject``1
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject<T>()
-  nameWithType: Rigidbody2D.GetPhysicsObject<T>()
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject<T>()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets the physics object associated with this behavior, cast to the specified type.
-  example: []
-  syntax:
-    content: public override T GetPhysicsObject<T>()
-    typeParameters:
-    - id: T
-      description: The type to which the physics object is cast.
-    return:
-      type: '{T}'
-      description: The RigidBody physics object cast to the specified type.
-    content.vb: Public Overrides Function GetPhysicsObject(Of T)() As T
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject*
-  nameWithType.vb: Rigidbody2D.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
-  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
-  id: '#ctor'
-  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  langs:
-  - csharp
-  - vb
-  name: Rigidbody2D()
-  nameWithType: Rigidbody2D.Rigidbody2D()
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.Rigidbody2D()
+  name: Rigidbody2D(PhysicHandler)
+  nameWithType: Rigidbody2D.Rigidbody2D(PhysicHandler)
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.Rigidbody2D(Genesis.Physics.PhysicHandler)
   type: Constructor
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Initializes a new instance of the <xref href="Genesis.Core.Behaviors.Physics2D.Rigidbody2D" data-throw-if-not-resolved="false"></xref> class with the specified physics handler.
+  example: []
   syntax:
-    content: public Rigidbody2D()
-    content.vb: Public Sub New()
+    content: public Rigidbody2D(PhysicHandler handler)
+    parameters:
+    - id: handler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler.
+    content.vb: Public Sub New(handler As PhysicHandler)
   overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor*
-  nameWithType.vb: Rigidbody2D.New()
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.New()
-  name.vb: New()
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-  commentId: P:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-  id: RigidBody
+  nameWithType.vb: Rigidbody2D.New(PhysicHandler)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.New(Genesis.Physics.PhysicHandler)
+  name.vb: New(PhysicHandler)
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(System.Single)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(System.Single)
+  id: CreateRigidBody(System.Single)
   parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
   langs:
   - csharp
   - vb
-  name: RigidBody
-  nameWithType: Rigidbody2D.RigidBody
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-  type: Property
+  name: CreateRigidBody(float)
+  nameWithType: Rigidbody2D.CreateRigidBody(float)
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(float)
+  type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets or sets the RigidBody associated with this 2D physics behavior.
+  summary: Creates the rigid body with the specified mass.
   example: []
   syntax:
-    content: public RigidBody RigidBody { get; set; }
-    parameters: []
-    return:
-      type: BulletSharp.RigidBody
-    content.vb: Public Property RigidBody As RigidBody
-  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody*
+    content: public override void CreateRigidBody(float mass)
+    parameters:
+    - id: mass
+      type: System.Single
+      description: The mass of the rigid body.
+    content.vb: Public Overrides Sub CreateRigidBody(mass As Single)
+  overridden: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody*
+  nameWithType.vb: Rigidbody2D.CreateRigidBody(Single)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(Single)
+  name.vb: CreateRigidBody(Single)
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(System.Single,System.Single,System.Single)
+  id: CreateRigidbody(System.Single,System.Single,System.Single)
+  parent: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  langs:
+  - csharp
+  - vb
+  name: CreateRigidbody(float, float, float)
+  nameWithType: Rigidbody2D.CreateRigidbody(float, float, float)
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Creates the rigid body with the specified mass, capsule radius, and capsule height.
+  example: []
+  syntax:
+    content: public void CreateRigidbody(float mass, float capsuleRadius, float capsuleHeight)
+    parameters:
+    - id: mass
+      type: System.Single
+      description: The mass of the rigid body.
+    - id: capsuleRadius
+      type: System.Single
+      description: The radius of the capsule shape.
+    - id: capsuleHeight
+      type: System.Single
+      description: The height of the capsule shape.
+    content.vb: Public Sub CreateRigidbody(mass As Single, capsuleRadius As Single, capsuleHeight As Single)
+  overload: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
+  nameWithType.vb: Rigidbody2D.CreateRigidbody(Single, Single, Single)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(Single, Single, Single)
+  name.vb: CreateRigidbody(Single, Single, Single)
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.LinearFactor
   commentId: P:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.LinearFactor
   id: LinearFactor
@@ -359,7 +161,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets or sets the linear factor for the RigidBody's motion.
+  summary: Gets or sets the linear factor for the rigid body.
   example: []
   syntax:
     content: public Vec3 LinearFactor { get; set; }
@@ -382,7 +184,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets or sets the angular factor for the RigidBody's rotation.
+  summary: Gets or sets the angular factor for the rigid body.
   example: []
   syntax:
     content: public Vec3 AngularFactor { get; set; }
@@ -489,66 +291,599 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.RigidBodyBehavior2D
+  commentId: T:Genesis.Physics.RigidBodyBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html
+  name: RigidBodyBehavior2D
+  nameWithType: RigidBodyBehavior2D
+  fullName: Genesis.Physics.RigidBodyBehavior2D
+- uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_Genesis_Math_Vec3_
+  name: Rotate(Vec3)
+  nameWithType: RigidBodyBehavior2D.Rotate(Vec3)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.Rotate(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_System_Single_
+  name: Rotate(float)
+  nameWithType: RigidBodyBehavior2D.Rotate(float)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.Rotate(float)
+  nameWithType.vb: RigidBodyBehavior2D.Rotate(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.Rotate(Single)
+  name.vb: Rotate(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_Genesis_Math_Vec3_
+  name: Translate(Vec3)
+  nameWithType: RigidBodyBehavior2D.Translate(Vec3)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.Translate(System.Single,System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.Translate(System.Single,System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_System_Single_System_Single_
+  name: Translate(float, float)
+  nameWithType: RigidBodyBehavior2D.Translate(float, float)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.Translate(float, float)
+  nameWithType.vb: RigidBodyBehavior2D.Translate(Single, Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.Translate(Single, Single)
+  name.vb: Translate(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_System_Single_
+  name: AngularVelocity(float)
+  nameWithType: RigidBodyBehavior2D.AngularVelocity(float)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(float)
+  nameWithType.vb: RigidBodyBehavior2D.AngularVelocity(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Single)
+  name.vb: AngularVelocity(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
+    name: AngularVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
+    name: AngularVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_Genesis_Math_Vec3_
+  name: AngularVelocity(Vec3)
+  nameWithType: RigidBodyBehavior2D.AngularVelocity(Vec3)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+    name: AngularVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
+    name: AngularVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_AngularVelocity_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(System.Single,System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(System.Single,System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_System_Single_System_Single_
+  name: LinearVelocity(float, float)
+  nameWithType: RigidBodyBehavior2D.LinearVelocity(float, float)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(float, float)
+  nameWithType.vb: RigidBodyBehavior2D.LinearVelocity(Single, Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Single, Single)
+  name.vb: LinearVelocity(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(System.Single,System.Single)
+    name: LinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(System.Single,System.Single)
+    name: LinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_Genesis_Math_Vec3_
+  name: LinearVelocity(Vec3)
+  nameWithType: RigidBodyBehavior2D.LinearVelocity(Vec3)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+    name: LinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
+    name: LinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_LinearVelocity_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject
+  name: GetPhysicsObject()
+  nameWithType: RigidBodyBehavior2D.GetPhysicsObject()
+  fullName: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject()
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject__1
+  name: GetPhysicsObject<T>()
+  nameWithType: RigidBodyBehavior2D.GetPhysicsObject<T>()
+  fullName: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject<T>()
+  nameWithType.vb: RigidBodyBehavior2D.GetPhysicsObject(Of T)()
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject(Of T)()
+  name.vb: GetPhysicsObject(Of T)()
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_GetPhysicsObject__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate(Game, GameElement)
+  nameWithType: RigidBodyBehavior2D.OnUpdate(Game, GameElement)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy(Game, GameElement)
+  nameWithType: RigidBodyBehavior2D.OnDestroy(Game, GameElement)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit(Game, GameElement)
+  nameWithType: RigidBodyBehavior2D.OnInit(Game, GameElement)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender(Game, GameElement)
+  nameWithType: RigidBodyBehavior2D.OnRender(Game, GameElement)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior2D.RigidBody
+  commentId: P:Genesis.Physics.RigidBodyBehavior2D.RigidBody
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_RigidBody
+  name: RigidBody
+  nameWithType: RigidBodyBehavior2D.RigidBody
+  fullName: Genesis.Physics.RigidBodyBehavior2D.RigidBody
+- uid: Genesis.Physics.RigidBodyBehavior2D.Offset
+  commentId: P:Genesis.Physics.RigidBodyBehavior2D.Offset
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_Offset
+  name: Offset
+  nameWithType: RigidBodyBehavior2D.Offset
+  fullName: Genesis.Physics.RigidBodyBehavior2D.Offset
+- uid: Genesis.Physics.RigidBodyBehavior2D.PhysicHandler
+  commentId: P:Genesis.Physics.RigidBodyBehavior2D.PhysicHandler
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_PhysicHandler
+  name: PhysicHandler
+  nameWithType: RigidBodyBehavior2D.PhysicHandler
+  fullName: Genesis.Physics.RigidBodyBehavior2D.PhysicHandler
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: Collide(Scene, Game, GameElement)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
 - uid: Genesis.Physics.PhysicsBehavior.OnCollide
-  commentId: F:Genesis.Physics.PhysicsBehavior.OnCollide
+  commentId: E:Genesis.Physics.PhysicsBehavior.OnCollide
   parent: Genesis.Physics.PhysicsBehavior
   isExternal: true
   href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_OnCollide
   name: OnCollide
   nameWithType: PhysicsBehavior.OnCollide
   fullName: Genesis.Physics.PhysicsBehavior.OnCollide
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  name: Collide(Scene, Game, CollisionObject)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
 - uid: Genesis.Core.IGameBehavior.Parent
   commentId: P:Genesis.Core.IGameBehavior.Parent
   parent: Genesis.Core.IGameBehavior
@@ -837,13 +1172,24 @@ references:
     name: Physics
     isExternal: true
     href: Genesis.Physics.html
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  parent: Genesis.Core.Behaviors.Physics2D
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_CreateRigidbody_Genesis_Physics_PhysicHandler_System_Single_System_Single_System_Single_
-  name: CreateRigidbody
-  nameWithType: Rigidbody2D.CreateRigidbody
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html
+  name: Rigidbody2D
+  nameWithType: Rigidbody2D
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D__ctor_Genesis_Physics_PhysicHandler_
+  name: Rigidbody2D
+  nameWithType: Rigidbody2D.Rigidbody2D
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.Rigidbody2D
+  nameWithType.vb: Rigidbody2D.New
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.New
+  name.vb: New
 - uid: Genesis.Physics.PhysicHandler
   commentId: T:Genesis.Physics.PhysicHandler
   parent: Genesis.Physics
@@ -852,6 +1198,46 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior2D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+  name: CreateRigidBody(float)
+  nameWithType: RigidBodyBehavior2D.CreateRigidBody(float)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(float)
+  nameWithType.vb: RigidBodyBehavior2D.CreateRigidBody(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(Single)
+  name.vb: CreateRigidBody(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+    name: CreateRigidBody
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+    name: CreateRigidBody
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_CreateRigidBody_System_Single_
+  name: CreateRigidBody
+  nameWithType: Rigidbody2D.CreateRigidBody
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -863,327 +1249,13 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_UpdateRigidBody
-  name: UpdateRigidBody
-  nameWithType: Rigidbody2D.UpdateRigidBody
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.UpdateRigidBody
-- uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy(Game, GameElement)
-  nameWithType: IGameBehavior.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy
-  nameWithType: Rigidbody2D.OnDestroy
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnDestroy
-- uid: Genesis.Core.Game
-  commentId: T:Genesis.Core.Game
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Game.html
-  name: Game
-  nameWithType: Game
-  fullName: Genesis.Core.Game
-- uid: Genesis.Core.GameElement
-  commentId: T:Genesis.Core.GameElement
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.GameElement.html
-  name: GameElement
-  nameWithType: GameElement
-  fullName: Genesis.Core.GameElement
-- uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit(Game, GameElement)
-  nameWithType: IGameBehavior.OnInit(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit
-  nameWithType: Rigidbody2D.OnInit
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnInit
-- uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender(Game, GameElement)
-  nameWithType: IGameBehavior.OnRender(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender
-  nameWithType: Rigidbody2D.OnRender
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnRender
-- uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate(Game, GameElement)
-  nameWithType: IGameBehavior.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate
-  nameWithType: Rigidbody2D.OnUpdate
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.OnUpdate
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  name: GetPhysicsObject()
-  nameWithType: PhysicsBehavior.GetPhysicsObject()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_GetPhysicsObject
-  name: GetPhysicsObject
-  nameWithType: Rigidbody2D.GetPhysicsObject
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.GetPhysicsObject
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  name: GetPhysicsObject<T>()
-  nameWithType: PhysicsBehavior.GetPhysicsObject<T>()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject<T>()
-  nameWithType.vb: PhysicsBehavior.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Physics.PhysicsBehavior.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.#ctor
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D__ctor
-  name: Rigidbody2D
-  nameWithType: Rigidbody2D.Rigidbody2D
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.Rigidbody2D
-  nameWithType.vb: Rigidbody2D.New
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.New
-  name.vb: New
-- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_RigidBody
-  name: RigidBody
-  nameWithType: Rigidbody2D.RigidBody
-  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.RigidBody
-- uid: BulletSharp.RigidBody
-  commentId: T:BulletSharp.RigidBody
-  parent: BulletSharp
-  isExternal: true
-  name: RigidBody
-  nameWithType: RigidBody
-  fullName: BulletSharp.RigidBody
-- uid: BulletSharp
-  commentId: N:BulletSharp
-  isExternal: true
-  name: BulletSharp
-  nameWithType: BulletSharp
-  fullName: BulletSharp
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html#Genesis_Core_Behaviors_Physics2D_Rigidbody2D_CreateRigidbody_System_Single_System_Single_System_Single_
+  name: CreateRigidbody
+  nameWithType: Rigidbody2D.CreateRigidbody
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody
 - uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.LinearFactor*
   commentId: Overload:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.LinearFactor
   isExternal: true

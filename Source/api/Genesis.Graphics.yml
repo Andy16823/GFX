@@ -5,6 +5,8 @@ items:
   id: Genesis.Graphics
   children:
   - Genesis.Graphics.Animation
+  - Genesis.Graphics.AnimationCallback
+  - Genesis.Graphics.AnimationCallback.AnimationEvent
   - Genesis.Graphics.Camera
   - Genesis.Graphics.CameraType
   - Genesis.Graphics.Face
@@ -16,8 +18,10 @@ items:
   - Genesis.Graphics.MaterialBuffer
   - Genesis.Graphics.Mesh
   - Genesis.Graphics.PerspectiveCamera
+  - Genesis.Graphics.RenderSettings
   - Genesis.Graphics.Shader
   - Genesis.Graphics.ShaderProgram
+  - Genesis.Graphics.SpriteSheet
   - Genesis.Graphics.TexCoords
   - Genesis.Graphics.Texture
   - Genesis.Graphics.Viewport
@@ -39,6 +43,41 @@ references:
   name: Animation
   nameWithType: Animation
   fullName: Genesis.Graphics.Animation
+- uid: Genesis.Graphics.AnimationCallback
+  commentId: T:Genesis.Graphics.AnimationCallback
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html
+  name: AnimationCallback
+  nameWithType: AnimationCallback
+  fullName: Genesis.Graphics.AnimationCallback
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+  commentId: T:Genesis.Graphics.AnimationCallback.AnimationEvent
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html
+  name: AnimationCallback.AnimationEvent
+  nameWithType: AnimationCallback.AnimationEvent
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent
+  spec.csharp:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
+  spec.vb:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
 - uid: Genesis.Graphics.Face
   commentId: T:Genesis.Graphics.Face
   isExternal: true
@@ -102,6 +141,22 @@ references:
   name: PerspectiveCamera
   nameWithType: PerspectiveCamera
   fullName: Genesis.Graphics.PerspectiveCamera
+- uid: Genesis.Graphics.RenderSettings
+  commentId: T:Genesis.Graphics.RenderSettings
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderSettings.html
+  name: RenderSettings
+  nameWithType: RenderSettings
+  fullName: Genesis.Graphics.RenderSettings
+- uid: Genesis.Graphics.SpriteSheet
+  commentId: T:Genesis.Graphics.SpriteSheet
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.SpriteSheet.html
+  name: SpriteSheet
+  nameWithType: SpriteSheet
+  fullName: Genesis.Graphics.SpriteSheet
 - uid: Genesis.Graphics.Shader
   commentId: T:Genesis.Graphics.Shader
   parent: Genesis.Graphics

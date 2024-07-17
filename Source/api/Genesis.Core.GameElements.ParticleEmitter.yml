@@ -10,6 +10,7 @@ items:
   - Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
   - Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Drawing.Color,System.Drawing.Color)
   - Genesis.Core.GameElements.ParticleEmitter.CreateParticles(System.Int32,Genesis.Math.Vec3,System.Drawing.Color,System.Drawing.Color)
+  - Genesis.Core.GameElements.ParticleEmitter.EndColor
   - Genesis.Core.GameElements.ParticleEmitter.GetParticleBuffers
   - Genesis.Core.GameElements.ParticleEmitter.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.ParticleEmitter.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
@@ -19,6 +20,7 @@ items:
   - Genesis.Core.GameElements.ParticleEmitter.ParticleDistance
   - Genesis.Core.GameElements.ParticleEmitter.ParticleMask
   - Genesis.Core.GameElements.ParticleEmitter.ProcessParticle(Genesis.Core.GameElements.ParticleDeffinition,System.Int64)
+  - Genesis.Core.GameElements.ParticleEmitter.StartColor
   - Genesis.Core.GameElements.ParticleEmitter.Texture
   langs:
   - csharp
@@ -47,6 +49,7 @@ items:
   - Genesis.Core.GameElement.GetBehaviors``1
   - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
   - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.HasTag(System.String)
   - Genesis.Core.GameElement.Name
   - Genesis.Core.GameElement.Tag
   - Genesis.Core.GameElement.Location
@@ -499,6 +502,52 @@ items:
       type: Genesis.Graphics.Texture
     content.vb: Public Property ParticleMask As Texture
   overload: Genesis.Core.GameElements.ParticleEmitter.ParticleMask*
+- uid: Genesis.Core.GameElements.ParticleEmitter.StartColor
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.StartColor
+  id: StartColor
+  parent: Genesis.Core.GameElements.ParticleEmitter
+  langs:
+  - csharp
+  - vb
+  name: StartColor
+  nameWithType: ParticleEmitter.StartColor
+  fullName: Genesis.Core.GameElements.ParticleEmitter.StartColor
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: The start color for the partciles
+  example: []
+  syntax:
+    content: public Color StartColor { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Property StartColor As Color
+  overload: Genesis.Core.GameElements.ParticleEmitter.StartColor*
+- uid: Genesis.Core.GameElements.ParticleEmitter.EndColor
+  commentId: P:Genesis.Core.GameElements.ParticleEmitter.EndColor
+  id: EndColor
+  parent: Genesis.Core.GameElements.ParticleEmitter
+  langs:
+  - csharp
+  - vb
+  name: EndColor
+  nameWithType: ParticleEmitter.EndColor
+  fullName: Genesis.Core.GameElements.ParticleEmitter.EndColor
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: The end color for the particles
+  example: []
+  syntax:
+    content: public Color EndColor { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Property EndColor As Color
+  overload: Genesis.Core.GameElements.ParticleEmitter.EndColor*
 - uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
   commentId: P:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
   id: ParticleDeffinitions
@@ -853,6 +902,39 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.GameElement.HasTag(System.String)
+  commentId: M:Genesis.Core.GameElement.HasTag(System.String)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  name: HasTag(string)
+  nameWithType: GameElement.HasTag(string)
+  fullName: Genesis.Core.GameElement.HasTag(string)
+  nameWithType.vb: GameElement.HasTag(String)
+  fullName.vb: Genesis.Core.GameElement.HasTag(String)
+  name.vb: HasTag(String)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: Genesis.Core.GameElement.Name
   commentId: P:Genesis.Core.GameElement.Name
@@ -1570,6 +1652,20 @@ references:
   name: ParticleMask
   nameWithType: ParticleEmitter.ParticleMask
   fullName: Genesis.Core.GameElements.ParticleEmitter.ParticleMask
+- uid: Genesis.Core.GameElements.ParticleEmitter.StartColor*
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.StartColor
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_StartColor
+  name: StartColor
+  nameWithType: ParticleEmitter.StartColor
+  fullName: Genesis.Core.GameElements.ParticleEmitter.StartColor
+- uid: Genesis.Core.GameElements.ParticleEmitter.EndColor*
+  commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.EndColor
+  isExternal: true
+  href: Genesis.Core.GameElements.ParticleEmitter.html#Genesis_Core_GameElements_ParticleEmitter_EndColor
+  name: EndColor
+  nameWithType: ParticleEmitter.EndColor
+  fullName: Genesis.Core.GameElements.ParticleEmitter.EndColor
 - uid: Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions*
   commentId: Overload:Genesis.Core.GameElements.ParticleEmitter.ParticleDeffinitions
   isExternal: true
