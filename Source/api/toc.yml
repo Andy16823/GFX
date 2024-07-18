@@ -236,8 +236,6 @@ items:
 - uid: Genesis.Graphics.RenderDevice
   name: Genesis.Graphics.RenderDevice
   items:
-  - uid: Genesis.Graphics.RenderDevice.BetaRenderer
-    name: BetaRenderer
   - uid: Genesis.Graphics.RenderDevice.GLRenderer
     name: GLRenderer
 - uid: Genesis.Graphics.Shaders.OpenGL

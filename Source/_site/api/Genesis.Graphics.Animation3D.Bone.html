@@ -468,9 +468,6 @@
 
                         <ul class="nav level2">
                           <li class="">
-                            <a href="Genesis.Graphics.RenderDevice.BetaRenderer.html" title="BetaRenderer" class="">BetaRenderer</a>
-                          </li>
-                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -1068,6 +1065,317 @@
   </table>
   <h3 id="methods">Methods
 </h3>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_GetPositionIndex_" data-uid="Genesis.Graphics.Animation3D.Bone.GetPositionIndex*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_GetPositionIndex_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.GetPositionIndex(System.Single)">GetPositionIndex(float)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the position keyframe at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetPositionIndex(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_GetRotationIndex_" data-uid="Genesis.Graphics.Animation3D.Bone.GetRotationIndex*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_GetRotationIndex_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.GetRotationIndex(System.Single)">GetRotationIndex(float)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the rotation keyframe at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetRotationIndex(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_GetScaleFactor_" data-uid="Genesis.Graphics.Animation3D.Bone.GetScaleFactor*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_GetScaleFactor_System_Single_System_Single_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.GetScaleFactor(System.Single,System.Single,System.Single)">GetScaleFactor(float, float, float)</h4>
+  <div class="markdown level1 summary"><p>Calculates the interpolation factor between two keyframes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GetScaleFactor(float lastTimeStamp, float nextTimeStamp, float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">lastTimeStamp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">nextTimeStamp</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_GetScaleIndex_" data-uid="Genesis.Graphics.Animation3D.Bone.GetScaleIndex*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_GetScaleIndex_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.GetScaleIndex(System.Single)">GetScaleIndex(float)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of the scale keyframe at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetScaleIndex(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_InterpolatePosition_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolatePosition*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_InterpolatePosition_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolatePosition(System.Single)">InterpolatePosition(float)</h4>
+  <div class="markdown level1 summary"><p>Interpolates position for the bone at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public mat4 InterpolatePosition(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">mat4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_InterpolateRotation_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolateRotation*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_InterpolateRotation_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolateRotation(System.Single)">InterpolateRotation(float)</h4>
+  <div class="markdown level1 summary"><p>Interpolates rotation for the bone at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public mat4 InterpolateRotation(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">mat4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Bone_InterpolateScaling_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolateScaling*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Bone_InterpolateScaling_System_Single_" data-uid="Genesis.Graphics.Animation3D.Bone.InterpolateScaling(System.Single)">InterpolateScaling(float)</h4>
+  <div class="markdown level1 summary"><p>Interpolates scale for the bone at the specified animation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public mat4 InterpolateScaling(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">mat4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 
   <a id="Genesis_Graphics_Animation3D_Bone_Update_" data-uid="Genesis.Graphics.Animation3D.Bone.Update*"></a>

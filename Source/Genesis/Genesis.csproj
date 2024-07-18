@@ -155,7 +155,6 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
-    <Compile Include="Graphics\RenderDevice\BetaRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />

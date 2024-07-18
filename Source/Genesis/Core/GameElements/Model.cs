@@ -299,6 +299,20 @@ namespace Genesis.Core.GameElements
         }
 
         /// <summary>
+        /// Stops the currently playing animation.
+        /// </summary>
+        /// <remarks>
+        /// This method sets the animator's play state to false, effectively pausing the animation.
+        /// </remarks>
+        public void StopAnimation()
+        {
+            if(this.Animator.Play != false)
+            {
+                this.Animator.Play = false;
+            }
+        }
+
+        /// <summary>
         /// Finds an animation with the specified name.
         /// </summary>
         public Genesis.Graphics.Animation3D.Animation FindAnimation(String name)

@@ -4951,6 +4951,33 @@ references:
   fullName.vb: Genesis.Core.GameElements.Model.New
   nameWithType: Model.Model
   nameWithType.vb: Model.New
+- uid: Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  name: AddAnimationCallback(string, int, AnimationEvent)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AddAnimationCallback_System_String_System_Int32_Genesis_Graphics_AnimationCallback_AnimationEvent_
+  commentId: M:Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  name.vb: AddAnimationCallback(String, Integer, AnimationEvent)
+  fullName: Genesis.Core.GameElements.Model.AddAnimationCallback(string, int, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  fullName.vb: Genesis.Core.GameElements.Model.AddAnimationCallback(String, Integer, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  nameWithType: Model.AddAnimationCallback(string, int, AnimationCallback.AnimationEvent)
+  nameWithType.vb: Model.AddAnimationCallback(String, Integer, AnimationCallback.AnimationEvent)
+- uid: Genesis.Core.GameElements.Model.AddAnimationCallback*
+  name: AddAnimationCallback
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AddAnimationCallback_
+  commentId: Overload:Genesis.Core.GameElements.Model.AddAnimationCallback
+  fullName: Genesis.Core.GameElements.Model.AddAnimationCallback
+  nameWithType: Model.AddAnimationCallback
+- uid: Genesis.Core.GameElements.Model.AnimationCallbacks
+  name: AnimationCallbacks
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationCallbacks
+  commentId: P:Genesis.Core.GameElements.Model.AnimationCallbacks
+  fullName: Genesis.Core.GameElements.Model.AnimationCallbacks
+  nameWithType: Model.AnimationCallbacks
+- uid: Genesis.Core.GameElements.Model.AnimationCallbacks*
+  name: AnimationCallbacks
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationCallbacks_
+  commentId: Overload:Genesis.Core.GameElements.Model.AnimationCallbacks
+  fullName: Genesis.Core.GameElements.Model.AnimationCallbacks
+  nameWithType: Model.AnimationCallbacks
 - uid: Genesis.Core.GameElements.Model.AnimationSpeed
   name: AnimationSpeed
   href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationSpeed
@@ -5086,6 +5113,33 @@ references:
   commentId: Overload:Genesis.Core.GameElements.Model.FindAnimation
   fullName: Genesis.Core.GameElements.Model.FindAnimation
   nameWithType: Model.FindAnimation
+- uid: Genesis.Core.GameElements.Model.GetAnimationLength(System.String)
+  name: GetAnimationLength(string)
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetAnimationLength_System_String_
+  commentId: M:Genesis.Core.GameElements.Model.GetAnimationLength(System.String)
+  name.vb: GetAnimationLength(String)
+  fullName: Genesis.Core.GameElements.Model.GetAnimationLength(string)
+  fullName.vb: Genesis.Core.GameElements.Model.GetAnimationLength(String)
+  nameWithType: Model.GetAnimationLength(string)
+  nameWithType.vb: Model.GetAnimationLength(String)
+- uid: Genesis.Core.GameElements.Model.GetAnimationLength*
+  name: GetAnimationLength
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetAnimationLength_
+  commentId: Overload:Genesis.Core.GameElements.Model.GetAnimationLength
+  fullName: Genesis.Core.GameElements.Model.GetAnimationLength
+  nameWithType: Model.GetAnimationLength
+- uid: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  name: GetCurrentAnimationFrame()
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetCurrentAnimationFrame
+  commentId: M:Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  fullName: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame()
+  nameWithType: Model.GetCurrentAnimationFrame()
+- uid: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame*
+  name: GetCurrentAnimationFrame
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetCurrentAnimationFrame_
+  commentId: Overload:Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  fullName: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  nameWithType: Model.GetCurrentAnimationFrame
 - uid: Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   name: Init(Game, IRenderDevice)
   href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
@@ -5185,6 +5239,18 @@ references:
   commentId: Overload:Genesis.Core.GameElements.Model.Shader
   fullName: Genesis.Core.GameElements.Model.Shader
   nameWithType: Model.Shader
+- uid: Genesis.Core.GameElements.Model.StopAnimation
+  name: StopAnimation()
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_StopAnimation
+  commentId: M:Genesis.Core.GameElements.Model.StopAnimation
+  fullName: Genesis.Core.GameElements.Model.StopAnimation()
+  nameWithType: Model.StopAnimation()
+- uid: Genesis.Core.GameElements.Model.StopAnimation*
+  name: StopAnimation
+  href: api/Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_StopAnimation_
+  commentId: Overload:Genesis.Core.GameElements.Model.StopAnimation
+  fullName: Genesis.Core.GameElements.Model.StopAnimation
+  nameWithType: Model.StopAnimation
 - uid: Genesis.Core.GameElements.NavMesh
   name: NavMesh
   href: api/Genesis.Core.GameElements.NavMesh.html
@@ -10873,6 +10939,18 @@ references:
   fullName.vb: Genesis.Graphics.Animation3D.Animation.New
   nameWithType: Animation.Animation
   nameWithType.vb: Animation.New
+- uid: Genesis.Graphics.Animation3D.Animation.AnimationLength
+  name: AnimationLength()
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_AnimationLength
+  commentId: M:Genesis.Graphics.Animation3D.Animation.AnimationLength
+  fullName: Genesis.Graphics.Animation3D.Animation.AnimationLength()
+  nameWithType: Animation.AnimationLength()
+- uid: Genesis.Graphics.Animation3D.Animation.AnimationLength*
+  name: AnimationLength
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_AnimationLength_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.AnimationLength
+  fullName: Genesis.Graphics.Animation3D.Animation.AnimationLength
+  nameWithType: Animation.AnimationLength
 - uid: Genesis.Graphics.Animation3D.Animation.BoneInfoMap
   name: BoneInfoMap
   href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_BoneInfoMap
@@ -10924,6 +11002,21 @@ references:
   commentId: Overload:Genesis.Graphics.Animation3D.Animation.FindBone
   fullName: Genesis.Graphics.Animation3D.Animation.FindBone
   nameWithType: Animation.FindBone
+- uid: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)
+  name: GetKeyFrameIndex(float)
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)
+  name.vb: GetKeyFrameIndex(Single)
+  fullName: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(Single)
+  nameWithType: Animation.GetKeyFrameIndex(float)
+  nameWithType.vb: Animation.GetKeyFrameIndex(Single)
+- uid: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex*
+  name: GetKeyFrameIndex
+  href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex
+  fullName: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex
+  nameWithType: Animation.GetKeyFrameIndex
 - uid: Genesis.Graphics.Animation3D.Animation.Name
   name: Name
   href: api/Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_Name
@@ -11170,6 +11263,66 @@ references:
   fullName.vb: Genesis.Graphics.Animation3D.Bone.New
   nameWithType: Bone.Bone
   nameWithType.vb: Bone.New
+- uid: Genesis.Graphics.Animation3D.Bone.GetPositionIndex(System.Single)
+  name: GetPositionIndex(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetPositionIndex_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.GetPositionIndex(System.Single)
+  name.vb: GetPositionIndex(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.GetPositionIndex(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.GetPositionIndex(Single)
+  nameWithType: Bone.GetPositionIndex(float)
+  nameWithType.vb: Bone.GetPositionIndex(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.GetPositionIndex*
+  name: GetPositionIndex
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetPositionIndex_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.GetPositionIndex
+  fullName: Genesis.Graphics.Animation3D.Bone.GetPositionIndex
+  nameWithType: Bone.GetPositionIndex
+- uid: Genesis.Graphics.Animation3D.Bone.GetRotationIndex(System.Single)
+  name: GetRotationIndex(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetRotationIndex_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.GetRotationIndex(System.Single)
+  name.vb: GetRotationIndex(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.GetRotationIndex(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.GetRotationIndex(Single)
+  nameWithType: Bone.GetRotationIndex(float)
+  nameWithType.vb: Bone.GetRotationIndex(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.GetRotationIndex*
+  name: GetRotationIndex
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetRotationIndex_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.GetRotationIndex
+  fullName: Genesis.Graphics.Animation3D.Bone.GetRotationIndex
+  nameWithType: Bone.GetRotationIndex
+- uid: Genesis.Graphics.Animation3D.Bone.GetScaleFactor(System.Single,System.Single,System.Single)
+  name: GetScaleFactor(float, float, float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetScaleFactor_System_Single_System_Single_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.GetScaleFactor(System.Single,System.Single,System.Single)
+  name.vb: GetScaleFactor(Single, Single, Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.GetScaleFactor(float, float, float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.GetScaleFactor(Single, Single, Single)
+  nameWithType: Bone.GetScaleFactor(float, float, float)
+  nameWithType.vb: Bone.GetScaleFactor(Single, Single, Single)
+- uid: Genesis.Graphics.Animation3D.Bone.GetScaleFactor*
+  name: GetScaleFactor
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetScaleFactor_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.GetScaleFactor
+  fullName: Genesis.Graphics.Animation3D.Bone.GetScaleFactor
+  nameWithType: Bone.GetScaleFactor
+- uid: Genesis.Graphics.Animation3D.Bone.GetScaleIndex(System.Single)
+  name: GetScaleIndex(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetScaleIndex_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.GetScaleIndex(System.Single)
+  name.vb: GetScaleIndex(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.GetScaleIndex(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.GetScaleIndex(Single)
+  nameWithType: Bone.GetScaleIndex(float)
+  nameWithType.vb: Bone.GetScaleIndex(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.GetScaleIndex*
+  name: GetScaleIndex
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_GetScaleIndex_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.GetScaleIndex
+  fullName: Genesis.Graphics.Animation3D.Bone.GetScaleIndex
+  nameWithType: Bone.GetScaleIndex
 - uid: Genesis.Graphics.Animation3D.Bone.ID
   name: ID
   href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_ID
@@ -11182,6 +11335,51 @@ references:
   commentId: Overload:Genesis.Graphics.Animation3D.Bone.ID
   fullName: Genesis.Graphics.Animation3D.Bone.ID
   nameWithType: Bone.ID
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolatePosition(System.Single)
+  name: InterpolatePosition(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolatePosition_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.InterpolatePosition(System.Single)
+  name.vb: InterpolatePosition(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolatePosition(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.InterpolatePosition(Single)
+  nameWithType: Bone.InterpolatePosition(float)
+  nameWithType.vb: Bone.InterpolatePosition(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolatePosition*
+  name: InterpolatePosition
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolatePosition_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.InterpolatePosition
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolatePosition
+  nameWithType: Bone.InterpolatePosition
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolateRotation(System.Single)
+  name: InterpolateRotation(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolateRotation_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.InterpolateRotation(System.Single)
+  name.vb: InterpolateRotation(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolateRotation(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.InterpolateRotation(Single)
+  nameWithType: Bone.InterpolateRotation(float)
+  nameWithType.vb: Bone.InterpolateRotation(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolateRotation*
+  name: InterpolateRotation
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolateRotation_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.InterpolateRotation
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolateRotation
+  nameWithType: Bone.InterpolateRotation
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolateScaling(System.Single)
+  name: InterpolateScaling(float)
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolateScaling_System_Single_
+  commentId: M:Genesis.Graphics.Animation3D.Bone.InterpolateScaling(System.Single)
+  name.vb: InterpolateScaling(Single)
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolateScaling(float)
+  fullName.vb: Genesis.Graphics.Animation3D.Bone.InterpolateScaling(Single)
+  nameWithType: Bone.InterpolateScaling(float)
+  nameWithType.vb: Bone.InterpolateScaling(Single)
+- uid: Genesis.Graphics.Animation3D.Bone.InterpolateScaling*
+  name: InterpolateScaling
+  href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_InterpolateScaling_
+  commentId: Overload:Genesis.Graphics.Animation3D.Bone.InterpolateScaling
+  fullName: Genesis.Graphics.Animation3D.Bone.InterpolateScaling
+  nameWithType: Bone.InterpolateScaling
 - uid: Genesis.Graphics.Animation3D.Bone.LocalTransform
   name: LocalTransform
   href: api/Genesis.Graphics.Animation3D.Bone.html#Genesis_Graphics_Animation3D_Bone_LocalTransform
@@ -11668,6 +11866,18 @@ references:
   commentId: Overload:Genesis.Graphics.AnimationCallback.Callback
   fullName: Genesis.Graphics.AnimationCallback.Callback
   nameWithType: AnimationCallback.Callback
+- uid: Genesis.Graphics.AnimationCallback.CallbackRised
+  name: CallbackRised
+  href: api/Genesis.Graphics.AnimationCallback.html#Genesis_Graphics_AnimationCallback_CallbackRised
+  commentId: P:Genesis.Graphics.AnimationCallback.CallbackRised
+  fullName: Genesis.Graphics.AnimationCallback.CallbackRised
+  nameWithType: AnimationCallback.CallbackRised
+- uid: Genesis.Graphics.AnimationCallback.CallbackRised*
+  name: CallbackRised
+  href: api/Genesis.Graphics.AnimationCallback.html#Genesis_Graphics_AnimationCallback_CallbackRised_
+  commentId: Overload:Genesis.Graphics.AnimationCallback.CallbackRised
+  fullName: Genesis.Graphics.AnimationCallback.CallbackRised
+  nameWithType: AnimationCallback.CallbackRised
 - uid: Genesis.Graphics.AnimationCallback.Frame
   name: Frame
   href: api/Genesis.Graphics.AnimationCallback.html#Genesis_Graphics_AnimationCallback_Frame

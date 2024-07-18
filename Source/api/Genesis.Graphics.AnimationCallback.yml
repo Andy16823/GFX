@@ -9,6 +9,7 @@ items:
   - Genesis.Graphics.AnimationCallback.#ctor(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
   - Genesis.Graphics.AnimationCallback.AnimationName
   - Genesis.Graphics.AnimationCallback.Callback
+  - Genesis.Graphics.AnimationCallback.CallbackRised
   - Genesis.Graphics.AnimationCallback.Frame
   langs:
   - csharp
@@ -137,6 +138,30 @@ items:
       type: System.Int32
     content.vb: Public Property Frame As Integer
   overload: Genesis.Graphics.AnimationCallback.Frame*
+- uid: Genesis.Graphics.AnimationCallback.CallbackRised
+  commentId: P:Genesis.Graphics.AnimationCallback.CallbackRised
+  id: CallbackRised
+  parent: Genesis.Graphics.AnimationCallback
+  langs:
+  - csharp
+  - vb
+  name: CallbackRised
+  nameWithType: AnimationCallback.CallbackRised
+  fullName: Genesis.Graphics.AnimationCallback.CallbackRised
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets a value indicating whether an animation callback has been triggered.
+  example: []
+  syntax:
+    content: public bool CallbackRised { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a callback has been triggered; otherwise, <code>false</code>.
+    content.vb: Public Property CallbackRised As Boolean
+  overload: Genesis.Graphics.AnimationCallback.CallbackRised*
 - uid: Genesis.Graphics.AnimationCallback.Callback
   commentId: P:Genesis.Graphics.AnimationCallback.Callback
   id: Callback
@@ -506,6 +531,24 @@ references:
   name: Frame
   nameWithType: AnimationCallback.Frame
   fullName: Genesis.Graphics.AnimationCallback.Frame
+- uid: Genesis.Graphics.AnimationCallback.CallbackRised*
+  commentId: Overload:Genesis.Graphics.AnimationCallback.CallbackRised
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html#Genesis_Graphics_AnimationCallback_CallbackRised
+  name: CallbackRised
+  nameWithType: AnimationCallback.CallbackRised
+  fullName: Genesis.Graphics.AnimationCallback.CallbackRised
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Genesis.Graphics.AnimationCallback.Callback*
   commentId: Overload:Genesis.Graphics.AnimationCallback.Callback
   isExternal: true

@@ -4,7 +4,6 @@ items:
   commentId: N:Genesis.Graphics.RenderDevice
   id: Genesis.Graphics.RenderDevice
   children:
-  - Genesis.Graphics.RenderDevice.BetaRenderer
   - Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
@@ -16,13 +15,6 @@ items:
   assemblies:
   - Genesis
 references:
-- uid: Genesis.Graphics.RenderDevice.BetaRenderer
-  commentId: T:Genesis.Graphics.RenderDevice.BetaRenderer
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.BetaRenderer.html
-  name: BetaRenderer
-  nameWithType: BetaRenderer
-  fullName: Genesis.Graphics.RenderDevice.BetaRenderer
 - uid: Genesis.Graphics.RenderDevice.GLRenderer
   commentId: T:Genesis.Graphics.RenderDevice.GLRenderer
   isExternal: true

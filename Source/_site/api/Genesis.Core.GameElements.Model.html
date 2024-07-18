@@ -468,9 +468,6 @@
 
                         <ul class="nav level2">
                           <li class="">
-                            <a href="Genesis.Graphics.RenderDevice.BetaRenderer.html" title="BetaRenderer" class="">BetaRenderer</a>
-                          </li>
-                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -892,6 +889,36 @@
 </h3>
 
 
+  <a id="Genesis_Core_GameElements_Model_AnimationCallbacks_" data-uid="Genesis.Core.GameElements.Model.AnimationCallbacks*"></a>
+  <h4 id="Genesis_Core_GameElements_Model_AnimationCallbacks" data-uid="Genesis.Core.GameElements.Model.AnimationCallbacks">AnimationCallbacks</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the list of animation callbacks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;AnimationCallback&gt; AnimationCallbacks { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Genesis.Graphics.AnimationCallback.html">AnimationCallback</a>&gt;</td>
+        <td><p>A list of <a class="xref" href="Genesis.Graphics.AnimationCallback.html">AnimationCallback</a> objects representing the callbacks to be triggered at specific frames of animations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Core_GameElements_Model_AnimationCallbacks_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property holds the callbacks that are associated with specific frames of animations. These callbacks are checked and potentially triggered during the animation update process.</p>
+</div>
+
+
   <a id="Genesis_Core_GameElements_Model_AnimationSpeed_" data-uid="Genesis.Core.GameElements.Model.AnimationSpeed*"></a>
   <h4 id="Genesis_Core_GameElements_Model_AnimationSpeed" data-uid="Genesis.Core.GameElements.Model.AnimationSpeed">AnimationSpeed</h4>
   <div class="markdown level1 summary"><p>Gets or sets the speed of animation playback.</p>
@@ -1154,6 +1181,50 @@
 </h3>
 
 
+  <a id="Genesis_Core_GameElements_Model_AddAnimationCallback_" data-uid="Genesis.Core.GameElements.Model.AddAnimationCallback*"></a>
+  <h4 id="Genesis_Core_GameElements_Model_AddAnimationCallback_System_String_System_Int32_Genesis_Graphics_AnimationCallback_AnimationEvent_" data-uid="Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)">AddAnimationCallback(string, int, AnimationEvent)</h4>
+  <div class="markdown level1 summary"><p>Adds a callback to be triggered at a specific frame of a specified animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAnimationCallback(string name, int frame, AnimationCallback.AnimationEvent callback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the animation to which the callback should be added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">frame</span></td>
+        <td><p>The frame at which the callback should be triggered.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Genesis.Graphics.AnimationCallback.html">AnimationCallback</a>.<a class="xref" href="Genesis.Graphics.AnimationCallback.AnimationEvent.html">AnimationEvent</a></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>The callback event to be triggered at the specified frame.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Core_GameElements_Model_AddAnimationCallback_System_String_System_Int32_Genesis_Graphics_AnimationCallback_AnimationEvent__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method registers a new animation callback by adding it to the list of animation callbacks.</p>
+</div>
+
+
   <a id="Genesis_Core_GameElements_Model_ExtractAnimations_" data-uid="Genesis.Core.GameElements.Model.ExtractAnimations*"></a>
   <h4 id="Genesis_Core_GameElements_Model_ExtractAnimations_Assimp_Scene_" data-uid="Genesis.Core.GameElements.Model.ExtractAnimations(Assimp.Scene)">ExtractAnimations(Scene)</h4>
   <div class="markdown level1 summary"><p>Extracts animations from the imported model.</p>
@@ -1279,6 +1350,84 @@
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Genesis_Core_GameElements_Model_GetAnimationLength_" data-uid="Genesis.Core.GameElements.Model.GetAnimationLength*"></a>
+  <h4 id="Genesis_Core_GameElements_Model_GetAnimationLength_System_String_" data-uid="Genesis.Core.GameElements.Model.GetAnimationLength(System.String)">GetAnimationLength(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the keyframe length of the specified animation by its name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetAnimationLength(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The keyframe length of the specified animation if it exists; otherwise, returns -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Core_GameElements_Model_GetAnimationLength_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method searches for an animation by its name and returns its keyframe length.</p>
+</div>
+
+
+  <a id="Genesis_Core_GameElements_Model_GetCurrentAnimationFrame_" data-uid="Genesis.Core.GameElements.Model.GetCurrentAnimationFrame*"></a>
+  <h4 id="Genesis_Core_GameElements_Model_GetCurrentAnimationFrame" data-uid="Genesis.Core.GameElements.Model.GetCurrentAnimationFrame">GetCurrentAnimationFrame()</h4>
+  <div class="markdown level1 summary"><p>Gets the current keyframe index of the animation being played by the animator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetCurrentAnimationFrame()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The current keyframe index if an animation is being played; otherwise, returns -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Core_GameElements_Model_GetCurrentAnimationFrame_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method checks if there is a current animation being played by the animator and retrieves the keyframe index based on the current time of the animation.</p>
+</div>
 
 
   <a id="Genesis_Core_GameElements_Model_Init_" data-uid="Genesis.Core.GameElements.Model.Init*"></a>
@@ -1442,6 +1591,20 @@
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Genesis_Core_GameElements_Model_StopAnimation_" data-uid="Genesis.Core.GameElements.Model.StopAnimation*"></a>
+  <h4 id="Genesis_Core_GameElements_Model_StopAnimation" data-uid="Genesis.Core.GameElements.Model.StopAnimation">StopAnimation()</h4>
+  <div class="markdown level1 summary"><p>Stops the currently playing animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopAnimation()</code></pre>
+  </div>
+  <h5 id="Genesis_Core_GameElements_Model_StopAnimation_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method sets the animator's play state to false, effectively pausing the animation.</p>
+</div>
 
 </article>
           </div>

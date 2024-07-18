@@ -468,9 +468,6 @@
 
                         <ul class="nav level2">
                           <li class="">
-                            <a href="Genesis.Graphics.RenderDevice.BetaRenderer.html" title="BetaRenderer" class="">BetaRenderer</a>
-                          </li>
-                          <li class="">
                             <a href="Genesis.Graphics.RenderDevice.GLRenderer.html" title="GLRenderer" class="">GLRenderer</a>
                           </li>
                         </ul>
@@ -992,6 +989,36 @@
 </h3>
 
 
+  <a id="Genesis_Graphics_Animation3D_Animation_AnimationLength_" data-uid="Genesis.Graphics.Animation3D.Animation.AnimationLength*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Animation_AnimationLength" data-uid="Genesis.Graphics.Animation3D.Animation.AnimationLength">AnimationLength()</h4>
+  <div class="markdown level1 summary"><p>Calculates the keyframe length of the animation based on the maximum number of position, rotation, and scaling keyframes among all bones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AnimationLength()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The maximum number of keyframes (positions, rotations, or scalings) among all bones; if no bones are present, returns -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Graphics_Animation3D_Animation_AnimationLength_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method iterates through all bones to determine the maximum keyframe length.</p>
+</div>
+
+
   <a id="Genesis_Graphics_Animation3D_Animation_FindBone_" data-uid="Genesis.Graphics.Animation3D.Animation.FindBone*"></a>
   <h4 id="Genesis_Graphics_Animation3D_Animation_FindBone_System_String_" data-uid="Genesis.Graphics.Animation3D.Animation.FindBone(System.String)">FindBone(string)</h4>
   <div class="markdown level1 summary"><p>Finds a bone with the specified name.</p>
@@ -1033,6 +1060,55 @@
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_" data-uid="Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex*"></a>
+  <h4 id="Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_System_Single_" data-uid="Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)">GetKeyFrameIndex(float)</h4>
+  <div class="markdown level1 summary"><p>Gets the keyframe index at a specific animation time based on the first bone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetKeyFrameIndex(float animationTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">animationTime</span></td>
+        <td><p>The time within the animation to find the keyframe index for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The highest keyframe index (position, rotation, or scale) at the specified animation time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method assumes that all keyframe lists (positions, rotations, scales) are synchronized and have the same number of keyframes.
+It calculates the keyframe index for the first bone in the list.</p>
+</div>
 
 </article>
           </div>
