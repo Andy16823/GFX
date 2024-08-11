@@ -5,6 +5,7 @@ items:
   id: Sprite
   parent: Genesis.Core.GameElements
   children:
+  - Genesis.Core.GameElements.Sprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.SpriteSheet,System.Int32,System.Int32)
   - Genesis.Core.GameElements.Sprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.Texture)
   - Genesis.Core.GameElements.Sprite.CalculateVerticies
   - Genesis.Core.GameElements.Sprite.Color
@@ -42,6 +43,7 @@ items:
   - Genesis.Core.GameElement.GetBehaviors``1
   - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
   - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.HasTag(System.String)
   - Genesis.Core.GameElement.Name
   - Genesis.Core.GameElement.Tag
   - Genesis.Core.GameElement.Location
@@ -97,6 +99,48 @@ items:
   nameWithType.vb: Sprite.New(String, Vec3, Vec3, Texture)
   fullName.vb: Genesis.Core.GameElements.Sprite.New(String, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.Texture)
   name.vb: New(String, Vec3, Vec3, Texture)
+- uid: Genesis.Core.GameElements.Sprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.SpriteSheet,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.GameElements.Sprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.SpriteSheet,System.Int32,System.Int32)
+  id: '#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.SpriteSheet,System.Int32,System.Int32)'
+  parent: Genesis.Core.GameElements.Sprite
+  langs:
+  - csharp
+  - vb
+  name: Sprite(string, Vec3, Vec3, SpriteSheet, int, int)
+  nameWithType: Sprite.Sprite(string, Vec3, Vec3, SpriteSheet, int, int)
+  fullName: Genesis.Core.GameElements.Sprite.Sprite(string, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.SpriteSheet, int, int)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Initializes a new instance of the <xref href="Genesis.Core.GameElements.Sprite" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public Sprite(string name, Vec3 location, Vec3 size, SpriteSheet spriteSheet, int col, int row)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the sprite.
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The location of the sprite.
+    - id: size
+      type: Genesis.Math.Vec3
+      description: The size of the sprite.
+    - id: spriteSheet
+      type: Genesis.Graphics.SpriteSheet
+      description: The sprite sheet from which this sprite is sourced.
+    - id: col
+      type: System.Int32
+      description: The column index of the sprite in the sprite sheet.
+    - id: row
+      type: System.Int32
+      description: The row index of the sprite in the sprite sheet.
+    content.vb: Public Sub New(name As String, location As Vec3, size As Vec3, spriteSheet As SpriteSheet, col As Integer, row As Integer)
+  overload: Genesis.Core.GameElements.Sprite.#ctor*
+  nameWithType.vb: Sprite.New(String, Vec3, Vec3, SpriteSheet, Integer, Integer)
+  fullName.vb: Genesis.Core.GameElements.Sprite.New(String, Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Graphics.SpriteSheet, Integer, Integer)
+  name.vb: New(String, Vec3, Vec3, SpriteSheet, Integer, Integer)
 - uid: Genesis.Core.GameElements.Sprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElements.Sprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   id: Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
@@ -629,6 +673,39 @@ references:
     isExternal: true
     href: Genesis.Core.GameElement.html
   - name: )
+- uid: Genesis.Core.GameElement.HasTag(System.String)
+  commentId: M:Genesis.Core.GameElement.HasTag(System.String)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  name: HasTag(string)
+  nameWithType: GameElement.HasTag(string)
+  fullName: Genesis.Core.GameElement.HasTag(string)
+  nameWithType.vb: GameElement.HasTag(String)
+  fullName.vb: Genesis.Core.GameElement.HasTag(String)
+  name.vb: HasTag(String)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: Genesis.Core.GameElement.Name
   commentId: P:Genesis.Core.GameElement.Name
   parent: Genesis.Core.GameElement
@@ -1103,6 +1180,33 @@ references:
     name: Graphics
     isExternal: true
     href: Genesis.Graphics.html
+- uid: Genesis.Core.GameElements.Sprite
+  commentId: T:Genesis.Core.GameElements.Sprite
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Sprite.html
+  name: Sprite
+  nameWithType: Sprite
+  fullName: Genesis.Core.GameElements.Sprite
+- uid: Genesis.Graphics.SpriteSheet
+  commentId: T:Genesis.Graphics.SpriteSheet
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.SpriteSheet.html
+  name: SpriteSheet
+  nameWithType: SpriteSheet
+  fullName: Genesis.Graphics.SpriteSheet
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   parent: Genesis.Core.GameElement

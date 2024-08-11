@@ -5,15 +5,9 @@ items:
   id: BoxTrigger2D
   parent: Genesis.Core.Behaviors.Physics2D
   children:
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
+  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor(Genesis.Physics.PhysicHandler)
+  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger
+  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)
   langs:
   - csharp
   - vb
@@ -25,17 +19,32 @@ items:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
   summary: Represents a 2D box trigger for physics interactions.
+  remarks: Provides functionality to create and manage a box-shaped trigger for detecting collisions in a 2D physics world.
   example: []
   syntax:
-    content: 'public class BoxTrigger2D : PhysicsBehavior'
-    content.vb: Public Class BoxTrigger2D Inherits PhysicsBehavior
+    content: 'public class BoxTrigger2D : TriggerBehavior2D'
+    content.vb: Public Class BoxTrigger2D Inherits TriggerBehavior2D
   inheritance:
   - System.Object
   - Genesis.Core.IGameBehavior
   - Genesis.Physics.PhysicsBehavior
+  - Genesis.Physics.TriggerBehavior2D
   inheritedMembers:
+  - Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+  - Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)
+  - Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+  - Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)
+  - Genesis.Physics.TriggerBehavior2D.GetPhysicsObject
+  - Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1
+  - Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.TriggerBehavior2D.Offset
+  - Genesis.Physics.TriggerBehavior2D.Trigger
+  - Genesis.Physics.TriggerBehavior2D.PhysicHandler
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Physics.PhysicsBehavior.OnCollide
-  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
   - Genesis.Core.IGameBehavior.Parent
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -44,243 +53,78 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
-  id: CreateCollider(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor(Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor(Genesis.Physics.PhysicHandler)
+  id: '#ctor(Genesis.Physics.PhysicHandler)'
   parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   langs:
   - csharp
   - vb
-  name: CreateCollider(PhysicHandler, Vec3)
-  nameWithType: BoxTrigger2D.CreateCollider(PhysicHandler, Vec3)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Creates a collider for the box trigger.
-  example: []
-  syntax:
-    content: public void CreateCollider(PhysicHandler handler, Vec3 halfExtends)
-    parameters:
-    - id: handler
-      type: Genesis.Physics.PhysicHandler
-      description: The physics handler.
-    - id: halfExtends
-      type: Genesis.Math.Vec3
-      description: Half extends of the box.
-    content.vb: Public Sub CreateCollider(handler As PhysicHandler, halfExtends As Vec3)
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
-  id: GetPhysicsObject
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject()
-  nameWithType: BoxTrigger2D.GetPhysicsObject()
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets the physics object associated with this behavior.
-  example: []
-  syntax:
-    content: public override object GetPhysicsObject()
-    return:
-      type: System.Object
-      description: The ghost object representing the trigger.
-    content.vb: Public Overrides Function GetPhysicsObject() As Object
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject``1
-  id: GetPhysicsObject``1
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: GetPhysicsObject<T>()
-  nameWithType: BoxTrigger2D.GetPhysicsObject<T>()
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject<T>()
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets the physics object associated with this behavior, cast to the specified type.
-  example: []
-  syntax:
-    content: public override T GetPhysicsObject<T>()
-    typeParameters:
-    - id: T
-      description: The type to cast to.
-    return:
-      type: '{T}'
-      description: The ghost object representing the trigger.
-    content.vb: Public Overrides Function GetPhysicsObject(Of T)() As T
-  overridden: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject*
-  nameWithType.vb: BoxTrigger2D.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: OnDestroy(Game, GameElement)
-  nameWithType: BoxTrigger2D.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the behavior is being destroyed.
-  example: []
-  syntax:
-    content: public override void OnDestroy(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnDestroy(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: OnInit(Game, GameElement)
-  nameWithType: BoxTrigger2D.OnInit(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the behavior is initialized.
-  example: []
-  syntax:
-    content: public override void OnInit(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnInit(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: OnRender(Game, GameElement)
-  nameWithType: BoxTrigger2D.OnRender(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the behavior needs to render something.
-  example: []
-  syntax:
-    content: public override void OnRender(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnRender(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: OnUpdate(Game, GameElement)
-  nameWithType: BoxTrigger2D.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Called when the behavior needs to update its state.
-  example: []
-  syntax:
-    content: public override void OnUpdate(Game game, GameElement parent)
-    parameters:
-    - id: game
-      type: Genesis.Core.Game
-      description: The game instance.
-    - id: parent
-      type: Genesis.Core.GameElement
-      description: The parent game element.
-    content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
-  overridden: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate*
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
-  id: '#ctor'
-  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  langs:
-  - csharp
-  - vb
-  name: BoxTrigger2D()
-  nameWithType: BoxTrigger2D.BoxTrigger2D()
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D()
+  name: BoxTrigger2D(PhysicHandler)
+  nameWithType: BoxTrigger2D.BoxTrigger2D(PhysicHandler)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D(Genesis.Physics.PhysicHandler)
   type: Constructor
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Initializes a new instance of the <xref href="Genesis.Core.Behaviors.Physics2D.BoxTrigger2D" data-throw-if-not-resolved="false"></xref> class with the specified physics handler.
+  example: []
   syntax:
-    content: public BoxTrigger2D()
-    content.vb: Public Sub New()
+    content: public BoxTrigger2D(PhysicHandler handler)
+    parameters:
+    - id: handler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler to associate with this box trigger.
+    content.vb: Public Sub New(handler As PhysicHandler)
   overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor*
-  nameWithType.vb: BoxTrigger2D.New()
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New()
-  name.vb: New()
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
-  commentId: P:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
-  id: Trigger
+  nameWithType.vb: BoxTrigger2D.New(PhysicHandler)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New(Genesis.Physics.PhysicHandler)
+  name.vb: New(PhysicHandler)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger
+  id: CreateTrigger
   parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   langs:
   - csharp
   - vb
-  name: Trigger
-  nameWithType: BoxTrigger2D.Trigger
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
-  type: Property
+  name: CreateTrigger()
+  nameWithType: BoxTrigger2D.CreateTrigger()
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger()
+  type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Core.Behaviors.Physics2D
-  summary: Gets or sets the ghost object representing the trigger.
+  summary: Creates the trigger using the parent's size half extents.
   example: []
   syntax:
-    content: public GhostObject Trigger { get; set; }
-    parameters: []
-    return:
-      type: BulletSharp.GhostObject
-    content.vb: Public Property Trigger As GhostObject
-  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger*
+    content: public override void CreateTrigger()
+    content.vb: Public Overrides Sub CreateTrigger()
+  overridden: Genesis.Physics.TriggerBehavior2D.CreateTrigger
+  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger*
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)
+  id: CreateTrigger(Genesis.Math.Vec3)
+  parent: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+  langs:
+  - csharp
+  - vb
+  name: CreateTrigger(Vec3)
+  nameWithType: BoxTrigger2D.CreateTrigger(Vec3)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Creates the trigger with the specified half extents.
+  example: []
+  syntax:
+    content: public void CreateTrigger(Vec3 halfExtends)
+    parameters:
+    - id: halfExtends
+      type: Genesis.Math.Vec3
+      description: The half extents of the box trigger.
+    content.vb: Public Sub CreateTrigger(halfExtends As Vec3)
+  overload: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger*
 references:
 - uid: Genesis.Core.Behaviors.Physics2D
   commentId: N:Genesis.Core.Behaviors.Physics2D
@@ -356,66 +200,461 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.TriggerBehavior2D
+  commentId: T:Genesis.Physics.TriggerBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html
+  name: TriggerBehavior2D
+  nameWithType: TriggerBehavior2D
+  fullName: Genesis.Physics.TriggerBehavior2D
+- uid: Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_Genesis_Math_Vec3_
+  name: Translate(Vec3)
+  nameWithType: TriggerBehavior2D.Translate(Vec3)
+  fullName: Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_System_Single_System_Single_
+  name: Translate(float, float)
+  nameWithType: TriggerBehavior2D.Translate(float, float)
+  fullName: Genesis.Physics.TriggerBehavior2D.Translate(float, float)
+  nameWithType.vb: TriggerBehavior2D.Translate(Single, Single)
+  fullName.vb: Genesis.Physics.TriggerBehavior2D.Translate(Single, Single)
+  name.vb: Translate(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_Genesis_Math_Vec3_
+  name: Rotate(Vec3)
+  nameWithType: TriggerBehavior2D.Rotate(Vec3)
+  fullName: Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_System_Single_
+  name: Rotate(float)
+  nameWithType: TriggerBehavior2D.Rotate(float)
+  fullName: Genesis.Physics.TriggerBehavior2D.Rotate(float)
+  nameWithType.vb: TriggerBehavior2D.Rotate(Single)
+  fullName.vb: Genesis.Physics.TriggerBehavior2D.Rotate(Single)
+  name.vb: Rotate(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject
+  commentId: M:Genesis.Physics.TriggerBehavior2D.GetPhysicsObject
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject
+  name: GetPhysicsObject()
+  nameWithType: TriggerBehavior2D.GetPhysicsObject()
+  fullName: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject()
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1
+  commentId: M:Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject__1
+  name: GetPhysicsObject<T>()
+  nameWithType: TriggerBehavior2D.GetPhysicsObject<T>()
+  fullName: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject<T>()
+  nameWithType.vb: TriggerBehavior2D.GetPhysicsObject(Of T)()
+  fullName.vb: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject(Of T)()
+  name.vb: GetPhysicsObject(Of T)()
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_GetPhysicsObject__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate(Game, GameElement)
+  nameWithType: TriggerBehavior2D.OnUpdate(Game, GameElement)
+  fullName: Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy(Game, GameElement)
+  nameWithType: TriggerBehavior2D.OnDestroy(Game, GameElement)
+  fullName: Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit(Game, GameElement)
+  nameWithType: TriggerBehavior2D.OnInit(Game, GameElement)
+  fullName: Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender(Game, GameElement)
+  nameWithType: TriggerBehavior2D.OnRender(Game, GameElement)
+  fullName: Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.TriggerBehavior2D.Offset
+  commentId: P:Genesis.Physics.TriggerBehavior2D.Offset
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Offset
+  name: Offset
+  nameWithType: TriggerBehavior2D.Offset
+  fullName: Genesis.Physics.TriggerBehavior2D.Offset
+- uid: Genesis.Physics.TriggerBehavior2D.Trigger
+  commentId: P:Genesis.Physics.TriggerBehavior2D.Trigger
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_Trigger
+  name: Trigger
+  nameWithType: TriggerBehavior2D.Trigger
+  fullName: Genesis.Physics.TriggerBehavior2D.Trigger
+- uid: Genesis.Physics.TriggerBehavior2D.PhysicHandler
+  commentId: P:Genesis.Physics.TriggerBehavior2D.PhysicHandler
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_PhysicHandler
+  name: PhysicHandler
+  nameWithType: TriggerBehavior2D.PhysicHandler
+  fullName: Genesis.Physics.TriggerBehavior2D.PhysicHandler
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: Collide(Scene, Game, GameElement)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
 - uid: Genesis.Physics.PhysicsBehavior.OnCollide
-  commentId: F:Genesis.Physics.PhysicsBehavior.OnCollide
+  commentId: E:Genesis.Physics.PhysicsBehavior.OnCollide
   parent: Genesis.Physics.PhysicsBehavior
   isExternal: true
   href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_OnCollide
   name: OnCollide
   nameWithType: PhysicsBehavior.OnCollide
   fullName: Genesis.Physics.PhysicsBehavior.OnCollide
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  name: Collide(Scene, Game, CollisionObject)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-    name: Collide
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: BulletSharp.CollisionObject
-    name: CollisionObject
-    isExternal: true
-  - name: )
 - uid: Genesis.Core.IGameBehavior.Parent
   commentId: P:Genesis.Core.IGameBehavior.Parent
   parent: Genesis.Core.IGameBehavior
@@ -704,13 +943,23 @@ references:
     name: Physics
     isExternal: true
     href: Genesis.Physics.html
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_CreateCollider_Genesis_Physics_PhysicHandler_Genesis_Math_Vec3_
-  name: CreateCollider
-  nameWithType: BoxTrigger2D.CreateCollider
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateCollider
+  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html
+  name: BoxTrigger2D
+  nameWithType: BoxTrigger2D
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D__ctor_Genesis_Physics_PhysicHandler_
+  name: BoxTrigger2D
+  nameWithType: BoxTrigger2D.BoxTrigger2D
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D
+  nameWithType.vb: BoxTrigger2D.New
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New
+  name.vb: New
 - uid: Genesis.Physics.PhysicHandler
   commentId: T:Genesis.Physics.PhysicHandler
   parent: Genesis.Physics
@@ -719,6 +968,35 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Physics.TriggerBehavior2D.CreateTrigger
+  commentId: M:Genesis.Physics.TriggerBehavior2D.CreateTrigger
+  parent: Genesis.Physics.TriggerBehavior2D
+  isExternal: true
+  href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_CreateTrigger
+  name: CreateTrigger()
+  nameWithType: TriggerBehavior2D.CreateTrigger()
+  fullName: Genesis.Physics.TriggerBehavior2D.CreateTrigger()
+  spec.csharp:
+  - uid: Genesis.Physics.TriggerBehavior2D.CreateTrigger
+    name: CreateTrigger
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_CreateTrigger
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.TriggerBehavior2D.CreateTrigger
+    name: CreateTrigger
+    isExternal: true
+    href: Genesis.Physics.TriggerBehavior2D.html#Genesis_Physics_TriggerBehavior2D_CreateTrigger
+  - name: (
+  - name: )
+- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_CreateTrigger
+  name: CreateTrigger
+  nameWithType: BoxTrigger2D.CreateTrigger
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger
 - uid: Genesis.Math.Vec3
   commentId: T:Genesis.Math.Vec3
   parent: Genesis.Math
@@ -754,317 +1032,3 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  name: GetPhysicsObject()
-  nameWithType: PhysicsBehavior.GetPhysicsObject()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject
-  - name: (
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_GetPhysicsObject
-  name: GetPhysicsObject
-  nameWithType: BoxTrigger2D.GetPhysicsObject
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.GetPhysicsObject
-- uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-  parent: Genesis.Physics.PhysicsBehavior
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  name: GetPhysicsObject<T>()
-  nameWithType: PhysicsBehavior.GetPhysicsObject<T>()
-  fullName: Genesis.Physics.PhysicsBehavior.GetPhysicsObject<T>()
-  nameWithType.vb: PhysicsBehavior.GetPhysicsObject(Of T)()
-  fullName.vb: Genesis.Physics.PhysicsBehavior.GetPhysicsObject(Of T)()
-  name.vb: GetPhysicsObject(Of T)()
-  spec.csharp:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: <
-  - name: T
-  - name: '>'
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
-    name: GetPhysicsObject
-    isExternal: true
-    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_GetPhysicsObject__1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: (
-  - name: )
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy(Game, GameElement)
-  nameWithType: IGameBehavior.OnDestroy(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnDestroy
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnDestroy
-  nameWithType: BoxTrigger2D.OnDestroy
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnDestroy
-- uid: Genesis.Core.Game
-  commentId: T:Genesis.Core.Game
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Game.html
-  name: Game
-  nameWithType: Game
-  fullName: Genesis.Core.Game
-- uid: Genesis.Core.GameElement
-  commentId: T:Genesis.Core.GameElement
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.GameElement.html
-  name: GameElement
-  nameWithType: GameElement
-  fullName: Genesis.Core.GameElement
-- uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit(Game, GameElement)
-  nameWithType: IGameBehavior.OnInit(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnInit
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnInit
-  nameWithType: BoxTrigger2D.OnInit
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnInit
-- uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender(Game, GameElement)
-  nameWithType: IGameBehavior.OnRender(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnRender
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnRender
-  nameWithType: BoxTrigger2D.OnRender
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnRender
-- uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-  parent: Genesis.Core.IGameBehavior
-  isExternal: true
-  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate(Game, GameElement)
-  nameWithType: IGameBehavior.OnUpdate(Game, GameElement)
-  fullName: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
-  spec.csharp:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
-    name: OnUpdate
-    isExternal: true
-    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  - name: (
-  - uid: Genesis.Core.Game
-    name: Game
-    isExternal: true
-    href: Genesis.Core.Game.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Core.GameElement
-    name: GameElement
-    isExternal: true
-    href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
-  name: OnUpdate
-  nameWithType: BoxTrigger2D.OnUpdate
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.OnUpdate
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.#ctor
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D__ctor
-  name: BoxTrigger2D
-  nameWithType: BoxTrigger2D.BoxTrigger2D
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.BoxTrigger2D
-  nameWithType.vb: BoxTrigger2D.New
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.New
-  name.vb: New
-- uid: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger*
-  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
-  isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.html#Genesis_Core_Behaviors_Physics2D_BoxTrigger2D_Trigger
-  name: Trigger
-  nameWithType: BoxTrigger2D.Trigger
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.Trigger
-- uid: BulletSharp.GhostObject
-  commentId: T:BulletSharp.GhostObject
-  parent: BulletSharp
-  isExternal: true
-  name: GhostObject
-  nameWithType: GhostObject
-  fullName: BulletSharp.GhostObject
-- uid: BulletSharp
-  commentId: N:BulletSharp
-  isExternal: true
-  name: BulletSharp
-  nameWithType: BulletSharp
-  fullName: BulletSharp

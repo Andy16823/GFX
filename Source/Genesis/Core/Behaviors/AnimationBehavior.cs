@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static Genesis.Graphics.AnimationCallback;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Genesis.Core.Behaviors
@@ -46,6 +47,11 @@ namespace Genesis.Core.Behaviors
         /// </summary>
         public Animation SelectedAnimation { get; set; }
 
+        /// <summary>
+        /// Gets or sets the callbacks for the animation
+        /// </summary>
+        public List<AnimationCallback> Callbacks { get; set; }
+
         private bool run;
         private Sprite sprite;
         private long lastFrame;
@@ -57,6 +63,7 @@ namespace Genesis.Core.Behaviors
         public AnimationBehavior()
         {
             this.Animations = new List<Animation>();
+            this.Callbacks = new List<AnimationCallback>();
         }
 
         /// <summary>
@@ -73,6 +80,7 @@ namespace Genesis.Core.Behaviors
             this.Rows = rows;
             this.FrameTime = frameTime;
             this.AnimationSheet = animationSheet;
+            this.Callbacks = new List<AnimationCallback>();
         }
 
 
@@ -180,6 +188,14 @@ namespace Genesis.Core.Behaviors
                     sprite.TexCoords.BottomLeft.X = (float)currentCell * colVal;
                     sprite.TexCoords.BottomLeft.Y = (float)SelectedAnimation.Row * rowVal + rowVal;
 
+                    foreach (var animationCallback in this.Callbacks)
+                    {
+                        if (animationCallback.AnimationName.Equals(SelectedAnimation.Name) && currentCell == animationCallback.Frame)
+                        {
+                            animationCallback.Callback(game, parent);
+                        }
+                    }
+
                     currentCell++;
                     if (currentCell >= SelectedAnimation.Cell + SelectedAnimation.Frames)
                     {
@@ -188,6 +204,17 @@ namespace Genesis.Core.Behaviors
                     lastFrame = now;
                 }
             }
+        }
+
+        /// <summary>
+        /// Adds an new animation callback to the animation behavior
+        /// </summary>
+        /// <param name="animation">The name from the animation</param>
+        /// <param name="frame">The frame when the callback gets rised</param>
+        /// <param name="animationEvent">The animation event</param>
+        public void AddCallback(String animation, int frame, AnimationEvent animationEvent)
+        {
+            this.Callbacks.Add(new AnimationCallback(animation, frame, animationEvent));
         }
     }
 }

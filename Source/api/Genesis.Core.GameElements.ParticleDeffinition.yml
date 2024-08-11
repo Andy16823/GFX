@@ -238,11 +238,11 @@ items:
   summary: Gets or sets the color of the particle.
   example: []
   syntax:
-    content: public Color ParticleColor { get; set; }
+    content: public float[] ParticleColor { get; set; }
     parameters: []
     return:
-      type: System.Drawing.Color
-    content.vb: Public Property ParticleColor As Color
+      type: System.Single[]
+    content.vb: Public Property ParticleColor As Single()
   overload: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor*
 references:
 - uid: Genesis.Core.GameElements
@@ -653,38 +653,26 @@ references:
   name: ParticleColor
   nameWithType: ParticleDeffinition.ParticleColor
   fullName: Genesis.Core.GameElements.ParticleDeffinition.ParticleColor
-- uid: System.Drawing.Color
-  commentId: T:System.Drawing.Color
-  parent: System.Drawing
+- uid: System.Single[]
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
-  name: Color
-  nameWithType: Color
-  fullName: System.Drawing.Color
-- uid: System.Drawing
-  commentId: N:System.Drawing
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Drawing
-  nameWithType: System.Drawing
-  fullName: System.Drawing
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
   spec.csharp:
-  - uid: System
-    name: System
+  - uid: System.Single
+    name: float
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
   spec.vb:
-  - uid: System
-    name: System
+  - uid: System.Single
+    name: Single
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Drawing
-    name: Drawing
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.drawing
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )

@@ -86,6 +86,7 @@ namespace Genesis.Core.GameElements
             foreach (var mesh in model.Meshes)
             {
                 var gMesh = new Genesis.Graphics.Mesh();
+                gMesh.Name = mesh.Name;
                 gMesh.Material = this.Materials[mesh.MaterialIndex];
                 gMesh.Indicies.AddRange(mesh.GetIndices());
                 foreach (var face in mesh.Faces)

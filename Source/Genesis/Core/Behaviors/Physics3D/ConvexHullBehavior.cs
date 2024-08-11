@@ -50,6 +50,7 @@ namespace Genesis.Core.Behaviors.Physics3D
                 //Create the rigid body
                 this.RigidBody = new BulletSharp.RigidBody(info);
                 this.RigidBody.ApplyGravity();
+                this.RigidBody.UserObject = this.Parent;
                 //Scale it
                 this.RigidBody.CollisionShape.LocalScaling = new Vector3(scale.X, scale.Y, scale.Z);
                 handler.ManageElement(this);

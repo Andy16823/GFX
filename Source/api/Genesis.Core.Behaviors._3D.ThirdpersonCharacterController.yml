@@ -6,7 +6,6 @@ items:
   parent: Genesis.Core.Behaviors._3D
   children:
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.#ctor
-  - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,System.Single,System.Single,System.Single)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.CreatePhysics(Genesis.Physics.PhysicHandler,System.Single,System.Single,System.Single)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IdleAnimation
@@ -19,6 +18,7 @@ items:
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunAnimation
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RunSpeed
   - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.SetInput(Genesis.Math.Vec3)
@@ -310,16 +310,16 @@ items:
       description: <code>true</code> if the character is airborne; otherwise, <code>false</code>.
     content.vb: Public Function IsAirborn() As Boolean
   overload: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.IsAirborn*
-- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
-  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
-  id: Collider
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
+  commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
+  id: RigidBody
   parent: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
   langs:
   - csharp
   - vb
-  name: Collider
-  nameWithType: ThirdpersonCharacterController.Collider
-  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+  name: RigidBody
+  nameWithType: ThirdpersonCharacterController.RigidBody
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
   type: Property
   assemblies:
   - Genesis
@@ -327,12 +327,12 @@ items:
   summary: Gets or sets the collider for the character.
   example: []
   syntax:
-    content: public CapsuleCollider Collider { get; set; }
+    content: public CapsuleRigidBody RigidBody { get; set; }
     parameters: []
     return:
-      type: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
-    content.vb: Public Property Collider As CapsuleCollider
-  overload: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider*
+      type: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
+    content.vb: Public Property RigidBody As CapsuleRigidBody
+  overload: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody*
 - uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
   commentId: P:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.WalkSpeed
   id: WalkSpeed
@@ -1233,21 +1233,21 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider*
-  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody*
+  commentId: Overload:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
   isExternal: true
-  href: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_Collider
-  name: Collider
-  nameWithType: ThirdpersonCharacterController.Collider
-  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.Collider
-- uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
-  commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  href: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html#Genesis_Core_Behaviors__3D_ThirdpersonCharacterController_RigidBody
+  name: RigidBody
+  nameWithType: ThirdpersonCharacterController.RigidBody
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.RigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
+  commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
   parent: Genesis.Core.Behaviors.Physics3D
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html
-  name: CapsuleCollider
-  nameWithType: CapsuleCollider
-  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  href: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.html
+  name: CapsuleRigidBody
+  nameWithType: CapsuleRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
   isExternal: true

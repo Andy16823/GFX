@@ -6,20 +6,24 @@ items:
   parent: Genesis.Core
   children:
   - Genesis.Core.Utils.#ctor
+  - Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)
+  - Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
   - Genesis.Core.Utils.CalculateCameraFront(Genesis.Graphics.Camera)
   - Genesis.Core.Utils.CalculateCameraFront2(Genesis.Graphics.Camera)
   - Genesis.Core.Utils.CalculateDirectionVector(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.Utils.CalculateFrontVec3(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)
   - Genesis.Core.Utils.CalculatePitch(Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)
   - Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.Utils.ConvertBase64ToBitmap(System.String)
   - Genesis.Core.Utils.ConvertBitmapToBase64(System.Drawing.Bitmap)
-  - Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
+  - Genesis.Core.Utils.ConvertColor(System.Drawing.Color,System.Boolean)
   - Genesis.Core.Utils.ConvertDrawingColor(System.Single,System.Single,System.Single,System.Single)
   - Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
   - Genesis.Core.Utils.CreateEmptyNormalMap(System.Int32,System.Int32)
   - Genesis.Core.Utils.CreateEmptyTexture(System.Int32,System.Int32)
   - Genesis.Core.Utils.EulerToQuaternion(Genesis.Math.Vec3)
+  - Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
   - Genesis.Core.Utils.ForwardVector(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)
   - Genesis.Core.Utils.GetCurrentTimeMillis
   - Genesis.Core.Utils.GetElementWorldLocation(Genesis.Core.GameElement)
@@ -47,6 +51,7 @@ items:
   - Genesis.Core.Utils.GetStringWidth(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetVMirroredPosition(Genesis.Math.Vec3,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.GetVMirroredPosition(System.Single,System.Single,System.Single,Genesis.Graphics.Camera)
+  - Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)
   - Genesis.Core.Utils.LookAt(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
@@ -1068,29 +1073,39 @@ items:
       description: The pitch angle in degrees.
     content.vb: Public Shared Function CalculatePitch(point1 As Vec3, point2 As Vec3) As Single
   overload: Genesis.Core.Utils.CalculatePitch*
-- uid: Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
-  commentId: M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
-  id: ConvertColor(System.Drawing.Color)
+- uid: Genesis.Core.Utils.ConvertColor(System.Drawing.Color,System.Boolean)
+  commentId: M:Genesis.Core.Utils.ConvertColor(System.Drawing.Color,System.Boolean)
+  id: ConvertColor(System.Drawing.Color,System.Boolean)
   parent: Genesis.Core.Utils
   langs:
   - csharp
   - vb
-  name: ConvertColor(Color)
-  nameWithType: Utils.ConvertColor(Color)
-  fullName: Genesis.Core.Utils.ConvertColor(System.Drawing.Color)
+  name: ConvertColor(Color, bool)
+  nameWithType: Utils.ConvertColor(Color, bool)
+  fullName: Genesis.Core.Utils.ConvertColor(System.Drawing.Color, bool)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Converts a System.Drawing.Color into a float array.
+  example: []
   syntax:
-    content: public static float[] ConvertColor(Color color)
+    content: public static float[] ConvertColor(Color color, bool alpha = false)
     parameters:
     - id: color
       type: System.Drawing.Color
+      description: The color.
+    - id: alpha
+      type: System.Boolean
+      description: Checks if the alpha gets converted
     return:
       type: System.Single[]
-    content.vb: Public Shared Function ConvertColor(color As Color) As Single()
+      description: The float array representing the color.
+    content.vb: Public Shared Function ConvertColor(color As Color, alpha As Boolean = False) As Single()
   overload: Genesis.Core.Utils.ConvertColor*
+  nameWithType.vb: Utils.ConvertColor(Color, Boolean)
+  fullName.vb: Genesis.Core.Utils.ConvertColor(System.Drawing.Color, Boolean)
+  name.vb: ConvertColor(Color, Boolean)
 - uid: Genesis.Core.Utils.GetRandomColor
   commentId: M:Genesis.Core.Utils.GetRandomColor
   id: GetRandomColor
@@ -1561,6 +1576,151 @@ items:
       description: The forward direction vector.
     content.vb: Public Shared Function GetForwardDirection(eulerAngles As Vec3) As Vec3
   overload: Genesis.Core.Utils.GetForwardDirection*
+- uid: Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)
+  commentId: M:Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)
+  id: LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: LerpColor(Color, Color, float)
+  nameWithType: Utils.LerpColor(Color, Color, float)
+  fullName: Genesis.Core.Utils.LerpColor(System.Drawing.Color, System.Drawing.Color, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Interpolates between an start and end color
+  example: []
+  syntax:
+    content: public static float[] LerpColor(Color startColor, Color endColor, float t)
+    parameters:
+    - id: startColor
+      type: System.Drawing.Color
+      description: The color start
+    - id: endColor
+      type: System.Drawing.Color
+      description: The color end
+    - id: t
+      type: System.Single
+      description: the time
+    return:
+      type: System.Single[]
+      description: ''
+    content.vb: Public Shared Function LerpColor(startColor As Color, endColor As Color, t As Single) As Single()
+  overload: Genesis.Core.Utils.LerpColor*
+  nameWithType.vb: Utils.LerpColor(Color, Color, Single)
+  fullName.vb: Genesis.Core.Utils.LerpColor(System.Drawing.Color, System.Drawing.Color, Single)
+  name.vb: LerpColor(Color, Color, Single)
+- uid: Genesis.Core.Utils.CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Core.Utils.CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)
+  id: CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: CalculateScreenCorrection(float, float, float, float)
+  nameWithType: Utils.CalculateScreenCorrection(float, float, float, float)
+  fullName: Genesis.Core.Utils.CalculateScreenCorrection(float, float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static float CalculateScreenCorrection(float screenWidth, float screenHeight, float virtualWidth, float virtualHeight)
+    parameters:
+    - id: screenWidth
+      type: System.Single
+    - id: screenHeight
+      type: System.Single
+    - id: virtualWidth
+      type: System.Single
+    - id: virtualHeight
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function CalculateScreenCorrection(screenWidth As Single, screenHeight As Single, virtualWidth As Single, virtualHeight As Single) As Single
+  overload: Genesis.Core.Utils.CalculateScreenCorrection*
+  nameWithType.vb: Utils.CalculateScreenCorrection(Single, Single, Single, Single)
+  fullName.vb: Genesis.Core.Utils.CalculateScreenCorrection(Single, Single, Single, Single)
+  name.vb: CalculateScreenCorrection(Single, Single, Single, Single)
+- uid: Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
+  commentId: M:Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
+  id: ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: ExtractScaleFromMatrix(Matrix)
+  nameWithType: Utils.ExtractScaleFromMatrix(Matrix)
+  fullName: Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Vector3 ExtractScaleFromMatrix(Matrix matrix)
+    parameters:
+    - id: matrix
+      type: BulletSharp.Math.Matrix
+    return:
+      type: BulletSharp.Math.Vector3
+    content.vb: Public Shared Function ExtractScaleFromMatrix(matrix As Matrix) As Vector3
+  overload: Genesis.Core.Utils.ExtractScaleFromMatrix*
+- uid: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  commentId: M:Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  id: BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: BuildPhysicsMatrix(Vector3, Vector3, Vector3)
+  nameWithType: Utils.BuildPhysicsMatrix(Vector3, Vector3, Vector3)
+  fullName: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Matrix BuildPhysicsMatrix(Vector3 location, Vector3 rotation, Vector3 scale)
+    parameters:
+    - id: location
+      type: BulletSharp.Math.Vector3
+    - id: rotation
+      type: BulletSharp.Math.Vector3
+    - id: scale
+      type: BulletSharp.Math.Vector3
+    return:
+      type: BulletSharp.Math.Matrix
+    content.vb: Public Shared Function BuildPhysicsMatrix(location As Vector3, rotation As Vector3, scale As Vector3) As Matrix
+  overload: Genesis.Core.Utils.BuildPhysicsMatrix*
+- uid: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)
+  commentId: M:Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)
+  id: BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: BuildPhysicsMatrix(Vector3, Quaternion, Vector3)
+  nameWithType: Utils.BuildPhysicsMatrix(Vector3, Quaternion, Vector3)
+  fullName: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3, BulletSharp.Math.Quaternion, BulletSharp.Math.Vector3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Matrix BuildPhysicsMatrix(Vector3 location, Quaternion rotation, Vector3 scale)
+    parameters:
+    - id: location
+      type: BulletSharp.Math.Vector3
+    - id: rotation
+      type: BulletSharp.Math.Quaternion
+    - id: scale
+      type: BulletSharp.Math.Vector3
+    return:
+      type: BulletSharp.Math.Matrix
+    content.vb: Public Shared Function BuildPhysicsMatrix(location As Vector3, rotation As Quaternion, scale As Vector3) As Matrix
+  overload: Genesis.Core.Utils.BuildPhysicsMatrix*
 - uid: Genesis.Core.Utils.#ctor
   commentId: M:Genesis.Core.Utils.#ctor
   id: '#ctor'
@@ -2259,7 +2419,7 @@ references:
 - uid: Genesis.Core.Utils.ConvertColor*
   commentId: Overload:Genesis.Core.Utils.ConvertColor
   isExternal: true
-  href: Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertColor_System_Drawing_Color_
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_ConvertColor_System_Drawing_Color_System_Boolean_
   name: ConvertColor
   nameWithType: Utils.ConvertColor
   fullName: Genesis.Core.Utils.ConvertColor
@@ -2271,6 +2431,17 @@ references:
   name: Color
   nameWithType: Color
   fullName: System.Drawing.Color
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.Single[]
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.single
@@ -2407,6 +2578,77 @@ references:
   name: GetForwardDirection
   nameWithType: Utils.GetForwardDirection
   fullName: Genesis.Core.Utils.GetForwardDirection
+- uid: Genesis.Core.Utils.LerpColor*
+  commentId: Overload:Genesis.Core.Utils.LerpColor
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_LerpColor_System_Drawing_Color_System_Drawing_Color_System_Single_
+  name: LerpColor
+  nameWithType: Utils.LerpColor
+  fullName: Genesis.Core.Utils.LerpColor
+- uid: Genesis.Core.Utils.CalculateScreenCorrection*
+  commentId: Overload:Genesis.Core.Utils.CalculateScreenCorrection
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_CalculateScreenCorrection_System_Single_System_Single_System_Single_System_Single_
+  name: CalculateScreenCorrection
+  nameWithType: Utils.CalculateScreenCorrection
+  fullName: Genesis.Core.Utils.CalculateScreenCorrection
+- uid: Genesis.Core.Utils.ExtractScaleFromMatrix*
+  commentId: Overload:Genesis.Core.Utils.ExtractScaleFromMatrix
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_ExtractScaleFromMatrix_BulletSharp_Math_Matrix_
+  name: ExtractScaleFromMatrix
+  nameWithType: Utils.ExtractScaleFromMatrix
+  fullName: Genesis.Core.Utils.ExtractScaleFromMatrix
+- uid: BulletSharp.Math.Matrix
+  commentId: T:BulletSharp.Math.Matrix
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Matrix
+  nameWithType: Matrix
+  fullName: BulletSharp.Math.Matrix
+- uid: BulletSharp.Math.Vector3
+  commentId: T:BulletSharp.Math.Vector3
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: BulletSharp.Math.Vector3
+- uid: BulletSharp.Math
+  commentId: N:BulletSharp.Math
+  isExternal: true
+  name: BulletSharp.Math
+  nameWithType: BulletSharp.Math
+  fullName: BulletSharp.Math
+  spec.csharp:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+  spec.vb:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+- uid: Genesis.Core.Utils.BuildPhysicsMatrix*
+  commentId: Overload:Genesis.Core.Utils.BuildPhysicsMatrix
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_BuildPhysicsMatrix_BulletSharp_Math_Vector3_BulletSharp_Math_Vector3_BulletSharp_Math_Vector3_
+  name: BuildPhysicsMatrix
+  nameWithType: Utils.BuildPhysicsMatrix
+  fullName: Genesis.Core.Utils.BuildPhysicsMatrix
+- uid: BulletSharp.Math.Quaternion
+  commentId: T:BulletSharp.Math.Quaternion
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: BulletSharp.Math.Quaternion
 - uid: Genesis.Core.Utils.#ctor*
   commentId: Overload:Genesis.Core.Utils.#ctor
   isExternal: true

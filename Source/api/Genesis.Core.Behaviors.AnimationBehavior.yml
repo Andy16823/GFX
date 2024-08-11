@@ -8,8 +8,10 @@ items:
   - Genesis.Core.Behaviors.AnimationBehavior.#ctor
   - Genesis.Core.Behaviors.AnimationBehavior.#ctor(System.Single,System.Single,System.Int64,Genesis.Graphics.Texture)
   - Genesis.Core.Behaviors.AnimationBehavior.AddAnimation(Genesis.Graphics.Animation)
+  - Genesis.Core.Behaviors.AnimationBehavior.AddCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
   - Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet
   - Genesis.Core.Behaviors.AnimationBehavior.Animations
+  - Genesis.Core.Behaviors.AnimationBehavior.Callbacks
   - Genesis.Core.Behaviors.AnimationBehavior.Cells
   - Genesis.Core.Behaviors.AnimationBehavior.FrameTime
   - Genesis.Core.Behaviors.AnimationBehavior.LoadAnimation(System.String)
@@ -305,6 +307,39 @@ items:
     content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
   overridden: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   overload: Genesis.Core.Behaviors.AnimationBehavior.OnUpdate*
+- uid: Genesis.Core.Behaviors.AnimationBehavior.AddCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  commentId: M:Genesis.Core.Behaviors.AnimationBehavior.AddCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  id: AddCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  parent: Genesis.Core.Behaviors.AnimationBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddCallback(string, int, AnimationEvent)
+  nameWithType: AnimationBehavior.AddCallback(string, int, AnimationCallback.AnimationEvent)
+  fullName: Genesis.Core.Behaviors.AnimationBehavior.AddCallback(string, int, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Adds an new animation callback to the animation behavior
+  example: []
+  syntax:
+    content: public void AddCallback(string animation, int frame, AnimationCallback.AnimationEvent animationEvent)
+    parameters:
+    - id: animation
+      type: System.String
+      description: The name from the animation
+    - id: frame
+      type: System.Int32
+      description: The frame when the callback gets rised
+    - id: animationEvent
+      type: Genesis.Graphics.AnimationCallback.AnimationEvent
+      description: The animation event
+    content.vb: Public Sub AddCallback(animation As String, frame As Integer, animationEvent As AnimationCallback.AnimationEvent)
+  overload: Genesis.Core.Behaviors.AnimationBehavior.AddCallback*
+  nameWithType.vb: AnimationBehavior.AddCallback(String, Integer, AnimationCallback.AnimationEvent)
+  fullName.vb: Genesis.Core.Behaviors.AnimationBehavior.AddCallback(String, Integer, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  name.vb: AddCallback(String, Integer, AnimationEvent)
 - uid: Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet
   commentId: P:Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet
   id: AnimationSheet
@@ -443,6 +478,29 @@ items:
       type: Genesis.Graphics.Animation
     content.vb: Public Property SelectedAnimation As Animation
   overload: Genesis.Core.Behaviors.AnimationBehavior.SelectedAnimation*
+- uid: Genesis.Core.Behaviors.AnimationBehavior.Callbacks
+  commentId: P:Genesis.Core.Behaviors.AnimationBehavior.Callbacks
+  id: Callbacks
+  parent: Genesis.Core.Behaviors.AnimationBehavior
+  langs:
+  - csharp
+  - vb
+  name: Callbacks
+  nameWithType: AnimationBehavior.Callbacks
+  fullName: Genesis.Core.Behaviors.AnimationBehavior.Callbacks
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the callbacks for the animation
+  example: []
+  syntax:
+    content: public List<AnimationCallback> Callbacks { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+    content.vb: Public Property Callbacks As List(Of AnimationCallback)
+  overload: Genesis.Core.Behaviors.AnimationBehavior.Callbacks*
 references:
 - uid: Genesis.Core.Behaviors
   commentId: N:Genesis.Core.Behaviors
@@ -1087,6 +1145,52 @@ references:
   name: OnUpdate
   nameWithType: AnimationBehavior.OnUpdate
   fullName: Genesis.Core.Behaviors.AnimationBehavior.OnUpdate
+- uid: Genesis.Core.Behaviors.AnimationBehavior.AddCallback*
+  commentId: Overload:Genesis.Core.Behaviors.AnimationBehavior.AddCallback
+  isExternal: true
+  href: Genesis.Core.Behaviors.AnimationBehavior.html#Genesis_Core_Behaviors_AnimationBehavior_AddCallback_System_String_System_Int32_Genesis_Graphics_AnimationCallback_AnimationEvent_
+  name: AddCallback
+  nameWithType: AnimationBehavior.AddCallback
+  fullName: Genesis.Core.Behaviors.AnimationBehavior.AddCallback
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+  commentId: T:Genesis.Graphics.AnimationCallback.AnimationEvent
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html
+  name: AnimationCallback.AnimationEvent
+  nameWithType: AnimationCallback.AnimationEvent
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent
+  spec.csharp:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
+  spec.vb:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
 - uid: Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet*
   commentId: Overload:Genesis.Core.Behaviors.AnimationBehavior.AnimationSheet
   isExternal: true
@@ -1229,3 +1333,45 @@ references:
   name: SelectedAnimation
   nameWithType: AnimationBehavior.SelectedAnimation
   fullName: Genesis.Core.Behaviors.AnimationBehavior.SelectedAnimation
+- uid: Genesis.Core.Behaviors.AnimationBehavior.Callbacks*
+  commentId: Overload:Genesis.Core.Behaviors.AnimationBehavior.Callbacks
+  isExternal: true
+  href: Genesis.Core.Behaviors.AnimationBehavior.html#Genesis_Core_Behaviors_AnimationBehavior_Callbacks
+  name: Callbacks
+  nameWithType: AnimationBehavior.Callbacks
+  fullName: Genesis.Core.Behaviors.AnimationBehavior.Callbacks
+- uid: System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+  commentId: T:System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<AnimationCallback>
+  nameWithType: List<AnimationCallback>
+  fullName: System.Collections.Generic.List<Genesis.Graphics.AnimationCallback>
+  nameWithType.vb: List(Of AnimationCallback)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Graphics.AnimationCallback)
+  name.vb: List(Of AnimationCallback)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: )

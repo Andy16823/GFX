@@ -5,13 +5,13 @@ items:
   id: GLRenderer
   parent: Genesis.Graphics.RenderDevice
   children:
-  - Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr)
+  - Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr,Genesis.Graphics.RenderSettings)
   - Genesis.Graphics.RenderDevice.GLRenderer.Begin
   - Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32)
   - Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.BuildFramebuffer(System.Int32,System.Int32,System.Int32)
-  - Genesis.Graphics.RenderDevice.GLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)
   - Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer(System.Single[])
+  - Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(System.String,Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.CreateStaticVertexBuffer(System.Single[])
   - Genesis.Graphics.RenderDevice.GLRenderer.Dispose
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement(Genesis.Core.GameElement)
@@ -20,6 +20,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeShader(Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.DisposeTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
+  - Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawGameElement(Genesis.Core.GameElement)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
@@ -38,6 +39,7 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.End
+  - Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
@@ -50,12 +52,11 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.GetShaderProgram(Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.Init
   - Genesis.Graphics.RenderDevice.GLRenderer.InitElement3D(Genesis.Core.GameElements.Element3D)
-  - Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(System.String)
-  - Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(System.String)
   - Genesis.Graphics.RenderDevice.GLRenderer.InitGameElement(Genesis.Core.GameElement)
+  - Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(System.String)
   - Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)
+  - Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(System.String)
   - Genesis.Graphics.RenderDevice.GLRenderer.LoadFont(Genesis.Graphics.Font)
-  - Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)
   - Genesis.Graphics.RenderDevice.GLRenderer.LoadTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.RenderDevice.GLRenderer.ModelViewMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PopMatrix
@@ -65,10 +66,11 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.ProjectionMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.PushMatrix
   - Genesis.Graphics.RenderDevice.GLRenderer.Rotate(System.Single,Genesis.Math.Vec3)
-  - Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Camera)
+  - Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   - Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.RenderDevice.GLRenderer.SetFramebuffer(System.Int32)
   - Genesis.Graphics.RenderDevice.GLRenderer.SetLightSource(Genesis.Core.Light)
+  - Genesis.Graphics.RenderDevice.GLRenderer.SetViewport(Genesis.Graphics.Viewport)
   - Genesis.Graphics.RenderDevice.GLRenderer.TextureClampS
   - Genesis.Graphics.RenderDevice.GLRenderer.TextureClampT
   - Genesis.Graphics.RenderDevice.GLRenderer.TextureRepeatS
@@ -76,7 +78,6 @@ items:
   - Genesis.Graphics.RenderDevice.GLRenderer.Translate(Genesis.Math.Vec3)
   - Genesis.Graphics.RenderDevice.GLRenderer.Translate(System.Single,System.Single,System.Single)
   - Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize(Genesis.Graphics.Framebuffer,System.Int32,System.Int32)
-  - Genesis.Graphics.RenderDevice.GLRenderer.Viewport(System.Single,System.Single,System.Single,System.Single)
   - Genesis.Graphics.RenderDevice.GLRenderer.sceneBuffer
   langs:
   - csharp
@@ -122,30 +123,32 @@ items:
     return:
       type: Genesis.Graphics.Framebuffer
     content.vb: Public sceneBuffer As Framebuffer
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr)
-  id: '#ctor(System.IntPtr)'
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr,Genesis.Graphics.RenderSettings)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.#ctor(System.IntPtr,Genesis.Graphics.RenderSettings)
+  id: '#ctor(System.IntPtr,Genesis.Graphics.RenderSettings)'
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: GLRenderer(IntPtr)
-  nameWithType: GLRenderer.GLRenderer(IntPtr)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.GLRenderer(System.IntPtr)
+  name: GLRenderer(IntPtr, RenderSettings)
+  nameWithType: GLRenderer.GLRenderer(IntPtr, RenderSettings)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.GLRenderer(System.IntPtr, Genesis.Graphics.RenderSettings)
   type: Constructor
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
   syntax:
-    content: public GLRenderer(IntPtr hwnd)
+    content: public GLRenderer(IntPtr hwnd, RenderSettings settings)
     parameters:
     - id: hwnd
       type: System.IntPtr
-    content.vb: Public Sub New(hwnd As IntPtr)
+    - id: settings
+      type: Genesis.Graphics.RenderSettings
+    content.vb: Public Sub New(hwnd As IntPtr, settings As RenderSettings)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.#ctor*
-  nameWithType.vb: GLRenderer.New(IntPtr)
-  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.New(System.IntPtr)
-  name.vb: New(IntPtr)
+  nameWithType.vb: GLRenderer.New(IntPtr, RenderSettings)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.New(System.IntPtr, Genesis.Graphics.RenderSettings)
+  name.vb: New(IntPtr, RenderSettings)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Init
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Init
   id: Init
@@ -168,30 +171,6 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.Init*
   implements:
   - Genesis.Graphics.IRenderDevice.Init
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)
-  id: BuildShape(Genesis.Graphics.Shapes.Shape)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: BuildShape(Shape)
-  nameWithType: GLRenderer.BuildShape(Shape)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.BuildShape(Genesis.Graphics.Shapes.Shape)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Creates an buffer for the shape
-  example: []
-  syntax:
-    content: public void BuildShape(Shape shape)
-    parameters:
-    - id: shape
-      type: Genesis.Graphics.Shapes.Shape
-      description: ''
-    content.vb: Public Sub BuildShape(shape As Shape)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.BuildShape*
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer(System.Single[])
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer(System.Single[])
   id: CreateDynamicVertexBuffer(System.Single[])
@@ -406,32 +385,36 @@ items:
   nameWithType.vb: GLRenderer.UpdateFramebufferSize(Framebuffer, Integer, Integer)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.UpdateFramebufferSize(Genesis.Graphics.Framebuffer, Integer, Integer)
   name.vb: UpdateFramebufferSize(Framebuffer, Integer, Integer)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(System.String,Genesis.Graphics.ShaderProgram)
-  id: LoadShader(System.String,Genesis.Graphics.ShaderProgram)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(System.String,Genesis.Graphics.ShaderProgram)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(System.String,Genesis.Graphics.ShaderProgram)
+  id: CreateShader(System.String,Genesis.Graphics.ShaderProgram)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: LoadShader(string, ShaderProgram)
-  nameWithType: GLRenderer.LoadShader(string, ShaderProgram)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(string, Genesis.Graphics.ShaderProgram)
+  name: CreateShader(string, ShaderProgram)
+  nameWithType: GLRenderer.CreateShader(string, ShaderProgram)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(string, Genesis.Graphics.ShaderProgram)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
+  summary: Loads a shader program
+  example: []
   syntax:
-    content: public void LoadShader(string name, ShaderProgram program)
+    content: public void CreateShader(string name, ShaderProgram program)
     parameters:
     - id: name
       type: System.String
+      description: ''
     - id: program
       type: Genesis.Graphics.ShaderProgram
-    content.vb: Public Sub LoadShader(name As String, program As ShaderProgram)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*
-  nameWithType.vb: GLRenderer.LoadShader(String, ShaderProgram)
-  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader(String, Genesis.Graphics.ShaderProgram)
-  name.vb: LoadShader(String, ShaderProgram)
+      description: ''
+    content.vb: Public Sub CreateShader(name As String, program As ShaderProgram)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader*
+  nameWithType.vb: GLRenderer.CreateShader(String, ShaderProgram)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader(String, Genesis.Graphics.ShaderProgram)
+  name.vb: CreateShader(String, ShaderProgram)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitSprite(Genesis.Core.GameElements.Sprite)
   id: InitSprite(Genesis.Core.GameElements.Sprite)
@@ -510,58 +493,72 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3D*
   implements:
   - Genesis.Graphics.IRenderDevice.InitElement3D(Genesis.Core.GameElements.Element3D)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(System.String)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(System.String)
-  id: InitElement3DTexture(System.String)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(System.String)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(System.String)
+  id: InitTexture(System.String)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: InitElement3DTexture(string)
-  nameWithType: GLRenderer.InitElement3DTexture(string)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(string)
+  name: InitTexture(string)
+  nameWithType: GLRenderer.InitTexture(string)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(string)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
+  summary: >-
+    Initial the diffuse texture for the 3D model
+
+    If the texture file isnt existing an empty 1x1 texture get created
+  example: []
   syntax:
-    content: public int InitElement3DTexture(string path)
+    content: public int InitTexture(string path)
     parameters:
     - id: path
       type: System.String
+      description: ''
     return:
       type: System.Int32
-    content.vb: Public Function InitElement3DTexture(path As String) As Integer
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture*
-  nameWithType.vb: GLRenderer.InitElement3DTexture(String)
-  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture(String)
-  name.vb: InitElement3DTexture(String)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(System.String)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(System.String)
-  id: InitElement3DNormalMap(System.String)
+      description: ''
+    content.vb: Public Function InitTexture(path As String) As Integer
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture*
+  nameWithType.vb: GLRenderer.InitTexture(String)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture(String)
+  name.vb: InitTexture(String)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(System.String)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(System.String)
+  id: InitNormalMap(System.String)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: InitElement3DNormalMap(string)
-  nameWithType: GLRenderer.InitElement3DNormalMap(string)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(string)
+  name: InitNormalMap(string)
+  nameWithType: GLRenderer.InitNormalMap(string)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(string)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Graphics.RenderDevice
+  summary: >-
+    Inital the normal map for an 3D element
+
+    if the normal map file isnt existing an empty 1x1 normal map get created
+  example: []
   syntax:
-    content: public int InitElement3DNormalMap(string path)
+    content: public int InitNormalMap(string path)
     parameters:
     - id: path
       type: System.String
+      description: ''
     return:
       type: System.Int32
-    content.vb: Public Function InitElement3DNormalMap(path As String) As Integer
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap*
-  nameWithType.vb: GLRenderer.InitElement3DNormalMap(String)
-  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap(String)
-  name.vb: InitElement3DNormalMap(String)
+      description: ''
+    content.vb: Public Function InitNormalMap(path As String) As Integer
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap*
+  nameWithType.vb: GLRenderer.InitNormalMap(String)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap(String)
+  name.vb: InitNormalMap(String)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Begin
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Begin
   id: Begin
@@ -648,6 +645,79 @@ items:
   nameWithType.vb: GLRenderer.DrawRect(Rect, Color, Single)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.DrawRect(Genesis.Math.Rect, System.Drawing.Color, Single)
   name.vb: DrawRect(Rect, Color, Single)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  id: FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: FillCircle(Vec3, float, Color)
+  nameWithType: GLRenderer.FillCircle(Vec3, float, Color)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3, float, System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Renders an filled circle
+  example: []
+  syntax:
+    content: public void FillCircle(Vec3 center, float radius, Color color)
+    parameters:
+    - id: center
+      type: Genesis.Math.Vec3
+      description: Center of the circle
+    - id: radius
+      type: System.Single
+      description: Radius of the circle
+    - id: color
+      type: System.Drawing.Color
+      description: Color of the circle
+    content.vb: Public Sub FillCircle(center As Vec3, radius As Single, color As Color)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle*
+  implements:
+  - Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  nameWithType.vb: GLRenderer.FillCircle(Vec3, Single, Color)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle(Genesis.Math.Vec3, Single, System.Drawing.Color)
+  name.vb: FillCircle(Vec3, Single, Color)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  id: DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawCircle(Vec3, float, Color, float)
+  nameWithType: GLRenderer.DrawCircle(Vec3, float, Color, float)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3, float, System.Drawing.Color, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Draws an circle
+  example: []
+  syntax:
+    content: public void DrawCircle(Vec3 center, float radius, Color color, float borderWidth)
+    parameters:
+    - id: center
+      type: Genesis.Math.Vec3
+      description: Location for the circle
+    - id: radius
+      type: System.Single
+      description: Radius for the circle
+    - id: color
+      type: System.Drawing.Color
+      description: Color for the circle
+    - id: borderWidth
+      type: System.Single
+      description: Border width for the circle
+    content.vb: Public Sub DrawCircle(center As Vec3, radius As Single, color As Color, borderWidth As Single)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle*
+  implements:
+  - Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  nameWithType.vb: GLRenderer.DrawCircle(Vec3, Single, Color, Single)
+  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle(Genesis.Math.Vec3, Single, System.Drawing.Color, Single)
+  name.vb: DrawCircle(Vec3, Single, Color, Single)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
   id: DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
@@ -1154,16 +1224,16 @@ items:
   nameWithType.vb: GLRenderer.Rotate(Single, Vec3)
   fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.Rotate(Single, Genesis.Math.Vec3)
   name.vb: Rotate(Single, Vec3)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.Viewport(System.Single,System.Single,System.Single,System.Single)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Viewport(System.Single,System.Single,System.Single,System.Single)
-  id: Viewport(System.Single,System.Single,System.Single,System.Single)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.SetViewport(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.SetViewport(Genesis.Graphics.Viewport)
+  id: SetViewport(Genesis.Graphics.Viewport)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: Viewport(float, float, float, float)
-  nameWithType: GLRenderer.Viewport(float, float, float, float)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Viewport(float, float, float, float)
+  name: SetViewport(Viewport)
+  nameWithType: GLRenderer.SetViewport(Viewport)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.SetViewport(Genesis.Graphics.Viewport)
   type: Method
   assemblies:
   - Genesis
@@ -1171,37 +1241,24 @@ items:
   summary: Sets the viewport for the rendering
   example: []
   syntax:
-    content: public void Viewport(float x, float y, float width, float height)
+    content: public void SetViewport(Viewport viewport)
     parameters:
-    - id: x
-      type: System.Single
-      description: ''
-    - id: y
-      type: System.Single
-      description: ''
-    - id: width
-      type: System.Single
-      description: ''
-    - id: height
-      type: System.Single
-      description: ''
-    content.vb: Public Sub Viewport(x As Single, y As Single, width As Single, height As Single)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.Viewport*
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+    content.vb: Public Sub SetViewport(viewport As Viewport)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.SetViewport*
   implements:
-  - Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
-  nameWithType.vb: GLRenderer.Viewport(Single, Single, Single, Single)
-  fullName.vb: Genesis.Graphics.RenderDevice.GLRenderer.Viewport(Single, Single, Single, Single)
-  name.vb: Viewport(Single, Single, Single, Single)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Camera)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Camera)
-  id: SetCamera(Genesis.Graphics.Camera)
+  - Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
+  id: SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   parent: Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
   - vb
-  name: SetCamera(Camera)
-  nameWithType: GLRenderer.SetCamera(Camera)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Camera)
+  name: SetCamera(Viewport, Camera)
+  nameWithType: GLRenderer.SetCamera(Viewport, Camera)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera(Genesis.Graphics.Viewport, Genesis.Graphics.Camera)
   type: Method
   assemblies:
   - Genesis
@@ -1209,15 +1266,17 @@ items:
   summary: Set the Projection and view matrices
   example: []
   syntax:
-    content: public void SetCamera(Camera camera)
+    content: public void SetCamera(Viewport viewport, Camera camera)
     parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
     - id: camera
       type: Genesis.Graphics.Camera
       description: ''
-    content.vb: Public Sub SetCamera(camera As Camera)
+    content.vb: Public Sub SetCamera(viewport As Viewport, camera As Camera)
   overload: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera*
   implements:
-  - Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  - Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Translate(Genesis.Math.Vec3)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.Translate(Genesis.Math.Vec3)
   id: Translate(Genesis.Math.Vec3)
@@ -1837,6 +1896,62 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishSceneRendering*
   implements:
   - Genesis.Graphics.IRenderDevice.FinishSceneRendering(Genesis.Core.Scene)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Prepares the render for the 2D lightmap
+  example: []
+  syntax:
+    content: public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.RenderDevice.GLRenderer
+  langs:
+  - csharp
+  - vb
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: GLRenderer.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.RenderDevice
+  summary: Finish the lightmap 2D rendering
+  example: []
+  syntax:
+    content: public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+      description: ''
+    - id: framebuffer
+      type: Genesis.Graphics.Framebuffer
+    content.vb: Public Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
+  overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  implements:
+  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   id: PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
@@ -2097,62 +2212,6 @@ items:
   overload: Genesis.Graphics.RenderDevice.GLRenderer.DisposeElement*
   implements:
   - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  id: PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: PrepareLightmap2D(Scene, Framebuffer)
-  nameWithType: GLRenderer.PrepareLightmap2D(Scene, Framebuffer)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Prepares the render for the 2D lightmap
-  example: []
-  syntax:
-    content: public void PrepareLightmap2D(Scene scene, Framebuffer framebuffer)
-    parameters:
-    - id: scene
-      type: Genesis.Core.Scene
-      description: ''
-    - id: framebuffer
-      type: Genesis.Graphics.Framebuffer
-    content.vb: Public Sub PrepareLightmap2D(scene As Scene, framebuffer As Framebuffer)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
-  implements:
-  - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  commentId: M:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  id: FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  parent: Genesis.Graphics.RenderDevice.GLRenderer
-  langs:
-  - csharp
-  - vb
-  name: FinishLightmap2D(Scene, Framebuffer)
-  nameWithType: GLRenderer.FinishLightmap2D(Scene, Framebuffer)
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
-  type: Method
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics.RenderDevice
-  summary: Finish the lightmap 2D rendering
-  example: []
-  syntax:
-    content: public void FinishLightmap2D(Scene scene, Framebuffer framebuffer)
-    parameters:
-    - id: scene
-      type: Genesis.Core.Scene
-      description: ''
-    - id: framebuffer
-      type: Genesis.Graphics.Framebuffer
-    content.vb: Public Sub FinishLightmap2D(scene As Scene, framebuffer As Framebuffer)
-  overload: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
-  implements:
-  - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
 references:
 - uid: Genesis.Graphics.RenderDevice
   commentId: N:Genesis.Graphics.RenderDevice
@@ -2474,7 +2533,7 @@ references:
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.#ctor*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.#ctor
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer__ctor_System_IntPtr_
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer__ctor_System_IntPtr_Genesis_Graphics_RenderSettings_
   name: GLRenderer
   nameWithType: GLRenderer.GLRenderer
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.GLRenderer
@@ -2489,6 +2548,14 @@ references:
   name: IntPtr
   nameWithType: IntPtr
   fullName: System.IntPtr
+- uid: Genesis.Graphics.RenderSettings
+  commentId: T:Genesis.Graphics.RenderSettings
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderSettings.html
+  name: RenderSettings
+  nameWithType: RenderSettings
+  fullName: Genesis.Graphics.RenderSettings
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Init*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Init
   isExternal: true
@@ -2518,58 +2585,6 @@ references:
     href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Init
   - name: (
   - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.BuildShape*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.BuildShape
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_BuildShape_Genesis_Graphics_Shapes_Shape_
-  name: BuildShape
-  nameWithType: GLRenderer.BuildShape
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.BuildShape
-- uid: Genesis.Graphics.Shapes.Shape
-  commentId: T:Genesis.Graphics.Shapes.Shape
-  parent: Genesis.Graphics.Shapes
-  isExternal: true
-  href: Genesis.Graphics.Shapes.Shape.html
-  name: Shape
-  nameWithType: Shape
-  fullName: Genesis.Graphics.Shapes.Shape
-- uid: Genesis.Graphics.Shapes
-  commentId: N:Genesis.Graphics.Shapes
-  isExternal: true
-  href: Genesis.html
-  name: Genesis.Graphics.Shapes
-  nameWithType: Genesis.Graphics.Shapes
-  fullName: Genesis.Graphics.Shapes
-  spec.csharp:
-  - uid: Genesis
-    name: Genesis
-    isExternal: true
-    href: Genesis.html
-  - name: .
-  - uid: Genesis.Graphics
-    name: Graphics
-    isExternal: true
-    href: Genesis.Graphics.html
-  - name: .
-  - uid: Genesis.Graphics.Shapes
-    name: Shapes
-    isExternal: true
-    href: Genesis.Graphics.Shapes.html
-  spec.vb:
-  - uid: Genesis
-    name: Genesis
-    isExternal: true
-    href: Genesis.html
-  - name: .
-  - uid: Genesis.Graphics
-    name: Graphics
-    isExternal: true
-    href: Genesis.Graphics.html
-  - name: .
-  - uid: Genesis.Graphics.Shapes
-    name: Shapes
-    isExternal: true
-    href: Genesis.Graphics.Shapes.html
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.CreateDynamicVertexBuffer
   isExternal: true
@@ -2930,13 +2945,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.LoadShader
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.CreateShader
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_LoadShader_System_String_Genesis_Graphics_ShaderProgram_
-  name: LoadShader
-  nameWithType: GLRenderer.LoadShader
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.LoadShader
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_CreateShader_System_String_Genesis_Graphics_ShaderProgram_
+  name: CreateShader
+  nameWithType: GLRenderer.CreateShader
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.CreateShader
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -3155,20 +3170,20 @@ references:
   name: Element3D
   nameWithType: Element3D
   fullName: Genesis.Core.GameElements.Element3D
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.InitTexture
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DTexture_System_String_
-  name: InitElement3DTexture
-  nameWithType: GLRenderer.InitElement3DTexture
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DTexture
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_InitTexture_System_String_
+  name: InitTexture
+  nameWithType: GLRenderer.InitTexture
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitTexture
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_InitElement3DNormalMap_System_String_
-  name: InitElement3DNormalMap
-  nameWithType: GLRenderer.InitElement3DNormalMap
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitElement3DNormalMap
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_InitNormalMap_System_String_
+  name: InitNormalMap
+  nameWithType: GLRenderer.InitNormalMap
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.InitNormalMap
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.Begin*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Begin
   isExternal: true
@@ -3385,6 +3400,154 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FillCircle
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FillCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_
+  name: FillCircle
+  nameWithType: GLRenderer.FillCircle
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FillCircle
+- uid: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  commentId: M:Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FillCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_
+  name: FillCircle(Vec3, float, Color)
+  nameWithType: IRenderDevice.FillCircle(Vec3, float, Color)
+  fullName: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3, float, System.Drawing.Color)
+  nameWithType.vb: IRenderDevice.FillCircle(Vec3, Single, Color)
+  fullName.vb: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3, Single, System.Drawing.Color)
+  name.vb: FillCircle(Vec3, Single, Color)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+    name: FillCircle
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FillCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
+    name: FillCircle
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FillCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_DrawCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_System_Single_
+  name: DrawCircle
+  nameWithType: GLRenderer.DrawCircle
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.DrawCircle
+- uid: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  commentId: M:Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DrawCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_System_Single_
+  name: DrawCircle(Vec3, float, Color, float)
+  nameWithType: IRenderDevice.DrawCircle(Vec3, float, Color, float)
+  fullName: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3, float, System.Drawing.Color, float)
+  nameWithType.vb: IRenderDevice.DrawCircle(Vec3, Single, Color, Single)
+  fullName.vb: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3, Single, System.Drawing.Color, Single)
+  name.vb: DrawCircle(Vec3, Single, Color, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+    name: DrawCircle
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DrawCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
+    name: DrawCircle
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DrawCircle_Genesis_Math_Vec3_System_Single_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawLine*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawLine
   isExternal: true
@@ -3446,14 +3609,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.drawing.color
   - name: )
-- uid: Genesis.Math.Vec3
-  commentId: T:Genesis.Math.Vec3
-  parent: Genesis.Math
-  isExternal: true
-  href: Genesis.Math.Vec3.html
-  name: Vec3
-  nameWithType: Vec3
-  fullName: Genesis.Math.Vec3
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.DrawGameElement*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.DrawGameElement
   isExternal: true
@@ -4252,114 +4407,95 @@ references:
     isExternal: true
     href: Genesis.Math.Vec3.html
   - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.Viewport*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.Viewport
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.SetViewport*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.SetViewport
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_Viewport_System_Single_System_Single_System_Single_System_Single_
-  name: Viewport
-  nameWithType: GLRenderer.Viewport
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.Viewport
-- uid: Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
-  commentId: M:Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_SetViewport_Genesis_Graphics_Viewport_
+  name: SetViewport
+  nameWithType: GLRenderer.SetViewport
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.SetViewport
+- uid: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
   parent: Genesis.Graphics.IRenderDevice
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Viewport_System_Single_System_Single_System_Single_System_Single_
-  name: Viewport(float, float, float, float)
-  nameWithType: IRenderDevice.Viewport(float, float, float, float)
-  fullName: Genesis.Graphics.IRenderDevice.Viewport(float, float, float, float)
-  nameWithType.vb: IRenderDevice.Viewport(Single, Single, Single, Single)
-  fullName.vb: Genesis.Graphics.IRenderDevice.Viewport(Single, Single, Single, Single)
-  name.vb: Viewport(Single, Single, Single, Single)
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetViewport_Genesis_Graphics_Viewport_
+  name: SetViewport(Viewport)
+  nameWithType: IRenderDevice.SetViewport(Viewport)
+  fullName: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
   spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
+  - uid: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+    name: SetViewport
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetViewport_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
     name: Viewport
     isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Viewport_System_Single_System_Single_System_Single_System_Single_
-  - name: (
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: float
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
+    href: Genesis.Graphics.Viewport.html
   - name: )
   spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.Viewport(System.Single,System.Single,System.Single,System.Single)
+  - uid: Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
+    name: SetViewport
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetViewport_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
     name: Viewport
     isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_Viewport_System_Single_System_Single_System_Single_System_Single_
-  - name: (
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
-  - name: ','
-  - name: " "
-  - uid: System.Single
-    name: Single
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.single
+    href: Genesis.Graphics.Viewport.html
   - name: )
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.SetCamera
   isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_SetCamera_Genesis_Graphics_Camera_
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_SetCamera_Genesis_Graphics_Viewport_Genesis_Graphics_Camera_
   name: SetCamera
   nameWithType: GLRenderer.SetCamera
   fullName: Genesis.Graphics.RenderDevice.GLRenderer.SetCamera
-- uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
-  commentId: M:Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+- uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   parent: Genesis.Graphics.IRenderDevice
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Camera_
-  name: SetCamera(Camera)
-  nameWithType: IRenderDevice.SetCamera(Camera)
-  fullName: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Viewport_Genesis_Graphics_Camera_
+  name: SetCamera(Viewport, Camera)
+  nameWithType: IRenderDevice.SetCamera(Viewport, Camera)
+  fullName: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport, Genesis.Graphics.Camera)
   spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  - uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
     name: SetCamera
     isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Camera_
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Viewport_Genesis_Graphics_Camera_
   - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
   - uid: Genesis.Graphics.Camera
     name: Camera
     isExternal: true
     href: Genesis.Graphics.Camera.html
   - name: )
   spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Camera)
+  - uid: Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
     name: SetCamera
     isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Camera_
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetCamera_Genesis_Graphics_Viewport_Genesis_Graphics_Camera_
   - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
   - uid: Genesis.Graphics.Camera
     name: Camera
     isExternal: true
@@ -5255,6 +5391,104 @@ references:
     isExternal: true
     href: Genesis.Core.Scene.html
   - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D
+  nameWithType: GLRenderer.PrepareLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: PrepareLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: PrepareLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
+  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D
+  nameWithType: GLRenderer.FinishLightmap2D
+  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
+- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+  parent: Genesis.Graphics.IRenderDevice
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  name: FinishLightmap2D(Scene, Framebuffer)
+  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
+  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
+  spec.csharp:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
+    name: FinishLightmap2D
+    isExternal: true
+    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Framebuffer
+    name: Framebuffer
+    isExternal: true
+    href: Genesis.Graphics.Framebuffer.html
+  - name: )
 - uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering*
   commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareCanvasRendering
   isExternal: true
@@ -5619,102 +5853,4 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
-  - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  name: PrepareLightmap2D
-  nameWithType: GLRenderer.PrepareLightmap2D
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.PrepareLightmap2D
-- uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  commentId: M:Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  parent: Genesis.Graphics.IRenderDevice
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  name: PrepareLightmap2D(Scene, Framebuffer)
-  nameWithType: IRenderDevice.PrepareLightmap2D(Scene, Framebuffer)
-  fullName: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
-  spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-    name: PrepareLightmap2D
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Graphics.Framebuffer
-    name: Framebuffer
-    isExternal: true
-    href: Genesis.Graphics.Framebuffer.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-    name: PrepareLightmap2D
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Graphics.Framebuffer
-    name: Framebuffer
-    isExternal: true
-    href: Genesis.Graphics.Framebuffer.html
-  - name: )
-- uid: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D*
-  commentId: Overload:Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.GLRenderer.html#Genesis_Graphics_RenderDevice_GLRenderer_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  name: FinishLightmap2D
-  nameWithType: GLRenderer.FinishLightmap2D
-  fullName: Genesis.Graphics.RenderDevice.GLRenderer.FinishLightmap2D
-- uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  commentId: M:Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-  parent: Genesis.Graphics.IRenderDevice
-  isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  name: FinishLightmap2D(Scene, Framebuffer)
-  nameWithType: IRenderDevice.FinishLightmap2D(Scene, Framebuffer)
-  fullName: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene, Genesis.Graphics.Framebuffer)
-  spec.csharp:
-  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-    name: FinishLightmap2D
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Graphics.Framebuffer
-    name: Framebuffer
-    isExternal: true
-    href: Genesis.Graphics.Framebuffer.html
-  - name: )
-  spec.vb:
-  - uid: Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
-    name: FinishLightmap2D
-    isExternal: true
-    href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishLightmap2D_Genesis_Core_Scene_Genesis_Graphics_Framebuffer_
-  - name: (
-  - uid: Genesis.Core.Scene
-    name: Scene
-    isExternal: true
-    href: Genesis.Core.Scene.html
-  - name: ','
-  - name: " "
-  - uid: Genesis.Graphics.Framebuffer
-    name: Framebuffer
-    isExternal: true
-    href: Genesis.Graphics.Framebuffer.html
   - name: )

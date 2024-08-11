@@ -13,6 +13,7 @@ items:
   - Genesis.Core.Input.GetRefMousePos(System.IntPtr)
   - Genesis.Core.Input.GetRefMousePos(System.Windows.Forms.Control)
   - Genesis.Core.Input.HideCursor
+  - Genesis.Core.Input.IsKeyDown(Genesis.Core.Input.Keys)
   - Genesis.Core.Input.IsKeyDown(System.Windows.Forms.Keys)
   - Genesis.Core.Input.SetCursorPos(Genesis.Math.Vec3,System.IntPtr)
   - Genesis.Core.Input.SetCursorPos(System.Int32,System.Int32)
@@ -158,6 +159,41 @@ items:
       type: System.Boolean
       description: True if the key is down; otherwise, false.
     content.vb: Public Shared Function IsKeyDown(vKey As Keys) As Boolean
+  overload: Genesis.Core.Input.IsKeyDown*
+- uid: Genesis.Core.Input.IsKeyDown(Genesis.Core.Input.Keys)
+  commentId: M:Genesis.Core.Input.IsKeyDown(Genesis.Core.Input.Keys)
+  id: IsKeyDown(Genesis.Core.Input.Keys)
+  parent: Genesis.Core.Input
+  langs:
+  - csharp
+  - vb
+  name: IsKeyDown(Keys)
+  nameWithType: Input.IsKeyDown(Input.Keys)
+  fullName: Genesis.Core.Input.IsKeyDown(Genesis.Core.Input.Keys)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Checks whether the specified key is currently pressed.
+  example:
+  - >-
+    This example demonstrates how to use IsKeyDown method:
+
+    <pre><code class="lang-csharp">if (Input.IsKeyDown(Input.Keys.A))
+
+    {
+        Console.WriteLine("Key A is pressed.");
+    }</code></pre>
+  syntax:
+    content: public static bool IsKeyDown(Input.Keys vKey)
+    parameters:
+    - id: vKey
+      type: Genesis.Core.Input.Keys
+      description: The virtual key to check.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the key is currently down; otherwise, <code>false</code>.
+    content.vb: Public Shared Function IsKeyDown(vKey As Input.Keys) As Boolean
   overload: Genesis.Core.Input.IsKeyDown*
 - uid: Genesis.Core.Input.GetMousePos
   commentId: M:Genesis.Core.Input.GetMousePos
@@ -746,6 +782,34 @@ references:
   name: IsKeyDown
   nameWithType: Input.IsKeyDown
   fullName: Genesis.Core.Input.IsKeyDown
+- uid: Genesis.Core.Input.Keys
+  commentId: T:Genesis.Core.Input.Keys
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Input.html
+  name: Input.Keys
+  nameWithType: Input.Keys
+  fullName: Genesis.Core.Input.Keys
+  spec.csharp:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html
+  spec.vb:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html
 - uid: Genesis.Core.Input.GetMousePos*
   commentId: Overload:Genesis.Core.Input.GetMousePos
   isExternal: true

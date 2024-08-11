@@ -11,6 +11,7 @@ items:
   - Genesis.Physics.PhysicsHandler3D.PhysicsWorld
   - Genesis.Physics.PhysicsHandler3D.Process(Genesis.Core.Scene,Genesis.Core.Game)
   - Genesis.Physics.PhysicsHandler3D.ProcessPhysics
+  - Genesis.Physics.PhysicsHandler3D.RemoveElement(Genesis.Physics.PhysicsBehavior)
   langs:
   - csharp
   - vb
@@ -151,6 +152,32 @@ items:
     content.vb: Public Overrides Sub ManageElement(collisionObjec As PhysicsBehavior)
   overridden: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
   overload: Genesis.Physics.PhysicsHandler3D.ManageElement*
+- uid: Genesis.Physics.PhysicsHandler3D.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  commentId: M:Genesis.Physics.PhysicsHandler3D.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  id: RemoveElement(Genesis.Physics.PhysicsBehavior)
+  parent: Genesis.Physics.PhysicsHandler3D
+  langs:
+  - csharp
+  - vb
+  name: RemoveElement(PhysicsBehavior)
+  nameWithType: PhysicsHandler3D.RemoveElement(PhysicsBehavior)
+  fullName: Genesis.Physics.PhysicsHandler3D.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Removes the specified physics behavior from the physics world.
+  remarks: This method removes the collision object associated with the provided physics behavior from the physics world.
+  example: []
+  syntax:
+    content: public override void RemoveElement(PhysicsBehavior physicsBehavior)
+    parameters:
+    - id: physicsBehavior
+      type: Genesis.Physics.PhysicsBehavior
+      description: The physics behavior to be removed.
+    content.vb: Public Overrides Sub RemoveElement(physicsBehavior As PhysicsBehavior)
+  overridden: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  overload: Genesis.Physics.PhysicsHandler3D.RemoveElement*
 - uid: Genesis.Physics.PhysicsHandler3D.PhysicsWorld
   commentId: P:Genesis.Physics.PhysicsHandler3D.PhysicsWorld
   id: PhysicsWorld
@@ -644,6 +671,43 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  commentId: M:Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  parent: Genesis.Physics.PhysicHandler
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_RemoveElement_Genesis_Physics_PhysicsBehavior_
+  name: RemoveElement(PhysicsBehavior)
+  nameWithType: PhysicHandler.RemoveElement(PhysicsBehavior)
+  fullName: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+    name: RemoveElement
+    isExternal: true
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_RemoveElement_Genesis_Physics_PhysicsBehavior_
+  - name: (
+  - uid: Genesis.Physics.PhysicsBehavior
+    name: PhysicsBehavior
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
+    name: RemoveElement
+    isExternal: true
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_RemoveElement_Genesis_Physics_PhysicsBehavior_
+  - name: (
+  - uid: Genesis.Physics.PhysicsBehavior
+    name: PhysicsBehavior
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html
+  - name: )
+- uid: Genesis.Physics.PhysicsHandler3D.RemoveElement*
+  commentId: Overload:Genesis.Physics.PhysicsHandler3D.RemoveElement
+  isExternal: true
+  href: Genesis.Physics.PhysicsHandler3D.html#Genesis_Physics_PhysicsHandler3D_RemoveElement_Genesis_Physics_PhysicsBehavior_
+  name: RemoveElement
+  nameWithType: PhysicsHandler3D.RemoveElement
+  fullName: Genesis.Physics.PhysicsHandler3D.RemoveElement
 - uid: Genesis.Physics.PhysicsHandler3D.PhysicsWorld*
   commentId: Overload:Genesis.Physics.PhysicsHandler3D.PhysicsWorld
   isExternal: true

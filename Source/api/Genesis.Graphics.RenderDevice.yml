@@ -4,8 +4,6 @@ items:
   commentId: N:Genesis.Graphics.RenderDevice
   id: Genesis.Graphics.RenderDevice
   children:
-  - Genesis.Graphics.RenderDevice.ClassicGL
-  - Genesis.Graphics.RenderDevice.Experimental
   - Genesis.Graphics.RenderDevice.GLRenderer
   langs:
   - csharp
@@ -17,20 +15,6 @@ items:
   assemblies:
   - Genesis
 references:
-- uid: Genesis.Graphics.RenderDevice.Experimental
-  commentId: T:Genesis.Graphics.RenderDevice.Experimental
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.Experimental.html
-  name: Experimental
-  nameWithType: Experimental
-  fullName: Genesis.Graphics.RenderDevice.Experimental
-- uid: Genesis.Graphics.RenderDevice.ClassicGL
-  commentId: T:Genesis.Graphics.RenderDevice.ClassicGL
-  isExternal: true
-  href: Genesis.Graphics.RenderDevice.ClassicGL.html
-  name: ClassicGL
-  nameWithType: ClassicGL
-  fullName: Genesis.Graphics.RenderDevice.ClassicGL
 - uid: Genesis.Graphics.RenderDevice.GLRenderer
   commentId: T:Genesis.Graphics.RenderDevice.GLRenderer
   isExternal: true

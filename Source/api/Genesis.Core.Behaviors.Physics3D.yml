@@ -5,11 +5,16 @@ items:
   id: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.BoxCollider
+  - Genesis.Core.Behaviors.Physics3D.BoxRigidBody
   - Genesis.Core.Behaviors.Physics3D.BoxTrigger
   - Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  - Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
+  - Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull
   - Genesis.Core.Behaviors.Physics3D.SphereCollider
+  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody
+  - Genesis.Core.Behaviors.Physics3D.SphereTrigger
   - Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   langs:
   - csharp
@@ -28,6 +33,13 @@ references:
   name: BoxCollider
   nameWithType: BoxCollider
   fullName: Genesis.Core.Behaviors.Physics3D.BoxCollider
+- uid: Genesis.Core.Behaviors.Physics3D.BoxRigidBody
+  commentId: T:Genesis.Core.Behaviors.Physics3D.BoxRigidBody
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.BoxRigidBody.html
+  name: BoxRigidBody
+  nameWithType: BoxRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxRigidBody
 - uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger
   commentId: T:Genesis.Core.Behaviors.Physics3D.BoxTrigger
   isExternal: true
@@ -37,12 +49,26 @@ references:
   fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger
 - uid: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleCollider
-  parent: Genesis.Core.Behaviors.Physics3D
   isExternal: true
   href: Genesis.Core.Behaviors.Physics3D.CapsuleCollider.html
   name: CapsuleCollider
   nameWithType: CapsuleCollider
   fullName: Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+- uid: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
+  commentId: T:Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
+  parent: Genesis.Core.Behaviors.Physics3D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody.html
+  name: CapsuleRigidBody
+  nameWithType: CapsuleRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.CapsuleRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
+  commentId: T:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.html
+  name: ConvexHullCollider
+  nameWithType: ConvexHullCollider
+  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
 - uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
   commentId: T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull
   isExternal: true
@@ -57,6 +83,20 @@ references:
   name: SphereCollider
   nameWithType: SphereCollider
   fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider
+- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody
+  commentId: T:Genesis.Core.Behaviors.Physics3D.SphereRigidBody
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.html
+  name: SphereRigidBody
+  nameWithType: SphereRigidBody
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody
+- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger
+  commentId: T:Genesis.Core.Behaviors.Physics3D.SphereTrigger
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.SphereTrigger.html
+  name: SphereTrigger
+  nameWithType: SphereTrigger
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger
 - uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   commentId: T:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
   isExternal: true

@@ -6,10 +6,12 @@ items:
   parent: Genesis.Graphics.Animation3D
   children:
   - Genesis.Graphics.Animation3D.Animation.#ctor(Assimp.Scene,Genesis.Core.GameElements.Model,System.Int32)
+  - Genesis.Graphics.Animation3D.Animation.AnimationLength
   - Genesis.Graphics.Animation3D.Animation.BoneInfoMap
   - Genesis.Graphics.Animation3D.Animation.Bones
   - Genesis.Graphics.Animation3D.Animation.Duration
   - Genesis.Graphics.Animation3D.Animation.FindBone(System.String)
+  - Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)
   - Genesis.Graphics.Animation3D.Animation.Name
   - Genesis.Graphics.Animation3D.Animation.RootNode
   - Genesis.Graphics.Animation3D.Animation.TicksPerSecond
@@ -96,6 +98,64 @@ items:
   nameWithType.vb: Animation.FindBone(String)
   fullName.vb: Genesis.Graphics.Animation3D.Animation.FindBone(String)
   name.vb: FindBone(String)
+- uid: Genesis.Graphics.Animation3D.Animation.AnimationLength
+  commentId: M:Genesis.Graphics.Animation3D.Animation.AnimationLength
+  id: AnimationLength
+  parent: Genesis.Graphics.Animation3D.Animation
+  langs:
+  - csharp
+  - vb
+  name: AnimationLength()
+  nameWithType: Animation.AnimationLength()
+  fullName: Genesis.Graphics.Animation3D.Animation.AnimationLength()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Calculates the keyframe length of the animation based on the maximum number of position, rotation, and scaling keyframes among all bones.
+  remarks: This method iterates through all bones to determine the maximum keyframe length.
+  example: []
+  syntax:
+    content: public int AnimationLength()
+    return:
+      type: System.Int32
+      description: The maximum number of keyframes (positions, rotations, or scalings) among all bones; if no bones are present, returns -1.
+    content.vb: Public Function AnimationLength() As Integer
+  overload: Genesis.Graphics.Animation3D.Animation.AnimationLength*
+- uid: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)
+  commentId: M:Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(System.Single)
+  id: GetKeyFrameIndex(System.Single)
+  parent: Genesis.Graphics.Animation3D.Animation
+  langs:
+  - csharp
+  - vb
+  name: GetKeyFrameIndex(float)
+  nameWithType: Animation.GetKeyFrameIndex(float)
+  fullName: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Gets the keyframe index at a specific animation time based on the first bone.
+  remarks: >-
+    This method assumes that all keyframe lists (positions, rotations, scales) are synchronized and have the same number of keyframes.
+
+    It calculates the keyframe index for the first bone in the list.
+  example: []
+  syntax:
+    content: public int GetKeyFrameIndex(float animationTime)
+    parameters:
+    - id: animationTime
+      type: System.Single
+      description: The time within the animation to find the keyframe index for.
+    return:
+      type: System.Int32
+      description: The highest keyframe index (position, rotation, or scale) at the specified animation time.
+    content.vb: Public Function GetKeyFrameIndex(animationTime As Single) As Integer
+  overload: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex*
+  nameWithType.vb: Animation.GetKeyFrameIndex(Single)
+  fullName.vb: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex(Single)
+  name.vb: GetKeyFrameIndex(Single)
 - uid: Genesis.Graphics.Animation3D.Animation.Name
   commentId: P:Genesis.Graphics.Animation3D.Animation.Name
   id: Name
@@ -614,6 +674,31 @@ references:
   name: Bone
   nameWithType: Bone
   fullName: Genesis.Graphics.Animation3D.Bone
+- uid: Genesis.Graphics.Animation3D.Animation.AnimationLength*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.AnimationLength
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_AnimationLength
+  name: AnimationLength
+  nameWithType: Animation.AnimationLength
+  fullName: Genesis.Graphics.Animation3D.Animation.AnimationLength
+- uid: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animation.html#Genesis_Graphics_Animation3D_Animation_GetKeyFrameIndex_System_Single_
+  name: GetKeyFrameIndex
+  nameWithType: Animation.GetKeyFrameIndex
+  fullName: Genesis.Graphics.Animation3D.Animation.GetKeyFrameIndex
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: Genesis.Graphics.Animation3D.Animation.Name*
   commentId: Overload:Genesis.Graphics.Animation3D.Animation.Name
   isExternal: true
@@ -628,17 +713,6 @@ references:
   name: Duration
   nameWithType: Animation.Duration
   fullName: Genesis.Graphics.Animation3D.Animation.Duration
-- uid: System.Single
-  commentId: T:System.Single
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.single
-  name: float
-  nameWithType: float
-  fullName: float
-  nameWithType.vb: Single
-  fullName.vb: Single
-  name.vb: Single
 - uid: Genesis.Graphics.Animation3D.Animation.TicksPerSecond*
   commentId: Overload:Genesis.Graphics.Animation3D.Animation.TicksPerSecond
   isExternal: true

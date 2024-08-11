@@ -1,0 +1,244 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.GameElements.FindPathAsynchResult
+  commentId: T:Genesis.Core.GameElements.FindPathAsynchResult
+  id: FindPathAsynchResult
+  parent: Genesis.Core.GameElements
+  children:
+  - Genesis.Core.GameElements.FindPathAsynchResult.#ctor(System.Object,System.IntPtr)
+  - Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke(Genesis.Core.GameElements.Waypoint,System.AsyncCallback,System.Object)
+  - Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke(System.IAsyncResult)
+  - Genesis.Core.GameElements.FindPathAsynchResult.Invoke(Genesis.Core.GameElements.Waypoint)
+  langs:
+  - csharp
+  - vb
+  name: FindPathAsynchResult
+  nameWithType: FindPathAsynchResult
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult
+  type: Delegate
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public delegate void FindPathAsynchResult(Waypoint result)
+    parameters:
+    - id: result
+      type: Genesis.Core.GameElements.Waypoint
+    content.vb: Public Delegate Sub FindPathAsynchResult(result As Waypoint)
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.#ctor(System.Object,System.IntPtr)
+  commentId: M:Genesis.Core.GameElements.FindPathAsynchResult.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: Genesis.Core.GameElements.FindPathAsynchResult
+  langs:
+  - csharp
+  - vb
+  name: FindPathAsynchResult(object, IntPtr)
+  nameWithType: FindPathAsynchResult.FindPathAsynchResult(object, IntPtr)
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.FindPathAsynchResult(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public FindPathAsynchResult(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: Genesis.Core.GameElements.FindPathAsynchResult.#ctor*
+  nameWithType.vb: FindPathAsynchResult.New(Object, IntPtr)
+  fullName.vb: Genesis.Core.GameElements.FindPathAsynchResult.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.Invoke(Genesis.Core.GameElements.Waypoint)
+  commentId: M:Genesis.Core.GameElements.FindPathAsynchResult.Invoke(Genesis.Core.GameElements.Waypoint)
+  id: Invoke(Genesis.Core.GameElements.Waypoint)
+  parent: Genesis.Core.GameElements.FindPathAsynchResult
+  langs:
+  - csharp
+  - vb
+  name: Invoke(Waypoint)
+  nameWithType: FindPathAsynchResult.Invoke(Waypoint)
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.Invoke(Genesis.Core.GameElements.Waypoint)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public virtual void Invoke(Waypoint result)
+    parameters:
+    - id: result
+      type: Genesis.Core.GameElements.Waypoint
+    content.vb: Public Overridable Sub Invoke(result As Waypoint)
+  overload: Genesis.Core.GameElements.FindPathAsynchResult.Invoke*
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke(Genesis.Core.GameElements.Waypoint,System.AsyncCallback,System.Object)
+  commentId: M:Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke(Genesis.Core.GameElements.Waypoint,System.AsyncCallback,System.Object)
+  id: BeginInvoke(Genesis.Core.GameElements.Waypoint,System.AsyncCallback,System.Object)
+  parent: Genesis.Core.GameElements.FindPathAsynchResult
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(Waypoint, AsyncCallback, object)
+  nameWithType: FindPathAsynchResult.BeginInvoke(Waypoint, AsyncCallback, object)
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke(Genesis.Core.GameElements.Waypoint, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(Waypoint result, AsyncCallback callback, object @object)
+    parameters:
+    - id: result
+      type: Genesis.Core.GameElements.Waypoint
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(result As Waypoint, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke*
+  nameWithType.vb: FindPathAsynchResult.BeginInvoke(Waypoint, AsyncCallback, Object)
+  fullName.vb: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke(Genesis.Core.GameElements.Waypoint, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(Waypoint, AsyncCallback, Object)
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke(System.IAsyncResult)
+  commentId: M:Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: Genesis.Core.GameElements.FindPathAsynchResult
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: FindPathAsynchResult.EndInvoke(IAsyncResult)
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke*
+references:
+- uid: Genesis.Core.GameElements
+  commentId: N:Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.GameElements
+  nameWithType: Genesis.Core.GameElements
+  fullName: Genesis.Core.GameElements
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.GameElements
+    name: GameElements
+    isExternal: true
+    href: Genesis.Core.GameElements.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.GameElements
+    name: GameElements
+    isExternal: true
+    href: Genesis.Core.GameElements.html
+- uid: Genesis.Core.GameElements.Waypoint
+  commentId: T:Genesis.Core.GameElements.Waypoint
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Waypoint.html
+  name: Waypoint
+  nameWithType: Waypoint
+  fullName: Genesis.Core.GameElements.Waypoint
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.#ctor*
+  commentId: Overload:Genesis.Core.GameElements.FindPathAsynchResult.#ctor
+  isExternal: true
+  href: Genesis.Core.GameElements.FindPathAsynchResult.html#Genesis_Core_GameElements_FindPathAsynchResult__ctor_System_Object_System_IntPtr_
+  name: FindPathAsynchResult
+  nameWithType: FindPathAsynchResult.FindPathAsynchResult
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.FindPathAsynchResult
+  nameWithType.vb: FindPathAsynchResult.New
+  fullName.vb: Genesis.Core.GameElements.FindPathAsynchResult.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.Invoke*
+  commentId: Overload:Genesis.Core.GameElements.FindPathAsynchResult.Invoke
+  isExternal: true
+  href: Genesis.Core.GameElements.FindPathAsynchResult.html#Genesis_Core_GameElements_FindPathAsynchResult_Invoke_Genesis_Core_GameElements_Waypoint_
+  name: Invoke
+  nameWithType: FindPathAsynchResult.Invoke
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.Invoke
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke*
+  commentId: Overload:Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke
+  isExternal: true
+  href: Genesis.Core.GameElements.FindPathAsynchResult.html#Genesis_Core_GameElements_FindPathAsynchResult_BeginInvoke_Genesis_Core_GameElements_Waypoint_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: FindPathAsynchResult.BeginInvoke
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke*
+  commentId: Overload:Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke
+  isExternal: true
+  href: Genesis.Core.GameElements.FindPathAsynchResult.html#Genesis_Core_GameElements_FindPathAsynchResult_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: FindPathAsynchResult.EndInvoke
+  fullName: Genesis.Core.GameElements.FindPathAsynchResult.EndInvoke

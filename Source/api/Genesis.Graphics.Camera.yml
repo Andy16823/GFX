@@ -5,7 +5,11 @@ items:
   id: Camera
   parent: Genesis.Graphics
   children:
+  - Genesis.Graphics.Camera.#ctor(Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Graphics.Camera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  - Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Graphics.Camera.Far
   - Genesis.Graphics.Camera.GetRect
   - Genesis.Graphics.Camera.Location
@@ -79,6 +83,39 @@ items:
   nameWithType.vb: Camera.New(Vec3, Vec3, Single, Single)
   fullName.vb: Genesis.Graphics.Camera.New(Genesis.Math.Vec3, Genesis.Math.Vec3, Single, Single)
   name.vb: New(Vec3, Vec3, Single, Single)
+- uid: Genesis.Graphics.Camera.#ctor(Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.#ctor(Genesis.Graphics.Viewport,System.Single,System.Single)
+  id: '#ctor(Genesis.Graphics.Viewport,System.Single,System.Single)'
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: Camera(Viewport, float, float)
+  nameWithType: Camera.Camera(Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.Camera(Genesis.Graphics.Viewport, float, float)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Initializes a new instance of the <xref href="Genesis.Graphics.Camera" data-throw-if-not-resolved="false"></xref> class with the specified location, size, near and far distances.
+  example: []
+  syntax:
+    content: public Camera(Viewport viewport, float near, float far)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport for the location and resoulution.
+    - id: near
+      type: System.Single
+      description: The distance to the near clipping plane of the camera.
+    - id: far
+      type: System.Single
+      description: The distance to the far clipping plane of the camera.
+    content.vb: Public Sub New(viewport As Viewport, near As Single, far As Single)
+  overload: Genesis.Graphics.Camera.#ctor*
+  nameWithType.vb: Camera.New(Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.New(Genesis.Graphics.Viewport, Single, Single)
+  name.vb: New(Viewport, Single, Single)
 - uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   commentId: M:Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   id: LookAt(Genesis.Core.GameElement)
@@ -156,6 +193,120 @@ items:
       description: A <xref href="Genesis.Math.Rect" data-throw-if-not-resolved="false"></xref> object representing the camera's view region.
     content.vb: Public Function GetRect() As Rect
   overload: Genesis.Graphics.Camera.GetRect*
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  id: CalculateScreenCorrection(System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: CalculateScreenCorrection(float, float)
+  nameWithType: Camera.CalculateScreenCorrection(float, float)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the screen correction factor.
+  example: []
+  syntax:
+    content: public float CalculateScreenCorrection(float screenWidth, float screenHeight)
+    parameters:
+    - id: screenWidth
+      type: System.Single
+      description: The width of the screen.
+    - id: screenHeight
+      type: System.Single
+      description: The height of the screen.
+    return:
+      type: System.Single
+      description: >-
+        The correction factor to be applied to the screen size,
+
+        based on the smaller ratio of screen width to desired width (Size.X)
+
+        and screen height to desired height (Size.Y).
+    content.vb: Public Function CalculateScreenCorrection(screenWidth As Single, screenHeight As Single) As Single
+  overload: Genesis.Graphics.Camera.CalculateScreenCorrection*
+  nameWithType.vb: Camera.CalculateScreenCorrection(Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.CalculateScreenCorrection(Single, Single)
+  name.vb: CalculateScreenCorrection(Single, Single)
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  id: CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: CalculateScreenCorrection(Viewport)
+  nameWithType: Camera.CalculateScreenCorrection(Viewport)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the screen correction factor using the dimensions of a viewport.
+  example: []
+  syntax:
+    content: public float CalculateScreenCorrection(Viewport viewport)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport containing the screen dimensions.
+    return:
+      type: System.Single
+      description: >-
+        The correction factor to be applied to the screen size,
+
+        based on the smaller ratio of viewport width to desired width (Size.X)
+
+        and viewport height to desired height (Size.Y).
+    content.vb: Public Function CalculateScreenCorrection(viewport As Viewport) As Single
+  overload: Genesis.Graphics.Camera.CalculateScreenCorrection*
+- uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  id: ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: ConvertScreenToWorldOrtho(Viewport, float, float)
+  nameWithType: Camera.ConvertScreenToWorldOrtho(Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Converts screen coordinates to world coordinates using an orthographic projection.
+  remarks: >-
+    This method assumes an orthographic projection and calculates the world coordinates
+
+    based on the screen position, the camera's position, and the size of the viewport.
+
+    The screen coordinates are first normalized to a range of [-1, 1], then adjusted
+
+    according to the camera's position and size.
+  example: []
+  syntax:
+    content: public Vec3 ConvertScreenToWorldOrtho(Viewport viewport, float x, float y)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport object that defines the dimensions of the screen space.
+    - id: x
+      type: System.Single
+      description: The x-coordinate of the screen position to convert.
+    - id: y
+      type: System.Single
+      description: The y-coordinate of the screen position to convert.
+    return:
+      type: Genesis.Math.Vec3
+      description: A Vec3 object representing the corresponding world coordinates.
+    content.vb: Public Function ConvertScreenToWorldOrtho(viewport As Viewport, x As Single, y As Single) As Vec3
+  overload: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho*
+  nameWithType.vb: Camera.ConvertScreenToWorldOrtho(Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ConvertScreenToWorldOrtho(Viewport, Single, Single)
 - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   id: ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
@@ -662,6 +813,14 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
 - uid: Genesis.Graphics.Camera.LookAt*
   commentId: Overload:Genesis.Graphics.Camera.LookAt
   isExternal: true
@@ -730,6 +889,20 @@ references:
   name: GetRect
   nameWithType: Camera.GetRect
   fullName: Genesis.Graphics.Camera.GetRect
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection*
+  commentId: Overload:Genesis.Graphics.Camera.CalculateScreenCorrection
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  name: CalculateScreenCorrection
+  nameWithType: Camera.CalculateScreenCorrection
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection
+- uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho*
+  commentId: Overload:Genesis.Graphics.Camera.ConvertScreenToWorldOrtho
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ConvertScreenToWorldOrtho
+  nameWithType: Camera.ConvertScreenToWorldOrtho
+  fullName: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho
 - uid: Genesis.Graphics.Camera.ProjectMouse2D*
   commentId: Overload:Genesis.Graphics.Camera.ProjectMouse2D
   isExternal: true
@@ -737,14 +910,6 @@ references:
   name: ProjectMouse2D
   nameWithType: Camera.ProjectMouse2D
   fullName: Genesis.Graphics.Camera.ProjectMouse2D
-- uid: Genesis.Graphics.Viewport
-  commentId: T:Genesis.Graphics.Viewport
-  parent: Genesis.Graphics
-  isExternal: true
-  href: Genesis.Graphics.Viewport.html
-  name: Viewport
-  nameWithType: Viewport
-  fullName: Genesis.Graphics.Viewport
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System

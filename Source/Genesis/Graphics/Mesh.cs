@@ -13,6 +13,11 @@ namespace Genesis.Graphics
     public class Mesh
     {
         /// <summary>
+        /// Name of the mesh
+        /// </summary>
+        public String Name { get; set; }
+
+        /// <summary>
         /// Index of the material associated with the mesh.
         /// </summary>
         public Material Material { get; set; }

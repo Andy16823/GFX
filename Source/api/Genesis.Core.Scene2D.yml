@@ -6,6 +6,7 @@ items:
   parent: Genesis.Core
   children:
   - Genesis.Core.Scene2D.#ctor
+  - Genesis.Core.Scene2D.#ctor(System.String)
   - Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
   - Genesis.Core.Scene2D.AfterLightmapRendering
   - Genesis.Core.Scene2D.BeforeLightmapPreparation
@@ -99,6 +100,32 @@ items:
   nameWithType.vb: Scene2D.New()
   fullName.vb: Genesis.Core.Scene2D.New()
   name.vb: New()
+- uid: Genesis.Core.Scene2D.#ctor(System.String)
+  commentId: M:Genesis.Core.Scene2D.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Genesis.Core.Scene2D
+  langs:
+  - csharp
+  - vb
+  name: Scene2D(string)
+  nameWithType: Scene2D.Scene2D(string)
+  fullName: Genesis.Core.Scene2D.Scene2D(string)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Initializes a new instance of the <xref href="Genesis.Core.Scene2D" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public Scene2D(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub New(name As String)
+  overload: Genesis.Core.Scene2D.#ctor*
+  nameWithType.vb: Scene2D.New(String)
+  fullName.vb: Genesis.Core.Scene2D.New(String)
+  name.vb: New(String)
 - uid: Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
   commentId: M:Genesis.Core.Scene2D.AddLight(Genesis.Core.Light2D)
   id: AddLight(Genesis.Core.Light2D)
@@ -1486,6 +1513,17 @@ references:
   nameWithType.vb: Scene2D.New
   fullName.vb: Genesis.Core.Scene2D.New
   name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Genesis.Core.Scene2D.AddLight*
   commentId: Overload:Genesis.Core.Scene2D.AddLight
   isExternal: true

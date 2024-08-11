@@ -13,29 +13,37 @@ items:
   - Genesis.Core.Game.BeforeRender
   - Genesis.Core.Game.BeforeUpdate
   - Genesis.Core.Game.DeltaTime
+  - Genesis.Core.Game.EndFrame(System.Int64)
   - Genesis.Core.Game.FPS
   - Genesis.Core.Game.FindScene(System.String)
+  - Genesis.Core.Game.GameThread
   - Genesis.Core.Game.GetElementCenterScreenLocation2D(Genesis.Core.GameElement)
   - Genesis.Core.Game.GetElementScreenLocation2D(Genesis.Core.GameElement)
   - Genesis.Core.Game.GetSceneCord(Genesis.Math.Vec3)
+  - Genesis.Core.Game.GetScene``1
+  - Genesis.Core.Game.InitGame
   - Genesis.Core.Game.InitGameElement(Genesis.Core.GameElement)
   - Genesis.Core.Game.LastFrame
   - Genesis.Core.Game.LoadScene(Genesis.Core.Scene)
   - Genesis.Core.Game.LoadScene(System.String)
   - Genesis.Core.Game.Loop
+  - Genesis.Core.Game.NextFrame(System.Int64)
   - Genesis.Core.Game.OnDispose
   - Genesis.Core.Game.OnInit
   - Genesis.Core.Game.OnRenderBeginn
   - Genesis.Core.Game.OnRenderEnd
   - Genesis.Core.Game.OnUpdate
   - Genesis.Core.Game.RenderDevice
+  - Genesis.Core.Game.RenderFrame(System.Int64)
   - Genesis.Core.Game.Run
   - Genesis.Core.Game.Scenes
   - Genesis.Core.Game.SelectedScene
   - Genesis.Core.Game.Start
   - Genesis.Core.Game.Stop
+  - Genesis.Core.Game.StopGame
   - Genesis.Core.Game.Storage
   - Genesis.Core.Game.TargetFPS
+  - Genesis.Core.Game.UpdateFrame(System.Int64)
   - Genesis.Core.Game.Viewport
   langs:
   - csharp
@@ -132,6 +140,157 @@ items:
     content: public void Loop()
     content.vb: Public Sub [Loop]()
   overload: Genesis.Core.Game.Loop*
+- uid: Genesis.Core.Game.InitGame
+  commentId: M:Genesis.Core.Game.InitGame
+  id: InitGame
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: InitGame()
+  nameWithType: Game.InitGame()
+  fullName: Genesis.Core.Game.InitGame()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Initialize the game
+  example: []
+  syntax:
+    content: public void InitGame()
+    content.vb: Public Sub InitGame()
+  overload: Genesis.Core.Game.InitGame*
+- uid: Genesis.Core.Game.NextFrame(System.Int64)
+  commentId: M:Genesis.Core.Game.NextFrame(System.Int64)
+  id: NextFrame(System.Int64)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: NextFrame(long)
+  nameWithType: Game.NextFrame(long)
+  fullName: Genesis.Core.Game.NextFrame(long)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Determines if it's time to proceed to the next frame based on the target FPS.
+  example: []
+  syntax:
+    content: public bool NextFrame(long currentFrame)
+    parameters:
+    - id: currentFrame
+      type: System.Int64
+      description: The current time in milliseconds.
+    return:
+      type: System.Boolean
+      description: True if enough time has passed to proceed to the next frame, otherwise false.
+    content.vb: Public Function NextFrame(currentFrame As Long) As Boolean
+  overload: Genesis.Core.Game.NextFrame*
+  nameWithType.vb: Game.NextFrame(Long)
+  fullName.vb: Genesis.Core.Game.NextFrame(Long)
+  name.vb: NextFrame(Long)
+- uid: Genesis.Core.Game.UpdateFrame(System.Int64)
+  commentId: M:Genesis.Core.Game.UpdateFrame(System.Int64)
+  id: UpdateFrame(System.Int64)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: UpdateFrame(long)
+  nameWithType: Game.UpdateFrame(long)
+  fullName: Genesis.Core.Game.UpdateFrame(long)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Updates the game state for the current frame.
+  example: []
+  syntax:
+    content: public void UpdateFrame(long currentFrame)
+    parameters:
+    - id: currentFrame
+      type: System.Int64
+      description: The current time in milliseconds.
+    content.vb: Public Sub UpdateFrame(currentFrame As Long)
+  overload: Genesis.Core.Game.UpdateFrame*
+  nameWithType.vb: Game.UpdateFrame(Long)
+  fullName.vb: Genesis.Core.Game.UpdateFrame(Long)
+  name.vb: UpdateFrame(Long)
+- uid: Genesis.Core.Game.RenderFrame(System.Int64)
+  commentId: M:Genesis.Core.Game.RenderFrame(System.Int64)
+  id: RenderFrame(System.Int64)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: RenderFrame(long)
+  nameWithType: Game.RenderFrame(long)
+  fullName: Genesis.Core.Game.RenderFrame(long)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Renders the current frame.
+  example: []
+  syntax:
+    content: public void RenderFrame(long currentFrame)
+    parameters:
+    - id: currentFrame
+      type: System.Int64
+      description: The current time in milliseconds.
+    content.vb: Public Sub RenderFrame(currentFrame As Long)
+  overload: Genesis.Core.Game.RenderFrame*
+  nameWithType.vb: Game.RenderFrame(Long)
+  fullName.vb: Genesis.Core.Game.RenderFrame(Long)
+  name.vb: RenderFrame(Long)
+- uid: Genesis.Core.Game.EndFrame(System.Int64)
+  commentId: M:Genesis.Core.Game.EndFrame(System.Int64)
+  id: EndFrame(System.Int64)
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: EndFrame(long)
+  nameWithType: Game.EndFrame(long)
+  fullName: Genesis.Core.Game.EndFrame(long)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Ends the current frame by processing storage and updating timing information.
+  example: []
+  syntax:
+    content: public void EndFrame(long currentFrame)
+    parameters:
+    - id: currentFrame
+      type: System.Int64
+      description: The current time in milliseconds.
+    content.vb: Public Sub EndFrame(currentFrame As Long)
+  overload: Genesis.Core.Game.EndFrame*
+  nameWithType.vb: Game.EndFrame(Long)
+  fullName.vb: Genesis.Core.Game.EndFrame(Long)
+  name.vb: EndFrame(Long)
+- uid: Genesis.Core.Game.StopGame
+  commentId: M:Genesis.Core.Game.StopGame
+  id: StopGame
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: StopGame()
+  nameWithType: Game.StopGame()
+  fullName: Genesis.Core.Game.StopGame()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Stops the game and cleans up resources.
+  example: []
+  syntax:
+    content: public void StopGame()
+    content.vb: Public Sub StopGame()
+  overload: Genesis.Core.Game.StopGame*
 - uid: Genesis.Core.Game.Stop
   commentId: M:Genesis.Core.Game.Stop
   id: Stop
@@ -365,6 +524,31 @@ items:
   nameWithType.vb: Game.FindScene(String)
   fullName.vb: Genesis.Core.Game.FindScene(String)
   name.vb: FindScene(String)
+- uid: Genesis.Core.Game.GetScene``1
+  commentId: M:Genesis.Core.Game.GetScene``1
+  id: GetScene``1
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: GetScene<T>()
+  nameWithType: Game.GetScene<T>()
+  fullName: Genesis.Core.Game.GetScene<T>()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: 'public T GetScene<T>() where T : Scene'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetScene(Of T As Scene)() As T
+  overload: Genesis.Core.Game.GetScene*
+  nameWithType.vb: Game.GetScene(Of T)()
+  fullName.vb: Genesis.Core.Game.GetScene(Of T)()
+  name.vb: GetScene(Of T)()
 - uid: Genesis.Core.Game.Run
   commentId: P:Genesis.Core.Game.Run
   id: Run
@@ -618,6 +802,27 @@ items:
       type: Genesis.Core.Storage
     content.vb: Public Property Storage As Storage
   overload: Genesis.Core.Game.Storage*
+- uid: Genesis.Core.Game.GameThread
+  commentId: P:Genesis.Core.Game.GameThread
+  id: GameThread
+  parent: Genesis.Core.Game
+  langs:
+  - csharp
+  - vb
+  name: GameThread
+  nameWithType: Game.GameThread
+  fullName: Genesis.Core.Game.GameThread
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Thread GameThread { get; set; }
+    parameters: []
+    return:
+      type: System.Threading.Thread
+    content.vb: Public Property GameThread As Thread
+  overload: Genesis.Core.Game.GameThread*
 - uid: Genesis.Core.Game.OnInit
   commentId: E:Genesis.Core.Game.OnInit
   id: OnInit
@@ -1139,6 +1344,70 @@ references:
   name: Loop
   nameWithType: Game.Loop
   fullName: Genesis.Core.Game.Loop
+- uid: Genesis.Core.Game.InitGame*
+  commentId: Overload:Genesis.Core.Game.InitGame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_InitGame
+  name: InitGame
+  nameWithType: Game.InitGame
+  fullName: Genesis.Core.Game.InitGame
+- uid: Genesis.Core.Game.NextFrame*
+  commentId: Overload:Genesis.Core.Game.NextFrame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_NextFrame_System_Int64_
+  name: NextFrame
+  nameWithType: Game.NextFrame
+  fullName: Genesis.Core.Game.NextFrame
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Core.Game.UpdateFrame*
+  commentId: Overload:Genesis.Core.Game.UpdateFrame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_UpdateFrame_System_Int64_
+  name: UpdateFrame
+  nameWithType: Game.UpdateFrame
+  fullName: Genesis.Core.Game.UpdateFrame
+- uid: Genesis.Core.Game.RenderFrame*
+  commentId: Overload:Genesis.Core.Game.RenderFrame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_RenderFrame_System_Int64_
+  name: RenderFrame
+  nameWithType: Game.RenderFrame
+  fullName: Genesis.Core.Game.RenderFrame
+- uid: Genesis.Core.Game.EndFrame*
+  commentId: Overload:Genesis.Core.Game.EndFrame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_EndFrame_System_Int64_
+  name: EndFrame
+  nameWithType: Game.EndFrame
+  fullName: Genesis.Core.Game.EndFrame
+- uid: Genesis.Core.Game.StopGame*
+  commentId: Overload:Genesis.Core.Game.StopGame
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_StopGame
+  name: StopGame
+  nameWithType: Game.StopGame
+  fullName: Genesis.Core.Game.StopGame
 - uid: Genesis.Core.Game.Stop*
   commentId: Overload:Genesis.Core.Game.Stop
   isExternal: true
@@ -1257,6 +1526,23 @@ references:
   name: FindScene
   nameWithType: Game.FindScene
   fullName: Genesis.Core.Game.FindScene
+- uid: Genesis.Core.Game.GetScene*
+  commentId: Overload:Genesis.Core.Game.GetScene
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_GetScene__1
+  name: GetScene
+  nameWithType: Game.GetScene
+  fullName: Genesis.Core.Game.GetScene
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
 - uid: Genesis.Core.Game.Run*
   commentId: Overload:Genesis.Core.Game.Run
   isExternal: true
@@ -1264,17 +1550,6 @@ references:
   name: Run
   nameWithType: Game.Run
   fullName: Genesis.Core.Game.Run
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Genesis.Core.Game.RenderDevice*
   commentId: Overload:Genesis.Core.Game.RenderDevice
   isExternal: true
@@ -1461,17 +1736,6 @@ references:
   name: LastFrame
   nameWithType: Game.LastFrame
   fullName: Genesis.Core.Game.LastFrame
-- uid: System.Int64
-  commentId: T:System.Int64
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int64
-  name: long
-  nameWithType: long
-  fullName: long
-  nameWithType.vb: Long
-  fullName.vb: Long
-  name.vb: Long
 - uid: Genesis.Core.Game.DeltaTime*
   commentId: Overload:Genesis.Core.Game.DeltaTime
   isExternal: true
@@ -1494,6 +1758,48 @@ references:
   name: Storage
   nameWithType: Storage
   fullName: Genesis.Core.Storage
+- uid: Genesis.Core.Game.GameThread*
+  commentId: Overload:Genesis.Core.Game.GameThread
+  isExternal: true
+  href: Genesis.Core.Game.html#Genesis_Core_Game_GameThread
+  name: GameThread
+  nameWithType: Game.GameThread
+  fullName: Genesis.Core.Game.GameThread
+- uid: System.Threading.Thread
+  commentId: T:System.Threading.Thread
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.thread
+  name: Thread
+  nameWithType: Thread
+  fullName: System.Threading.Thread
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: Genesis.Core.GameEventHandler
   commentId: T:Genesis.Core.GameEventHandler
   parent: Genesis.Core

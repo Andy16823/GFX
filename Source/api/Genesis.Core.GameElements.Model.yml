@@ -6,6 +6,8 @@ items:
   parent: Genesis.Core.GameElements
   children:
   - Genesis.Core.GameElements.Model.#ctor(System.String,Genesis.Math.Vec3,System.String)
+  - Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  - Genesis.Core.GameElements.Model.AnimationCallbacks
   - Genesis.Core.GameElements.Model.AnimationSpeed
   - Genesis.Core.GameElements.Model.Animations
   - Genesis.Core.GameElements.Model.Animator
@@ -17,6 +19,8 @@ items:
   - Genesis.Core.GameElements.Model.FileDirectory
   - Genesis.Core.GameElements.Model.FileName
   - Genesis.Core.GameElements.Model.FindAnimation(System.String)
+  - Genesis.Core.GameElements.Model.GetAnimationLength(System.String)
+  - Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
   - Genesis.Core.GameElements.Model.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Model.Materials
   - Genesis.Core.GameElements.Model.Meshes
@@ -25,6 +29,7 @@ items:
   - Genesis.Core.GameElements.Model.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Model.PlayAnimation(System.String)
   - Genesis.Core.GameElements.Model.Shader
+  - Genesis.Core.GameElements.Model.StopAnimation
   langs:
   - csharp
   - vb
@@ -50,6 +55,7 @@ items:
   - Genesis.Core.GameElement.GetBehaviors``1
   - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
   - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.HasTag(System.String)
   - Genesis.Core.GameElement.Name
   - Genesis.Core.GameElement.Tag
   - Genesis.Core.GameElement.Location
@@ -296,6 +302,27 @@ items:
   nameWithType.vb: Model.PlayAnimation(String)
   fullName.vb: Genesis.Core.GameElements.Model.PlayAnimation(String)
   name.vb: PlayAnimation(String)
+- uid: Genesis.Core.GameElements.Model.StopAnimation
+  commentId: M:Genesis.Core.GameElements.Model.StopAnimation
+  id: StopAnimation
+  parent: Genesis.Core.GameElements.Model
+  langs:
+  - csharp
+  - vb
+  name: StopAnimation()
+  nameWithType: Model.StopAnimation()
+  fullName: Genesis.Core.GameElements.Model.StopAnimation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Stops the currently playing animation.
+  remarks: This method sets the animator's play state to false, effectively pausing the animation.
+  example: []
+  syntax:
+    content: public void StopAnimation()
+    content.vb: Public Sub StopAnimation()
+  overload: Genesis.Core.GameElements.Model.StopAnimation*
 - uid: Genesis.Core.GameElements.Model.FindAnimation(System.String)
   commentId: M:Genesis.Core.GameElements.Model.FindAnimation(System.String)
   id: FindAnimation(System.String)
@@ -324,6 +351,95 @@ items:
   nameWithType.vb: Model.FindAnimation(String)
   fullName.vb: Genesis.Core.GameElements.Model.FindAnimation(String)
   name.vb: FindAnimation(String)
+- uid: Genesis.Core.GameElements.Model.GetAnimationLength(System.String)
+  commentId: M:Genesis.Core.GameElements.Model.GetAnimationLength(System.String)
+  id: GetAnimationLength(System.String)
+  parent: Genesis.Core.GameElements.Model
+  langs:
+  - csharp
+  - vb
+  name: GetAnimationLength(string)
+  nameWithType: Model.GetAnimationLength(string)
+  fullName: Genesis.Core.GameElements.Model.GetAnimationLength(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Gets the keyframe length of the specified animation by its name.
+  remarks: This method searches for an animation by its name and returns its keyframe length.
+  example: []
+  syntax:
+    content: public int GetAnimationLength(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the animation.
+    return:
+      type: System.Int32
+      description: The keyframe length of the specified animation if it exists; otherwise, returns -1.
+    content.vb: Public Function GetAnimationLength(name As String) As Integer
+  overload: Genesis.Core.GameElements.Model.GetAnimationLength*
+  nameWithType.vb: Model.GetAnimationLength(String)
+  fullName.vb: Genesis.Core.GameElements.Model.GetAnimationLength(String)
+  name.vb: GetAnimationLength(String)
+- uid: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  commentId: M:Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  id: GetCurrentAnimationFrame
+  parent: Genesis.Core.GameElements.Model
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentAnimationFrame()
+  nameWithType: Model.GetCurrentAnimationFrame()
+  fullName: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Gets the current keyframe index of the animation being played by the animator.
+  remarks: This method checks if there is a current animation being played by the animator and retrieves the keyframe index based on the current time of the animation.
+  example: []
+  syntax:
+    content: public int GetCurrentAnimationFrame()
+    return:
+      type: System.Int32
+      description: The current keyframe index if an animation is being played; otherwise, returns -1.
+    content.vb: Public Function GetCurrentAnimationFrame() As Integer
+  overload: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame*
+- uid: Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  commentId: M:Genesis.Core.GameElements.Model.AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  id: AddAnimationCallback(System.String,System.Int32,Genesis.Graphics.AnimationCallback.AnimationEvent)
+  parent: Genesis.Core.GameElements.Model
+  langs:
+  - csharp
+  - vb
+  name: AddAnimationCallback(string, int, AnimationEvent)
+  nameWithType: Model.AddAnimationCallback(string, int, AnimationCallback.AnimationEvent)
+  fullName: Genesis.Core.GameElements.Model.AddAnimationCallback(string, int, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Adds a callback to be triggered at a specific frame of a specified animation.
+  remarks: This method registers a new animation callback by adding it to the list of animation callbacks.
+  example: []
+  syntax:
+    content: public void AddAnimationCallback(string name, int frame, AnimationCallback.AnimationEvent callback)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the animation to which the callback should be added.
+    - id: frame
+      type: System.Int32
+      description: The frame at which the callback should be triggered.
+    - id: callback
+      type: Genesis.Graphics.AnimationCallback.AnimationEvent
+      description: The callback event to be triggered at the specified frame.
+    content.vb: Public Sub AddAnimationCallback(name As String, frame As Integer, callback As AnimationCallback.AnimationEvent)
+  overload: Genesis.Core.GameElements.Model.AddAnimationCallback*
+  nameWithType.vb: Model.AddAnimationCallback(String, Integer, AnimationCallback.AnimationEvent)
+  fullName.vb: Genesis.Core.GameElements.Model.AddAnimationCallback(String, Integer, Genesis.Graphics.AnimationCallback.AnimationEvent)
+  name.vb: AddAnimationCallback(String, Integer, AnimationEvent)
 - uid: Genesis.Core.GameElements.Model.Shader
   commentId: P:Genesis.Core.GameElements.Model.Shader
   id: Shader
@@ -554,6 +670,31 @@ items:
       type: Genesis.Graphics.Animation3D.Animator
     content.vb: Public Property Animator As Animator
   overload: Genesis.Core.GameElements.Model.Animator*
+- uid: Genesis.Core.GameElements.Model.AnimationCallbacks
+  commentId: P:Genesis.Core.GameElements.Model.AnimationCallbacks
+  id: AnimationCallbacks
+  parent: Genesis.Core.GameElements.Model
+  langs:
+  - csharp
+  - vb
+  name: AnimationCallbacks
+  nameWithType: Model.AnimationCallbacks
+  fullName: Genesis.Core.GameElements.Model.AnimationCallbacks
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  summary: Gets or sets the list of animation callbacks.
+  remarks: This property holds the callbacks that are associated with specific frames of animations. These callbacks are checked and potentially triggered during the animation update process.
+  example: []
+  syntax:
+    content: public List<AnimationCallback> AnimationCallbacks { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+      description: A list of <xref href="Genesis.Graphics.AnimationCallback" data-throw-if-not-resolved="false"></xref> objects representing the callbacks to be triggered at specific frames of animations.
+    content.vb: Public Property AnimationCallbacks As List(Of AnimationCallback)
+  overload: Genesis.Core.GameElements.Model.AnimationCallbacks*
 references:
 - uid: Genesis.Core.GameElements
   commentId: N:Genesis.Core.GameElements
@@ -801,6 +942,39 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.GameElement.HasTag(System.String)
+  commentId: M:Genesis.Core.GameElement.HasTag(System.String)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  name: HasTag(string)
+  nameWithType: GameElement.HasTag(string)
+  fullName: Genesis.Core.GameElement.HasTag(string)
+  nameWithType.vb: GameElement.HasTag(String)
+  fullName.vb: Genesis.Core.GameElement.HasTag(String)
+  name.vb: HasTag(String)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: Genesis.Core.GameElement.Name
   commentId: P:Genesis.Core.GameElement.Name
@@ -1509,6 +1683,13 @@ references:
   name: PlayAnimation
   nameWithType: Model.PlayAnimation
   fullName: Genesis.Core.GameElements.Model.PlayAnimation
+- uid: Genesis.Core.GameElements.Model.StopAnimation*
+  commentId: Overload:Genesis.Core.GameElements.Model.StopAnimation
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_StopAnimation
+  name: StopAnimation
+  nameWithType: Model.StopAnimation
+  fullName: Genesis.Core.GameElements.Model.StopAnimation
 - uid: Genesis.Core.GameElements.Model.FindAnimation*
   commentId: Overload:Genesis.Core.GameElements.Model.FindAnimation
   isExternal: true
@@ -1561,6 +1742,66 @@ references:
     name: Animation3D
     isExternal: true
     href: Genesis.Graphics.Animation3D.html
+- uid: Genesis.Core.GameElements.Model.GetAnimationLength*
+  commentId: Overload:Genesis.Core.GameElements.Model.GetAnimationLength
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetAnimationLength_System_String_
+  name: GetAnimationLength
+  nameWithType: Model.GetAnimationLength
+  fullName: Genesis.Core.GameElements.Model.GetAnimationLength
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame*
+  commentId: Overload:Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_GetCurrentAnimationFrame
+  name: GetCurrentAnimationFrame
+  nameWithType: Model.GetCurrentAnimationFrame
+  fullName: Genesis.Core.GameElements.Model.GetCurrentAnimationFrame
+- uid: Genesis.Core.GameElements.Model.AddAnimationCallback*
+  commentId: Overload:Genesis.Core.GameElements.Model.AddAnimationCallback
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AddAnimationCallback_System_String_System_Int32_Genesis_Graphics_AnimationCallback_AnimationEvent_
+  name: AddAnimationCallback
+  nameWithType: Model.AddAnimationCallback
+  fullName: Genesis.Core.GameElements.Model.AddAnimationCallback
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+  commentId: T:Genesis.Graphics.AnimationCallback.AnimationEvent
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html
+  name: AnimationCallback.AnimationEvent
+  nameWithType: AnimationCallback.AnimationEvent
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent
+  spec.csharp:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
+  spec.vb:
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: .
+  - uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+    name: AnimationEvent
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.AnimationEvent.html
 - uid: Genesis.Core.GameElements.Model.Shader*
   commentId: Overload:Genesis.Core.GameElements.Model.Shader
   isExternal: true
@@ -1820,17 +2061,6 @@ references:
   name: BoneCounter
   nameWithType: Model.BoneCounter
   fullName: Genesis.Core.GameElements.Model.BoneCounter
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
 - uid: Genesis.Core.GameElements.Model.Meshes*
   commentId: Overload:Genesis.Core.GameElements.Model.Meshes
   isExternal: true
@@ -1920,3 +2150,52 @@ references:
   name: Animator
   nameWithType: Animator
   fullName: Genesis.Graphics.Animation3D.Animator
+- uid: Genesis.Graphics.AnimationCallback
+  commentId: T:Genesis.Graphics.AnimationCallback
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.html
+  name: AnimationCallback
+  nameWithType: AnimationCallback
+  fullName: Genesis.Graphics.AnimationCallback
+- uid: Genesis.Core.GameElements.Model.AnimationCallbacks*
+  commentId: Overload:Genesis.Core.GameElements.Model.AnimationCallbacks
+  isExternal: true
+  href: Genesis.Core.GameElements.Model.html#Genesis_Core_GameElements_Model_AnimationCallbacks
+  name: AnimationCallbacks
+  nameWithType: Model.AnimationCallbacks
+  fullName: Genesis.Core.GameElements.Model.AnimationCallbacks
+- uid: System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+  commentId: T:System.Collections.Generic.List{Genesis.Graphics.AnimationCallback}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<AnimationCallback>
+  nameWithType: List<AnimationCallback>
+  fullName: System.Collections.Generic.List<Genesis.Graphics.AnimationCallback>
+  nameWithType.vb: List(Of AnimationCallback)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Graphics.AnimationCallback)
+  name.vb: List(Of AnimationCallback)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Graphics.AnimationCallback
+    name: AnimationCallback
+    isExternal: true
+    href: Genesis.Graphics.AnimationCallback.html
+  - name: )

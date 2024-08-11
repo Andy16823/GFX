@@ -4,7 +4,9 @@ items:
   commentId: N:Genesis.UI
   id: Genesis.UI
   children:
+  - Genesis.UI.Button
   - Genesis.UI.Canvas
+  - Genesis.UI.GridView
   - Genesis.UI.ImageButton
   - Genesis.UI.Label
   - Genesis.UI.ListItem
@@ -17,6 +19,7 @@ items:
   - Genesis.UI.UIParseHandler
   - Genesis.UI.UIParser
   - Genesis.UI.Widget
+  - Genesis.UI.WidgetAnchor
   langs:
   - csharp
   - vb
@@ -27,6 +30,13 @@ items:
   assemblies:
   - Genesis
 references:
+- uid: Genesis.UI.Button
+  commentId: T:Genesis.UI.Button
+  isExternal: true
+  href: Genesis.UI.Button.html
+  name: Button
+  nameWithType: Button
+  fullName: Genesis.UI.Button
 - uid: Genesis.UI.Canvas
   commentId: T:Genesis.UI.Canvas
   parent: Genesis.UI
@@ -35,6 +45,13 @@ references:
   name: Canvas
   nameWithType: Canvas
   fullName: Genesis.UI.Canvas
+- uid: Genesis.UI.GridView
+  commentId: T:Genesis.UI.GridView
+  isExternal: true
+  href: Genesis.UI.GridView.html
+  name: GridView
+  nameWithType: GridView
+  fullName: Genesis.UI.GridView
 - uid: Genesis.UI.UIParseHandler
   commentId: T:Genesis.UI.UIParseHandler
   isExternal: true
@@ -50,6 +67,14 @@ references:
   name: UIParser
   nameWithType: UIParser
   fullName: Genesis.UI.UIParser
+- uid: Genesis.UI.WidgetAnchor
+  commentId: T:Genesis.UI.WidgetAnchor
+  parent: Genesis.UI
+  isExternal: true
+  href: Genesis.UI.WidgetAnchor.html
+  name: WidgetAnchor
+  nameWithType: WidgetAnchor
+  fullName: Genesis.UI.WidgetAnchor
 - uid: Genesis.UI.UIEvent
   commentId: T:Genesis.UI.UIEvent
   parent: Genesis.UI

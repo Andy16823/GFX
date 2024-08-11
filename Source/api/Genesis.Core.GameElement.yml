@@ -15,6 +15,7 @@ items:
   - Genesis.Core.GameElement.GetBehavior``1
   - Genesis.Core.GameElement.GetBehaviors``1
   - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.HasTag(System.String)
   - Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElement.Location
   - Genesis.Core.GameElement.Name
@@ -51,6 +52,7 @@ items:
   - Genesis.Core.GameElements.Element3D
   - Genesis.Core.GameElements.Empty
   - Genesis.Core.GameElements.Model
+  - Genesis.Core.GameElements.NavMesh
   - Genesis.Core.GameElements.ParticleEmitter
   - Genesis.Core.GameElements.Qube
   - Genesis.Core.GameElements.RectElement
@@ -269,14 +271,14 @@ items:
   summary: Gets the first game behavior of type T.
   example: []
   syntax:
-    content: public IGameBehavior GetBehavior<T>()
+    content: 'public T GetBehavior<T>() where T : IGameBehavior'
     typeParameters:
     - id: T
       description: The type of the behavior.
     return:
-      type: Genesis.Core.IGameBehavior
+      type: '{T}'
       description: The first game behavior of type T, or null if not found.
-    content.vb: Public Function GetBehavior(Of T)() As IGameBehavior
+    content.vb: Public Function GetBehavior(Of T As IGameBehavior)() As T
   overload: Genesis.Core.GameElement.GetBehavior*
   nameWithType.vb: GameElement.GetBehavior(Of T)()
   fullName.vb: Genesis.Core.GameElement.GetBehavior(Of T)()
@@ -358,6 +360,36 @@ items:
       description: The game element from which to copy properties.
     content.vb: Public Overridable Sub GetInstance(element As GameElement)
   overload: Genesis.Core.GameElement.GetInstance*
+- uid: Genesis.Core.GameElement.HasTag(System.String)
+  commentId: M:Genesis.Core.GameElement.HasTag(System.String)
+  id: HasTag(System.String)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: HasTag(string)
+  nameWithType: GameElement.HasTag(string)
+  fullName: Genesis.Core.GameElement.HasTag(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Determines whether the current object has a tag that matches the specified value.
+  example: []
+  syntax:
+    content: public bool HasTag(string value)
+    parameters:
+    - id: value
+      type: System.String
+      description: The tag value to compare with the current object's tag.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the current object's tag matches the specified value (case-insensitive); otherwise, <code>false</code>.
+    content.vb: Public Function HasTag(value As String) As Boolean
+  overload: Genesis.Core.GameElement.HasTag*
+  nameWithType.vb: GameElement.HasTag(String)
+  fullName.vb: Genesis.Core.GameElement.HasTag(String)
+  name.vb: HasTag(String)
 - uid: Genesis.Core.GameElement.Name
   commentId: P:Genesis.Core.GameElement.Name
   id: Name
@@ -1141,13 +1173,13 @@ references:
   name: GetInstance
   nameWithType: GameElement.GetInstance
   fullName: Genesis.Core.GameElement.GetInstance
-- uid: Genesis.Core.GameElement.Name*
-  commentId: Overload:Genesis.Core.GameElement.Name
+- uid: Genesis.Core.GameElement.HasTag*
+  commentId: Overload:Genesis.Core.GameElement.HasTag
   isExternal: true
-  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Name
-  name: Name
-  nameWithType: GameElement.Name
-  fullName: Genesis.Core.GameElement.Name
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  name: HasTag
+  nameWithType: GameElement.HasTag
+  fullName: Genesis.Core.GameElement.HasTag
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1159,6 +1191,24 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Core.GameElement.Name*
+  commentId: Overload:Genesis.Core.GameElement.Name
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Name
+  name: Name
+  nameWithType: GameElement.Name
+  fullName: Genesis.Core.GameElement.Name
 - uid: Genesis.Core.GameElement.Tag*
   commentId: Overload:Genesis.Core.GameElement.Tag
   isExternal: true
@@ -1251,17 +1301,6 @@ references:
   name: Enabled
   nameWithType: GameElement.Enabled
   fullName: Genesis.Core.GameElement.Enabled
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: Genesis.Core.GameElement.Propertys*
   commentId: Overload:Genesis.Core.GameElement.Propertys
   isExternal: true

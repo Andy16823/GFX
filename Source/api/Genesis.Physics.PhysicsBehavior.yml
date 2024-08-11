@@ -6,7 +6,7 @@ items:
   parent: Genesis.Physics
   children:
   - Genesis.Physics.PhysicsBehavior.#ctor
-  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Physics.PhysicsBehavior.GetPhysicsObject
   - Genesis.Physics.PhysicsBehavior.GetPhysicsObject``1
   - Genesis.Physics.PhysicsBehavior.OnCollide
@@ -29,18 +29,17 @@ items:
   - System.Object
   - Genesis.Core.IGameBehavior
   derivedClasses:
-  - Genesis.Core.Behaviors.Physics2D.BoxTrigger2D
-  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
   - Genesis.Core.Behaviors.Physics2D.PhysicsBox2D
   - Genesis.Core.Behaviors.Physics2D.PhysicsPolygon2D
-  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D
-  - Genesis.Core.Behaviors.Physics3D.BoxCollider
-  - Genesis.Core.Behaviors.Physics3D.BoxTrigger
-  - Genesis.Core.Behaviors.Physics3D.CapsuleCollider
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   - Genesis.Core.Behaviors.Physics3D.QubeConvexHull
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider
   - Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
+  - Genesis.Physics.ColliderBehavior2D
+  - Genesis.Physics.ColliderBehavior3D
+  - Genesis.Physics.RigidBodyBehavior2D
+  - Genesis.Physics.RigidBodyBehavior3D
+  - Genesis.Physics.TriggerBehavior2D
+  - Genesis.Physics.TriggerBehavior3D
   inheritedMembers:
   - Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -54,37 +53,16 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Physics.PhysicsBehavior.OnCollide
-  commentId: F:Genesis.Physics.PhysicsBehavior.OnCollide
-  id: OnCollide
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  id: Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   parent: Genesis.Physics.PhysicsBehavior
   langs:
   - csharp
   - vb
-  name: OnCollide
-  nameWithType: PhysicsBehavior.OnCollide
-  fullName: Genesis.Physics.PhysicsBehavior.OnCollide
-  type: Field
-  assemblies:
-  - Genesis
-  namespace: Genesis.Physics
-  summary: Event triggered when a collision occurs.
-  example: []
-  syntax:
-    content: public PhysicsBehaviorEvent OnCollide
-    return:
-      type: Genesis.Physics.PhysicsBehaviorEvent
-    content.vb: Public OnCollide As PhysicsBehaviorEvent
-- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  id: Collide(Genesis.Core.Scene,Genesis.Core.Game,BulletSharp.CollisionObject)
-  parent: Genesis.Physics.PhysicsBehavior
-  langs:
-  - csharp
-  - vb
-  name: Collide(Scene, Game, CollisionObject)
-  nameWithType: PhysicsBehavior.Collide(Scene, Game, CollisionObject)
-  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, BulletSharp.CollisionObject)
+  name: Collide(Scene, Game, GameElement)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
   type: Method
   assemblies:
   - Genesis
@@ -92,7 +70,7 @@ items:
   summary: Handles the collision event, invoking the OnCollide event if subscribed.
   example: []
   syntax:
-    content: public virtual void Collide(Scene scene, Game game, CollisionObject collisionObject)
+    content: public virtual void Collide(Scene scene, Game game, GameElement collisionObject)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
@@ -101,9 +79,9 @@ items:
       type: Genesis.Core.Game
       description: The game associated with the collision
     - id: collisionObject
-      type: BulletSharp.CollisionObject
+      type: Genesis.Core.GameElement
       description: The collision object involved in the event
-    content.vb: Public Overridable Sub Collide(scene As Scene, game As Game, collisionObject As CollisionObject)
+    content.vb: Public Overridable Sub Collide(scene As Scene, game As Game, collisionObject As GameElement)
   overload: Genesis.Physics.PhysicsBehavior.Collide*
 - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject
   commentId: M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject
@@ -178,6 +156,27 @@ items:
   nameWithType.vb: PhysicsBehavior.New()
   fullName.vb: Genesis.Physics.PhysicsBehavior.New()
   name.vb: New()
+- uid: Genesis.Physics.PhysicsBehavior.OnCollide
+  commentId: E:Genesis.Physics.PhysicsBehavior.OnCollide
+  id: OnCollide
+  parent: Genesis.Physics.PhysicsBehavior
+  langs:
+  - csharp
+  - vb
+  name: OnCollide
+  nameWithType: PhysicsBehavior.OnCollide
+  fullName: Genesis.Physics.PhysicsBehavior.OnCollide
+  type: Event
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Event triggered when a collision occurs.
+  example: []
+  syntax:
+    content: public event PhysicsBehaviorEvent OnCollide
+    return:
+      type: Genesis.Physics.PhysicsBehaviorEvent
+    content.vb: Public Event OnCollide As PhysicsBehaviorEvent
 references:
 - uid: Genesis.Physics
   commentId: N:Genesis.Physics
@@ -654,18 +653,10 @@ references:
     name: Core
     isExternal: true
     href: Genesis.Core.html
-- uid: Genesis.Physics.PhysicsBehaviorEvent
-  commentId: T:Genesis.Physics.PhysicsBehaviorEvent
-  parent: Genesis.Physics
-  isExternal: true
-  href: Genesis.Physics.PhysicsBehaviorEvent.html
-  name: PhysicsBehaviorEvent
-  nameWithType: PhysicsBehaviorEvent
-  fullName: Genesis.Physics.PhysicsBehaviorEvent
 - uid: Genesis.Physics.PhysicsBehavior.Collide*
   commentId: Overload:Genesis.Physics.PhysicsBehavior.Collide
   isExternal: true
-  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_BulletSharp_CollisionObject_
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
   name: Collide
   nameWithType: PhysicsBehavior.Collide
   fullName: Genesis.Physics.PhysicsBehavior.Collide
@@ -685,19 +676,14 @@ references:
   name: Game
   nameWithType: Game
   fullName: Genesis.Core.Game
-- uid: BulletSharp.CollisionObject
-  commentId: T:BulletSharp.CollisionObject
-  parent: BulletSharp
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
   isExternal: true
-  name: CollisionObject
-  nameWithType: CollisionObject
-  fullName: BulletSharp.CollisionObject
-- uid: BulletSharp
-  commentId: N:BulletSharp
-  isExternal: true
-  name: BulletSharp
-  nameWithType: BulletSharp
-  fullName: BulletSharp
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
 - uid: Genesis.Physics.PhysicsBehavior.GetPhysicsObject*
   commentId: Overload:Genesis.Physics.PhysicsBehavior.GetPhysicsObject
   isExternal: true
@@ -725,3 +711,11 @@ references:
   nameWithType.vb: PhysicsBehavior.New
   fullName.vb: Genesis.Physics.PhysicsBehavior.New
   name.vb: New
+- uid: Genesis.Physics.PhysicsBehaviorEvent
+  commentId: T:Genesis.Physics.PhysicsBehaviorEvent
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehaviorEvent.html
+  name: PhysicsBehaviorEvent
+  nameWithType: PhysicsBehaviorEvent
+  fullName: Genesis.Physics.PhysicsBehaviorEvent

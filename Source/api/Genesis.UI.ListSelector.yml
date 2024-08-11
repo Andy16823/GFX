@@ -44,6 +44,9 @@ items:
   - Genesis.UI.Widget.GetRelativeBounds2D(Genesis.UI.Canvas)
   - Genesis.UI.Widget.IsHover(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.FindChildren(System.String)
+  - Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  - Genesis.UI.Widget.Hovered
+  - Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.UI.Widget.Name
   - Genesis.UI.Widget.Location
   - Genesis.UI.Widget.Size
@@ -51,6 +54,7 @@ items:
   - Genesis.UI.Widget.Children
   - Genesis.UI.Widget.Enabled
   - Genesis.UI.Widget.Debug
+  - Genesis.UI.Widget.Anchor
   - Genesis.UI.Widget.MouseEnter
   - Genesis.UI.Widget.MouseLeave
   - Genesis.UI.Widget.Click
@@ -732,6 +736,124 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  commentId: M:Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  name: TransformBounds(Rect, WidgetAnchor)
+  nameWithType: Widget.TransformBounds(Rect, WidgetAnchor)
+  fullName: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect, Genesis.UI.WidgetAnchor)
+  spec.csharp:
+  - uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+    name: TransformBounds
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  - name: (
+  - uid: Genesis.Math.Rect
+    name: Rect
+    isExternal: true
+    href: Genesis.Math.Rect.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.WidgetAnchor
+    name: WidgetAnchor
+    isExternal: true
+    href: Genesis.UI.WidgetAnchor.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.TransformBounds(Genesis.Math.Rect,Genesis.UI.WidgetAnchor)
+    name: TransformBounds
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_TransformBounds_Genesis_Math_Rect_Genesis_UI_WidgetAnchor_
+  - name: (
+  - uid: Genesis.Math.Rect
+    name: Rect
+    isExternal: true
+    href: Genesis.Math.Rect.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.WidgetAnchor
+    name: WidgetAnchor
+    isExternal: true
+    href: Genesis.UI.WidgetAnchor.html
+  - name: )
+- uid: Genesis.UI.Widget.Hovered
+  commentId: M:Genesis.UI.Widget.Hovered
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  name: Hovered()
+  nameWithType: Widget.Hovered()
+  fullName: Genesis.UI.Widget.Hovered()
+  spec.csharp:
+  - uid: Genesis.UI.Widget.Hovered
+    name: Hovered
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.Hovered
+    name: Hovered
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_Hovered
+  - name: (
+  - name: )
+- uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  commentId: M:Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  name: OnClick(Game, Scene, Canvas)
+  nameWithType: Widget.OnClick(Game, Scene, Canvas)
+  fullName: Genesis.UI.Widget.OnClick(Genesis.Core.Game, Genesis.Core.Scene, Genesis.UI.Canvas)
+  spec.csharp:
+  - uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+    name: OnClick
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.Canvas
+    name: Canvas
+    isExternal: true
+    href: Genesis.UI.Canvas.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.UI.Widget.OnClick(Genesis.Core.Game,Genesis.Core.Scene,Genesis.UI.Canvas)
+    name: OnClick
+    isExternal: true
+    href: Genesis.UI.Widget.html#Genesis_UI_Widget_OnClick_Genesis_Core_Game_Genesis_Core_Scene_Genesis_UI_Canvas_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.UI.Canvas
+    name: Canvas
+    isExternal: true
+    href: Genesis.UI.Canvas.html
+  - name: )
 - uid: Genesis.UI.Widget.Name
   commentId: P:Genesis.UI.Widget.Name
   parent: Genesis.UI.Widget
@@ -788,6 +910,14 @@ references:
   name: Debug
   nameWithType: Widget.Debug
   fullName: Genesis.UI.Widget.Debug
+- uid: Genesis.UI.Widget.Anchor
+  commentId: P:Genesis.UI.Widget.Anchor
+  parent: Genesis.UI.Widget
+  isExternal: true
+  href: Genesis.UI.Widget.html#Genesis_UI_Widget_Anchor
+  name: Anchor
+  nameWithType: Widget.Anchor
+  fullName: Genesis.UI.Widget.Anchor
 - uid: Genesis.UI.Widget.MouseEnter
   commentId: E:Genesis.UI.Widget.MouseEnter
   parent: Genesis.UI.Widget

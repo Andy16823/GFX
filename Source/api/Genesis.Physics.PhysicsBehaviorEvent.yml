@@ -6,9 +6,9 @@ items:
   parent: Genesis.Physics
   children:
   - Genesis.Physics.PhysicsBehaviorEvent.#ctor(System.Object,System.IntPtr)
-  - Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object,System.AsyncCallback,System.Object)
+  - Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
   - Genesis.Physics.PhysicsBehaviorEvent.EndInvoke(System.IAsyncResult)
-  - Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object)
+  - Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   langs:
   - csharp
   - vb
@@ -22,7 +22,7 @@ items:
   summary: Represents a delegate for handling physics behavior events.
   example: []
   syntax:
-    content: public delegate void PhysicsBehaviorEvent(Scene scene, Game game, object collision)
+    content: public delegate void PhysicsBehaviorEvent(Scene scene, Game game, GameElement collision)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
@@ -31,9 +31,9 @@ items:
       type: Genesis.Core.Game
       description: The game involved in the physics behavior event
     - id: collision
-      type: System.Object
+      type: Genesis.Core.GameElement
       description: The collision object involved in the physics behavior event
-    content.vb: Public Delegate Sub PhysicsBehaviorEvent(scene As Scene, game As Game, collision As Object)
+    content.vb: Public Delegate Sub PhysicsBehaviorEvent(scene As Scene, game As Game, collision As GameElement)
 - uid: Genesis.Physics.PhysicsBehaviorEvent.#ctor(System.Object,System.IntPtr)
   commentId: M:Genesis.Physics.PhysicsBehaviorEvent.#ctor(System.Object,System.IntPtr)
   id: '#ctor(System.Object,System.IntPtr)'
@@ -60,68 +60,65 @@ items:
   nameWithType.vb: PhysicsBehaviorEvent.New(Object, IntPtr)
   fullName.vb: Genesis.Physics.PhysicsBehaviorEvent.New(Object, System.IntPtr)
   name.vb: New(Object, IntPtr)
-- uid: Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object)
-  commentId: M:Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object)
-  id: Invoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object)
+- uid: Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  id: Invoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
   parent: Genesis.Physics.PhysicsBehaviorEvent
   langs:
   - csharp
   - vb
-  name: Invoke(Scene, Game, object)
-  nameWithType: PhysicsBehaviorEvent.Invoke(Scene, Game, object)
-  fullName: Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene, Genesis.Core.Game, object)
+  name: Invoke(Scene, Game, GameElement)
+  nameWithType: PhysicsBehaviorEvent.Invoke(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Physics
   syntax:
-    content: public virtual void Invoke(Scene scene, Game game, object collision)
+    content: public virtual void Invoke(Scene scene, Game game, GameElement collision)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
     - id: game
       type: Genesis.Core.Game
     - id: collision
-      type: System.Object
-    content.vb: Public Overridable Sub Invoke(scene As Scene, game As Game, collision As Object)
+      type: Genesis.Core.GameElement
+    content.vb: Public Overridable Sub Invoke(scene As Scene, game As Game, collision As GameElement)
   overload: Genesis.Physics.PhysicsBehaviorEvent.Invoke*
-  nameWithType.vb: PhysicsBehaviorEvent.Invoke(Scene, Game, Object)
-  fullName.vb: Genesis.Physics.PhysicsBehaviorEvent.Invoke(Genesis.Core.Scene, Genesis.Core.Game, Object)
-  name.vb: Invoke(Scene, Game, Object)
-- uid: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object,System.AsyncCallback,System.Object)
-  commentId: M:Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object,System.AsyncCallback,System.Object)
-  id: BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,System.Object,System.AsyncCallback,System.Object)
+- uid: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  commentId: M:Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  id: BeginInvoke(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
   parent: Genesis.Physics.PhysicsBehaviorEvent
   langs:
   - csharp
   - vb
-  name: BeginInvoke(Scene, Game, object, AsyncCallback, object)
-  nameWithType: PhysicsBehaviorEvent.BeginInvoke(Scene, Game, object, AsyncCallback, object)
-  fullName: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene, Genesis.Core.Game, object, System.AsyncCallback, object)
+  name: BeginInvoke(Scene, Game, GameElement, AsyncCallback, object)
+  nameWithType: PhysicsBehaviorEvent.BeginInvoke(Scene, Game, GameElement, AsyncCallback, object)
+  fullName: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement, System.AsyncCallback, object)
   type: Method
   assemblies:
   - Genesis
   namespace: Genesis.Physics
   syntax:
-    content: public virtual IAsyncResult BeginInvoke(Scene scene, Game game, object collision, AsyncCallback callback, object @object)
+    content: public virtual IAsyncResult BeginInvoke(Scene scene, Game game, GameElement collision, AsyncCallback callback, object @object)
     parameters:
     - id: scene
       type: Genesis.Core.Scene
     - id: game
       type: Genesis.Core.Game
     - id: collision
-      type: System.Object
+      type: Genesis.Core.GameElement
     - id: callback
       type: System.AsyncCallback
     - id: object
       type: System.Object
     return:
       type: System.IAsyncResult
-    content.vb: Public Overridable Function BeginInvoke(scene As Scene, game As Game, collision As Object, callback As AsyncCallback, [object] As Object) As IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(scene As Scene, game As Game, collision As GameElement, callback As AsyncCallback, [object] As Object) As IAsyncResult
   overload: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke*
-  nameWithType.vb: PhysicsBehaviorEvent.BeginInvoke(Scene, Game, Object, AsyncCallback, Object)
-  fullName.vb: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene, Genesis.Core.Game, Object, System.AsyncCallback, Object)
-  name.vb: BeginInvoke(Scene, Game, Object, AsyncCallback, Object)
+  nameWithType.vb: PhysicsBehaviorEvent.BeginInvoke(Scene, Game, GameElement, AsyncCallback, Object)
+  fullName.vb: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(Scene, Game, GameElement, AsyncCallback, Object)
 - uid: Genesis.Physics.PhysicsBehaviorEvent.EndInvoke(System.IAsyncResult)
   commentId: M:Genesis.Physics.PhysicsBehaviorEvent.EndInvoke(System.IAsyncResult)
   id: EndInvoke(System.IAsyncResult)
@@ -187,17 +184,14 @@ references:
   name: Game
   nameWithType: Game
   fullName: Genesis.Core.Game
-- uid: System.Object
-  commentId: T:System.Object
-  parent: System
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
-  name: object
-  nameWithType: object
-  fullName: object
-  nameWithType.vb: Object
-  fullName.vb: Object
-  name.vb: Object
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
 - uid: Genesis.Core
   commentId: N:Genesis.Core
   isExternal: true
@@ -225,13 +219,6 @@ references:
     name: Core
     isExternal: true
     href: Genesis.Core.html
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Genesis.Physics.PhysicsBehaviorEvent.#ctor*
   commentId: Overload:Genesis.Physics.PhysicsBehaviorEvent.#ctor
   isExternal: true
@@ -242,6 +229,17 @@ references:
   nameWithType.vb: PhysicsBehaviorEvent.New
   fullName.vb: Genesis.Physics.PhysicsBehaviorEvent.New
   name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
 - uid: System.IntPtr
   commentId: T:System.IntPtr
   parent: System
@@ -250,17 +248,24 @@ references:
   name: IntPtr
   nameWithType: IntPtr
   fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Genesis.Physics.PhysicsBehaviorEvent.Invoke*
   commentId: Overload:Genesis.Physics.PhysicsBehaviorEvent.Invoke
   isExternal: true
-  href: Genesis.Physics.PhysicsBehaviorEvent.html#Genesis_Physics_PhysicsBehaviorEvent_Invoke_Genesis_Core_Scene_Genesis_Core_Game_System_Object_
+  href: Genesis.Physics.PhysicsBehaviorEvent.html#Genesis_Physics_PhysicsBehaviorEvent_Invoke_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
   name: Invoke
   nameWithType: PhysicsBehaviorEvent.Invoke
   fullName: Genesis.Physics.PhysicsBehaviorEvent.Invoke
 - uid: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke*
   commentId: Overload:Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke
   isExternal: true
-  href: Genesis.Physics.PhysicsBehaviorEvent.html#Genesis_Physics_PhysicsBehaviorEvent_BeginInvoke_Genesis_Core_Scene_Genesis_Core_Game_System_Object_System_AsyncCallback_System_Object_
+  href: Genesis.Physics.PhysicsBehaviorEvent.html#Genesis_Physics_PhysicsBehaviorEvent_BeginInvoke_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_System_AsyncCallback_System_Object_
   name: BeginInvoke
   nameWithType: PhysicsBehaviorEvent.BeginInvoke
   fullName: Genesis.Physics.PhysicsBehaviorEvent.BeginInvoke

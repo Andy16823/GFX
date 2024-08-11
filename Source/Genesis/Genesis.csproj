@@ -106,6 +106,7 @@
     <Compile Include="Core\Behaviors\Physics3D\BoxTrigger.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CapsuleCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CapsuleRigidBody.cs" />
+    <Compile Include="Core\Behaviors\Physics3D\CompoundMeshCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\ConvexHullCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
     <Compile Include="Core\Behaviors\Physics3D\SphereCollider.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Graphics\Animation3D\Animator.cs" />
     <Compile Include="Graphics\Animation3D\Bone.cs" />
     <Compile Include="Graphics\Animation3D\ModelMesh.cs" />
+    <Compile Include="Graphics\AnimationCallback.cs" />
     <Compile Include="Graphics\Face.cs" />
     <Compile Include="Graphics\Font.cs" />
     <Compile Include="Graphics\Framebuffer.cs" />
@@ -154,7 +156,6 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
-    <Compile Include="Graphics\RenderDevice\BetaRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />

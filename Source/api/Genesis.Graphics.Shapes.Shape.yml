@@ -27,6 +27,7 @@ items:
   - System.Object
   derivedClasses:
   - Genesis.Graphics.Shapes.BufferedSpriteShape
+  - Genesis.Graphics.Shapes.CircleShape
   - Genesis.Graphics.Shapes.FrameShape
   - Genesis.Graphics.Shapes.GlypheShape
   - Genesis.Graphics.Shapes.Light2DShape

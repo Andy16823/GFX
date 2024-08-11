@@ -13,6 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BulletSharp.DiscreteCollisionDetectorInterface;
 
 namespace Genesis.Physics
 {
@@ -165,6 +166,43 @@ namespace Genesis.Physics
                 }
             }
             return result;
+        }
+
+        public static List<HitResult> PerformCastAll(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
+        {
+            var results = new List<HitResult>();
+
+            var btStart = Raycast.GetStartVec(camera, viewport, posX, posY);
+            var btEnd = Raycast.GetEndVec(camera, viewport, posX, posY);
+            var direction = Raycast.GetRayDir(btStart, btEnd);
+            vec3 out_end = btStart.xyz - (direction * 1000.0f);
+
+            var _start = new Vector3(btStart.x, btStart.y, btEnd.z);
+            var _end = new Vector3(out_end.x, out_end.y, out_end.z);
+
+            
+
+            PhysicsHandler3D physics = (PhysicsHandler3D)physicHandler;
+            using (var cb = new AllHitsRayResultCallback(_start, _end))
+            {
+                physics.PhysicsWorld.RayTest(_start, _end, cb);
+                if (cb.HasHit)
+                {
+                    for(int i = 0; i < cb.CollisionObjects.Count; i++)
+                    {
+                        Vector3 location = cb.HitPointWorld[i];
+                        RigidBody rigidBody = (RigidBody) cb.CollisionObjects[i];
+
+                        HitResult result = new HitResult();
+                        result.rayStart = new Vec3(btStart.xyz);
+                        result.rayEnd = new Vec3(out_end.xyz);
+                        result.hitLocation = new Vec3(location.X, location.Y, location.Z);
+                        result.rigidBody = rigidBody;
+                        results.Add(result);
+                    }
+                }
+            }
+            return results;
         }
 
         /// <summary>

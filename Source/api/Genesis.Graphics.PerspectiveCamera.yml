@@ -39,6 +39,9 @@ items:
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
   - Genesis.Graphics.Camera.GetRect
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   - Genesis.Graphics.Camera.Location
   - Genesis.Graphics.Camera.Size
@@ -540,6 +543,138 @@ references:
     isExternal: true
     href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetRect
   - name: (
+  - name: )
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  name: CalculateScreenCorrection(float, float)
+  nameWithType: Camera.CalculateScreenCorrection(float, float)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(float, float)
+  nameWithType.vb: Camera.CalculateScreenCorrection(Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.CalculateScreenCorrection(Single, Single)
+  name.vb: CalculateScreenCorrection(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  name: CalculateScreenCorrection(Viewport)
+  nameWithType: Camera.CalculateScreenCorrection(Viewport)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+- uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ConvertScreenToWorldOrtho(Viewport, float, float)
+  nameWithType: Camera.ConvertScreenToWorldOrtho(Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, float, float)
+  nameWithType.vb: Camera.ConvertScreenToWorldOrtho(Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ConvertScreenToWorldOrtho(Viewport, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ConvertScreenToWorldOrtho
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ConvertScreenToWorldOrtho
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)

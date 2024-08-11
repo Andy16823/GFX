@@ -13,7 +13,7 @@
   ],
   "metadata": [
     {
-      "src": ["Genesis/bin/Debug/Genesis.dll"],
+      "src": ["Genesis/bin/x64/Debug/Genesis.dll"],
       "dest": "api",
       "files": ["Genesis.xml"]
     }

@@ -42,6 +42,7 @@ items:
   - Genesis.Core.GameElement.GetBehaviors``1
   - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
   - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.HasTag(System.String)
   - Genesis.Core.GameElement.Name
   - Genesis.Core.GameElement.Tag
   - Genesis.Core.GameElement.Location
@@ -648,6 +649,39 @@ references:
     name: GameElement
     isExternal: true
     href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.GameElement.HasTag(System.String)
+  commentId: M:Genesis.Core.GameElement.HasTag(System.String)
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  name: HasTag(string)
+  nameWithType: GameElement.HasTag(string)
+  fullName: Genesis.Core.GameElement.HasTag(string)
+  nameWithType.vb: GameElement.HasTag(String)
+  fullName.vb: Genesis.Core.GameElement.HasTag(String)
+  name.vb: HasTag(String)
+  spec.csharp:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElement.HasTag(System.String)
+    name: HasTag
+    isExternal: true
+    href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_HasTag_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: Genesis.Core.GameElement.Name
   commentId: P:Genesis.Core.GameElement.Name
