@@ -30,7 +30,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// </summary>
         /// <param name="handler">Physics handler responsible for managing elements.</param>
         /// <param name="mass">Mass of the rigid body.</param>
-        public void CreateRigidBody(PhysicHandler handler, float mass)
+        public void CreateRigidBody(PhysicHandler handler, float mass, int CollisionGroup = -1, int CollisionMask = -1)
         {
             if(this.Parent.GetType() == typeof(Element3D))
             {
@@ -53,7 +53,7 @@ namespace Genesis.Core.Behaviors.Physics3D
                 this.RigidBody.UserObject = this.Parent;
                 //Scale it
                 this.RigidBody.CollisionShape.LocalScaling = new Vector3(scale.X, scale.Y, scale.Z);
-                handler.ManageElement(this);
+                handler.ManageElement(this, CollisionGroup, CollisionMask);
             }
             else
             {

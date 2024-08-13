@@ -659,7 +659,7 @@ namespace Genesis.Core
         /// <returns>The System.Drawing.Color representation.</returns>
         public static Color ConvertDrawingColor(float a, float r, float g, float b)
         {
-            return Color.FromArgb((int)a * 255, (int)r * 255, (int)g * 255, (int)b * 255);
+            return Color.FromArgb((int)(a * 255), (int)(r * 255), (int)(g * 255), (int)(b * 255));
         }
 
         /// <summary>

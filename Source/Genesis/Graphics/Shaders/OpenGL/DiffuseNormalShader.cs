@@ -46,6 +46,7 @@ namespace Genesis.Graphics.Shaders.OpenGL
                 out vec4 fragColor;
                 uniform sampler2D textureSampler;
                 uniform sampler2D normalMap;
+                uniform vec4 materialColor;
 
                 void main()
                 {
@@ -59,7 +60,7 @@ namespace Genesis.Graphics.Shaders.OpenGL
                     vec4 texColor = texture(textureSampler, flippedTexCoord);
 
                     vec3 diffuse = diff * texture(textureSampler, flippedTexCoord).rgb * vec3(1.0, 1.0, 1.0);
-                    fragColor = vec4(diffuse, texColor.a);
+                    fragColor = vec4(diffuse, texColor.a) * materialColor;
                 }
             ");
         }

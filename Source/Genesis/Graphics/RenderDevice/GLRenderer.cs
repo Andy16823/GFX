@@ -1635,8 +1635,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 if (material.Propeterys.ContainsKey("vbo"))
                 {
+                    var materialColor = Utils.ConvertColor(material.DiffuseColor, true);
                     gl.UseProgram(elementShaderID);
                     gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "mvp"), 1, false, mvp.ToArray());
+                    gl.Uniform4f(gl.GetUniformLocation(elementShaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
 
                     if (this.lightSource != null)
                     {

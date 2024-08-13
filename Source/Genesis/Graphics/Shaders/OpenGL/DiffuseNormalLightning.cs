@@ -49,6 +49,7 @@ namespace Genesis.Graphics.Shaders.OpenGL
                 uniform vec3 lightPos;
                 uniform float lightIntensity;
                 uniform vec3 lightColor;
+                uniform vec4 materialColor;
 
                 void main()
                 {
@@ -71,7 +72,7 @@ namespace Genesis.Graphics.Shaders.OpenGL
                     vec3 result = (ambient + diffuse) * texColor.rgb;
 
                     // Setze den finalen Farbwert
-                    fragColor = vec4(result, texColor.a);
+                    fragColor = vec4(result, texColor.a) * materialColor;
                 }
             ");
         }

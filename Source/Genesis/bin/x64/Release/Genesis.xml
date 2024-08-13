@@ -1122,7 +1122,7 @@
             Gets or sets the RigidBody associated with this behavior.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Int32,System.Int32)">
             <summary>
             Creates a RigidBody for the ConvexHullBehavior.
             </summary>
@@ -6671,7 +6671,7 @@
             <param name="scene">The current game scene.</param>
             <param name="game">The current game instance.</param>
         </member>
-        <member name="M:Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior)">
+        <member name="M:Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)">
             <summary>
             Manages a physics behavior element by adding its RigidBody to the physics world.
             </summary>
@@ -6823,14 +6823,14 @@
             Represents an abstract class for handling physics interactions.
             </summary>
         </member>
-        <member name="M:Genesis.Physics.PhysicHandler.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Physics.PhysicHandler"/> class.
-            </summary>
-        </member>
         <member name="P:Genesis.Physics.PhysicHandler.Callbacks">
             <summary>
             Gets or sets the dictionary of physics callbacks.
+            </summary>
+        </member>
+        <member name="M:Genesis.Physics.PhysicHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Physics.PhysicHandler"/> class.
             </summary>
         </member>
         <member name="M:Genesis.Physics.PhysicHandler.Process(Genesis.Core.Scene,Genesis.Core.Game)">
@@ -6840,7 +6840,7 @@
             <param name="scene">The scene to process physics for</param>
             <param name="game">The game to process physics for</param>
         </member>
-        <member name="M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)">
+        <member name="M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)">
             <summary>
             Manages physics interactions for a specific physics behavior.
             </summary>
@@ -6891,7 +6891,7 @@
             <param name="scene">The current game scene.</param>
             <param name="game">The current game instance.</param>
         </member>
-        <member name="M:Genesis.Physics.PhysicsHandler3D.ManageElement(Genesis.Physics.PhysicsBehavior)">
+        <member name="M:Genesis.Physics.PhysicsHandler3D.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)">
             <summary>
             Manages a physics behavior element by adding its collision object to the physics world.
             </summary>

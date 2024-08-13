@@ -33,6 +33,12 @@ namespace Genesis.Physics
     /// </summary>
     public abstract class PhysicHandler
     {
+        public Dictionary<String, CollisionGroup> CollisionGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets the dictionary of physics callbacks.
+        /// </summary>
+        public Dictionary<object, PhysicHandlerEvent>  Callbacks { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PhysicHandler"/> class.
@@ -40,12 +46,9 @@ namespace Genesis.Physics
         public PhysicHandler()
         {
             this.Callbacks = new Dictionary<object, PhysicHandlerEvent>();
+            this.CollisionGroups = new Dictionary<string, CollisionGroup>();
+            this.CollisionGroups.Add("All", new CollisionGroup(-1));
         }
-
-        /// <summary>
-        /// Gets or sets the dictionary of physics callbacks.
-        /// </summary>
-        public Dictionary<object, PhysicHandlerEvent>  Callbacks { get; set; }
 
         /// <summary>
         /// Processes physics interactions for a given scene and game.
@@ -58,7 +61,7 @@ namespace Genesis.Physics
         /// Manages physics interactions for a specific physics behavior.
         /// </summary>
         /// <param name="physicsBehavior">The physics behavior to manage</param>
-        public virtual void ManageElement(PhysicsBehavior physicsBehavior)
+        public virtual void ManageElement(PhysicsBehavior physicsBehavior, int collisionGroup = -1, int collisionMask = -1)
         {
             this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, cObj) =>
             {
