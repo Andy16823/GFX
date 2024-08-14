@@ -14,7 +14,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         {
         }
 
-        public override void CreateCollider()
+        public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
         {
             var element = (Element3D)this.Parent;
         }

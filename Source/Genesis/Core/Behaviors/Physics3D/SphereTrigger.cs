@@ -24,18 +24,18 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// Creates a trigger with a sphere shape using the default radius (half of the parent's size).
         /// </summary>
         /// <param name="physicHandler">The physics handler to manage this element.</param>
-        public override void CreateTrigger()
+        public override void CreateTrigger(int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateTrigger(this.Parent.Size.X / 2);
+            this.CreateTrigger(this.Parent.Size.X / 2, collisionGroup, collisionMask);
         }
 
         /// <summary>
         /// Creates a trigger with a sphere shape at the origin.
         /// </summary>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateTrigger(float radius)
+        public void CreateTrigger(float radius, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateTrigger(Vec3.Zero(), radius);
+            this.CreateTrigger(Vec3.Zero(), radius, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// </summary>
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the sphere.</param>
-        public void CreateTrigger(Vec3 offset, float radius)
+        public void CreateTrigger(Vec3 offset, float radius, int collisionGroup = -1, int collisionMask = -1)
         {
             this.Offset = offset;
 
@@ -61,7 +61,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             Trigger.UserObject = element;
             Trigger.CollisionShape = sphereShape;
             Trigger.WorldTransform = btStartTransform;
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }

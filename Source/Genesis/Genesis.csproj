@@ -205,7 +205,7 @@
     <Compile Include="Math\Vec3.cs" />
     <Compile Include="Physics\ColliderBehavior2D.cs" />
     <Compile Include="Physics\ColliderBehavior3D.cs" />
-    <Compile Include="Physics\CollisionGroup.cs" />
+    <Compile Include="Physics\CollisionGroupExtensions.cs" />
     <Compile Include="Physics\PhysicsHandler2D.cs" />
     <Compile Include="Physics\Ray2D.cs" />
     <Compile Include="Physics\Raycast.cs" />

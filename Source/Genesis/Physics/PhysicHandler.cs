@@ -33,8 +33,6 @@ namespace Genesis.Physics
     /// </summary>
     public abstract class PhysicHandler
     {
-        public Dictionary<String, CollisionGroup> CollisionGroups { get; set; }
-
         /// <summary>
         /// Gets or sets the dictionary of physics callbacks.
         /// </summary>
@@ -46,8 +44,6 @@ namespace Genesis.Physics
         public PhysicHandler()
         {
             this.Callbacks = new Dictionary<object, PhysicHandlerEvent>();
-            this.CollisionGroups = new Dictionary<string, CollisionGroup>();
-            this.CollisionGroups.Add("All", new CollisionGroup(-1));
         }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace Genesis.Physics
         /// Creates the trigger associated with this behavior.
         /// </summary>
         /// <param name="handler">The physics handler to manage this trigger.</param>
-        public abstract void CreateTrigger();
+        public abstract void CreateTrigger(int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Retrieves the physics object associated with this trigger.

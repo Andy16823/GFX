@@ -27,7 +27,7 @@ namespace Genesis.Physics
         /// Implement this method in derived classes to define the specific behavior for creating a collider.
         /// </summary>
         /// <param name="physicHandler">The physics handler responsible for managing physics-related tasks.</param>
-        public abstract void CreateCollider();
+        public abstract void CreateCollider(int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Translates the collider by the specified vector.

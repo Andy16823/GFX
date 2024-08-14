@@ -28,9 +28,9 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// Creates a RigidBody with default capsule dimensions.
         /// </summary>
         /// <param name="mass">The mass of the capsule.</param>
-        public override void CreateRigidBody(float mass)
+        public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(1.0f, 2.0f, mass);
+            this.CreateRigidBody(1.0f, 2.0f, mass, null, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="height">The height of the capsule.</param>
         /// <param name="mass">The mass of the capsule.</param>
         /// <param name="offset">The offset of the capsule. Default is Vec3.Zero().</param>
-        public void CreateRigidBody(float radius, float height, float mass, Vec3 offset = null)
+        public void CreateRigidBody(float radius, float height, float mass, Vec3 offset = null, int collisionGroup = -1, int collisionMask = -1)
         {
             if (offset == null)
             {
@@ -64,7 +64,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.UserObject = Parent;
             RigidBody.ApplyGravity();
 
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }

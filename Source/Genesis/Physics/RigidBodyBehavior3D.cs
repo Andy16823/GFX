@@ -44,7 +44,7 @@ namespace Genesis.Physics
         /// Abstract method to create the rigid body. 
         /// Implement this method in derived classes to define the specific behavior for creating a rigid body.
         /// </summary>
-        public abstract void CreateRigidBody(float mass);
+        public abstract void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Rotates the rigid body by the specified vector of Euler angles.

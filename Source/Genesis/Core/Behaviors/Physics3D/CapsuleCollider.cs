@@ -26,18 +26,18 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <summary>
         /// Creates a collider with a capsule shape using default dimensions.
         /// </summary>
-        public override void CreateCollider()
+        public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateCollider(1.0f, 2.0f);
+            this.CreateCollider(1.0f, 2.0f, collisionGroup, collisionMask);
         }
         /// <summary>
         /// Creates a collider with a capsule shape at the origin.
         /// </summary>
         /// <param name="radius">The radius of the capsule.</param>
         /// <param name="height">The height of the capsule.</param>
-        public void CreateCollider(float radius, float height)
+        public void CreateCollider(float radius, float height, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateCollider(Vec3.Zero(), radius, height);
+            this.CreateCollider(Vec3.Zero(), radius, height, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the capsule.</param>
         /// <param name="height">The height of the capsule.</param>
-        public void CreateCollider(Vec3 offset, float radius, float height)
+        public void CreateCollider(Vec3 offset, float radius, float height, int collisionGroup = -1, int collisionMask = -1)
         {
             this.Offset = offset;
             var element = this.Parent;
@@ -64,7 +64,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             Collider.CollisionShape = capsuleShape;
             Collider.WorldTransform = btStartTransform;
 
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }

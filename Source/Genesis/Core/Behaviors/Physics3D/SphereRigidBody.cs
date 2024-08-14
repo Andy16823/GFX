@@ -28,9 +28,9 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// Creates a rigid body with a sphere shape using the default radius (half of the parent's size).
         /// </summary>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public override void CreateRigidBody(float mass)
+        public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(this.Parent.Size.X / 2, mass);
+            this.CreateRigidBody(this.Parent.Size.X / 2, mass, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// </summary>
         /// <param name="radius">The radius of the sphere.</param>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public void CreateRigidBody(float radius, float mass)
+        public void CreateRigidBody(float radius, float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(Vec3.Zero(), radius, mass);
+            this.CreateRigidBody(Vec3.Zero(), radius, mass, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="offset">The offset from the parent element's location.</param>
         /// <param name="radius">The radius of the sphere.</param>
         /// <param name="mass">The mass of the sphere rigid body.</param>
-        public void CreateRigidBody(Vec3 offset, float radius, float mass)
+        public void CreateRigidBody(Vec3 offset, float radius, float mass, int collisionGroup = -1, int collisionMask = -1)
         {
             this.Offset = offset;
 
@@ -70,7 +70,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.UserObject = element;
             RigidBody.ApplyGravity();
 
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }
