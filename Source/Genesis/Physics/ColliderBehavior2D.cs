@@ -45,7 +45,7 @@ namespace Genesis.Physics
         /// <summary>
         /// Creates the collider object.
         /// </summary>
-        public abstract void CreateCollider();
+        public abstract void CreateCollider(int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Translates the collider by the specified vector.

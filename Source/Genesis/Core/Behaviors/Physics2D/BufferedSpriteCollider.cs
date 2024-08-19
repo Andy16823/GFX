@@ -26,7 +26,7 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// <summary>
         /// Creates a rigid body for the collider.
         /// </summary>
-        public override void CreateCollider()
+        public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
         {
             if (this.Parent.GetType() == typeof(BufferedSprite))
             {
@@ -48,7 +48,7 @@ namespace Genesis.Core.Behaviors.Physics2D
                 Collider.UserObject = this.Parent;
                 //RigidBody.CollisionFlags = CollisionFlags.StaticObject;
 
-                PhysicHandler.ManageElement(this);
+                PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
             }
             else
             {

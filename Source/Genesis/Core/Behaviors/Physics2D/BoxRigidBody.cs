@@ -29,9 +29,9 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// Creates the rigid body with the specified mass.
         /// </summary>
         /// <param name="mass">The mass of the rigid body.</param>
-        public override void CreateRigidBody(float mass)
+        public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(mass, Parent.Size.Half());
+            this.CreateRigidBody(mass, Parent.Size.Half(), collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// </summary>
         /// <param name="mass">The mass of the rigid body.</param>
         /// <param name="halfextends">The half extents of the box shape.</param>
-        public void CreateRigidBody(float mass, Vec3 halfextends)
+        public void CreateRigidBody(float mass, Vec3 halfextends, int collisionGroup = -1, int collisionMask = -1)
         {
             //var capsuleShape = new CapsuleShape(Parent.Size.X / 2, 1.1f);
             var boxShape = new Box2DShape(halfextends.ToBulletVec3());
@@ -65,7 +65,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             RigidBody.AngularFactor = this.AngularFactor.ToBulletVec3();
             RigidBody.UserObject = this.Parent;
             this.RigidBody.ApplyGravity();
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }

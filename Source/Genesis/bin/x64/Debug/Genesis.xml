@@ -503,7 +503,7 @@
             </summary>
             <param name="physicHandler">The physics handler to associate with this box collider.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.CreateCollider">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxCollider.CreateCollider(System.Int32,System.Int32)">
             <summary>
             Creates a collider using the provided PhysicHandler.
             </summary>
@@ -524,7 +524,7 @@
             Gets or sets the angular factor for the rigid body.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)">
             <summary>
             Creates the rigid body with the specified mass.
             </summary>
@@ -536,7 +536,7 @@
             </summary>
             <param name="handler">The physics handler.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3,System.Int32,System.Int32)">
             <summary>
             Creates the rigid body with the specified mass and half extents.
             </summary>
@@ -557,12 +557,12 @@
             </summary>
             <param name="handler">The physics handler to associate with this box trigger.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(System.Int32,System.Int32)">
             <summary>
             Creates the trigger using the parent's size half extents.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BoxTrigger2D.CreateTrigger(Genesis.Math.Vec3,System.Int32,System.Int32)">
             <summary>
             Creates the trigger with the specified half extents.
             </summary>
@@ -573,7 +573,7 @@
             Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
             </summary>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(System.Int32,System.Int32)">
             <summary>
             Creates a rigid body for the collider.
             </summary>
@@ -746,13 +746,13 @@
             </summary>
             <param name="handler">The physics handler.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidBody(System.Single,System.Int32,System.Int32)">
             <summary>
             Creates the rigid body with the specified mass.
             </summary>
             <param name="mass">The mass of the rigid body.</param>
         </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(System.Single,System.Single,System.Single)">
+        <member name="M:Genesis.Core.Behaviors.Physics2D.Rigidbody2D.CreateRigidbody(System.Single,System.Single,System.Single,System.Int32,System.Int32)">
             <summary>
             Creates the rigid body with the specified mass, capsule radius, and capsule height.
             </summary>
@@ -6481,7 +6481,7 @@
             </summary>
             <param name="physicHandler">The physics handler to associate with this collider behavior.</param>
         </member>
-        <member name="M:Genesis.Physics.ColliderBehavior2D.CreateCollider">
+        <member name="M:Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)">
             <summary>
             Creates the collider object.
             </summary>
@@ -7078,7 +7078,7 @@
             </summary>
             <param name="handler">The physics handler.</param>
         </member>
-        <member name="M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)">
+        <member name="M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)">
             <summary>
             Creates a rigid body with the specified mass.
             </summary>
@@ -7336,7 +7336,7 @@
             </summary>
             <param name="handler">The physics handler to associate with this trigger behavior.</param>
         </member>
-        <member name="M:Genesis.Physics.TriggerBehavior2D.CreateTrigger">
+        <member name="M:Genesis.Physics.TriggerBehavior2D.CreateTrigger(System.Int32,System.Int32)">
             <summary>
             Creates the trigger object using the specified physics handler.
             </summary>

@@ -46,7 +46,7 @@ namespace Genesis.Physics
         /// <summary>
         /// Creates the trigger object using the specified physics handler.
         /// </summary>
-        public abstract void CreateTrigger();
+        public abstract void CreateTrigger(int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Translates the trigger by the specified vector.

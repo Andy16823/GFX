@@ -31,7 +31,7 @@ namespace Genesis.Core.Behaviors.Physics2D
         /// Creates a collider using the provided PhysicHandler.
         /// </summary>
         /// <param name="handler">The PhysicHandler responsible for managing physics elements.</param>
-        public override void CreateCollider()
+        public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
         {
             //var shape = new CapsuleShape(Parent.Size.X / 2, 1.5f);
             var shape = new Box2DShape(Parent.Size.ToBulletVec3() / 2);
@@ -45,7 +45,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             Collider.CollisionShape = shape;
             Collider.UserObject = this.Parent;
             Collider.WorldTransform = btStartTransform;
-            PhysicHandler.ManageElement(this);
+            PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }
     }
 }
