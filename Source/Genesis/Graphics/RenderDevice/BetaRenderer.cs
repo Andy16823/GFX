@@ -53,6 +53,10 @@ namespace Genesis.Graphics.RenderDevice
 
         private Viewport m_viewport;
 
+        // test
+        private Framebuffer shadowmap;
+        private mat4 lightspacematrix;
+
         public BetaRenderer(IntPtr hwnd, RenderSettings settings)
         {
             this.hwnd = hwnd;
@@ -93,6 +97,7 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
             this.ShaderPrograms.Add("SolidShapeShader", new SolidShapeShader());
             this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
+            this.ShaderPrograms.Add("LightmapShader", new LightmapShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -157,6 +162,30 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
             gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.StaticDraw);
             return vbo;
+        }
+
+        public Framebuffer BuildShadowMap(int width, int height)
+        {
+            var framebuffer = new Framebuffer();
+            framebuffer.Propertys.Add("width", width);
+            framebuffer.Propertys.Add("height", height);
+            framebuffer.FramebufferID = gl.GenFramebuffers(1);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer.FramebufferID);
+            gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+            framebuffer.Texture = gl.GenTextures(1);
+            gl.BindTexture(OpenGL.Texture2D, framebuffer.Texture);
+            gl.TexImage2D(OpenGL.Texture2D, 0, OpenGL.DepthComponent, width, height, 0, OpenGL.DepthComponent, OpenGL.Float);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMinFilter, NetGL.OpenGL.Nearest);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMagFilter, NetGL.OpenGL.Nearest);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapS, OpenGL.Repeate);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapT, OpenGL.Repeate);
+            gl.FrameBufferTexture2D(OpenGL.FrameBuffer, OpenGL.DepthAttachment, OpenGL.Texture2D, framebuffer.Texture, 0);
+            gl.DrawBuffer(OpenGL.None);
+            gl.ReadBuffer(OpenGL.None);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
+
+            return framebuffer;
         }
 
         /// <summary>
@@ -1635,8 +1664,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 if (material.Propeterys.ContainsKey("vbo"))
                 {
+                    var materialColor = Utils.ConvertColor(material.DiffuseColor, true);
                     gl.UseProgram(elementShaderID);
                     gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "mvp"), 1, false, mvp.ToArray());
+                    gl.Uniform4f(gl.GetUniformLocation(elementShaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
 
                     if (this.lightSource != null)
                     {
@@ -1654,6 +1685,18 @@ namespace Genesis.Graphics.RenderDevice
                     gl.ActiveTexture(OpenGL.Texture1);
                     gl.BindTexture(OpenGL.Texture2D, (int)material.Propeterys["normal_id"]);
                     gl.Uniform1I(gl.GetUniformLocation(elementShaderID, "normalMap"), 1);
+
+                    if(this.shadowmap != null)
+                    {
+                        gl.ActiveTexture(OpenGL.Texture2);
+                        gl.BindTexture(OpenGL.Texture2D, shadowmap.Texture);
+                        gl.Uniform1I(gl.GetUniformLocation(elementShaderID, "shadowMap"), 2);
+
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "projection"), 1, false, p_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "view"), 1, false, v_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "model"), 1, false, m_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "lightSpaceMatrix"), 1, false, lightspacematrix.ToArray());
+                    }
 
                     gl.BindVertexArray((int)material.Propeterys["vao"]);
                     gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
@@ -2487,6 +2530,79 @@ namespace Genesis.Graphics.RenderDevice
             gl.DeleteBuffers(1, vbo);
             gl.DeleteBuffers(1, tbo);
             Console.WriteLine("Disposed Light2D " + light2D.UUID + " with error " + gl.GetError());
+        }
+
+
+        public mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource)
+        {
+            float near_plane = 1.0f, far_plane = 7.5f;
+
+            float left = camera.Location.X - 10f;
+            float right = camera.Location.X + 10f;
+            float top = camera.Location.Y + 10f;
+            float bottom = camera.Location.Y - 10f;
+
+            mat4 lightProjection = mat4.Ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0.0f, 0.0f, 0.0f), new vec3(0.0f, 1.0f, 0.0f));
+
+            return lightProjection * lightView;
+        }
+
+        public void PrepareShadowPass(Framebuffer shadowmap, mat4 lightspaceMatrix)
+        {
+            int width = (int) shadowmap.Propertys["width"];
+            int height = (int)shadowmap.Propertys["height"];
+
+            this.shadowmap = shadowmap;
+            this.lightspacematrix = lightspaceMatrix;
+
+            gl.Viewport(0, 0, width, height);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, shadowmap.FramebufferID);
+            gl.Clear(NetGL.OpenGL.DepthBufferBit);
+        }
+
+        public void RenderShadowmap(Framebuffer shadowmap, mat4 lightspaceMatrix, Scene3D scene)
+        {
+            var shaderId = this.ShaderPrograms["LightmapShader"].ProgramID;
+
+            foreach (var layer in scene.Layer)
+            {
+                foreach (var item in layer.Elements)
+                {
+                    if(item.GetType() == typeof(Element3D))
+                    {
+                        var element = (Element3D)item;
+
+                        mat4 mt_mat = Utils.GetModelTransformation(element);
+                        mat4 mr_mat = Utils.GetModelRotation(element);
+                        mat4 ms_mat = Utils.GetModelScale(element);
+                        mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+                        gl.Enable(OpenGL.Texture2D);
+                        foreach (var material in element.Materials)
+                        {
+                            if (material.Propeterys.ContainsKey("vao"))
+                            {
+                                gl.UseProgram(shaderId);
+
+                                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "lightSpaceMatrix"), 1, false, lightspaceMatrix.ToArray());
+                                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "model"), 1, false, m_mat.ToArray());
+
+                                gl.BindVertexArray((int)material.Propeterys["vao"]);
+                                gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
+                                gl.BindVertexArray(0);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void FinishShadowPass(Viewport viewport)
+        {
+            this.SetViewport(viewport);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
         }
     }
 }

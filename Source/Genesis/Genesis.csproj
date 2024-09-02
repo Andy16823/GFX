@@ -156,12 +156,15 @@
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />
     <Compile Include="Graphics\PerspectiveCamera.cs" />
+    <Compile Include="Graphics\RenderDevice\BetaRenderer.cs" />
     <Compile Include="Graphics\RenderDevice\GLRenderer.cs" />
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\BorderCircleShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\Element3DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\Light2DShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\LightmapShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\SceneShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\SolidShapeShader.cs" />

@@ -2,6 +2,7 @@
 using Genesis.Core.GameElements;
 using Genesis.Math;
 using Genesis.UI;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -60,6 +61,45 @@ namespace Genesis.Graphics
         /// <param name="verticies">The vertices for the static vertex buffer.</param>
         /// <returns>The ID of the created static vertex buffer.</returns>
         int CreateStaticVertexBuffer(float[] verticies);
+
+        /// <summary>
+        /// Builds a framebuffer for rendering shadow maps.
+        /// </summary>
+        /// <param name="width">The width of the framebuffer.</param>
+        /// <param name="height">The height of the framebuffer.</param>
+        /// <returns>A framebuffer object configured for shadow mapping.</returns>
+        Framebuffer BuildShadowMap(int width, int height);
+
+        /// <summary>
+        /// Generates a matrix that transforms coordinates from world space to light space.
+        /// This matrix is used to project the scene from the perspective of the light source.
+        /// </summary>
+        /// <param name="camera">The camera object used to generate the view matrix. This is typically a camera with a perspective or orthographic projection.</param>
+        /// <param name="lightSource">The light source used to compute the light space matrix. This includes information like position and direction of the light.</param>
+        /// <returns>A 4x4 matrix representing the light space transformation.</returns>
+        mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource);
+
+        /// <summary>
+        /// Prepares the framebuffer and matrix for rendering shadows. This setup is necessary before rendering the scene to the shadow map.
+        /// </summary>
+        /// <param name="shadowmap">The framebuffer that will be used to render the shadow map.</param>
+        /// <param name="lightspaceMatrix">The matrix used to transform scene coordinates into light space for shadow mapping.</param>
+        void PrepareShadowPass(Framebuffer shadowmap, mat4 lightspaceMatrix);
+
+        /// <summary>
+        /// Renders the scene from the perspective of the light source into the shadow map framebuffer. This creates the shadow map texture used for shadow testing.
+        /// </summary>
+        /// <param name="shadowmap">The framebuffer where the shadow map will be rendered.</param>
+        /// <param name="lightspaceMatrix">The matrix that transforms scene coordinates into light space.</param>
+        /// <param name="scene">The 3D scene to be rendered into the shadow map.</param>
+        void RenderShadowmap(Framebuffer shadowmap, mat4 lightspaceMatrix, Scene3D scene);
+
+        /// <summary>
+        /// Completes the shadow pass by finalizing any state changes or cleanup required after rendering the shadow map.
+        /// This may involve restoring viewport settings or other post-processing tasks.
+        /// </summary>
+        /// <param name="viewport">The viewport object representing the final render area on the screen or in the context.</param>
+        void FinishShadowPass(Viewport viewport);
 
         /// <summary>
         /// Builds a framebuffer with the specified width and height.

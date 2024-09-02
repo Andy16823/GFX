@@ -27,6 +27,19 @@ namespace Genesis.Graphics
         public int Texture { get; set; }
 
         /// <summary>
+        /// Gets or sets the propertys for the framebuffer
+        /// </summary>
+        public Dictionary<String, Object> Propertys { get; set; }
+
+        /// <summary>
+        /// Creates an new framebuffer
+        /// </summary>
+        public Framebuffer()
+        {
+            this.Propertys = new Dictionary<String, Object>();
+        }
+
+        /// <summary>
         /// Converts the framebuffer to a texture.
         /// </summary>
         /// <returns>The converted texture.</returns>

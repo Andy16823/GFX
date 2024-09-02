@@ -2490,5 +2490,30 @@ namespace Genesis.Graphics.RenderDevice
             gl.DeleteBuffers(1, tbo);
             Console.WriteLine("Disposed Light2D " + light2D.UUID + " with error " + gl.GetError());
         }
+
+        public Framebuffer BuildShadowMap(int width, int height)
+        {
+            return null;
+        }
+
+        public mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource)
+        {
+            return mat4.Identity;
+        }
+
+        public void PrepareShadowPass(Framebuffer shadowmap, mat4 lightspaceMatrix)
+        {
+            
+        }
+
+        public void RenderShadowmap(Framebuffer shadowmap, mat4 lightspaceMatrix, Scene3D scene)
+        {
+            
+        }
+
+        public void FinishShadowPass(Viewport viewport)
+        {
+            
+        }
     }
 }

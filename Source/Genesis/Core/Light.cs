@@ -15,14 +15,24 @@ namespace Genesis.Core
     public class Light : GameElement
     {
         /// <summary>
+        /// Gets or sets a value indicating whether the light should cast shadows.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if the light casts shadows; otherwise, <c>false</c>.
+        /// This property controls whether shadows are rendered for this object during the shadow mapping process.
+        /// </value>
+        public bool CastShadows { get; set; }
+
+        /// <summary>
         /// Creates a new instance of the Light class with the specified name and location.
         /// </summary>
         /// <param name="name">The name of the light.</param>
         /// <param name="location">The 3D location of the light.</param>
-        public Light(String name, Vec3 location)
+        public Light(String name, Vec3 location, bool castShadows = true)
         {
             this.Name = name;
             this.Location = location;
+            this.CastShadows = castShadows;
         }
 
         /// <summary>
@@ -31,11 +41,12 @@ namespace Genesis.Core
         /// <param name="name">The name of the light.</param>
         /// <param name="location">The 3D location of the light.</param>
         /// <param name="intensity">The intensity of the light.</param>
-        public Light(String name, Vec3 location, float intensity) 
+        public Light(String name, Vec3 location, float intensity, bool castShadows = true) 
         {
             this.Name=name;
             this.Location = location;
             this.Intensity = intensity;
+            this.CastShadows = castShadows;
         }
 
         /// <summary>

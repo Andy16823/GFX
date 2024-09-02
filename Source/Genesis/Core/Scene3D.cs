@@ -1,7 +1,9 @@
 ﻿using Genesis.Core.GameElements;
 using Genesis.Graphics;
+using Genesis.Math;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,23 @@ namespace Genesis.Core
         /// Gets or sets the skybox used in the scene (optional).
         /// </summary>
         public Skybox Skybox { get; set; }
+
+        /// <summary>
+        /// Gets or sets the framebuffer used for storing the shadow map.
+        /// </summary>
+        /// <value>
+        /// The framebuffer object that holds the shadow map texture. This is used during the shadow mapping process to store depth information from the perspective of the light source.
+        /// </value>
+        public Framebuffer ShadowMap { get; set; }
+
+        /// <summary>
+        /// Gets or sets the resolution of the shadow map.
+        /// </summary>
+        /// <value>
+        /// A <see cref="Vec3"/> representing the width, height, and depth (unused) of the shadow map in pixels.
+        /// The default value is (1024, 1024, 0), where the third component is typically not used.
+        /// </value>
+        public Vec3 ShadowResolution { get; set; } = new Vec3(1024, 1024, 0);
 
         /// <summary>
         /// Initializes a new instance of the Scene3D class.
@@ -47,6 +66,8 @@ namespace Genesis.Core
             {
                 Skybox.Init(game, renderDevice);
             }
+            ShadowMap = renderDevice.BuildShadowMap((int) ShadowResolution.X, (int) ShadowResolution.Y);
+            Debug.WriteLine("Shadowmap created with error " + renderDevice.GetError());
         }
 
         /// <summary>
@@ -70,7 +91,17 @@ namespace Genesis.Core
         /// <param name="renderDevice">The render device used for rendering.</param>
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
-            if(this.Camera != null)
+            var lightspaceMatrix = renderDevice.GenerateLightspaceMatrix(Camera, Sun);
+            renderDevice.PrepareShadowPass(ShadowMap, lightspaceMatrix);
+            if (this.Sun.CastShadows)
+            {
+                renderDevice.RenderShadowmap(ShadowMap, lightspaceMatrix, this);
+            }
+            renderDevice.FinishShadowPass(game.Viewport);
+            Debug.WriteLine($"Rendered Shadowmap with error: {renderDevice.GetError()}");
+
+            // Old code
+            if (this.Camera != null)
                renderDevice.SetCamera(game.Viewport, this.Camera);
 
             if (this.Skybox != null)
