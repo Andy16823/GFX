@@ -2533,18 +2533,42 @@ namespace Genesis.Graphics.RenderDevice
         }
 
 
-        public mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource)
+        public mat4 GenerateLightspaceMatrix(Camera camera, Viewport viewport, Light lightSource)
         {
-            float near_plane = 1.0f, far_plane = 7.5f;
+            var cam = (PerspectiveCamera) camera;
 
-            float left = camera.Location.X - 10f;
-            float right = camera.Location.X + 10f;
-            float top = camera.Location.Y + 10f;
-            float bottom = camera.Location.Y - 10f;
+            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0), new vec3(0.0f, 1.0f, 0.0f));
+            var frustumCorners = cam.GetFrustum(viewport).ToList(lightView);
 
-            mat4 lightProjection = mat4.Ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
-            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0.0f, 0.0f, 0.0f), new vec3(0.0f, 1.0f, 0.0f));
+            vec3 min = new vec3();
+            vec3 max = new vec3();
 
+            for (int i = 0; i < frustumCorners.Count; i++)
+            {
+                if (frustumCorners[i].x < min.x)
+                    min.x = frustumCorners[i].x;
+                if (frustumCorners[i].y < min.y)
+                    min.y = frustumCorners[i].y;
+                if (frustumCorners[i].z < min.z)
+                    min.z = frustumCorners[i].z;
+
+                if (frustumCorners[i].x > max.x)
+                    max.x = frustumCorners[i].x;
+                if (frustumCorners[i].y > max.y)
+                    max.y = frustumCorners[i].y;
+                if (frustumCorners[i].z > max.z)
+                    max.z = frustumCorners[i].z;
+            }
+
+            float l = min.x - 10f;
+            float r = max.x + 10f;
+            float b = min.y - 10f;
+            float t = max.y + 10f;
+
+            float n = -max.z;
+            float f = -min.z;
+
+            mat4 lightProjection = mat4.Ortho(l, r, b, t, n, f);
             return lightProjection * lightView;
         }
 

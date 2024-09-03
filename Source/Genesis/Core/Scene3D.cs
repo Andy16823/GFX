@@ -91,7 +91,7 @@ namespace Genesis.Core
         /// <param name="renderDevice">The render device used for rendering.</param>
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
-            var lightspaceMatrix = renderDevice.GenerateLightspaceMatrix(Camera, Sun);
+            var lightspaceMatrix = renderDevice.GenerateLightspaceMatrix(Camera, game.Viewport, Sun);
             renderDevice.PrepareShadowPass(ShadowMap, lightspaceMatrix);
             if (this.Sun.CastShadows)
             {

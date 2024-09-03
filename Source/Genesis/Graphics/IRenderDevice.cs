@@ -74,10 +74,11 @@ namespace Genesis.Graphics
         /// Generates a matrix that transforms coordinates from world space to light space.
         /// This matrix is used to project the scene from the perspective of the light source.
         /// </summary>
+        /// <param name="viewport">The viewport from the current render target</param>
         /// <param name="camera">The camera object used to generate the view matrix. This is typically a camera with a perspective or orthographic projection.</param>
         /// <param name="lightSource">The light source used to compute the light space matrix. This includes information like position and direction of the light.</param>
         /// <returns>A 4x4 matrix representing the light space transformation.</returns>
-        mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource);
+        mat4 GenerateLightspaceMatrix(Camera camera, Viewport viewport, Light lightSource);
 
         /// <summary>
         /// Prepares the framebuffer and matrix for rendering shadows. This setup is necessary before rendering the scene to the shadow map.

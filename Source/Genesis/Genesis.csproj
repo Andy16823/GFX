@@ -152,6 +152,7 @@
     <Compile Include="Graphics\Face.cs" />
     <Compile Include="Graphics\Font.cs" />
     <Compile Include="Graphics\Framebuffer.cs" />
+    <Compile Include="Graphics\Frustum.cs" />
     <Compile Include="Graphics\Glyphe.cs" />
     <Compile Include="Graphics\IRenderDevice.cs" />
     <Compile Include="Graphics\Material.cs" />

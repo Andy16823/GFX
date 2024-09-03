@@ -2496,7 +2496,7 @@ namespace Genesis.Graphics.RenderDevice
             return null;
         }
 
-        public mat4 GenerateLightspaceMatrix(Camera camera, Light lightSource)
+        public mat4 GenerateLightspaceMatrix(Camera camera, Viewport viewport, Light lightSource)
         {
             return mat4.Identity;
         }

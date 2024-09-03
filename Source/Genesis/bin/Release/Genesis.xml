@@ -4637,6 +4637,73 @@
             </summary>
             <returns>The converted texture.</returns>
         </member>
+        <member name="T:Genesis.Graphics.Frustum">
+            <summary>
+            Represents a viewing frustum in 3D space, defined by its corners in both the near and far planes.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.centerFar">
+            <summary>
+            Gets or sets the center point of the far plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.topLeftFar">
+            <summary>
+            Gets or sets the top-left corner of the far plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.topRightFar">
+            <summary>
+            Gets or sets the top-right corner of the far plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.bottomRightFar">
+            <summary>
+            Gets or sets the bottom-right corner of the far plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.bottomLeftFar">
+            <summary>
+            Gets or sets the bottom-left corner of the far plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.centerNear">
+            <summary>
+            Gets or sets the center point of the near plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.topLeftNear">
+            <summary>
+            Gets or sets the top-left corner of the near plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.topRightNear">
+            <summary>
+            Gets or sets the top-right corner of the near plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.bottomRightNear">
+            <summary>
+            Gets or sets the bottom-right corner of the near plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.bottomLeftNear">
+            <summary>
+            Gets or sets the bottom-left corner of the near plane of the frustum.
+            </summary>
+        </member>
+        <member name="F:Genesis.Graphics.Frustum.center">
+            <summary>
+            Gets or sets the center point of the frustum.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Frustum.ToList(GlmSharp.mat4)">
+            <summary>
+            Transforms the frustum corners using the specified transformation matrix and returns them as a list of <see cref="T:GlmSharp.vec3"/> vectors.
+            </summary>
+            <param name="matrix">The transformation matrix to apply to the frustum corners.</param>
+            <returns>A <see cref="T:System.Collections.Generic.List`1"/> containing the transformed corners of the frustum.</returns>
+        </member>
         <member name="T:Genesis.Graphics.Glyphe">
             <summary>
             Represents a glyph in a font texture atlas.
@@ -4722,11 +4789,12 @@
             <param name="height">The height of the framebuffer.</param>
             <returns>A framebuffer object configured for shadow mapping.</returns>
         </member>
-        <member name="M:Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Core.Light)">
+        <member name="M:Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Core.Light)">
             <summary>
             Generates a matrix that transforms coordinates from world space to light space.
             This matrix is used to project the scene from the perspective of the light source.
             </summary>
+            <param name="viewport">The viewport from the current render target</param>
             <param name="camera">The camera object used to generate the view matrix. This is typically a camera with a perspective or orthographic projection.</param>
             <param name="lightSource">The light source used to compute the light space matrix. This includes information like position and direction of the light.</param>
             <returns>A 4x4 matrix representing the light space transformation.</returns>
@@ -5283,6 +5351,13 @@
             Adjusts the camera's orientation to look at a specified position.
             </summary>
             <param name="vec3">The position to look at.</param>
+        </member>
+        <member name="M:Genesis.Graphics.PerspectiveCamera.GetFrustum(Genesis.Graphics.Viewport)">
+            <summary>
+            ToDo: Change FOV
+            </summary>
+            <param name="viewport"></param>
+            <returns></returns>
         </member>
         <member name="F:Genesis.Graphics.RenderDevice.BetaRenderer.rot">
             <summary>
@@ -7069,6 +7144,35 @@
             <param name="mouseX">the screen x coordinate</param>
             <param name="mouseY">the screen y coordinate</param>
             <returns></returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)">
+            <summary>
+            Calculates the projection matrix for this camera based on the specified viewport.
+            </summary>
+            <param name="viewport">The viewport used to calculate the projection matrix.</param>
+            <returns>A <see cref="T:GlmSharp.mat4"/> representing the projection matrix.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single)">
+            <summary>
+            Calculates the projection matrix for the specified camera based on the viewport and field of view.
+            </summary>
+            <param name="camera">The camera for which to calculate the projection matrix.</param>
+            <param name="viewport">The viewport used to calculate the projection matrix.</param>
+            <param name="fov">The field of view in degrees. Defaults to 45.0f.</param>
+            <returns>A <see cref="T:GlmSharp.mat4"/> representing the projection matrix.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.GetViewMatrix">
+            <summary>
+            Calculates the view matrix for this camera.
+            </summary>
+            <returns>A <see cref="T:GlmSharp.mat4"/> representing the view matrix.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.GetViewMatrix(Genesis.Graphics.Camera)">
+            <summary>
+            Calculates the view matrix for the specified camera.
+            </summary>
+            <param name="camera">The camera for which to calculate the view matrix.</param>
+            <returns>A <see cref="T:GlmSharp.mat4"/> representing the view matrix.</returns>
         </member>
         <member name="T:Genesis.Physics.Aabb">
             <summary>
