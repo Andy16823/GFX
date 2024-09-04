@@ -75,7 +75,7 @@ namespace Genesis.Physics
             vec3 cameraPosition = camera.Location.ToGlmVec3();
             Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
 
-            matrixSet.projectionMatrix = mat4.Perspective(Utils.ToRadians(45.0f), camera.Size.X / camera.Size.Y, camera.Near, camera.Far);
+            matrixSet.projectionMatrix = mat4.Perspective(Utils.ToRadians(camera.FOV), camera.Size.X / camera.Size.Y, camera.Near, camera.Far);
             matrixSet.viewMatrix = mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
 
             return matrixSet;

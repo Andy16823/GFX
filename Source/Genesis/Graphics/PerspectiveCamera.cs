@@ -182,7 +182,7 @@ namespace Genesis.Graphics
 
             float correction = this.CalculateScreenCorrection(viewport);
             float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
-            float fov = glm.Radians(45.0f);
+            float fov = glm.Radians(this.FOV);
             float nearDist = this.Near;
             float farDist = this.Far;
             float hNear = (float)(2 * System.Math.Tan(fov / 2) * nearDist);

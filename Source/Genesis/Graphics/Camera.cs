@@ -19,7 +19,7 @@ namespace Genesis.Graphics
     }
 
     /// <summary>
-    /// Represents a camera in a graphics context for rendering 2D scenes.
+    /// Represents a camera in a graphics context for rendering.
     /// </summary>
     public class Camera
     {
@@ -52,6 +52,11 @@ namespace Genesis.Graphics
         /// Gets or sets the type of the camera, either orthographic or perspective.
         /// </summary>
         public CameraType Type { get; set; }
+
+        /// <summary>
+        /// Gets or sets the field of view (FOV) for the camera in degrees.
+        /// </summary>
+        public float FOV { get; set; } = 45.0f;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Camera"/> class with the specified location, size, near and far distances.
@@ -226,7 +231,7 @@ namespace Genesis.Graphics
         /// <param name="viewport">The viewport used to calculate the projection matrix.</param>
         /// <param name="fov">The field of view in degrees. Defaults to 45.0f.</param>
         /// <returns>A <see cref="mat4"/> representing the projection matrix.</returns>
-        public static mat4 GetProjectionMatrix(Camera camera, Viewport viewport, float fov = 45.0f)
+        public static mat4 GetProjectionMatrix(Camera camera, Viewport viewport)
         {
             float correction = camera.CalculateScreenCorrection(viewport);
 
@@ -246,7 +251,7 @@ namespace Genesis.Graphics
                 float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
                 vec3 cameraPosition = camera.Location.ToGlmVec3();
                 Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
-                var p_mat = mat4.Perspective(Utils.ToRadians(fov), aspectRatio, camera.Near, camera.Far);
+                var p_mat = mat4.Perspective(Utils.ToRadians(camera.FOV), aspectRatio, camera.Near, camera.Far);
                 return p_mat;
             }
         }

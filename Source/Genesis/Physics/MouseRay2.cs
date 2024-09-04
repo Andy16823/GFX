@@ -30,7 +30,7 @@ namespace Genesis.Physics
             Vector3 cameraFront = Utils.CalculateCameraFront2(camera).ToBulletVec3();
             Vector3 eye = camera.Location.ToBulletVec3();
             Vector3 target = Vector3.Add(eye, cameraFront);
-            float fov = 45.0f;
+            float fov = camera.FOV;
 
             Vector3 rayForward = target - eye;
             rayForward.Normalize();

@@ -7028,7 +7028,7 @@
         </member>
         <member name="T:Genesis.Graphics.Camera">
             <summary>
-            Represents a camera in a graphics context for rendering 2D scenes.
+            Represents a camera in a graphics context for rendering.
             </summary>
         </member>
         <member name="P:Genesis.Graphics.Camera.Location">
@@ -7059,6 +7059,11 @@
         <member name="P:Genesis.Graphics.Camera.Type">
             <summary>
             Gets or sets the type of the camera, either orthographic or perspective.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Camera.FOV">
+            <summary>
+            Gets or sets the field of view (FOV) for the camera in degrees.
             </summary>
         </member>
         <member name="M:Genesis.Graphics.Camera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)">
@@ -7152,7 +7157,7 @@
             <param name="viewport">The viewport used to calculate the projection matrix.</param>
             <returns>A <see cref="T:GlmSharp.mat4"/> representing the projection matrix.</returns>
         </member>
-        <member name="M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single)">
+        <member name="M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)">
             <summary>
             Calculates the projection matrix for the specified camera based on the viewport and field of view.
             </summary>

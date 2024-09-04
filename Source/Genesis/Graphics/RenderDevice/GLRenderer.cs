@@ -1206,7 +1206,7 @@ namespace Genesis.Graphics.RenderDevice
                 vec3 cameraPosition = camera.Location.ToGlmVec3();
                 Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
 
-                p_mat = mat4.Perspective(Utils.ToRadians(45.0f), aspectRatio, camera.Near, camera.Far);
+                p_mat = mat4.Perspective(Utils.ToRadians(camera.FOV), aspectRatio, camera.Near, camera.Far);
                 v_mat =  mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
             }
 
