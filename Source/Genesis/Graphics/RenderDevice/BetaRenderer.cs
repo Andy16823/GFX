@@ -1214,30 +1214,34 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="camera"></param>
         public void SetCamera(Viewport viewport, Camera camera)
         {
-            float correction = camera.CalculateScreenCorrection(viewport);
+            // Old camera code
+            //float correction = camera.CalculateScreenCorrection(viewport);
 
-            if (camera.Type == CameraType.Ortho)
-            {
-                float halfWidth = (viewport.Width / 2) / correction;
-                float halfHeight = (viewport.Height / 2) / correction;
+            //if (camera.Type == CameraType.Ortho)
+            //{
+            //    float halfWidth = (viewport.Width / 2) / correction;
+            //    float halfHeight = (viewport.Height / 2) / correction;
 
-                float left = camera.Location.X - halfWidth;
-                float right = camera.Location.X + halfWidth;
-                float bottom = camera.Location.Y - halfHeight;
-                float top = camera.Location.Y + halfHeight;
+            //    float left = camera.Location.X - halfWidth;
+            //    float right = camera.Location.X + halfWidth;
+            //    float bottom = camera.Location.Y - halfHeight;
+            //    float top = camera.Location.Y + halfHeight;
 
-                p_mat = mat4.Ortho(left, right, bottom, top, 0.1f, 100.0f);
-                v_mat = mat4.LookAt(new vec3(0f, 0f, 1f), new vec3(0f, 0f, 0f), new vec3(0f, 1f, 0f));
-            }
-            else
-            {
-                float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
-                vec3 cameraPosition = camera.Location.ToGlmVec3();
-                Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
+            //    p_mat = mat4.Ortho(left, right, bottom, top, 0.1f, 100.0f);
+            //    v_mat = mat4.LookAt(new vec3(0f, 0f, 1f), new vec3(0f, 0f, 0f), new vec3(0f, 1f, 0f));
+            //}
+            //else
+            //{
+            //    float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
+            //    vec3 cameraPosition = camera.Location.ToGlmVec3();
+            //    Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
 
-                p_mat = mat4.Perspective(Utils.ToRadians(45.0f), aspectRatio, camera.Near, camera.Far);
-                v_mat =  mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
-            }
+            //    p_mat = mat4.Perspective(Utils.ToRadians(45.0f), aspectRatio, camera.Near, camera.Far);
+            //    v_mat =  mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
+            //}
+
+            p_mat = camera.GetProjectionMatrix(viewport);
+            v_mat = camera.GetViewMatrix();
 
             if(this.camera == null || this.camera != camera)
             {
