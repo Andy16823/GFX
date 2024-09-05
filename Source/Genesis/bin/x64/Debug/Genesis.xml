@@ -1511,6 +1511,12 @@
             Gets or sets the unique identifier for the game element.
             </summary>
         </member>
+        <member name="P:Genesis.Core.GameElement.CastShadows">
+            <summary>
+            Gets or sets a value indicating whether the 3D element casts shadows. 
+            Shadows are currently only supported for 3D elements.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.GameElement.#ctor">
             <summary>
             Creates a new instance of the GameElement class.

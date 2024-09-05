@@ -420,6 +420,10 @@ namespace Genesis.Graphics
         /// <param name="element">The 3D element to dispose.</param>
         void DisposeElement3D(Element3D element);
 
+        void SetProjectionMatrix(mat4 projectionMatrix);
+
+        void SetViewMatrix(mat4 viewMatrix);
+
         /// <summary>
         /// Sets the current rendering matrix to the model-view matrix.
         /// </summary>

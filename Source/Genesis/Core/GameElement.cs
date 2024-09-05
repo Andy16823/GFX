@@ -76,6 +76,12 @@ namespace Genesis.Core
         public String UUID { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the 3D element casts shadows. 
+        /// Shadows are currently only supported for 3D elements.
+        /// </summary>
+        public bool CastShadows { get; set; } = true;
+
+        /// <summary>
         /// Creates a new instance of the GameElement class.
         /// </summary>
         public GameElement()

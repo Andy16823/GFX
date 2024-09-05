@@ -91,18 +91,35 @@ namespace Genesis.Core
         /// <param name="renderDevice">The render device used for rendering.</param>
         public override void OnRender(Game game, IRenderDevice renderDevice)
         {
-            var lightspaceMatrix = renderDevice.GenerateLightspaceMatrix(Camera, game.Viewport, Sun);
-            renderDevice.PrepareShadowPass(ShadowMap, lightspaceMatrix);
+            // Shadowpass
+            renderDevice.SetCamera(game.Viewport, this.Camera);
+
+            var lightProjectionMatrix = Light.GetLightProjectionMatrix(Sun, (PerspectiveCamera)Camera, game.Viewport);
+            var lightViewMatrix = Light.GetLightViewMatrix(Sun);
+            var lightSpaceMatrix = Utils.CalculateLightspaceMatrix(lightProjectionMatrix, lightViewMatrix);
+
+            renderDevice.PrepareShadowPass(ShadowMap, lightSpaceMatrix);
+            renderDevice.SetProjectionMatrix(lightProjectionMatrix);
+            renderDevice.SetViewMatrix(lightViewMatrix);
+            
             if (this.Sun.CastShadows)
             {
-                renderDevice.RenderShadowmap(ShadowMap, lightspaceMatrix, this);
+                foreach (var layer in this.Layer)
+                {
+                    foreach (var item in layer.Elements)
+                    {
+                        if(item.Enabled && item.CastShadows)
+                        {
+                            item.OnRender(game, renderDevice);
+                        }
+                    }
+                }
             }
             renderDevice.FinishShadowPass(game.Viewport);
             Debug.WriteLine($"Rendered Shadowmap with error: {renderDevice.GetError()}");
 
-            // Old code
-            if (this.Camera != null)
-               renderDevice.SetCamera(game.Viewport, this.Camera);
+            // Normal Pass (Set Camera needs to set again for the new matrices!
+            renderDevice.SetCamera(game.Viewport, this.Camera);
 
             if (this.Skybox != null)
                 renderDevice.DrawSkyBox(this.Skybox);

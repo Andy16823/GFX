@@ -2571,32 +2571,37 @@ namespace Genesis.Graphics.RenderDevice
             {
                 foreach (var item in layer.Elements)
                 {
-                    if(item.GetType() == typeof(Element3D))
-                    {
-                        var element = (Element3D)item;
+                    item.OnRender(null, this);
+                    //if(item.GetType() == typeof(Element3D))
+                    //{
+                    //    var element = (Element3D)item;
 
-                        mat4 mt_mat = Utils.GetModelTransformation(element);
-                        mat4 mr_mat = Utils.GetModelRotation(element);
-                        mat4 ms_mat = Utils.GetModelScale(element);
-                        mat4 m_mat = mt_mat * mr_mat * ms_mat;
+                    //    mat4 mt_mat = Utils.GetModelTransformation(element);
+                    //    mat4 mr_mat = Utils.GetModelRotation(element);
+                    //    mat4 ms_mat = Utils.GetModelScale(element);
+                    //    mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
-                        gl.Enable(OpenGL.Texture2D);
-                        foreach (var material in element.Materials)
-                        {
-                            if (material.Propeterys.ContainsKey("vao"))
-                            {
-                                gl.UseProgram(shaderId);
+                    //    gl.Enable(OpenGL.Texture2D);
+                    //    foreach (var material in element.Materials)
+                    //    {
+                    //        if (material.Propeterys.ContainsKey("vao"))
+                    //        {
+                    //            gl.UseProgram(shaderId);
 
-                                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "lightSpaceMatrix"), 1, false, lightspaceMatrix.ToArray());
-                                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "model"), 1, false, m_mat.ToArray());
+                    //            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "lightSpaceMatrix"), 1, false, lightspaceMatrix.ToArray());
+                    //            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "model"), 1, false, m_mat.ToArray());
 
-                                gl.BindVertexArray((int)material.Propeterys["vao"]);
-                                gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
-                                gl.BindVertexArray(0);
+                    //            gl.BindVertexArray((int)material.Propeterys["vao"]);
+                    //            gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
+                    //            gl.BindVertexArray(0);
 
-                            }
-                        }
-                    }
+                    //        }
+                    //    }
+                    //}
+                    //else if(item.GetType() == typeof(Qube))
+                    //{
+                    //    item.OnRender(null, this);
+                    //}
                 }
             }
         }
@@ -2605,6 +2610,16 @@ namespace Genesis.Graphics.RenderDevice
         {
             this.SetViewport(viewport);
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
+        }
+
+        public void SetProjectionMatrix(mat4 projectionMatrix)
+        {
+            p_mat = projectionMatrix;
+        }
+
+        public void SetViewMatrix(mat4 viewMatrix)
+        {
+            v_mat = viewMatrix;
         }
     }
 }

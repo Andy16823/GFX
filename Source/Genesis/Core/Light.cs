@@ -1,5 +1,6 @@
 ﻿using Genesis.Graphics;
 using Genesis.Math;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -81,6 +82,50 @@ namespace Genesis.Core
             float g = (float)LightColor.G / 255;
             float b = (float)LightColor.B / 255;
             return new Vec3(r, g, b);
+        }
+
+        public static mat4 GetLightViewMatrix(Light lightSource)
+        {
+            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0), new vec3(0.0f, 1.0f, 0.0f));
+            return lightView;
+        }
+
+        public static mat4 GetLightProjectionMatrix(Light lightSource, PerspectiveCamera camera, Viewport viewport)
+        {
+            mat4 lightView = Light.GetLightViewMatrix(lightSource);
+            var frustumCorners = camera.GetFrustum(viewport).ToList(lightView);
+
+            vec3 min = new vec3();
+            vec3 max = new vec3();
+
+            for (int i = 0; i < frustumCorners.Count; i++)
+            {
+                if (frustumCorners[i].x < min.x)
+                    min.x = frustumCorners[i].x;
+                if (frustumCorners[i].y < min.y)
+                    min.y = frustumCorners[i].y;
+                if (frustumCorners[i].z < min.z)
+                    min.z = frustumCorners[i].z;
+
+                if (frustumCorners[i].x > max.x)
+                    max.x = frustumCorners[i].x;
+                if (frustumCorners[i].y > max.y)
+                    max.y = frustumCorners[i].y;
+                if (frustumCorners[i].z > max.z)
+                    max.z = frustumCorners[i].z;
+            }
+
+            float l = min.x - 10f;
+            float r = max.x + 10f;
+            float b = min.y - 10f;
+            float t = max.y + 10f;
+
+            float n = -max.z;
+            float f = -min.z;
+
+            mat4 lightProjection = mat4.Ortho(l, r, b, t, n, f);
+
+            return lightProjection;
         }
 
     }

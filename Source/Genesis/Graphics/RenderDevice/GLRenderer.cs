@@ -2515,5 +2515,15 @@ namespace Genesis.Graphics.RenderDevice
         {
             
         }
+
+        public void SetProjectionMatrix(mat4 projectionMatrix)
+        {
+            p_mat = projectionMatrix;
+        }
+
+        public void SetViewMatrix(mat4 viewMatrix)
+        {
+            v_mat = viewMatrix;
+        }
     }
 }

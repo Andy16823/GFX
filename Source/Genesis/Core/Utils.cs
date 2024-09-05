@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Genesis.Core
@@ -1012,6 +1013,9 @@ namespace Genesis.Core
             return (u >= 0) && (v >= 0) && (u + v < 1);
         }
 
-
+        public static mat4 CalculateLightspaceMatrix(mat4 lightProjection, mat4 lightView)
+        {
+            return lightProjection * lightView;
+        }
     }
 }
