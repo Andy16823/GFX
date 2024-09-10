@@ -99,6 +99,7 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("SolidShapeShader", new SolidShapeShader());
             this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
             this.ShaderPrograms.Add("LightmapShader", new LightmapShader());
+            this.ShaderPrograms.Add("Element3DShader", new Element3DShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -487,7 +488,7 @@ namespace Genesis.Graphics.RenderDevice
 
             if(element.Shader == null)
             {
-                element.Propertys.Add("ShaderID", ShaderPrograms["DiffuseShader"].ProgramID);
+                element.Propertys.Add("ShaderID", ShaderPrograms["Element3DShader"].ProgramID);
             }
             else
             {

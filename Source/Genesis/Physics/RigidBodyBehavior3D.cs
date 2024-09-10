@@ -143,6 +143,11 @@ namespace Genesis.Physics
             this.LinearVelocity(value.X, value.Y, value.Z);
         }
 
+        public Vec3 GetLinearVelocity()
+        {
+            return new Vec3(this.RigidBody.LinearVelocity.X, this.RigidBody.LinearVelocity.Y, this.RigidBody.LinearVelocity.Z);
+        }
+
         /// <summary>
         /// Updates the rigid body's position and rotation based on its current state in the physics simulation.
         /// </summary>
