@@ -27,6 +27,7 @@ using static System.Windows.Forms.AxHost;
 using BulletSharp;
 using BulletSharp.SoftBody;
 using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -2246,9 +2247,9 @@ namespace Genesis.Graphics.RenderDevice
 
         private void DrawModel(Core.GameElements.Model model)
         {
-            mat4 mt_mat = mat4.Translate(model.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(model.Rotation.X) * mat4.RotateY(model.Rotation.Y) * mat4.RotateZ(model.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(model.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(model);
+            mat4 mr_mat = Utils.GetModelRotation(model);
+            mat4 ms_mat = Utils.GetModelScale(model);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             foreach (var mesh in model.Meshes)
