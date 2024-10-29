@@ -12,6 +12,7 @@ namespace Genesis.Graphics.Physics
     public class BulletDebugRenderer : DebugDraw
     {
         private IRenderDevice Renderer;
+        private DebugDrawModes _debugMode = DebugDrawModes.All;
 
         public BulletDebugRenderer(IRenderDevice RenderDevice)
         {
@@ -20,7 +21,7 @@ namespace Genesis.Graphics.Physics
 
         public override DebugDrawModes DebugMode
         {
-            get => DebugDrawModes.All; set => throw new NotImplementedException();
+            get => _debugMode; set => _debugMode = value;
         }
 
         public override void Draw3DText(ref Vector3 location, string textString)

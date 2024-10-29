@@ -597,6 +597,22 @@ namespace Genesis.Math
             return new Vec3(randomX, randomY, randomZ);
         }
 
+        public static Vec3 NormalizeAngles(float vX, float vY, float vZ)
+        {
+            float x = Utils.NormalizeAngle(vX);
+            float y = Utils.NormalizeAngle(vY);
+            float z = Utils.NormalizeAngle(vZ);
+            return new Vec3(x, y, z);
+        }
+
+        public static Vec3 NormalizeAngles(Vec3 value)
+        {
+            float x = Utils.NormalizeAngle(value.X);
+            float y = Utils.NormalizeAngle(value.Y);
+            float z = Utils.NormalizeAngle(value.Z);
+            return new Vec3(x, y, z);
+        }
+
         /// <summary>
         /// Returns a string representation of the vector.
         /// </summary>

@@ -4001,6 +4001,75 @@
             <param name="t">the time</param>
             <returns></returns>
         </member>
+        <member name="M:Genesis.Core.Utils.CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Calculates the screen correction factor based on screen dimensions and virtual dimensions,
+            ensuring the content fits proportionally.
+            </summary>
+            <param name="screenWidth">The width of the physical screen.</param>
+            <param name="screenHeight">The height of the physical screen.</param>
+            <param name="virtualWidth">The width of the virtual screen.</param>
+            <param name="virtualHeight">The height of the virtual screen.</param>
+            <returns>The correction factor for scaling the virtual screen to the physical screen.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)">
+            <summary>
+            Extracts the scaling factors from a given transformation matrix.
+            </summary>
+            <param name="matrix">The transformation matrix from which to extract scale.</param>
+            <returns>A vector representing the scale along the X, Y, and Z axes.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)">
+            <summary>
+            Builds a transformation matrix for physics calculations based on location, rotation, and scale.
+            </summary>
+            <param name="location">The position vector.</param>
+            <param name="rotation">The rotation vector in Euler angles.</param>
+            <param name="scale">The scale vector.</param>
+            <returns>A transformation matrix combining translation, rotation, and scaling.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)">
+            <summary>
+            Builds a transformation matrix for physics calculations based on location, quaternion rotation, and scale.
+            </summary>
+            <param name="location">The position vector.</param>
+            <param name="rotation">The rotation quaternion.</param>
+            <param name="scale">The scale vector.</param>
+            <returns>A transformation matrix combining translation, quaternion rotation, and scaling.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.GetTriangleIndex(Genesis.Core.GameElements.Element3D,Genesis.Math.Vec3)">
+            <summary>
+            Gets the index of the triangle within a mesh that contains the specified hitpoint.
+            </summary>
+            <param name="element">The 3D element containing the mesh.</param>
+            <param name="hitpoint">The point in space to check for containment within a triangle.</param>
+            <returns>The index of the triangle containing the hitpoint, or -1 if not found.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.IsPointInTriangle(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)">
+            <summary>
+            Checks if a given point is inside a specified triangle using barycentric coordinates.
+            </summary>
+            <param name="p">The point to test.</param>
+            <param name="a">The first vertex of the triangle.</param>
+            <param name="b">The second vertex of the triangle.</param>
+            <param name="c">The third vertex of the triangle.</param>
+            <returns>True if the point is inside the triangle; otherwise, false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.CalculateLightspaceMatrix(GlmSharp.mat4,GlmSharp.mat4)">
+            <summary>
+            Calculates the light space transformation matrix using light projection and view matrices.
+            </summary>
+            <param name="lightProjection">The light projection matrix.</param>
+            <param name="lightView">The light view matrix.</param>
+            <returns>The combined light space matrix.</returns>
+        </member>
+        <member name="M:Genesis.Core.Utils.NormalizeAngle(System.Single)">
+            <summary>
+            Normalizes an angle to be within the range of -180 to 180 degrees.
+            </summary>
+            <param name="angle">The angle in degrees to normalize.</param>
+            <returns>The normalized angle within the range -180 to 180.</returns>
+        </member>
         <member name="T:Genesis.Core.Window">
             <summary>
             Represents a window with specified properties and events.
@@ -8052,6 +8121,45 @@
             Sets the linear velocity of the rigid body.
             </summary>
             <param name="value">Linear velocity vector.</param>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity">
+            <summary>
+            Gets the current linear velocity of the rigid body.
+            </summary>
+            <returns>A vector representing the linear velocity.</returns>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.GetRotation">
+            <summary>
+            Gets the current rotation of the rigid body as a quaternion.
+            </summary>
+            <returns>The quaternion representing the rotation of the rigid body.</returns>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.GetLocation">
+            <summary>
+            Gets the current location of the rigid body.
+            </summary>
+            <returns>A vector representing the position of the rigid body.</returns>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)">
+            <summary>
+            Calculates the forward vector of the rigid body based on its rotation and a specified distance.
+            </summary>
+            <param name="distance">The distance to scale the forward vector.</param>
+            <returns>The forward vector scaled by the specified distance.</returns>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)">
+            <summary>
+            Calculates the right vector of the rigid body based on its rotation and a specified distance.
+            </summary>
+            <param name="distance">The distance to scale the right vector.</param>
+            <returns>The right vector scaled by the specified distance.</returns>
+        </member>
+        <member name="M:Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)">
+            <summary>
+            Calculates the up vector of the rigid body based on its rotation and a specified distance.
+            </summary>
+            <param name="distance">The distance to scale the up vector.</param>
+            <returns>The up vector scaled by the specified distance.</returns>
         </member>
         <member name="M:Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)">
             <summary>

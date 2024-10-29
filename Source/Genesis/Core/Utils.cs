@@ -926,6 +926,15 @@ namespace Genesis.Core
             return new float[] { r, g, b, a};
         }
 
+        /// <summary>
+        /// Calculates the screen correction factor based on screen dimensions and virtual dimensions,
+        /// ensuring the content fits proportionally.
+        /// </summary>
+        /// <param name="screenWidth">The width of the physical screen.</param>
+        /// <param name="screenHeight">The height of the physical screen.</param>
+        /// <param name="virtualWidth">The width of the virtual screen.</param>
+        /// <param name="virtualHeight">The height of the virtual screen.</param>
+        /// <returns>The correction factor for scaling the virtual screen to the physical screen.</returns>
         public static float CalculateScreenCorrection(float screenWidth, float screenHeight, float virtualWidth, float virtualHeight)
         {
             return System.Math.Min(screenWidth / virtualWidth, screenHeight / virtualHeight);
@@ -944,6 +953,11 @@ namespace Genesis.Core
             //}
         }
 
+        /// <summary>
+        /// Extracts the scaling factors from a given transformation matrix.
+        /// </summary>
+        /// <param name="matrix">The transformation matrix from which to extract scale.</param>
+        /// <returns>A vector representing the scale along the X, Y, and Z axes.</returns>
         public static Vector3 ExtractScaleFromMatrix(BulletSharp.Math.Matrix matrix)
         {
             float scaleX = new Vector3(matrix.M11, matrix.M12, matrix.M13).Length;
@@ -953,6 +967,13 @@ namespace Genesis.Core
             return new Vector3(scaleX, scaleY, scaleZ);
         }
 
+        /// <summary>
+        /// Builds a transformation matrix for physics calculations based on location, rotation, and scale.
+        /// </summary>
+        /// <param name="location">The position vector.</param>
+        /// <param name="rotation">The rotation vector in Euler angles.</param>
+        /// <param name="scale">The scale vector.</param>
+        /// <returns>A transformation matrix combining translation, rotation, and scaling.</returns>
         public static BulletSharp.Math.Matrix BuildPhysicsMatrix(Vector3 location, Vector3 rotation, Vector3 scale)
         {
             BulletSharp.Math.Matrix translationMatrix = BulletSharp.Math.Matrix.Translation(location);
@@ -963,6 +984,13 @@ namespace Genesis.Core
             return translationMatrix * rotaionMatrx * scaleMatrix;
         }
 
+        /// <summary>
+        /// Builds a transformation matrix for physics calculations based on location, quaternion rotation, and scale.
+        /// </summary>
+        /// <param name="location">The position vector.</param>
+        /// <param name="rotation">The rotation quaternion.</param>
+        /// <param name="scale">The scale vector.</param>
+        /// <returns>A transformation matrix combining translation, quaternion rotation, and scaling.</returns>
         public static BulletSharp.Math.Matrix BuildPhysicsMatrix(Vector3 location, Quaternion rotation, Vector3 scale)
         {
             BulletSharp.Math.Matrix translationMatrix = BulletSharp.Math.Matrix.Translation(location);
@@ -973,6 +1001,12 @@ namespace Genesis.Core
             return translationMatrix * rotaionMatrx * scaleMatrix;
         }
 
+        /// <summary>
+        /// Gets the index of the triangle within a mesh that contains the specified hitpoint.
+        /// </summary>
+        /// <param name="element">The 3D element containing the mesh.</param>
+        /// <param name="hitpoint">The point in space to check for containment within a triangle.</param>
+        /// <returns>The index of the triangle containing the hitpoint, or -1 if not found.</returns>
         public static int GetTriangleIndex(Element3D element, Vec3 hitpoint)
         {
             foreach (var mesh in element.Meshes)
@@ -993,6 +1027,14 @@ namespace Genesis.Core
             return -1;
         }
 
+        /// <summary>
+        /// Checks if a given point is inside a specified triangle using barycentric coordinates.
+        /// </summary>
+        /// <param name="p">The point to test.</param>
+        /// <param name="a">The first vertex of the triangle.</param>
+        /// <param name="b">The second vertex of the triangle.</param>
+        /// <param name="c">The third vertex of the triangle.</param>
+        /// <returns>True if the point is inside the triangle; otherwise, false.</returns>
         public static bool IsPointInTriangle(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
         {
             // Implementiere die Logik zur Überprüfung, ob ein Punkt in einem Dreieck liegt
@@ -1013,9 +1055,34 @@ namespace Genesis.Core
             return (u >= 0) && (v >= 0) && (u + v < 1);
         }
 
+        /// <summary>
+        /// Calculates the light space transformation matrix using light projection and view matrices.
+        /// </summary>
+        /// <param name="lightProjection">The light projection matrix.</param>
+        /// <param name="lightView">The light view matrix.</param>
+        /// <returns>The combined light space matrix.</returns>
         public static mat4 CalculateLightspaceMatrix(mat4 lightProjection, mat4 lightView)
         {
             return lightProjection * lightView;
+        }
+
+        /// <summary>
+        /// Normalizes an angle to be within the range of -180 to 180 degrees.
+        /// </summary>
+        /// <param name="angle">The angle in degrees to normalize.</param>
+        /// <returns>The normalized angle within the range -180 to 180.</returns>
+        public static float NormalizeAngle(float angle)
+        {
+            angle %= 360;
+            if (angle > 180)
+            {
+                angle -= 360;
+            }
+            else if (angle < -180)
+            {
+                angle += 360;
+            }
+            return angle;
         }
     }
 }

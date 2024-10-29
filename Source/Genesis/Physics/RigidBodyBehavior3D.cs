@@ -4,6 +4,7 @@ using Genesis.Math;
 using GlmSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -143,9 +144,81 @@ namespace Genesis.Physics
             this.LinearVelocity(value.X, value.Y, value.Z);
         }
 
+        /// <summary>
+        /// Gets the current linear velocity of the rigid body.
+        /// </summary>
+        /// <returns>A vector representing the linear velocity.</returns>
         public Vec3 GetLinearVelocity()
         {
             return new Vec3(this.RigidBody.LinearVelocity.X, this.RigidBody.LinearVelocity.Y, this.RigidBody.LinearVelocity.Z);
+        }
+
+        /// <summary>
+        /// Gets the current rotation of the rigid body as a quaternion.
+        /// </summary>
+        /// <returns>The quaternion representing the rotation of the rigid body.</returns>
+        public BulletSharp.Math.Quaternion GetRotation()
+        {
+            var rotation = RigidBody.WorldTransform.Basis;
+            return BulletSharp.Math.Quaternion.RotationMatrix(rotation);
+        }
+
+        /// <summary>
+        /// Gets the current location of the rigid body.
+        /// </summary>
+        /// <returns>A vector representing the position of the rigid body.</returns>
+        public Vec3 GetLocation()
+        {
+            var position = RigidBody.WorldTransform.Origin;
+            return new Vec3(position.X, position.Y, position.Z);
+        }
+
+        /// <summary>
+        /// Calculates the forward vector of the rigid body based on its rotation and a specified distance.
+        /// </summary>
+        /// <param name="distance">The distance to scale the forward vector.</param>
+        /// <returns>The forward vector scaled by the specified distance.</returns>
+        public Vec3 CalculateForwardVector(float distance)
+        {
+            var rotation = GetRotation();
+            vec3 forward = new vec3(0, 0, -1);
+            quat quaternion = new quat(rotation.X, rotation.Y, rotation.Z, rotation.W);
+            forward = quaternion * forward;
+
+            forward *= distance;
+            return new Vec3(forward);
+        }
+
+        /// <summary>
+        /// Calculates the right vector of the rigid body based on its rotation and a specified distance.
+        /// </summary>
+        /// <param name="distance">The distance to scale the right vector.</param>
+        /// <returns>The right vector scaled by the specified distance.</returns>
+        public Vec3 CalculateRightVector(float distance)
+        {
+            var rotation = GetRotation();
+            var right = new vec3(1, 0, 0);
+            quat quaternion = new quat(rotation.X, rotation.Y, rotation.Z, rotation.W);
+            right = quaternion * right;
+
+            right *= distance;
+            return new Vec3(right);
+        }
+
+        /// <summary>
+        /// Calculates the up vector of the rigid body based on its rotation and a specified distance.
+        /// </summary>
+        /// <param name="distance">The distance to scale the up vector.</param>
+        /// <returns>The up vector scaled by the specified distance.</returns>
+        public Vec3 CalculateUpVector(float distance)
+        {
+            var rotation = GetRotation();
+            var up = new vec3(0, 1, 0);
+            quat quaternion = new quat(rotation.X, rotation.Y, rotation.Z, rotation.W);
+            up = quaternion * up;
+
+            up *= distance;
+            return new Vec3(up);
         }
 
         /// <summary>
@@ -157,17 +230,16 @@ namespace Genesis.Physics
         {
             // Translation
             var position = RigidBody.WorldTransform.Origin;
-
-            // Rotation
-            var rotation = BulletSharp.Math.Quaternion.RotationMatrix(RigidBody.WorldTransform);
-            vec3 rotationVector = (vec3)glm.EulerAngles(new quat(rotation.X, rotation.Y, rotation.Z, rotation.W));
+            var rotationQuat = this.GetRotation();
+            vec3 eulerAngles = (vec3) glm.EulerAngles(new quat(rotationQuat.X, rotationQuat.Y, rotationQuat.Z, rotationQuat.W));
+            vec3 rotationVector = new vec3(Utils.ToDegrees(eulerAngles.x), Utils.ToDegrees(eulerAngles.y), Utils.ToDegrees(eulerAngles.z));
 
             // New Location
             Vec3 newLocation = Utils.GetModelSpaceLocation(Parent, new Vec3(position.X, position.Y, position.Z));
             Vec3 newRotation = Utils.GetModelSpaceRotation(Parent, new Vec3(rotationVector));
 
             parent.Location = newLocation - Offset;
-            parent.Rotation = new Vec3(Utils.ToDegrees(newRotation.X), Utils.ToDegrees(newRotation.Y), Utils.ToDegrees(newRotation.Z));
+            parent.Rotation = newRotation;
             RigidBody.Activate(true);
         }
 
