@@ -4070,6 +4070,18 @@
             <param name="angle">The angle in degrees to normalize.</param>
             <returns>The normalized angle within the range -180 to 180.</returns>
         </member>
+        <member name="M:Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Calculates the transformed forward vector based on the given rotation and distance, 
+            using quaternion rotation to avoid gimbal lock issues.
+            </summary>
+            <param name="rotation">The rotation in degrees, specified as Euler angles (Pitch, Yaw, Roll).</param>
+            <param name="dist">The distance by which the forward vector is scaled.</param>
+            <returns>Returns the calculated forward vector as a <see cref="T:Genesis.Math.Vec3"/>, transformed according to the rotation and scaled by the specified distance.</returns>
+            <remarks>
+            This function is currently under testing and should be used if the original <c>ForwardVector</c> method causes gimbal lock issues.
+            </remarks>
+        </member>
         <member name="T:Genesis.Core.Window">
             <summary>
             Represents a window with specified properties and events.

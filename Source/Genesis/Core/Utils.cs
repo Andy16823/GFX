@@ -1084,5 +1084,31 @@ namespace Genesis.Core
             }
             return angle;
         }
+
+        /// <summary>
+        /// Calculates the transformed forward vector based on the given rotation and distance, 
+        /// using quaternion rotation to avoid gimbal lock issues.
+        /// </summary>
+        /// <param name="rotation">The rotation in degrees, specified as Euler angles (Pitch, Yaw, Roll).</param>
+        /// <param name="dist">The distance by which the forward vector is scaled.</param>
+        /// <returns>Returns the calculated forward vector as a <see cref="Vec3"/>, transformed according to the rotation and scaled by the specified distance.</returns>
+        /// <remarks>
+        /// This function is currently under testing and should be used if the original <c>ForwardVector</c> method causes gimbal lock issues.
+        /// </remarks>
+        public static Vec3 GetTransformedForwardVector(Vec3 rotation, float dist)
+        {
+            mat4 rotMat = mat4.RotateX(glm.Radians(rotation.X)) * mat4.RotateY(glm.Radians(rotation.Y)) * mat4.RotateZ(glm.Radians(rotation.Z));
+            quat rotationQuat = rotMat.ToQuaternion;
+
+            //quat xQuat = quat.FromAxisAngle(glm.Radians(rotation.X), new vec3(1, 0, 0));
+            //quat yQuat = quat.FromAxisAngle(glm.Radians(rotation.Y), new vec3(0, 1, 0));
+            //quat zQuat = quat.FromAxisAngle(glm.Radians(rotation.Z), new vec3(0, 0, 1));
+            //quat rotationQuat = yQuat * zQuat * xQuat;
+
+            vec3 forward = new vec3(0, 0, -1);
+            forward = rotationQuat * forward;
+            forward *= dist;
+            return new Vec3(forward);
+        }
     }
 }
