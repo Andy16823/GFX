@@ -33,6 +33,9 @@ namespace Genesis.Physics
     /// </summary>
     public abstract class PhysicHandler
     {
+        public event PhysicHandlerEvent BeforePhysicsUpdate;
+
+
         /// <summary>
         /// Gets or sets the dictionary of physics callbacks.
         /// </summary>
@@ -73,5 +76,13 @@ namespace Genesis.Physics
         /// This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
         /// </remarks>
         public abstract void RemoveElement(PhysicsBehavior physicsBehavior);
+
+        public virtual void OnBeforePhysicsUpdate(Scene scene, Game game)
+        {
+            if(this.BeforePhysicsUpdate != null)
+            {
+                this.BeforePhysicsUpdate(scene, game, null);
+            }
+        }
     }
 }

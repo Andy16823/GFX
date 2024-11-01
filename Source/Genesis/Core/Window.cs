@@ -280,5 +280,25 @@ namespace Genesis.Core
             return new Vec3(width, height);
         }
 
+        public static Vec3 GetClientLocation(IntPtr handle)
+        {
+            WindowUtilities.RECT rect;
+            WindowUtilities.GetClientRect(handle, out rect);
+
+            WindowUtilities.POINT topLeft;
+            topLeft.X = rect.Left;
+            topLeft.Y = rect.Top;
+            WindowUtilities.ClientToScreen(handle, ref topLeft);
+
+            var x = topLeft.X;
+            var y = topLeft.Y;
+
+            return new Vec3(x, y);
+        }
+
+        public Vec3 GetClientLocation()
+        {
+            return Window.GetClientLocation(Handle);
+        }
     }
 }

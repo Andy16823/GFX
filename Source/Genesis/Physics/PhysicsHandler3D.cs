@@ -61,6 +61,7 @@ namespace Genesis.Physics
         {
             if (this.ProcessPhysics && this.PhysicsWorld != null)
             {
+                this.OnBeforePhysicsUpdate(scene, game);
                 this.PhysicsWorld.StepSimulation(1.0f / 60.0f, 10); // (float)(game.DeltaTime / 1000)
 
                 int numManifolds = PhysicsWorld.Dispatcher.NumManifolds;

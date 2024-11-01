@@ -510,7 +510,6 @@ namespace Genesis.Core
         /// <param name="targetPosition">The position to look at.</param>
         public static void LookAtX(Camera camera, Vec3 targetPosition)
         {
-            //camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
             camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
         }
 
@@ -522,7 +521,6 @@ namespace Genesis.Core
         public static void LookAtY(Camera camera, Vec3 targetPosition)
         {
             camera.Rotation.Y = Utils.CalculateYaw(camera.Location, targetPosition);
-            //camera.Rotation.X = Utils.CalculatePitch(camera.Location, targetPosition);
         }
 
         /// <summary>
