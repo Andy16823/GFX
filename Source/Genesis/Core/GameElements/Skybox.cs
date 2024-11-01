@@ -25,7 +25,7 @@ namespace Genesis.Core.GameElements
         public Skybox(string name, string path, Vec3 location, Vec3 rotation, Vec3 scale) 
             : base(name, path, location, rotation, scale)
         {
-
+            this.Shader = new Graphics.Shaders.OpenGL.DiffuseShader();
         }
 
         /// <summary>

@@ -47,6 +47,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             var btStartTransform = btTranslation * btRotation;
 
             Trigger = new GhostObject();
+            Trigger.UserObject = element;
             Trigger.CollisionShape = boxShape;
             Trigger.WorldTransform = btStartTransform;
             Trigger.CollisionFlags = CollisionFlags.NoContactResponse;

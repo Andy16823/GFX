@@ -3,6 +3,7 @@ using Genesis.Math;
 using GlmSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -63,6 +64,12 @@ namespace Genesis.Core
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool GetMessage(out MSG lpMsg, IntPtr hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll")]
+        private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("user32.dll")]
         private static extern IntPtr DispatchMessage(ref MSG lpmsg);
@@ -253,6 +260,15 @@ namespace Genesis.Core
             m_game.GameThread.Join();
             DestroyWindow(Handle);
             s_windowProcDelegate = null;
+        }
+
+        /// <summary>
+        /// Requests the window to close by posting WM_QUIT message.
+        /// </summary>
+        public void RequestClose()
+        {
+            m_isWindowClosed = true; // Set flag to indicate closing
+            PostMessage(Handle, WM_QUIT, IntPtr.Zero, IntPtr.Zero);
         }
 
         /// <summary>

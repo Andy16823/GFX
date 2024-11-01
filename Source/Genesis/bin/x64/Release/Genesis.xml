@@ -4147,6 +4147,11 @@
             Closes the window and stops the associated game.
             </summary>
         </member>
+        <member name="M:Genesis.Core.Window.RequestClose">
+            <summary>
+            Requests the window to close by posting WM_QUIT message.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.Window.GetClientSize">
             <summary>
             Returns an vector with the window client size

@@ -61,7 +61,7 @@ namespace Genesis.Core.GameElements
         /// <summary>
         /// Gets or sets the speed of animation playback.
         /// </summary>
-        public float AnimationSpeed { get; set; } = 0.01f;
+        public float AnimationSpeed { get; set; } = 1.0f;
 
         /// <summary>
         /// Gets or sets the animator responsible for controlling animations.
@@ -102,7 +102,11 @@ namespace Genesis.Core.GameElements
         public override void OnUpdate(Game game, IRenderDevice renderDevice)
         {
             base.OnUpdate(game, renderDevice);
-            Animator.UpdateAnimation(AnimationSpeed);
+
+            float deltaTime = (float)game.DeltaTime;
+            float animationSpeed = this.AnimationSpeed / 100f;
+
+            Animator.UpdateAnimation(deltaTime * animationSpeed);
             if (Animator.CurrentAnimation != null && Animator.Play)
             {
                 foreach (var callback in AnimationCallbacks)
