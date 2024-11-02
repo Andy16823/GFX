@@ -155,6 +155,56 @@ namespace Genesis.Core.GameElements
             return colorArray;
         }
 
+        public static float[] GetTextureCoordinates(float width, float height, float depth)
+        {
+            float[] frontBackTextureCoords = {
+                0.0f, 0.0f,
+                width, 0.0f,
+                width, height,
+                width, height,
+                0.0f, height,
+                0.0f, 0.0f
+            };
+
+            // Linke und rechte Seite (YZ-Ebene)
+            float[] leftRightTextureCoords = {
+                0.0f, 0.0f,
+                depth, 0.0f,
+                depth, -height,
+                depth, -height,
+                0.0f, -height,
+                0.0f, 0.0f
+            };
+
+            // Obere und untere Seite (XY-Ebene)
+            float[] topBottomTextureCoords = {
+                0.0f, 0.0f,
+                width, 0.0f,
+                width, depth,
+                width, depth,
+                0.0f, depth,
+                0.0f, 0.0f
+            };
+
+            // Zusammenführen der Texturkoordinaten für alle 6 Seiten des Würfels
+            float[] textureCoordinates = new float[6 * frontBackTextureCoords.Length];
+
+            // Vorderseite
+            frontBackTextureCoords.CopyTo(textureCoordinates, 0 * frontBackTextureCoords.Length);
+            // Rückseite
+            frontBackTextureCoords.CopyTo(textureCoordinates, 1 * frontBackTextureCoords.Length);
+            // Linke Seite
+            leftRightTextureCoords.CopyTo(textureCoordinates, 2 * leftRightTextureCoords.Length);
+            // Rechte Seite
+            leftRightTextureCoords.CopyTo(textureCoordinates, 3 * leftRightTextureCoords.Length);
+            // Obere Seite
+            topBottomTextureCoords.CopyTo(textureCoordinates, 4 * topBottomTextureCoords.Length);
+            // Untere Seite
+            topBottomTextureCoords.CopyTo(textureCoordinates, 5 * topBottomTextureCoords.Length);
+
+            return textureCoordinates;
+        }
+
         /// <summary>
         /// Initializes the game element.
         /// </summary>

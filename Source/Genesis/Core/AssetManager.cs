@@ -82,6 +82,15 @@ namespace Genesis.Core
             return null;
         }
 
+        public Material LoadMaterial(String name, String diffuseTexture, String normalTexture = "")
+        {
+            Material material = new Material();
+            
+            material.DiffuseTexture = Path.Combine(AssetManager.GetRessourcesDirectory(), diffuseTexture);
+            material.NormalTexture = Path.Combine(AssetManager.GetRessourcesDirectory(), normalTexture);
+            return material;
+        }
+
         /// <summary>
         /// Initializes the assets in the rendering device.
         /// </summary>
@@ -219,7 +228,7 @@ namespace Genesis.Core
         /// <returns>The path to the resource directory.</returns>
         public static String GetRessourcesDirectory()
         {
-            return Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/Resources";
+            return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Resources");
         }
     }
 }

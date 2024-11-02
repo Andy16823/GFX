@@ -2525,5 +2525,10 @@ namespace Genesis.Graphics.RenderDevice
         {
             v_mat = viewMatrix;
         }
+
+        public void InitMaterial(Material material)
+        {
+            
+        }
     }
 }

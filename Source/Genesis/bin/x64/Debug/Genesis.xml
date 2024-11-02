@@ -4844,6 +4844,12 @@
             Initializes a sprite for rendering.
             </summary>
         </member>
+        <member name="M:Genesis.Graphics.IRenderDevice.InitMaterial(Genesis.Graphics.Material)">
+            <summary>
+            Initialize a material for rendering
+            </summary>
+            <param name="material"></param>
+        </member>
         <member name="M:Genesis.Graphics.IRenderDevice.InitElement3D(Genesis.Core.GameElements.Element3D)">
             <summary>
             Initializes a 3D element for rendering.

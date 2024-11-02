@@ -67,7 +67,7 @@ namespace Genesis.Core
                 Skybox.Init(game, renderDevice);
             }
             ShadowMap = renderDevice.BuildShadowMap((int) ShadowResolution.X, (int) ShadowResolution.Y);
-            Debug.WriteLine("Shadowmap created with error " + renderDevice.GetError());
+            //Debug.WriteLine("Shadowmap created with error " + renderDevice.GetError());
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Genesis.Core
                 }
             }
             renderDevice.FinishShadowPass(game.Viewport);
-            Debug.WriteLine($"Rendered Shadowmap with error: {renderDevice.GetError()}");
+            //Debug.WriteLine($"Rendered Shadowmap with error: {renderDevice.GetError()}");
 
             // Normal Pass (Set Camera needs to set again for the new matrices!
             renderDevice.SetCamera(game.Viewport, this.Camera);

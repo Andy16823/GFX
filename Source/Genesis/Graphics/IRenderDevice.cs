@@ -34,6 +34,12 @@ namespace Genesis.Graphics
         void InitSprite(Sprite sprite);
 
         /// <summary>
+        /// Initialize a material for rendering
+        /// </summary>
+        /// <param name="material"></param>
+        void InitMaterial(Material material);
+
+        /// <summary>
         /// Initializes a 3D element for rendering.
         /// </summary>
         void InitElement3D(Element3D element);
