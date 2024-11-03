@@ -30,7 +30,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="mass">The mass of the capsule.</param>
         public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(1.0f, 2.0f, mass, null, collisionGroup, collisionMask);
+            this.CreateRigidBody(1.0f, 2.0f, mass, new Vec3(), collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -40,13 +40,8 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="height">The height of the capsule.</param>
         /// <param name="mass">The mass of the capsule.</param>
         /// <param name="offset">The offset of the capsule. Default is Vec3.Zero().</param>
-        public void CreateRigidBody(float radius, float height, float mass, Vec3 offset = null, int collisionGroup = -1, int collisionMask = -1)
+        public void CreateRigidBody(float radius, float height, float mass, Vec3 offset = new Vec3(), int collisionGroup = -1, int collisionMask = -1)
         {
-            if (offset == null)
-            {
-                offset = Vec3.Zero();
-            }
-
             this.Offset = offset;
             CapsuleShape capsuleShape = new CapsuleShape(radius, height);
             RigidBodyConstructionInfo constructionInfo = new RigidBodyConstructionInfo(mass, null, capsuleShape);

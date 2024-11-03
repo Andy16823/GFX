@@ -95,8 +95,11 @@ namespace Genesis.Graphics
         /// <param name="element">The game element to look at.</param>
         public void LookAt(GameElement element)
         {
-            this.Location.X = element.Location.X + element.Size.X / 2;
-            this.Location.Y = element.Location.Y + element.Size.Y / 2;
+            float x = element.Location.X + element.Size.X / 2;
+            float y = element.Location.Y + element.Size.Y / 2;
+            float z = this.Location.Z;
+
+            this.Location = new Vec3(x, y, z);
         }
 
         /// <summary>
@@ -112,8 +115,11 @@ namespace Genesis.Graphics
             }
             else
             {
-                this.Location.X = element.Location.X;
-                this.Location.Y = element.Location.Y;
+                float x = element.Location.X;
+                float y = element.Location.Y;
+                float z = this.Location.Z;
+
+                this.Location = new Vec3(x, y, z);
             }
         }
 

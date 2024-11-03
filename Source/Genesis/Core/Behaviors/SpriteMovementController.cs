@@ -99,7 +99,7 @@ namespace Genesis.Core.Behaviors
         /// </summary>
         public void MoveUp()
         {
-            parent.Location.Y -= MoveSpeed * (float)game.DeltaTime;
+            parent.Location = parent.Location.SubY(MoveSpeed * (float)game.DeltaTime);
         }
 
         /// <summary>
@@ -107,14 +107,14 @@ namespace Genesis.Core.Behaviors
         /// </summary>
         public void MoveDown()
         {
-            parent.Location.Y += MoveSpeed * (float)game.DeltaTime;
+            parent.Location = parent.Location.AddY(MoveSpeed * (float)game.DeltaTime);
         }
 
         /// <summary>
         /// Moves the sprite to the left.
         /// </summary>
-        public void MoveLeft() { 
-            parent.Location.X -= MoveSpeed * (float)game.DeltaTime;
+        public void MoveLeft() {
+            parent.Location = parent.Location.SubX(MoveSpeed * (float)game.DeltaTime);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Genesis.Core.Behaviors
         /// </summary>
         public void MoveRight()
         {
-            parent.Location.X += MoveSpeed * (float)game.DeltaTime;
+            parent.Location = parent.Location.AddX(MoveSpeed * (float)game.DeltaTime);
         }
     }
 }

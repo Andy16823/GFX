@@ -15,6 +15,10 @@ namespace Genesis.Core
     /// </summary>
     public abstract class GameElement
     {
+        private Vec3 location;
+        private Vec3 rotation;
+        private Vec3 scale;
+
         /// <summary>
         /// Gets or sets the name of the game element.
         /// </summary>
@@ -28,12 +32,18 @@ namespace Genesis.Core
         /// <summary>
         /// Gets or sets the 3D coordinates of the game element.
         /// </summary>
-        public Vec3 Location { get; set; }
+        public Vec3 Location { 
+            get => location;
+            set => location = value;
+        }
 
         /// <summary>
         /// Gets or sets the 3D rotation of the game element.
         /// </summary>
-        public Vec3 Rotation { get; set; }
+        public Vec3 Rotation {
+            get => rotation; 
+            set => rotation = value; 
+        }
 
         /// <summary>
         /// Gets or sets the 3D size of the game element.

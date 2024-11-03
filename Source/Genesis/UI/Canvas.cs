@@ -188,7 +188,7 @@ namespace Genesis.UI
             float wX = cX - (widget.Size.X / 2);
             float wY = cY - (widget.Size.Y / 2);
 
-            widget.Location.Set(wX, wY, 0f);
+            widget.Location = new Vec3(wX, wY, 0f);
         }
 
         /// <summary>

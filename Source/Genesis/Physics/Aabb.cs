@@ -51,15 +51,17 @@ namespace Genesis.Physics
         /// <param name="element">The element for the Aabb</param>
         public Aabb(GameElement element)
         {
-            this.Min = Vec3.Zero();
-            this.Min.X = element.Location.X - (element.Size.X / 2);
-            this.Min.Y = element.Location.Y - (element.Size.Y / 2);
-            this.Min.Z = element.Location.Z - (element.Size.Z / 2);
+            var min = new Vec3();
+            min.X = element.Location.X - (element.Size.X / 2);
+            min.Y = element.Location.Y - (element.Size.Y / 2);
+            min.Z = element.Location.Z - (element.Size.Z / 2);
+            this.Min = min;
 
-            this.Max = Vec3.Zero();
-            this.Max.X = element.Location.X + (element.Size.X / 2);
-            this.Max.Y = element.Location.Y + (element.Size.Y / 2);
-            this.Max.Z = element.Location.Z + (element.Size.Z / 2);
+            var max = new Vec3();
+            max.X = element.Location.X + (element.Size.X / 2);
+            max.Y = element.Location.Y + (element.Size.Y / 2);
+            max.Z = element.Location.Z + (element.Size.Z / 2);
+            this.Max = max;
         }
 
         /// <summary>

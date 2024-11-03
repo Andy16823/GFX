@@ -10,27 +10,27 @@ using System.Threading.Tasks;
 namespace Genesis.Math
 {
     /// <summary>
-    /// Represents a 3D vector for coordinates.
+    /// Represents a three-dimensional vector, used for representing points or directions in 3D space.
     /// </summary>
-    public class Vec3
+    public struct Vec3
     {
         /// <summary>
         /// Gets or sets the X-coordinate of the vector.
         /// </summary>
-        public float X { get; set; }
+        public float X;
 
         /// <summary>
         /// Gets or sets the Y-coordinate of the vector.
         /// </summary>
-        public float Y { get; set; }
+        public float Y;
 
         /// <summary>
         /// Gets or sets the Z-coordinate of the vector.
         /// </summary>
-        public float Z { get; set; }
+        public float Z;
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct with the specified coordinates.
         /// </summary>
         /// <param name="x">The X-coordinate of the vector.</param>
         /// <param name="y">The Y-coordinate of the vector.</param>
@@ -43,10 +43,10 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new Vector
+        /// Initializes a new instance of the <see cref="Vec3"/> struct with the specified X and Y coordinates, and Z set to 0.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
+        /// <param name="x">The X-coordinate of the vector.</param>
+        /// <param name="y">The Y-coordinate of the vector.</param>
         public Vec3(float x, float y)
         {
             X = x;
@@ -55,9 +55,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new Vector
+        /// Initializes a new instance of the <see cref="Vec3"/> struct with all coordinates set to the same value.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value to assign to all coordinates of the vector.</param>
         public Vec3(float value)
         {
             X = value;
@@ -66,9 +66,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates from a Size object.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct from a <see cref="Size"/> object, setting Z to 0.
         /// </summary>
-        /// <param name="size">The Size object to extract coordinates from.</param>
+        /// <param name="size">The <see cref="Size"/> object to extract coordinates from.</param>
         public Vec3(Size size)
         {
             X = size.Width;
@@ -77,9 +77,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates from a SizeF object.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct from a <see cref="SizeF"/> object, setting Z to 0.
         /// </summary>
-        /// <param name="size">The SizeF object to extract coordinates from.</param>
+        /// <param name="size">The <see cref="SizeF"/> object to extract coordinates from.</param>>
         public Vec3(SizeF size) 
         {
             X = size.Width;
@@ -88,9 +88,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates from a Point object.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct from a <see cref="Point"/> object, setting Z to 0.
         /// </summary>
-        /// <param name="size">The Point object to extract coordinates from.</param>
+        /// <param name="point">The <see cref="Point"/> object to extract coordinates from.</param>
         public Vec3(Point point)
         {
             X = point.X;
@@ -99,9 +99,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates from a PointF object.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct from a <see cref="PointF"/> object, setting Z to 0.
         /// </summary>
-        /// <param name="size">The PointF object to extract coordinates from.</param>
+        /// <param name="point">The <see cref="PointF"/> object to extract coordinates from.</param>
         public Vec3(PointF point)
         {
             X = point.X;
@@ -110,9 +110,9 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Creates a new 3D vector with specified coordinates from a glm vec3 object.
+        /// Initializes a new instance of the <see cref="Vec3"/> struct from a <see cref="glm.vec3"/> object.
         /// </summary>
-        /// <param name="size">The glm vec3 object to extract coordinates from.</param>
+        /// <param name="vec3">The <see cref="glm.vec3"/> object to extract coordinates from.</param>
         public Vec3(vec3 vec3)
         {
             X = vec3.x;
@@ -121,20 +121,20 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Returns a new 3D vector with X = 0, Y = 0, Z = 0.
+        /// Returns a new vector representing the origin (0, 0, 0).
         /// </summary>
-        /// <returns>A Vec3 instance representing the zero vector.</returns>
+        /// <returns>A <see cref="Vec3"/> instance representing the zero vector.</returns>
         public static Vec3 Zero()
         {
             return new Vec3(0.0f);
         }
 
         /// <summary>
-        /// Returns the offset angle to the vector.
+        /// Calculates the angle in degrees from this vector to the specified coordinates.
         /// </summary>
-        /// <param name="x">The X-coordinate of the vector.</param>
-        /// <param name="y">The Y-coordinate of the vector.</param>
-        /// <returns>The offset angle to the vector in degrees.</returns>
+        /// <param name="x">The X-coordinate of the target point.</param>
+        /// <param name="y">The Y-coordinate of the target point.</param>
+        /// <returns>The angle in degrees from this vector to the specified point.</returns>
         public float Degres(float x, float y)
         {
             float rad = (float) System.Math.Atan2(x - X, y - Y);
@@ -147,22 +147,21 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Returns the offset angle to the vector.
+        /// Calculates the angle in degrees from this vector to the specified vector.
         /// </summary>
         /// <param name="vec3">The reference vector.</param>
-        /// <returns>The offset angle to the vector in degrees.</returns>
+        /// <returns>The angle in degrees from this vector to the specified vector.</returns>
         public float Degres(Vec3 vec3)
         {
             return this.Degres(vec3.X, vec3.Y);
         }
 
         /// <summary>
-        /// Calculates the vector towards in 3D.
+        /// Calculates the point in 3D space towards a specified angle and distance from this vector.
         /// </summary>
-        /// <param name="rotation">The rotation vector.</param>
-        /// <param name="start">The starting vector.</param>
-        /// <param name="dist">The distance.</param>
-        /// <returns>A new Vec3 instance representing the vector towards in 3D.</returns>
+        /// <param name="degrees">The angle in degrees.</param>
+        /// <param name="dist">The distance from this vector.</param>
+        /// <returns>A new <see cref="Vec3"/> instance representing the calculated point in 3D space.</returns>
         public Vec3 Towards(float degrees, float dist)
         {
             float radians = (float)((System.Math.PI / 180) * degrees);
@@ -172,12 +171,12 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Returns a new vector towards the given direction.
+        /// Returns a new vector in 2D space towards a specified angle from the given starting vector.
         /// </summary>
-        /// <param name="degrees"></param>
-        /// <param name="start"></param>
-        /// <param name="dist"></param>
-        /// <returns></returns>
+        /// <param name="degrees">The angle in degrees.</param>
+        /// <param name="start">The starting vector.</param>
+        /// <param name="dist">The distance from the starting vector.</param>
+        /// <returns>A new <see cref="Vec3"/> instance representing the target vector in 2D space.</returns>
         public static Vec3 Towards2D(float degrees, Vec3 start, float dist)
         {
             Vec3 twd = start.Towards(degrees, dist);
@@ -185,12 +184,12 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Calculates the Vector towards in 3D
+        /// Calculates a point in 3D space towards the specified rotation from a starting vector.
         /// </summary>
-        /// <param name="rotation"></param>
-        /// <param name="start"></param>
-        /// <param name="dist"></param>
-        /// <returns></returns>
+        /// <param name="rotation">The rotation vector representing angles.</param>
+        /// <param name="start">The starting vector.</param>
+        /// <param name="dist">The distance from the starting vector.</param>
+        /// <returns>A new <see cref="Vec3"/> instance representing the calculated point in 3D space.</returns>
         public static Vec3 Towards3D(Vec3 rotation, Vec3 start, float dist)
         {
             Vec3 direction = new Vec3(0f);
@@ -202,24 +201,24 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Calculates the towards vector
+        /// Calculates a point in 3D space towards the specified rotation angles from a starting vector.
         /// </summary>
-        /// <param name="rotX"></param>
-        /// <param name="rotY"></param>
-        /// <param name="rotZ"></param>
-        /// <param name="start"></param>
-        /// <param name="dist"></param>
-        /// <returns></returns>
+        /// <param name="rotX">The rotation angle around the X-axis.</param>
+        /// <param name="rotY">The rotation angle around the Y-axis.</param>
+        /// <param name="rotZ">The rotation angle around the Z-axis.</param>
+        /// <param name="start">The starting vector.</param>
+        /// <param name="dist">The distance from the starting vector.</param>
+        /// <returns>A new <see cref="Vec3"/> instance representing the calculated point in 3D space.</returns>
         public static Vec3 Towards3D(float rotX, float rotY, float rotZ, Vec3 start, float dist)
         {
             return Vec3.Towards3D(new Vec3(rotX, rotY, rotZ), start, dist);
         }
 
         /// <summary>
-        /// Returns the distance between two vectors
+        /// Calculates the distance between this vector and another vector.
         /// </summary>
-        /// <param name="vec3"></param>
-        /// <returns></returns>
+        /// <param name="vec3">The vector to measure distance to.</param>
+        /// <returns>The distance between this vector and the specified vector.</returns>
         public float Distance(Vec3 vec3)
         {
             float xDist = X - vec3.X;
@@ -229,108 +228,166 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Adds the value from a vector
+        /// Adds the value from another vector.
         /// </summary>
-        /// <param name="vec"></param>
-        public void Add(Vec3 vec)
+        /// <param name="vec">The vector to add.</param>
+        /// <returns>A new Vec3 that is the sum of this vector and the specified vector.</returns>
+        public Vec3 Add(Vec3 vec)
         {
-            X += vec.X;
-            Y += vec.Y;
-            Z += vec.Z;
+            return this + vec;
         }
 
         /// <summary>
-        /// Adds the values to the vector
+        /// Adds the specified X and Y values to this vector.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        public void Add(float x, float y)
+        /// <param name="x">The value to add to the X component.</param>
+        /// <param name="y">The value to add to the Y component.</param>
+        /// <returns>A new Vec3 with the added values.</returns>
+        public Vec3 Add(float x, float y)
         {
-            X += x;
-            Y += y;
+            return this + new Vec3(x, y);
         }
 
         /// <summary>
-        /// Adds the values to the vector
+        /// Adds the specified X, Y, and Z values to this vector.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
-        public void Add(float x, float y, float z)
+        /// <param name="x">The value to add to the X component.</param>
+        /// <param name="y">The value to add to the Y component.</param>
+        /// <param name="z">The value to add to the Z component.</param>
+        /// <returns>A new Vec3 with the added values.</returns>
+        public Vec3 Add(float x, float y, float z)
         {
-            X += x;
-            Y += y;
-            Z += z;
+            return this + new Vec3(x, y, z);
         }
 
         /// <summary>
-        /// Add the value to the X param
+        /// Adds the specified value to the X component of this vector.
         /// </summary>
-        /// <param name="x"></param>
-        public void AddX(float x)
+        /// <param name="x">The value to add to the X component.</param>
+        /// <returns>A new Vec3 with the updated X component.</returns>
+        public Vec3 AddX(float x)
         {
-            X += x;
+            return this + new Vec3(x, 0, 0);
         }
 
         /// <summary>
-        /// Add the value to the y param
+        /// Adds the specified value to the Y component of this vector.
         /// </summary>
-        /// <param name="y"></param>
-        public void AddY(float y)
+        /// <param name="y">The value to add to the Y component.</param>
+        /// <returns>A new Vec3 with the updated Y component.</returns>
+        public Vec3 AddY(float y)
         {
-            Y += y;
+            return this + new Vec3(0, y, 0);
         }
 
         /// <summary>
-        /// Add the value to the z param
+        /// Adds the specified value to the Z component of this vector.
         /// </summary>
-        /// <param name="z"></param>
-        public void AddZ(float z)
+        /// <param name="z">The value to add to the Z component.</param>
+        /// <returns>A new Vec3 with the updated Z component.</returns>
+        public Vec3 AddZ(float z)
         {
-            Z += z;
+            return this + new Vec3(0, 0, z);
         }
 
         /// <summary>
-        /// Subtract the vector
+        /// Subtracts the specified vector from this vector.
         /// </summary>
-        /// <param name="v"></param>
-        public void Sub(Vec3 v)
+        /// <param name="v">The vector to subtract.</param>
+        /// <returns>A new Vec3 that is the result of the subtraction.</returns>
+        public Vec3 Sub(Vec3 v)
         {
-            X -= v.X;
-            Y -= v.Y;
-            Z -= v.Z;
+            return this - v;
         }
 
         /// <summary>
-        /// Sets the value for the vector
+        /// Subtracts the specified value from the X component of this vector.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
-        public void Set(float x, float y, float z)
+        /// <param name="x">The value to subtract from the X component.</param>
+        /// <returns>A new Vec3 with the updated X component.</returns>
+        public Vec3 SubX(float x)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            return this - new Vec3(x, 0, 0);
         }
 
         /// <summary>
-        /// Sets the value for the vector
+        /// Subtracts the specified value from the Y component of this vector.
         /// </summary>
-        /// <param name="vec"></param>
-        public void Set(Vec3 vec)
+        /// <param name="y">The value to subtract from the Y component.</param>
+        /// <returns>A new Vec3 with the updated Y component.</returns>
+        public Vec3 SubY(float y)
         {
-            X = vec.X;
-            Y = vec.Y;
-            Z = vec.Z;
+            return this - new Vec3(0, y, 0);
         }
 
         /// <summary>
-        /// Returns the forward vector
+        /// Subtracts the specified value from the Z component of this vector.
         /// </summary>
-        /// <param name="rotation"></param>
-        /// <param name="dist"></param>
-        /// <returns></returns>
+        /// <param name="z">The value to subtract from the Z component.</param>
+        /// <returns>A new Vec3 with the updated Z component.</returns>
+        public Vec3 SubZ(float z)
+        {
+            return this - new Vec3(0, 0, z);
+        }
+
+        /// <summary>
+        /// Sets the X component of the vector to the specified value.
+        /// </summary>
+        /// <param name="x">The value to set the X component to.</param>
+        /// <returns>A new Vec3 with the updated X component.</returns>
+        public Vec3 SetX(float x)
+        {
+            return new Vec3(x, Y, Z);
+        }
+
+        /// <summary>
+        /// Sets the Y component of the vector to the specified value.
+        /// </summary>
+        /// <param name="y">The value to set the Y component to.</param>
+        /// <returns>A new Vec3 with the updated Y component.</returns>
+        public Vec3 SetY(float y)
+        {
+            return new Vec3(X, y, Z);
+        }
+
+        /// <summary>
+        /// Sets the Z component of the vector to the specified value.
+        /// </summary>
+        /// <param name="z">The value to set the Z component to.</param>
+        /// <returns>A new Vec3 with the updated Z component.</returns>
+        public Vec3 SetZ(float z)
+        {
+            return new Vec3(X, Y, z);
+        }
+
+        /// <summary>
+        /// Sets the values for the vector.
+        /// </summary>
+        /// <param name="x">The value to set the X component to.</param>
+        /// <param name="y">The value to set the Y component to.</param>
+        /// <param name="z">The value to set the Z component to.</param>
+        /// <returns>A new Vec3 with the specified values.</returns>
+        public Vec3 Set(float x, float y, float z)
+        {
+            return new Vec3(x, y, z);
+        }
+
+        /// <summary>
+        /// Sets the values for the vector based on another vector.
+        /// </summary>
+        /// <param name="vec">The vector to copy values from.</param>
+        /// <returns>A new Vec3 with values copied from the specified vector.</returns>
+        public Vec3 Set(Vec3 vec)
+        {
+            return new Vec3(vec.X, vec.Y, vec.Z);
+        }
+
+        /// <summary>
+        /// Returns the forward vector based on the specified rotation and distance.
+        /// </summary>
+        /// <param name="rotation">The rotation to apply.</param>
+        /// <param name="dist">The distance to project forward.</param>
+        /// <returns>A new Vec3 representing the forward vector.</returns>
         public Vec3 Forward(Vec3 rotation, float dist)
         {
             return Utils.ForwardVector(this, rotation, dist);
@@ -351,7 +408,7 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Add operator for vector multiplication.
+        /// Multiply operator for vector multiplication with another vector.
         /// </summary>
         /// <param name="vec1">The first vector.</param>
         /// <param name="vec2">The second vector.</param>
@@ -365,11 +422,11 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Add operator for vector substraction.
+        /// Divide operator for vector division by another vector.
         /// </summary>
         /// <param name="vec1">The first vector.</param>
-        /// <param name="vec2">The second vector.</param>
-        /// <returns>A new Vec3 instance representing the result of vector substraction.</returns>
+        /// <param name="vec2">The second vector to divide by.</param>
+        /// <returns>A new Vec3 instance representing the result of vector division.</returns>
         public static Vec3 operator /(Vec3 vec1, Vec3 vec2)
         {
             float x = vec1.X / vec2.X;
@@ -379,11 +436,11 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Multiplies the vector by a scalar value.
+        /// Multiplies the vector by a scalar.
         /// </summary>
         /// <param name="vec">The vector to multiply.</param>
-        /// <param name="value">The scalar value.</param>
-        /// <returns>A new Vec3 instance representing the result of the multiplication.</returns>
+        /// <param name="value">The scalar to multiply by.</param>
+        /// <returns>A new Vec3 instance representing the scaled vector.</returns>
         public static Vec3 operator *(Vec3 vec, float value)
         {
             float x = vec.X * value;
@@ -393,11 +450,11 @@ namespace Genesis.Math
         }
 
         /// <summary>
-        /// Subtracts one vector from another.
+        /// Subtract operator for vector subtraction.
         /// </summary>
         /// <param name="vec1">The first vector.</param>
         /// <param name="vec2">The second vector to subtract.</param>
-        /// <returns>A new Vec3 instance representing the result of the subtraction.</returns>
+        /// <returns>A new Vec3 instance representing the result of vector subtraction.</returns>
         public static Vec3 operator -(Vec3 vec1, Vec3 vec2)
         {
             float x = vec1.X - vec2.X;
@@ -405,11 +462,6 @@ namespace Genesis.Math
             float z = vec1.Z - vec2.Z;
             return new Vec3(x, y, z);
         }
-
-        //public static implicit operator Vec3(Vec3 v)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         /// <summary>
         /// Calculates the cross product of two vectors.

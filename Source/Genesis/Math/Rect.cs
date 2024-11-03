@@ -9,7 +9,7 @@ namespace Genesis.Math
     /// <summary>
     /// Represents a rectangle with position and dimensions.
     /// </summary>
-    public class Rect
+    public struct Rect
     {
         /// <summary>
         /// Gets or sets the X-coordinate of the rectangle.
@@ -57,14 +57,6 @@ namespace Genesis.Math
             Y = location.Y;
             Width = size.X;
             Height = size.Y;
-        }
-
-        /// <summary>
-        /// Default constructor for the Rect class.
-        /// </summary>
-        public Rect()
-        {
-
         }
 
         /// <summary>

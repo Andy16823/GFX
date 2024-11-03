@@ -23,3 +23,4 @@ E:\Own Games\Genesis\Genesis\obj\x64\Debug\Genesis.csproj.CoreCompileInputs.cach
 E:\Own Games\Genesis\Genesis\obj\x64\Debug\Genesis.dll
 E:\Own Games\Genesis\Genesis\obj\x64\Debug\Genesis.pdb
 E:\Own Games\Genesis\Genesis\obj\x64\Debug\Genesis.csproj.Up2Date
+E:\Own Games\Genesis\Genesis\bin\x64\Debug\OpenObjectLoader.pdb

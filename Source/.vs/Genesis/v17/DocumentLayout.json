@@ -1,0 +1,332 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Own Games\\Genesis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\math\\rect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\math\\rect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\math\\vec3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\math\\vec3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|E:\\Own Games\\Genesis\\genesis\\core\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\ui\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\ui\\canvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\physics\\aabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\physics\\aabb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|E:\\Own Games\\Genesis\\genesis\\graphics\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\gameelements\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\particleemitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\behaviors\\spritemovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\spritemovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\behaviors\\animationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\animationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\behaviors\\3d\\thirdpersoncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\3d\\thirdpersoncharactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\ui\\widget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\ui\\widget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\gameelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\behaviors\\physics3d\\capsulerigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\physics3d\\capsulerigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\scene3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\scene3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|e:\\own games\\genesis\\genesis\\core\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\window.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|E:\\Own Games\\Genesis\\genesis\\core\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|E:\\Own Games\\Genesis\\genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Rect.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Math\\Rect.cs",
+              "RelativeDocumentMoniker": "Genesis\\Math\\Rect.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Math\\Rect.cs",
+              "RelativeToolTip": "Genesis\\Math\\Rect.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAA9wCwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T14:00:59.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Canvas.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\UI\\Canvas.cs",
+              "RelativeDocumentMoniker": "Genesis\\UI\\Canvas.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\UI\\Canvas.cs",
+              "RelativeToolTip": "Genesis\\UI\\Canvas.cs",
+              "ViewState": "AQIAAKsAAAAAAAAAAADwv74AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:28:47.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ParticleEmitter.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\GameElements\\ParticleEmitter.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\ParticleEmitter.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\GameElements\\ParticleEmitter.cs",
+              "RelativeToolTip": "Genesis\\Core\\GameElements\\ParticleEmitter.cs",
+              "ViewState": "AQIAANkAAAAAAAAAAADwv+wAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:18:21.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Game.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Game.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Game.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Game.cs",
+              "RelativeToolTip": "Genesis\\Core\\Game.cs",
+              "ViewState": "AQIAAEgBAAAAAAAAAAAswFsBAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:17:57.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SpriteMovementController.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\SpriteMovementController.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\SpriteMovementController.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\SpriteMovementController.cs",
+              "RelativeToolTip": "Genesis\\Core\\Behaviors\\SpriteMovementController.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAADwv3wAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:16:07.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AnimationBehavior.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\AnimationBehavior.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\AnimationBehavior.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\AnimationBehavior.cs",
+              "RelativeToolTip": "Genesis\\Core\\Behaviors\\AnimationBehavior.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAADwv7kAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:13:43.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ThirdpersonCharacterController.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\3D\\ThirdpersonCharacterController.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\3D\\ThirdpersonCharacterController.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\3D\\ThirdpersonCharacterController.cs",
+              "RelativeToolTip": "Genesis\\Core\\Behaviors\\3D\\ThirdpersonCharacterController.cs",
+              "ViewState": "AQIAAAsBAAAAAAAAAADwvyMBAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:50:26.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Utils.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Utils.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Utils.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Utils.cs",
+              "RelativeToolTip": "Genesis\\Core\\Utils.cs",
+              "ViewState": "AQIAALkAAAAAAAAAAAD4v8gAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:22:22.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vec3.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Math\\Vec3.cs",
+              "RelativeDocumentMoniker": "Genesis\\Math\\Vec3.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Math\\Vec3.cs",
+              "RelativeToolTip": "Genesis\\Math\\Vec3.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAAA4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:36:36.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Graphics\\Camera.cs",
+              "RelativeDocumentMoniker": "Genesis\\Graphics\\Camera.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Graphics\\Camera.cs",
+              "RelativeToolTip": "Genesis\\Graphics\\Camera.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAkwHkAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T23:41:38.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Aabb.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Physics\\Aabb.cs",
+              "RelativeDocumentMoniker": "Genesis\\Physics\\Aabb.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Physics\\Aabb.cs",
+              "RelativeToolTip": "Genesis\\Physics\\Aabb.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAkwD8AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:03:38.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Widget.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\UI\\Widget.cs",
+              "RelativeDocumentMoniker": "Genesis\\UI\\Widget.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\UI\\Widget.cs",
+              "RelativeToolTip": "Genesis\\UI\\Widget.cs",
+              "ViewState": "AQIAALwAAAAAAAAAAADwv88AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:08:11.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameElement.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\GameElement.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\GameElement.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\GameElement.cs",
+              "RelativeToolTip": "Genesis\\Core\\GameElement.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwDEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:59:54.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CapsuleRigidBody.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\Physics3D\\CapsuleRigidBody.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\Physics3D\\CapsuleRigidBody.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Behaviors\\Physics3D\\CapsuleRigidBody.cs",
+              "RelativeToolTip": "Genesis\\Core\\Behaviors\\Physics3D\\CapsuleRigidBody.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAADwvykAAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:50:05.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Scene3D.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Scene3D.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Scene3D.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Scene3D.cs",
+              "RelativeToolTip": "Genesis\\Core\\Scene3D.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:27:29.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Input.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Input.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Input.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Input.cs",
+              "RelativeToolTip": "Genesis\\Core\\Input.cs",
+              "ViewState": "AQIAABMBAAAAAAAAAAAswCwBAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T13:09:52.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BetaRenderer.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ViewState": "AQIAAJcEAAAAAAAAAAAjwKQEAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T12:35:09.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Window.cs",
+              "DocumentMoniker": "E:\\Own Games\\Genesis\\Genesis\\Core\\Window.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Window.cs",
+              "ToolTip": "E:\\Own Games\\Genesis\\Genesis\\Core\\Window.cs",
+              "RelativeToolTip": "Genesis\\Core\\Window.cs",
+              "ViewState": "AQIAAPoAAAAAAAAAAAAuwAIBAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T18:24:58.77Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

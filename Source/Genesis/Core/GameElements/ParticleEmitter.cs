@@ -234,7 +234,7 @@ namespace Genesis.Core.GameElements
                 if (distance > this.ParticleDistance)
                 {
                     particle.Location = this.Location + new Vec3(0, 0, 0);
-                    particle.Rotation.Z += particle.RotationSpeed;
+                    particle.Rotation = particle.Rotation.AddZ(particle.RotationSpeed);
                     particle.ParticleColor = Utils.ConvertColor(StartColor);
                 }
                 particle.LastUpdate = now;

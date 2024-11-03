@@ -205,7 +205,7 @@ namespace Genesis.UI
             if(Parent != null)
             {
                 Vec3 pLoc = Parent.GetRelativePos(canvas);
-                loc.Add(Parent.Location);
+                loc += Parent.Location;
             }
             loc.X += Location.X + (Size.X / 2);
             loc.Y += Location.Y + (Size.Y / 2);

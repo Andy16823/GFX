@@ -1,5 +1,6 @@
 ﻿using Genesis.Core.GameElements;
 using Genesis.Graphics;
+using Genesis.Math;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -178,15 +179,10 @@ namespace Genesis.Core.Behaviors
                     float rowVal = 1 / ((float)Rows);
                     float colVal = 1 / ((float)Cells);
 
-
-                    sprite.TexCoords.TopLeft.X = (float)currentCell * colVal;
-                    sprite.TexCoords.TopLeft.Y = (float)SelectedAnimation.Row * rowVal;
-                    sprite.TexCoords.TopRight.X = (float)currentCell * colVal + colVal;
-                    sprite.TexCoords.TopRight.Y = (float)SelectedAnimation.Row * rowVal;
-                    sprite.TexCoords.BottomRight.X = (float)currentCell * colVal + colVal;
-                    sprite.TexCoords.BottomRight.Y = (float)SelectedAnimation.Row * rowVal + rowVal;
-                    sprite.TexCoords.BottomLeft.X = (float)currentCell * colVal;
-                    sprite.TexCoords.BottomLeft.Y = (float)SelectedAnimation.Row * rowVal + rowVal;
+                    sprite.TexCoords.TopLeft = new Vec3((float)currentCell * colVal, (float)SelectedAnimation.Row * rowVal);
+                    sprite.TexCoords.TopRight = new Vec3((float)currentCell * colVal + colVal, (float)SelectedAnimation.Row * rowVal);
+                    sprite.TexCoords.BottomRight = new Vec3((float)currentCell * colVal + colVal, (float)SelectedAnimation.Row * rowVal + rowVal);
+                    sprite.TexCoords.BottomLeft = new Vec3((float)currentCell * colVal, (float)SelectedAnimation.Row * rowVal + rowVal);
 
                     foreach (var animationCallback in this.Callbacks)
                     {
