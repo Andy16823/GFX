@@ -7915,6 +7915,53 @@
             <typeparam name="T">Type to cast the physics object to</typeparam>
             <returns>The physics object cast to type T</returns>
         </member>
+        <member name="T:Genesis.Physics.HitResult2D">
+            <summary>
+            Represents the result of a raycast hit in 2D space, containing information about
+            the intersection point, distance from the origin, the hit element, and its bounding box.
+            </summary>
+        </member>
+        <member name="F:Genesis.Physics.HitResult2D.intersectionPoint">
+            <summary>
+            The intersection point of the raycast hit.
+            </summary>
+        </member>
+        <member name="F:Genesis.Physics.HitResult2D.distance">
+            <summary>
+            The distance from the ray's origin to the intersection point.
+            </summary>
+        </member>
+        <member name="F:Genesis.Physics.HitResult2D.hit">
+            <summary>
+            The game element that was hit by the raycast.
+            </summary>
+        </member>
+        <member name="F:Genesis.Physics.HitResult2D.aabb">
+            <summary>
+            The axis-aligned bounding box (AABB) of the hit element.
+            </summary>
+        </member>
+        <member name="T:Genesis.Physics.Raycast2D">
+            <summary>
+            Provides methods to perform raycasting in a 2D scene and retrieve intersection information.
+            </summary>
+        </member>
+        <member name="M:Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.Scene)">
+            <summary>
+            Casts a ray in a scene and returns all hit results for elements intersected by the ray.
+            </summary>
+            <param name="ray">The 2D ray to cast.</param>
+            <param name="scene">The scene containing elements to test for intersections.</param>
+            <returns>A list of <see cref="T:Genesis.Physics.HitResult2D"/> representing all intersection results.</returns>
+        </member>
+        <member name="M:Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.GameElement[])">
+            <summary>
+            Casts a ray against an array of game elements and returns all hit results.
+            </summary>
+            <param name="ray">The 2D ray to cast.</param>
+            <param name="elements">An array of game elements to test for intersections.</param>
+            <returns>A list of <see cref="T:Genesis.Physics.HitResult2D"/> containing all intersection results.</returns>
+        </member>
         <member name="M:Genesis.Physics.Raycast2D.RayIntersectsAABB(Genesis.Physics.Ray2D,Genesis.Physics.Aabb,Genesis.Math.Vec3@)">
             <summary>
             Checks if a 2D ray intersects with an Axis-Aligned Bounding Box (AABB).

@@ -24,3 +24,28 @@ E:\Own Games\Genesis\Genesis\bin\x64\Release\Genesis.pdb
 E:\Own Games\Genesis\Genesis\bin\x64\Release\Genesis.xml
 E:\Own Games\Genesis\Genesis\obj\x64\Release\Genesis.csproj.Up2Date
 E:\Own Games\Genesis\Genesis\bin\x64\Release\OpenObjectLoader.pdb
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\AssimpNet.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\BulletSharp.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\GlmSharp.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\NetGL.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\NewtonsoftJson.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Licences\OpenObjectLoader.txt
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Genesis.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Genesis.pdb
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Genesis.xml
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\AssimpNet.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\BulletSharp.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\GlmSharp.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\System.ValueTuple.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\AssimpNet.xml
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\GlmSharp.xml
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\NetGL.pdb
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\OpenObjectLoader.pdb
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\System.ValueTuple.xml
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.csproj.AssemblyReference.cache
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.csproj.CoreCompileInputs.cache
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.csproj.Up2Date
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.dll
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.pdb

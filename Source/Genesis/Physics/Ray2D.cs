@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Genesis.Physics
 {
-    public class Ray2D
+    public struct Ray2D
     {
         public Vec3 Origin { get; set; }
         public Vec3 Direction { get; set; }
