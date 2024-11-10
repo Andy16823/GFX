@@ -2,6 +2,7 @@
 using Genesis.Core;
 using Genesis.Graphics.RenderDevice;
 using Genesis.Math;
+using Genesis.Physics;
 using GlmSharp;
 using System;
 using System.Collections.Generic;
@@ -204,6 +205,21 @@ namespace Genesis.Graphics
             frustum.center = (frustum.centerFar - frustum.centerNear) * 0.5f;
 
             return frustum;
+        }
+
+        public static mat4 GetProjectionMatrix(Camera camera)
+        {
+            vec3 cameraPosition = camera.Location.ToGlmVec3();
+            Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
+
+            return mat4.Perspective(Utils.ToRadians(camera.FOV), camera.Size.X / camera.Size.Y, camera.Near, camera.Far);
+        }
+
+        public static mat4 GetViewMatrix(Camera camera)
+        {
+            vec3 cameraPosition = camera.Location.ToGlmVec3();
+            Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
+            return mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
         }
 
     }

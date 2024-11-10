@@ -7238,6 +7238,37 @@
             according to the camera's position and size.
             </remarks>
         </member>
+        <member name="M:Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)">
+            <summary>
+            Projects the mouse coordinates into 3D world space, returning the direction vector.
+            </summary>
+            <param name="camera">The camera used for the projection.</param>
+            <param name="viewport">The viewport for the camera's dimensions.</param>
+            <param name="sX">The x-coordinate of the mouse in screen space.</param>
+            <param name="sY">The y-coordinate of the mouse in screen space.</param>
+            <returns>A <see cref="T:Genesis.Math.Vec3"/> representing the direction of the ray in 3D space.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)">
+            <summary>
+            Converts screen space coordinates (2D) into world space coordinates (3D).
+            </summary>
+            <param name="camera">The perspective camera used for projection and view matrix calculations.</param>
+            <param name="viewport">The viewport that defines the screen's width and height.</param>
+            <param name="sX">The x-coordinate of the mouse position in screen space (pixels).</param>
+            <param name="sY">The y-coordinate of the mouse position in screen space (pixels).</param>
+            <returns>
+            A <see cref="T:Genesis.Math.Vec3"/> representing the corresponding world space coordinates.
+            This is the position in the 3D world corresponding to the input screen coordinates, 
+            taking into account the perspective projection and camera view matrix.
+            </returns>
+            <remarks>
+            The method first normalizes the screen coordinates to the range [-1, 1], then applies 
+            the inverse of the combined projection and view matrix to map the 2D screen coordinates 
+            back into 3D world coordinates. The result is a position in the world space, representing 
+            the direction of a ray starting from the camera's near plane and passing through the 
+            specified screen coordinates.
+            </remarks>
+        </member>
         <member name="M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)">
             <summary>
             Projects the mouse coords into screen coords

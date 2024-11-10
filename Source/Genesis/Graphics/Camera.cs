@@ -1,4 +1,5 @@
 ﻿using Assimp;
+using BulletSharp.SoftBody;
 using Genesis.Core;
 using Genesis.Math;
 using GlmSharp;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Genesis.Graphics
@@ -203,6 +205,72 @@ namespace Genesis.Graphics
             vec4 worldPosition = ivmat * ndcPosition;
 
             return new Vec3(worldPosition.x, worldPosition.y, worldPosition.z);
+        }
+
+        /// <summary>
+        /// Projects the mouse coordinates into 3D world space, returning the direction vector.
+        /// </summary>
+        /// <param name="camera">The camera used for the projection.</param>
+        /// <param name="viewport">The viewport for the camera's dimensions.</param>
+        /// <param name="sX">The x-coordinate of the mouse in screen space.</param>
+        /// <param name="sY">The y-coordinate of the mouse in screen space.</param>
+        /// <returns>A <see cref="Vec3"/> representing the direction of the ray in 3D space.</returns>
+        public static Vec3 ScreenToWorldDirection3D(PerspectiveCamera camera, Viewport viewport, float sX, float sY)
+        {
+            var projectionMatrix = PerspectiveCamera.GetProjectionMatrix(camera);
+            var viewMatrix = PerspectiveCamera.GetViewMatrix(camera);
+
+            float x = (2.0f * sX) / viewport.Width - 1.0f;
+            float y = 1.0f - (2.0f * sY) / viewport.Height;
+            float z = 1.0f;
+
+            vec3 nds = new vec3(x, y, z);
+            vec4 clip = new vec4(nds.xy, -1.0f, 1.0f);
+            vec4 eye = projectionMatrix.Inverse * clip;
+            eye = new vec4(eye.xy, -1.0f, 0.0f);
+
+            vec3 worldCords = (viewMatrix.Inverse * eye).xyz;
+            // don't forget to normalise the vector at some point
+            worldCords = worldCords.Normalized;
+
+            Vec3 mouseWorldPosition = new Vec3(worldCords.x, worldCords.y, worldCords.z);
+            return mouseWorldPosition;
+        }
+
+        /// <summary>
+        /// Converts screen space coordinates (2D) into world space coordinates (3D).
+        /// </summary>
+        /// <param name="camera">The perspective camera used for projection and view matrix calculations.</param>
+        /// <param name="viewport">The viewport that defines the screen's width and height.</param>
+        /// <param name="sX">The x-coordinate of the mouse position in screen space (pixels).</param>
+        /// <param name="sY">The y-coordinate of the mouse position in screen space (pixels).</param>
+        /// <returns>
+        /// A <see cref="Vec3"/> representing the corresponding world space coordinates.
+        /// This is the position in the 3D world corresponding to the input screen coordinates, 
+        /// taking into account the perspective projection and camera view matrix.
+        /// </returns>
+        /// <remarks>
+        /// The method first normalizes the screen coordinates to the range [-1, 1], then applies 
+        /// the inverse of the combined projection and view matrix to map the 2D screen coordinates 
+        /// back into 3D world coordinates. The result is a position in the world space, representing 
+        /// the direction of a ray starting from the camera's near plane and passing through the 
+        /// specified screen coordinates.
+        /// </remarks>
+        public static Vec3 ScreenToWorldPosition3D(PerspectiveCamera camera, Viewport viewport, float sX, float sY)
+        {
+            var projectionMatrix = PerspectiveCamera.GetProjectionMatrix(camera);
+            var viewMatrix = PerspectiveCamera.GetViewMatrix(camera);
+
+            float x = ((float)sX / (float)viewport.Width) * 2.0f - 1.0f;
+            float y = 1.0f - ((float)sY / (float)viewport.Height) * 2.0f;
+            vec4 ndc = new vec4(x, y, -1.0f, 1.0f);
+
+            // Faster way (just one inverse)
+            mat4 m = (projectionMatrix * viewMatrix).Inverse;
+            vec4 world = m * ndc;
+            world /= world.w;
+
+            return new Vec3(world.x, world.y, world.z);
         }
 
         /// <summary>
