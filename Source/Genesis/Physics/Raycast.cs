@@ -129,12 +129,27 @@ namespace Genesis.Physics
         /// <param name="posX">X-coordinate of the mouse cursor.</param>
         /// <param name="posY">Y-coordinate of the mouse cursor.</param>
         /// <returns>HitResult containing information about the raycasting hit.</returns>
-        public HitResult PerformCast(PhysicHandler physicHandler, int posX, int posY)
+        public HitResult PerformRaycastFromScreen(PhysicHandler physicHandler, int posX, int posY)
         {
-            return PerformCast(this.Camera, this.Viewport, physicHandler, posX, posY);
+            return PerformRaycastFromScreen(this.Camera, this.Viewport, physicHandler, posX, posY);
         }
 
-        public static HitResult PerformCast(Vec3 start, Vec3 end, PhysicHandler physicHandler)
+        /// <summary>
+        /// Performs a raycast between two 3D points to detect collisions within the physics world.
+        /// </summary>
+        /// <param name="start">The starting point of the ray in world space.</param>
+        /// <param name="end">The ending point of the ray in world space.</param>
+        /// <param name="physicHandler">The <see cref="PhysicHandler"/> responsible for physics simulation and raycasting.</param>
+        /// <returns>
+        /// A <see cref="HitResult"/> object containing information about whether a hit occurred,
+        /// the collided game element, and the collision details (e.g., location of the hit and collision object).
+        /// </returns>
+        /// <remarks>
+        /// The method casts a ray from the <paramref name="start"/> position to the <paramref name="end"/> position.
+        /// If the ray intersects any object within the physics world, the <see cref="HitResult"/> will contain details 
+        /// about the hit, including the element hit and the collision object.
+        /// </remarks>
+        public static HitResult PerformRaycast(Vec3 start, Vec3 end, PhysicHandler physicHandler)
         {
             var result = new HitResult();
             var btStart = start.ToBulletVec3();
@@ -164,7 +179,7 @@ namespace Genesis.Physics
         /// <param name="posX">X-coordinate of the mouse cursor.</param>
         /// <param name="posY">Y-coordinate of the mouse cursor.</param>
         /// <returns>HitResult containing information about the raycasting hit.</returns>
-        public static HitResult PerformCast(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
+        public static HitResult PerformRaycastFromScreen(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
         {
             HitResult result = new HitResult();
             var btStart = Raycast.GetStartVec(camera, viewport, posX, posY);
@@ -193,7 +208,7 @@ namespace Genesis.Physics
             return result;
         }
 
-        public static HitResult PerformCastFiltered(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY, int collisionGroup = -1, int collisionMask = -1)
+        public static HitResult PerformRaycastFromScreenFiltered(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY, int collisionGroup = -1, int collisionMask = -1)
         {
             HitResult result = new HitResult();
             var btStart = Raycast.GetStartVec(camera, viewport, posX, posY);
@@ -225,7 +240,7 @@ namespace Genesis.Physics
             return result;
         }
 
-        public static List<HitResult> PerformCastAll(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
+        public static List<HitResult> PerformRaycastFromScreenAll(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
         {
             var results = new List<HitResult>();
 

@@ -7744,7 +7744,7 @@
             <param name="mouseY">Y-coordinate of the mouse cursor.</param>
             <returns>World position of the mouse cursor.</returns>
         </member>
-        <member name="M:Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)">
+        <member name="M:Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)">
             <summary>
             Performs a raycast and returns the hit result based on the mouse cursor position.
             </summary>
@@ -7753,7 +7753,24 @@
             <param name="posY">Y-coordinate of the mouse cursor.</param>
             <returns>HitResult containing information about the raycasting hit.</returns>
         </member>
-        <member name="M:Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)">
+        <member name="M:Genesis.Physics.Raycast.PerformRaycast(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Physics.PhysicHandler)">
+            <summary>
+            Performs a raycast between two 3D points to detect collisions within the physics world.
+            </summary>
+            <param name="start">The starting point of the ray in world space.</param>
+            <param name="end">The ending point of the ray in world space.</param>
+            <param name="physicHandler">The <see cref="T:Genesis.Physics.PhysicHandler"/> responsible for physics simulation and raycasting.</param>
+            <returns>
+            A <see cref="T:Genesis.Physics.HitResult"/> object containing information about whether a hit occurred,
+            the collided game element, and the collision details (e.g., location of the hit and collision object).
+            </returns>
+            <remarks>
+            The method casts a ray from the <paramref name="start"/> position to the <paramref name="end"/> position.
+            If the ray intersects any object within the physics world, the <see cref="T:Genesis.Physics.HitResult"/> will contain details 
+            about the hit, including the element hit and the collision object.
+            </remarks>
+        </member>
+        <member name="M:Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)">
             <summary>
             Performs a raycast and returns the hit result based on the mouse cursor position.
             </summary>
