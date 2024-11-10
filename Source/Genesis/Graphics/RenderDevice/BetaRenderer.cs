@@ -389,6 +389,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.InitModel((Core.GameElements.Model)element);
             }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Sphere))
+            {
+                this.InitSphere((Core.GameElements.Sphere)element);
+            }
             else if(element.GetType() == typeof(Genesis.Core.Light2D))
             {
                 //this.InitLight2D((Light2D)element); Using the instanced shape
@@ -474,6 +478,51 @@ namespace Genesis.Graphics.RenderDevice
 
             cube.Propertys.Add("vao", VAO);
             cube.Propertys.Add("tris", (verticies.Length / 3));
+            gl.BindVertexArray(0);
+        }
+
+        private void InitSphere(Sphere sphere)
+        {
+            sphere.Propertys.Add("ShaderID", this.InitShader(sphere.Shader));
+            this.InitMaterial(sphere.Material);
+
+            int VAO = gl.GenVertexArrays(1);
+            gl.BindVertexArray(VAO);
+
+            int vbo = gl.GenBuffer(1);
+            var vertices = sphere.Shape.GetShape();
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, vertices.Length * sizeof(float), vertices, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("vbo", vbo);
+
+            int cbo = gl.GenBuffer(1);
+            var vertexColors = sphere.Shape.GetColors(sphere.Color);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, vertexColors.Length * sizeof(float), vertexColors, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("cbo", cbo);
+
+            float[] texCords = sphere.Shape.GetOrderedTextureCoordinates();
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("tbo", tbo);
+
+            float[] normals = sphere.Shape.GetOrderedNormals();
+            int nbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+            gl.BufferData(OpenGL.ArrayBuffer, normals.Length * sizeof(float), normals, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("nbo", nbo);
+
+            sphere.Propertys.Add("vao", VAO);
+            sphere.Propertys.Add("tris", (vertices.Length / 3));
             gl.BindVertexArray(0);
         }
 
@@ -782,6 +831,10 @@ namespace Genesis.Graphics.RenderDevice
             if(element.GetType() == typeof(Qube))
             {
                 this.DrawCube((Qube)element);
+            }
+            else if(element.GetType() == typeof(Sphere))
+            {
+                this.DrawSpehere((Sphere)element);
             }
             else if(element.GetType() == typeof(Terrain3D))
             {
@@ -2031,6 +2084,54 @@ namespace Genesis.Graphics.RenderDevice
 
             gl.BindVertexArray((int)cube.Propertys["vao"]);
             gl.DrawArrays(OpenGL.Triangles, 0, (int)cube.Propertys["tris"]);
+            gl.BindVertexArray(0);
+        }
+
+        private void DrawSpehere(Sphere sphere)
+        {
+            mat4 mt_mat = mat4.Translate(sphere.Location.ToGlmVec3());
+            mat4 mr_mat = mat4.RotateX(sphere.Rotation.X) * mat4.RotateY(sphere.Rotation.Y) * mat4.RotateZ(sphere.Rotation.Z);
+            mat4 ms_mat = mat4.Scale(sphere.Size.ToGlmVec3());
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            // Assign the matrices to the shader
+            int shaderID = (int)sphere.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+
+            if (gl.GetUniformLocation(shaderID, "mvp") != -1)
+            {
+                mat4 mvp = p_mat * v_mat * m_mat;
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "mvp"), 1, false, mvp.ToArray());
+            }
+            else
+            {
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+            }
+
+            var materialColor = Utils.ConvertColor(sphere.Material.DiffuseColor, true);
+            gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
+
+            if (this.lightSource != null)
+            {
+                Vec3 ligtDirection = lightSource.GetLightDirection(camera);
+                Vec3 lightColor = lightSource.GetLightColor();
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
+                gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+            }
+
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, (int)sphere.Material.Propeterys["tex_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+            gl.ActiveTexture(OpenGL.Texture1);
+            gl.BindTexture(OpenGL.Texture2D, (int)sphere.Material.Propeterys["normal_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+
+            gl.BindVertexArray((int)sphere.Propertys["vao"]);
+            gl.DrawArrays(OpenGL.Triangles, 0, (int)sphere.Propertys["tris"]);
             gl.BindVertexArray(0);
         }
 

@@ -49,3 +49,4 @@ C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.cs
 C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.csproj.Up2Date
 C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.dll
 C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\obj\x64\Release\Genesis.pdb
+C:\Users\Andy\Documents\GFX Net Framework\GFX\Genesis\bin\x64\Release\NetGL.dll

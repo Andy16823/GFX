@@ -64,7 +64,7 @@
     <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
     </Reference>
-    <Reference Include="NetGL, Version=1.0.8872.31560, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="NetGL, Version=1.0.8874.27403, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\NetGL - Kopie\x64\Release\NetGL.dll</HintPath>
     </Reference>
@@ -121,6 +121,7 @@
     <Compile Include="Core\GameElements\Model.cs" />
     <Compile Include="Core\GameElements\NavMesh.cs" />
     <Compile Include="Core\GameElements\ParticleEmitter.cs" />
+    <Compile Include="Core\GameElements\Sphere.cs" />
     <Compile Include="Core\GameElements\Waypoint.cs" />
     <Compile Include="Core\IGameBehavior.cs" />
     <Compile Include="Core\Input.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Graphics\Shaders\OpenGL\SolidShapeShader.cs" />
     <Compile Include="Graphics\Shapes\CircleShape.cs" />
     <Compile Include="Graphics\Shapes\Light2DShape.cs" />
+    <Compile Include="Graphics\Shapes\SphereShape.cs" />
     <Compile Include="Graphics\SpriteSheet.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
