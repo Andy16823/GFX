@@ -498,7 +498,7 @@ namespace Genesis.Graphics.RenderDevice
             sphere.Propertys.Add("vbo", vbo);
 
             int cbo = gl.GenBuffer(1);
-            var vertexColors = sphere.Shape.GetColors(sphere.Color);
+            var vertexColors = sphere.Shape.GetOrderedColors(sphere.Color);
             gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
             gl.BufferData(OpenGL.ArrayBuffer, vertexColors.Length * sizeof(float), vertexColors, OpenGL.DynamicDraw);
             gl.EnableVertexAttribArray(1);

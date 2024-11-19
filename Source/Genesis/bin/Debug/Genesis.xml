@@ -6657,6 +6657,101 @@
             </summary>
             <param name="emitter"></param>
         </member>
+        <member name="T:Genesis.Graphics.Shapes.SphereShape">
+            <summary>
+            Represents a 3D sphere shape with configurable latitude, longitude, and radius.
+            Provides methods to retrieve vertex positions, normals, texture coordinates, and colors.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shapes.SphereShape.LatitudeBands">
+            <summary>
+            Gets or sets the number of horizontal segments of the sphere.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shapes.SphereShape.LongitudeBands">
+            <summary>
+            Gets or sets the number of vertical segments of the sphere.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.Shapes.SphereShape.Radius">
+            <summary>
+            Gets or sets the radius of the sphere.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetShape">
+            <summary>
+            Constructs the geometry of the sphere by combining vertex positions and indices.
+            </summary>
+            <returns>A float array containing the ordered vertex positions of the sphere.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetVertices(System.Int32,System.Int32,System.Single)">
+            <summary>
+            Generates the vertices for the sphere based on latitude and longitude segments and the radius.
+            </summary>
+            <param name="latitudebands">The number of horizontal segments.</param>
+            <param name="longitudebands">The number of vertical segments.</param>
+            <param name="radius">The radius of the sphere.</param>
+            <returns>A float array containing the vertex positions for the sphere.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetIndices(System.Int32,System.Int32)">
+            <summary>
+            Generates the indices required to construct triangles for the sphere's surface.
+            </summary>
+            <param name="latitudeBands">The number of horizontal segments.</param>
+            <param name="longitudeBands">The number of vertical segments.</param>
+            <returns>An array of integers representing the indices of the sphere's vertices.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals">
+            <summary>
+            Retrieves the ordered normals for the sphere's vertices.
+            </summary>
+            <returns>A float array containing the normals ordered by vertex indices.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetNormals(System.Int32,System.Int32)">
+            <summary>
+            Generates the normal vectors for each vertex of the sphere.
+            </summary>
+            <param name="latitudebands">The number of horizontal segments.</param>
+            <param name="longitudebands">The number of vertical segments.</param>
+            <returns>A float array containing the normals for each vertex.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates">
+            <summary>
+            Retrieves the ordered texture coordinates for the sphere's vertices.
+            </summary>
+            <returns>A float array containing the texture coordinates ordered by vertex indices.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(System.Int32,System.Int32)">
+            <summary>
+            Generates the texture coordinates for each vertex of the sphere.
+            </summary>
+            <param name="latitudebands">The number of horizontal segments.</param>
+            <param name="longitudebands">The number of vertical segments.</param>
+            <returns>A float array containing the texture coordinates for each vertex.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color)">
+            <summary>
+            Generates an array of color values for each vertex based on the specified color.
+            </summary>
+            <param name="color">The color to apply to each vertex.</param>
+            <returns>A float array containing RGB color values for each vertex.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetOrderedColors(System.Drawing.Color)">
+            <summary>
+            Retrieves the ordered color values for the sphere's vertices based on the specified color.
+            </summary>
+            <param name="color">The color to apply to each vertex.</param>
+            <returns>A float array containing ordered RGB color values for each vertex.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color,System.Int32,System.Int32)">
+            <summary>
+            Generates an array of RGB color values for each vertex of the sphere.
+            </summary>
+            <param name="color">The color to apply to each vertex.</param>
+            <param name="latitudeBands">The number of horizontal segments.</param>
+            <param name="longitudeBands">The number of vertical segments.</param>
+            <returns>A float array containing RGB color values for each vertex.</returns>
+        </member>
         <member name="T:Genesis.Graphics.Shapes.FrameShape">
             <summary>
             Represents a shape that defines a frame or rectangle.

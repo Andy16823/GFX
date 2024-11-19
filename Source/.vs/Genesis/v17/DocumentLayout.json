@@ -3,27 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\physics\\rigidbodybehavior3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\physics\\rigidbodybehavior3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\core\\behaviors\\physics3d\\sphererigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\physics3d\\sphererigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\graphics\\shapes\\sphereshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\shapes\\sphereshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\shapes\\sphereshape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\core\\gameelements\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\physics\\physicshandler3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\physics\\physicshandler3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\physics\\physichandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\physics\\physichandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\behaviors\\physics3d\\sphererigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\physics3d\\sphererigidbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderdevice\\glrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\glrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelements\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\core\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -54,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,72 +74,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RigidBodyBehavior3D.cs",
-              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\RigidBodyBehavior3D.cs",
-              "RelativeDocumentMoniker": "Genesis\\Physics\\RigidBodyBehavior3D.cs",
-              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\RigidBodyBehavior3D.cs",
-              "RelativeToolTip": "Genesis\\Physics\\RigidBodyBehavior3D.cs",
-              "ViewState": "AQIAAOAAAAAAAAAAAAAowAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "PhysicsHandler3D.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\PhysicsHandler3D.cs",
+              "RelativeDocumentMoniker": "Genesis\\Physics\\PhysicsHandler3D.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\PhysicsHandler3D.cs",
+              "RelativeToolTip": "Genesis\\Physics\\PhysicsHandler3D.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T21:12:22.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SphereRigidBody.cs",
-              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
-              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
-              "RelativeToolTip": "Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAwwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T21:11:58.811Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Sphere.cs",
-              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Sphere.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Sphere.cs",
-              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Sphere.cs",
-              "RelativeToolTip": "Genesis\\Core\\GameElements\\Sphere.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAEwB8AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:28:11.424Z",
+              "WhenOpened": "2024-11-19T07:18:16.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "PhysicHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\PhysicHandler.cs",
+              "RelativeDocumentMoniker": "Genesis\\Physics\\PhysicHandler.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\PhysicHandler.cs",
+              "RelativeToolTip": "Genesis\\Physics\\PhysicHandler.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T07:18:01.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BetaRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ViewState": "AQIAAPIBAAAAAAAAAAAMwPQBAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:25:41.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GLRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
+              "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
+              "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
+              "ViewState": "AQIAADcBAAAAAAAAAAAMwEkBAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:25:30.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SphereRigidBody.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
+              "RelativeToolTip": "Genesis\\Core\\Behaviors\\Physics3D\\SphereRigidBody.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowEQAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T21:11:58.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Sphere.cs",
+              "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Sphere.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Sphere.cs",
+              "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Sphere.cs",
+              "RelativeToolTip": "Genesis\\Core\\GameElements\\Sphere.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAcwC8AAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T17:28:11.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Qube.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Qube.cs",
               "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Qube.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Qube.cs",
               "RelativeToolTip": "Genesis\\Core\\GameElements\\Qube.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAAArwN4AAAAIAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwN4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:20:28.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T17:20:28.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "SphereShape.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\Shapes\\SphereShape.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\Shapes\\SphereShape.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\Shapes\\SphereShape.cs",
               "RelativeToolTip": "Genesis\\Graphics\\Shapes\\SphereShape.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIkAAAA3AAAA",
+              "ViewState": "AQIAAPcAAAAAAAAAAAAnwPwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-10T17:11:17.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Utils.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\Utils.cs",
               "RelativeDocumentMoniker": "Genesis\\Core\\Utils.cs",
@@ -135,12 +181,11 @@
               "RelativeToolTip": "Genesis\\Core\\Utils.cs",
               "ViewState": "AQIAAEgEAAAAAAAAAAAqwBEAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T12:52:41.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T12:52:41.637Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "PerspectiveCamera.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\PerspectiveCamera.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\PerspectiveCamera.cs",
@@ -152,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Camera.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\Camera.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\Camera.cs",
@@ -164,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Raycast.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\Raycast.cs",
               "RelativeDocumentMoniker": "Genesis\\Physics\\Raycast.cs",
@@ -176,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Raycast2D.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\Raycast2D.cs",
               "RelativeDocumentMoniker": "Genesis\\Physics\\Raycast2D.cs",
@@ -188,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Ray2D.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Physics\\Ray2D.cs",
               "RelativeDocumentMoniker": "Genesis\\Physics\\Ray2D.cs",

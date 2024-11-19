@@ -30,6 +30,22 @@ namespace Genesis.Core.GameElements
             this.Material = new Material();
             this.Color = Color.Green;
             this.Shape = new SphereShape();
+            this.Shader = new Graphics.Shaders.OpenGL.DiffuseLightning();
+        }
+
+        public Sphere(String name, Vec3 location, Vec3 size, Vec3 rotation, int latitudebands =  20, int longitudebands = 20, float radius = 0.5f)
+        {
+            this.Name = name;
+            this.Location = location;
+            this.Size = size;
+            this.Rotation = rotation;
+            this.Material = new Material();
+            this.Color = Color.Green;
+            this.Shape = new SphereShape();
+            this.Shape.LatitudeBands = latitudebands;
+            this.Shape.LongitudeBands = longitudebands;
+            this.Shape.Radius = radius;
+            this.Shader = new Graphics.Shaders.OpenGL.DiffuseLightning();
         }
 
         public override void Init(Game game, IRenderDevice renderDevice)

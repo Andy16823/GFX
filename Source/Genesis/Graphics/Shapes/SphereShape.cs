@@ -7,12 +7,31 @@ using System.Threading.Tasks;
 
 namespace Genesis.Graphics.Shapes
 {
+    /// <summary>
+    /// Represents a 3D sphere shape with configurable latitude, longitude, and radius.
+    /// Provides methods to retrieve vertex positions, normals, texture coordinates, and colors.
+    /// </summary>
     public class SphereShape : Shape
     {
+        /// <summary>
+        /// Gets or sets the number of horizontal segments of the sphere.
+        /// </summary>
         public int LatitudeBands { get; set; } = 20;
+
+        /// <summary>
+        /// Gets or sets the number of vertical segments of the sphere.
+        /// </summary>
         public int LongitudeBands { get; set; } = 20;
+
+        /// <summary>
+        /// Gets or sets the radius of the sphere.
+        /// </summary>
         public float Radius { get; set; } = 0.5f;
 
+        /// <summary>
+        /// Constructs the geometry of the sphere by combining vertex positions and indices.
+        /// </summary>
+        /// <returns>A float array containing the ordered vertex positions of the sphere.</returns>
         public override float[] GetShape()
         {
             var vertices = SphereShape.GetVertices(LatitudeBands, LongitudeBands, Radius);
@@ -30,6 +49,13 @@ namespace Genesis.Graphics.Shapes
             return shape.ToArray();
         }
 
+        /// <summary>
+        /// Generates the vertices for the sphere based on latitude and longitude segments and the radius.
+        /// </summary>
+        /// <param name="latitudebands">The number of horizontal segments.</param>
+        /// <param name="longitudebands">The number of vertical segments.</param>
+        /// <param name="radius">The radius of the sphere.</param>
+        /// <returns>A float array containing the vertex positions for the sphere.</returns>
         public static float[] GetVertices(int latitudebands, int longitudebands, float radius)
         {
             List<float> vertices = new List<float>();
@@ -58,6 +84,12 @@ namespace Genesis.Graphics.Shapes
             return vertices.ToArray();
         }
 
+        /// <summary>
+        /// Generates the indices required to construct triangles for the sphere's surface.
+        /// </summary>
+        /// <param name="latitudeBands">The number of horizontal segments.</param>
+        /// <param name="longitudeBands">The number of vertical segments.</param>
+        /// <returns>An array of integers representing the indices of the sphere's vertices.</returns>
         public static int[] GetIndices(int latitudeBands, int longitudeBands)
         {
             List<int> indices = new List<int>();
@@ -85,6 +117,10 @@ namespace Genesis.Graphics.Shapes
             return indices.ToArray();
         }
 
+        /// <summary>
+        /// Retrieves the ordered normals for the sphere's vertices.
+        /// </summary>
+        /// <returns>A float array containing the normals ordered by vertex indices.</returns>
         public float[] GetOrderedNormals()
         {
             var normals = GetNormals(LatitudeBands, LongitudeBands); // Originale Normals für alle Vertices
@@ -102,6 +138,12 @@ namespace Genesis.Graphics.Shapes
             return orderedNormals.ToArray();
         }
 
+        /// <summary>
+        /// Generates the normal vectors for each vertex of the sphere.
+        /// </summary>
+        /// <param name="latitudebands">The number of horizontal segments.</param>
+        /// <param name="longitudebands">The number of vertical segments.</param>
+        /// <returns>A float array containing the normals for each vertex.</returns>
         public static float[] GetNormals(int latitudebands, int longitudebands)
         {
             List<float> normals = new List<float>();
@@ -131,6 +173,10 @@ namespace Genesis.Graphics.Shapes
             return normals.ToArray();
         }
 
+        /// <summary>
+        /// Retrieves the ordered texture coordinates for the sphere's vertices.
+        /// </summary>
+        /// <returns>A float array containing the texture coordinates ordered by vertex indices.</returns>
         public float[] GetOrderedTextureCoordinates()
         {
             var textureCoords = GetTextureCoordinates(LatitudeBands, LongitudeBands); // Originale Texture-Koordinaten für alle Vertices
@@ -147,6 +193,12 @@ namespace Genesis.Graphics.Shapes
             return orderedTextureCoords.ToArray();
         }
 
+        /// <summary>
+        /// Generates the texture coordinates for each vertex of the sphere.
+        /// </summary>
+        /// <param name="latitudebands">The number of horizontal segments.</param>
+        /// <param name="longitudebands">The number of vertical segments.</param>
+        /// <returns>A float array containing the texture coordinates for each vertex.</returns>
         public static float[] GetTextureCoordinates(int latitudebands, int longitudebands)
         {
             List<float> textureCoords = new List<float>();
@@ -165,11 +217,48 @@ namespace Genesis.Graphics.Shapes
             return textureCoords.ToArray();
         }
 
+        /// <summary>
+        /// Generates an array of color values for each vertex based on the specified color.
+        /// </summary>
+        /// <param name="color">The color to apply to each vertex.</param>
+        /// <returns>A float array containing RGB color values for each vertex.</returns>
         public float[] GetColors(Color color)
         {
             return GetColors(color, LatitudeBands, LongitudeBands);
         }
 
+        /// <summary>
+        /// Retrieves the ordered color values for the sphere's vertices based on the specified color.
+        /// </summary>
+        /// <param name="color">The color to apply to each vertex.</param>
+        /// <returns>A float array containing ordered RGB color values for each vertex.</returns>
+        public float[] GetOrderedColors(Color color)
+        {
+            float r = (float)color.R / 255;
+            float g = (float)color.G / 255;
+            float b = (float)color.B / 255;
+
+            var indices = GetIndices(LatitudeBands, LongitudeBands);
+            var orderedColors = new List<float>();
+
+            // Für jeden Index die entsprechenden Farbwerte (r, g, b) hinzufügen
+            foreach (var i in indices)
+            {
+                orderedColors.Add(r);
+                orderedColors.Add(g);
+                orderedColors.Add(b);
+            }
+
+            return orderedColors.ToArray();
+        }
+
+        /// <summary>
+        /// Generates an array of RGB color values for each vertex of the sphere.
+        /// </summary>
+        /// <param name="color">The color to apply to each vertex.</param>
+        /// <param name="latitudeBands">The number of horizontal segments.</param>
+        /// <param name="longitudeBands">The number of vertical segments.</param>
+        /// <returns>A float array containing RGB color values for each vertex.</returns>
         public static float[] GetColors(Color color, int latitudeBands, int longitudeBands)
         {
             float r = (float)color.R / 255;
