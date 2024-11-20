@@ -239,6 +239,7 @@ namespace Genesis.Core.GameElements
             instanceContainer.Vertices = qubeShape.GetShape();
             instanceContainer.VertexColors = Qube.GetColors(material.DiffuseColor);
             instanceContainer.TextureCords = qubeShape.GetTextureCoordinates();
+            instanceContainer.Normals = qubeShape.GetNormals();
             instanceContainer.AddInstance(location, size, rotation);
             return instanceContainer;
         }

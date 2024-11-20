@@ -1,5 +1,6 @@
 ﻿using Genesis.Core;
 using Genesis.Math;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,12 @@ namespace Genesis.Graphics
         public float[] Vertices { get; set; }
         public float[] TextureCords { get; set; }
         public float[] VertexColors { get; set; }
+        public float[] Normals { get; set; }
         public Material Material { get; set; }
         public int Instances { get; set; }
+        public bool UpdateInstances { get; set; } = false;
+
+        private IRenderDevice renderer;
 
         public RenderInstanceContainer(String instanceId, Material material) : base()
         {
@@ -30,7 +35,7 @@ namespace Genesis.Graphics
             instancedElement.Size = size;
             instancedElement.Rotation = rotation;
             this.AddChild(instancedElement);
-            instancedElement.InstanceID = this.Children.Count;
+            instancedElement.InstanceID = this.Children.Count -1;
             return instancedElement;
         }
 
@@ -49,6 +54,7 @@ namespace Genesis.Graphics
         public override void Init(Game game, IRenderDevice renderDevice)
         {
             renderDevice.InitInstance(this);
+            this.renderer = renderDevice;
         }
 
         public override void OnRender(Game game, IRenderDevice renderDevice)
@@ -56,5 +62,24 @@ namespace Genesis.Graphics
             renderDevice.DrawInstance(this);
         }
 
+        public override void OnUpdate(Game game, IRenderDevice renderDevice)
+        {
+            if (this.UpdateInstances)
+            {
+                foreach (var item in this.Children)
+                {
+                    item.OnUpdate(game, renderDevice);
+                }
+            }
+        }
+
+        public void UpdateInstanceMatrix(int instanceId, float[] data)
+        {
+            if(this.renderer != null)
+            {
+                int offsetSize = 16 * sizeof(float);
+                renderer.EditBufferSubData((int)this.Propertys["mbo"], instanceId * offsetSize, data);
+            }
+        }
     }
 }

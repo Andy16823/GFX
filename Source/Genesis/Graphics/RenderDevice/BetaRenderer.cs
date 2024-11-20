@@ -140,6 +140,13 @@ namespace Genesis.Graphics.RenderDevice
             gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
         }
 
+        public void EditBufferSubData(int bufferId, int offset, float[] data)
+        {
+            gl.BindBuffer(OpenGL.ArrayBuffer, bufferId);
+            gl.BufferSubData(OpenGL.ArrayBuffer, offset, data.Length * sizeof(float), data);
+            gl.BindBuffer(OpenGL.ArrayBuffer, 0);
+        }
+
         /// <summary>
         /// Creates a dynamic vertex buffer in OpenGL and initializes it with the specified vertices.
         /// Dynamic buffers are suitable for frequently changing data, like dynamic vertex updates.
@@ -2763,28 +2770,44 @@ namespace Genesis.Graphics.RenderDevice
             gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
             element.Propertys.Add("cbo", cbo);
 
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, element.TextureCords.Length * sizeof(float), element.TextureCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+            element.Propertys.Add("tbo", tbo);
+
+            int nbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+            gl.BufferData(OpenGL.ArrayBuffer, element.Normals.Length * sizeof(float), element.Normals, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+            element.Propertys.Add("nbo", nbo);
+
             var matrices = element.GetMatrices();
             int mbo = gl.GenBuffer(1);
             int vec4Size = sizeof(float) * 4;
             gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
             gl.BufferData(OpenGL.ArrayBuffer, matrices.Length * sizeof(float), matrices, OpenGL.DynamicDraw);
 
-            gl.EnableVertexAttribArray(2);
-            gl.VertexAttribPointer(2, 4, OpenGL.Float, false, 4 * vec4Size, 0);
-
-            gl.EnableVertexAttribArray(3);
-            gl.VertexAttribPointer(3, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
-
             gl.EnableVertexAttribArray(4);
-            gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+            gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 0);
 
             gl.EnableVertexAttribArray(5);
-            gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+            gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
 
-            gl.VertexAttribDivisor(2, 1);
-            gl.VertexAttribDivisor(3, 1);
+            gl.EnableVertexAttribArray(6);
+            gl.VertexAttribPointer(6, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+
+            gl.EnableVertexAttribArray(7);
+            gl.VertexAttribPointer(7, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+
             gl.VertexAttribDivisor(4, 1);
             gl.VertexAttribDivisor(5, 1);
+            gl.VertexAttribDivisor(6, 1);
+            gl.VertexAttribDivisor(7, 1);
+
+            element.Propertys.Add("mbo", mbo);
 
             element.Propertys.Add("vao", vao);
             element.Propertys.Add("tris", (element.Vertices.Length / 3));
@@ -2804,12 +2827,32 @@ namespace Genesis.Graphics.RenderDevice
             int viewLoc = gl.GetUniformLocation(shaderID, "view");
             gl.UniformMatrix4fv(viewLoc, 1, false, v_mat.ToArray());
 
+            var materialColor = Utils.ConvertColor(element.Material.DiffuseColor, true);
+            gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
+
+            if (this.lightSource != null)
+            {
+                Vec3 lightColor = lightSource.GetLightColor();
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
+                gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+            }
+
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, (int)element.Material.Propeterys["tex_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+            gl.ActiveTexture(OpenGL.Texture1);
+            gl.BindTexture(OpenGL.Texture2D, (int)element.Material.Propeterys["normal_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+
             gl.BindVertexArray((int) element.Propertys["vao"]);
             int vertexCount = (int)element.Propertys["tris"] * 3;
             int instanceCount = element.Children.Count;
             gl.DrawArraysInstanced(OpenGL.Triangles, 0, vertexCount, instanceCount);
             gl.BindVertexArray(0);
             gl.UseProgram(0);
+            gl.ActiveTexture(OpenGL.Texture0);
             Debug.WriteLine($"Rendered {element.GetType().Name}: {element.Name} with error {gl.GetError()}");
         }
     }

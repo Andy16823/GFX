@@ -56,6 +56,8 @@ namespace Genesis.Graphics
         /// </summary>
         void End();
 
+        void EditBufferSubData(int bufferId, int offset, float[] data);
+
         /// <summary>
         /// Creates a dynamic vertex buffer with the specified float array.
         /// </summary>

@@ -131,6 +131,13 @@ namespace Genesis.Graphics.RenderDevice
             gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
         }
 
+        public void EditBufferSubData(int bufferId, int offset, float[] data)
+        {
+            gl.BindBuffer(OpenGL.ArrayBuffer, bufferId);
+            gl.BufferSubData(OpenGL.ArrayBuffer, offset, data.Length * sizeof(float), data);
+            gl.BindBuffer(OpenGL.ArrayBuffer, 0);
+        }
+
         /// <summary>
         /// Creates a dynamic vertex buffer in OpenGL and initializes it with the specified vertices.
         /// Dynamic buffers are suitable for frequently changing data, like dynamic vertex updates.
