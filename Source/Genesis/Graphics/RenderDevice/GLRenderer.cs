@@ -2530,5 +2530,15 @@ namespace Genesis.Graphics.RenderDevice
         {
             
         }
+
+        public void InitInstance(RenderInstanceContainer element)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DrawInstance(RenderInstanceContainer element)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -28,6 +28,7 @@ using BulletSharp;
 using BulletSharp.SoftBody;
 using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -100,6 +101,7 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
             this.ShaderPrograms.Add("LightmapShader", new LightmapShader());
             this.ShaderPrograms.Add("Element3DShader", new Element3DShader());
+            this.ShaderPrograms.Add("InstancedShader", new InstancedShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -2738,6 +2740,77 @@ namespace Genesis.Graphics.RenderDevice
             {
                 material.Propeterys.Add("normal_id", this.InitNormalMap(material.NormalTexture));
             }
+        }
+
+        public void InitInstance(RenderInstanceContainer element)
+        {
+            element.Propertys.Add("ShaderID", ShaderPrograms["InstancedShader"].ProgramID);
+
+            int vao = gl.GenVertexArrays(1);
+            gl.BindVertexArray(vao);
+
+            int vbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, element.Vertices.Length * sizeof(float), element.Vertices, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            element.Propertys.Add("vbo", vbo);
+
+            int cbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, element.VertexColors.Length * sizeof(float), element.VertexColors, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+            element.Propertys.Add("cbo", cbo);
+
+            var matrices = element.GetMatrices();
+            int mbo = gl.GenBuffer(1);
+            int vec4Size = sizeof(float) * 4;
+            gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
+            gl.BufferData(OpenGL.ArrayBuffer, matrices.Length * sizeof(float), matrices, OpenGL.DynamicDraw);
+
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 4, OpenGL.Float, false, 4 * vec4Size, 0);
+
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
+
+            gl.EnableVertexAttribArray(4);
+            gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+
+            gl.EnableVertexAttribArray(5);
+            gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+
+            gl.VertexAttribDivisor(2, 1);
+            gl.VertexAttribDivisor(3, 1);
+            gl.VertexAttribDivisor(4, 1);
+            gl.VertexAttribDivisor(5, 1);
+
+            element.Propertys.Add("vao", vao);
+            element.Propertys.Add("tris", (element.Vertices.Length / 3));
+            gl.BindVertexArray(0);
+
+            Debug.WriteLine($"Initilized Element {element.Name} with error {gl.GetError()}");
+        }
+
+        public void DrawInstance(RenderInstanceContainer element)
+        {
+            int shaderID = (int)element.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+
+            int projectionLoc = gl.GetUniformLocation(shaderID, "projection");
+            gl.UniformMatrix4fv(projectionLoc, 1, false, p_mat.ToArray());
+
+            int viewLoc = gl.GetUniformLocation(shaderID, "view");
+            gl.UniformMatrix4fv(viewLoc, 1, false, v_mat.ToArray());
+
+            gl.BindVertexArray((int) element.Propertys["vao"]);
+            int vertexCount = (int)element.Propertys["tris"] * 3;
+            int instanceCount = element.Children.Count;
+            gl.DrawArraysInstanced(OpenGL.Triangles, 0, vertexCount, instanceCount);
+            gl.BindVertexArray(0);
+            gl.UseProgram(0);
+            Debug.WriteLine($"Rendered {element.GetType().Name}: {element.Name} with error {gl.GetError()}");
         }
     }
 }

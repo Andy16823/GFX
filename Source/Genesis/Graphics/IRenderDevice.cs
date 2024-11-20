@@ -23,6 +23,8 @@ namespace Genesis.Graphics
         /// </summary>
         void Init();
 
+        void InitInstance(RenderInstanceContainer element);
+
         /// <summary>
         /// Initializes a game element for rendering.
         /// </summary>
@@ -261,6 +263,8 @@ namespace Genesis.Graphics
         /// </summary>
         /// <param name="element">The game element to draw.</param>
         void DrawGameElement(GameElement element);
+
+        void DrawInstance(RenderInstanceContainer element);
 
         /// <summary>
         /// Draws a sprite in the current rendering context.
