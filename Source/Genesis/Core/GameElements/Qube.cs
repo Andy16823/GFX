@@ -235,11 +235,13 @@ namespace Genesis.Core.GameElements
         public static RenderInstanceContainer CreateInstanceContainer(Vec3 location, Vec3 rotation, Vec3 size, Material material)
         {
             QubeShape qubeShape = new QubeShape();
-            RenderInstanceContainer instanceContainer = new RenderInstanceContainer("-", material);
-            instanceContainer.Vertices = qubeShape.GetShape();
-            instanceContainer.VertexColors = Qube.GetColors(material.DiffuseColor);
-            instanceContainer.TextureCords = qubeShape.GetTextureCoordinates();
-            instanceContainer.Normals = qubeShape.GetNormals();
+            InstancedMesh mesh = new InstancedMesh();
+            mesh.Vertices = qubeShape.GetShape();
+            mesh.VertexColors = Qube.GetColors(material.DiffuseColor);
+            mesh.TextureCords = qubeShape.GetTextureCoordinates();
+            mesh.Normals = qubeShape.GetNormals();
+            mesh.Material = material;
+            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh);
             instanceContainer.AddInstance(location, size, rotation);
             return instanceContainer;
         }

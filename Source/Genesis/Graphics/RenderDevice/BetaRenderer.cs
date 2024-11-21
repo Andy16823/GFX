@@ -29,6 +29,7 @@ using BulletSharp.SoftBody;
 using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -2752,72 +2753,83 @@ namespace Genesis.Graphics.RenderDevice
         public void InitInstance(RenderInstanceContainer element)
         {
             element.Propertys.Add("ShaderID", ShaderPrograms["InstancedShader"].ProgramID);
-
-            int vao = gl.GenVertexArrays(1);
-            gl.BindVertexArray(vao);
-
-            int vbo = gl.GenBuffer(1);
-            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
-            gl.BufferData(OpenGL.ArrayBuffer, element.Vertices.Length * sizeof(float), element.Vertices, OpenGL.DynamicDraw);
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-            element.Propertys.Add("vbo", vbo);
-
-            int cbo = gl.GenBuffer(1);
-            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-            gl.BufferData(OpenGL.ArrayBuffer, element.VertexColors.Length * sizeof(float), element.VertexColors, OpenGL.DynamicDraw);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
-            element.Propertys.Add("cbo", cbo);
-
-            int tbo = gl.GenBuffer(1);
-            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
-            gl.BufferData(OpenGL.ArrayBuffer, element.TextureCords.Length * sizeof(float), element.TextureCords, OpenGL.DynamicDraw);
-            gl.EnableVertexAttribArray(2);
-            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
-            element.Propertys.Add("tbo", tbo);
-
-            int nbo = gl.GenBuffer(1);
-            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
-            gl.BufferData(OpenGL.ArrayBuffer, element.Normals.Length * sizeof(float), element.Normals, OpenGL.DynamicDraw);
-            gl.EnableVertexAttribArray(3);
-            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
-            element.Propertys.Add("nbo", nbo);
-
             var matrices = element.GetMatrices();
+
+            // Generate the matrix buffer for all meshes so we need only 1 buffer
             int mbo = gl.GenBuffer(1);
             int vec4Size = sizeof(float) * 4;
             gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
             gl.BufferData(OpenGL.ArrayBuffer, matrices.Length * sizeof(float), matrices, OpenGL.DynamicDraw);
 
-            gl.EnableVertexAttribArray(4);
-            gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 0);
+            foreach(var mesh in element.Meshes)
+            {
+                // Init the material
+                this.InitMaterial(mesh.Material);
 
-            gl.EnableVertexAttribArray(5);
-            gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
+                // Create an vao for this mesh
+                int vao = gl.GenVertexArrays(1);
+                gl.BindVertexArray(vao);
 
-            gl.EnableVertexAttribArray(6);
-            gl.VertexAttribPointer(6, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+                // Create the vbo for the mesh
+                int vbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.Vertices.Length * sizeof(float), mesh.Vertices, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(0);
+                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("vbo", vbo);
 
-            gl.EnableVertexAttribArray(7);
-            gl.VertexAttribPointer(7, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+                // Create and bind  the cbo for the mesh
+                int cbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.VertexColors.Length * sizeof(float), mesh.VertexColors, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(1);
+                gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("cbo", cbo);
 
-            gl.VertexAttribDivisor(4, 1);
-            gl.VertexAttribDivisor(5, 1);
-            gl.VertexAttribDivisor(6, 1);
-            gl.VertexAttribDivisor(7, 1);
+                // Create and bind the tbo for the mesh
+                int tbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.TextureCords.Length * sizeof(float), mesh.TextureCords, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(2);
+                gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("tbo", tbo);
+
+                // Create and bind the nbo for the mesh
+                int nbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.Normals.Length * sizeof(float), mesh.Normals, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(3);
+                gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("nbo", nbo);
+
+                // Bind the mbo for the mesh
+                gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
+                gl.EnableVertexAttribArray(4);
+                gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 0);
+                gl.EnableVertexAttribArray(5);
+                gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
+                gl.EnableVertexAttribArray(6);
+                gl.VertexAttribPointer(6, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+                gl.EnableVertexAttribArray(7);
+                gl.VertexAttribPointer(7, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+                gl.VertexAttribDivisor(4, 1);
+                gl.VertexAttribDivisor(5, 1);
+                gl.VertexAttribDivisor(6, 1);
+                gl.VertexAttribDivisor(7, 1);
+                
+                // Save the vao
+                mesh.Propertys.Add("vao", vao);
+                mesh.Propertys.Add("tris", (mesh.Vertices.Length / 3));
+                gl.BindVertexArray(0);
+            }
 
             element.Propertys.Add("mbo", mbo);
-
-            element.Propertys.Add("vao", vao);
-            element.Propertys.Add("tris", (element.Vertices.Length / 3));
-            gl.BindVertexArray(0);
-
             Debug.WriteLine($"Initilized Element {element.Name} with error {gl.GetError()}");
         }
 
         public void DrawInstance(RenderInstanceContainer element)
         {
+            int instanceCount = element.Children.Count;
             int shaderID = (int)element.Propertys["ShaderID"];
             gl.UseProgram(shaderID);
 
@@ -2827,9 +2839,6 @@ namespace Genesis.Graphics.RenderDevice
             int viewLoc = gl.GetUniformLocation(shaderID, "view");
             gl.UniformMatrix4fv(viewLoc, 1, false, v_mat.ToArray());
 
-            var materialColor = Utils.ConvertColor(element.Material.DiffuseColor, true);
-            gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
-
             if (this.lightSource != null)
             {
                 Vec3 lightColor = lightSource.GetLightColor();
@@ -2838,18 +2847,24 @@ namespace Genesis.Graphics.RenderDevice
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
             }
 
-            gl.ActiveTexture(OpenGL.Texture0);
-            gl.BindTexture(OpenGL.Texture2D, (int)element.Material.Propeterys["tex_id"]);
-            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+            foreach(var mesh in element.Meshes)
+            {
+                var materialColor = Utils.ConvertColor(mesh.Material.DiffuseColor, true);
+                gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
 
-            gl.ActiveTexture(OpenGL.Texture1);
-            gl.BindTexture(OpenGL.Texture2D, (int)element.Material.Propeterys["normal_id"]);
-            gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+                gl.ActiveTexture(OpenGL.Texture0);
+                gl.BindTexture(OpenGL.Texture2D, (int)mesh.Material.Propeterys["tex_id"]);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
 
-            gl.BindVertexArray((int) element.Propertys["vao"]);
-            int vertexCount = (int)element.Propertys["tris"] * 3;
-            int instanceCount = element.Children.Count;
-            gl.DrawArraysInstanced(OpenGL.Triangles, 0, vertexCount, instanceCount);
+                gl.ActiveTexture(OpenGL.Texture1);
+                gl.BindTexture(OpenGL.Texture2D, (int)mesh.Material.Propeterys["normal_id"]);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+
+                gl.BindVertexArray((int)mesh.Propertys["vao"]);
+                int vertexCount = (int)mesh.Propertys["tris"] * 3;
+                gl.DrawArraysInstanced(OpenGL.Triangles, 0, vertexCount, instanceCount);
+            }
+
             gl.BindVertexArray(0);
             gl.UseProgram(0);
             gl.ActiveTexture(OpenGL.Texture0);
@@ -2859,11 +2874,14 @@ namespace Genesis.Graphics.RenderDevice
         public void DisposeInstance(RenderInstanceContainer element)
         {
             Console.WriteLine($"Disposing {element.Name}");
-            gl.DeleteVertexArrays(1, (int)element.Propertys["vao"]);
-            gl.DeleteBuffers(1, (int)element.Propertys["vbo"]);
-            gl.DeleteBuffers(1, (int)element.Propertys["cbo"]);
-            gl.DeleteBuffers(1, (int)element.Propertys["tbo"]);
-            gl.DeleteBuffers(1, (int)element.Propertys["nbo"]);
+             foreach(var mesh in element.Meshes)
+            {
+                gl.DeleteVertexArrays(1, (int)mesh.Propertys["vao"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["vbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["cbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["tbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["nbo"]);
+            }
             gl.DeleteBuffers(1, (int)element.Propertys["mbo"]);
             Console.WriteLine($"{element.Name} Disposed!");
         }

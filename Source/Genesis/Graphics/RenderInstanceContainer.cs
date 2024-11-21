@@ -9,23 +9,32 @@ using System.Threading.Tasks;
 
 namespace Genesis.Graphics
 {
-    public class RenderInstanceContainer : GameElement
+    public class InstancedMesh
     {
-        public String InstanceID { get; set; }
+        public Material Material { get; set; }
         public float[] Vertices { get; set; }
         public float[] TextureCords { get; set; }
         public float[] VertexColors { get; set; }
         public float[] Normals { get; set; }
-        public Material Material { get; set; }
-        public int Instances { get; set; }
+        public Dictionary<String, Object> Propertys { get; set; }
+
+        public InstancedMesh()
+        {
+            this.Propertys = new Dictionary<string, object>();
+        }
+    }
+
+    public class RenderInstanceContainer : GameElement
+    {
+        public List<InstancedMesh> Meshes { get; set; }
         public bool UpdateInstances { get; set; } = false;
 
         private IRenderDevice renderer;
 
-        public RenderInstanceContainer(String instanceId, Material material) : base()
+        public RenderInstanceContainer(InstancedMesh mesh) : base()
         {
-            this.InstanceID = instanceId;
-            this.Material = material;
+            this.Meshes = new List<InstancedMesh>();
+            this.Meshes.Add(mesh);
         }
 
         public InstancedElement AddInstance(Vec3 position, Vec3 size, Vec3 rotation = default)

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderinstancecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\graphics\\renderinstancecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderinstancecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\instancedelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\instancedelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\renderdevice\\glrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +31,12 @@
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\irenderdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy\\documents\\gfx net framework\\gfx\\genesis\\graphics\\instancedelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\instancedelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\shaders\\opengl\\instancedshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\shaders\\opengl\\instancedshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelements\\cameraelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\cameraelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\genesis\\graphics\\shaders\\opengl\\particleshader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,20 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "GameElement.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElement.cs",
               "RelativeDocumentMoniker": "Genesis\\Core\\GameElement.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElement.cs",
               "RelativeToolTip": "Genesis\\Core\\GameElement.cs",
-              "ViewState": "AQIAAJEAAAAAAAAAAAAMwKUAAAAMAAAA",
+              "ViewState": "AQIAAEEAAAAAAAAAAAD4v0YAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T16:42:32.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CameraElement.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\CameraElement.cs",
               "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\CameraElement.cs",
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IRenderDevice.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\IRenderDevice.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\IRenderDevice.cs",
@@ -91,8 +91,7 @@
               "RelativeToolTip": "Genesis\\Graphics\\IRenderDevice.cs",
               "ViewState": "AQIAAJABAAAAAAAAAAAAAKYBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T15:54:59.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T15:54:59.055Z"
             },
             {
               "$type": "Document",
@@ -108,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "InstancedShader.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\Shaders\\OpenGL\\InstancedShader.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\Shaders\\OpenGL\\InstancedShader.cs",
@@ -120,32 +119,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Qube.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Qube.cs",
               "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Qube.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Core\\GameElements\\Qube.cs",
               "RelativeToolTip": "Genesis\\Core\\GameElements\\Qube.cs",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAqwPEAAAA/AAAA",
+              "ViewState": "AQIAANkAAAAAAAAAAAAgwPIAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T23:19:43.828Z"
+              "WhenOpened": "2024-11-19T23:19:43.828Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BetaRenderer.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
               "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
-              "ViewState": "AQIAACELAAAAAAAAAAAAADULAAAFAAAA",
+              "ViewState": "AQIAACgLAAAAAAAAAAAcwEYLAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T23:17:29.925Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GLRenderer.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
@@ -153,12 +153,11 @@
               "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\GLRenderer.cs",
               "ViewState": "AQIAAOcJAAAAAAAAAAAcwPgJAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T23:17:25.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-19T23:17:25.715Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "InstancedElement.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\InstancedElement.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\InstancedElement.cs",
@@ -171,13 +170,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "RenderInstanceContainer.cs",
               "DocumentMoniker": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderInstanceContainer.cs",
               "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderInstanceContainer.cs",
               "ToolTip": "C:\\Users\\Andy\\Documents\\GFX Net Framework\\GFX\\Genesis\\Graphics\\RenderInstanceContainer.cs",
               "RelativeToolTip": "Genesis\\Graphics\\RenderInstanceContainer.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAwwGYAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAArwCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T22:24:19.109Z",
               "EditorCaption": ""
