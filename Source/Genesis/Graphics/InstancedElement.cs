@@ -61,15 +61,6 @@ namespace Genesis.Graphics
         public int InstanceID { get; set; }
         public bool Initialized { get; set; }
 
-        public InstancedElement()
-        {
-        }
-
-
-        public void UpdatePosition(Vec3 position)
-        {
-        }
-
         public mat4 GetModelViewMatrix()
         {
             mat4 mt_mat = mat4.Translate(this.Location.X, this.Location.Y, this.Location.Z);

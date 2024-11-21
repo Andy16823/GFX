@@ -2855,5 +2855,17 @@ namespace Genesis.Graphics.RenderDevice
             gl.ActiveTexture(OpenGL.Texture0);
             Debug.WriteLine($"Rendered {element.GetType().Name}: {element.Name} with error {gl.GetError()}");
         }
+
+        public void DisposeInstance(RenderInstanceContainer element)
+        {
+            Console.WriteLine($"Disposing {element.Name}");
+            gl.DeleteVertexArrays(1, (int)element.Propertys["vao"]);
+            gl.DeleteBuffers(1, (int)element.Propertys["vbo"]);
+            gl.DeleteBuffers(1, (int)element.Propertys["cbo"]);
+            gl.DeleteBuffers(1, (int)element.Propertys["tbo"]);
+            gl.DeleteBuffers(1, (int)element.Propertys["nbo"]);
+            gl.DeleteBuffers(1, (int)element.Propertys["mbo"]);
+            Console.WriteLine($"{element.Name} Disposed!");
+        }
     }
 }

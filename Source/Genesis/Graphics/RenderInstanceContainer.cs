@@ -62,6 +62,23 @@ namespace Genesis.Graphics
             renderDevice.DrawInstance(this);
         }
 
+        public override void OnDestroy(Game game)
+        {
+            game.RenderDevice.DisposeInstance(this);
+            foreach (var instance in this.Children)
+            {
+                foreach (var behavior in instance.Behaviors)
+                {
+                    behavior.OnDestroy(game, this);
+                }
+            }
+
+            foreach (var behavior in this.Behaviors)
+            {
+                behavior.OnDestroy(game, this);
+            }
+        }
+
         public override void OnUpdate(Game game, IRenderDevice renderDevice)
         {
             if (this.UpdateInstances)

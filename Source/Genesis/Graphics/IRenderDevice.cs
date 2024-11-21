@@ -420,6 +420,8 @@ namespace Genesis.Graphics
         /// <param name="font">The font to dispose.</param>
         void DisposeFont(Font font);
 
+        void DisposeInstance(RenderInstanceContainer element);
+
         /// <summary>
         /// Disposes the game element
         /// </summary>

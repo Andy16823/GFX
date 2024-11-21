@@ -2547,5 +2547,10 @@ namespace Genesis.Graphics.RenderDevice
         {
             throw new NotImplementedException();
         }
+
+        public void DisposeInstance(RenderInstanceContainer element)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
