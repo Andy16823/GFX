@@ -1,6 +1,7 @@
 ﻿using Genesis.Graphics;
 using Genesis.Graphics.Shapes;
 using Genesis.Math;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -57,6 +58,23 @@ namespace Genesis.Core.GameElements
         {
             base.OnRender(game, renderDevice);
             renderDevice.DrawGameElement(this);
+        }
+
+        public static RenderInstanceContainer CreateInstanceContainer(Material material, int latitudebands = 20, int longitudebands = 20, float radius = 0.5f)
+        {
+            SphereShape shape = new SphereShape();
+            shape.LatitudeBands = latitudebands;
+            shape.LongitudeBands = longitudebands;
+            shape.Radius = radius;
+
+            InstancedMesh mesh = new InstancedMesh();
+            mesh.Vertices = shape.GetShape();
+            mesh.VertexColors = shape.GetOrderedColors(material.DiffuseColor);
+            mesh.TextureCords = shape.GetOrderedTextureCoordinates();
+            mesh.Normals = shape.GetOrderedNormals();
+            mesh.Material = material;
+            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh);
+            return instanceContainer;
         }
     }
 }

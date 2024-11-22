@@ -595,6 +595,20 @@ namespace Genesis.Core
             return new float[] { r, g, b, a };
         }
 
+        public static float[] CreateVertexColors(int vertexCount, Color color)
+        {
+            float[] result = new float[vertexCount * 3];
+            float[] c = Utils.ConvertColor(color);
+
+            for (int i = 0; i < vertexCount; i++)
+            {
+                result[i * 3] = c[0];
+                result[i * 3 + 1] = c[1];
+                result[i * 3 + 2] = c[2];
+            }
+            return result;
+        }
+
         /// <summary>
         /// Generates an random color
         /// </summary>

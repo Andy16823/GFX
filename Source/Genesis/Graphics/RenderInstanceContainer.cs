@@ -31,6 +31,11 @@ namespace Genesis.Graphics
 
         private IRenderDevice renderer;
 
+        public RenderInstanceContainer()
+        {
+            this.Meshes = new List<InstancedMesh>();
+        }
+
         public RenderInstanceContainer(InstancedMesh mesh) : base()
         {
             this.Meshes = new List<InstancedMesh>();

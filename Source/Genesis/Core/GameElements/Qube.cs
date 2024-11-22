@@ -232,7 +232,7 @@ namespace Genesis.Core.GameElements
             game.RenderDevice.DisposeElement(this);
         }
 
-        public static RenderInstanceContainer CreateInstanceContainer(Vec3 location, Vec3 rotation, Vec3 size, Material material)
+        public static RenderInstanceContainer CreateInstanceContainer(Material material)
         {
             QubeShape qubeShape = new QubeShape();
             InstancedMesh mesh = new InstancedMesh();
@@ -242,7 +242,6 @@ namespace Genesis.Core.GameElements
             mesh.Normals = qubeShape.GetNormals();
             mesh.Material = material;
             RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh);
-            instanceContainer.AddInstance(location, size, rotation);
             return instanceContainer;
         }
     }

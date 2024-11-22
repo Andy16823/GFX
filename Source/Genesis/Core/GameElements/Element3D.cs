@@ -234,5 +234,28 @@ namespace Genesis.Core.GameElements
 
             return buffer;
         }
+
+        public RenderInstanceContainer ToRenderInstance()
+        {
+            return Element3D.CreateInstanceContainer(this);
+        }
+
+        public static RenderInstanceContainer CreateInstanceContainer(Element3D element)
+        {
+            var renderInstance = new RenderInstanceContainer();
+            foreach (var material in element.Materials)
+            {
+                var buffers = element.GetMaterialBuffers(material);
+                InstancedMesh mesh = new InstancedMesh();
+                mesh.Vertices = buffers.Verticies;
+                mesh.VertexColors = Utils.CreateVertexColors(mesh.Vertices.Length / 3, Color.White);
+                mesh.TextureCords = buffers.Texcords;
+                mesh.Normals = buffers.Normals;
+                mesh.Material = material;
+
+                renderInstance.Meshes.Add(mesh);
+            }
+            return renderInstance;
+        }
     }
 }
