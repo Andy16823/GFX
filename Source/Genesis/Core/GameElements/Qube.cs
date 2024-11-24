@@ -232,6 +232,11 @@ namespace Genesis.Core.GameElements
             game.RenderDevice.DisposeElement(this);
         }
 
+        public RenderInstanceContainer ToRenderInstance()
+        {
+            return Qube.CreateInstanceContainer(this.Material);
+        }
+
         public static RenderInstanceContainer CreateInstanceContainer(Material material)
         {
             QubeShape qubeShape = new QubeShape();

@@ -2737,16 +2737,39 @@ namespace Genesis.Graphics.RenderDevice
             v_mat = viewMatrix;
         }
 
+        public bool IsMaterialLoaded(Material material)
+        {
+            if(material.Propeterys.ContainsKey("tex_id") && material.Propeterys.ContainsKey("normal_id"))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void InitMaterial(Material material)
         {
-            if(!material.Propeterys.ContainsKey("tex_id"))
+            if(!this.IsMaterialLoaded(material))
             {
-                material.Propeterys.Add("tex_id", this.InitTexture(material.DiffuseTexture));
-            }
-
-            if (!material.Propeterys.ContainsKey("normal_id"))
-            {
-                material.Propeterys.Add("normal_id", this.InitNormalMap(material.NormalTexture));
+                Debug.WriteLine($"Loading Material {material.Name}");
+                if (!material.Propeterys.ContainsKey("tex_id"))
+                {
+                    var texturePath = material.DiffuseTexture;
+                    if (material.Propeterys.ContainsKey("Path"))
+                    {
+                        texturePath = Path.Combine((String)material.Propeterys["Path"], material.DiffuseTexture);
+                    }
+                    material.Propeterys.Add("tex_id", this.InitTexture(texturePath));
+                }
+                if (!material.Propeterys.ContainsKey("normal_id"))
+                {
+                    var texturePath = material.NormalTexture;
+                    if (material.Propeterys.ContainsKey("Path"))
+                    {
+                        texturePath = Path.Combine((String)material.Propeterys["Path"], material.NormalTexture);
+                    }
+                    material.Propeterys.Add("normal_id", this.InitNormalMap(texturePath));
+                }
+                Debug.WriteLine($"Loaded Material {material.Name} with error {gl.GetError()}");
             }
         }
 

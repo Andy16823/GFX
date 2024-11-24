@@ -35,6 +35,8 @@ namespace Genesis.Graphics
         /// </summary>
         void InitSprite(Sprite sprite);
 
+        bool IsMaterialLoaded(Material material);
+
         /// <summary>
         /// Initialize a material for rendering
         /// </summary>

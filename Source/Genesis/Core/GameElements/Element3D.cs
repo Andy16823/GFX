@@ -252,6 +252,7 @@ namespace Genesis.Core.GameElements
                 mesh.TextureCords = buffers.Texcords;
                 mesh.Normals = buffers.Normals;
                 mesh.Material = material;
+                material.Propeterys.Add("Path", element.Propertys["path"]);
 
                 renderInstance.Meshes.Add(mesh);
             }

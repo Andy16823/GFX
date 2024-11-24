@@ -60,6 +60,11 @@ namespace Genesis.Core.GameElements
             renderDevice.DrawGameElement(this);
         }
 
+        public RenderInstanceContainer ToRenderInstance()
+        {
+            return Sphere.CreateInstanceContainer(this.Material, this.Shape.LatitudeBands, this.Shape.LongitudeBands, this.Shape.Radius);
+        }
+
         public static RenderInstanceContainer CreateInstanceContainer(Material material, int latitudebands = 20, int longitudebands = 20, float radius = 0.5f)
         {
             SphereShape shape = new SphereShape();

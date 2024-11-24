@@ -2533,6 +2533,11 @@ namespace Genesis.Graphics.RenderDevice
             v_mat = viewMatrix;
         }
 
+        public bool IsMaterialLoaded(Material material)
+        {
+            return false;
+        }
+
         public void InitMaterial(Material material)
         {
             
