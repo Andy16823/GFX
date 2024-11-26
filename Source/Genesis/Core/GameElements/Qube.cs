@@ -246,7 +246,7 @@ namespace Genesis.Core.GameElements
             mesh.TextureCords = qubeShape.GetTextureCoordinates();
             mesh.Normals = qubeShape.GetNormals();
             mesh.Material = material;
-            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh);
+            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh, new InstancedShader());
             return instanceContainer;
         }
     }

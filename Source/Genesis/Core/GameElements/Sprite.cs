@@ -153,6 +153,5 @@ namespace Genesis.Core.GameElements
                 RightX, bottom, 0.0f
             };
         }
-
     }
 }

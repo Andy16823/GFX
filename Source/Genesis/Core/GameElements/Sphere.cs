@@ -1,4 +1,5 @@
 ﻿using Genesis.Graphics;
+using Genesis.Graphics.Shaders.OpenGL;
 using Genesis.Graphics.Shapes;
 using Genesis.Math;
 using Microsoft.Win32.SafeHandles;
@@ -78,7 +79,7 @@ namespace Genesis.Core.GameElements
             mesh.TextureCords = shape.GetOrderedTextureCoordinates();
             mesh.Normals = shape.GetOrderedNormals();
             mesh.Material = material;
-            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh);
+            RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh, new InstancedShader());
             return instanceContainer;
         }
     }

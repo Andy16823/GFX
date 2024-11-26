@@ -169,6 +169,7 @@
     <Compile Include="Graphics\Shaders\OpenGL\Element3DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\InstancedShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\InstanceShader2D.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\Light2DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\LightmapShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\ParticleShader.cs" />

@@ -4824,6 +4824,47 @@
             <param name="row">The row index of the glyph in the texture atlas.</param>
             <param name="column">The column index of the glyph in the texture atlas.</param>
         </member>
+        <member name="T:Genesis.Graphics.InstancedElement">
+            <summary>
+            Represents an instanced element within a scene, providing position, rotation, and size transformations.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedElement.Location">
+            <summary>
+            Gets or sets the location of the instance in the world space.
+            Updates the instance matrix in the parent container when changed.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedElement.Rotation">
+            <summary>
+            Gets or sets the rotation of the instance in degrees (X, Y, Z).
+            Updates the instance matrix in the parent container when changed.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedElement.Size">
+            <summary>
+            Gets or sets the size (scale) of the instance in the world space.
+            Updates the instance matrix in the parent container when changed.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedElement.InstanceID">
+            <summary>
+            Gets or sets the unique identifier for the instance within its container.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedElement.Initialized">
+            <summary>
+            Gets or sets a value indicating whether the instance has been initialized.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.InstancedElement.GetModelViewMatrix">
+            <summary>
+            Computes the model-view transformation matrix for the instance.
+            </summary>
+            <returns>
+            A <see cref="T:GlmSharp.mat4"/> representing the combined transformations: translation, rotation, and scaling.
+            </returns>
+        </member>
         <member name="T:Genesis.Graphics.IRenderDevice">
             <summary>
             Interface for a rendering device that handles graphics rendering operations.
@@ -6656,6 +6697,128 @@
             Disposes the particle emitter
             </summary>
             <param name="emitter"></param>
+        </member>
+        <member name="T:Genesis.Graphics.InstancedMesh">
+            <summary>
+            Represents an instanced mesh containing material, vertex data, and other properties.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.Material">
+            <summary>
+            Gets or sets the material of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.Vertices">
+            <summary>
+            Gets or sets the vertex data of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.TextureCords">
+            <summary>
+            Gets or sets the texture coordinates of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.VertexColors">
+            <summary>
+            Gets or sets the vertex color data of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.Normals">
+            <summary>
+            Gets or sets the normals of the mesh.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.InstancedMesh.Propertys">
+            <summary>
+            Gets or sets additional properties for the mesh.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.InstancedMesh.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.InstancedMesh"/> class.
+            </summary>
+        </member>
+        <member name="T:Genesis.Graphics.RenderInstanceContainer">
+            <summary>
+            Represents a container for managing and rendering instanced meshes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.RenderInstanceContainer.Meshes">
+            <summary>
+            Gets or sets the collection of instanced meshes.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.RenderInstanceContainer.UpdateInstances">
+            <summary>
+            Gets or sets a value indicating whether the instances need to be updated.
+            </summary>
+        </member>
+        <member name="P:Genesis.Graphics.RenderInstanceContainer.Shader">
+            <summary>
+            Gets or sets the shader program used for rendering the instances.
+            </summary>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.#ctor(Genesis.Graphics.ShaderProgram)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.RenderInstanceContainer"/> class with a specified shader.
+            </summary>
+            <param name="shader">The shader program to use for rendering.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.#ctor(Genesis.Graphics.InstancedMesh,Genesis.Graphics.ShaderProgram)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Graphics.RenderInstanceContainer"/> class with a specified mesh and shader.
+            </summary>
+            <param name="mesh">The instanced mesh to add.</param>
+            <param name="shader">The shader program to use for rendering.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.AddInstance(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Adds a new instance to the container with specified position, size, and optional rotation.
+            </summary>
+            <param name="position">The position of the instance.</param>
+            <param name="size">The size of the instance.</param>
+            <param name="rotation">The rotation of the instance. Default is no rotation.</param>
+            <returns>The created <see cref="T:Genesis.Graphics.InstancedElement"/>.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.GetMatrices">
+            <summary>
+            Retrieves an array of transformation matrices for all instances.
+            </summary>
+            <returns>An array of transformation matrices as floats.</returns>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the container with the specified game and render device.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Renders the container using the specified game and render device.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.OnDestroy(Genesis.Core.Game)">
+            <summary>
+            Cleans up resources associated with the container when it is destroyed.
+            </summary>
+            <param name="game">The game instance.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Updates the instances in the container if <see cref="P:Genesis.Graphics.RenderInstanceContainer.UpdateInstances"/> is set to true.
+            </summary>
+            <param name="game">The game instance.</param>
+            <param name="renderDevice">The render device used for rendering.</param>
+        </member>
+        <member name="M:Genesis.Graphics.RenderInstanceContainer.UpdateInstanceMatrix(System.Int32,System.Single[])">
+            <summary>
+            Updates the transformation matrix for a specific instance.
+            </summary>
+            <param name="instanceId">The ID of the instance to update.</param>
+            <param name="data">The new transformation matrix data.</param>
         </member>
         <member name="T:Genesis.Graphics.Shapes.SphereShape">
             <summary>

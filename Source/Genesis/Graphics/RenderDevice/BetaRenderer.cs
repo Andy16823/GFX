@@ -2775,7 +2775,8 @@ namespace Genesis.Graphics.RenderDevice
 
         public void InitInstance(RenderInstanceContainer element)
         {
-            element.Propertys.Add("ShaderID", ShaderPrograms["InstancedShader"].ProgramID);
+            var shaderId = InitShader(element.Shader);
+            element.Propertys.Add("ShaderID", shaderId);
             var matrices = element.GetMatrices();
 
             // Generate the matrix buffer for all meshes so we need only 1 buffer

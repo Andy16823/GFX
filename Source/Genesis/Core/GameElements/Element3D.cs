@@ -15,6 +15,7 @@ using System.Drawing;
 using System.Reflection;
 using Assimp.Unmanaged;
 using Genesis.Graphics.Animation3D;
+using Genesis.Graphics.Shaders.OpenGL;
 
 namespace Genesis.Core.GameElements
 {
@@ -242,7 +243,7 @@ namespace Genesis.Core.GameElements
 
         public static RenderInstanceContainer CreateInstanceContainer(Element3D element)
         {
-            var renderInstance = new RenderInstanceContainer();
+            var renderInstance = new RenderInstanceContainer(new InstancedShader());
             foreach (var material in element.Materials)
             {
                 var buffers = element.GetMaterialBuffers(material);
