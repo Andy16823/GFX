@@ -160,5 +160,20 @@ namespace Genesis.Physics
         {
             PhysicHandler.RemoveElement(this);
         }
+
+        public static BulletSharp.Math.Matrix GetBtTransform(GameElement element)
+        {
+            var location = Utils.GetElementWorldLocation(element);
+            var rotation = Utils.GetElementWorldRotation(element);
+            var scale = Utils.GetElementWorldScale(element);
+
+            quat quat = new quat(new vec3(Utils.ToRadians(rotation.X), Utils.ToRadians(rotation.Y), Utils.ToRadians(rotation.Z)));
+            mat4 rotMat = new mat4(quat);
+
+            BulletSharp.Math.Matrix btTranslation = BulletSharp.Math.Matrix.Translation(location.X, location.Y, location.Z);
+            BulletSharp.Math.Matrix btRotation = new BulletSharp.Math.Matrix(rotMat.ToArray());
+
+            return btRotation * btTranslation;
+        }
     }
 }

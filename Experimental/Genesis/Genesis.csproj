@@ -107,7 +107,6 @@
     <Compile Include="Core\Behaviors\Physics3D\CapsuleCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CapsuleRigidBody.cs" />
     <Compile Include="Core\Behaviors\Physics3D\CompoundMeshCollider.cs" />
-    <Compile Include="Core\Behaviors\Physics3D\CompoundMeshCollider2.cs" />
     <Compile Include="Core\Behaviors\Physics3D\ConvexHullCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\MeshCollider.cs" />
     <Compile Include="Core\Behaviors\Physics3D\QubeConvexHull.cs" />
