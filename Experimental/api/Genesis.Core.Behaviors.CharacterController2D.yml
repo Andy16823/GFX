@@ -1,0 +1,1574 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.CharacterController2D
+  commentId: T:Genesis.Core.Behaviors.CharacterController2D
+  id: CharacterController2D
+  parent: Genesis.Core.Behaviors
+  children:
+  - Genesis.Core.Behaviors.CharacterController2D.#ctor
+  - Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  - Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  - Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  - Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  - Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  - Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  - Genesis.Core.Behaviors.CharacterController2D.DownKey
+  - Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  - Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  - Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  - Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  - Genesis.Core.Behaviors.CharacterController2D.Mass
+  - Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  - Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  - Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Core.Behaviors.CharacterController2D.RightKey
+  - Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  - Genesis.Core.Behaviors.CharacterController2D.Speed
+  - Genesis.Core.Behaviors.CharacterController2D.UpKey
+  langs:
+  - csharp
+  - vb
+  name: CharacterController2D
+  nameWithType: CharacterController2D
+  fullName: Genesis.Core.Behaviors.CharacterController2D
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Class representing a 2D character controller as a game behavior.
+  example: []
+  syntax:
+    content: 'public class CharacterController2D : IGameBehavior'
+    content.vb: Public Class CharacterController2D Inherits IGameBehavior
+  inheritance:
+  - System.Object
+  - Genesis.Core.IGameBehavior
+  inheritedMembers:
+  - Genesis.Core.IGameBehavior.Parent
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Core.Behaviors.CharacterController2D.#ctor
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.#ctor
+  id: '#ctor'
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CharacterController2D()
+  nameWithType: CharacterController2D.CharacterController2D()
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterController2D()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Default constructor for CharacterController2D.
+  example: []
+  syntax:
+    content: public CharacterController2D()
+    content.vb: Public Sub New()
+  overload: Genesis.Core.Behaviors.CharacterController2D.#ctor*
+  nameWithType.vb: CharacterController2D.New()
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.New()
+  name.vb: New()
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: OnInit(Game, GameElement)
+  nameWithType: CharacterController2D.OnInit(Game, GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Initialization method called when the game starts.
+  example: []
+  syntax:
+    content: public override void OnInit(Game game, GameElement parent)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement of the behavior.
+    content.vb: Public Overrides Sub OnInit(game As Game, parent As GameElement)
+  overridden: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  overload: Genesis.Core.Behaviors.CharacterController2D.OnInit*
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  id: CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Core.Behaviors.ControllerPreset)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CreatePhysics(PhysicHandler, ControllerPreset)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler, ControllerPreset)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Core.Behaviors.ControllerPreset)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Creates physics for the character based on the specified controller preset.
+  example: []
+  syntax:
+    content: public void CreatePhysics(PhysicHandler physicsHandler, ControllerPreset controllerPreset)
+    parameters:
+    - id: physicsHandler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler for creating the physics.
+    - id: controllerPreset
+      type: Genesis.Core.Behaviors.ControllerPreset
+      description: The preset for the controller.
+    content.vb: Public Sub CreatePhysics(physicsHandler As PhysicHandler, controllerPreset As ControllerPreset)
+  overload: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics*
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  id: CreatePhysics(Genesis.Physics.PhysicHandler)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CreatePhysics(PhysicHandler)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Creates default physics for the character with no specified factors.
+  example: []
+  syntax:
+    content: public void CreatePhysics(PhysicHandler physicHandler)
+    parameters:
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler for creating the physics.
+    content.vb: Public Sub CreatePhysics(physicHandler As PhysicHandler)
+  overload: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics*
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  id: CreatePhysics(Genesis.Physics.PhysicHandler,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Boolean)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CreatePhysics(PhysicHandler, Vec3, Vec3, bool)
+  nameWithType: CharacterController2D.CreatePhysics(PhysicHandler, Vec3, Vec3, bool)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Genesis.Math.Vec3, bool)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Creates physics for the character with specified factors and physics enabling.
+  example: []
+  syntax:
+    content: public void CreatePhysics(PhysicHandler physicHandler, Vec3 linearFactor, Vec3 angularFactor, bool enablePhysics)
+    parameters:
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+      description: The physics handler for creating the physics.
+    - id: linearFactor
+      type: Genesis.Math.Vec3
+      description: The linear factor for the physics.
+    - id: angularFactor
+      type: Genesis.Math.Vec3
+      description: The angular factor for the physics.
+    - id: enablePhysics
+      type: System.Boolean
+      description: Specifies whether physics should be enabled initially.
+    content.vb: Public Sub CreatePhysics(physicHandler As PhysicHandler, linearFactor As Vec3, angularFactor As Vec3, enablePhysics As Boolean)
+  overload: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics*
+  nameWithType.vb: CharacterController2D.CreatePhysics(PhysicHandler, Vec3, Vec3, Boolean)
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics(Genesis.Physics.PhysicHandler, Genesis.Math.Vec3, Genesis.Math.Vec3, Boolean)
+  name.vb: CreatePhysics(PhysicHandler, Vec3, Vec3, Boolean)
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate(Game, GameElement)
+  nameWithType: CharacterController2D.OnUpdate(Game, GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Updates the character state on each frame.
+  example: []
+  syntax:
+    content: public override void OnUpdate(Game game, GameElement parent)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement of the behavior.
+    content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
+  overridden: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  overload: Genesis.Core.Behaviors.CharacterController2D.OnUpdate*
+- uid: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  id: CharacterProcess(Genesis.Core.Game)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CharacterProcess(Game)
+  nameWithType: CharacterController2D.CharacterProcess(Game)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Processes character movement and behavior based on user input.
+  example: []
+  syntax:
+    content: public void CharacterProcess(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    content.vb: Public Sub CharacterProcess(game As Game)
+  overload: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess*
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy(Game, GameElement)
+  nameWithType: CharacterController2D.OnDestroy(Game, GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Destruction method called when the game ends or the behavior is removed.
+  example: []
+  syntax:
+    content: public override void OnDestroy(Game game, GameElement parent)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement of the behavior.
+    content.vb: Public Overrides Sub OnDestroy(game As Game, parent As GameElement)
+  overridden: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  overload: Genesis.Core.Behaviors.CharacterController2D.OnDestroy*
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: OnRender(Game, GameElement)
+  nameWithType: CharacterController2D.OnRender(Game, GameElement)
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Rendering method called during the rendering phase.
+  example: []
+  syntax:
+    content: public override void OnRender(Game game, GameElement parent)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent GameElement of the behavior.
+    content.vb: Public Overrides Sub OnRender(game As Game, parent As GameElement)
+  overridden: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  overload: Genesis.Core.Behaviors.CharacterController2D.OnRender*
+- uid: Genesis.Core.Behaviors.CharacterController2D.Mass
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Mass
+  id: Mass
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: Mass
+  nameWithType: CharacterController2D.Mass
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Mass
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the mass of the character.
+  example: []
+  syntax:
+    content: public float Mass { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Mass As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.Mass*
+- uid: Genesis.Core.Behaviors.CharacterController2D.Speed
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Speed
+  id: Speed
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: Speed
+  nameWithType: CharacterController2D.Speed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Speed
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the speed of the character movement.
+  example: []
+  syntax:
+    content: public float Speed { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Speed As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.Speed*
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  id: JumpSpeed
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: JumpSpeed
+  nameWithType: CharacterController2D.JumpSpeed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the jump speed of the character.
+  example: []
+  syntax:
+    content: public float JumpSpeed { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property JumpSpeed As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed*
+- uid: Genesis.Core.Behaviors.CharacterController2D.UpKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.UpKey
+  id: UpKey
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: UpKey
+  nameWithType: CharacterController2D.UpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.UpKey
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the key for moving the character up.
+  example: []
+  syntax:
+    content: public Keys UpKey { get; set; }
+    parameters: []
+    return:
+      type: System.Windows.Forms.Keys
+    content.vb: Public Property UpKey As Keys
+  overload: Genesis.Core.Behaviors.CharacterController2D.UpKey*
+- uid: Genesis.Core.Behaviors.CharacterController2D.DownKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.DownKey
+  id: DownKey
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: DownKey
+  nameWithType: CharacterController2D.DownKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.DownKey
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the key for moving the character down.
+  example: []
+  syntax:
+    content: public Keys DownKey { get; set; }
+    parameters: []
+    return:
+      type: System.Windows.Forms.Keys
+    content.vb: Public Property DownKey As Keys
+  overload: Genesis.Core.Behaviors.CharacterController2D.DownKey*
+- uid: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  id: LeftKey
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: LeftKey
+  nameWithType: CharacterController2D.LeftKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the key for moving the character right.
+  example: []
+  syntax:
+    content: public Keys LeftKey { get; set; }
+    parameters: []
+    return:
+      type: System.Windows.Forms.Keys
+    content.vb: Public Property LeftKey As Keys
+  overload: Genesis.Core.Behaviors.CharacterController2D.LeftKey*
+- uid: Genesis.Core.Behaviors.CharacterController2D.RightKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.RightKey
+  id: RightKey
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: RightKey
+  nameWithType: CharacterController2D.RightKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.RightKey
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the key for making the character jump.
+  example: []
+  syntax:
+    content: public Keys RightKey { get; set; }
+    parameters: []
+    return:
+      type: System.Windows.Forms.Keys
+    content.vb: Public Property RightKey As Keys
+  overload: Genesis.Core.Behaviors.CharacterController2D.RightKey*
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  id: JumpKey
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: JumpKey
+  nameWithType: CharacterController2D.JumpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets whether jumping is allowed.
+  example: []
+  syntax:
+    content: public Keys JumpKey { get; set; }
+    parameters: []
+    return:
+      type: System.Windows.Forms.Keys
+    content.vb: Public Property JumpKey As Keys
+  overload: Genesis.Core.Behaviors.CharacterController2D.JumpKey*
+- uid: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  id: AllowJump
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: AllowJump
+  nameWithType: CharacterController2D.AllowJump
+  fullName: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the jump cooldown duration in milliseconds.
+  example: []
+  syntax:
+    content: public bool AllowJump { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AllowJump As Boolean
+  overload: Genesis.Core.Behaviors.CharacterController2D.AllowJump*
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  id: JumpCooldown
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: JumpCooldown
+  nameWithType: CharacterController2D.JumpCooldown
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the jump cooldown in milliseconds
+  example: []
+  syntax:
+    content: public long JumpCooldown { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property JumpCooldown As Long
+  overload: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown*
+- uid: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  id: CameraFlags
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: CameraFlags
+  nameWithType: CharacterController2D.CameraFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the camera flags for character control.
+  example: []
+  syntax:
+    content: public CameraFlags CameraFlags { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Behaviors.CameraFlags
+    content.vb: Public Property CameraFlags As CameraFlags
+  overload: Genesis.Core.Behaviors.CharacterController2D.CameraFlags*
+- uid: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  id: MovementFlags
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: MovementFlags
+  nameWithType: CharacterController2D.MovementFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the movement flags for character control.
+  example: []
+  syntax:
+    content: public MovementFlags MovementFlags { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Behaviors.MovementFlags
+    content.vb: Public Property MovementFlags As MovementFlags
+  overload: Genesis.Core.Behaviors.CharacterController2D.MovementFlags*
+- uid: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  id: MoveDirection
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: MoveDirection
+  nameWithType: CharacterController2D.MoveDirection
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets the last movement direction from the character
+  example: []
+  syntax:
+    content: public MoveDirection MoveDirection { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+    content.vb: Public Property MoveDirection As MoveDirection
+  overload: Genesis.Core.Behaviors.CharacterController2D.MoveDirection*
+- uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  id: Rigidbody
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: Rigidbody
+  nameWithType: CharacterController2D.Rigidbody
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the Rigidbody2D component for character physics.
+  example: []
+  syntax:
+    content: public Rigidbody2D Rigidbody { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+    content.vb: Public Property Rigidbody As Rigidbody2D
+  overload: Genesis.Core.Behaviors.CharacterController2D.Rigidbody*
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  id: ColliderRadius
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: ColliderRadius
+  nameWithType: CharacterController2D.ColliderRadius
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the collider radius
+  example: []
+  syntax:
+    content: public float ColliderRadius { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ColliderRadius As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius*
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  commentId: P:Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  id: ColliderHeight
+  parent: Genesis.Core.Behaviors.CharacterController2D
+  langs:
+  - csharp
+  - vb
+  name: ColliderHeight
+  nameWithType: CharacterController2D.ColliderHeight
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Gets or sets the follider height
+  example: []
+  syntax:
+    content: public float ColliderHeight { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property ColliderHeight As Single
+  overload: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight*
+references:
+- uid: Genesis.Core.Behaviors
+  commentId: N:Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors
+  nameWithType: Genesis.Core.Behaviors
+  fullName: Genesis.Core.Behaviors
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Genesis.Core.IGameBehavior
+  commentId: T:Genesis.Core.IGameBehavior
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html
+  name: IGameBehavior
+  nameWithType: IGameBehavior
+  fullName: Genesis.Core.IGameBehavior
+- uid: Genesis.Core.IGameBehavior.Parent
+  commentId: P:Genesis.Core.IGameBehavior.Parent
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_Parent
+  name: Parent
+  nameWithType: IGameBehavior.Parent
+  fullName: Genesis.Core.IGameBehavior.Parent
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: Genesis.Core.Behaviors.CharacterController2D.#ctor*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.#ctor
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D__ctor
+  name: CharacterController2D
+  nameWithType: CharacterController2D.CharacterController2D
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterController2D
+  nameWithType.vb: CharacterController2D.New
+  fullName.vb: Genesis.Core.Behaviors.CharacterController2D.New
+  name.vb: New
+- uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit(Game, GameElement)
+  nameWithType: IGameBehavior.OnInit(Game, GameElement)
+  fullName: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.IGameBehavior.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnInit*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnInit
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit
+  nameWithType: CharacterController2D.OnInit
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnInit
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+- uid: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CreatePhysics
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CreatePhysics_Genesis_Physics_PhysicHandler_Genesis_Core_Behaviors_ControllerPreset_
+  name: CreatePhysics
+  nameWithType: CharacterController2D.CreatePhysics
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CreatePhysics
+- uid: Genesis.Physics.PhysicHandler
+  commentId: T:Genesis.Physics.PhysicHandler
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html
+  name: PhysicHandler
+  nameWithType: PhysicHandler
+  fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Core.Behaviors.ControllerPreset
+  commentId: T:Genesis.Core.Behaviors.ControllerPreset
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.ControllerPreset.html
+  name: ControllerPreset
+  nameWithType: ControllerPreset
+  fullName: Genesis.Core.Behaviors.ControllerPreset
+- uid: Genesis.Physics
+  commentId: N:Genesis.Physics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Physics
+  nameWithType: Genesis.Physics
+  fullName: Genesis.Physics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate(Game, GameElement)
+  nameWithType: IGameBehavior.OnUpdate(Game, GameElement)
+  fullName: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnUpdate*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnUpdate
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate
+  nameWithType: CharacterController2D.OnUpdate
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnUpdate
+- uid: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CharacterProcess
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CharacterProcess_Genesis_Core_Game_
+  name: CharacterProcess
+  nameWithType: CharacterController2D.CharacterProcess
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CharacterProcess
+- uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy(Game, GameElement)
+  nameWithType: IGameBehavior.OnDestroy(Game, GameElement)
+  fullName: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.IGameBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnDestroy*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnDestroy
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy
+  nameWithType: CharacterController2D.OnDestroy
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnDestroy
+- uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender(Game, GameElement)
+  nameWithType: IGameBehavior.OnRender(Game, GameElement)
+  fullName: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.IGameBehavior.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.Behaviors.CharacterController2D.OnRender*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.OnRender
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender
+  nameWithType: CharacterController2D.OnRender
+  fullName: Genesis.Core.Behaviors.CharacterController2D.OnRender
+- uid: Genesis.Core.Behaviors.CharacterController2D.Mass*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Mass
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Mass
+  name: Mass
+  nameWithType: CharacterController2D.Mass
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Mass
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Core.Behaviors.CharacterController2D.Speed*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Speed
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Speed
+  name: Speed
+  nameWithType: CharacterController2D.Speed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Speed
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpSpeed
+  name: JumpSpeed
+  nameWithType: CharacterController2D.JumpSpeed
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpSpeed
+- uid: Genesis.Core.Behaviors.CharacterController2D.UpKey*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.UpKey
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_UpKey
+  name: UpKey
+  nameWithType: CharacterController2D.UpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.UpKey
+- uid: System.Windows.Forms.Keys
+  commentId: T:System.Windows.Forms.Keys
+  parent: System.Windows.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.forms.keys
+  name: Keys
+  nameWithType: Keys
+  fullName: System.Windows.Forms.Keys
+- uid: System.Windows.Forms
+  commentId: N:System.Windows.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Forms
+  nameWithType: System.Windows.Forms
+  fullName: System.Windows.Forms
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.forms
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.forms
+- uid: Genesis.Core.Behaviors.CharacterController2D.DownKey*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.DownKey
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_DownKey
+  name: DownKey
+  nameWithType: CharacterController2D.DownKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.DownKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.LeftKey*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.LeftKey
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_LeftKey
+  name: LeftKey
+  nameWithType: CharacterController2D.LeftKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.LeftKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.RightKey*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.RightKey
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_RightKey
+  name: RightKey
+  nameWithType: CharacterController2D.RightKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.RightKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpKey*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpKey
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpKey
+  name: JumpKey
+  nameWithType: CharacterController2D.JumpKey
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpKey
+- uid: Genesis.Core.Behaviors.CharacterController2D.AllowJump*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.AllowJump
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_AllowJump
+  name: AllowJump
+  nameWithType: CharacterController2D.AllowJump
+  fullName: Genesis.Core.Behaviors.CharacterController2D.AllowJump
+- uid: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_JumpCooldown
+  name: JumpCooldown
+  nameWithType: CharacterController2D.JumpCooldown
+  fullName: Genesis.Core.Behaviors.CharacterController2D.JumpCooldown
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: Genesis.Core.Behaviors.CharacterController2D.CameraFlags*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_CameraFlags
+  name: CameraFlags
+  nameWithType: CharacterController2D.CameraFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.CameraFlags
+- uid: Genesis.Core.Behaviors.CameraFlags
+  commentId: T:Genesis.Core.Behaviors.CameraFlags
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.CameraFlags.html
+  name: CameraFlags
+  nameWithType: CameraFlags
+  fullName: Genesis.Core.Behaviors.CameraFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.MovementFlags*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_MovementFlags
+  name: MovementFlags
+  nameWithType: CharacterController2D.MovementFlags
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MovementFlags
+- uid: Genesis.Core.Behaviors.MovementFlags
+  commentId: T:Genesis.Core.Behaviors.MovementFlags
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MovementFlags.html
+  name: MovementFlags
+  nameWithType: MovementFlags
+  fullName: Genesis.Core.Behaviors.MovementFlags
+- uid: Genesis.Core.Behaviors.CharacterController2D.MoveDirection*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_MoveDirection
+  name: MoveDirection
+  nameWithType: CharacterController2D.MoveDirection
+  fullName: Genesis.Core.Behaviors.CharacterController2D.MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection
+  commentId: T:Genesis.Core.Behaviors.MoveDirection
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MoveDirection.html
+  name: MoveDirection
+  nameWithType: MoveDirection
+  fullName: Genesis.Core.Behaviors.MoveDirection
+- uid: Genesis.Core.Behaviors.CharacterController2D.Rigidbody*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_Rigidbody
+  name: Rigidbody
+  nameWithType: CharacterController2D.Rigidbody
+  fullName: Genesis.Core.Behaviors.CharacterController2D.Rigidbody
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  parent: Genesis.Core.Behaviors.Physics2D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html
+  name: Rigidbody2D
+  nameWithType: Rigidbody2D
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+- uid: Genesis.Core.Behaviors.Physics2D
+  commentId: N:Genesis.Core.Behaviors.Physics2D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors.Physics2D
+  nameWithType: Genesis.Core.Behaviors.Physics2D
+  fullName: Genesis.Core.Behaviors.Physics2D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_ColliderRadius
+  name: ColliderRadius
+  nameWithType: CharacterController2D.ColliderRadius
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderRadius
+- uid: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight*
+  commentId: Overload:Genesis.Core.Behaviors.CharacterController2D.ColliderHeight
+  isExternal: true
+  href: Genesis.Core.Behaviors.CharacterController2D.html#Genesis_Core_Behaviors_CharacterController2D_ColliderHeight
+  name: ColliderHeight
+  nameWithType: CharacterController2D.ColliderHeight
+  fullName: Genesis.Core.Behaviors.CharacterController2D.ColliderHeight

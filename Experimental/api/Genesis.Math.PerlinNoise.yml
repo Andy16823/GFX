@@ -1,0 +1,545 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Math.PerlinNoise
+  commentId: T:Genesis.Math.PerlinNoise
+  id: PerlinNoise
+  parent: Genesis.Math
+  children:
+  - Genesis.Math.PerlinNoise.#ctor
+  - Genesis.Math.PerlinNoise.GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)
+  - Genesis.Math.PerlinNoise.GenerateNoiseMap(System.Int32,System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: PerlinNoise
+  nameWithType: PerlinNoise
+  fullName: Genesis.Math.PerlinNoise
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Class for generating Perlin noise.
+  example: []
+  syntax:
+    content: public class PerlinNoise
+    content.vb: Public Class PerlinNoise
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Math.PerlinNoise.GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Math.PerlinNoise.GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)
+  id: GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)
+  parent: Genesis.Math.PerlinNoise
+  langs:
+  - csharp
+  - vb
+  name: GenerateNoise(float, float, float, int, int)
+  nameWithType: PerlinNoise.GenerateNoise(float, float, float, int, int)
+  fullName: Genesis.Math.PerlinNoise.GenerateNoise(float, float, float, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Generates Perlin noise at a specific point with specified parameters.
+  example: []
+  syntax:
+    content: public static float GenerateNoise(float x, float y, float persistence, int octaves, int seed)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The x-coordinate of the point.
+    - id: y
+      type: System.Single
+      description: The y-coordinate of the point.
+    - id: persistence
+      type: System.Single
+      description: The persistence value affecting the amplitude of octaves.
+    - id: octaves
+      type: System.Int32
+      description: The number of octaves to generate.
+    - id: seed
+      type: System.Int32
+      description: The seed value for the noise generation.
+    return:
+      type: System.Single
+      description: The generated Perlin noise value at the specified point.
+    content.vb: Public Shared Function GenerateNoise(x As Single, y As Single, persistence As Single, octaves As Integer, seed As Integer) As Single
+  overload: Genesis.Math.PerlinNoise.GenerateNoise*
+  nameWithType.vb: PerlinNoise.GenerateNoise(Single, Single, Single, Integer, Integer)
+  fullName.vb: Genesis.Math.PerlinNoise.GenerateNoise(Single, Single, Single, Integer, Integer)
+  name.vb: GenerateNoise(Single, Single, Single, Integer, Integer)
+- uid: Genesis.Math.PerlinNoise.GenerateNoiseMap(System.Int32,System.Int32,System.Int32)
+  commentId: M:Genesis.Math.PerlinNoise.GenerateNoiseMap(System.Int32,System.Int32,System.Int32)
+  id: GenerateNoiseMap(System.Int32,System.Int32,System.Int32)
+  parent: Genesis.Math.PerlinNoise
+  langs:
+  - csharp
+  - vb
+  name: GenerateNoiseMap(int, int, int)
+  nameWithType: PerlinNoise.GenerateNoiseMap(int, int, int)
+  fullName: Genesis.Math.PerlinNoise.GenerateNoiseMap(int, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Generates a 2D noise map with specified dimensions and seed.
+  example: []
+  syntax:
+    content: public List<NoisePoint> GenerateNoiseMap(int width, int height, int seed)
+    parameters:
+    - id: width
+      type: System.Int32
+      description: The width of the noise map.
+    - id: height
+      type: System.Int32
+      description: The height of the noise map.
+    - id: seed
+      type: System.Int32
+      description: The seed value for the noise generation.
+    return:
+      type: System.Collections.Generic.List{Genesis.Math.NoisePoint}
+      description: A list of NoisePoint objects representing the generated noise map.
+    content.vb: Public Function GenerateNoiseMap(width As Integer, height As Integer, seed As Integer) As List(Of NoisePoint)
+  overload: Genesis.Math.PerlinNoise.GenerateNoiseMap*
+  nameWithType.vb: PerlinNoise.GenerateNoiseMap(Integer, Integer, Integer)
+  fullName.vb: Genesis.Math.PerlinNoise.GenerateNoiseMap(Integer, Integer, Integer)
+  name.vb: GenerateNoiseMap(Integer, Integer, Integer)
+- uid: Genesis.Math.PerlinNoise.#ctor
+  commentId: M:Genesis.Math.PerlinNoise.#ctor
+  id: '#ctor'
+  parent: Genesis.Math.PerlinNoise
+  langs:
+  - csharp
+  - vb
+  name: PerlinNoise()
+  nameWithType: PerlinNoise.PerlinNoise()
+  fullName: Genesis.Math.PerlinNoise.PerlinNoise()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public PerlinNoise()
+    content.vb: Public Sub New()
+  overload: Genesis.Math.PerlinNoise.#ctor*
+  nameWithType.vb: PerlinNoise.New()
+  fullName.vb: Genesis.Math.PerlinNoise.New()
+  name.vb: New()
+references:
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Math.PerlinNoise.GenerateNoise*
+  commentId: Overload:Genesis.Math.PerlinNoise.GenerateNoise
+  isExternal: true
+  href: Genesis.Math.PerlinNoise.html#Genesis_Math_PerlinNoise_GenerateNoise_System_Single_System_Single_System_Single_System_Int32_System_Int32_
+  name: GenerateNoise
+  nameWithType: PerlinNoise.GenerateNoise
+  fullName: Genesis.Math.PerlinNoise.GenerateNoise
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Math.PerlinNoise.GenerateNoiseMap*
+  commentId: Overload:Genesis.Math.PerlinNoise.GenerateNoiseMap
+  isExternal: true
+  href: Genesis.Math.PerlinNoise.html#Genesis_Math_PerlinNoise_GenerateNoiseMap_System_Int32_System_Int32_System_Int32_
+  name: GenerateNoiseMap
+  nameWithType: PerlinNoise.GenerateNoiseMap
+  fullName: Genesis.Math.PerlinNoise.GenerateNoiseMap
+- uid: System.Collections.Generic.List{Genesis.Math.NoisePoint}
+  commentId: T:System.Collections.Generic.List{Genesis.Math.NoisePoint}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<NoisePoint>
+  nameWithType: List<NoisePoint>
+  fullName: System.Collections.Generic.List<Genesis.Math.NoisePoint>
+  nameWithType.vb: List(Of NoisePoint)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Math.NoisePoint)
+  name.vb: List(Of NoisePoint)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Math.NoisePoint
+    name: NoisePoint
+    isExternal: true
+    href: Genesis.Math.NoisePoint.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Math.NoisePoint
+    name: NoisePoint
+    isExternal: true
+    href: Genesis.Math.NoisePoint.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Math.PerlinNoise.#ctor*
+  commentId: Overload:Genesis.Math.PerlinNoise.#ctor
+  isExternal: true
+  href: Genesis.Math.PerlinNoise.html#Genesis_Math_PerlinNoise__ctor
+  name: PerlinNoise
+  nameWithType: PerlinNoise.PerlinNoise
+  fullName: Genesis.Math.PerlinNoise.PerlinNoise
+  nameWithType.vb: PerlinNoise.New
+  fullName.vb: Genesis.Math.PerlinNoise.New
+  name.vb: New

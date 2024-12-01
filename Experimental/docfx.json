@@ -1,0 +1,52 @@
+{
+  "nav": [
+    {
+      "href": "https://gfx-engine.org/",
+      "name": "Website",
+      "target": "_blank"
+    },
+    {
+      "href": "https://forum.gfx-engine.org/",
+      "name": "Forum",
+      "target": "_blank"
+    }
+  ],
+  "metadata": [
+    {
+      "src": ["Genesis/bin/x64/Debug/Genesis.dll"],
+      "dest": "api",
+      "files": ["Genesis.xml"]
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern",
+      "statictoc"
+    ],
+    "globalMetadata": {
+      "_appName": "GFX",
+      "_appTitle": "GFX",
+      "_enableSearch": true,
+      "pdf": false
+    }
+  }
+}

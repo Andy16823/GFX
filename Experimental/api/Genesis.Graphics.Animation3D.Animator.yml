@@ -1,0 +1,830 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Animation3D.Animator
+  commentId: T:Genesis.Graphics.Animation3D.Animator
+  id: Animator
+  parent: Genesis.Graphics.Animation3D
+  children:
+  - Genesis.Graphics.Animation3D.Animator.#ctor
+  - Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
+  - Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  - Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  - Genesis.Graphics.Animation3D.Animator.CurrentTime
+  - Genesis.Graphics.Animation3D.Animator.DeltaTime
+  - Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  - Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  - Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  - Genesis.Graphics.Animation3D.Animator.Loop
+  - Genesis.Graphics.Animation3D.Animator.Play
+  - Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: Animator
+  nameWithType: Animator
+  fullName: Genesis.Graphics.Animation3D.Animator
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Controls the animation playback of a 3D model.
+  example: []
+  syntax:
+    content: public class Animator
+    content.vb: Public Class Animator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
+  commentId: M:Genesis.Graphics.Animation3D.Animator.#ctor(Genesis.Graphics.Animation3D.Animation)
+  id: '#ctor(Genesis.Graphics.Animation3D.Animation)'
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: Animator(Animation)
+  nameWithType: Animator.Animator(Animation)
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator(Genesis.Graphics.Animation3D.Animation)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Initializes a new instance of the Animator class with the specified animation.
+  example: []
+  syntax:
+    content: public Animator(Animation animation)
+    parameters:
+    - id: animation
+      type: Genesis.Graphics.Animation3D.Animation
+    content.vb: Public Sub New(animation As Animation)
+  overload: Genesis.Graphics.Animation3D.Animator.#ctor*
+  nameWithType.vb: Animator.New(Animation)
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New(Genesis.Graphics.Animation3D.Animation)
+  name.vb: New(Animation)
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor
+  commentId: M:Genesis.Graphics.Animation3D.Animator.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: Animator()
+  nameWithType: Animator.Animator()
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  syntax:
+    content: public Animator()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Animation3D.Animator.#ctor*
+  nameWithType.vb: Animator.New()
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
+  commentId: M:Genesis.Graphics.Animation3D.Animator.UpdateAnimation(System.Single)
+  id: UpdateAnimation(System.Single)
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: UpdateAnimation(float)
+  nameWithType: Animator.UpdateAnimation(float)
+  fullName: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Updates the animation based on the elapsed time since the last frame.
+  example: []
+  syntax:
+    content: public void UpdateAnimation(float dt)
+    parameters:
+    - id: dt
+      type: System.Single
+    content.vb: Public Sub UpdateAnimation(dt As Single)
+  overload: Genesis.Graphics.Animation3D.Animator.UpdateAnimation*
+  nameWithType.vb: Animator.UpdateAnimation(Single)
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.UpdateAnimation(Single)
+  name.vb: UpdateAnimation(Single)
+- uid: Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  commentId: M:Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  id: LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: LoadAnimation(Animation)
+  nameWithType: Animator.LoadAnimation(Animation)
+  fullName: Genesis.Graphics.Animation3D.Animator.LoadAnimation(Genesis.Graphics.Animation3D.Animation)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Loads a new animation.
+  example: []
+  syntax:
+    content: public void LoadAnimation(Animation animation)
+    parameters:
+    - id: animation
+      type: Genesis.Graphics.Animation3D.Animation
+    content.vb: Public Sub LoadAnimation(animation As Animation)
+  overload: Genesis.Graphics.Animation3D.Animator.LoadAnimation*
+- uid: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  commentId: M:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  id: CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData,GlmSharp.mat4)
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: CalculateBoneTransform(AssimpNodeData, mat4)
+  nameWithType: Animator.CalculateBoneTransform(AssimpNodeData, mat4)
+  fullName: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform(Genesis.Graphics.Animation3D.AssimpNodeData, GlmSharp.mat4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Calculates bone transformations recursively based on the animation hierarchy.
+  example: []
+  syntax:
+    content: public void CalculateBoneTransform(AssimpNodeData node, mat4 parentTransform)
+    parameters:
+    - id: node
+      type: Genesis.Graphics.Animation3D.AssimpNodeData
+    - id: parentTransform
+      type: GlmSharp.mat4
+    content.vb: Public Sub CalculateBoneTransform(node As AssimpNodeData, parentTransform As mat4)
+  overload: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform*
+- uid: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  commentId: P:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  id: FinalBoneMatrices
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: FinalBoneMatrices
+  nameWithType: Animator.FinalBoneMatrices
+  fullName: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: List of final bone transformation matrices.
+  example: []
+  syntax:
+    content: public List<mat4> FinalBoneMatrices { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{GlmSharp.mat4}
+    content.vb: Public Property FinalBoneMatrices As List(Of mat4)
+  overload: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices*
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  commentId: P:Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  id: CurrentAnimation
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: CurrentAnimation
+  nameWithType: Animator.CurrentAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Currently active animation.
+  example: []
+  syntax:
+    content: public Animation CurrentAnimation { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Graphics.Animation3D.Animation
+    content.vb: Public Property CurrentAnimation As Animation
+  overload: Genesis.Graphics.Animation3D.Animator.CurrentAnimation*
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentTime
+  commentId: P:Genesis.Graphics.Animation3D.Animator.CurrentTime
+  id: CurrentTime
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: CurrentTime
+  nameWithType: Animator.CurrentTime
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentTime
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Current time in the animation.
+  example: []
+  syntax:
+    content: public float CurrentTime { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property CurrentTime As Single
+  overload: Genesis.Graphics.Animation3D.Animator.CurrentTime*
+- uid: Genesis.Graphics.Animation3D.Animator.DeltaTime
+  commentId: P:Genesis.Graphics.Animation3D.Animator.DeltaTime
+  id: DeltaTime
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: DeltaTime
+  nameWithType: Animator.DeltaTime
+  fullName: Genesis.Graphics.Animation3D.Animator.DeltaTime
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Time elapsed since last frame.
+  example: []
+  syntax:
+    content: public float DeltaTime { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property DeltaTime As Single
+  overload: Genesis.Graphics.Animation3D.Animator.DeltaTime*
+- uid: Genesis.Graphics.Animation3D.Animator.Play
+  commentId: P:Genesis.Graphics.Animation3D.Animator.Play
+  id: Play
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: Play
+  nameWithType: Animator.Play
+  fullName: Genesis.Graphics.Animation3D.Animator.Play
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Flag indicating whether the animation is playing.
+  example: []
+  syntax:
+    content: public bool Play { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Play As Boolean
+  overload: Genesis.Graphics.Animation3D.Animator.Play*
+- uid: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  commentId: P:Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  id: InterpolateFrames
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: InterpolateFrames
+  nameWithType: Animator.InterpolateFrames
+  fullName: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Flag indicating whether to interpolate frames during animation playback.
+  example: []
+  syntax:
+    content: public bool InterpolateFrames { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property InterpolateFrames As Boolean
+  overload: Genesis.Graphics.Animation3D.Animator.InterpolateFrames*
+- uid: Genesis.Graphics.Animation3D.Animator.Loop
+  commentId: P:Genesis.Graphics.Animation3D.Animator.Loop
+  id: Loop
+  parent: Genesis.Graphics.Animation3D.Animator
+  langs:
+  - csharp
+  - vb
+  name: Loop
+  nameWithType: Animator.Loop
+  fullName: Genesis.Graphics.Animation3D.Animator.Loop
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Animation3D
+  summary: Flag indicating whether to loop the animation.
+  example: []
+  syntax:
+    content: public bool Loop { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property [Loop] As Boolean
+  overload: Genesis.Graphics.Animation3D.Animator.Loop*
+references:
+- uid: Genesis.Graphics.Animation3D
+  commentId: N:Genesis.Graphics.Animation3D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics.Animation3D
+  nameWithType: Genesis.Graphics.Animation3D
+  fullName: Genesis.Graphics.Animation3D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Animation3D
+    name: Animation3D
+    isExternal: true
+    href: Genesis.Graphics.Animation3D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Animation3D
+    name: Animation3D
+    isExternal: true
+    href: Genesis.Graphics.Animation3D.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Animation3D.Animator.#ctor*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator__ctor_Genesis_Graphics_Animation3D_Animation_
+  name: Animator
+  nameWithType: Animator.Animator
+  fullName: Genesis.Graphics.Animation3D.Animator.Animator
+  nameWithType.vb: Animator.New
+  fullName.vb: Genesis.Graphics.Animation3D.Animator.New
+  name.vb: New
+- uid: Genesis.Graphics.Animation3D.Animation
+  commentId: T:Genesis.Graphics.Animation3D.Animation
+  parent: Genesis.Graphics.Animation3D
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animation.html
+  name: Animation
+  nameWithType: Animation
+  fullName: Genesis.Graphics.Animation3D.Animation
+- uid: Genesis.Graphics.Animation3D.Animator.UpdateAnimation*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.UpdateAnimation
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_UpdateAnimation_System_Single_
+  name: UpdateAnimation
+  nameWithType: Animator.UpdateAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.UpdateAnimation
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Graphics.Animation3D.Animator.LoadAnimation*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.LoadAnimation
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_LoadAnimation_Genesis_Graphics_Animation3D_Animation_
+  name: LoadAnimation
+  nameWithType: Animator.LoadAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.LoadAnimation
+- uid: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CalculateBoneTransform_Genesis_Graphics_Animation3D_AssimpNodeData_GlmSharp_mat4_
+  name: CalculateBoneTransform
+  nameWithType: Animator.CalculateBoneTransform
+  fullName: Genesis.Graphics.Animation3D.Animator.CalculateBoneTransform
+- uid: Genesis.Graphics.Animation3D.AssimpNodeData
+  commentId: T:Genesis.Graphics.Animation3D.AssimpNodeData
+  parent: Genesis.Graphics.Animation3D
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.AssimpNodeData.html
+  name: AssimpNodeData
+  nameWithType: AssimpNodeData
+  fullName: Genesis.Graphics.Animation3D.AssimpNodeData
+- uid: GlmSharp.mat4
+  commentId: T:GlmSharp.mat4
+  parent: GlmSharp
+  isExternal: true
+  name: mat4
+  nameWithType: mat4
+  fullName: GlmSharp.mat4
+- uid: GlmSharp
+  commentId: N:GlmSharp
+  isExternal: true
+  name: GlmSharp
+  nameWithType: GlmSharp
+  fullName: GlmSharp
+- uid: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_FinalBoneMatrices
+  name: FinalBoneMatrices
+  nameWithType: Animator.FinalBoneMatrices
+  fullName: Genesis.Graphics.Animation3D.Animator.FinalBoneMatrices
+- uid: System.Collections.Generic.List{GlmSharp.mat4}
+  commentId: T:System.Collections.Generic.List{GlmSharp.mat4}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<mat4>
+  nameWithType: List<mat4>
+  fullName: System.Collections.Generic.List<GlmSharp.mat4>
+  nameWithType.vb: List(Of mat4)
+  fullName.vb: System.Collections.Generic.List(Of GlmSharp.mat4)
+  name.vb: List(Of mat4)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: GlmSharp.mat4
+    name: mat4
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: GlmSharp.mat4
+    name: mat4
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentAnimation*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentAnimation
+  name: CurrentAnimation
+  nameWithType: Animator.CurrentAnimation
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentAnimation
+- uid: Genesis.Graphics.Animation3D.Animator.CurrentTime*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.CurrentTime
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_CurrentTime
+  name: CurrentTime
+  nameWithType: Animator.CurrentTime
+  fullName: Genesis.Graphics.Animation3D.Animator.CurrentTime
+- uid: Genesis.Graphics.Animation3D.Animator.DeltaTime*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.DeltaTime
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_DeltaTime
+  name: DeltaTime
+  nameWithType: Animator.DeltaTime
+  fullName: Genesis.Graphics.Animation3D.Animator.DeltaTime
+- uid: Genesis.Graphics.Animation3D.Animator.Play*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.Play
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Play
+  name: Play
+  nameWithType: Animator.Play
+  fullName: Genesis.Graphics.Animation3D.Animator.Play
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Graphics.Animation3D.Animator.InterpolateFrames*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_InterpolateFrames
+  name: InterpolateFrames
+  nameWithType: Animator.InterpolateFrames
+  fullName: Genesis.Graphics.Animation3D.Animator.InterpolateFrames
+- uid: Genesis.Graphics.Animation3D.Animator.Loop*
+  commentId: Overload:Genesis.Graphics.Animation3D.Animator.Loop
+  isExternal: true
+  href: Genesis.Graphics.Animation3D.Animator.html#Genesis_Graphics_Animation3D_Animator_Loop
+  name: Loop
+  nameWithType: Animator.Loop
+  fullName: Genesis.Graphics.Animation3D.Animator.Loop

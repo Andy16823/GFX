@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.Physics2D
+  commentId: N:Genesis.Core.Behaviors.Physics2D
+  id: Genesis.Core.Behaviors.Physics2D
+  children:
+  - Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  langs:
+  - csharp
+  - vb
+  name: Genesis.Core.Behaviors.Physics2D
+  nameWithType: Genesis.Core.Behaviors.Physics2D
+  fullName: Genesis.Core.Behaviors.Physics2D
+  type: Namespace
+  assemblies:
+  - Genesis
+references:
+- uid: Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  commentId: T:Genesis.Core.Behaviors.Physics2D.Rigidbody2D
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.Rigidbody2D.html
+  name: Rigidbody2D
+  nameWithType: Rigidbody2D
+  fullName: Genesis.Core.Behaviors.Physics2D.Rigidbody2D

@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors._3D
+  commentId: N:Genesis.Core.Behaviors._3D
+  id: Genesis.Core.Behaviors._3D
+  children:
+  - Genesis.Core.Behaviors._3D.Stance
+  - Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  langs:
+  - csharp
+  - vb
+  name: Genesis.Core.Behaviors._3D
+  nameWithType: Genesis.Core.Behaviors._3D
+  fullName: Genesis.Core.Behaviors._3D
+  type: Namespace
+  assemblies:
+  - Genesis
+references:
+- uid: Genesis.Core.Behaviors._3D.Stance
+  commentId: T:Genesis.Core.Behaviors._3D.Stance
+  parent: Genesis.Core.Behaviors._3D
+  isExternal: true
+  href: Genesis.Core.Behaviors._3D.Stance.html
+  name: Stance
+  nameWithType: Stance
+  fullName: Genesis.Core.Behaviors._3D.Stance
+- uid: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  commentId: T:Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+  isExternal: true
+  href: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController.html
+  name: ThirdpersonCharacterController
+  nameWithType: ThirdpersonCharacterController
+  fullName: Genesis.Core.Behaviors._3D.ThirdpersonCharacterController
+- uid: Genesis.Core.Behaviors._3D
+  commentId: N:Genesis.Core.Behaviors._3D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors._3D
+  nameWithType: Genesis.Core.Behaviors._3D
+  fullName: Genesis.Core.Behaviors._3D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors._3D
+    name: _3D
+    isExternal: true
+    href: Genesis.Core.Behaviors._3D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors._3D
+    name: _3D
+    isExternal: true
+    href: Genesis.Core.Behaviors._3D.html

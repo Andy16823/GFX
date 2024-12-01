@@ -1,0 +1,1405 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  id: GameElement
+  parent: Genesis.Core
+  children:
+  - Genesis.Core.GameElement.#ctor
+  - Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
+  - Genesis.Core.GameElement.AddBehavior``1(``0)
+  - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.Behaviors
+  - Genesis.Core.GameElement.Children
+  - Genesis.Core.GameElement.Enabled
+  - Genesis.Core.GameElement.GetBehavior``1
+  - Genesis.Core.GameElement.GetBehaviors``1
+  - Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  - Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElement.Location
+  - Genesis.Core.GameElement.Name
+  - Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  - Genesis.Core.GameElement.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.GameElement.Parent
+  - Genesis.Core.GameElement.Propertys
+  - Genesis.Core.GameElement.Rotation
+  - Genesis.Core.GameElement.Scene
+  - Genesis.Core.GameElement.Size
+  - Genesis.Core.GameElement.Tag
+  - Genesis.Core.GameElement.UUID
+  langs:
+  - csharp
+  - vb
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Represents a base class for game elements in the Genesis framework.
+  example: []
+  syntax:
+    content: public abstract class GameElement
+    content.vb: Public MustInherit Class GameElement
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Genesis.Core.GameElements.BufferedSprite
+  - Genesis.Core.GameElements.CameraElement
+  - Genesis.Core.GameElements.Element3D
+  - Genesis.Core.GameElements.Empty
+  - Genesis.Core.GameElements.Qube
+  - Genesis.Core.GameElements.RectElement
+  - Genesis.Core.GameElements.Sprite
+  - Genesis.Core.GameElements.Terrain2D
+  - Genesis.Core.GameElements.Terrain3D
+  - Genesis.Core.Light
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Core.GameElement.#ctor
+  commentId: M:Genesis.Core.GameElement.#ctor
+  id: '#ctor'
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: GameElement()
+  nameWithType: GameElement.GameElement()
+  fullName: Genesis.Core.GameElement.GameElement()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Creates a new instance of the GameElement class.
+  example: []
+  syntax:
+    content: public GameElement()
+    content.vb: Public Sub New()
+  overload: Genesis.Core.GameElement.#ctor*
+  nameWithType.vb: GameElement.New()
+  fullName.vb: Genesis.Core.GameElement.New()
+  name.vb: New()
+- uid: Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  id: Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Init(Game, IRenderDevice)
+  nameWithType: GameElement.Init(Game, IRenderDevice)
+  fullName: Genesis.Core.GameElement.Init(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Called when the game is initialized.
+  example: []
+  syntax:
+    content: public virtual void Init(Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+      description: The rendering device.
+    content.vb: Public Overridable Sub Init(game As Game, renderDevice As IRenderDevice)
+  overload: Genesis.Core.GameElement.Init*
+- uid: Genesis.Core.GameElement.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.GameElement.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  id: OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: OnRender(Game, IRenderDevice)
+  nameWithType: GameElement.OnRender(Game, IRenderDevice)
+  fullName: Genesis.Core.GameElement.OnRender(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Called when the game is rendered.
+  example: []
+  syntax:
+    content: public virtual void OnRender(Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+      description: The rendering device.
+    content.vb: Public Overridable Sub OnRender(game As Game, renderDevice As IRenderDevice)
+  overload: Genesis.Core.GameElement.OnRender*
+- uid: Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  id: OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate(Game, IRenderDevice)
+  nameWithType: GameElement.OnUpdate(Game, IRenderDevice)
+  fullName: Genesis.Core.GameElement.OnUpdate(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Called when the game is updated.
+  example: []
+  syntax:
+    content: public virtual void OnUpdate(Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+      description: The rendering device.
+    content.vb: Public Overridable Sub OnUpdate(game As Game, renderDevice As IRenderDevice)
+  overload: Genesis.Core.GameElement.OnUpdate*
+- uid: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  commentId: M:Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  id: OnDestroy(Genesis.Core.Game)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy(Game)
+  nameWithType: GameElement.OnDestroy(Game)
+  fullName: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Called when the game element is disposed.
+  example: []
+  syntax:
+    content: public virtual void OnDestroy(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    content.vb: Public Overridable Sub OnDestroy(game As Game)
+  overload: Genesis.Core.GameElement.OnDestroy*
+- uid: Genesis.Core.GameElement.AddBehavior``1(``0)
+  commentId: M:Genesis.Core.GameElement.AddBehavior``1(``0)
+  id: AddBehavior``1(``0)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: AddBehavior<T>(T)
+  nameWithType: GameElement.AddBehavior<T>(T)
+  fullName: Genesis.Core.GameElement.AddBehavior<T>(T)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adds a behavior of type T to the game element and returns it.
+  example: []
+  syntax:
+    content: 'public T AddBehavior<T>(T behavior) where T : IGameBehavior'
+    parameters:
+    - id: behavior
+      type: '{T}'
+      description: The behavior to be added.
+    typeParameters:
+    - id: T
+      description: The type of the behavior.
+    return:
+      type: '{T}'
+      description: The added behavior of type T.
+    content.vb: Public Function AddBehavior(Of T As IGameBehavior)(behavior As T) As T
+  overload: Genesis.Core.GameElement.AddBehavior*
+  nameWithType.vb: GameElement.AddBehavior(Of T)(T)
+  fullName.vb: Genesis.Core.GameElement.AddBehavior(Of T)(T)
+  name.vb: AddBehavior(Of T)(T)
+- uid: Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
+  commentId: M:Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
+  id: AddBehavior(Genesis.Core.IGameBehavior)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: AddBehavior(IGameBehavior)
+  nameWithType: GameElement.AddBehavior(IGameBehavior)
+  fullName: Genesis.Core.GameElement.AddBehavior(Genesis.Core.IGameBehavior)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adds a behavior to the game element.
+  example: []
+  syntax:
+    content: public void AddBehavior(IGameBehavior behavior)
+    parameters:
+    - id: behavior
+      type: Genesis.Core.IGameBehavior
+      description: The behavior to be added.
+    content.vb: Public Sub AddBehavior(behavior As IGameBehavior)
+  overload: Genesis.Core.GameElement.AddBehavior*
+- uid: Genesis.Core.GameElement.GetBehavior``1
+  commentId: M:Genesis.Core.GameElement.GetBehavior``1
+  id: GetBehavior``1
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: GetBehavior<T>()
+  nameWithType: GameElement.GetBehavior<T>()
+  fullName: Genesis.Core.GameElement.GetBehavior<T>()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the first game behavior of type T.
+  example: []
+  syntax:
+    content: public IGameBehavior GetBehavior<T>()
+    typeParameters:
+    - id: T
+      description: The type of the behavior.
+    return:
+      type: Genesis.Core.IGameBehavior
+      description: The first game behavior of type T, or null if not found.
+    content.vb: Public Function GetBehavior(Of T)() As IGameBehavior
+  overload: Genesis.Core.GameElement.GetBehavior*
+  nameWithType.vb: GameElement.GetBehavior(Of T)()
+  fullName.vb: Genesis.Core.GameElement.GetBehavior(Of T)()
+  name.vb: GetBehavior(Of T)()
+- uid: Genesis.Core.GameElement.GetBehaviors``1
+  commentId: M:Genesis.Core.GameElement.GetBehaviors``1
+  id: GetBehaviors``1
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: GetBehaviors<T>()
+  nameWithType: GameElement.GetBehaviors<T>()
+  fullName: Genesis.Core.GameElement.GetBehaviors<T>()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns all behaviors of type T.
+  example: []
+  syntax:
+    content: public List<IGameBehavior> GetBehaviors<T>()
+    typeParameters:
+    - id: T
+      description: The type of the behavior.
+    return:
+      type: System.Collections.Generic.List{Genesis.Core.IGameBehavior}
+      description: A list of all behaviors of type T.
+    content.vb: Public Function GetBehaviors(Of T)() As List(Of IGameBehavior)
+  overload: Genesis.Core.GameElement.GetBehaviors*
+  nameWithType.vb: GameElement.GetBehaviors(Of T)()
+  fullName.vb: Genesis.Core.GameElement.GetBehaviors(Of T)()
+  name.vb: GetBehaviors(Of T)()
+- uid: Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
+  id: AddChild(Genesis.Core.GameElement)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: AddChild(GameElement)
+  nameWithType: GameElement.AddChild(GameElement)
+  fullName: Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adds a child game element to the current game element.
+  example: []
+  syntax:
+    content: public void AddChild(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The child game element to be added.
+    content.vb: Public Sub AddChild(element As GameElement)
+  overload: Genesis.Core.GameElement.AddChild*
+- uid: Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  id: GetInstance(Genesis.Core.GameElement)
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(GameElement)
+  nameWithType: GameElement.GetInstance(GameElement)
+  fullName: Genesis.Core.GameElement.GetInstance(Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Copies the properties from another game element instance to the current one.
+  example: []
+  syntax:
+    content: public virtual void GetInstance(GameElement element)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The game element from which to copy properties.
+    content.vb: Public Overridable Sub GetInstance(element As GameElement)
+  overload: Genesis.Core.GameElement.GetInstance*
+- uid: Genesis.Core.GameElement.Name
+  commentId: P:Genesis.Core.GameElement.Name
+  id: Name
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: GameElement.Name
+  fullName: Genesis.Core.GameElement.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the name of the game element.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Core.GameElement.Name*
+- uid: Genesis.Core.GameElement.Tag
+  commentId: P:Genesis.Core.GameElement.Tag
+  id: Tag
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Tag
+  nameWithType: GameElement.Tag
+  fullName: Genesis.Core.GameElement.Tag
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the tag associated with the game element.
+  example: []
+  syntax:
+    content: public string Tag { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Tag As String
+  overload: Genesis.Core.GameElement.Tag*
+- uid: Genesis.Core.GameElement.Location
+  commentId: P:Genesis.Core.GameElement.Location
+  id: Location
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Location
+  nameWithType: GameElement.Location
+  fullName: Genesis.Core.GameElement.Location
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the 3D coordinates of the game element.
+  example: []
+  syntax:
+    content: public Vec3 Location { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property Location As Vec3
+  overload: Genesis.Core.GameElement.Location*
+- uid: Genesis.Core.GameElement.Rotation
+  commentId: P:Genesis.Core.GameElement.Rotation
+  id: Rotation
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: GameElement.Rotation
+  fullName: Genesis.Core.GameElement.Rotation
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the 3D rotation of the game element.
+  example: []
+  syntax:
+    content: public Vec3 Rotation { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property Rotation As Vec3
+  overload: Genesis.Core.GameElement.Rotation*
+- uid: Genesis.Core.GameElement.Size
+  commentId: P:Genesis.Core.GameElement.Size
+  id: Size
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: GameElement.Size
+  fullName: Genesis.Core.GameElement.Size
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the 3D size of the game element.
+  example: []
+  syntax:
+    content: public Vec3 Size { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property Size As Vec3
+  overload: Genesis.Core.GameElement.Size*
+- uid: Genesis.Core.GameElement.Behaviors
+  commentId: P:Genesis.Core.GameElement.Behaviors
+  id: Behaviors
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Behaviors
+  nameWithType: GameElement.Behaviors
+  fullName: Genesis.Core.GameElement.Behaviors
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the list of behaviors associated with the game element.
+  example: []
+  syntax:
+    content: public List<IGameBehavior> Behaviors { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Core.IGameBehavior}
+    content.vb: Public Property Behaviors As List(Of IGameBehavior)
+  overload: Genesis.Core.GameElement.Behaviors*
+- uid: Genesis.Core.GameElement.Scene
+  commentId: P:Genesis.Core.GameElement.Scene
+  id: Scene
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Scene
+  nameWithType: GameElement.Scene
+  fullName: Genesis.Core.GameElement.Scene
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the scene to which the game element belongs.
+  example: []
+  syntax:
+    content: public Scene Scene { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.Scene
+    content.vb: Public Property Scene As Scene
+  overload: Genesis.Core.GameElement.Scene*
+- uid: Genesis.Core.GameElement.Enabled
+  commentId: P:Genesis.Core.GameElement.Enabled
+  id: Enabled
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: GameElement.Enabled
+  fullName: Genesis.Core.GameElement.Enabled
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets a value indicating whether the game element is enabled.
+  example: []
+  syntax:
+    content: public bool Enabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Enabled As Boolean
+  overload: Genesis.Core.GameElement.Enabled*
+- uid: Genesis.Core.GameElement.Propertys
+  commentId: P:Genesis.Core.GameElement.Propertys
+  id: Propertys
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Propertys
+  nameWithType: GameElement.Propertys
+  fullName: Genesis.Core.GameElement.Propertys
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the properties associated with the game element.
+  example: []
+  syntax:
+    content: public Dictionary<string, object> Propertys { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property Propertys As Dictionary(Of String, Object)
+  overload: Genesis.Core.GameElement.Propertys*
+- uid: Genesis.Core.GameElement.Children
+  commentId: P:Genesis.Core.GameElement.Children
+  id: Children
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: GameElement.Children
+  fullName: Genesis.Core.GameElement.Children
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the list of child game elements.
+  example: []
+  syntax:
+    content: public List<GameElement> Children { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Core.GameElement}
+    content.vb: Public Property Children As List(Of GameElement)
+  overload: Genesis.Core.GameElement.Children*
+- uid: Genesis.Core.GameElement.Parent
+  commentId: P:Genesis.Core.GameElement.Parent
+  id: Parent
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: Parent
+  nameWithType: GameElement.Parent
+  fullName: Genesis.Core.GameElement.Parent
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the parent game element.
+  example: []
+  syntax:
+    content: public GameElement Parent { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Core.GameElement
+    content.vb: Public Property Parent As GameElement
+  overload: Genesis.Core.GameElement.Parent*
+- uid: Genesis.Core.GameElement.UUID
+  commentId: P:Genesis.Core.GameElement.UUID
+  id: UUID
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: UUID
+  nameWithType: GameElement.UUID
+  fullName: Genesis.Core.GameElement.UUID
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the unique identifier for the game element.
+  example: []
+  syntax:
+    content: public string UUID { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property UUID As String
+  overload: Genesis.Core.GameElement.UUID*
+references:
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core.GameElement.#ctor*
+  commentId: Overload:Genesis.Core.GameElement.#ctor
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement__ctor
+  name: GameElement
+  nameWithType: GameElement.GameElement
+  fullName: Genesis.Core.GameElement.GameElement
+  nameWithType.vb: GameElement.New
+  fullName.vb: Genesis.Core.GameElement.New
+  name.vb: New
+- uid: Genesis.Core.GameElement.Init*
+  commentId: Overload:Genesis.Core.GameElement.Init
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  name: Init
+  nameWithType: GameElement.Init
+  fullName: Genesis.Core.GameElement.Init
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Graphics.IRenderDevice
+  commentId: T:Genesis.Graphics.IRenderDevice
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html
+  name: IRenderDevice
+  nameWithType: IRenderDevice
+  fullName: Genesis.Graphics.IRenderDevice
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Core.GameElement.OnRender*
+  commentId: Overload:Genesis.Core.GameElement.OnRender
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  name: OnRender
+  nameWithType: GameElement.OnRender
+  fullName: Genesis.Core.GameElement.OnRender
+- uid: Genesis.Core.GameElement.OnUpdate*
+  commentId: Overload:Genesis.Core.GameElement.OnUpdate
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnUpdate_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  name: OnUpdate
+  nameWithType: GameElement.OnUpdate
+  fullName: Genesis.Core.GameElement.OnUpdate
+- uid: Genesis.Core.GameElement.OnDestroy*
+  commentId: Overload:Genesis.Core.GameElement.OnDestroy
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_
+  name: OnDestroy
+  nameWithType: GameElement.OnDestroy
+  fullName: Genesis.Core.GameElement.OnDestroy
+- uid: Genesis.Core.GameElement.AddBehavior*
+  commentId: Overload:Genesis.Core.GameElement.AddBehavior
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddBehavior__1___0_
+  name: AddBehavior
+  nameWithType: GameElement.AddBehavior
+  fullName: Genesis.Core.GameElement.AddBehavior
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Genesis.Core.IGameBehavior
+  commentId: T:Genesis.Core.IGameBehavior
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html
+  name: IGameBehavior
+  nameWithType: IGameBehavior
+  fullName: Genesis.Core.IGameBehavior
+- uid: Genesis.Core.GameElement.GetBehavior*
+  commentId: Overload:Genesis.Core.GameElement.GetBehavior
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetBehavior__1
+  name: GetBehavior
+  nameWithType: GameElement.GetBehavior
+  fullName: Genesis.Core.GameElement.GetBehavior
+- uid: Genesis.Core.GameElement.GetBehaviors*
+  commentId: Overload:Genesis.Core.GameElement.GetBehaviors
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetBehaviors__1
+  name: GetBehaviors
+  nameWithType: GameElement.GetBehaviors
+  fullName: Genesis.Core.GameElement.GetBehaviors
+- uid: System.Collections.Generic.List{Genesis.Core.IGameBehavior}
+  commentId: T:System.Collections.Generic.List{Genesis.Core.IGameBehavior}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IGameBehavior>
+  nameWithType: List<IGameBehavior>
+  fullName: System.Collections.Generic.List<Genesis.Core.IGameBehavior>
+  nameWithType.vb: List(Of IGameBehavior)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Core.IGameBehavior)
+  name.vb: List(Of IGameBehavior)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Core.IGameBehavior
+    name: IGameBehavior
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Core.IGameBehavior
+    name: IGameBehavior
+    isExternal: true
+    href: Genesis.Core.IGameBehavior.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Core.GameElement.AddChild*
+  commentId: Overload:Genesis.Core.GameElement.AddChild
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddChild_Genesis_Core_GameElement_
+  name: AddChild
+  nameWithType: GameElement.AddChild
+  fullName: Genesis.Core.GameElement.AddChild
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+- uid: Genesis.Core.GameElement.GetInstance*
+  commentId: Overload:Genesis.Core.GameElement.GetInstance
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetInstance_Genesis_Core_GameElement_
+  name: GetInstance
+  nameWithType: GameElement.GetInstance
+  fullName: Genesis.Core.GameElement.GetInstance
+- uid: Genesis.Core.GameElement.Name*
+  commentId: Overload:Genesis.Core.GameElement.Name
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Name
+  name: Name
+  nameWithType: GameElement.Name
+  fullName: Genesis.Core.GameElement.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Genesis.Core.GameElement.Tag*
+  commentId: Overload:Genesis.Core.GameElement.Tag
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Tag
+  name: Tag
+  nameWithType: GameElement.Tag
+  fullName: Genesis.Core.GameElement.Tag
+- uid: Genesis.Core.GameElement.Location*
+  commentId: Overload:Genesis.Core.GameElement.Location
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Location
+  name: Location
+  nameWithType: GameElement.Location
+  fullName: Genesis.Core.GameElement.Location
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: Genesis.Core.GameElement.Rotation*
+  commentId: Overload:Genesis.Core.GameElement.Rotation
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Rotation
+  name: Rotation
+  nameWithType: GameElement.Rotation
+  fullName: Genesis.Core.GameElement.Rotation
+- uid: Genesis.Core.GameElement.Size*
+  commentId: Overload:Genesis.Core.GameElement.Size
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Size
+  name: Size
+  nameWithType: GameElement.Size
+  fullName: Genesis.Core.GameElement.Size
+- uid: Genesis.Core.GameElement.Behaviors*
+  commentId: Overload:Genesis.Core.GameElement.Behaviors
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Behaviors
+  name: Behaviors
+  nameWithType: GameElement.Behaviors
+  fullName: Genesis.Core.GameElement.Behaviors
+- uid: Genesis.Core.GameElement.Scene*
+  commentId: Overload:Genesis.Core.GameElement.Scene
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Scene
+  name: Scene
+  nameWithType: GameElement.Scene
+  fullName: Genesis.Core.GameElement.Scene
+- uid: Genesis.Core.Scene
+  commentId: T:Genesis.Core.Scene
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: Genesis.Core.Scene
+- uid: Genesis.Core.GameElement.Enabled*
+  commentId: Overload:Genesis.Core.GameElement.Enabled
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Enabled
+  name: Enabled
+  nameWithType: GameElement.Enabled
+  fullName: Genesis.Core.GameElement.Enabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Genesis.Core.GameElement.Propertys*
+  commentId: Overload:Genesis.Core.GameElement.Propertys
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Propertys
+  name: Propertys
+  nameWithType: GameElement.Propertys
+  fullName: Genesis.Core.GameElement.Propertys
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: Genesis.Core.GameElement.Children*
+  commentId: Overload:Genesis.Core.GameElement.Children
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Children
+  name: Children
+  nameWithType: GameElement.Children
+  fullName: Genesis.Core.GameElement.Children
+- uid: System.Collections.Generic.List{Genesis.Core.GameElement}
+  commentId: T:System.Collections.Generic.List{Genesis.Core.GameElement}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<GameElement>
+  nameWithType: List<GameElement>
+  fullName: System.Collections.Generic.List<Genesis.Core.GameElement>
+  nameWithType.vb: List(Of GameElement)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Core.GameElement)
+  name.vb: List(Of GameElement)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.GameElement.Parent*
+  commentId: Overload:Genesis.Core.GameElement.Parent
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_Parent
+  name: Parent
+  nameWithType: GameElement.Parent
+  fullName: Genesis.Core.GameElement.Parent
+- uid: Genesis.Core.GameElement.UUID*
+  commentId: Overload:Genesis.Core.GameElement.UUID
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_UUID
+  name: UUID
+  nameWithType: GameElement.UUID
+  fullName: Genesis.Core.GameElement.UUID

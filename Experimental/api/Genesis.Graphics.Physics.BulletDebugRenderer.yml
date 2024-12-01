@@ -1,0 +1,2265 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer
+  commentId: T:Genesis.Graphics.Physics.BulletDebugRenderer
+  id: BulletDebugRenderer
+  parent: Genesis.Graphics.Physics
+  children:
+  - Genesis.Graphics.Physics.BulletDebugRenderer.#ctor(Genesis.Graphics.IRenderDevice)
+  - Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+  - Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  - Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  - Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning(System.String)
+  langs:
+  - csharp
+  - vb
+  name: BulletDebugRenderer
+  nameWithType: BulletDebugRenderer
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  syntax:
+    content: 'public class BulletDebugRenderer : DebugDraw, IDisposable'
+    content.vb: Public Class BulletDebugRenderer Inherits DebugDraw Implements IDisposable
+  inheritance:
+  - System.Object
+  - BulletSharp.DebugDraw
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  - BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Boolean,System.Single)
+  - BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawCapsule(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawCone(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Int32,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawCylinder(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawSphere(System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Single)
+  - BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  - BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  - BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix@,System.Single)
+  - BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  - BulletSharp.DebugDraw.Dispose
+  - BulletSharp.DebugDraw.Dispose(System.Boolean)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.#ctor(Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Graphics.Physics.BulletDebugRenderer.#ctor(Genesis.Graphics.IRenderDevice)
+  id: '#ctor(Genesis.Graphics.IRenderDevice)'
+  parent: Genesis.Graphics.Physics.BulletDebugRenderer
+  langs:
+  - csharp
+  - vb
+  name: BulletDebugRenderer(IRenderDevice)
+  nameWithType: BulletDebugRenderer.BulletDebugRenderer(IRenderDevice)
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.BulletDebugRenderer(Genesis.Graphics.IRenderDevice)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  syntax:
+    content: public BulletDebugRenderer(IRenderDevice RenderDevice)
+    parameters:
+    - id: RenderDevice
+      type: Genesis.Graphics.IRenderDevice
+    content.vb: Public Sub New(RenderDevice As IRenderDevice)
+  overload: Genesis.Graphics.Physics.BulletDebugRenderer.#ctor*
+  nameWithType.vb: BulletDebugRenderer.New(IRenderDevice)
+  fullName.vb: Genesis.Graphics.Physics.BulletDebugRenderer.New(Genesis.Graphics.IRenderDevice)
+  name.vb: New(IRenderDevice)
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  commentId: M:Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  id: Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  parent: Genesis.Graphics.Physics.BulletDebugRenderer
+  langs:
+  - csharp
+  - vb
+  name: Draw3DText(ref Vector3, string)
+  nameWithType: BulletDebugRenderer.Draw3DText(ref Vector3, string)
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText(ref BulletSharp.Math.Vector3, string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  example: []
+  syntax:
+    content: public override void Draw3DText(ref Vector3 location, string textString)
+    parameters:
+    - id: location
+      type: BulletSharp.Math.Vector3
+    - id: textString
+      type: System.String
+    content.vb: Public Overrides Sub Draw3DText(location As Vector3, textString As String)
+  overridden: BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  overload: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText*
+  nameWithType.vb: BulletDebugRenderer.Draw3DText(Vector3, String)
+  fullName.vb: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText(BulletSharp.Math.Vector3, String)
+  name.vb: Draw3DText(Vector3, String)
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  id: DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: Genesis.Graphics.Physics.BulletDebugRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawLine(ref Vector3, ref Vector3, ref Vector3)
+  nameWithType: BulletDebugRenderer.DrawLine(ref Vector3, ref Vector3, ref Vector3)
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  example: []
+  syntax:
+    content: public override void DrawLine(ref Vector3 from, ref Vector3 to, ref Vector3 color)
+    parameters:
+    - id: from
+      type: BulletSharp.Math.Vector3
+    - id: to
+      type: BulletSharp.Math.Vector3
+    - id: color
+      type: BulletSharp.Math.Vector3
+    content.vb: Public Overrides Sub DrawLine(from As Vector3, [to] As Vector3, color As Vector3)
+  overridden: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  overload: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine*
+  nameWithType.vb: BulletDebugRenderer.DrawLine(Vector3, Vector3, Vector3)
+  fullName.vb: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: DrawLine(Vector3, Vector3, Vector3)
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning(System.String)
+  commentId: M:Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning(System.String)
+  id: ReportErrorWarning(System.String)
+  parent: Genesis.Graphics.Physics.BulletDebugRenderer
+  langs:
+  - csharp
+  - vb
+  name: ReportErrorWarning(string)
+  nameWithType: BulletDebugRenderer.ReportErrorWarning(string)
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  example: []
+  syntax:
+    content: public override void ReportErrorWarning(string warningString)
+    parameters:
+    - id: warningString
+      type: System.String
+    content.vb: Public Overrides Sub ReportErrorWarning(warningString As String)
+  overridden: BulletSharp.DebugDraw.ReportErrorWarning(System.String)
+  overload: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning*
+  nameWithType.vb: BulletDebugRenderer.ReportErrorWarning(String)
+  fullName.vb: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning(String)
+  name.vb: ReportErrorWarning(String)
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+  commentId: P:Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+  id: DebugMode
+  parent: Genesis.Graphics.Physics.BulletDebugRenderer
+  langs:
+  - csharp
+  - vb
+  name: DebugMode
+  nameWithType: BulletDebugRenderer.DebugMode
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Physics
+  example: []
+  syntax:
+    content: public override DebugDrawModes DebugMode { get; set; }
+    parameters: []
+    return:
+      type: BulletSharp.DebugDrawModes
+    content.vb: Public Overrides Property DebugMode As DebugDrawModes
+  overridden: BulletSharp.DebugDraw.DebugMode
+  overload: Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode*
+references:
+- uid: Genesis.Graphics.Physics
+  commentId: N:Genesis.Graphics.Physics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics.Physics
+  nameWithType: Genesis.Graphics.Physics
+  fullName: Genesis.Graphics.Physics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Graphics.Physics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Graphics.Physics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: BulletSharp.DebugDraw
+  commentId: T:BulletSharp.DebugDraw
+  parent: BulletSharp
+  isExternal: true
+  name: DebugDraw
+  nameWithType: DebugDraw
+  fullName: BulletSharp.DebugDraw
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  commentId: M:BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawLine(Vector3, Vector3, Vector3)
+  nameWithType: DebugDraw.DrawLine(Vector3, Vector3, Vector3)
+  fullName: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawLine(ref Vector3, ref Vector3, ref Vector3, ref Vector3)
+  nameWithType: DebugDraw.DrawLine(ref Vector3, ref Vector3, ref Vector3, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawLine(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawLine(Vector3, Vector3, Vector3, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: DrawLine(Vector3, Vector3, Vector3, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawAabb(ref Vector3, ref Vector3, ref Vector3)
+  nameWithType: DebugDraw.DrawAabb(ref Vector3, ref Vector3, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawAabb(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawAabb(Vector3, Vector3, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: DrawAabb(Vector3, Vector3, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawAabb
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawAabb(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawAabb
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Boolean,System.Single)
+  commentId: M:BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Boolean,System.Single)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawArc(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, ref Vector3, bool, float)
+  nameWithType: DebugDraw.DrawArc(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, ref Vector3, bool, float)
+  fullName: BulletSharp.DebugDraw.DrawArc(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float, float, float, float, ref BulletSharp.Math.Vector3, bool, float)
+  nameWithType.vb: DebugDraw.DrawArc(Vector3, Vector3, Vector3, Single, Single, Single, Single, Vector3, Boolean, Single)
+  fullName.vb: BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single, Single, Single, Single, BulletSharp.Math.Vector3, Boolean, Single)
+  name.vb: DrawArc(Vector3, Vector3, Vector3, Single, Single, Single, Single, Vector3, Boolean, Single)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Boolean,System.Single)
+    name: DrawArc
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawArc(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Boolean,System.Single)
+    name: DrawArc
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawBox(ref Vector3, ref Vector3, ref Vector3)
+  nameWithType: DebugDraw.DrawBox(ref Vector3, ref Vector3, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawBox(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawBox(Vector3, Vector3, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: DrawBox(Vector3, Vector3, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawBox
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawBox
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawBox(ref Vector3, ref Vector3, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawBox(ref Vector3, ref Vector3, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawBox(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawBox(Vector3, Vector3, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawBox(Vector3, Vector3, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawBox
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawBox(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawBox
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawCapsule(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawCapsule(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawCapsule(float, float, int, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawCapsule(float, float, int, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawCapsule(float, float, int, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawCapsule(Single, Single, Integer, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawCapsule(Single, Single, Integer, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawCapsule(Single, Single, Integer, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawCapsule(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCapsule
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawCapsule(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCapsule
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawCone(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawCone(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawCone(float, float, int, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawCone(float, float, int, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawCone(float, float, int, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawCone(Single, Single, Integer, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawCone(Single, Single, Integer, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawCone(Single, Single, Integer, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawCone(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCone
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawCone(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCone
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Int32,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Int32,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawContactPoint(ref Vector3, ref Vector3, float, int, ref Vector3)
+  nameWithType: DebugDraw.DrawContactPoint(ref Vector3, ref Vector3, float, int, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawContactPoint(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float, int, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawContactPoint(Vector3, Vector3, Single, Integer, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single, Integer, BulletSharp.Math.Vector3)
+  name.vb: DrawContactPoint(Vector3, Vector3, Single, Integer, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Int32,BulletSharp.Math.Vector3@)
+    name: DrawContactPoint
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawContactPoint(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Int32,BulletSharp.Math.Vector3@)
+    name: DrawContactPoint
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawCylinder(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawCylinder(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawCylinder(float, float, int, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawCylinder(float, float, int, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawCylinder(float, float, int, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawCylinder(Single, Single, Integer, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawCylinder(Single, Single, Integer, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawCylinder(Single, Single, Integer, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawCylinder(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCylinder
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawCylinder(System.Single,System.Single,System.Int32,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawCylinder
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawPlane(ref Vector3, float, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawPlane(ref Vector3, float, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawPlane(ref BulletSharp.Math.Vector3, float, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawPlane(Vector3, Single, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3, Single, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawPlane(Vector3, Single, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawPlane
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawPlane(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawPlane
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawSphere(System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawSphere(System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawSphere(float, ref Matrix, ref Vector3)
+  nameWithType: DebugDraw.DrawSphere(float, ref Matrix, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawSphere(float, ref BulletSharp.Math.Matrix, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawSphere(Single, Matrix, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawSphere(Single, BulletSharp.Math.Matrix, BulletSharp.Math.Vector3)
+  name.vb: DrawSphere(Single, Matrix, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawSphere(System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawSphere
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawSphere(System.Single,BulletSharp.Math.Matrix@,BulletSharp.Math.Vector3@)
+    name: DrawSphere
+    isExternal: true
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawSphere(ref Vector3, float, ref Vector3)
+  nameWithType: DebugDraw.DrawSphere(ref Vector3, float, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawSphere(ref BulletSharp.Math.Vector3, float, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawSphere(Vector3, Single, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3, Single, BulletSharp.Math.Vector3)
+  name.vb: DrawSphere(Vector3, Single, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Vector3@)
+    name: DrawSphere
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawSphere(BulletSharp.Math.Vector3@,System.Single,BulletSharp.Math.Vector3@)
+    name: DrawSphere
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawSpherePatch(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, float, ref Vector3)
+  nameWithType: DebugDraw.DrawSpherePatch(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, float, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawSpherePatch(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float, float, float, float, float, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawSpherePatch(Vector3, Vector3, Vector3, Single, Single, Single, Single, Single, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single, Single, Single, Single, Single, BulletSharp.Math.Vector3)
+  name.vb: DrawSpherePatch(Vector3, Vector3, Vector3, Single, Single, Single, Single, Single, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@)
+    name: DrawSpherePatch
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@)
+    name: DrawSpherePatch
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Single)
+  commentId: M:BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Single)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawSpherePatch(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, float, ref Vector3, float)
+  nameWithType: DebugDraw.DrawSpherePatch(ref Vector3, ref Vector3, ref Vector3, float, float, float, float, float, ref Vector3, float)
+  fullName: BulletSharp.DebugDraw.DrawSpherePatch(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float, float, float, float, float, ref BulletSharp.Math.Vector3, float)
+  nameWithType.vb: DebugDraw.DrawSpherePatch(Vector3, Vector3, Vector3, Single, Single, Single, Single, Single, Vector3, Single)
+  fullName.vb: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single, Single, Single, Single, Single, BulletSharp.Math.Vector3, Single)
+  name.vb: DrawSpherePatch(Vector3, Vector3, Vector3, Single, Single, Single, Single, Single, Vector3, Single)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawSpherePatch
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawSpherePatch(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single,System.Single,System.Single,System.Single,System.Single,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawSpherePatch
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  commentId: M:BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawTriangle(ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, float)
+  nameWithType: DebugDraw.DrawTriangle(ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, ref Vector3, float)
+  fullName: BulletSharp.DebugDraw.DrawTriangle(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float)
+  nameWithType.vb: DebugDraw.DrawTriangle(Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Single)
+  fullName.vb: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single)
+  name.vb: DrawTriangle(Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Vector3, Single)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawTriangle
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawTriangle
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  commentId: M:BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawTriangle(ref Vector3, ref Vector3, ref Vector3, ref Vector3, float)
+  nameWithType: DebugDraw.DrawTriangle(ref Vector3, ref Vector3, ref Vector3, ref Vector3, float)
+  fullName: BulletSharp.DebugDraw.DrawTriangle(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, float)
+  nameWithType.vb: DebugDraw.DrawTriangle(Vector3, Vector3, Vector3, Vector3, Single)
+  fullName.vb: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, Single)
+  name.vb: DrawTriangle(Vector3, Vector3, Vector3, Vector3, Single)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawTriangle
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawTriangle(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,System.Single)
+    name: DrawTriangle
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix@,System.Single)
+  commentId: M:BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix@,System.Single)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: DrawTransform(ref Matrix, float)
+  nameWithType: DebugDraw.DrawTransform(ref Matrix, float)
+  fullName: BulletSharp.DebugDraw.DrawTransform(ref BulletSharp.Math.Matrix, float)
+  nameWithType.vb: DebugDraw.DrawTransform(Matrix, Single)
+  fullName.vb: BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix, Single)
+  name.vb: DrawTransform(Matrix, Single)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix@,System.Single)
+    name: DrawTransform
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawTransform(BulletSharp.Math.Matrix@,System.Single)
+    name: DrawTransform
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Matrix
+    name: Matrix
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: PlaneSpace1(ref Vector3, out Vector3, out Vector3)
+  nameWithType: DebugDraw.PlaneSpace1(ref Vector3, out Vector3, out Vector3)
+  fullName: BulletSharp.DebugDraw.PlaneSpace1(ref BulletSharp.Math.Vector3, out BulletSharp.Math.Vector3, out BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.PlaneSpace1(Vector3, Vector3, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: PlaneSpace1(Vector3, Vector3, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: PlaneSpace1
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: out
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.PlaneSpace1(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: PlaneSpace1
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: BulletSharp.DebugDraw.Dispose
+  commentId: M:BulletSharp.DebugDraw.Dispose
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: Dispose()
+  nameWithType: DebugDraw.Dispose()
+  fullName: BulletSharp.DebugDraw.Dispose()
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.Dispose
+    name: Dispose
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.Dispose
+    name: Dispose
+    isExternal: true
+  - name: (
+  - name: )
+- uid: BulletSharp.DebugDraw.Dispose(System.Boolean)
+  commentId: M:BulletSharp.DebugDraw.Dispose(System.Boolean)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: Dispose(bool)
+  nameWithType: DebugDraw.Dispose(bool)
+  fullName: BulletSharp.DebugDraw.Dispose(bool)
+  nameWithType.vb: DebugDraw.Dispose(Boolean)
+  fullName.vb: BulletSharp.DebugDraw.Dispose(Boolean)
+  name.vb: Dispose(Boolean)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.Dispose(System.Boolean)
+    name: Dispose
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.Dispose(System.Boolean)
+    name: Dispose
+    isExternal: true
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BulletSharp
+  commentId: N:BulletSharp
+  isExternal: true
+  name: BulletSharp
+  nameWithType: BulletSharp
+  fullName: BulletSharp
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.#ctor*
+  commentId: Overload:Genesis.Graphics.Physics.BulletDebugRenderer.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Physics.BulletDebugRenderer.html#Genesis_Graphics_Physics_BulletDebugRenderer__ctor_Genesis_Graphics_IRenderDevice_
+  name: BulletDebugRenderer
+  nameWithType: BulletDebugRenderer.BulletDebugRenderer
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.BulletDebugRenderer
+  nameWithType.vb: BulletDebugRenderer.New
+  fullName.vb: Genesis.Graphics.Physics.BulletDebugRenderer.New
+  name.vb: New
+- uid: Genesis.Graphics.IRenderDevice
+  commentId: T:Genesis.Graphics.IRenderDevice
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html
+  name: IRenderDevice
+  nameWithType: IRenderDevice
+  fullName: Genesis.Graphics.IRenderDevice
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  commentId: M:BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: Draw3DText(ref Vector3, string)
+  nameWithType: DebugDraw.Draw3DText(ref Vector3, string)
+  fullName: BulletSharp.DebugDraw.Draw3DText(ref BulletSharp.Math.Vector3, string)
+  nameWithType.vb: DebugDraw.Draw3DText(Vector3, String)
+  fullName.vb: BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3, String)
+  name.vb: Draw3DText(Vector3, String)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+    name: Draw3DText
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.Draw3DText(BulletSharp.Math.Vector3@,System.String)
+    name: Draw3DText
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText*
+  commentId: Overload:Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText
+  isExternal: true
+  href: Genesis.Graphics.Physics.BulletDebugRenderer.html#Genesis_Graphics_Physics_BulletDebugRenderer_Draw3DText_BulletSharp_Math_Vector3__System_String_
+  name: Draw3DText
+  nameWithType: BulletDebugRenderer.Draw3DText
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.Draw3DText
+- uid: BulletSharp.Math.Vector3
+  commentId: T:BulletSharp.Math.Vector3
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: BulletSharp.Math.Vector3
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: BulletSharp.Math
+  commentId: N:BulletSharp.Math
+  isExternal: true
+  name: BulletSharp.Math
+  nameWithType: BulletSharp.Math
+  fullName: BulletSharp.Math
+  spec.csharp:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+  spec.vb:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+- uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  commentId: M:BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DrawLine(ref Vector3, ref Vector3, ref Vector3)
+  nameWithType: DebugDraw.DrawLine(ref Vector3, ref Vector3, ref Vector3)
+  fullName: BulletSharp.DebugDraw.DrawLine(ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3, ref BulletSharp.Math.Vector3)
+  nameWithType.vb: DebugDraw.DrawLine(Vector3, Vector3, Vector3)
+  fullName.vb: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  name.vb: DrawLine(Vector3, Vector3, Vector3)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: ref
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.DrawLine(BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@,BulletSharp.Math.Vector3@)
+    name: DrawLine
+    isExternal: true
+  - name: (
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: BulletSharp.Math.Vector3
+    name: Vector3
+    isExternal: true
+  - name: )
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine*
+  commentId: Overload:Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine
+  isExternal: true
+  href: Genesis.Graphics.Physics.BulletDebugRenderer.html#Genesis_Graphics_Physics_BulletDebugRenderer_DrawLine_BulletSharp_Math_Vector3__BulletSharp_Math_Vector3__BulletSharp_Math_Vector3__
+  name: DrawLine
+  nameWithType: BulletDebugRenderer.DrawLine
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.DrawLine
+- uid: BulletSharp.DebugDraw.ReportErrorWarning(System.String)
+  commentId: M:BulletSharp.DebugDraw.ReportErrorWarning(System.String)
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: ReportErrorWarning(string)
+  nameWithType: DebugDraw.ReportErrorWarning(string)
+  fullName: BulletSharp.DebugDraw.ReportErrorWarning(string)
+  nameWithType.vb: DebugDraw.ReportErrorWarning(String)
+  fullName.vb: BulletSharp.DebugDraw.ReportErrorWarning(String)
+  name.vb: ReportErrorWarning(String)
+  spec.csharp:
+  - uid: BulletSharp.DebugDraw.ReportErrorWarning(System.String)
+    name: ReportErrorWarning
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: BulletSharp.DebugDraw.ReportErrorWarning(System.String)
+    name: ReportErrorWarning
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning*
+  commentId: Overload:Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning
+  isExternal: true
+  href: Genesis.Graphics.Physics.BulletDebugRenderer.html#Genesis_Graphics_Physics_BulletDebugRenderer_ReportErrorWarning_System_String_
+  name: ReportErrorWarning
+  nameWithType: BulletDebugRenderer.ReportErrorWarning
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.ReportErrorWarning
+- uid: BulletSharp.DebugDraw.DebugMode
+  commentId: P:BulletSharp.DebugDraw.DebugMode
+  parent: BulletSharp.DebugDraw
+  isExternal: true
+  name: DebugMode
+  nameWithType: DebugDraw.DebugMode
+  fullName: BulletSharp.DebugDraw.DebugMode
+- uid: Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode*
+  commentId: Overload:Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+  isExternal: true
+  href: Genesis.Graphics.Physics.BulletDebugRenderer.html#Genesis_Graphics_Physics_BulletDebugRenderer_DebugMode
+  name: DebugMode
+  nameWithType: BulletDebugRenderer.DebugMode
+  fullName: Genesis.Graphics.Physics.BulletDebugRenderer.DebugMode
+- uid: BulletSharp.DebugDrawModes
+  commentId: T:BulletSharp.DebugDrawModes
+  parent: BulletSharp
+  isExternal: true
+  name: DebugDrawModes
+  nameWithType: DebugDrawModes
+  fullName: BulletSharp.DebugDrawModes

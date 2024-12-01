@@ -1,0 +1,1014 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  commentId: T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  id: BufferedSpriteCollider
+  parent: Genesis.Core.Behaviors.Physics2D
+  children:
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor(Genesis.Physics.PhysicHandler)
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  langs:
+  - csharp
+  - vb
+  name: BufferedSpriteCollider
+  nameWithType: BufferedSpriteCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
+  example: []
+  syntax:
+    content: 'public class BufferedSpriteCollider : ColliderBehavior2D'
+    content.vb: Public Class BufferedSpriteCollider Inherits ColliderBehavior2D
+  inheritance:
+  - System.Object
+  - Genesis.Core.IGameBehavior
+  - Genesis.Physics.PhysicsBehavior
+  - Genesis.Physics.ColliderBehavior2D
+  inheritedMembers:
+  - Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+  - Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)
+  - Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+  - Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)
+  - Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
+  - Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
+  - Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.ColliderBehavior2D.Collider
+  - Genesis.Physics.ColliderBehavior2D.Offset
+  - Genesis.Physics.ColliderBehavior2D.PhysicHandler
+  - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  - Genesis.Physics.PhysicsBehavior.OnCollide
+  - Genesis.Core.IGameBehavior.Parent
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor(Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor(Genesis.Physics.PhysicHandler)
+  id: '#ctor(Genesis.Physics.PhysicHandler)'
+  parent: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  langs:
+  - csharp
+  - vb
+  name: BufferedSpriteCollider(PhysicHandler)
+  nameWithType: BufferedSpriteCollider.BufferedSpriteCollider(PhysicHandler)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.BufferedSpriteCollider(Genesis.Physics.PhysicHandler)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  syntax:
+    content: public BufferedSpriteCollider(PhysicHandler physicHandler)
+    parameters:
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+    content.vb: Public Sub New(physicHandler As PhysicHandler)
+  overload: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor*
+  nameWithType.vb: BufferedSpriteCollider.New(PhysicHandler)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.New(Genesis.Physics.PhysicHandler)
+  name.vb: New(PhysicHandler)
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+  id: CreateCollider
+  parent: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  langs:
+  - csharp
+  - vb
+  name: CreateCollider()
+  nameWithType: BufferedSpriteCollider.CreateCollider()
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Creates a rigid body for the collider.
+  example: []
+  syntax:
+    content: public override void CreateCollider()
+    content.vb: Public Overrides Sub CreateCollider()
+  overridden: Genesis.Physics.ColliderBehavior2D.CreateCollider
+  overload: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider*
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate(Game, GameElement)
+  nameWithType: BufferedSpriteCollider.OnUpdate(Game, GameElement)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors.Physics2D
+  summary: Updates the collider's position and rotation each frame.
+  example: []
+  syntax:
+    content: public override void OnUpdate(Game game, GameElement parent)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance.
+    - id: parent
+      type: Genesis.Core.GameElement
+      description: The parent game element.
+    content.vb: Public Overrides Sub OnUpdate(game As Game, parent As GameElement)
+  overridden: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  overload: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate*
+references:
+- uid: Genesis.Core.Behaviors.Physics2D
+  commentId: N:Genesis.Core.Behaviors.Physics2D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors.Physics2D
+  nameWithType: Genesis.Core.Behaviors.Physics2D
+  fullName: Genesis.Core.Behaviors.Physics2D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors.Physics2D
+    name: Physics2D
+    isExternal: true
+    href: Genesis.Core.Behaviors.Physics2D.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Genesis.Core.IGameBehavior
+  commentId: T:Genesis.Core.IGameBehavior
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html
+  name: IGameBehavior
+  nameWithType: IGameBehavior
+  fullName: Genesis.Core.IGameBehavior
+- uid: Genesis.Physics.PhysicsBehavior
+  commentId: T:Genesis.Physics.PhysicsBehavior
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html
+  name: PhysicsBehavior
+  nameWithType: PhysicsBehavior
+  fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.ColliderBehavior2D
+  commentId: T:Genesis.Physics.ColliderBehavior2D
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html
+  name: ColliderBehavior2D
+  nameWithType: ColliderBehavior2D
+  fullName: Genesis.Physics.ColliderBehavior2D
+- uid: Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_Genesis_Math_Vec3_
+  name: Translate(Vec3)
+  nameWithType: ColliderBehavior2D.Translate(Vec3)
+  fullName: Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_System_Single_System_Single_
+  name: Translate(float, float)
+  nameWithType: ColliderBehavior2D.Translate(float, float)
+  fullName: Genesis.Physics.ColliderBehavior2D.Translate(float, float)
+  nameWithType.vb: ColliderBehavior2D.Translate(Single, Single)
+  fullName.vb: Genesis.Physics.ColliderBehavior2D.Translate(Single, Single)
+  name.vb: Translate(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.Translate(System.Single,System.Single)
+    name: Translate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Translate_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_Genesis_Math_Vec3_
+  name: Rotate(Vec3)
+  nameWithType: ColliderBehavior2D.Rotate(Vec3)
+  fullName: Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.Rotate(Genesis.Math.Vec3)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_Genesis_Math_Vec3_
+  - name: (
+  - uid: Genesis.Math.Vec3
+    name: Vec3
+    isExternal: true
+    href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_System_Single_
+  name: Rotate(float)
+  nameWithType: ColliderBehavior2D.Rotate(float)
+  fullName: Genesis.Physics.ColliderBehavior2D.Rotate(float)
+  nameWithType.vb: ColliderBehavior2D.Rotate(Single)
+  fullName.vb: Genesis.Physics.ColliderBehavior2D.Rotate(Single)
+  name.vb: Rotate(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.Rotate(System.Single)
+    name: Rotate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Rotate_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
+  commentId: M:Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject
+  name: GetPhysicsObject()
+  nameWithType: ColliderBehavior2D.GetPhysicsObject()
+  fullName: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject
+  - name: (
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
+  commentId: M:Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject__1
+  name: GetPhysicsObject<T>()
+  nameWithType: ColliderBehavior2D.GetPhysicsObject<T>()
+  fullName: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject<T>()
+  nameWithType.vb: ColliderBehavior2D.GetPhysicsObject(Of T)()
+  fullName.vb: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject(Of T)()
+  name.vb: GetPhysicsObject(Of T)()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
+    name: GetPhysicsObject
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_GetPhysicsObject__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnDestroy(Game, GameElement)
+  nameWithType: ColliderBehavior2D.OnDestroy(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnDestroy
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnDestroy_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnInit(Game, GameElement)
+  nameWithType: ColliderBehavior2D.OnInit(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnInit(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnInit
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnInit_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnRender(Game, GameElement)
+  nameWithType: ColliderBehavior2D.OnRender(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnRender(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnRender
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnRender_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.ColliderBehavior2D.Collider
+  commentId: P:Genesis.Physics.ColliderBehavior2D.Collider
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Collider
+  name: Collider
+  nameWithType: ColliderBehavior2D.Collider
+  fullName: Genesis.Physics.ColliderBehavior2D.Collider
+- uid: Genesis.Physics.ColliderBehavior2D.Offset
+  commentId: P:Genesis.Physics.ColliderBehavior2D.Offset
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_Offset
+  name: Offset
+  nameWithType: ColliderBehavior2D.Offset
+  fullName: Genesis.Physics.ColliderBehavior2D.Offset
+- uid: Genesis.Physics.ColliderBehavior2D.PhysicHandler
+  commentId: P:Genesis.Physics.ColliderBehavior2D.PhysicHandler
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_PhysicHandler
+  name: PhysicHandler
+  nameWithType: ColliderBehavior2D.PhysicHandler
+  fullName: Genesis.Physics.ColliderBehavior2D.PhysicHandler
+- uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: Collide(Scene, Game, GameElement)
+  nameWithType: PhysicsBehavior.Collide(Scene, Game, GameElement)
+  fullName: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene, Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
+    name: Collide
+    isExternal: true
+    href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_Collide_Genesis_Core_Scene_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Physics.PhysicsBehavior.OnCollide
+  commentId: E:Genesis.Physics.PhysicsBehavior.OnCollide
+  parent: Genesis.Physics.PhysicsBehavior
+  isExternal: true
+  href: Genesis.Physics.PhysicsBehavior.html#Genesis_Physics_PhysicsBehavior_OnCollide
+  name: OnCollide
+  nameWithType: PhysicsBehavior.OnCollide
+  fullName: Genesis.Physics.PhysicsBehavior.OnCollide
+- uid: Genesis.Core.IGameBehavior.Parent
+  commentId: P:Genesis.Core.IGameBehavior.Parent
+  parent: Genesis.Core.IGameBehavior
+  isExternal: true
+  href: Genesis.Core.IGameBehavior.html#Genesis_Core_IGameBehavior_Parent
+  name: Parent
+  nameWithType: IGameBehavior.Parent
+  fullName: Genesis.Core.IGameBehavior.Parent
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: Genesis.Physics
+  commentId: N:Genesis.Physics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Physics
+  nameWithType: Genesis.Physics
+  fullName: Genesis.Physics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider__ctor_Genesis_Physics_PhysicHandler_
+  name: BufferedSpriteCollider
+  nameWithType: BufferedSpriteCollider.BufferedSpriteCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.BufferedSpriteCollider
+  nameWithType.vb: BufferedSpriteCollider.New
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.New
+  name.vb: New
+- uid: Genesis.Physics.PhysicHandler
+  commentId: T:Genesis.Physics.PhysicHandler
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html
+  name: PhysicHandler
+  nameWithType: PhysicHandler
+  fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
+  commentId: M:Genesis.Physics.ColliderBehavior2D.CreateCollider
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+  name: CreateCollider()
+  nameWithType: ColliderBehavior2D.CreateCollider()
+  fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider()
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
+    name: CreateCollider
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
+    name: CreateCollider
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+  - name: (
+  - name: )
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_CreateCollider
+  name: CreateCollider
+  nameWithType: BufferedSpriteCollider.CreateCollider
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+- uid: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Physics.ColliderBehavior2D
+  isExternal: true
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate(Game, GameElement)
+  nameWithType: ColliderBehavior2D.OnUpdate(Game, GameElement)
+  fullName: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game, Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
+    name: OnUpdate
+    isExternal: true
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate*
+  commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_OnUpdate_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: OnUpdate
+  nameWithType: BufferedSpriteCollider.OnUpdate
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
