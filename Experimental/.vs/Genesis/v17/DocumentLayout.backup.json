@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\behaviors\\physics3d\\compoundmeshcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\physics3d\\compoundmeshcollider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderdevice\\betarenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\physics\\colliderbehavior3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\genesis\\physics\\colliderbehavior3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\physics\\colliderbehavior3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\genesis\\core\\behaviors\\physics3d\\convexhullbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\behaviors\\physics3d\\convexhullbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\gameelements\\element3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\element3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BetaRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "RelativeToolTip": "Genesis\\Graphics\\RenderDevice\\BetaRenderer.cs",
+              "ViewState": "AgIAAPEHAAAAAAAAAAAiwAkIAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T22:59:13.528Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -36,53 +41,14 @@
               "RelativeDocumentMoniker": "Genesis\\Physics\\ColliderBehavior3D.cs",
               "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Physics\\ColliderBehavior3D.cs",
               "RelativeToolTip": "Genesis\\Physics\\ColliderBehavior3D.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAuwKIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T17:05:45.644Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Element3D.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Element3D.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Element3D.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Element3D.cs",
-              "RelativeToolTip": "Genesis\\Core\\GameElements\\Element3D.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwEMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T16:28:24.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CompoundMeshCollider.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Behaviors\\Physics3D\\CompoundMeshCollider.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\Physics3D\\CompoundMeshCollider.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Behaviors\\Physics3D\\CompoundMeshCollider.cs",
-              "RelativeToolTip": "Genesis\\Core\\Behaviors\\Physics3D\\CompoundMeshCollider.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAkwE4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T01:54:00.024Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConvexHullBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Behaviors\\Physics3D\\ConvexHullBehavior.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\Behaviors\\Physics3D\\ConvexHullBehavior.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Behaviors\\Physics3D\\ConvexHullBehavior.cs",
-              "RelativeToolTip": "Genesis\\Core\\Behaviors\\Physics3D\\ConvexHullBehavior.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAqwEcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T02:50:43.993Z",
-              "EditorCaption": ""
             }
           ]
         }

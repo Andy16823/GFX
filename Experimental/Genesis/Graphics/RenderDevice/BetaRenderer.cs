@@ -2053,9 +2053,9 @@ namespace Genesis.Graphics.RenderDevice
         private void DrawCube(Qube cube)
         {
             // Build the matrices
-            mat4 mt_mat = mat4.Translate(cube.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(cube.Rotation.X) * mat4.RotateY(cube.Rotation.Y) * mat4.RotateZ(cube.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(cube.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(cube);
+            mat4 mr_mat = Utils.GetModelRotation(cube); 
+            mat4 ms_mat = Utils.GetModelScale(cube);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             // Assign the matrices to the shader
