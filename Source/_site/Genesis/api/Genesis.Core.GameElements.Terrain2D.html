@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Terrain2D | GFX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Terrain2D | GFX ">
+    
+    <meta name="description" content="Represents a 2D terrain element.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="../../toc.html">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="GFX">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../../../docs/introduction.html" title="Docs">Docs</a>
+                      </li>
+                      <li>
+                          <a href="../../../../api/Genesis.Core.html" title="API">API</a>
+                      </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Genesis.Core.GameElements.Terrain2D">
+
+
+
+  <h1 id="Genesis_Core_GameElements_Terrain2D" data-uid="Genesis.Core.GameElements.Terrain2D" class="text-break">Class Terrain2D</h1>
+  <div class="markdown level0 summary"><p>Represents a 2D terrain element.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="../../api/Genesis.Core.GameElement.html">GameElement</a></div>
+    <div class="level2"><span class="xref">Terrain2D</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnUpdate_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_">GameElement.OnUpdate(Game, IRenderDevice)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddBehavior__1___0_">GameElement.AddBehavior&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddBehavior_Genesis_Core_IGameBehavior_">GameElement.AddBehavior(IGameBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetBehavior__1">GameElement.GetBehavior&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetBehaviors__1">GameElement.GetBehaviors&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_AddChild_Genesis_Core_GameElement_">GameElement.AddChild(GameElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_GetInstance_Genesis_Core_GameElement_">GameElement.GetInstance(GameElement)</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Name">GameElement.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Tag">GameElement.Tag</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Location">GameElement.Location</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Rotation">GameElement.Rotation</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Size">GameElement.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Behaviors">GameElement.Behaviors</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Scene">GameElement.Scene</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Enabled">GameElement.Enabled</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Propertys">GameElement.Propertys</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Children">GameElement.Children</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Parent">GameElement.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_UUID">GameElement.UUID</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Genesis.html">Genesis</a>.<a class="xref" href="Genesis.Core.html">Core</a>.<a class="xref" href="Genesis.Core.GameElements.html">GameElements</a></h6>
+  <h6><strong>Assembly</strong>: Genesis.dll</h6>
+  <h5 id="Genesis_Core_GameElements_Terrain2D_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Terrain2D : GameElement</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D__ctor_" data-uid="Genesis.Core.GameElements.Terrain2D.#ctor*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D__ctor_System_String_Genesis_Math_Vec3_System_Single_System_Single_System_Single_Genesis_Graphics_Texture_" data-uid="Genesis.Core.GameElements.Terrain2D.#ctor(System.String,Genesis.Math.Vec3,System.Single,System.Single,System.Single,Genesis.Graphics.Texture)">Terrain2D(string, Vec3, float, float, float, Texture)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the Terrain2D class with specified name, location, cell counts, cell size, and texture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Terrain2D(string name, Vec3 location, float cellsX, float cellsY, float cellSize, Texture texture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the terrain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Math.Vec3.html">Vec3</a></td>
+        <td><span class="parametername">location</span></td>
+        <td><p>The initial location of the terrain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">cellsX</span></td>
+        <td><p>The number of cells in the X direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">cellsY</span></td>
+        <td><p>The number of cells in the Y direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">cellSize</span></td>
+        <td><p>The size of each cell.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Texture.html">Texture</a></td>
+        <td><span class="parametername">texture</span></td>
+        <td><p>The texture for the terrain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_CellSize_" data-uid="Genesis.Core.GameElements.Terrain2D.CellSize*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_CellSize" data-uid="Genesis.Core.GameElements.Terrain2D.CellSize">CellSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the size of each cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CellSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_CellsX_" data-uid="Genesis.Core.GameElements.Terrain2D.CellsX*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_CellsX" data-uid="Genesis.Core.GameElements.Terrain2D.CellsX">CellsX</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of cells in the X direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CellsX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_CellsY_" data-uid="Genesis.Core.GameElements.Terrain2D.CellsY*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_CellsY" data-uid="Genesis.Core.GameElements.Terrain2D.CellsY">CellsY</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the number of cells in the Y direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CellsY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_Texture_" data-uid="Genesis.Core.GameElements.Terrain2D.Texture*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_Texture" data-uid="Genesis.Core.GameElements.Terrain2D.Texture">Texture</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the texture of the terrain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Texture Texture { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.Texture.html">Texture</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_GetBounds_" data-uid="Genesis.Core.GameElements.Terrain2D.GetBounds*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_GetBounds" data-uid="Genesis.Core.GameElements.Terrain2D.GetBounds">GetBounds()</h4>
+  <div class="markdown level1 summary"><p>Gets the 2D bounds of the terrain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rect GetBounds()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Math.Rect.html">Rect</a></td>
+        <td><p>A rectangular region representing the 2D bounds of the terrain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_Init_" data-uid="Genesis.Core.GameElements.Terrain2D.Init*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_" data-uid="Genesis.Core.GameElements.Terrain2D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">Init(Game, IRenderDevice)</h4>
+  <div class="markdown level1 summary"><p>Initializes the terrain element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(Game game, IRenderDevice renderDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td><p>The game instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.IRenderDevice.html">IRenderDevice</a></td>
+        <td><span class="parametername">renderDevice</span></td>
+        <td><p>The render device used for rendering.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_Init_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_">GameElement.Init(Game, IRenderDevice)</a></div>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_OnDestroy_" data-uid="Genesis.Core.GameElements.Terrain2D.OnDestroy*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_OnDestroy_Genesis_Core_Game_" data-uid="Genesis.Core.GameElements.Terrain2D.OnDestroy(Genesis.Core.Game)">OnDestroy(Game)</h4>
+  <div class="markdown level1 summary"><p>Handles cleanup and resource disposal when the terrain is destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnDestroy(Game game)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td><p>The game instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnDestroy_Genesis_Core_Game_">GameElement.OnDestroy(Game)</a></div>
+
+
+  <a id="Genesis_Core_GameElements_Terrain2D_OnRender_" data-uid="Genesis.Core.GameElements.Terrain2D.OnRender*"></a>
+  <h4 id="Genesis_Core_GameElements_Terrain2D_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_" data-uid="Genesis.Core.GameElements.Terrain2D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">OnRender(Game, IRenderDevice)</h4>
+  <div class="markdown level1 summary"><p>Renders the terrain element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnRender(Game game, IRenderDevice renderDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Core.Game.html">Game</a></td>
+        <td><span class="parametername">game</span></td>
+        <td><p>The game instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="../../api/Genesis.Graphics.IRenderDevice.html">IRenderDevice</a></td>
+        <td><span class="parametername">renderDevice</span></td>
+        <td><p>The render device used for rendering.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="../../api/Genesis.Core.GameElement.html#Genesis_Core_GameElement_OnRender_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_">GameElement.OnRender(Game, IRenderDevice)</a></div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

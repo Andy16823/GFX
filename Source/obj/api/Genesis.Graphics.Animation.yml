@@ -1,0 +1,514 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Animation
+  commentId: T:Genesis.Graphics.Animation
+  id: Animation
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.Animation.#ctor
+  - Genesis.Graphics.Animation.#ctor(System.String,System.Int32,System.Int32,System.Int32)
+  - Genesis.Graphics.Animation.Cell
+  - Genesis.Graphics.Animation.Frames
+  - Genesis.Graphics.Animation.Name
+  - Genesis.Graphics.Animation.Row
+  langs:
+  - csharp
+  - vb
+  name: Animation
+  nameWithType: Animation
+  fullName: Genesis.Graphics.Animation
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Represents an animation definition with details such as name, starting cell, row, and number of frames.
+  example: []
+  syntax:
+    content: public class Animation
+    content.vb: Public Class Animation
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Animation.#ctor
+  commentId: M:Genesis.Graphics.Animation.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Animation()
+  nameWithType: Animation.Animation()
+  fullName: Genesis.Graphics.Animation.Animation()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Initializes a new instance of the Animation class.
+  example: []
+  syntax:
+    content: public Animation()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Animation.#ctor*
+  nameWithType.vb: Animation.New()
+  fullName.vb: Genesis.Graphics.Animation.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Animation.#ctor(System.String,System.Int32,System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Animation.#ctor(System.String,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.String,System.Int32,System.Int32,System.Int32)'
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Animation(string, int, int, int)
+  nameWithType: Animation.Animation(string, int, int, int)
+  fullName: Genesis.Graphics.Animation.Animation(string, int, int, int)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Initializes a new instance of the Animation class with specified parameters.
+  example: []
+  syntax:
+    content: public Animation(string name, int cell, int row, int frames)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the animation.
+    - id: cell
+      type: System.Int32
+      description: The starting cell index of the animation.
+    - id: row
+      type: System.Int32
+      description: The row index in the animation sheet.
+    - id: frames
+      type: System.Int32
+      description: The number of frames in the animation.
+    content.vb: Public Sub New(name As String, cell As Integer, row As Integer, frames As Integer)
+  overload: Genesis.Graphics.Animation.#ctor*
+  nameWithType.vb: Animation.New(String, Integer, Integer, Integer)
+  fullName.vb: Genesis.Graphics.Animation.New(String, Integer, Integer, Integer)
+  name.vb: New(String, Integer, Integer, Integer)
+- uid: Genesis.Graphics.Animation.Name
+  commentId: P:Genesis.Graphics.Animation.Name
+  id: Name
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Animation.Name
+  fullName: Genesis.Graphics.Animation.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the name of the animation.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Graphics.Animation.Name*
+- uid: Genesis.Graphics.Animation.Cell
+  commentId: P:Genesis.Graphics.Animation.Cell
+  id: Cell
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Cell
+  nameWithType: Animation.Cell
+  fullName: Genesis.Graphics.Animation.Cell
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the starting cell index of the animation.
+  example: []
+  syntax:
+    content: public int Cell { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Cell As Integer
+  overload: Genesis.Graphics.Animation.Cell*
+- uid: Genesis.Graphics.Animation.Row
+  commentId: P:Genesis.Graphics.Animation.Row
+  id: Row
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Row
+  nameWithType: Animation.Row
+  fullName: Genesis.Graphics.Animation.Row
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the row index in the animation sheet.
+  example: []
+  syntax:
+    content: public int Row { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Row As Integer
+  overload: Genesis.Graphics.Animation.Row*
+- uid: Genesis.Graphics.Animation.Frames
+  commentId: P:Genesis.Graphics.Animation.Frames
+  id: Frames
+  parent: Genesis.Graphics.Animation
+  langs:
+  - csharp
+  - vb
+  name: Frames
+  nameWithType: Animation.Frames
+  fullName: Genesis.Graphics.Animation.Frames
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the number of frames in the animation.
+  example: []
+  syntax:
+    content: public int Frames { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Frames As Integer
+  overload: Genesis.Graphics.Animation.Frames*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Animation.#ctor*
+  commentId: Overload:Genesis.Graphics.Animation.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Animation.html#Genesis_Graphics_Animation__ctor
+  name: Animation
+  nameWithType: Animation.Animation
+  fullName: Genesis.Graphics.Animation.Animation
+  nameWithType.vb: Animation.New
+  fullName.vb: Genesis.Graphics.Animation.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.Animation.Name*
+  commentId: Overload:Genesis.Graphics.Animation.Name
+  isExternal: true
+  href: Genesis.Graphics.Animation.html#Genesis_Graphics_Animation_Name
+  name: Name
+  nameWithType: Animation.Name
+  fullName: Genesis.Graphics.Animation.Name
+- uid: Genesis.Graphics.Animation.Cell*
+  commentId: Overload:Genesis.Graphics.Animation.Cell
+  isExternal: true
+  href: Genesis.Graphics.Animation.html#Genesis_Graphics_Animation_Cell
+  name: Cell
+  nameWithType: Animation.Cell
+  fullName: Genesis.Graphics.Animation.Cell
+- uid: Genesis.Graphics.Animation.Row*
+  commentId: Overload:Genesis.Graphics.Animation.Row
+  isExternal: true
+  href: Genesis.Graphics.Animation.html#Genesis_Graphics_Animation_Row
+  name: Row
+  nameWithType: Animation.Row
+  fullName: Genesis.Graphics.Animation.Row
+- uid: Genesis.Graphics.Animation.Frames*
+  commentId: Overload:Genesis.Graphics.Animation.Frames
+  isExternal: true
+  href: Genesis.Graphics.Animation.html#Genesis_Graphics_Animation_Frames
+  name: Frames
+  nameWithType: Animation.Frames
+  fullName: Genesis.Graphics.Animation.Frames

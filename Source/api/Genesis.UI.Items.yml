@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.UI.Items
+  commentId: N:Genesis.UI.Items
+  id: Genesis.UI.Items
+  children:
+  - Genesis.UI.Items.GridViewImageIcon
+  - Genesis.UI.Items.IItem
+  langs:
+  - csharp
+  - vb
+  name: Genesis.UI.Items
+  nameWithType: Genesis.UI.Items
+  fullName: Genesis.UI.Items
+  type: Namespace
+  assemblies:
+  - Genesis
+references:
+- uid: Genesis.UI.Items.GridViewImageIcon
+  commentId: T:Genesis.UI.Items.GridViewImageIcon
+  isExternal: true
+  href: Genesis.UI.Items.GridViewImageIcon.html
+  name: GridViewImageIcon
+  nameWithType: GridViewImageIcon
+  fullName: Genesis.UI.Items.GridViewImageIcon
+- uid: Genesis.UI.Items.IItem
+  commentId: T:Genesis.UI.Items.IItem
+  parent: Genesis.UI.Items
+  isExternal: true
+  href: Genesis.UI.Items.IItem.html
+  name: IItem
+  nameWithType: IItem
+  fullName: Genesis.UI.Items.IItem
+- uid: Genesis.UI.Items
+  commentId: N:Genesis.UI.Items
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.UI.Items
+  nameWithType: Genesis.UI.Items
+  fullName: Genesis.UI.Items
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.UI
+    name: UI
+    isExternal: true
+    href: Genesis.UI.html
+  - name: .
+  - uid: Genesis.UI.Items
+    name: Items
+    isExternal: true
+    href: Genesis.UI.Items.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.UI
+    name: UI
+    isExternal: true
+    href: Genesis.UI.html
+  - name: .
+  - uid: Genesis.UI.Items
+    name: Items
+    isExternal: true
+    href: Genesis.UI.Items.html

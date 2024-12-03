@@ -1,0 +1,946 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Shapes.SphereShape
+  commentId: T:Genesis.Graphics.Shapes.SphereShape
+  id: SphereShape
+  parent: Genesis.Graphics.Shapes
+  children:
+  - Genesis.Graphics.Shapes.SphereShape.#ctor
+  - Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color)
+  - Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color,System.Int32,System.Int32)
+  - Genesis.Graphics.Shapes.SphereShape.GetIndices(System.Int32,System.Int32)
+  - Genesis.Graphics.Shapes.SphereShape.GetNormals(System.Int32,System.Int32)
+  - Genesis.Graphics.Shapes.SphereShape.GetOrderedColors(System.Drawing.Color)
+  - Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals
+  - Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates
+  - Genesis.Graphics.Shapes.SphereShape.GetShape
+  - Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(System.Int32,System.Int32)
+  - Genesis.Graphics.Shapes.SphereShape.GetVertices(System.Int32,System.Int32,System.Single)
+  - Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+  - Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+  - Genesis.Graphics.Shapes.SphereShape.Radius
+  langs:
+  - csharp
+  - vb
+  name: SphereShape
+  nameWithType: SphereShape
+  fullName: Genesis.Graphics.Shapes.SphereShape
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: >-
+    Represents a 3D sphere shape with configurable latitude, longitude, and radius.
+
+    Provides methods to retrieve vertex positions, normals, texture coordinates, and colors.
+  example: []
+  syntax:
+    content: 'public class SphereShape : Shape'
+    content.vb: Public Class SphereShape Inherits Shape
+  inheritance:
+  - System.Object
+  - Genesis.Graphics.Shapes.Shape
+  inheritedMembers:
+  - Genesis.Graphics.Shapes.Shape.vbo
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Shapes.SphereShape.GetShape
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetShape
+  id: GetShape
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetShape()
+  nameWithType: SphereShape.GetShape()
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetShape()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Constructs the geometry of the sphere by combining vertex positions and indices.
+  example: []
+  syntax:
+    content: public override float[] GetShape()
+    return:
+      type: System.Single[]
+      description: A float array containing the ordered vertex positions of the sphere.
+    content.vb: Public Overrides Function GetShape() As Single()
+  overridden: Genesis.Graphics.Shapes.Shape.GetShape
+  overload: Genesis.Graphics.Shapes.SphereShape.GetShape*
+- uid: Genesis.Graphics.Shapes.SphereShape.GetVertices(System.Int32,System.Int32,System.Single)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetVertices(System.Int32,System.Int32,System.Single)
+  id: GetVertices(System.Int32,System.Int32,System.Single)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetVertices(int, int, float)
+  nameWithType: SphereShape.GetVertices(int, int, float)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetVertices(int, int, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates the vertices for the sphere based on latitude and longitude segments and the radius.
+  example: []
+  syntax:
+    content: public static float[] GetVertices(int latitudebands, int longitudebands, float radius)
+    parameters:
+    - id: latitudebands
+      type: System.Int32
+      description: The number of horizontal segments.
+    - id: longitudebands
+      type: System.Int32
+      description: The number of vertical segments.
+    - id: radius
+      type: System.Single
+      description: The radius of the sphere.
+    return:
+      type: System.Single[]
+      description: A float array containing the vertex positions for the sphere.
+    content.vb: Public Shared Function GetVertices(latitudebands As Integer, longitudebands As Integer, radius As Single) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetVertices*
+  nameWithType.vb: SphereShape.GetVertices(Integer, Integer, Single)
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.GetVertices(Integer, Integer, Single)
+  name.vb: GetVertices(Integer, Integer, Single)
+- uid: Genesis.Graphics.Shapes.SphereShape.GetIndices(System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetIndices(System.Int32,System.Int32)
+  id: GetIndices(System.Int32,System.Int32)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetIndices(int, int)
+  nameWithType: SphereShape.GetIndices(int, int)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetIndices(int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates the indices required to construct triangles for the sphere's surface.
+  example: []
+  syntax:
+    content: public static int[] GetIndices(int latitudeBands, int longitudeBands)
+    parameters:
+    - id: latitudeBands
+      type: System.Int32
+      description: The number of horizontal segments.
+    - id: longitudeBands
+      type: System.Int32
+      description: The number of vertical segments.
+    return:
+      type: System.Int32[]
+      description: An array of integers representing the indices of the sphere's vertices.
+    content.vb: Public Shared Function GetIndices(latitudeBands As Integer, longitudeBands As Integer) As Integer()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetIndices*
+  nameWithType.vb: SphereShape.GetIndices(Integer, Integer)
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.GetIndices(Integer, Integer)
+  name.vb: GetIndices(Integer, Integer)
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals
+  id: GetOrderedNormals
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetOrderedNormals()
+  nameWithType: SphereShape.GetOrderedNormals()
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Retrieves the ordered normals for the sphere's vertices.
+  example: []
+  syntax:
+    content: public float[] GetOrderedNormals()
+    return:
+      type: System.Single[]
+      description: A float array containing the normals ordered by vertex indices.
+    content.vb: Public Function GetOrderedNormals() As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals*
+- uid: Genesis.Graphics.Shapes.SphereShape.GetNormals(System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetNormals(System.Int32,System.Int32)
+  id: GetNormals(System.Int32,System.Int32)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetNormals(int, int)
+  nameWithType: SphereShape.GetNormals(int, int)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetNormals(int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates the normal vectors for each vertex of the sphere.
+  example: []
+  syntax:
+    content: public static float[] GetNormals(int latitudebands, int longitudebands)
+    parameters:
+    - id: latitudebands
+      type: System.Int32
+      description: The number of horizontal segments.
+    - id: longitudebands
+      type: System.Int32
+      description: The number of vertical segments.
+    return:
+      type: System.Single[]
+      description: A float array containing the normals for each vertex.
+    content.vb: Public Shared Function GetNormals(latitudebands As Integer, longitudebands As Integer) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetNormals*
+  nameWithType.vb: SphereShape.GetNormals(Integer, Integer)
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.GetNormals(Integer, Integer)
+  name.vb: GetNormals(Integer, Integer)
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates
+  id: GetOrderedTextureCoordinates
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetOrderedTextureCoordinates()
+  nameWithType: SphereShape.GetOrderedTextureCoordinates()
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Retrieves the ordered texture coordinates for the sphere's vertices.
+  example: []
+  syntax:
+    content: public float[] GetOrderedTextureCoordinates()
+    return:
+      type: System.Single[]
+      description: A float array containing the texture coordinates ordered by vertex indices.
+    content.vb: Public Function GetOrderedTextureCoordinates() As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates*
+- uid: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(System.Int32,System.Int32)
+  id: GetTextureCoordinates(System.Int32,System.Int32)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetTextureCoordinates(int, int)
+  nameWithType: SphereShape.GetTextureCoordinates(int, int)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates the texture coordinates for each vertex of the sphere.
+  example: []
+  syntax:
+    content: public static float[] GetTextureCoordinates(int latitudebands, int longitudebands)
+    parameters:
+    - id: latitudebands
+      type: System.Int32
+      description: The number of horizontal segments.
+    - id: longitudebands
+      type: System.Int32
+      description: The number of vertical segments.
+    return:
+      type: System.Single[]
+      description: A float array containing the texture coordinates for each vertex.
+    content.vb: Public Shared Function GetTextureCoordinates(latitudebands As Integer, longitudebands As Integer) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates*
+  nameWithType.vb: SphereShape.GetTextureCoordinates(Integer, Integer)
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates(Integer, Integer)
+  name.vb: GetTextureCoordinates(Integer, Integer)
+- uid: Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color)
+  id: GetColors(System.Drawing.Color)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetColors(Color)
+  nameWithType: SphereShape.GetColors(Color)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates an array of color values for each vertex based on the specified color.
+  example: []
+  syntax:
+    content: public float[] GetColors(Color color)
+    parameters:
+    - id: color
+      type: System.Drawing.Color
+      description: The color to apply to each vertex.
+    return:
+      type: System.Single[]
+      description: A float array containing RGB color values for each vertex.
+    content.vb: Public Function GetColors(color As Color) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetColors*
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedColors(System.Drawing.Color)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetOrderedColors(System.Drawing.Color)
+  id: GetOrderedColors(System.Drawing.Color)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetOrderedColors(Color)
+  nameWithType: SphereShape.GetOrderedColors(Color)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedColors(System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Retrieves the ordered color values for the sphere's vertices based on the specified color.
+  example: []
+  syntax:
+    content: public float[] GetOrderedColors(Color color)
+    parameters:
+    - id: color
+      type: System.Drawing.Color
+      description: The color to apply to each vertex.
+    return:
+      type: System.Single[]
+      description: A float array containing ordered RGB color values for each vertex.
+    content.vb: Public Function GetOrderedColors(color As Color) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetOrderedColors*
+- uid: Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color,System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color,System.Int32,System.Int32)
+  id: GetColors(System.Drawing.Color,System.Int32,System.Int32)
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: GetColors(Color, int, int)
+  nameWithType: SphereShape.GetColors(Color, int, int)
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Generates an array of RGB color values for each vertex of the sphere.
+  example: []
+  syntax:
+    content: public static float[] GetColors(Color color, int latitudeBands, int longitudeBands)
+    parameters:
+    - id: color
+      type: System.Drawing.Color
+      description: The color to apply to each vertex.
+    - id: latitudeBands
+      type: System.Int32
+      description: The number of horizontal segments.
+    - id: longitudeBands
+      type: System.Int32
+      description: The number of vertical segments.
+    return:
+      type: System.Single[]
+      description: A float array containing RGB color values for each vertex.
+    content.vb: Public Shared Function GetColors(color As Color, latitudeBands As Integer, longitudeBands As Integer) As Single()
+  overload: Genesis.Graphics.Shapes.SphereShape.GetColors*
+  nameWithType.vb: SphereShape.GetColors(Color, Integer, Integer)
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.GetColors(System.Drawing.Color, Integer, Integer)
+  name.vb: GetColors(Color, Integer, Integer)
+- uid: Genesis.Graphics.Shapes.SphereShape.#ctor
+  commentId: M:Genesis.Graphics.Shapes.SphereShape.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: SphereShape()
+  nameWithType: SphereShape.SphereShape()
+  fullName: Genesis.Graphics.Shapes.SphereShape.SphereShape()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  syntax:
+    content: public SphereShape()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Shapes.SphereShape.#ctor*
+  nameWithType.vb: SphereShape.New()
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+  commentId: P:Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+  id: LatitudeBands
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: LatitudeBands
+  nameWithType: SphereShape.LatitudeBands
+  fullName: Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Gets or sets the number of horizontal segments of the sphere.
+  example: []
+  syntax:
+    content: public int LatitudeBands { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property LatitudeBands As Integer
+  overload: Genesis.Graphics.Shapes.SphereShape.LatitudeBands*
+- uid: Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+  commentId: P:Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+  id: LongitudeBands
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: LongitudeBands
+  nameWithType: SphereShape.LongitudeBands
+  fullName: Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Gets or sets the number of vertical segments of the sphere.
+  example: []
+  syntax:
+    content: public int LongitudeBands { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property LongitudeBands As Integer
+  overload: Genesis.Graphics.Shapes.SphereShape.LongitudeBands*
+- uid: Genesis.Graphics.Shapes.SphereShape.Radius
+  commentId: P:Genesis.Graphics.Shapes.SphereShape.Radius
+  id: Radius
+  parent: Genesis.Graphics.Shapes.SphereShape
+  langs:
+  - csharp
+  - vb
+  name: Radius
+  nameWithType: SphereShape.Radius
+  fullName: Genesis.Graphics.Shapes.SphereShape.Radius
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics.Shapes
+  summary: Gets or sets the radius of the sphere.
+  example: []
+  syntax:
+    content: public float Radius { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Radius As Single
+  overload: Genesis.Graphics.Shapes.SphereShape.Radius*
+references:
+- uid: Genesis.Graphics.Shapes
+  commentId: N:Genesis.Graphics.Shapes
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics.Shapes
+  nameWithType: Genesis.Graphics.Shapes
+  fullName: Genesis.Graphics.Shapes
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Shapes
+    name: Shapes
+    isExternal: true
+    href: Genesis.Graphics.Shapes.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  - name: .
+  - uid: Genesis.Graphics.Shapes
+    name: Shapes
+    isExternal: true
+    href: Genesis.Graphics.Shapes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Genesis.Graphics.Shapes.Shape
+  commentId: T:Genesis.Graphics.Shapes.Shape
+  parent: Genesis.Graphics.Shapes
+  isExternal: true
+  href: Genesis.Graphics.Shapes.Shape.html
+  name: Shape
+  nameWithType: Shape
+  fullName: Genesis.Graphics.Shapes.Shape
+- uid: Genesis.Graphics.Shapes.Shape.vbo
+  commentId: P:Genesis.Graphics.Shapes.Shape.vbo
+  parent: Genesis.Graphics.Shapes.Shape
+  isExternal: true
+  href: Genesis.Graphics.Shapes.Shape.html#Genesis_Graphics_Shapes_Shape_vbo
+  name: vbo
+  nameWithType: Shape.vbo
+  fullName: Genesis.Graphics.Shapes.Shape.vbo
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Shapes.Shape.GetShape
+  commentId: M:Genesis.Graphics.Shapes.Shape.GetShape
+  parent: Genesis.Graphics.Shapes.Shape
+  isExternal: true
+  href: Genesis.Graphics.Shapes.Shape.html#Genesis_Graphics_Shapes_Shape_GetShape
+  name: GetShape()
+  nameWithType: Shape.GetShape()
+  fullName: Genesis.Graphics.Shapes.Shape.GetShape()
+  spec.csharp:
+  - uid: Genesis.Graphics.Shapes.Shape.GetShape
+    name: GetShape
+    isExternal: true
+    href: Genesis.Graphics.Shapes.Shape.html#Genesis_Graphics_Shapes_Shape_GetShape
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Shapes.Shape.GetShape
+    name: GetShape
+    isExternal: true
+    href: Genesis.Graphics.Shapes.Shape.html#Genesis_Graphics_Shapes_Shape_GetShape
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.Shapes.SphereShape.GetShape*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetShape
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetShape
+  name: GetShape
+  nameWithType: SphereShape.GetShape
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetShape
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.Shapes.SphereShape.GetVertices*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetVertices
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetVertices_System_Int32_System_Int32_System_Single_
+  name: GetVertices
+  nameWithType: SphereShape.GetVertices
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetVertices
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Graphics.Shapes.SphereShape.GetIndices*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetIndices
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetIndices_System_Int32_System_Int32_
+  name: GetIndices
+  nameWithType: SphereShape.GetIndices
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetIndices
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetOrderedNormals
+  name: GetOrderedNormals
+  nameWithType: SphereShape.GetOrderedNormals
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedNormals
+- uid: Genesis.Graphics.Shapes.SphereShape.GetNormals*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetNormals
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetNormals_System_Int32_System_Int32_
+  name: GetNormals
+  nameWithType: SphereShape.GetNormals
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetNormals
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetOrderedTextureCoordinates
+  name: GetOrderedTextureCoordinates
+  nameWithType: SphereShape.GetOrderedTextureCoordinates
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedTextureCoordinates
+- uid: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetTextureCoordinates_System_Int32_System_Int32_
+  name: GetTextureCoordinates
+  nameWithType: SphereShape.GetTextureCoordinates
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetTextureCoordinates
+- uid: Genesis.Graphics.Shapes.SphereShape.GetColors*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetColors
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetColors_System_Drawing_Color_
+  name: GetColors
+  nameWithType: SphereShape.GetColors
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetColors
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.Graphics.Shapes.SphereShape.GetOrderedColors*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.GetOrderedColors
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_GetOrderedColors_System_Drawing_Color_
+  name: GetOrderedColors
+  nameWithType: SphereShape.GetOrderedColors
+  fullName: Genesis.Graphics.Shapes.SphereShape.GetOrderedColors
+- uid: Genesis.Graphics.Shapes.SphereShape.#ctor*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape__ctor
+  name: SphereShape
+  nameWithType: SphereShape.SphereShape
+  fullName: Genesis.Graphics.Shapes.SphereShape.SphereShape
+  nameWithType.vb: SphereShape.New
+  fullName.vb: Genesis.Graphics.Shapes.SphereShape.New
+  name.vb: New
+- uid: Genesis.Graphics.Shapes.SphereShape.LatitudeBands*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_LatitudeBands
+  name: LatitudeBands
+  nameWithType: SphereShape.LatitudeBands
+  fullName: Genesis.Graphics.Shapes.SphereShape.LatitudeBands
+- uid: Genesis.Graphics.Shapes.SphereShape.LongitudeBands*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_LongitudeBands
+  name: LongitudeBands
+  nameWithType: SphereShape.LongitudeBands
+  fullName: Genesis.Graphics.Shapes.SphereShape.LongitudeBands
+- uid: Genesis.Graphics.Shapes.SphereShape.Radius*
+  commentId: Overload:Genesis.Graphics.Shapes.SphereShape.Radius
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html#Genesis_Graphics_Shapes_SphereShape_Radius
+  name: Radius
+  nameWithType: SphereShape.Radius
+  fullName: Genesis.Graphics.Shapes.SphereShape.Radius

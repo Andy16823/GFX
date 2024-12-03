@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.Physics3D
+  commentId: N:Genesis.Core.Behaviors.Physics3D
+  id: Genesis.Core.Behaviors.Physics3D
+  children:
+  - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
+  - Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+  - Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
+  langs:
+  - csharp
+  - vb
+  name: Genesis.Core.Behaviors.Physics3D
+  nameWithType: Genesis.Core.Behaviors.Physics3D
+  fullName: Genesis.Core.Behaviors.Physics3D
+  type: Namespace
+  assemblies:
+  - Genesis
+references:
+- uid: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+  commentId: T:Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.QubeConvexHull.html
+  name: QubeConvexHull
+  nameWithType: QubeConvexHull
+  fullName: Genesis.Core.Behaviors.Physics3D.QubeConvexHull
+- uid: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
+  commentId: T:Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior.html
+  name: StaticMeshBehavior
+  nameWithType: StaticMeshBehavior
+  fullName: Genesis.Core.Behaviors.Physics3D.StaticMeshBehavior
+- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
+  commentId: T:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
+  isExternal: true
+  href: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html
+  name: ConvexHullBehavior
+  nameWithType: ConvexHullBehavior
+  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior

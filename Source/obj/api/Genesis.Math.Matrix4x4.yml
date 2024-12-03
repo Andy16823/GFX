@@ -1,0 +1,853 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Math.Matrix4x4
+  commentId: T:Genesis.Math.Matrix4x4
+  id: Matrix4x4
+  parent: Genesis.Math
+  children:
+  - Genesis.Math.Matrix4x4.#ctor
+  - Genesis.Math.Matrix4x4.Identity
+  - Genesis.Math.Matrix4x4.Item(System.Int32,System.Int32)
+  - Genesis.Math.Matrix4x4.LookAt(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Matrix4x4)
+  - Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Vec3)
+  - Genesis.Math.Matrix4x4.Normalize
+  - Genesis.Math.Matrix4x4.Ortho(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  - Genesis.Math.Matrix4x4.RotateX(System.Single)
+  - Genesis.Math.Matrix4x4.RotateY(System.Single)
+  - Genesis.Math.Matrix4x4.RotateZ(System.Single)
+  - Genesis.Math.Matrix4x4.Scale(Genesis.Math.Vec3)
+  - Genesis.Math.Matrix4x4.ToArray
+  - Genesis.Math.Matrix4x4.Translate(Genesis.Math.Vec3)
+  - Genesis.Math.Matrix4x4.op_Multiply(Genesis.Math.Matrix4x4,Genesis.Math.Matrix4x4)
+  langs:
+  - csharp
+  - vb
+  name: Matrix4x4
+  nameWithType: Matrix4x4
+  fullName: Genesis.Math.Matrix4x4
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public class Matrix4x4
+    content.vb: Public Class Matrix4x4
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Math.Matrix4x4.#ctor
+  commentId: M:Genesis.Math.Matrix4x4.#ctor
+  id: '#ctor'
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Matrix4x4()
+  nameWithType: Matrix4x4.Matrix4x4()
+  fullName: Genesis.Math.Matrix4x4.Matrix4x4()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public Matrix4x4()
+    content.vb: Public Sub New()
+  overload: Genesis.Math.Matrix4x4.#ctor*
+  nameWithType.vb: Matrix4x4.New()
+  fullName.vb: Genesis.Math.Matrix4x4.New()
+  name.vb: New()
+- uid: Genesis.Math.Matrix4x4.Normalize
+  commentId: M:Genesis.Math.Matrix4x4.Normalize
+  id: Normalize
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Normalize()
+  nameWithType: Matrix4x4.Normalize()
+  fullName: Genesis.Math.Matrix4x4.Normalize()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public void Normalize()
+    content.vb: Public Sub Normalize()
+  overload: Genesis.Math.Matrix4x4.Normalize*
+- uid: Genesis.Math.Matrix4x4.Ortho(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Math.Matrix4x4.Ortho(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  id: Ortho(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Ortho(float, float, float, float, float, float)
+  nameWithType: Matrix4x4.Ortho(float, float, float, float, float, float)
+  fullName: Genesis.Math.Matrix4x4.Ortho(float, float, float, float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 Ortho(float left, float right, float bottom, float top, float near, float far)
+    parameters:
+    - id: left
+      type: System.Single
+    - id: right
+      type: System.Single
+    - id: bottom
+      type: System.Single
+    - id: top
+      type: System.Single
+    - id: near
+      type: System.Single
+    - id: far
+      type: System.Single
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function Ortho(left As Single, right As Single, bottom As Single, top As Single, near As Single, far As Single) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.Ortho*
+  nameWithType.vb: Matrix4x4.Ortho(Single, Single, Single, Single, Single, Single)
+  fullName.vb: Genesis.Math.Matrix4x4.Ortho(Single, Single, Single, Single, Single, Single)
+  name.vb: Ortho(Single, Single, Single, Single, Single, Single)
+- uid: Genesis.Math.Matrix4x4.Identity
+  commentId: M:Genesis.Math.Matrix4x4.Identity
+  id: Identity
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Identity()
+  nameWithType: Matrix4x4.Identity()
+  fullName: Genesis.Math.Matrix4x4.Identity()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 Identity()
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function Identity() As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.Identity*
+- uid: Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Matrix4x4)
+  commentId: M:Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Matrix4x4)
+  id: Multiply(Genesis.Math.Matrix4x4)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Matrix4x4)
+  nameWithType: Matrix4x4.Multiply(Matrix4x4)
+  fullName: Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Matrix4x4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public Matrix4x4 Multiply(Matrix4x4 right)
+    parameters:
+    - id: right
+      type: Genesis.Math.Matrix4x4
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Function Multiply(right As Matrix4x4) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.Multiply*
+- uid: Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Vec3)
+  id: Multiply(Genesis.Math.Vec3)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Vec3)
+  nameWithType: Matrix4x4.Multiply(Vec3)
+  fullName: Genesis.Math.Matrix4x4.Multiply(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public Vec3 Multiply(Vec3 vector)
+    parameters:
+    - id: vector
+      type: Genesis.Math.Vec3
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function Multiply(vector As Vec3) As Vec3
+  overload: Genesis.Math.Matrix4x4.Multiply*
+- uid: Genesis.Math.Matrix4x4.ToArray
+  commentId: M:Genesis.Math.Matrix4x4.ToArray
+  id: ToArray
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: ToArray()
+  nameWithType: Matrix4x4.ToArray()
+  fullName: Genesis.Math.Matrix4x4.ToArray()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public float[] ToArray()
+    return:
+      type: System.Single[]
+    content.vb: Public Function ToArray() As Single()
+  overload: Genesis.Math.Matrix4x4.ToArray*
+- uid: Genesis.Math.Matrix4x4.LookAt(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Matrix4x4.LookAt(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  id: LookAt(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: LookAt(Vec3, Vec3, Vec3)
+  nameWithType: Matrix4x4.LookAt(Vec3, Vec3, Vec3)
+  fullName: Genesis.Math.Matrix4x4.LookAt(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 LookAt(Vec3 eye, Vec3 target, Vec3 up)
+    parameters:
+    - id: eye
+      type: Genesis.Math.Vec3
+    - id: target
+      type: Genesis.Math.Vec3
+    - id: up
+      type: Genesis.Math.Vec3
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function LookAt(eye As Vec3, target As Vec3, up As Vec3) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.LookAt*
+- uid: Genesis.Math.Matrix4x4.Translate(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Matrix4x4.Translate(Genesis.Math.Vec3)
+  id: Translate(Genesis.Math.Vec3)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Translate(Vec3)
+  nameWithType: Matrix4x4.Translate(Vec3)
+  fullName: Genesis.Math.Matrix4x4.Translate(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 Translate(Vec3 translation)
+    parameters:
+    - id: translation
+      type: Genesis.Math.Vec3
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function Translate(translation As Vec3) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.Translate*
+- uid: Genesis.Math.Matrix4x4.RotateX(System.Single)
+  commentId: M:Genesis.Math.Matrix4x4.RotateX(System.Single)
+  id: RotateX(System.Single)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: RotateX(float)
+  nameWithType: Matrix4x4.RotateX(float)
+  fullName: Genesis.Math.Matrix4x4.RotateX(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 RotateX(float angleInRadians)
+    parameters:
+    - id: angleInRadians
+      type: System.Single
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function RotateX(angleInRadians As Single) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.RotateX*
+  nameWithType.vb: Matrix4x4.RotateX(Single)
+  fullName.vb: Genesis.Math.Matrix4x4.RotateX(Single)
+  name.vb: RotateX(Single)
+- uid: Genesis.Math.Matrix4x4.RotateY(System.Single)
+  commentId: M:Genesis.Math.Matrix4x4.RotateY(System.Single)
+  id: RotateY(System.Single)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: RotateY(float)
+  nameWithType: Matrix4x4.RotateY(float)
+  fullName: Genesis.Math.Matrix4x4.RotateY(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 RotateY(float angleInRadians)
+    parameters:
+    - id: angleInRadians
+      type: System.Single
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function RotateY(angleInRadians As Single) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.RotateY*
+  nameWithType.vb: Matrix4x4.RotateY(Single)
+  fullName.vb: Genesis.Math.Matrix4x4.RotateY(Single)
+  name.vb: RotateY(Single)
+- uid: Genesis.Math.Matrix4x4.RotateZ(System.Single)
+  commentId: M:Genesis.Math.Matrix4x4.RotateZ(System.Single)
+  id: RotateZ(System.Single)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: RotateZ(float)
+  nameWithType: Matrix4x4.RotateZ(float)
+  fullName: Genesis.Math.Matrix4x4.RotateZ(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 RotateZ(float angleInRadians)
+    parameters:
+    - id: angleInRadians
+      type: System.Single
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function RotateZ(angleInRadians As Single) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.RotateZ*
+  nameWithType.vb: Matrix4x4.RotateZ(Single)
+  fullName.vb: Genesis.Math.Matrix4x4.RotateZ(Single)
+  name.vb: RotateZ(Single)
+- uid: Genesis.Math.Matrix4x4.Scale(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Matrix4x4.Scale(Genesis.Math.Vec3)
+  id: Scale(Genesis.Math.Vec3)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: Scale(Vec3)
+  nameWithType: Matrix4x4.Scale(Vec3)
+  fullName: Genesis.Math.Matrix4x4.Scale(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 Scale(Vec3 scale)
+    parameters:
+    - id: scale
+      type: Genesis.Math.Vec3
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Function Scale(scale As Vec3) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.Scale*
+- uid: Genesis.Math.Matrix4x4.op_Multiply(Genesis.Math.Matrix4x4,Genesis.Math.Matrix4x4)
+  commentId: M:Genesis.Math.Matrix4x4.op_Multiply(Genesis.Math.Matrix4x4,Genesis.Math.Matrix4x4)
+  id: op_Multiply(Genesis.Math.Matrix4x4,Genesis.Math.Matrix4x4)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: operator *(Matrix4x4, Matrix4x4)
+  nameWithType: Matrix4x4.operator *(Matrix4x4, Matrix4x4)
+  fullName: Genesis.Math.Matrix4x4.operator *(Genesis.Math.Matrix4x4, Genesis.Math.Matrix4x4)
+  type: Operator
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Matrix4x4 operator *(Matrix4x4 left, Matrix4x4 right)
+    parameters:
+    - id: left
+      type: Genesis.Math.Matrix4x4
+    - id: right
+      type: Genesis.Math.Matrix4x4
+    return:
+      type: Genesis.Math.Matrix4x4
+    content.vb: Public Shared Operator *(left As Matrix4x4, right As Matrix4x4) As Matrix4x4
+  overload: Genesis.Math.Matrix4x4.op_Multiply*
+  nameWithType.vb: Matrix4x4.*(Matrix4x4, Matrix4x4)
+  fullName.vb: Genesis.Math.Matrix4x4.*(Genesis.Math.Matrix4x4, Genesis.Math.Matrix4x4)
+  name.vb: '*(Matrix4x4, Matrix4x4)'
+- uid: Genesis.Math.Matrix4x4.Item(System.Int32,System.Int32)
+  commentId: P:Genesis.Math.Matrix4x4.Item(System.Int32,System.Int32)
+  id: Item(System.Int32,System.Int32)
+  parent: Genesis.Math.Matrix4x4
+  langs:
+  - csharp
+  - vb
+  name: this[int, int]
+  nameWithType: Matrix4x4.this[int, int]
+  fullName: Genesis.Math.Matrix4x4.this[int, int]
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public float this[int row, int col] { get; set; }
+    parameters:
+    - id: row
+      type: System.Int32
+    - id: col
+      type: System.Int32
+    return:
+      type: System.Single
+    content.vb: Public Default Property this[](row As Integer, col As Integer) As Single
+  overload: Genesis.Math.Matrix4x4.Item*
+  nameWithType.vb: Matrix4x4.this[](Integer, Integer)
+  fullName.vb: Genesis.Math.Matrix4x4.this[](Integer, Integer)
+  name.vb: this[](Integer, Integer)
+references:
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Math.Matrix4x4.#ctor*
+  commentId: Overload:Genesis.Math.Matrix4x4.#ctor
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4__ctor
+  name: Matrix4x4
+  nameWithType: Matrix4x4.Matrix4x4
+  fullName: Genesis.Math.Matrix4x4.Matrix4x4
+  nameWithType.vb: Matrix4x4.New
+  fullName.vb: Genesis.Math.Matrix4x4.New
+  name.vb: New
+- uid: Genesis.Math.Matrix4x4.Normalize*
+  commentId: Overload:Genesis.Math.Matrix4x4.Normalize
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Normalize
+  name: Normalize
+  nameWithType: Matrix4x4.Normalize
+  fullName: Genesis.Math.Matrix4x4.Normalize
+- uid: Genesis.Math.Matrix4x4.Ortho*
+  commentId: Overload:Genesis.Math.Matrix4x4.Ortho
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Ortho_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_
+  name: Ortho
+  nameWithType: Matrix4x4.Ortho
+  fullName: Genesis.Math.Matrix4x4.Ortho
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Math.Matrix4x4
+  commentId: T:Genesis.Math.Matrix4x4
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html
+  name: Matrix4x4
+  nameWithType: Matrix4x4
+  fullName: Genesis.Math.Matrix4x4
+- uid: Genesis.Math.Matrix4x4.Identity*
+  commentId: Overload:Genesis.Math.Matrix4x4.Identity
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Identity
+  name: Identity
+  nameWithType: Matrix4x4.Identity
+  fullName: Genesis.Math.Matrix4x4.Identity
+- uid: Genesis.Math.Matrix4x4.Multiply*
+  commentId: Overload:Genesis.Math.Matrix4x4.Multiply
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Multiply_Genesis_Math_Matrix4x4_
+  name: Multiply
+  nameWithType: Matrix4x4.Multiply
+  fullName: Genesis.Math.Matrix4x4.Multiply
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math.Matrix4x4.ToArray*
+  commentId: Overload:Genesis.Math.Matrix4x4.ToArray
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_ToArray
+  name: ToArray
+  nameWithType: Matrix4x4.ToArray
+  fullName: Genesis.Math.Matrix4x4.ToArray
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )
+- uid: Genesis.Math.Matrix4x4.LookAt*
+  commentId: Overload:Genesis.Math.Matrix4x4.LookAt
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_LookAt_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Math_Vec3_
+  name: LookAt
+  nameWithType: Matrix4x4.LookAt
+  fullName: Genesis.Math.Matrix4x4.LookAt
+- uid: Genesis.Math.Matrix4x4.Translate*
+  commentId: Overload:Genesis.Math.Matrix4x4.Translate
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Translate_Genesis_Math_Vec3_
+  name: Translate
+  nameWithType: Matrix4x4.Translate
+  fullName: Genesis.Math.Matrix4x4.Translate
+- uid: Genesis.Math.Matrix4x4.RotateX*
+  commentId: Overload:Genesis.Math.Matrix4x4.RotateX
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_RotateX_System_Single_
+  name: RotateX
+  nameWithType: Matrix4x4.RotateX
+  fullName: Genesis.Math.Matrix4x4.RotateX
+- uid: Genesis.Math.Matrix4x4.RotateY*
+  commentId: Overload:Genesis.Math.Matrix4x4.RotateY
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_RotateY_System_Single_
+  name: RotateY
+  nameWithType: Matrix4x4.RotateY
+  fullName: Genesis.Math.Matrix4x4.RotateY
+- uid: Genesis.Math.Matrix4x4.RotateZ*
+  commentId: Overload:Genesis.Math.Matrix4x4.RotateZ
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_RotateZ_System_Single_
+  name: RotateZ
+  nameWithType: Matrix4x4.RotateZ
+  fullName: Genesis.Math.Matrix4x4.RotateZ
+- uid: Genesis.Math.Matrix4x4.Scale*
+  commentId: Overload:Genesis.Math.Matrix4x4.Scale
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Scale_Genesis_Math_Vec3_
+  name: Scale
+  nameWithType: Matrix4x4.Scale
+  fullName: Genesis.Math.Matrix4x4.Scale
+- uid: Genesis.Math.Matrix4x4.op_Multiply*
+  commentId: Overload:Genesis.Math.Matrix4x4.op_Multiply
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_op_Multiply_Genesis_Math_Matrix4x4_Genesis_Math_Matrix4x4_
+  name: operator *
+  nameWithType: Matrix4x4.operator *
+  fullName: Genesis.Math.Matrix4x4.operator *
+  nameWithType.vb: Matrix4x4.*
+  fullName.vb: Genesis.Math.Matrix4x4.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Genesis.Math.Matrix4x4.op_Multiply*
+    name: '*'
+    isExternal: true
+    href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_op_Multiply_Genesis_Math_Matrix4x4_Genesis_Math_Matrix4x4_
+- uid: Genesis.Math.Matrix4x4.Item*
+  commentId: Overload:Genesis.Math.Matrix4x4.Item
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html#Genesis_Math_Matrix4x4_Item_System_Int32_System_Int32_
+  name: this
+  nameWithType: Matrix4x4.this
+  fullName: Genesis.Math.Matrix4x4.this
+  nameWithType.vb: Matrix4x4.this[]
+  fullName.vb: Genesis.Math.Matrix4x4.this[]
+  name.vb: this[]
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

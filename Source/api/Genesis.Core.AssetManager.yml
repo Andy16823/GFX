@@ -1,0 +1,1092 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.AssetManager
+  commentId: T:Genesis.Core.AssetManager
+  id: AssetManager
+  parent: Genesis.Core
+  children:
+  - Genesis.Core.AssetManager.#ctor
+  - Genesis.Core.AssetManager.AddFont(Genesis.Graphics.Font)
+  - Genesis.Core.AssetManager.AddTexture(System.String,System.Drawing.Bitmap)
+  - Genesis.Core.AssetManager.DisposeTextures(Genesis.Core.Game)
+  - Genesis.Core.AssetManager.Fonts
+  - Genesis.Core.AssetManager.GetFont(System.String)
+  - Genesis.Core.AssetManager.GetRessourcesDirectory
+  - Genesis.Core.AssetManager.GetTexture(System.String)
+  - Genesis.Core.AssetManager.ImportAssetLibary(System.String)
+  - Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.AssetManager.LoadFonts
+  - Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
+  - Genesis.Core.AssetManager.LoadSystemFont(System.String)
+  - Genesis.Core.AssetManager.LoadTextures
+  - Genesis.Core.AssetManager.PackAssets(System.String)
+  - Genesis.Core.AssetManager.Textures
+  langs:
+  - csharp
+  - vb
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Genesis.Core.AssetManager
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Manages game assets such as textures and fonts.
+  example: []
+  syntax:
+    content: public class AssetManager
+    content.vb: Public Class AssetManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Core.AssetManager.#ctor
+  commentId: M:Genesis.Core.AssetManager.#ctor
+  id: '#ctor'
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: AssetManager()
+  nameWithType: AssetManager.AssetManager()
+  fullName: Genesis.Core.AssetManager.AssetManager()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Initializes a new instance of the <xref href="Genesis.Core.AssetManager" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public AssetManager()
+    content.vb: Public Sub New()
+  overload: Genesis.Core.AssetManager.#ctor*
+  nameWithType.vb: AssetManager.New()
+  fullName.vb: Genesis.Core.AssetManager.New()
+  name.vb: New()
+- uid: Genesis.Core.AssetManager.AddTexture(System.String,System.Drawing.Bitmap)
+  commentId: M:Genesis.Core.AssetManager.AddTexture(System.String,System.Drawing.Bitmap)
+  id: AddTexture(System.String,System.Drawing.Bitmap)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: AddTexture(string, Bitmap)
+  nameWithType: AssetManager.AddTexture(string, Bitmap)
+  fullName: Genesis.Core.AssetManager.AddTexture(string, System.Drawing.Bitmap)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adds a texture to the asset manager.
+  example: []
+  syntax:
+    content: public Texture AddTexture(string name, Bitmap bitmap)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the texture.
+    - id: bitmap
+      type: System.Drawing.Bitmap
+      description: The bitmap representing the texture.
+    return:
+      type: Genesis.Graphics.Texture
+      description: The added texture.
+    content.vb: Public Function AddTexture(name As String, bitmap As Bitmap) As Texture
+  overload: Genesis.Core.AssetManager.AddTexture*
+  nameWithType.vb: AssetManager.AddTexture(String, Bitmap)
+  fullName.vb: Genesis.Core.AssetManager.AddTexture(String, System.Drawing.Bitmap)
+  name.vb: AddTexture(String, Bitmap)
+- uid: Genesis.Core.AssetManager.GetTexture(System.String)
+  commentId: M:Genesis.Core.AssetManager.GetTexture(System.String)
+  id: GetTexture(System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetTexture(string)
+  nameWithType: AssetManager.GetTexture(string)
+  fullName: Genesis.Core.AssetManager.GetTexture(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets a texture by name.
+  example: []
+  syntax:
+    content: public Texture GetTexture(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the texture.
+    return:
+      type: Genesis.Graphics.Texture
+      description: The texture with the specified name, or null if not found.
+    content.vb: Public Function GetTexture(name As String) As Texture
+  overload: Genesis.Core.AssetManager.GetTexture*
+  nameWithType.vb: AssetManager.GetTexture(String)
+  fullName.vb: Genesis.Core.AssetManager.GetTexture(String)
+  name.vb: GetTexture(String)
+- uid: Genesis.Core.AssetManager.GetFont(System.String)
+  commentId: M:Genesis.Core.AssetManager.GetFont(System.String)
+  id: GetFont(System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetFont(string)
+  nameWithType: AssetManager.GetFont(string)
+  fullName: Genesis.Core.AssetManager.GetFont(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets a font by name.
+  example: []
+  syntax:
+    content: public Font GetFont(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the font.
+    return:
+      type: Genesis.Graphics.Font
+      description: The font with the specified name, or null if not found.
+    content.vb: Public Function GetFont(name As String) As Font
+  overload: Genesis.Core.AssetManager.GetFont*
+  nameWithType.vb: AssetManager.GetFont(String)
+  fullName.vb: Genesis.Core.AssetManager.GetFont(String)
+  name.vb: GetFont(String)
+- uid: Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
+  commentId: M:Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
+  id: LoadMaterial(System.String,System.String,System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadMaterial(string, string, string)
+  nameWithType: AssetManager.LoadMaterial(string, string, string)
+  fullName: Genesis.Core.AssetManager.LoadMaterial(string, string, string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Material LoadMaterial(string name, string diffuseTexture, string normalTexture = "")
+    parameters:
+    - id: name
+      type: System.String
+    - id: diffuseTexture
+      type: System.String
+    - id: normalTexture
+      type: System.String
+    return:
+      type: Genesis.Graphics.Material
+    content.vb: Public Function LoadMaterial(name As String, diffuseTexture As String, normalTexture As String = "") As Material
+  overload: Genesis.Core.AssetManager.LoadMaterial*
+  nameWithType.vb: AssetManager.LoadMaterial(String, String, String)
+  fullName.vb: Genesis.Core.AssetManager.LoadMaterial(String, String, String)
+  name.vb: LoadMaterial(String, String, String)
+- uid: Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
+  id: Init(Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: Init(IRenderDevice)
+  nameWithType: AssetManager.Init(IRenderDevice)
+  fullName: Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Initializes the assets in the rendering device.
+  example: []
+  syntax:
+    content: public void Init(IRenderDevice renderDevice)
+    parameters:
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+      description: The rendering device to load the assets into.
+    content.vb: Public Sub Init(renderDevice As IRenderDevice)
+  overload: Genesis.Core.AssetManager.Init*
+- uid: Genesis.Core.AssetManager.DisposeTextures(Genesis.Core.Game)
+  commentId: M:Genesis.Core.AssetManager.DisposeTextures(Genesis.Core.Game)
+  id: DisposeTextures(Genesis.Core.Game)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: DisposeTextures(Game)
+  nameWithType: AssetManager.DisposeTextures(Game)
+  fullName: Genesis.Core.AssetManager.DisposeTextures(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Disposes of the loaded textures and fonts.
+  example: []
+  syntax:
+    content: public void DisposeTextures(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game object associated with the assets.
+    content.vb: Public Sub DisposeTextures(game As Game)
+  overload: Genesis.Core.AssetManager.DisposeTextures*
+- uid: Genesis.Core.AssetManager.LoadTextures
+  commentId: M:Genesis.Core.AssetManager.LoadTextures
+  id: LoadTextures
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadTextures()
+  nameWithType: AssetManager.LoadTextures()
+  fullName: Genesis.Core.AssetManager.LoadTextures()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Loads textures from the resource folder.
+  example: []
+  syntax:
+    content: public void LoadTextures()
+    content.vb: Public Sub LoadTextures()
+  overload: Genesis.Core.AssetManager.LoadTextures*
+- uid: Genesis.Core.AssetManager.LoadFonts
+  commentId: M:Genesis.Core.AssetManager.LoadFonts
+  id: LoadFonts
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadFonts()
+  nameWithType: AssetManager.LoadFonts()
+  fullName: Genesis.Core.AssetManager.LoadFonts()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Loads fonts from the resource folder.
+  example: []
+  syntax:
+    content: public void LoadFonts()
+    content.vb: Public Sub LoadFonts()
+  overload: Genesis.Core.AssetManager.LoadFonts*
+- uid: Genesis.Core.AssetManager.AddFont(Genesis.Graphics.Font)
+  commentId: M:Genesis.Core.AssetManager.AddFont(Genesis.Graphics.Font)
+  id: AddFont(Genesis.Graphics.Font)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: AddFont(Font)
+  nameWithType: AssetManager.AddFont(Font)
+  fullName: Genesis.Core.AssetManager.AddFont(Genesis.Graphics.Font)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Adds an font
+  example: []
+  syntax:
+    content: public void AddFont(Font font)
+    parameters:
+    - id: font
+      type: Genesis.Graphics.Font
+      description: the font to add
+    content.vb: Public Sub AddFont(font As Font)
+  overload: Genesis.Core.AssetManager.AddFont*
+- uid: Genesis.Core.AssetManager.LoadSystemFont(System.String)
+  commentId: M:Genesis.Core.AssetManager.LoadSystemFont(System.String)
+  id: LoadSystemFont(System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadSystemFont(string)
+  nameWithType: AssetManager.LoadSystemFont(string)
+  fullName: Genesis.Core.AssetManager.LoadSystemFont(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Loads a system font
+  example: []
+  syntax:
+    content: public void LoadSystemFont(string font)
+    parameters:
+    - id: font
+      type: System.String
+      description: ''
+    content.vb: Public Sub LoadSystemFont(font As String)
+  overload: Genesis.Core.AssetManager.LoadSystemFont*
+  nameWithType.vb: AssetManager.LoadSystemFont(String)
+  fullName.vb: Genesis.Core.AssetManager.LoadSystemFont(String)
+  name.vb: LoadSystemFont(String)
+- uid: Genesis.Core.AssetManager.PackAssets(System.String)
+  commentId: M:Genesis.Core.AssetManager.PackAssets(System.String)
+  id: PackAssets(System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: PackAssets(string)
+  nameWithType: AssetManager.PackAssets(string)
+  fullName: Genesis.Core.AssetManager.PackAssets(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Packs the assets into an asset library.
+  example: []
+  syntax:
+    content: public void PackAssets(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The file path to save the asset library.
+    content.vb: Public Sub PackAssets(file As String)
+  overload: Genesis.Core.AssetManager.PackAssets*
+  nameWithType.vb: AssetManager.PackAssets(String)
+  fullName.vb: Genesis.Core.AssetManager.PackAssets(String)
+  name.vb: PackAssets(String)
+- uid: Genesis.Core.AssetManager.ImportAssetLibary(System.String)
+  commentId: M:Genesis.Core.AssetManager.ImportAssetLibary(System.String)
+  id: ImportAssetLibary(System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: ImportAssetLibary(string)
+  nameWithType: AssetManager.ImportAssetLibary(string)
+  fullName: Genesis.Core.AssetManager.ImportAssetLibary(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Imports assets from an asset library.
+  example: []
+  syntax:
+    content: public void ImportAssetLibary(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The file path of the asset library to import.
+    content.vb: Public Sub ImportAssetLibary(file As String)
+  overload: Genesis.Core.AssetManager.ImportAssetLibary*
+  nameWithType.vb: AssetManager.ImportAssetLibary(String)
+  fullName.vb: Genesis.Core.AssetManager.ImportAssetLibary(String)
+  name.vb: ImportAssetLibary(String)
+- uid: Genesis.Core.AssetManager.GetRessourcesDirectory
+  commentId: M:Genesis.Core.AssetManager.GetRessourcesDirectory
+  id: GetRessourcesDirectory
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetRessourcesDirectory()
+  nameWithType: AssetManager.GetRessourcesDirectory()
+  fullName: Genesis.Core.AssetManager.GetRessourcesDirectory()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the resource directory path.
+  example: []
+  syntax:
+    content: public static string GetRessourcesDirectory()
+    return:
+      type: System.String
+      description: The path to the resource directory.
+    content.vb: Public Shared Function GetRessourcesDirectory() As String
+  overload: Genesis.Core.AssetManager.GetRessourcesDirectory*
+- uid: Genesis.Core.AssetManager.Textures
+  commentId: P:Genesis.Core.AssetManager.Textures
+  id: Textures
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: Textures
+  nameWithType: AssetManager.Textures
+  fullName: Genesis.Core.AssetManager.Textures
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: List of loaded textures.
+  example: []
+  syntax:
+    content: public List<Texture> Textures { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Graphics.Texture}
+    content.vb: Public Property Textures As List(Of Texture)
+  overload: Genesis.Core.AssetManager.Textures*
+- uid: Genesis.Core.AssetManager.Fonts
+  commentId: P:Genesis.Core.AssetManager.Fonts
+  id: Fonts
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: Fonts
+  nameWithType: AssetManager.Fonts
+  fullName: Genesis.Core.AssetManager.Fonts
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: List of loaded fonts.
+  example: []
+  syntax:
+    content: public List<Font> Fonts { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Genesis.Graphics.Font}
+    content.vb: Public Property Fonts As List(Of Font)
+  overload: Genesis.Core.AssetManager.Fonts*
+references:
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core.AssetManager
+  commentId: T:Genesis.Core.AssetManager
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.AssetManager.html
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Genesis.Core.AssetManager
+- uid: Genesis.Core.AssetManager.#ctor*
+  commentId: Overload:Genesis.Core.AssetManager.#ctor
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager__ctor
+  name: AssetManager
+  nameWithType: AssetManager.AssetManager
+  fullName: Genesis.Core.AssetManager.AssetManager
+  nameWithType.vb: AssetManager.New
+  fullName.vb: Genesis.Core.AssetManager.New
+  name.vb: New
+- uid: Genesis.Core.AssetManager.AddTexture*
+  commentId: Overload:Genesis.Core.AssetManager.AddTexture
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_AddTexture_System_String_System_Drawing_Bitmap_
+  name: AddTexture
+  nameWithType: AssetManager.AddTexture
+  fullName: Genesis.Core.AssetManager.AddTexture
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Drawing.Bitmap
+  commentId: T:System.Drawing.Bitmap
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
+  name: Bitmap
+  nameWithType: Bitmap
+  fullName: System.Drawing.Bitmap
+- uid: Genesis.Graphics.Texture
+  commentId: T:Genesis.Graphics.Texture
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Genesis.Graphics.Texture
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Core.AssetManager.GetTexture*
+  commentId: Overload:Genesis.Core.AssetManager.GetTexture
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_GetTexture_System_String_
+  name: GetTexture
+  nameWithType: AssetManager.GetTexture
+  fullName: Genesis.Core.AssetManager.GetTexture
+- uid: Genesis.Core.AssetManager.GetFont*
+  commentId: Overload:Genesis.Core.AssetManager.GetFont
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_GetFont_System_String_
+  name: GetFont
+  nameWithType: AssetManager.GetFont
+  fullName: Genesis.Core.AssetManager.GetFont
+- uid: Genesis.Graphics.Font
+  commentId: T:Genesis.Graphics.Font
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Font.html
+  name: Font
+  nameWithType: Font
+  fullName: Genesis.Graphics.Font
+- uid: Genesis.Core.AssetManager.LoadMaterial*
+  commentId: Overload:Genesis.Core.AssetManager.LoadMaterial
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_LoadMaterial_System_String_System_String_System_String_
+  name: LoadMaterial
+  nameWithType: AssetManager.LoadMaterial
+  fullName: Genesis.Core.AssetManager.LoadMaterial
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
+- uid: Genesis.Core.AssetManager.Init*
+  commentId: Overload:Genesis.Core.AssetManager.Init
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_Init_Genesis_Graphics_IRenderDevice_
+  name: Init
+  nameWithType: AssetManager.Init
+  fullName: Genesis.Core.AssetManager.Init
+- uid: Genesis.Graphics.IRenderDevice
+  commentId: T:Genesis.Graphics.IRenderDevice
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html
+  name: IRenderDevice
+  nameWithType: IRenderDevice
+  fullName: Genesis.Graphics.IRenderDevice
+- uid: Genesis.Core.AssetManager.DisposeTextures*
+  commentId: Overload:Genesis.Core.AssetManager.DisposeTextures
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_DisposeTextures_Genesis_Core_Game_
+  name: DisposeTextures
+  nameWithType: AssetManager.DisposeTextures
+  fullName: Genesis.Core.AssetManager.DisposeTextures
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Core.AssetManager.LoadTextures*
+  commentId: Overload:Genesis.Core.AssetManager.LoadTextures
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_LoadTextures
+  name: LoadTextures
+  nameWithType: AssetManager.LoadTextures
+  fullName: Genesis.Core.AssetManager.LoadTextures
+- uid: Genesis.Core.AssetManager.LoadFonts*
+  commentId: Overload:Genesis.Core.AssetManager.LoadFonts
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_LoadFonts
+  name: LoadFonts
+  nameWithType: AssetManager.LoadFonts
+  fullName: Genesis.Core.AssetManager.LoadFonts
+- uid: Genesis.Core.AssetManager.AddFont*
+  commentId: Overload:Genesis.Core.AssetManager.AddFont
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_AddFont_Genesis_Graphics_Font_
+  name: AddFont
+  nameWithType: AssetManager.AddFont
+  fullName: Genesis.Core.AssetManager.AddFont
+- uid: Genesis.Core.AssetManager.LoadSystemFont*
+  commentId: Overload:Genesis.Core.AssetManager.LoadSystemFont
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_LoadSystemFont_System_String_
+  name: LoadSystemFont
+  nameWithType: AssetManager.LoadSystemFont
+  fullName: Genesis.Core.AssetManager.LoadSystemFont
+- uid: Genesis.Core.AssetManager.PackAssets*
+  commentId: Overload:Genesis.Core.AssetManager.PackAssets
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_PackAssets_System_String_
+  name: PackAssets
+  nameWithType: AssetManager.PackAssets
+  fullName: Genesis.Core.AssetManager.PackAssets
+- uid: Genesis.Core.AssetManager.ImportAssetLibary*
+  commentId: Overload:Genesis.Core.AssetManager.ImportAssetLibary
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_ImportAssetLibary_System_String_
+  name: ImportAssetLibary
+  nameWithType: AssetManager.ImportAssetLibary
+  fullName: Genesis.Core.AssetManager.ImportAssetLibary
+- uid: Genesis.Core.AssetManager.GetRessourcesDirectory*
+  commentId: Overload:Genesis.Core.AssetManager.GetRessourcesDirectory
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_GetRessourcesDirectory
+  name: GetRessourcesDirectory
+  nameWithType: AssetManager.GetRessourcesDirectory
+  fullName: Genesis.Core.AssetManager.GetRessourcesDirectory
+- uid: Genesis.Core.AssetManager.Textures*
+  commentId: Overload:Genesis.Core.AssetManager.Textures
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_Textures
+  name: Textures
+  nameWithType: AssetManager.Textures
+  fullName: Genesis.Core.AssetManager.Textures
+- uid: System.Collections.Generic.List{Genesis.Graphics.Texture}
+  commentId: T:System.Collections.Generic.List{Genesis.Graphics.Texture}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Texture>
+  nameWithType: List<Texture>
+  fullName: System.Collections.Generic.List<Genesis.Graphics.Texture>
+  nameWithType.vb: List(Of Texture)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Graphics.Texture)
+  name.vb: List(Of Texture)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Graphics.Texture
+    name: Texture
+    isExternal: true
+    href: Genesis.Graphics.Texture.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Graphics.Texture
+    name: Texture
+    isExternal: true
+    href: Genesis.Graphics.Texture.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Core.AssetManager.Fonts*
+  commentId: Overload:Genesis.Core.AssetManager.Fonts
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_Fonts
+  name: Fonts
+  nameWithType: AssetManager.Fonts
+  fullName: Genesis.Core.AssetManager.Fonts
+- uid: System.Collections.Generic.List{Genesis.Graphics.Font}
+  commentId: T:System.Collections.Generic.List{Genesis.Graphics.Font}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Font>
+  nameWithType: List<Font>
+  fullName: System.Collections.Generic.List<Genesis.Graphics.Font>
+  nameWithType.vb: List(Of Font)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Graphics.Font)
+  name.vb: List(Of Font)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Graphics.Font
+    name: Font
+    isExternal: true
+    href: Genesis.Graphics.Font.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Graphics.Font
+    name: Font
+    isExternal: true
+    href: Genesis.Graphics.Font.html
+  - name: )

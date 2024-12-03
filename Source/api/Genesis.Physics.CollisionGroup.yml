@@ -1,0 +1,470 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Physics.CollisionGroup
+  commentId: T:Genesis.Physics.CollisionGroup
+  id: CollisionGroup
+  parent: Genesis.Physics
+  children:
+  - Genesis.Physics.CollisionGroup.All
+  - Genesis.Physics.CollisionGroup.Collider
+  - Genesis.Physics.CollisionGroup.EditorEntity
+  - Genesis.Physics.CollisionGroup.EnvironmentObject
+  - Genesis.Physics.CollisionGroup.InteractiveObject
+  - Genesis.Physics.CollisionGroup.NPC
+  - Genesis.Physics.CollisionGroup.None
+  - Genesis.Physics.CollisionGroup.Particles
+  - Genesis.Physics.CollisionGroup.Player
+  - Genesis.Physics.CollisionGroup.Projectile
+  - Genesis.Physics.CollisionGroup.StaticObject
+  - Genesis.Physics.CollisionGroup.Trigger
+  - Genesis.Physics.CollisionGroup.Vehicle
+  langs:
+  - csharp
+  - vb
+  name: CollisionGroup
+  nameWithType: CollisionGroup
+  fullName: Genesis.Physics.CollisionGroup
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Defines different collision groups for physics interactions.
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum CollisionGroup
+    content.vb: >-
+      <Flags>
+
+      Public Enum CollisionGroup
+  extensionMethods:
+  - Genesis.Physics.CollisionGroup.Genesis.Physics.CollisionGroupExtensions.GetCollisionMask
+  - Genesis.Physics.CollisionGroup.Genesis.Physics.CollisionGroupExtensions.GetGroup
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: Genesis.Physics.CollisionGroup.None
+  commentId: F:Genesis.Physics.CollisionGroup.None
+  id: None
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: CollisionGroup.None
+  fullName: Genesis.Physics.CollisionGroup.None
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Represents no collision group.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.StaticObject
+  commentId: F:Genesis.Physics.CollisionGroup.StaticObject
+  id: StaticObject
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: StaticObject
+  nameWithType: CollisionGroup.StaticObject
+  fullName: Genesis.Physics.CollisionGroup.StaticObject
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for static objects that do not move.
+  example: []
+  syntax:
+    content: StaticObject = 2
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Player
+  commentId: F:Genesis.Physics.CollisionGroup.Player
+  id: Player
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: CollisionGroup.Player
+  fullName: Genesis.Physics.CollisionGroup.Player
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for player-controlled characters.
+  example: []
+  syntax:
+    content: Player = 32
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.NPC
+  commentId: F:Genesis.Physics.CollisionGroup.NPC
+  id: NPC
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: NPC
+  nameWithType: CollisionGroup.NPC
+  fullName: Genesis.Physics.CollisionGroup.NPC
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for non-player characters (NPCs).
+  example: []
+  syntax:
+    content: NPC = 64
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Vehicle
+  commentId: F:Genesis.Physics.CollisionGroup.Vehicle
+  id: Vehicle
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Vehicle
+  nameWithType: CollisionGroup.Vehicle
+  fullName: Genesis.Physics.CollisionGroup.Vehicle
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for vehicles.
+  example: []
+  syntax:
+    content: Vehicle = 128
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Projectile
+  commentId: F:Genesis.Physics.CollisionGroup.Projectile
+  id: Projectile
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Projectile
+  nameWithType: CollisionGroup.Projectile
+  fullName: Genesis.Physics.CollisionGroup.Projectile
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for projectiles or other similar objects.
+  example: []
+  syntax:
+    content: Projectile = 256
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Trigger
+  commentId: F:Genesis.Physics.CollisionGroup.Trigger
+  id: Trigger
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Trigger
+  nameWithType: CollisionGroup.Trigger
+  fullName: Genesis.Physics.CollisionGroup.Trigger
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for trigger volumes or sensors.
+  example: []
+  syntax:
+    content: Trigger = 16
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.InteractiveObject
+  commentId: F:Genesis.Physics.CollisionGroup.InteractiveObject
+  id: InteractiveObject
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: InteractiveObject
+  nameWithType: CollisionGroup.InteractiveObject
+  fullName: Genesis.Physics.CollisionGroup.InteractiveObject
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for interactive objects.
+  example: []
+  syntax:
+    content: InteractiveObject = 512
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.EnvironmentObject
+  commentId: F:Genesis.Physics.CollisionGroup.EnvironmentObject
+  id: EnvironmentObject
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: EnvironmentObject
+  nameWithType: CollisionGroup.EnvironmentObject
+  fullName: Genesis.Physics.CollisionGroup.EnvironmentObject
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for environmental objects.
+  example: []
+  syntax:
+    content: EnvironmentObject = 1024
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Particles
+  commentId: F:Genesis.Physics.CollisionGroup.Particles
+  id: Particles
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Particles
+  nameWithType: CollisionGroup.Particles
+  fullName: Genesis.Physics.CollisionGroup.Particles
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for particle systems.
+  example: []
+  syntax:
+    content: Particles = 2048
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.Collider
+  commentId: F:Genesis.Physics.CollisionGroup.Collider
+  id: Collider
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: Collider
+  nameWithType: CollisionGroup.Collider
+  fullName: Genesis.Physics.CollisionGroup.Collider
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for collision detection components.
+  example: []
+  syntax:
+    content: Collider = 4096
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.EditorEntity
+  commentId: F:Genesis.Physics.CollisionGroup.EditorEntity
+  id: EditorEntity
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: EditorEntity
+  nameWithType: CollisionGroup.EditorEntity
+  fullName: Genesis.Physics.CollisionGroup.EditorEntity
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group for editor entities such as gizmos and debug objects.
+  example: []
+  syntax:
+    content: EditorEntity = 8192
+    return:
+      type: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroup.All
+  commentId: F:Genesis.Physics.CollisionGroup.All
+  id: All
+  parent: Genesis.Physics.CollisionGroup
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: CollisionGroup.All
+  fullName: Genesis.Physics.CollisionGroup.All
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Group representing all collision groups.
+  example: []
+  syntax:
+    content: All = -1
+    return:
+      type: Genesis.Physics.CollisionGroup
+references:
+- uid: Genesis.Physics
+  commentId: N:Genesis.Physics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Physics
+  nameWithType: Genesis.Physics
+  fullName: Genesis.Physics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Physics
+    name: Physics
+    isExternal: true
+    href: Genesis.Physics.html
+- uid: Genesis.Physics.CollisionGroup.Genesis.Physics.CollisionGroupExtensions.GetCollisionMask
+  commentId: M:Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  parent: Genesis.Physics.CollisionGroupExtensions
+  definition: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  name: GetCollisionMask(CollisionGroup)
+  nameWithType: CollisionGroupExtensions.GetCollisionMask(CollisionGroup)
+  fullName: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  spec.csharp:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+    name: GetCollisionMask
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+    name: GetCollisionMask
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+- uid: Genesis.Physics.CollisionGroup.Genesis.Physics.CollisionGroupExtensions.GetGroup
+  commentId: M:Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  parent: Genesis.Physics.CollisionGroupExtensions
+  definition: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  name: GetGroup(CollisionGroup)
+  nameWithType: CollisionGroupExtensions.GetGroup(CollisionGroup)
+  fullName: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  spec.csharp:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+    name: GetGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+    name: GetGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+- uid: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  commentId: M:Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  isExternal: true
+  href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  name: GetCollisionMask(CollisionGroup)
+  nameWithType: CollisionGroupExtensions.GetCollisionMask(CollisionGroup)
+  fullName: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+  spec.csharp:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+    name: GetCollisionMask
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetCollisionMask(Genesis.Physics.CollisionGroup)
+    name: GetCollisionMask
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetCollisionMask_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+- uid: Genesis.Physics.CollisionGroupExtensions
+  commentId: T:Genesis.Physics.CollisionGroupExtensions
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.CollisionGroupExtensions.html
+  name: CollisionGroupExtensions
+  nameWithType: CollisionGroupExtensions
+  fullName: Genesis.Physics.CollisionGroupExtensions
+- uid: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  commentId: M:Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  isExternal: true
+  href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  name: GetGroup(CollisionGroup)
+  nameWithType: CollisionGroupExtensions.GetGroup(CollisionGroup)
+  fullName: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+  spec.csharp:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+    name: GetGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.CollisionGroupExtensions.GetGroup(Genesis.Physics.CollisionGroup)
+    name: GetGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroupExtensions.html#Genesis_Physics_CollisionGroupExtensions_GetGroup_Genesis_Physics_CollisionGroup_
+  - name: (
+  - uid: Genesis.Physics.CollisionGroup
+    name: CollisionGroup
+    isExternal: true
+    href: Genesis.Physics.CollisionGroup.html
+  - name: )
+- uid: Genesis.Physics.CollisionGroup
+  commentId: T:Genesis.Physics.CollisionGroup
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.CollisionGroup.html
+  name: CollisionGroup
+  nameWithType: CollisionGroup
+  fullName: Genesis.Physics.CollisionGroup
