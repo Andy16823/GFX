@@ -1,0 +1,4 @@
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\Debug\Test3D.csproj.AssemblyReference.cache
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\Debug\Test3D.Properties.Resources.resources
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\Debug\Test3D.csproj.GenerateResource.cache
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\Debug\Test3D.csproj.CoreCompileInputs.cache

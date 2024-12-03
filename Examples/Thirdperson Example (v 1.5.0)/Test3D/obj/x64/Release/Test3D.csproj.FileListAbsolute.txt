@@ -1,0 +1,98 @@
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.AssemblyReference.cache
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.Properties.Resources.resources
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.GenerateResource.cache
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.CoreCompileInputs.cache
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Diffuse.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Glossiness.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Normal.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Specular.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Base_color.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Metallic.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Normal_OpenGL.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Roughness.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Base_Color.jpg
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Normal.jpg
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Roughness.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_blue.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_white.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_gray.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_orange.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Coin\Coin.fbx
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbx
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\rock.bin
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\rock.gltf
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.exr
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\skydome.mtl
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\skydome.obj
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\gfx.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbx
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).exe.config
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).exe
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).pdb
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\BulletSharp.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\GlmSharp.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\NetGL.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\AssimpNet.dll
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.pdb
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.xml
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\GlmSharp.xml
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\NetGL.pdb
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\AssimpNet.xml
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.Up2Date
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\GFX 3D Tempalte (Net Framework).exe
+C:\Users\Andy\source\repos\Test3D\Test3D\obj\x64\Release\GFX 3D Tempalte (Net Framework).pdb
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\test_walls.fbm\wall_orange.png
+C:\Users\Andy\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\test_walls.fbx
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Diffuse.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Glossiness.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Normal.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbm\Ch03_1001_Specular.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Base_color.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Metallic.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Normal_OpenGL.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbm\DefaultMaterial_Roughness.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Base_Color.jpg
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Normal.jpg
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\Textures\black_Rock_046_Roughness.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_blue.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_white.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_gray.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\wall_orange.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Coin\Coin.fbx
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Girly\girly.fbx
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\rock.bin
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Rock\rock.gltf
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\kloofendal_48d_partly_cloudy_puresky_4k.exr
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\skydome.mtl
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Skydome1\skydome.obj
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\gfx.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\test_walls.fbm\wall_orange.png
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\Guitar\Guitar.fbx
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Resources\Models\test_walls.fbx
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).exe.config
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).exe
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\GFX 3D Tempalte (Net Framework).pdb
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\BulletSharp.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\GlmSharp.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\NetGL.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\AssimpNet.dll
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.pdb
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Genesis.xml
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\GlmSharp.xml
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\NetGL.pdb
+C:\Users\andy1\source\repos\Test3D\Test3D\bin\x64\Release\AssimpNet.xml
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.AssemblyReference.cache
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.Properties.Resources.resources
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.GenerateResource.cache
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.CoreCompileInputs.cache
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\Test3D.csproj.Up2Date
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\GFX 3D Tempalte (Net Framework).exe
+C:\Users\andy1\source\repos\Test3D\Test3D\obj\x64\Release\GFX 3D Tempalte (Net Framework).pdb
