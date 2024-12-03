@@ -66,7 +66,7 @@ namespace Genesis.Core.GameElements
             return Sphere.CreateInstanceContainer(this.Material, this.Shape.LatitudeBands, this.Shape.LongitudeBands, this.Shape.Radius);
         }
 
-        public static RenderInstanceContainer CreateInstanceContainer(Material material, int latitudebands = 20, int longitudebands = 20, float radius = 0.5f)
+        public static RenderInstanceContainer CreateInstanceContainer(Material material, int latitudebands = 20, int longitudebands = 20, float radius = 0.5f, bool updateInstances = false)
         {
             SphereShape shape = new SphereShape();
             shape.LatitudeBands = latitudebands;
@@ -80,6 +80,7 @@ namespace Genesis.Core.GameElements
             mesh.Normals = shape.GetOrderedNormals();
             mesh.Material = material;
             RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh, new InstancedShader());
+            instanceContainer.UpdateInstances = updateInstances;
             return instanceContainer;
         }
     }

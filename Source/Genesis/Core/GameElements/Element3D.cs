@@ -241,9 +241,10 @@ namespace Genesis.Core.GameElements
             return Element3D.CreateInstanceContainer(this);
         }
 
-        public static RenderInstanceContainer CreateInstanceContainer(Element3D element)
+        public static RenderInstanceContainer CreateInstanceContainer(Element3D element, bool updateInstances = false)
         {
             var renderInstance = new RenderInstanceContainer(new InstancedShader());
+            renderInstance.UpdateInstances = updateInstances;
             foreach (var material in element.Materials)
             {
                 var buffers = element.GetMaterialBuffers(material);

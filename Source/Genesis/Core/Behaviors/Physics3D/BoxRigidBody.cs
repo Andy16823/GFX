@@ -31,7 +31,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="mass">The mass of the rigid body.</param>
         public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateRigidBody(this.Parent.Size.Half(), mass, collisionGroup, collisionMask);
+            this.CreateRigidBody(new Vec3(0.5f, 0.5f, 0.5f), mass, collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -44,18 +44,13 @@ namespace Genesis.Core.Behaviors.Physics3D
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
             RigidBodyConstructionInfo info = new RigidBodyConstructionInfo(mass, null, boxShape, boxShape.CalculateLocalInertia(mass));
-
-            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
-            Vec3 rotation = Utils.GetElementWorldRotation(element);
-
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
-            var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
-            var btStartTransform = btTranslation * btRotation;
+            var btStartTransform = Utils.GetBtTransform(element, Offset);
 
             info.MotionState = new DefaultMotionState(btStartTransform);
             RigidBody = new RigidBody(info);
             RigidBody.UserObject = element;
             RigidBody.ApplyGravity();
+            RigidBody.CollisionShape.LocalScaling = element.Size.ToBulletVec3();
             
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }

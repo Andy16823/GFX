@@ -237,7 +237,7 @@ namespace Genesis.Core.GameElements
             return Qube.CreateInstanceContainer(this.Material);
         }
 
-        public static RenderInstanceContainer CreateInstanceContainer(Material material)
+        public static RenderInstanceContainer CreateInstanceContainer(Material material, bool updateInstances = false)
         {
             QubeShape qubeShape = new QubeShape();
             InstancedMesh mesh = new InstancedMesh();
@@ -247,6 +247,7 @@ namespace Genesis.Core.GameElements
             mesh.Normals = qubeShape.GetNormals();
             mesh.Material = material;
             RenderInstanceContainer instanceContainer = new RenderInstanceContainer(mesh, new InstancedShader());
+            instanceContainer.UpdateInstances = updateInstances;
             return instanceContainer;
         }
     }

@@ -116,6 +116,7 @@
     <Compile Include="Core\Behaviors\Physics3D\StaticMeshBehavior.cs" />
     <Compile Include="Core\Behaviors\Physics3D\ConvexHullBehavior.cs" />
     <Compile Include="Core\Behaviors\SpriteMovementController.cs" />
+    <Compile Include="Core\DirectionalLight.cs" />
     <Compile Include="Core\Game.cs" />
     <Compile Include="Core\GameElement.cs" />
     <Compile Include="Core\GameElements\Model.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Core\GameElements\CameraElement.cs" />
     <Compile Include="Core\GameElements\Terrain3D.cs" />
     <Compile Include="Core\Light2D.cs" />
+    <Compile Include="Core\PointLight.cs" />
     <Compile Include="Core\Scene2D.cs" />
     <Compile Include="Core\Scene3D.cs" />
     <Compile Include="Core\GameElements\Element3D.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\BorderCircleShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\SpecularShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\Element3DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\InstancedShader.cs" />

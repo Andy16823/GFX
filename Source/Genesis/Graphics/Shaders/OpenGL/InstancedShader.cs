@@ -56,23 +56,31 @@ namespace Genesis.Graphics.Shaders.OpenGL
                 uniform vec3 lightColor;
                 uniform vec4 materialColor;
 
+                uniform vec3 viewPos;
+
 
                 void main() {
-                    vec3 ambient = lightIntensity * vec3(1.0, 1.0, 1.0);
-                    vec2 flippedTexCoord = vec2(texCoord.x, 1.0 - texCoord.y);
+                    vec3 color = texture(textureSampler, texCoord).rgb;
+                    float alpha = texture(textureSampler, texCoord).a;
+                    vec3 normal = normalize(fragNormal);
 
-                    vec3 norm = normalize(fragNormal);
+                    vec3 ambient = lightIntensity * lightColor;
                     vec3 lightDir = normalize(lightPos - fragPos);
-                    
-                    float diff = max(dot(norm, lightDir), 0.0);
+
+                    float diff = max(dot(lightDir, normal), 0.0);
                     vec3 diffuse = diff * lightColor;
 
-                    // Texturfarbe lesen
-                    vec4 texColor = texture(textureSampler, flippedTexCoord);
-                    vec3 result = (ambient + diffuse) * texColor.rgb;
+                    vec3 viewDir = normalize(viewPos - fragPos);
+                    vec3 reflectDir = reflect(-lightDir, normal);
 
-                    //outColor = vec4(fragColor, 1.0);  // Ausgabe der Farbe
-                    outColor = vec4(result, texColor.a) * materialColor;
+                    float spec = 0.0;
+                    vec3 halfwayDir = normalize(lightDir + viewDir); 
+                    spec = pow(max(dot(normal, halfwayDir), 0.0), 64.0);
+                    vec3 specular = spec * lightColor;
+
+                    vec3 lighting = (ambient + diffuse + specular) * color;    
+
+                    outColor = materialColor * vec4(lighting, alpha);
                 }
             ");
         }

@@ -31,7 +31,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// <param name="handler">The physics handler to manage this collider.</param>
         public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateCollider(this.Parent.Size.Half(), collisionGroup, collisionMask);
+            this.CreateCollider(new Vec3(0.5f, 0.5f, 0.5f), collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -42,18 +42,13 @@ namespace Genesis.Core.Behaviors.Physics3D
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
-
-            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
-            Vec3 rotation = Utils.GetElementWorldRotation(element);
-
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());            
-            var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
-            var btStartTransform = btTranslation * btRotation;
+            var btStartTransform = Utils.GetBtTransform(element, Offset);
 
             Collider = new CollisionObject();
             Collider.UserObject = element;
             Collider.CollisionShape = boxShape;
             Collider.WorldTransform = btStartTransform;
+            Collider.CollisionShape.LocalScaling = element.Size.ToBulletVec3();
 
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }

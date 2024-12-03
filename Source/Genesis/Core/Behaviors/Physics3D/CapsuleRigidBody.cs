@@ -1,4 +1,5 @@
 ﻿using BulletSharp;
+using BulletSharp.SoftBody;
 using Genesis.Math;
 using Genesis.Physics;
 using GlmSharp;
@@ -44,14 +45,8 @@ namespace Genesis.Core.Behaviors.Physics3D
         {
             this.Offset = offset;
             CapsuleShape capsuleShape = new CapsuleShape(radius, height);
-            RigidBodyConstructionInfo constructionInfo = new RigidBodyConstructionInfo(mass, null, capsuleShape);
-            
-            var location = Utils.GetElementWorldLocation(Parent) + Offset;
-            var rotation = Utils.GetElementWorldRotation(Parent);
-
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
-            var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
-            var btTransform = btTranslation * btRotation;
+            RigidBodyConstructionInfo constructionInfo = new RigidBodyConstructionInfo(mass, null, capsuleShape, capsuleShape.CalculateLocalInertia(mass));
+            var btTransform = Utils.GetBtTransform(Parent, Offset);
 
             constructionInfo.MotionState = new DefaultMotionState(btTransform);
 

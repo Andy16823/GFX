@@ -91,8 +91,9 @@ namespace Genesis.Graphics
         /// </returns>
         public mat4 GetModelViewMatrix()
         {
+            quat quat = new quat(new vec3(Utils.ToRadians(this.Rotation.X), Utils.ToRadians(this.Rotation.Y), Utils.ToRadians(this.Rotation.Z)));
             mat4 mt_mat = mat4.Translate(this.Location.X, this.Location.Y, this.Location.Z);
-            mat4 mr_mat = mat4.RotateX(Utils.ToRadians(this.Rotation.X)) * mat4.RotateY(Utils.ToRadians(this.Rotation.Y)) * mat4.RotateZ(Utils.ToRadians(this.Rotation.Z));
+            mat4 mr_mat = new mat4(quat);
             mat4 ms_mat = mat4.Scale(this.Size.X, this.Size.Y, this.Size.Z);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
             return m_mat;

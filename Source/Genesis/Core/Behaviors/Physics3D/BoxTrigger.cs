@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BulletSharp.Dbvt;
 
 namespace Genesis.Core.Behaviors.Physics3D
 {
@@ -27,7 +28,7 @@ namespace Genesis.Core.Behaviors.Physics3D
         /// </summary>
         public override void CreateTrigger(int collisionGroup = -1, int collisionMask = -1)
         {
-            this.CreateTrigger(Parent.Size.Half(), collisionGroup, collisionMask);
+            this.CreateTrigger(new Vec3(0.5f, 0.5f, 0.5f), collisionGroup, collisionMask);
         }
 
         /// <summary>
@@ -38,19 +39,14 @@ namespace Genesis.Core.Behaviors.Physics3D
         {
             var element = this.Parent;
             BoxShape boxShape = new BoxShape(boxHalfExtends.ToBulletVec3());
-
-            Vec3 location = Utils.GetElementWorldLocation(element) + Offset;
-            Vec3 rotation = Utils.GetElementWorldRotation(element);
-
-            var btTranslation = BulletSharp.Math.Matrix.Translation(location.ToBulletVec3());
-            var btRotation = BulletSharp.Math.Matrix.RotationX(rotation.X) * BulletSharp.Math.Matrix.RotationY(rotation.Y) * BulletSharp.Math.Matrix.RotationZ(rotation.Z);
-            var btStartTransform = btTranslation * btRotation;
+            var btStartTransform = Utils.GetBtTransform(element, Offset);
 
             Trigger = new GhostObject();
             Trigger.UserObject = element;
             Trigger.CollisionShape = boxShape;
             Trigger.WorldTransform = btStartTransform;
             Trigger.CollisionFlags = CollisionFlags.NoContactResponse;
+            Trigger.CollisionShape.LocalScaling = element.Size.ToBulletVec3();
 
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
         }

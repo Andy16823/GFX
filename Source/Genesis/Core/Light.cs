@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace Genesis.Core
     /// <summary>
     /// Represents a light source in the Genesis framework.
     /// </summary>
-    public class Light : GameElement
+    public abstract class Light : GameElement
     {
         /// <summary>
         /// Gets or sets a value indicating whether the light should cast shadows.
@@ -61,6 +62,22 @@ namespace Genesis.Core
         public float Intensity { get; set; }
 
         /// <summary>
+        /// Gets or sets the shadow map for the light.
+        /// </summary>
+        /// <value>
+        /// A <see cref="Framebuffer"/> object that stores the shadow map used for shadow calculations.
+        /// </value>
+        public Framebuffer Shadowmap { get; set; }
+
+        /// <summary>
+        /// Gets or sets the resolution of the shadow map.
+        /// </summary>
+        /// <value>
+        /// A <see cref="Vec3"/> object specifying the width and height of the shadow map. Default resolution is 2048x2048.
+        /// </value>
+        public Vec3 ShadowResolution { get; set; } = new Vec3(2048, 2048);
+
+        /// <summary>
         /// Returns the direction vector from the light to the camera.
         /// </summary>
         /// <param name="camera">The camera to which the direction is calculated.</param>
@@ -84,49 +101,35 @@ namespace Genesis.Core
             return new Vec3(r, g, b);
         }
 
-        public static mat4 GetLightViewMatrix(Light lightSource)
+        /// <summary>
+        /// Initializes the light with the provided game and render device.
+        /// This method prepares the shadow map for rendering.
+        /// </summary>
+        /// <param name="game">The game object that this light belongs to.</param>
+        /// <param name="renderDevice">The render device used to build the shadow map.</param>
+        public override void Init(Game game, IRenderDevice renderDevice)
         {
-            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0), new vec3(0.0f, 1.0f, 0.0f));
-            return lightView;
+            this.Shadowmap = renderDevice.BuildShadowMap((int)ShadowResolution.X, (int)ShadowResolution.Y);
         }
 
-        public static mat4 GetLightProjectionMatrix(Light lightSource, PerspectiveCamera camera, Viewport viewport)
-        {
-            mat4 lightView = Light.GetLightViewMatrix(lightSource);
-            var frustumCorners = camera.GetFrustum(viewport).ToList(lightView);
+        /// <summary>
+        /// Gets the light view matrix for rendering.
+        /// This abstract method must be implemented in subclasses to return the appropriate light view matrix.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="mat4"/> representing the view matrix for this light.
+        /// </returns>
+        public abstract mat4 GetLightViewMatrix();
 
-            vec3 min = new vec3();
-            vec3 max = new vec3();
-
-            for (int i = 0; i < frustumCorners.Count; i++)
-            {
-                if (frustumCorners[i].x < min.x)
-                    min.x = frustumCorners[i].x;
-                if (frustumCorners[i].y < min.y)
-                    min.y = frustumCorners[i].y;
-                if (frustumCorners[i].z < min.z)
-                    min.z = frustumCorners[i].z;
-
-                if (frustumCorners[i].x > max.x)
-                    max.x = frustumCorners[i].x;
-                if (frustumCorners[i].y > max.y)
-                    max.y = frustumCorners[i].y;
-                if (frustumCorners[i].z > max.z)
-                    max.z = frustumCorners[i].z;
-            }
-
-            float l = min.x - 10f;
-            float r = max.x + 10f;
-            float b = min.y - 10f;
-            float t = max.y + 10f;
-
-            float n = -max.z;
-            float f = -min.z;
-
-            mat4 lightProjection = mat4.Ortho(l, r, b, t, n, f);
-
-            return lightProjection;
-        }
-
+        /// <summary>
+        /// Gets the light projection matrix for the specified camera and viewport.
+        /// This abstract method must be implemented in subclasses to return the appropriate light projection matrix.
+        /// </summary>
+        /// <param name="camera">The perspective camera used for the calculation.</param>
+        /// <param name="viewport">The viewport that defines the rendering area.</param>
+        /// <returns>
+        /// A <see cref="mat4"/> representing the projection matrix for this light.
+        /// </returns>
+        public abstract mat4 GetLightProjectionMatrix(PerspectiveCamera camera, Viewport viewport);
     }
 }

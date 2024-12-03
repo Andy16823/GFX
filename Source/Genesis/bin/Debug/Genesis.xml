@@ -1231,6 +1231,35 @@
             Moves the sprite to the right.
             </summary>
         </member>
+        <member name="T:Genesis.Core.DirectionalLight">
+            <summary>
+            Represents a directional light source in the scene, such as sunlight.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.DirectionalLight.#ctor(System.String,Genesis.Math.Vec3,System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.DirectionalLight"/> class.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The position of the light source.</param>
+            <param name="intensity">The intensity of the light.</param>
+            <param name="castShadows">Indicates whether the light casts shadows.</param>
+        </member>
+        <member name="M:Genesis.Core.DirectionalLight.GetLightProjectionMatrix(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport)">
+            <summary>
+            Calculates the projection matrix for the directional light 
+            based on the provided camera and viewport.
+            </summary>
+            <param name="camera">The camera used to define the view frustum.</param>
+            <param name="viewport">The viewport dimensions.</param>
+            <returns>A 4x4 projection matrix for the light.</returns>
+        </member>
+        <member name="M:Genesis.Core.DirectionalLight.GetLightViewMatrix">
+            <summary>
+            Computes the view matrix for the directional light.
+            </summary>
+            <returns>A 4x4 view matrix for the light.</returns>
+        </member>
         <member name="T:Genesis.Core.Game">
             <summary>
             Represents the main game class responsible for managing game loops, scenes, rendering, and updates.
@@ -3085,6 +3114,22 @@
             Gets or sets the intensity of the light.
             </summary>
         </member>
+        <member name="P:Genesis.Core.Light.Shadowmap">
+            <summary>
+            Gets or sets the shadow map for the light.
+            </summary>
+            <value>
+            A <see cref="T:Genesis.Graphics.Framebuffer"/> object that stores the shadow map used for shadow calculations.
+            </value>
+        </member>
+        <member name="P:Genesis.Core.Light.ShadowResolution">
+            <summary>
+            Gets or sets the resolution of the shadow map.
+            </summary>
+            <value>
+            A <see cref="T:Genesis.Math.Vec3"/> object specifying the width and height of the shadow map. Default resolution is 2048x2048.
+            </value>
+        </member>
         <member name="M:Genesis.Core.Light.GetLightDirection(Genesis.Graphics.Camera)">
             <summary>
             Returns the direction vector from the light to the camera.
@@ -3097,6 +3142,34 @@
             Returns the light color in RGB values normalized between 0 and 1.
             </summary>
             <returns>A Vec3 representing the normalized RGB values of the light color.</returns>
+        </member>
+        <member name="M:Genesis.Core.Light.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
+            <summary>
+            Initializes the light with the provided game and render device.
+            This method prepares the shadow map for rendering.
+            </summary>
+            <param name="game">The game object that this light belongs to.</param>
+            <param name="renderDevice">The render device used to build the shadow map.</param>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightViewMatrix">
+            <summary>
+            Gets the light view matrix for rendering.
+            This abstract method must be implemented in subclasses to return the appropriate light view matrix.
+            </summary>
+            <returns>
+            A <see cref="T:GlmSharp.mat4"/> representing the view matrix for this light.
+            </returns>
+        </member>
+        <member name="M:Genesis.Core.Light.GetLightProjectionMatrix(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport)">
+            <summary>
+            Gets the light projection matrix for the specified camera and viewport.
+            This abstract method must be implemented in subclasses to return the appropriate light projection matrix.
+            </summary>
+            <param name="camera">The perspective camera used for the calculation.</param>
+            <param name="viewport">The viewport that defines the rendering area.</param>
+            <returns>
+            A <see cref="T:GlmSharp.mat4"/> representing the projection matrix for this light.
+            </returns>
         </member>
         <member name="T:Genesis.Core.Light2D">
             <summary>
@@ -3171,6 +3244,39 @@
             <summary>
             Tests the Light2D functionality.
             </summary>
+        </member>
+        <member name="T:Genesis.Core.PointLight">
+            <summary>
+            Represents a point light source in the scene, which emits light in all directions from a specific position.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.PointLight.ShadowRange">
+            <summary>
+            Gets or sets the range of the shadow for the point light.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.PointLight.#ctor(System.String,Genesis.Math.Vec3,System.Single,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Core.PointLight"/> class.
+            </summary>
+            <param name="name">The name of the light.</param>
+            <param name="location">The position of the light source.</param>
+            <param name="intensity">The intensity of the light.</param>
+            <param name="castShadows">Indicates whether the light casts shadows.</param>
+        </member>
+        <member name="M:Genesis.Core.PointLight.GetLightProjectionMatrix(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport)">
+            <summary>
+            Calculates the projection matrix for the point light based on its shadow range.
+            </summary>
+            <param name="camera">The camera used for the scene (not directly utilized here).</param>
+            <param name="viewport">The viewport dimensions (not directly utilized here).</param>
+            <returns>A 4x4 orthographic projection matrix for the light.</returns>
+        </member>
+        <member name="M:Genesis.Core.PointLight.GetLightViewMatrix">
+            <summary>
+            Computes the view matrix for the point light.
+            </summary>
+            <returns>A 4x4 view matrix for the light.</returns>
         </member>
         <member name="T:Genesis.Core.Scene2D">
             <summary>
@@ -3272,14 +3378,6 @@
             Gets or sets the skybox used in the scene (optional).
             </summary>
         </member>
-        <member name="P:Genesis.Core.Scene3D.ShadowMap">
-            <summary>
-            Gets or sets the framebuffer used for storing the shadow map.
-            </summary>
-            <value>
-            The framebuffer object that holds the shadow map texture. This is used during the shadow mapping process to store depth information from the perspective of the light source.
-            </value>
-        </member>
         <member name="P:Genesis.Core.Scene3D.ShadowResolution">
             <summary>
             Gets or sets the resolution of the shadow map.
@@ -3289,7 +3387,7 @@
             The default value is (1024, 1024, 0), where the third component is typically not used.
             </value>
         </member>
-        <member name="M:Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.Light)">
+        <member name="M:Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.DirectionalLight)">
             <summary>
             Initializes a new instance of the Scene3D class.
             </summary>

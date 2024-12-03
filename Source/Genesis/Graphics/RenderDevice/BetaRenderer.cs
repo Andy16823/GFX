@@ -190,8 +190,9 @@ namespace Genesis.Graphics.RenderDevice
             gl.TexImage2D(OpenGL.Texture2D, 0, OpenGL.DepthComponent, width, height, 0, OpenGL.DepthComponent, OpenGL.Float);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMinFilter, NetGL.OpenGL.Nearest);
             gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMagFilter, NetGL.OpenGL.Nearest);
-            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapS, OpenGL.Repeate);
-            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapT, OpenGL.Repeate);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapS, OpenGL.ClampToBorder);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapT, OpenGL.ClampToBorder);
+            gl.TexParameterfv(NetGL.OpenGL.Texture2D, OpenGL.TextureBorderColor, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
             gl.FrameBufferTexture2D(OpenGL.FrameBuffer, OpenGL.DepthAttachment, OpenGL.Texture2D, framebuffer.Texture, 0);
             gl.DrawBuffer(OpenGL.None);
             gl.ReadBuffer(OpenGL.None);
@@ -1718,6 +1719,7 @@ namespace Genesis.Graphics.RenderDevice
                         gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
                         gl.Uniform1f(gl.GetUniformLocation(elementShaderID, "lightIntensity"), lightSource.Intensity);
                         gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                        gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
                     }
 
                     gl.ActiveTexture(OpenGL.Texture0);
@@ -2051,9 +2053,9 @@ namespace Genesis.Graphics.RenderDevice
         private void DrawCube(Qube cube)
         {
             // Build the matrices
-            mat4 mt_mat = mat4.Translate(cube.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(cube.Rotation.X) * mat4.RotateY(cube.Rotation.Y) * mat4.RotateZ(cube.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(cube.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(cube);
+            mat4 mr_mat = Utils.GetModelRotation(cube); 
+            mat4 ms_mat = Utils.GetModelScale(cube);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             // Assign the matrices to the shader
@@ -2082,6 +2084,7 @@ namespace Genesis.Graphics.RenderDevice
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
                 gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
             }
 
             gl.ActiveTexture(OpenGL.Texture0);
@@ -2092,6 +2095,14 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindTexture(OpenGL.Texture2D, (int)cube.Material.Propeterys["normal_id"]);
             gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
 
+            if (this.shadowmap != null && gl.GetUniformLocation(shaderID, "lightSpaceMatrix") != -1)
+            {
+                gl.ActiveTexture(OpenGL.Texture2);
+                gl.BindTexture(OpenGL.Texture2D, shadowmap.Texture);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "shadowMap"), 2);
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "lightSpaceMatrix"), 1, false, lightspacematrix.ToArray());
+            }
+
             gl.BindVertexArray((int)cube.Propertys["vao"]);
             gl.DrawArrays(OpenGL.Triangles, 0, (int)cube.Propertys["tris"]);
             gl.BindVertexArray(0);
@@ -2099,9 +2110,9 @@ namespace Genesis.Graphics.RenderDevice
 
         private void DrawSpehere(Sphere sphere)
         {
-            mat4 mt_mat = mat4.Translate(sphere.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(sphere.Rotation.X) * mat4.RotateY(sphere.Rotation.Y) * mat4.RotateZ(sphere.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(sphere.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(sphere);
+            mat4 mr_mat = Utils.GetModelRotation(sphere);
+            mat4 ms_mat = Utils.GetModelScale(sphere);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             // Assign the matrices to the shader
@@ -2481,15 +2492,25 @@ namespace Genesis.Graphics.RenderDevice
         {
             foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
             {
-                Console.WriteLine("Dispose " + item.Key);
+                Debug.WriteLine($"Disposing {item.Key}");
                 this.DisposeShader(item.Value);
+                Debug.WriteLine($"{item.Key} Disposed with Error {gl.GetError()}");
             }
 
             foreach (var item in InstancedShapes)
             {
-                Console.WriteLine("Dispose " + item.Key);
+                Debug.WriteLine($"Disposing {item.Key}");
                 gl.DeleteBuffers(1, item.Value.vbo);
-                Console.WriteLine("Disposed " + item.Key + " with error " + gl.GetError());
+                Debug.WriteLine($"{item.Key} Disposed with Error {gl.GetError()}");
+            }
+
+            if(this.shadowmap != null)
+            {
+                Debug.WriteLine($"Disposing Shadowmap");
+                gl.DeleteTextures(1, this.shadowmap.Texture);
+                gl.DeleteFramebuffers(1, this.shadowmap.FramebufferID);
+                gl.DeleteRenderbuffers(1, this.shadowmap.RenderBuffer);
+                Debug.WriteLine($"Shadowmap Disposed with Error {gl.GetError()}");
             }
         }
 
@@ -2673,6 +2694,7 @@ namespace Genesis.Graphics.RenderDevice
             this.shadowmap = shadowmap;
             this.lightspacematrix = lightspaceMatrix;
 
+            gl.GlCullFace(OpenGL.Front);
             gl.Viewport(0, 0, width, height);
             gl.BindFramebuffer(OpenGL.FrameBuffer, shadowmap.FramebufferID);
             gl.Clear(NetGL.OpenGL.DepthBufferBit);
@@ -2723,6 +2745,7 @@ namespace Genesis.Graphics.RenderDevice
 
         public void FinishShadowPass(Viewport viewport)
         {
+            gl.GlCullFace(OpenGL.Back);
             this.SetViewport(viewport);
             gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
         }
@@ -2869,6 +2892,7 @@ namespace Genesis.Graphics.RenderDevice
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
                 gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
             }
 
             foreach(var mesh in element.Meshes)
