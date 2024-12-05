@@ -50,4 +50,4 @@ GFX Game Engine is licensed under the MIT License. Refer to the License folder f
 
 For the latest updates and community support, visit [GFX Game Engine on GitHub](https://github.com/Andy16823/GFX/tree/main/GFX/GFX%200.1.0.1).
 
-Let your creativity flourish with GFX Game Engine 0.1.2!
+Let your creativity flourish with GFX Game Engine 1.5.0!
