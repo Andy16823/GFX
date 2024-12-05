@@ -22,7 +22,7 @@ GFX uses OpenGL 4.5 as the default renderer, akin to DirectX 11. Custom renderer
 Physics simulation utilizes PhysicHandlers—PhysicHandler3D and PhysicHandler2D—leveraging BulletSharp, a Bullet Physics Wrapper. Custom PhysicHandlers can be developed as needed.
 
 **Supported Games:**
-GFX is ideal for creating 2D games across various genres. The 3D functionalities in version 0.1.2 include basic features like loading and rendering Wavefront and FBX files. However, additional features such as shadow maps are planned for future updates.
+GFX is ideal for 2D games as well as smaller 3D games.
 
 **Asset Loading:**
 Textures and fonts can be loaded easily by placing them in the Resources folder, managed automatically by the Asset Manager. GFX supports texture archiving to streamline project management without the need for additional RAR files. Ensure proper configuration for file copying during the build process.
