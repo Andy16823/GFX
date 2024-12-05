@@ -1,6 +1,6 @@
-**GFX Game Engine 0.1.2**
+**GFX Game Engine 1.5.0**
 
-Welcome to the GFX Game Engine, version 0.1.2!
+Welcome to the GFX Game Engine, version 1.5.0!
 
 **Overview:**
 GFX Game Engine is a robust framework developed in C# for creating both 2D and 3D games. Designed with simplicity in mind, it facilitates easy implementation and management of scenes, game elements, and their components. The engine abstracts rendering, physics, and components to enable seamless customization.
