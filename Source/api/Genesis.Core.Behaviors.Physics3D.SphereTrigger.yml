@@ -6,9 +6,9 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.SphereTrigger.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger
-  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single)
+  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single,System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -77,16 +77,16 @@ items:
   nameWithType.vb: SphereTrigger.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger
-  id: CreateTrigger
+- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Int32,System.Int32)
+  id: CreateTrigger(System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereTrigger
   langs:
   - csharp
   - vb
-  name: CreateTrigger()
-  nameWithType: SphereTrigger.CreateTrigger()
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger()
+  name: CreateTrigger(int, int)
+  nameWithType: SphereTrigger.CreateTrigger(int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -94,20 +94,28 @@ items:
   summary: Creates a trigger with a sphere shape using the default radius (half of the parent's size).
   example: []
   syntax:
-    content: public override void CreateTrigger()
-    content.vb: Public Overrides Sub CreateTrigger()
-  overridden: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+    content: public override void CreateTrigger(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateTrigger(collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single)
-  id: CreateTrigger(System.Single)
+  nameWithType.vb: SphereTrigger.CreateTrigger(Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Integer, Integer)
+  name.vb: CreateTrigger(Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(System.Single,System.Int32,System.Int32)
+  id: CreateTrigger(System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereTrigger
   langs:
   - csharp
   - vb
-  name: CreateTrigger(float)
-  nameWithType: SphereTrigger.CreateTrigger(float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(float)
+  name: CreateTrigger(float, int, int)
+  nameWithType: SphereTrigger.CreateTrigger(float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -115,26 +123,30 @@ items:
   summary: Creates a trigger with a sphere shape at the origin.
   example: []
   syntax:
-    content: public void CreateTrigger(float radius)
+    content: public void CreateTrigger(float radius, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: radius
       type: System.Single
       description: The radius of the sphere.
-    content.vb: Public Sub CreateTrigger(radius As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateTrigger(radius As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger*
-  nameWithType.vb: SphereTrigger.CreateTrigger(Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Single)
-  name.vb: CreateTrigger(Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single)
-  id: CreateTrigger(Genesis.Math.Vec3,System.Single)
+  nameWithType.vb: SphereTrigger.CreateTrigger(Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Single, Integer, Integer)
+  name.vb: CreateTrigger(Single, Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  id: CreateTrigger(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereTrigger
   langs:
   - csharp
   - vb
-  name: CreateTrigger(Vec3, float)
-  nameWithType: SphereTrigger.CreateTrigger(Vec3, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3, float)
+  name: CreateTrigger(Vec3, float, int, int)
+  nameWithType: SphereTrigger.CreateTrigger(Vec3, float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3, float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -142,7 +154,7 @@ items:
   summary: Creates a trigger with a sphere shape at the specified offset.
   example: []
   syntax:
-    content: public void CreateTrigger(Vec3 offset, float radius)
+    content: public void CreateTrigger(Vec3 offset, float radius, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: offset
       type: Genesis.Math.Vec3
@@ -150,11 +162,15 @@ items:
     - id: radius
       type: System.Single
       description: The radius of the sphere.
-    content.vb: Public Sub CreateTrigger(offset As Vec3, radius As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateTrigger(offset As Vec3, radius As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger*
-  nameWithType.vb: SphereTrigger.CreateTrigger(Vec3, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3, Single)
-  name.vb: CreateTrigger(Vec3, Single)
+  nameWithType.vb: SphereTrigger.CreateTrigger(Vec3, Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger(Genesis.Math.Vec3, Single, Integer, Integer)
+  name.vb: CreateTrigger(Vec3, Single, Integer, Integer)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -1027,35 +1043,69 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
-  commentId: M:Genesis.Physics.TriggerBehavior3D.CreateTrigger
+- uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
   parent: Genesis.Physics.TriggerBehavior3D
   isExternal: true
-  href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
-  name: CreateTrigger()
-  nameWithType: TriggerBehavior3D.CreateTrigger()
-  fullName: Genesis.Physics.TriggerBehavior3D.CreateTrigger()
+  href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
+  name: CreateTrigger(int, int)
+  nameWithType: TriggerBehavior3D.CreateTrigger(int, int)
+  fullName: Genesis.Physics.TriggerBehavior3D.CreateTrigger(int, int)
+  nameWithType.vb: TriggerBehavior3D.CreateTrigger(Integer, Integer)
+  fullName.vb: Genesis.Physics.TriggerBehavior3D.CreateTrigger(Integer, Integer)
+  name.vb: CreateTrigger(Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
     name: CreateTrigger
     isExternal: true
-    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
+    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
     name: CreateTrigger
     isExternal: true
-    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
+    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereTrigger.html#Genesis_Core_Behaviors_Physics3D_SphereTrigger_CreateTrigger
+  href: Genesis.Core.Behaviors.Physics3D.SphereTrigger.html#Genesis_Core_Behaviors_Physics3D_SphereTrigger_CreateTrigger_System_Int32_System_Int32_
   name: CreateTrigger
   nameWithType: SphereTrigger.CreateTrigger
   fullName: Genesis.Core.Behaviors.Physics3D.SphereTrigger.CreateTrigger
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Single
   commentId: T:System.Single
   parent: System

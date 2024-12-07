@@ -95,7 +95,6 @@ C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Deb
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Debug\GlmSharp.xml
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Debug\NetGL.pdb
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Debug\Newtonsoft.Json.xml
-C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Debug\OpenObjectLoader.pdb
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\bin\x64\Debug\System.ValueTuple.xml
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\obj\x64\Debug\Genesis.csproj.AssemblyReference.cache
 C:\Users\andy1\Documents\GFX Net Framework\GFX - Exprimental\Genesis\obj\x64\Debug\Genesis.csproj.CoreCompileInputs.cache

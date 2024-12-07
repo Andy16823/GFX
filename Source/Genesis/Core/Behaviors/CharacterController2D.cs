@@ -222,7 +222,7 @@ namespace Genesis.Core.Behaviors
             this.Rigidbody.AngularFactor = angularFactor;
             this.Rigidbody.EnablePhysic = enablePhysics;
             Rigidbody.CreateRigidbody(this.Mass, ColliderRadius, ColliderHeight);
-            Rigidbody.OnCollide += (s, g, objB) =>
+            Rigidbody.OnCollide += (s, g, collision) =>
             {
                 if (!m_collide)
                 {

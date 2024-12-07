@@ -1,5 +1,5 @@
 {
-  "source_base_path": "E:/Own Games/Genesis",
+  "source_base_path": "C:/Users/andy1/Documents/GFX Net Framework/GFX - Exprimental",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -782,6 +782,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.CompoundMeshCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.CompoundMeshCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.yml",
       "output": {
         ".html": {
@@ -796,6 +806,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.Behaviors.Physics3D.MeshCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.Behaviors.Physics3D.MeshCollider.html"
         }
       },
       "version": ""
@@ -906,6 +926,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Behaviors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.DirectionalLight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.DirectionalLight.html"
         }
       },
       "version": ""
@@ -1076,6 +1106,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.GameElements.Skybox.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.GameElements.Sphere.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.GameElements.Sphere.html"
         }
       },
       "version": ""
@@ -1266,6 +1306,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Core.Light2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Core.PointLight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Core.PointLight.html"
         }
       },
       "version": ""
@@ -1592,6 +1642,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Frustum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Frustum.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.Glyphe.yml",
       "output": {
         ".html": {
@@ -1606,6 +1666,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.IRenderDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.InstancedElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.InstancedElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.InstancedMesh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.InstancedMesh.html"
         }
       },
       "version": ""
@@ -1712,10 +1792,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.RenderDevice.LegacyRenerer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.RenderDevice.LegacyRenerer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.RenderDevice.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.RenderDevice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.RenderInstanceContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.RenderInstanceContainer.html"
         }
       },
       "version": ""
@@ -1832,6 +1932,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Element3DShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Element3DShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader.yml",
       "output": {
         ".html": {
@@ -1842,10 +1952,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.InstanceShader2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.InstanceShader2D.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.InstancedShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.InstancedShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.Light2DShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.LightmapShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.LightmapShader.html"
         }
       },
       "version": ""
@@ -1916,6 +2056,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.SolidShapeShader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shaders.OpenGL.SpecularShader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shaders.OpenGL.SpecularShader.html"
         }
       },
       "version": ""
@@ -2056,6 +2206,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Graphics.Shapes.Shape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Graphics.Shapes.SphereShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Graphics.Shapes.SphereShape.html"
         }
       },
       "version": ""
@@ -2222,10 +2382,40 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Physics.CollisionGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Physics.CollisionGroup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Physics.CollisionGroupExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Physics.CollisionGroupExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Genesis.Physics.HitResult.yml",
       "output": {
         ".html": {
           "relative_path": "api/Genesis.Physics.HitResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Genesis.Physics.HitResult2D.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Genesis.Physics.HitResult2D.html"
         }
       },
       "version": ""

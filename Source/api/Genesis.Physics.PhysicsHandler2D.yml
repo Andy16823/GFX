@@ -6,7 +6,7 @@ items:
   parent: Genesis.Physics
   children:
   - Genesis.Physics.PhysicsHandler2D.#ctor(System.Single,System.Single)
-  - Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior)
+  - Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
   - Genesis.Physics.PhysicsHandler2D.PhysicsWorld
   - Genesis.Physics.PhysicsHandler2D.Process(Genesis.Core.Scene,Genesis.Core.Game)
   - Genesis.Physics.PhysicsHandler2D.ProcessPhysics
@@ -32,7 +32,9 @@ items:
   - System.Object
   - Genesis.Physics.PhysicHandler
   inheritedMembers:
+  - Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
   - Genesis.Physics.PhysicHandler.Callbacks
+  - Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -98,16 +100,16 @@ items:
     content.vb: Public Overrides Sub Process(scene As Scene, game As Game)
   overridden: Genesis.Physics.PhysicHandler.Process(Genesis.Core.Scene,Genesis.Core.Game)
   overload: Genesis.Physics.PhysicsHandler2D.Process*
-- uid: Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior)
-  commentId: M:Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior)
-  id: ManageElement(Genesis.Physics.PhysicsBehavior)
+- uid: Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  id: ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
   parent: Genesis.Physics.PhysicsHandler2D
   langs:
   - csharp
   - vb
-  name: ManageElement(PhysicsBehavior)
-  nameWithType: PhysicsHandler2D.ManageElement(PhysicsBehavior)
-  fullName: Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior)
+  name: ManageElement(PhysicsBehavior, int, int)
+  nameWithType: PhysicsHandler2D.ManageElement(PhysicsBehavior, int, int)
+  fullName: Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -115,14 +117,21 @@ items:
   summary: Manages a physics behavior element by adding its RigidBody to the physics world.
   example: []
   syntax:
-    content: public override void ManageElement(PhysicsBehavior physicsBehavior)
+    content: public override void ManageElement(PhysicsBehavior physicsBehavior, int collisionFilterGroup = -1, int collisionMaskGroup = -1)
     parameters:
     - id: physicsBehavior
       type: Genesis.Physics.PhysicsBehavior
       description: The PhysicsBehavior representing the collision object.
-    content.vb: Public Overrides Sub ManageElement(physicsBehavior As PhysicsBehavior)
-  overridden: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+    - id: collisionFilterGroup
+      type: System.Int32
+    - id: collisionMaskGroup
+      type: System.Int32
+    content.vb: Public Overrides Sub ManageElement(physicsBehavior As PhysicsBehavior, collisionFilterGroup As Integer = -1, collisionMaskGroup As Integer = -1)
+  overridden: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
   overload: Genesis.Physics.PhysicsHandler2D.ManageElement*
+  nameWithType.vb: PhysicsHandler2D.ManageElement(PhysicsBehavior, Integer, Integer)
+  fullName.vb: Genesis.Physics.PhysicsHandler2D.ManageElement(Genesis.Physics.PhysicsBehavior, Integer, Integer)
+  name.vb: ManageElement(PhysicsBehavior, Integer, Integer)
 - uid: Genesis.Physics.PhysicsHandler2D.RemoveElement(Genesis.Physics.PhysicsBehavior)
   commentId: M:Genesis.Physics.PhysicsHandler2D.RemoveElement(Genesis.Physics.PhysicsBehavior)
   id: RemoveElement(Genesis.Physics.PhysicsBehavior)
@@ -288,6 +297,48 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
+- uid: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+  commentId: M:Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+  parent: Genesis.Physics.PhysicHandler
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_OnBeforePhysicsUpdate_Genesis_Core_Scene_Genesis_Core_Game_
+  name: OnBeforePhysicsUpdate(Scene, Game)
+  nameWithType: PhysicHandler.OnBeforePhysicsUpdate(Scene, Game)
+  fullName: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene, Genesis.Core.Game)
+  spec.csharp:
+  - uid: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+    name: OnBeforePhysicsUpdate
+    isExternal: true
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_OnBeforePhysicsUpdate_Genesis_Core_Scene_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+    name: OnBeforePhysicsUpdate
+    isExternal: true
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_OnBeforePhysicsUpdate_Genesis_Core_Scene_Genesis_Core_Game_
+  - name: (
+  - uid: Genesis.Core.Scene
+    name: Scene
+    isExternal: true
+    href: Genesis.Core.Scene.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Core.Game
+    name: Game
+    isExternal: true
+    href: Genesis.Core.Game.html
+  - name: )
 - uid: Genesis.Physics.PhysicHandler.Callbacks
   commentId: P:Genesis.Physics.PhysicHandler.Callbacks
   parent: Genesis.Physics.PhysicHandler
@@ -296,6 +347,14 @@ references:
   name: Callbacks
   nameWithType: PhysicHandler.Callbacks
   fullName: Genesis.Physics.PhysicHandler.Callbacks
+- uid: Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
+  commentId: E:Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
+  parent: Genesis.Physics.PhysicHandler
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_BeforePhysicsUpdate
+  name: BeforePhysicsUpdate
+  nameWithType: PhysicHandler.BeforePhysicsUpdate
+  fullName: Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -635,40 +694,67 @@ references:
     name: Core
     isExternal: true
     href: Genesis.Core.html
-- uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
-  commentId: M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+- uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
   parent: Genesis.Physics.PhysicHandler
   isExternal: true
-  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_
-  name: ManageElement(PhysicsBehavior)
-  nameWithType: PhysicHandler.ManageElement(PhysicsBehavior)
-  fullName: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_System_Int32_System_Int32_
+  name: ManageElement(PhysicsBehavior, int, int)
+  nameWithType: PhysicHandler.ManageElement(PhysicsBehavior, int, int)
+  fullName: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior, int, int)
+  nameWithType.vb: PhysicHandler.ManageElement(PhysicsBehavior, Integer, Integer)
+  fullName.vb: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior, Integer, Integer)
+  name.vb: ManageElement(PhysicsBehavior, Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+  - uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
     name: ManageElement
     isExternal: true
-    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_System_Int32_System_Int32_
   - name: (
   - uid: Genesis.Physics.PhysicsBehavior
     name: PhysicsBehavior
     isExternal: true
     href: Genesis.Physics.PhysicsBehavior.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+  - uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
     name: ManageElement
     isExternal: true
-    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_
+    href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_System_Int32_System_Int32_
   - name: (
   - uid: Genesis.Physics.PhysicsBehavior
     name: PhysicsBehavior
     isExternal: true
     href: Genesis.Physics.PhysicsBehavior.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Physics.PhysicsHandler2D.ManageElement*
   commentId: Overload:Genesis.Physics.PhysicsHandler2D.ManageElement
   isExternal: true
-  href: Genesis.Physics.PhysicsHandler2D.html#Genesis_Physics_PhysicsHandler2D_ManageElement_Genesis_Physics_PhysicsBehavior_
+  href: Genesis.Physics.PhysicsHandler2D.html#Genesis_Physics_PhysicsHandler2D_ManageElement_Genesis_Physics_PhysicsBehavior_System_Int32_System_Int32_
   name: ManageElement
   nameWithType: PhysicsHandler2D.ManageElement
   fullName: Genesis.Physics.PhysicsHandler2D.ManageElement
@@ -680,6 +766,17 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   commentId: M:Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   parent: Genesis.Physics.PhysicHandler
@@ -769,14 +866,3 @@ references:
   name: Substepps
   nameWithType: PhysicsHandler2D.Substepps
   fullName: Genesis.Physics.PhysicsHandler2D.Substepps
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer

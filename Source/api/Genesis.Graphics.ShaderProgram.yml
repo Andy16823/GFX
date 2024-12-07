@@ -35,8 +35,12 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.Element3DShader
   - Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  - Genesis.Graphics.Shaders.OpenGL.InstanceShader2D
+  - Genesis.Graphics.Shaders.OpenGL.InstancedShader
   - Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  - Genesis.Graphics.Shaders.OpenGL.LightmapShader
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
@@ -44,6 +48,7 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
   - Genesis.Graphics.Shaders.OpenGL.SolidShapeShader
+  - Genesis.Graphics.Shaders.OpenGL.SpecularShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader
   - Genesis.Graphics.Shaders.OpenGL.TerrainShader
   - Genesis.Graphics.Shaders.OpenGL.WireframeShader

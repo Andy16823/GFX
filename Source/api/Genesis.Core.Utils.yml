@@ -12,6 +12,7 @@ items:
   - Genesis.Core.Utils.CalculateCameraFront2(Genesis.Graphics.Camera)
   - Genesis.Core.Utils.CalculateDirectionVector(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.Utils.CalculateFrontVec3(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)
+  - Genesis.Core.Utils.CalculateLightspaceMatrix(GlmSharp.mat4,GlmSharp.mat4)
   - Genesis.Core.Utils.CalculatePitch(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.Utils.CalculateScreenCorrection(System.Single,System.Single,System.Single,System.Single)
   - Genesis.Core.Utils.CalculateYaw(Genesis.Math.Vec3,Genesis.Math.Vec3)
@@ -22,9 +23,11 @@ items:
   - Genesis.Core.Utils.ConvertToGlmMat4(Assimp.Matrix4x4)
   - Genesis.Core.Utils.CreateEmptyNormalMap(System.Int32,System.Int32)
   - Genesis.Core.Utils.CreateEmptyTexture(System.Int32,System.Int32)
+  - Genesis.Core.Utils.CreateVertexColors(System.Int32,System.Drawing.Color)
   - Genesis.Core.Utils.EulerToQuaternion(Genesis.Math.Vec3)
   - Genesis.Core.Utils.ExtractScaleFromMatrix(BulletSharp.Math.Matrix)
   - Genesis.Core.Utils.ForwardVector(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)
+  - Genesis.Core.Utils.GetBtTransform(Genesis.Core.GameElement,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetCurrentTimeMillis
   - Genesis.Core.Utils.GetElementWorldLocation(Genesis.Core.GameElement)
   - Genesis.Core.Utils.GetElementWorldRotation(Genesis.Core.GameElement)
@@ -49,12 +52,16 @@ items:
   - Genesis.Core.Utils.GetStringBounds(Genesis.Math.Vec3,System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringHeight(System.String,System.Single,System.Single)
   - Genesis.Core.Utils.GetStringWidth(System.String,System.Single,System.Single)
+  - Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3,System.Single)
+  - Genesis.Core.Utils.GetTriangleIndex(Genesis.Core.GameElements.Element3D,Genesis.Math.Vec3)
   - Genesis.Core.Utils.GetVMirroredPosition(Genesis.Math.Vec3,Genesis.Graphics.Camera)
   - Genesis.Core.Utils.GetVMirroredPosition(System.Single,System.Single,System.Single,Genesis.Graphics.Camera)
+  - Genesis.Core.Utils.IsPointInTriangle(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
   - Genesis.Core.Utils.LerpColor(System.Drawing.Color,System.Drawing.Color,System.Single)
   - Genesis.Core.Utils.LookAt(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.LookAtX(Genesis.Graphics.Camera,Genesis.Math.Vec3)
   - Genesis.Core.Utils.LookAtY(Genesis.Graphics.Camera,Genesis.Math.Vec3)
+  - Genesis.Core.Utils.NormalizeAngle(System.Single)
   - Genesis.Core.Utils.RayDirection(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Core.Utils.ToDegrees(System.Single)
   - Genesis.Core.Utils.ToRadians(System.Single)
@@ -1106,6 +1113,34 @@ items:
   nameWithType.vb: Utils.ConvertColor(Color, Boolean)
   fullName.vb: Genesis.Core.Utils.ConvertColor(System.Drawing.Color, Boolean)
   name.vb: ConvertColor(Color, Boolean)
+- uid: Genesis.Core.Utils.CreateVertexColors(System.Int32,System.Drawing.Color)
+  commentId: M:Genesis.Core.Utils.CreateVertexColors(System.Int32,System.Drawing.Color)
+  id: CreateVertexColors(System.Int32,System.Drawing.Color)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: CreateVertexColors(int, Color)
+  nameWithType: Utils.CreateVertexColors(int, Color)
+  fullName: Genesis.Core.Utils.CreateVertexColors(int, System.Drawing.Color)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static float[] CreateVertexColors(int vertexCount, Color color)
+    parameters:
+    - id: vertexCount
+      type: System.Int32
+    - id: color
+      type: System.Drawing.Color
+    return:
+      type: System.Single[]
+    content.vb: Public Shared Function CreateVertexColors(vertexCount As Integer, color As Color) As Single()
+  overload: Genesis.Core.Utils.CreateVertexColors*
+  nameWithType.vb: Utils.CreateVertexColors(Integer, Color)
+  fullName.vb: Genesis.Core.Utils.CreateVertexColors(Integer, System.Drawing.Color)
+  name.vb: CreateVertexColors(Integer, Color)
 - uid: Genesis.Core.Utils.GetRandomColor
   commentId: M:Genesis.Core.Utils.GetRandomColor
   id: GetRandomColor
@@ -1626,19 +1661,29 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: >-
+    Calculates the screen correction factor based on screen dimensions and virtual dimensions,
+
+    ensuring the content fits proportionally.
+  example: []
   syntax:
     content: public static float CalculateScreenCorrection(float screenWidth, float screenHeight, float virtualWidth, float virtualHeight)
     parameters:
     - id: screenWidth
       type: System.Single
+      description: The width of the physical screen.
     - id: screenHeight
       type: System.Single
+      description: The height of the physical screen.
     - id: virtualWidth
       type: System.Single
+      description: The width of the virtual screen.
     - id: virtualHeight
       type: System.Single
+      description: The height of the virtual screen.
     return:
       type: System.Single
+      description: The correction factor for scaling the virtual screen to the physical screen.
     content.vb: Public Shared Function CalculateScreenCorrection(screenWidth As Single, screenHeight As Single, virtualWidth As Single, virtualHeight As Single) As Single
   overload: Genesis.Core.Utils.CalculateScreenCorrection*
   nameWithType.vb: Utils.CalculateScreenCorrection(Single, Single, Single, Single)
@@ -1658,13 +1703,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Extracts the scaling factors from a given transformation matrix.
+  example: []
   syntax:
     content: public static Vector3 ExtractScaleFromMatrix(Matrix matrix)
     parameters:
     - id: matrix
       type: BulletSharp.Math.Matrix
+      description: The transformation matrix from which to extract scale.
     return:
       type: BulletSharp.Math.Vector3
+      description: A vector representing the scale along the X, Y, and Z axes.
     content.vb: Public Shared Function ExtractScaleFromMatrix(matrix As Matrix) As Vector3
   overload: Genesis.Core.Utils.ExtractScaleFromMatrix*
 - uid: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
@@ -1681,17 +1730,23 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Builds a transformation matrix for physics calculations based on location, rotation, and scale.
+  example: []
   syntax:
     content: public static Matrix BuildPhysicsMatrix(Vector3 location, Vector3 rotation, Vector3 scale)
     parameters:
     - id: location
       type: BulletSharp.Math.Vector3
+      description: The position vector.
     - id: rotation
       type: BulletSharp.Math.Vector3
+      description: The rotation vector in Euler angles.
     - id: scale
       type: BulletSharp.Math.Vector3
+      description: The scale vector.
     return:
       type: BulletSharp.Math.Matrix
+      description: A transformation matrix combining translation, rotation, and scaling.
     content.vb: Public Shared Function BuildPhysicsMatrix(location As Vector3, rotation As Vector3, scale As Vector3) As Matrix
   overload: Genesis.Core.Utils.BuildPhysicsMatrix*
 - uid: Genesis.Core.Utils.BuildPhysicsMatrix(BulletSharp.Math.Vector3,BulletSharp.Math.Quaternion,BulletSharp.Math.Vector3)
@@ -1708,19 +1763,213 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Core
+  summary: Builds a transformation matrix for physics calculations based on location, quaternion rotation, and scale.
+  example: []
   syntax:
     content: public static Matrix BuildPhysicsMatrix(Vector3 location, Quaternion rotation, Vector3 scale)
     parameters:
     - id: location
       type: BulletSharp.Math.Vector3
+      description: The position vector.
     - id: rotation
       type: BulletSharp.Math.Quaternion
+      description: The rotation quaternion.
     - id: scale
       type: BulletSharp.Math.Vector3
+      description: The scale vector.
     return:
       type: BulletSharp.Math.Matrix
+      description: A transformation matrix combining translation, quaternion rotation, and scaling.
     content.vb: Public Shared Function BuildPhysicsMatrix(location As Vector3, rotation As Quaternion, scale As Vector3) As Matrix
   overload: Genesis.Core.Utils.BuildPhysicsMatrix*
+- uid: Genesis.Core.Utils.GetTriangleIndex(Genesis.Core.GameElements.Element3D,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetTriangleIndex(Genesis.Core.GameElements.Element3D,Genesis.Math.Vec3)
+  id: GetTriangleIndex(Genesis.Core.GameElements.Element3D,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetTriangleIndex(Element3D, Vec3)
+  nameWithType: Utils.GetTriangleIndex(Element3D, Vec3)
+  fullName: Genesis.Core.Utils.GetTriangleIndex(Genesis.Core.GameElements.Element3D, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets the index of the triangle within a mesh that contains the specified hitpoint.
+  example: []
+  syntax:
+    content: public static int GetTriangleIndex(Element3D element, Vec3 hitpoint)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElements.Element3D
+      description: The 3D element containing the mesh.
+    - id: hitpoint
+      type: Genesis.Math.Vec3
+      description: The point in space to check for containment within a triangle.
+    return:
+      type: System.Int32
+      description: The index of the triangle containing the hitpoint, or -1 if not found.
+    content.vb: Public Shared Function GetTriangleIndex(element As Element3D, hitpoint As Vec3) As Integer
+  overload: Genesis.Core.Utils.GetTriangleIndex*
+- uid: Genesis.Core.Utils.IsPointInTriangle(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  commentId: M:Genesis.Core.Utils.IsPointInTriangle(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  id: IsPointInTriangle(BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3,BulletSharp.Math.Vector3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: IsPointInTriangle(Vector3, Vector3, Vector3, Vector3)
+  nameWithType: Utils.IsPointInTriangle(Vector3, Vector3, Vector3, Vector3)
+  fullName: Genesis.Core.Utils.IsPointInTriangle(BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3, BulletSharp.Math.Vector3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Checks if a given point is inside a specified triangle using barycentric coordinates.
+  example: []
+  syntax:
+    content: public static bool IsPointInTriangle(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
+    parameters:
+    - id: p
+      type: BulletSharp.Math.Vector3
+      description: The point to test.
+    - id: a
+      type: BulletSharp.Math.Vector3
+      description: The first vertex of the triangle.
+    - id: b
+      type: BulletSharp.Math.Vector3
+      description: The second vertex of the triangle.
+    - id: c
+      type: BulletSharp.Math.Vector3
+      description: The third vertex of the triangle.
+    return:
+      type: System.Boolean
+      description: True if the point is inside the triangle; otherwise, false.
+    content.vb: Public Shared Function IsPointInTriangle(p As Vector3, a As Vector3, b As Vector3, c As Vector3) As Boolean
+  overload: Genesis.Core.Utils.IsPointInTriangle*
+- uid: Genesis.Core.Utils.CalculateLightspaceMatrix(GlmSharp.mat4,GlmSharp.mat4)
+  commentId: M:Genesis.Core.Utils.CalculateLightspaceMatrix(GlmSharp.mat4,GlmSharp.mat4)
+  id: CalculateLightspaceMatrix(GlmSharp.mat4,GlmSharp.mat4)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: CalculateLightspaceMatrix(mat4, mat4)
+  nameWithType: Utils.CalculateLightspaceMatrix(mat4, mat4)
+  fullName: Genesis.Core.Utils.CalculateLightspaceMatrix(GlmSharp.mat4, GlmSharp.mat4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Calculates the light space transformation matrix using light projection and view matrices.
+  example: []
+  syntax:
+    content: public static mat4 CalculateLightspaceMatrix(mat4 lightProjection, mat4 lightView)
+    parameters:
+    - id: lightProjection
+      type: GlmSharp.mat4
+      description: The light projection matrix.
+    - id: lightView
+      type: GlmSharp.mat4
+      description: The light view matrix.
+    return:
+      type: GlmSharp.mat4
+      description: The combined light space matrix.
+    content.vb: Public Shared Function CalculateLightspaceMatrix(lightProjection As mat4, lightView As mat4) As mat4
+  overload: Genesis.Core.Utils.CalculateLightspaceMatrix*
+- uid: Genesis.Core.Utils.NormalizeAngle(System.Single)
+  commentId: M:Genesis.Core.Utils.NormalizeAngle(System.Single)
+  id: NormalizeAngle(System.Single)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: NormalizeAngle(float)
+  nameWithType: Utils.NormalizeAngle(float)
+  fullName: Genesis.Core.Utils.NormalizeAngle(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Normalizes an angle to be within the range of -180 to 180 degrees.
+  example: []
+  syntax:
+    content: public static float NormalizeAngle(float angle)
+    parameters:
+    - id: angle
+      type: System.Single
+      description: The angle in degrees to normalize.
+    return:
+      type: System.Single
+      description: The normalized angle within the range -180 to 180.
+    content.vb: Public Shared Function NormalizeAngle(angle As Single) As Single
+  overload: Genesis.Core.Utils.NormalizeAngle*
+  nameWithType.vb: Utils.NormalizeAngle(Single)
+  fullName.vb: Genesis.Core.Utils.NormalizeAngle(Single)
+  name.vb: NormalizeAngle(Single)
+- uid: Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3,System.Single)
+  commentId: M:Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3,System.Single)
+  id: GetTransformedForwardVector(Genesis.Math.Vec3,System.Single)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetTransformedForwardVector(Vec3, float)
+  nameWithType: Utils.GetTransformedForwardVector(Vec3, float)
+  fullName: Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: >-
+    Calculates the transformed forward vector based on the given rotation and distance, 
+
+    using quaternion rotation to avoid gimbal lock issues.
+  remarks: This function is currently under testing and should be used if the original <code>ForwardVector</code> method causes gimbal lock issues.
+  example: []
+  syntax:
+    content: public static Vec3 GetTransformedForwardVector(Vec3 rotation, float dist)
+    parameters:
+    - id: rotation
+      type: Genesis.Math.Vec3
+      description: The rotation in degrees, specified as Euler angles (Pitch, Yaw, Roll).
+    - id: dist
+      type: System.Single
+      description: The distance by which the forward vector is scaled.
+    return:
+      type: Genesis.Math.Vec3
+      description: Returns the calculated forward vector as a <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref>, transformed according to the rotation and scaled by the specified distance.
+    content.vb: Public Shared Function GetTransformedForwardVector(rotation As Vec3, dist As Single) As Vec3
+  overload: Genesis.Core.Utils.GetTransformedForwardVector*
+  nameWithType.vb: Utils.GetTransformedForwardVector(Vec3, Single)
+  fullName.vb: Genesis.Core.Utils.GetTransformedForwardVector(Genesis.Math.Vec3, Single)
+  name.vb: GetTransformedForwardVector(Vec3, Single)
+- uid: Genesis.Core.Utils.GetBtTransform(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  commentId: M:Genesis.Core.Utils.GetBtTransform(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  id: GetBtTransform(Genesis.Core.GameElement,Genesis.Math.Vec3)
+  parent: Genesis.Core.Utils
+  langs:
+  - csharp
+  - vb
+  name: GetBtTransform(GameElement, Vec3)
+  nameWithType: Utils.GetBtTransform(GameElement, Vec3)
+  fullName: Genesis.Core.Utils.GetBtTransform(Genesis.Core.GameElement, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Matrix GetBtTransform(GameElement element, Vec3 offsetLocation = default)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElement
+    - id: offsetLocation
+      type: Genesis.Math.Vec3
+    return:
+      type: BulletSharp.Math.Matrix
+    content.vb: Public Shared Function GetBtTransform(element As GameElement, offsetLocation As Vec3 = Nothing) As Matrix
+  overload: Genesis.Core.Utils.GetBtTransform*
 - uid: Genesis.Core.Utils.#ctor
   commentId: M:Genesis.Core.Utils.#ctor
   id: '#ctor'
@@ -2465,6 +2714,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: (
   - name: )
+- uid: Genesis.Core.Utils.CreateVertexColors*
+  commentId: Overload:Genesis.Core.Utils.CreateVertexColors
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_CreateVertexColors_System_Int32_System_Drawing_Color_
+  name: CreateVertexColors
+  nameWithType: Utils.CreateVertexColors
+  fullName: Genesis.Core.Utils.CreateVertexColors
 - uid: Genesis.Core.Utils.GetRandomColor*
   commentId: Overload:Genesis.Core.Utils.GetRandomColor
   isExternal: true
@@ -2649,6 +2905,93 @@ references:
   name: Quaternion
   nameWithType: Quaternion
   fullName: BulletSharp.Math.Quaternion
+- uid: Genesis.Core.Utils.GetTriangleIndex*
+  commentId: Overload:Genesis.Core.Utils.GetTriangleIndex
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetTriangleIndex_Genesis_Core_GameElements_Element3D_Genesis_Math_Vec3_
+  name: GetTriangleIndex
+  nameWithType: Utils.GetTriangleIndex
+  fullName: Genesis.Core.Utils.GetTriangleIndex
+- uid: Genesis.Core.GameElements.Element3D
+  commentId: T:Genesis.Core.GameElements.Element3D
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html
+  name: Element3D
+  nameWithType: Element3D
+  fullName: Genesis.Core.GameElements.Element3D
+- uid: Genesis.Core.GameElements
+  commentId: N:Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.GameElements
+  nameWithType: Genesis.Core.GameElements
+  fullName: Genesis.Core.GameElements
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.GameElements
+    name: GameElements
+    isExternal: true
+    href: Genesis.Core.GameElements.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.GameElements
+    name: GameElements
+    isExternal: true
+    href: Genesis.Core.GameElements.html
+- uid: Genesis.Core.Utils.IsPointInTriangle*
+  commentId: Overload:Genesis.Core.Utils.IsPointInTriangle
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_IsPointInTriangle_BulletSharp_Math_Vector3_BulletSharp_Math_Vector3_BulletSharp_Math_Vector3_BulletSharp_Math_Vector3_
+  name: IsPointInTriangle
+  nameWithType: Utils.IsPointInTriangle
+  fullName: Genesis.Core.Utils.IsPointInTriangle
+- uid: Genesis.Core.Utils.CalculateLightspaceMatrix*
+  commentId: Overload:Genesis.Core.Utils.CalculateLightspaceMatrix
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_CalculateLightspaceMatrix_GlmSharp_mat4_GlmSharp_mat4_
+  name: CalculateLightspaceMatrix
+  nameWithType: Utils.CalculateLightspaceMatrix
+  fullName: Genesis.Core.Utils.CalculateLightspaceMatrix
+- uid: Genesis.Core.Utils.NormalizeAngle*
+  commentId: Overload:Genesis.Core.Utils.NormalizeAngle
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_NormalizeAngle_System_Single_
+  name: NormalizeAngle
+  nameWithType: Utils.NormalizeAngle
+  fullName: Genesis.Core.Utils.NormalizeAngle
+- uid: Genesis.Core.Utils.GetTransformedForwardVector*
+  commentId: Overload:Genesis.Core.Utils.GetTransformedForwardVector
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetTransformedForwardVector_Genesis_Math_Vec3_System_Single_
+  name: GetTransformedForwardVector
+  nameWithType: Utils.GetTransformedForwardVector
+  fullName: Genesis.Core.Utils.GetTransformedForwardVector
+- uid: Genesis.Core.Utils.GetBtTransform*
+  commentId: Overload:Genesis.Core.Utils.GetBtTransform
+  isExternal: true
+  href: Genesis.Core.Utils.html#Genesis_Core_Utils_GetBtTransform_Genesis_Core_GameElement_Genesis_Math_Vec3_
+  name: GetBtTransform
+  nameWithType: Utils.GetBtTransform
+  fullName: Genesis.Core.Utils.GetBtTransform
 - uid: Genesis.Core.Utils.#ctor*
   commentId: Overload:Genesis.Core.Utils.#ctor
   isExternal: true

@@ -6,8 +6,8 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.BoxTrigger.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger
-  - Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3)
+  - Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -79,16 +79,16 @@ items:
   nameWithType.vb: BoxTrigger.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger
-  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger
-  id: CreateTrigger
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(System.Int32,System.Int32)
+  id: CreateTrigger(System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.BoxTrigger
   langs:
   - csharp
   - vb
-  name: CreateTrigger()
-  nameWithType: BoxTrigger.CreateTrigger()
-  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger()
+  name: CreateTrigger(int, int)
+  nameWithType: BoxTrigger.CreateTrigger(int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -96,20 +96,28 @@ items:
   summary: Creates the trigger using the parent's size half extents.
   example: []
   syntax:
-    content: public override void CreateTrigger()
-    content.vb: Public Overrides Sub CreateTrigger()
-  overridden: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+    content: public override void CreateTrigger(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateTrigger(collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger*
-- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3)
-  id: CreateTrigger(Genesis.Math.Vec3)
+  nameWithType.vb: BoxTrigger.CreateTrigger(Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Integer, Integer)
+  name.vb: CreateTrigger(Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3,System.Int32,System.Int32)
+  id: CreateTrigger(Genesis.Math.Vec3,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.BoxTrigger
   langs:
   - csharp
   - vb
-  name: CreateTrigger(Vec3)
-  nameWithType: BoxTrigger.CreateTrigger(Vec3)
-  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3)
+  name: CreateTrigger(Vec3, int, int)
+  nameWithType: BoxTrigger.CreateTrigger(Vec3, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -117,13 +125,20 @@ items:
   summary: Creates a box trigger with the specified parameters.
   example: []
   syntax:
-    content: public void CreateTrigger(Vec3 boxHalfExtends)
+    content: public void CreateTrigger(Vec3 boxHalfExtends, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: boxHalfExtends
       type: Genesis.Math.Vec3
       description: The half extends of the box trigger.
-    content.vb: Public Sub CreateTrigger(boxHalfExtends As Vec3)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateTrigger(boxHalfExtends As Vec3, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger*
+  nameWithType.vb: BoxTrigger.CreateTrigger(Vec3, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger(Genesis.Math.Vec3, Integer, Integer)
+  name.vb: CreateTrigger(Vec3, Integer, Integer)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -1003,35 +1018,69 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
-  commentId: M:Genesis.Physics.TriggerBehavior3D.CreateTrigger
+- uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
   parent: Genesis.Physics.TriggerBehavior3D
   isExternal: true
-  href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
-  name: CreateTrigger()
-  nameWithType: TriggerBehavior3D.CreateTrigger()
-  fullName: Genesis.Physics.TriggerBehavior3D.CreateTrigger()
+  href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
+  name: CreateTrigger(int, int)
+  nameWithType: TriggerBehavior3D.CreateTrigger(int, int)
+  fullName: Genesis.Physics.TriggerBehavior3D.CreateTrigger(int, int)
+  nameWithType.vb: TriggerBehavior3D.CreateTrigger(Integer, Integer)
+  fullName.vb: Genesis.Physics.TriggerBehavior3D.CreateTrigger(Integer, Integer)
+  name.vb: CreateTrigger(Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
     name: CreateTrigger
     isExternal: true
-    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
+    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger
+  - uid: Genesis.Physics.TriggerBehavior3D.CreateTrigger(System.Int32,System.Int32)
     name: CreateTrigger
     isExternal: true
-    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger
+    href: Genesis.Physics.TriggerBehavior3D.html#Genesis_Physics_TriggerBehavior3D_CreateTrigger_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_CreateTrigger
+  href: Genesis.Core.Behaviors.Physics3D.BoxTrigger.html#Genesis_Core_Behaviors_Physics3D_BoxTrigger_CreateTrigger_System_Int32_System_Int32_
   name: CreateTrigger
   nameWithType: BoxTrigger.CreateTrigger
   fullName: Genesis.Core.Behaviors.Physics3D.BoxTrigger.CreateTrigger
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Math.Vec3
   commentId: T:Genesis.Math.Vec3
   parent: Genesis.Math

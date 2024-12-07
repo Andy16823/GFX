@@ -7,6 +7,7 @@ items:
   children:
   - Genesis.Graphics.Framebuffer.#ctor
   - Genesis.Graphics.Framebuffer.FramebufferID
+  - Genesis.Graphics.Framebuffer.Propertys
   - Genesis.Graphics.Framebuffer.RenderBuffer
   - Genesis.Graphics.Framebuffer.Texture
   - Genesis.Graphics.Framebuffer.ToTexture
@@ -35,6 +36,29 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Framebuffer.#ctor
+  commentId: M:Genesis.Graphics.Framebuffer.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: Framebuffer()
+  nameWithType: Framebuffer.Framebuffer()
+  fullName: Genesis.Graphics.Framebuffer.Framebuffer()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Creates an new framebuffer
+  example: []
+  syntax:
+    content: public Framebuffer()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Framebuffer.#ctor*
+  nameWithType.vb: Framebuffer.New()
+  fullName.vb: Genesis.Graphics.Framebuffer.New()
+  name.vb: New()
 - uid: Genesis.Graphics.Framebuffer.ToTexture
   commentId: M:Genesis.Graphics.Framebuffer.ToTexture
   id: ToTexture
@@ -58,27 +82,6 @@ items:
       description: The converted texture.
     content.vb: Public Function ToTexture() As Texture
   overload: Genesis.Graphics.Framebuffer.ToTexture*
-- uid: Genesis.Graphics.Framebuffer.#ctor
-  commentId: M:Genesis.Graphics.Framebuffer.#ctor
-  id: '#ctor'
-  parent: Genesis.Graphics.Framebuffer
-  langs:
-  - csharp
-  - vb
-  name: Framebuffer()
-  nameWithType: Framebuffer.Framebuffer()
-  fullName: Genesis.Graphics.Framebuffer.Framebuffer()
-  type: Constructor
-  assemblies:
-  - Genesis
-  namespace: Genesis.Graphics
-  syntax:
-    content: public Framebuffer()
-    content.vb: Public Sub New()
-  overload: Genesis.Graphics.Framebuffer.#ctor*
-  nameWithType.vb: Framebuffer.New()
-  fullName.vb: Genesis.Graphics.Framebuffer.New()
-  name.vb: New()
 - uid: Genesis.Graphics.Framebuffer.FramebufferID
   commentId: P:Genesis.Graphics.Framebuffer.FramebufferID
   id: FramebufferID
@@ -148,6 +151,29 @@ items:
       type: System.Int32
     content.vb: Public Property Texture As Integer
   overload: Genesis.Graphics.Framebuffer.Texture*
+- uid: Genesis.Graphics.Framebuffer.Propertys
+  commentId: P:Genesis.Graphics.Framebuffer.Propertys
+  id: Propertys
+  parent: Genesis.Graphics.Framebuffer
+  langs:
+  - csharp
+  - vb
+  name: Propertys
+  nameWithType: Framebuffer.Propertys
+  fullName: Genesis.Graphics.Framebuffer.Propertys
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the propertys for the framebuffer
+  example: []
+  syntax:
+    content: public Dictionary<string, object> Propertys { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property Propertys As Dictionary(Of String, Object)
+  overload: Genesis.Graphics.Framebuffer.Propertys*
 references:
 - uid: Genesis.Graphics
   commentId: N:Genesis.Graphics
@@ -413,6 +439,16 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Genesis.Graphics.Framebuffer.#ctor*
+  commentId: Overload:Genesis.Graphics.Framebuffer.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer__ctor
+  name: Framebuffer
+  nameWithType: Framebuffer.Framebuffer
+  fullName: Genesis.Graphics.Framebuffer.Framebuffer
+  nameWithType.vb: Framebuffer.New
+  fullName.vb: Genesis.Graphics.Framebuffer.New
+  name.vb: New
 - uid: Genesis.Graphics.Framebuffer.ToTexture*
   commentId: Overload:Genesis.Graphics.Framebuffer.ToTexture
   isExternal: true
@@ -428,16 +464,6 @@ references:
   name: Texture
   nameWithType: Texture
   fullName: Genesis.Graphics.Texture
-- uid: Genesis.Graphics.Framebuffer.#ctor*
-  commentId: Overload:Genesis.Graphics.Framebuffer.#ctor
-  isExternal: true
-  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer__ctor
-  name: Framebuffer
-  nameWithType: Framebuffer.Framebuffer
-  fullName: Genesis.Graphics.Framebuffer.Framebuffer
-  nameWithType.vb: Framebuffer.New
-  fullName.vb: Genesis.Graphics.Framebuffer.New
-  name.vb: New
 - uid: Genesis.Graphics.Framebuffer.FramebufferID*
   commentId: Overload:Genesis.Graphics.Framebuffer.FramebufferID
   isExternal: true
@@ -470,3 +496,128 @@ references:
   name: Texture
   nameWithType: Framebuffer.Texture
   fullName: Genesis.Graphics.Framebuffer.Texture
+- uid: Genesis.Graphics.Framebuffer.Propertys*
+  commentId: Overload:Genesis.Graphics.Framebuffer.Propertys
+  isExternal: true
+  href: Genesis.Graphics.Framebuffer.html#Genesis_Graphics_Framebuffer_Propertys
+  name: Propertys
+  nameWithType: Framebuffer.Propertys
+  fullName: Genesis.Graphics.Framebuffer.Propertys
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

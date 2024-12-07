@@ -8,7 +8,7 @@ items:
   - Genesis.Physics.RigidBodyBehavior2D.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(Genesis.Math.Vec3)
   - Genesis.Physics.RigidBodyBehavior2D.AngularVelocity(System.Single)
-  - Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  - Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
   - Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject
   - Genesis.Physics.RigidBodyBehavior2D.GetPhysicsObject``1
   - Genesis.Physics.RigidBodyBehavior2D.LinearVelocity(Genesis.Math.Vec3)
@@ -84,16 +84,16 @@ items:
   nameWithType.vb: RigidBodyBehavior2D.New(PhysicHandler)
   fullName.vb: Genesis.Physics.RigidBodyBehavior2D.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
-  id: CreateRigidBody(System.Single)
+- uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Physics.RigidBodyBehavior2D
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float)
-  nameWithType: RigidBodyBehavior2D.CreateRigidBody(float)
-  fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(float)
+  name: CreateRigidBody(float, int, int)
+  nameWithType: RigidBodyBehavior2D.CreateRigidBody(float, int, int)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -101,16 +101,20 @@ items:
   summary: Creates a rigid body with the specified mass.
   example: []
   syntax:
-    content: public abstract void CreateRigidBody(float mass)
+    content: public abstract void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: mass
       type: System.Single
       description: The mass of the rigid body.
-    content.vb: Public MustOverride Sub CreateRigidBody(mass As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public MustOverride Sub CreateRigidBody(mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody*
-  nameWithType.vb: RigidBodyBehavior2D.CreateRigidBody(Single)
-  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
+  nameWithType.vb: RigidBodyBehavior2D.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
 - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
   commentId: M:Genesis.Physics.RigidBodyBehavior2D.Rotate(Genesis.Math.Vec3)
   id: Rotate(Genesis.Math.Vec3)
@@ -963,7 +967,7 @@ references:
 - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody*
   commentId: Overload:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody
   isExternal: true
-  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   name: CreateRigidBody
   nameWithType: RigidBodyBehavior2D.CreateRigidBody
   fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody
@@ -978,6 +982,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.RigidBodyBehavior2D.Rotate*
   commentId: Overload:Genesis.Physics.RigidBodyBehavior2D.Rotate
   isExternal: true

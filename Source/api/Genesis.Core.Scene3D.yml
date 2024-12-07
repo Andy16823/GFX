@@ -5,11 +5,13 @@ items:
   id: Scene3D
   parent: Genesis.Core
   children:
-  - Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.Light)
+  - Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.DirectionalLight)
   - Genesis.Core.Scene3D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.Scene3D.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.Scene3D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.Scene3D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.Scene3D.RenderShadowMap(Genesis.Core.Light,Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  - Genesis.Core.Scene3D.ShadowResolution
   - Genesis.Core.Scene3D.Skybox
   - Genesis.Core.Scene3D.Sun
   langs:
@@ -70,16 +72,16 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.Light)
-  commentId: M:Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.Light)
-  id: '#ctor(System.String,Genesis.Core.Light)'
+- uid: Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.DirectionalLight)
+  commentId: M:Genesis.Core.Scene3D.#ctor(System.String,Genesis.Core.DirectionalLight)
+  id: '#ctor(System.String,Genesis.Core.DirectionalLight)'
   parent: Genesis.Core.Scene3D
   langs:
   - csharp
   - vb
-  name: Scene3D(string, Light)
-  nameWithType: Scene3D.Scene3D(string, Light)
-  fullName: Genesis.Core.Scene3D.Scene3D(string, Genesis.Core.Light)
+  name: Scene3D(string, DirectionalLight)
+  nameWithType: Scene3D.Scene3D(string, DirectionalLight)
+  fullName: Genesis.Core.Scene3D.Scene3D(string, Genesis.Core.DirectionalLight)
   type: Constructor
   assemblies:
   - Genesis
@@ -87,19 +89,19 @@ items:
   summary: Initializes a new instance of the Scene3D class.
   example: []
   syntax:
-    content: public Scene3D(string name, Light sun)
+    content: public Scene3D(string name, DirectionalLight sun)
     parameters:
     - id: name
       type: System.String
       description: The name of the scene.
     - id: sun
-      type: Genesis.Core.Light
+      type: Genesis.Core.DirectionalLight
       description: The light source (sun) in the scene.
-    content.vb: Public Sub New(name As String, sun As Light)
+    content.vb: Public Sub New(name As String, sun As DirectionalLight)
   overload: Genesis.Core.Scene3D.#ctor*
-  nameWithType.vb: Scene3D.New(String, Light)
-  fullName.vb: Genesis.Core.Scene3D.New(String, Genesis.Core.Light)
-  name.vb: New(String, Light)
+  nameWithType.vb: Scene3D.New(String, DirectionalLight)
+  fullName.vb: Genesis.Core.Scene3D.New(String, Genesis.Core.DirectionalLight)
+  name.vb: New(String, DirectionalLight)
 - uid: Genesis.Core.Scene3D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.Scene3D.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   id: Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
@@ -184,6 +186,31 @@ items:
     content.vb: Public Overrides Sub OnRender(game As Game, renderDevice As IRenderDevice)
   overridden: Genesis.Core.Scene.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   overload: Genesis.Core.Scene3D.OnRender*
+- uid: Genesis.Core.Scene3D.RenderShadowMap(Genesis.Core.Light,Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.Scene3D.RenderShadowMap(Genesis.Core.Light,Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  id: RenderShadowMap(Genesis.Core.Light,Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.Scene3D
+  langs:
+  - csharp
+  - vb
+  name: RenderShadowMap(Light, Game, IRenderDevice)
+  nameWithType: Scene3D.RenderShadowMap(Light, Game, IRenderDevice)
+  fullName: Genesis.Core.Scene3D.RenderShadowMap(Genesis.Core.Light, Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public void RenderShadowMap(Light light, Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: light
+      type: Genesis.Core.Light
+    - id: game
+      type: Genesis.Core.Game
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+    content.vb: Public Sub RenderShadowMap(light As Light, game As Game, renderDevice As IRenderDevice)
+  overload: Genesis.Core.Scene3D.RenderShadowMap*
 - uid: Genesis.Core.Scene3D.OnDestroy(Genesis.Core.Game)
   commentId: M:Genesis.Core.Scene3D.OnDestroy(Genesis.Core.Game)
   id: OnDestroy(Genesis.Core.Game)
@@ -226,11 +253,11 @@ items:
   summary: Gets or sets the light source (sun) in the scene.
   example: []
   syntax:
-    content: public Light Sun { get; set; }
+    content: public DirectionalLight Sun { get; set; }
     parameters: []
     return:
-      type: Genesis.Core.Light
-    content.vb: Public Property Sun As Light
+      type: Genesis.Core.DirectionalLight
+    content.vb: Public Property Sun As DirectionalLight
   overload: Genesis.Core.Scene3D.Sun*
 - uid: Genesis.Core.Scene3D.Skybox
   commentId: P:Genesis.Core.Scene3D.Skybox
@@ -255,6 +282,33 @@ items:
       type: Genesis.Core.GameElements.Skybox
     content.vb: Public Property Skybox As Skybox
   overload: Genesis.Core.Scene3D.Skybox*
+- uid: Genesis.Core.Scene3D.ShadowResolution
+  commentId: P:Genesis.Core.Scene3D.ShadowResolution
+  id: ShadowResolution
+  parent: Genesis.Core.Scene3D
+  langs:
+  - csharp
+  - vb
+  name: ShadowResolution
+  nameWithType: Scene3D.ShadowResolution
+  fullName: Genesis.Core.Scene3D.ShadowResolution
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the resolution of the shadow map.
+  example: []
+  syntax:
+    content: public Vec3 ShadowResolution { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+      description: >-
+        A <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> representing the width, height, and depth (unused) of the shadow map in pixels.
+
+        The default value is (1024, 1024, 0), where the third component is typically not used.
+    content.vb: Public Property ShadowResolution As Vec3
+  overload: Genesis.Core.Scene3D.ShadowResolution*
 references:
 - uid: Genesis.Core
   commentId: N:Genesis.Core
@@ -1334,7 +1388,7 @@ references:
 - uid: Genesis.Core.Scene3D.#ctor*
   commentId: Overload:Genesis.Core.Scene3D.#ctor
   isExternal: true
-  href: Genesis.Core.Scene3D.html#Genesis_Core_Scene3D__ctor_System_String_Genesis_Core_Light_
+  href: Genesis.Core.Scene3D.html#Genesis_Core_Scene3D__ctor_System_String_Genesis_Core_DirectionalLight_
   name: Scene3D
   nameWithType: Scene3D.Scene3D
   fullName: Genesis.Core.Scene3D.Scene3D
@@ -1352,14 +1406,14 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Genesis.Core.Light
-  commentId: T:Genesis.Core.Light
+- uid: Genesis.Core.DirectionalLight
+  commentId: T:Genesis.Core.DirectionalLight
   parent: Genesis.Core
   isExternal: true
-  href: Genesis.Core.Light.html
-  name: Light
-  nameWithType: Light
-  fullName: Genesis.Core.Light
+  href: Genesis.Core.DirectionalLight.html
+  name: DirectionalLight
+  nameWithType: DirectionalLight
+  fullName: Genesis.Core.DirectionalLight
 - uid: Genesis.Core.Scene.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.Scene.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   parent: Genesis.Core.Scene
@@ -1550,6 +1604,21 @@ references:
   name: OnRender
   nameWithType: Scene3D.OnRender
   fullName: Genesis.Core.Scene3D.OnRender
+- uid: Genesis.Core.Scene3D.RenderShadowMap*
+  commentId: Overload:Genesis.Core.Scene3D.RenderShadowMap
+  isExternal: true
+  href: Genesis.Core.Scene3D.html#Genesis_Core_Scene3D_RenderShadowMap_Genesis_Core_Light_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  name: RenderShadowMap
+  nameWithType: Scene3D.RenderShadowMap
+  fullName: Genesis.Core.Scene3D.RenderShadowMap
+- uid: Genesis.Core.Light
+  commentId: T:Genesis.Core.Light
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Light.html
+  name: Light
+  nameWithType: Light
+  fullName: Genesis.Core.Light
 - uid: Genesis.Core.Scene.OnDestroy(Genesis.Core.Game)
   commentId: M:Genesis.Core.Scene.OnDestroy(Genesis.Core.Game)
   parent: Genesis.Core.Scene
@@ -1646,3 +1715,45 @@ references:
     name: GameElements
     isExternal: true
     href: Genesis.Core.GameElements.html
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Core.Scene3D.ShadowResolution*
+  commentId: Overload:Genesis.Core.Scene3D.ShadowResolution
+  isExternal: true
+  href: Genesis.Core.Scene3D.html#Genesis_Core_Scene3D_ShadowResolution
+  name: ShadowResolution
+  nameWithType: Scene3D.ShadowResolution
+  fullName: Genesis.Core.Scene3D.ShadowResolution
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html

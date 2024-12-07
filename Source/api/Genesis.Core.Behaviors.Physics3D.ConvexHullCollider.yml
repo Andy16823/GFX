@@ -6,7 +6,7 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider
+  - Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider(System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -79,16 +79,16 @@ items:
   nameWithType.vb: ConvexHullCollider.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider
-  commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider
-  id: CreateCollider
+- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider(System.Int32,System.Int32)
+  id: CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
   langs:
   - csharp
   - vb
-  name: CreateCollider()
-  nameWithType: ConvexHullCollider.CreateCollider()
-  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider()
+  name: CreateCollider(int, int)
+  nameWithType: ConvexHullCollider.CreateCollider(int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -96,10 +96,18 @@ items:
   summary: Creates the convex hull collider based on the parent's shape.
   example: []
   syntax:
-    content: public override void CreateCollider()
-    content.vb: Public Overrides Sub CreateCollider()
-  overridden: Genesis.Physics.ColliderBehavior3D.CreateCollider
+    content: public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateCollider(collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider*
+  nameWithType.vb: ConvexHullCollider.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -979,32 +987,66 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
-  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider
+- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Physics.ColliderBehavior3D
   isExternal: true
-  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
-  name: CreateCollider()
-  nameWithType: ColliderBehavior3D.CreateCollider()
-  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider()
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
+  name: CreateCollider(int, int)
+  nameWithType: ColliderBehavior3D.CreateCollider(int, int)
+  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider(int, int)
+  nameWithType.vb: ColliderBehavior3D.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.html#Genesis_Core_Behaviors_Physics3D_ConvexHullCollider_CreateCollider
+  href: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.html#Genesis_Core_Behaviors_Physics3D_ConvexHullCollider_CreateCollider_System_Int32_System_Int32_
   name: CreateCollider
   nameWithType: ConvexHullCollider.CreateCollider
   fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullCollider.CreateCollider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

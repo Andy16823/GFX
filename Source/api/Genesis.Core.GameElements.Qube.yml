@@ -9,13 +9,16 @@ items:
   - Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.GameElements.Qube.#ctor(System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Core.GameElements.Qube.Color
+  - Genesis.Core.GameElements.Qube.CreateInstanceContainer(Genesis.Graphics.Material,System.Boolean)
   - Genesis.Core.GameElements.Qube.GetColors(System.Drawing.Color)
+  - Genesis.Core.GameElements.Qube.GetTextureCoordinates(System.Single,System.Single,System.Single)
   - Genesis.Core.GameElements.Qube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Qube.Material
   - Genesis.Core.GameElements.Qube.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.Qube.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Qube.Shader
   - Genesis.Core.GameElements.Qube.Shape
+  - Genesis.Core.GameElements.Qube.ToRenderInstance
   langs:
   - csharp
   - vb
@@ -55,6 +58,7 @@ items:
   - Genesis.Core.GameElement.Children
   - Genesis.Core.GameElement.Parent
   - Genesis.Core.GameElement.UUID
+  - Genesis.Core.GameElement.CastShadows
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -187,6 +191,36 @@ items:
       description: An array of color values for the cube faces.
     content.vb: Public Shared Function GetColors(color As Color) As Single()
   overload: Genesis.Core.GameElements.Qube.GetColors*
+- uid: Genesis.Core.GameElements.Qube.GetTextureCoordinates(System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Core.GameElements.Qube.GetTextureCoordinates(System.Single,System.Single,System.Single)
+  id: GetTextureCoordinates(System.Single,System.Single,System.Single)
+  parent: Genesis.Core.GameElements.Qube
+  langs:
+  - csharp
+  - vb
+  name: GetTextureCoordinates(float, float, float)
+  nameWithType: Qube.GetTextureCoordinates(float, float, float)
+  fullName: Genesis.Core.GameElements.Qube.GetTextureCoordinates(float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public static float[] GetTextureCoordinates(float width, float height, float depth)
+    parameters:
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    - id: depth
+      type: System.Single
+    return:
+      type: System.Single[]
+    content.vb: Public Shared Function GetTextureCoordinates(width As Single, height As Single, depth As Single) As Single()
+  overload: Genesis.Core.GameElements.Qube.GetTextureCoordinates*
+  nameWithType.vb: Qube.GetTextureCoordinates(Single, Single, Single)
+  fullName.vb: Genesis.Core.GameElements.Qube.GetTextureCoordinates(Single, Single, Single)
+  name.vb: GetTextureCoordinates(Single, Single, Single)
 - uid: Genesis.Core.GameElements.Qube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElements.Qube.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   id: Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
@@ -268,6 +302,54 @@ items:
     content.vb: Public Overrides Sub OnDestroy(game As Game)
   overridden: Genesis.Core.GameElement.OnDestroy(Genesis.Core.Game)
   overload: Genesis.Core.GameElements.Qube.OnDestroy*
+- uid: Genesis.Core.GameElements.Qube.ToRenderInstance
+  commentId: M:Genesis.Core.GameElements.Qube.ToRenderInstance
+  id: ToRenderInstance
+  parent: Genesis.Core.GameElements.Qube
+  langs:
+  - csharp
+  - vb
+  name: ToRenderInstance()
+  nameWithType: Qube.ToRenderInstance()
+  fullName: Genesis.Core.GameElements.Qube.ToRenderInstance()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public RenderInstanceContainer ToRenderInstance()
+    return:
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Public Function ToRenderInstance() As RenderInstanceContainer
+  overload: Genesis.Core.GameElements.Qube.ToRenderInstance*
+- uid: Genesis.Core.GameElements.Qube.CreateInstanceContainer(Genesis.Graphics.Material,System.Boolean)
+  commentId: M:Genesis.Core.GameElements.Qube.CreateInstanceContainer(Genesis.Graphics.Material,System.Boolean)
+  id: CreateInstanceContainer(Genesis.Graphics.Material,System.Boolean)
+  parent: Genesis.Core.GameElements.Qube
+  langs:
+  - csharp
+  - vb
+  name: CreateInstanceContainer(Material, bool)
+  nameWithType: Qube.CreateInstanceContainer(Material, bool)
+  fullName: Genesis.Core.GameElements.Qube.CreateInstanceContainer(Genesis.Graphics.Material, bool)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public static RenderInstanceContainer CreateInstanceContainer(Material material, bool updateInstances = false)
+    parameters:
+    - id: material
+      type: Genesis.Graphics.Material
+    - id: updateInstances
+      type: System.Boolean
+    return:
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Public Shared Function CreateInstanceContainer(material As Material, updateInstances As Boolean = False) As RenderInstanceContainer
+  overload: Genesis.Core.GameElements.Qube.CreateInstanceContainer*
+  nameWithType.vb: Qube.CreateInstanceContainer(Material, Boolean)
+  fullName.vb: Genesis.Core.GameElements.Qube.CreateInstanceContainer(Genesis.Graphics.Material, Boolean)
+  name.vb: CreateInstanceContainer(Material, Boolean)
 - uid: Genesis.Core.GameElements.Qube.Shader
   commentId: P:Genesis.Core.GameElements.Qube.Shader
   id: Shader
@@ -779,6 +861,14 @@ references:
   name: UUID
   nameWithType: GameElement.UUID
   fullName: Genesis.Core.GameElement.UUID
+- uid: Genesis.Core.GameElement.CastShadows
+  commentId: P:Genesis.Core.GameElement.CastShadows
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_CastShadows
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -1187,6 +1277,24 @@ references:
     name: Drawing
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.Core.GameElements.Qube.GetTextureCoordinates*
+  commentId: Overload:Genesis.Core.GameElements.Qube.GetTextureCoordinates
+  isExternal: true
+  href: Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_GetTextureCoordinates_System_Single_System_Single_System_Single_
+  name: GetTextureCoordinates
+  nameWithType: Qube.GetTextureCoordinates
+  fullName: Genesis.Core.GameElements.Qube.GetTextureCoordinates
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
 - uid: Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.GameElement.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   parent: Genesis.Core.GameElement
@@ -1365,6 +1473,47 @@ references:
   name: OnDestroy
   nameWithType: Qube.OnDestroy
   fullName: Genesis.Core.GameElements.Qube.OnDestroy
+- uid: Genesis.Core.GameElements.Qube.ToRenderInstance*
+  commentId: Overload:Genesis.Core.GameElements.Qube.ToRenderInstance
+  isExternal: true
+  href: Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_ToRenderInstance
+  name: ToRenderInstance
+  nameWithType: Qube.ToRenderInstance
+  fullName: Genesis.Core.GameElements.Qube.ToRenderInstance
+- uid: Genesis.Graphics.RenderInstanceContainer
+  commentId: T:Genesis.Graphics.RenderInstanceContainer
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderInstanceContainer.html
+  name: RenderInstanceContainer
+  nameWithType: RenderInstanceContainer
+  fullName: Genesis.Graphics.RenderInstanceContainer
+- uid: Genesis.Core.GameElements.Qube.CreateInstanceContainer*
+  commentId: Overload:Genesis.Core.GameElements.Qube.CreateInstanceContainer
+  isExternal: true
+  href: Genesis.Core.GameElements.Qube.html#Genesis_Core_GameElements_Qube_CreateInstanceContainer_Genesis_Graphics_Material_System_Boolean_
+  name: CreateInstanceContainer
+  nameWithType: Qube.CreateInstanceContainer
+  fullName: Genesis.Core.GameElements.Qube.CreateInstanceContainer
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Genesis.Core.GameElements.Qube.Shader*
   commentId: Overload:Genesis.Core.GameElements.Qube.Shader
   isExternal: true
@@ -1387,14 +1536,6 @@ references:
   name: Material
   nameWithType: Qube.Material
   fullName: Genesis.Core.GameElements.Qube.Material
-- uid: Genesis.Graphics.Material
-  commentId: T:Genesis.Graphics.Material
-  parent: Genesis.Graphics
-  isExternal: true
-  href: Genesis.Graphics.Material.html
-  name: Material
-  nameWithType: Material
-  fullName: Genesis.Graphics.Material
 - uid: Genesis.Core.GameElements.Qube.Shape*
   commentId: Overload:Genesis.Core.GameElements.Qube.Shape
   isExternal: true

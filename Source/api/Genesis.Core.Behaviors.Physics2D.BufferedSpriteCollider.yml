@@ -6,7 +6,7 @@ items:
   parent: Genesis.Core.Behaviors.Physics2D
   children:
   - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+  - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(System.Int32,System.Int32)
   - Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   langs:
   - csharp
@@ -75,16 +75,16 @@ items:
   nameWithType.vb: BufferedSpriteCollider.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
-  id: CreateCollider
+- uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(System.Int32,System.Int32)
+  id: CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider
   langs:
   - csharp
   - vb
-  name: CreateCollider()
-  nameWithType: BufferedSpriteCollider.CreateCollider()
-  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider()
+  name: CreateCollider(int, int)
+  nameWithType: BufferedSpriteCollider.CreateCollider(int, int)
+  fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -92,10 +92,18 @@ items:
   summary: Creates a rigid body for the collider.
   example: []
   syntax:
-    content: public override void CreateCollider()
-    content.vb: Public Overrides Sub CreateCollider()
-  overridden: Genesis.Physics.ColliderBehavior2D.CreateCollider
+    content: public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateCollider(collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider*
+  nameWithType.vb: BufferedSpriteCollider.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
 - uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -918,35 +926,69 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
-  commentId: M:Genesis.Physics.ColliderBehavior2D.CreateCollider
+- uid: Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Physics.ColliderBehavior2D
   isExternal: true
-  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
-  name: CreateCollider()
-  nameWithType: ColliderBehavior2D.CreateCollider()
-  fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider()
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider_System_Int32_System_Int32_
+  name: CreateCollider(int, int)
+  nameWithType: ColliderBehavior2D.CreateCollider(int, int)
+  fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider(int, int)
+  nameWithType.vb: ColliderBehavior2D.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Physics.ColliderBehavior2D.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider*
   commentId: Overload:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_CreateCollider
+  href: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.html#Genesis_Core_Behaviors_Physics2D_BufferedSpriteCollider_CreateCollider_System_Int32_System_Int32_
   name: CreateCollider
   nameWithType: BufferedSpriteCollider.CreateCollider
   fullName: Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Physics.ColliderBehavior2D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   parent: Genesis.Physics.ColliderBehavior2D

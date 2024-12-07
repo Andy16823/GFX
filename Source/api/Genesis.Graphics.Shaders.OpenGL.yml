@@ -12,8 +12,12 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.DiffuseNormalShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseShader
   - Genesis.Graphics.Shaders.OpenGL.DiffuseSolidShader
+  - Genesis.Graphics.Shaders.OpenGL.Element3DShader
   - Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+  - Genesis.Graphics.Shaders.OpenGL.InstanceShader2D
+  - Genesis.Graphics.Shaders.OpenGL.InstancedShader
   - Genesis.Graphics.Shaders.OpenGL.Light2DShader
+  - Genesis.Graphics.Shaders.OpenGL.LightmapShader
   - Genesis.Graphics.Shaders.OpenGL.MVPRectShader
   - Genesis.Graphics.Shaders.OpenGL.MVPShader
   - Genesis.Graphics.Shaders.OpenGL.MVPSolidShader
@@ -21,6 +25,7 @@ items:
   - Genesis.Graphics.Shaders.OpenGL.ScreenShader
   - Genesis.Graphics.Shaders.OpenGL.SkyboxShader
   - Genesis.Graphics.Shaders.OpenGL.SolidShapeShader
+  - Genesis.Graphics.Shaders.OpenGL.SpecularShader
   - Genesis.Graphics.Shaders.OpenGL.SpriteShader
   - Genesis.Graphics.Shaders.OpenGL.TerrainShader
   - Genesis.Graphics.Shaders.OpenGL.WireframeShader
@@ -48,6 +53,20 @@ references:
   name: BorderCircleShader
   nameWithType: BorderCircleShader
   fullName: Genesis.Graphics.Shaders.OpenGL.BorderCircleShader
+- uid: Genesis.Graphics.Shaders.OpenGL.SpecularShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.SpecularShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.SpecularShader.html
+  name: SpecularShader
+  nameWithType: SpecularShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.SpecularShader
+- uid: Genesis.Graphics.Shaders.OpenGL.Element3DShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.Element3DShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.Element3DShader.html
+  name: Element3DShader
+  nameWithType: Element3DShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.Element3DShader
 - uid: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
   commentId: T:Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
   isExternal: true
@@ -55,6 +74,20 @@ references:
   name: FXScreenSpaceShadowShader
   nameWithType: FXScreenSpaceShadowShader
   fullName: Genesis.Graphics.Shaders.OpenGL.FXScreenSpaceShadowShader
+- uid: Genesis.Graphics.Shaders.OpenGL.InstancedShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.InstancedShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.InstancedShader.html
+  name: InstancedShader
+  nameWithType: InstancedShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.InstancedShader
+- uid: Genesis.Graphics.Shaders.OpenGL.InstanceShader2D
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.InstanceShader2D
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.InstanceShader2D.html
+  name: InstanceShader2D
+  nameWithType: InstanceShader2D
+  fullName: Genesis.Graphics.Shaders.OpenGL.InstanceShader2D
 - uid: Genesis.Graphics.Shaders.OpenGL.Light2DShader
   commentId: T:Genesis.Graphics.Shaders.OpenGL.Light2DShader
   isExternal: true
@@ -62,6 +95,13 @@ references:
   name: Light2DShader
   nameWithType: Light2DShader
   fullName: Genesis.Graphics.Shaders.OpenGL.Light2DShader
+- uid: Genesis.Graphics.Shaders.OpenGL.LightmapShader
+  commentId: T:Genesis.Graphics.Shaders.OpenGL.LightmapShader
+  isExternal: true
+  href: Genesis.Graphics.Shaders.OpenGL.LightmapShader.html
+  name: LightmapShader
+  nameWithType: LightmapShader
+  fullName: Genesis.Graphics.Shaders.OpenGL.LightmapShader
 - uid: Genesis.Graphics.Shaders.OpenGL.ParticleShader
   commentId: T:Genesis.Graphics.Shaders.OpenGL.ParticleShader
   isExternal: true

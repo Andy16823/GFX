@@ -8,9 +8,15 @@ items:
   - Genesis.Physics.RigidBodyBehavior3D.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Physics.RigidBodyBehavior3D.AngularVelocity(Genesis.Math.Vec3)
   - Genesis.Physics.RigidBodyBehavior3D.AngularVelocity(System.Single,System.Single,System.Single)
-  - Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  - Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  - Genesis.Physics.RigidBodyBehavior3D.GetLocation
   - Genesis.Physics.RigidBodyBehavior3D.GetPhysicsObject
   - Genesis.Physics.RigidBodyBehavior3D.GetPhysicsObject``1
+  - Genesis.Physics.RigidBodyBehavior3D.GetRotation
   - Genesis.Physics.RigidBodyBehavior3D.LinearVelocity(Genesis.Math.Vec3)
   - Genesis.Physics.RigidBodyBehavior3D.LinearVelocity(System.Single,System.Single,System.Single)
   - Genesis.Physics.RigidBodyBehavior3D.Offset
@@ -85,16 +91,16 @@ items:
   nameWithType.vb: RigidBodyBehavior3D.New(PhysicHandler)
   fullName.vb: Genesis.Physics.RigidBodyBehavior3D.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
-  id: CreateRigidBody(System.Single)
+- uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Physics.RigidBodyBehavior3D
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float)
-  nameWithType: RigidBodyBehavior3D.CreateRigidBody(float)
-  fullName: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(float)
+  name: CreateRigidBody(float, int, int)
+  nameWithType: RigidBodyBehavior3D.CreateRigidBody(float, int, int)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -105,15 +111,19 @@ items:
     Implement this method in derived classes to define the specific behavior for creating a rigid body.
   example: []
   syntax:
-    content: public abstract void CreateRigidBody(float mass)
+    content: public abstract void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: mass
       type: System.Single
-    content.vb: Public MustOverride Sub CreateRigidBody(mass As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public MustOverride Sub CreateRigidBody(mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody*
-  nameWithType.vb: RigidBodyBehavior3D.CreateRigidBody(Single)
-  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
+  nameWithType.vb: RigidBodyBehavior3D.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
 - uid: Genesis.Physics.RigidBodyBehavior3D.Rotate(Genesis.Math.Vec3)
   commentId: M:Genesis.Physics.RigidBodyBehavior3D.Rotate(Genesis.Math.Vec3)
   id: Rotate(Genesis.Math.Vec3)
@@ -342,6 +352,165 @@ items:
       description: Linear velocity vector.
     content.vb: Public Overridable Sub LinearVelocity(value As Vec3)
   overload: Genesis.Physics.RigidBodyBehavior3D.LinearVelocity*
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  id: GetLinearVelocity
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: GetLinearVelocity()
+  nameWithType: RigidBodyBehavior3D.GetLinearVelocity()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Gets the current linear velocity of the rigid body.
+  example: []
+  syntax:
+    content: public Vec3 GetLinearVelocity()
+    return:
+      type: Genesis.Math.Vec3
+      description: A vector representing the linear velocity.
+    content.vb: Public Function GetLinearVelocity() As Vec3
+  overload: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity*
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  id: GetRotation
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: GetRotation()
+  nameWithType: RigidBodyBehavior3D.GetRotation()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetRotation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Gets the current rotation of the rigid body as a quaternion.
+  example: []
+  syntax:
+    content: public Quaternion GetRotation()
+    return:
+      type: BulletSharp.Math.Quaternion
+      description: The quaternion representing the rotation of the rigid body.
+    content.vb: Public Function GetRotation() As Quaternion
+  overload: Genesis.Physics.RigidBodyBehavior3D.GetRotation*
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  id: GetLocation
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: GetLocation()
+  nameWithType: RigidBodyBehavior3D.GetLocation()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLocation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Gets the current location of the rigid body.
+  example: []
+  syntax:
+    content: public Vec3 GetLocation()
+    return:
+      type: Genesis.Math.Vec3
+      description: A vector representing the position of the rigid body.
+    content.vb: Public Function GetLocation() As Vec3
+  overload: Genesis.Physics.RigidBodyBehavior3D.GetLocation*
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  id: CalculateForwardVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: CalculateForwardVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateForwardVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Calculates the forward vector of the rigid body based on its rotation and a specified distance.
+  example: []
+  syntax:
+    content: public Vec3 CalculateForwardVector(float distance)
+    parameters:
+    - id: distance
+      type: System.Single
+      description: The distance to scale the forward vector.
+    return:
+      type: Genesis.Math.Vec3
+      description: The forward vector scaled by the specified distance.
+    content.vb: Public Function CalculateForwardVector(distance As Single) As Vec3
+  overload: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector*
+  nameWithType.vb: RigidBodyBehavior3D.CalculateForwardVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(Single)
+  name.vb: CalculateForwardVector(Single)
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  id: CalculateRightVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: CalculateRightVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateRightVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Calculates the right vector of the rigid body based on its rotation and a specified distance.
+  example: []
+  syntax:
+    content: public Vec3 CalculateRightVector(float distance)
+    parameters:
+    - id: distance
+      type: System.Single
+      description: The distance to scale the right vector.
+    return:
+      type: Genesis.Math.Vec3
+      description: The right vector scaled by the specified distance.
+    content.vb: Public Function CalculateRightVector(distance As Single) As Vec3
+  overload: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector*
+  nameWithType.vb: RigidBodyBehavior3D.CalculateRightVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(Single)
+  name.vb: CalculateRightVector(Single)
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+  id: CalculateUpVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  langs:
+  - csharp
+  - vb
+  name: CalculateUpVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateUpVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Calculates the up vector of the rigid body based on its rotation and a specified distance.
+  example: []
+  syntax:
+    content: public Vec3 CalculateUpVector(float distance)
+    parameters:
+    - id: distance
+      type: System.Single
+      description: The distance to scale the up vector.
+    return:
+      type: Genesis.Math.Vec3
+      description: The up vector scaled by the specified distance.
+    content.vb: Public Function CalculateUpVector(distance As Single) As Vec3
+  overload: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector*
+  nameWithType.vb: RigidBodyBehavior3D.CalculateUpVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(Single)
+  name.vb: CalculateUpVector(Single)
 - uid: Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   id: OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -985,7 +1154,7 @@ references:
 - uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody*
   commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody
   isExternal: true
-  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   name: CreateRigidBody
   nameWithType: RigidBodyBehavior3D.CreateRigidBody
   fullName: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody
@@ -1000,6 +1169,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.RigidBodyBehavior3D.Rotate*
   commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.Rotate
   isExternal: true
@@ -1063,6 +1243,77 @@ references:
   name: LinearVelocity
   nameWithType: RigidBodyBehavior3D.LinearVelocity
   fullName: Genesis.Physics.RigidBodyBehavior3D.LinearVelocity
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLinearVelocity
+  name: GetLinearVelocity
+  nameWithType: RigidBodyBehavior3D.GetLinearVelocity
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetRotation*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetRotation
+  name: GetRotation
+  nameWithType: RigidBodyBehavior3D.GetRotation
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetRotation
+- uid: BulletSharp.Math.Quaternion
+  commentId: T:BulletSharp.Math.Quaternion
+  parent: BulletSharp.Math
+  isExternal: true
+  name: Quaternion
+  nameWithType: Quaternion
+  fullName: BulletSharp.Math.Quaternion
+- uid: BulletSharp.Math
+  commentId: N:BulletSharp.Math
+  isExternal: true
+  name: BulletSharp.Math
+  nameWithType: BulletSharp.Math
+  fullName: BulletSharp.Math
+  spec.csharp:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+  spec.vb:
+  - uid: BulletSharp
+    name: BulletSharp
+    isExternal: true
+  - name: .
+  - uid: BulletSharp.Math
+    name: Math
+    isExternal: true
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLocation*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLocation
+  name: GetLocation
+  nameWithType: RigidBodyBehavior3D.GetLocation
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLocation
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateForwardVector_System_Single_
+  name: CalculateForwardVector
+  nameWithType: RigidBodyBehavior3D.CalculateForwardVector
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateRightVector_System_Single_
+  name: CalculateRightVector
+  nameWithType: RigidBodyBehavior3D.CalculateRightVector
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector*
+  commentId: Overload:Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateUpVector_System_Single_
+  name: CalculateUpVector
+  nameWithType: RigidBodyBehavior3D.CalculateUpVector
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector
 - uid: Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Core.IGameBehavior.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   parent: Genesis.Core.IGameBehavior

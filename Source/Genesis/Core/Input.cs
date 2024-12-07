@@ -1,6 +1,7 @@
 ﻿using Genesis.Math;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -206,6 +207,16 @@ namespace Genesis.Core
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool SetCursorPos(int X, int Y);
 
+        private static Dictionary<Keys, bool> m_keyStateHistory = new Dictionary<Keys, bool>();
+
+        static Input()
+        {
+            foreach (Keys key in Enum.GetValues(typeof(Keys)))
+            {
+                m_keyStateHistory[key] = false;
+            }
+        }
+
         /// <summary>
         /// Checks if the specified key is currently pressed.
         /// </summary>
@@ -236,6 +247,27 @@ namespace Genesis.Core
         {
             short key = (short)(GetAsyncKeyState((int) vKey) & 0x8000);
             return Convert.ToBoolean(key);
+        }
+
+        // <summary>
+        /// Checks if a key was just pressed down (Key Hit).
+        /// </summary>
+        /// <param name="vKey">The virtual key to check.</param>
+        /// <returns><c>true</c> if the key was just pressed down; otherwise, <c>false</c>.</returns>
+        public static bool IsKeyHit(Keys vKey)
+        {
+            bool isKeyDown = IsKeyDown(vKey);
+            if (isKeyDown && !m_keyStateHistory[vKey])
+            {
+                m_keyStateHistory[vKey] = true;
+                return true;
+            }
+            else if(!isKeyDown)
+            {
+                m_keyStateHistory[vKey] = false;
+            }
+
+            return false;
         }
 
         /// <summary>

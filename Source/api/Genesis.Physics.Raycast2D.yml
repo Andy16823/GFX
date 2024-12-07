@@ -6,6 +6,8 @@ items:
   parent: Genesis.Physics
   children:
   - Genesis.Physics.Raycast2D.#ctor
+  - Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.GameElement[])
+  - Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.Scene)
   - Genesis.Physics.Raycast2D.RayIntersects(Genesis.Physics.Ray2D,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3@)
   - Genesis.Physics.Raycast2D.RayIntersectsAABB(Genesis.Physics.Ray2D,Genesis.Physics.Aabb,Genesis.Math.Vec3@)
   langs:
@@ -18,6 +20,8 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Physics
+  summary: Provides methods to perform raycasting in a 2D scene and retrieve intersection information.
+  example: []
   syntax:
     content: public class Raycast2D
     content.vb: Public Class Raycast2D
@@ -31,6 +35,69 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
+- uid: Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.Scene)
+  commentId: M:Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.Scene)
+  id: PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.Scene)
+  parent: Genesis.Physics.Raycast2D
+  langs:
+  - csharp
+  - vb
+  name: PerformCastAll(Ray2D, Scene)
+  nameWithType: Raycast2D.PerformCastAll(Ray2D, Scene)
+  fullName: Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D, Genesis.Core.Scene)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Casts a ray in a scene and returns all hit results for elements intersected by the ray.
+  example: []
+  syntax:
+    content: public static List<HitResult2D> PerformCastAll(Ray2D ray, Scene scene)
+    parameters:
+    - id: ray
+      type: Genesis.Physics.Ray2D
+      description: The 2D ray to cast.
+    - id: scene
+      type: Genesis.Core.Scene
+      description: The scene containing elements to test for intersections.
+    return:
+      type: System.Collections.Generic.List{Genesis.Physics.HitResult2D}
+      description: A list of <xref href="Genesis.Physics.HitResult2D" data-throw-if-not-resolved="false"></xref> representing all intersection results.
+    content.vb: Public Shared Function PerformCastAll(ray As Ray2D, scene As Scene) As List(Of HitResult2D)
+  overload: Genesis.Physics.Raycast2D.PerformCastAll*
+- uid: Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.GameElement[])
+  commentId: M:Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.GameElement[])
+  id: PerformCastAll(Genesis.Physics.Ray2D,Genesis.Core.GameElement[])
+  parent: Genesis.Physics.Raycast2D
+  langs:
+  - csharp
+  - vb
+  name: PerformCastAll(Ray2D, GameElement[])
+  nameWithType: Raycast2D.PerformCastAll(Ray2D, GameElement[])
+  fullName: Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D, Genesis.Core.GameElement[])
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Casts a ray against an array of game elements and returns all hit results.
+  example: []
+  syntax:
+    content: public static List<HitResult2D> PerformCastAll(Ray2D ray, GameElement[] elements)
+    parameters:
+    - id: ray
+      type: Genesis.Physics.Ray2D
+      description: The 2D ray to cast.
+    - id: elements
+      type: Genesis.Core.GameElement[]
+      description: An array of game elements to test for intersections.
+    return:
+      type: System.Collections.Generic.List{Genesis.Physics.HitResult2D}
+      description: A list of <xref href="Genesis.Physics.HitResult2D" data-throw-if-not-resolved="false"></xref> containing all intersection results.
+    content.vb: Public Shared Function PerformCastAll(ray As Ray2D, elements As GameElement()) As List(Of HitResult2D)
+  overload: Genesis.Physics.Raycast2D.PerformCastAll*
+  nameWithType.vb: Raycast2D.PerformCastAll(Ray2D, GameElement())
+  fullName.vb: Genesis.Physics.Raycast2D.PerformCastAll(Genesis.Physics.Ray2D, Genesis.Core.GameElement())
+  name.vb: PerformCastAll(Ray2D, GameElement())
 - uid: Genesis.Physics.Raycast2D.RayIntersectsAABB(Genesis.Physics.Ray2D,Genesis.Physics.Aabb,Genesis.Math.Vec3@)
   commentId: M:Genesis.Physics.Raycast2D.RayIntersectsAABB(Genesis.Physics.Ray2D,Genesis.Physics.Aabb,Genesis.Math.Vec3@)
   id: RayIntersectsAABB(Genesis.Physics.Ray2D,Genesis.Physics.Aabb,Genesis.Math.Vec3@)
@@ -392,13 +459,20 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Genesis.Physics.Raycast2D.RayIntersectsAABB*
-  commentId: Overload:Genesis.Physics.Raycast2D.RayIntersectsAABB
+- uid: Genesis.Physics.HitResult2D
+  commentId: T:Genesis.Physics.HitResult2D
   isExternal: true
-  href: Genesis.Physics.Raycast2D.html#Genesis_Physics_Raycast2D_RayIntersectsAABB_Genesis_Physics_Ray2D_Genesis_Physics_Aabb_Genesis_Math_Vec3__
-  name: RayIntersectsAABB
-  nameWithType: Raycast2D.RayIntersectsAABB
-  fullName: Genesis.Physics.Raycast2D.RayIntersectsAABB
+  href: Genesis.Physics.HitResult2D.html
+  name: HitResult2D
+  nameWithType: HitResult2D
+  fullName: Genesis.Physics.HitResult2D
+- uid: Genesis.Physics.Raycast2D.PerformCastAll*
+  commentId: Overload:Genesis.Physics.Raycast2D.PerformCastAll
+  isExternal: true
+  href: Genesis.Physics.Raycast2D.html#Genesis_Physics_Raycast2D_PerformCastAll_Genesis_Physics_Ray2D_Genesis_Core_Scene_
+  name: PerformCastAll
+  nameWithType: Raycast2D.PerformCastAll
+  fullName: Genesis.Physics.Raycast2D.PerformCastAll
 - uid: Genesis.Physics.Ray2D
   commentId: T:Genesis.Physics.Ray2D
   parent: Genesis.Physics
@@ -407,6 +481,171 @@ references:
   name: Ray2D
   nameWithType: Ray2D
   fullName: Genesis.Physics.Ray2D
+- uid: Genesis.Core.Scene
+  commentId: T:Genesis.Core.Scene
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Scene.html
+  name: Scene
+  nameWithType: Scene
+  fullName: Genesis.Core.Scene
+- uid: System.Collections.Generic.List{Genesis.Physics.HitResult2D}
+  commentId: T:System.Collections.Generic.List{Genesis.Physics.HitResult2D}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<HitResult2D>
+  nameWithType: List<HitResult2D>
+  fullName: System.Collections.Generic.List<Genesis.Physics.HitResult2D>
+  nameWithType.vb: List(Of HitResult2D)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Physics.HitResult2D)
+  name.vb: List(Of HitResult2D)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Physics.HitResult2D
+    name: HitResult2D
+    isExternal: true
+    href: Genesis.Physics.HitResult2D.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Physics.HitResult2D
+    name: HitResult2D
+    isExternal: true
+    href: Genesis.Physics.HitResult2D.html
+  - name: )
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Core.GameElement[]
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement[]
+  nameWithType: GameElement[]
+  fullName: Genesis.Core.GameElement[]
+  nameWithType.vb: GameElement()
+  fullName.vb: Genesis.Core.GameElement()
+  name.vb: GameElement()
+  spec.csharp:
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: (
+  - name: )
+- uid: Genesis.Physics.Raycast2D.RayIntersectsAABB*
+  commentId: Overload:Genesis.Physics.Raycast2D.RayIntersectsAABB
+  isExternal: true
+  href: Genesis.Physics.Raycast2D.html#Genesis_Physics_Raycast2D_RayIntersectsAABB_Genesis_Physics_Ray2D_Genesis_Physics_Aabb_Genesis_Math_Vec3__
+  name: RayIntersectsAABB
+  nameWithType: Raycast2D.RayIntersectsAABB
+  fullName: Genesis.Physics.Raycast2D.RayIntersectsAABB
 - uid: Genesis.Physics.Aabb
   commentId: T:Genesis.Physics.Aabb
   parent: Genesis.Physics

@@ -10,6 +10,7 @@ items:
   - Genesis.Core.GameElement.AddBehavior``1(``0)
   - Genesis.Core.GameElement.AddChild(Genesis.Core.GameElement)
   - Genesis.Core.GameElement.Behaviors
+  - Genesis.Core.GameElement.CastShadows
   - Genesis.Core.GameElement.Children
   - Genesis.Core.GameElement.Enabled
   - Genesis.Core.GameElement.GetBehavior``1
@@ -56,11 +57,14 @@ items:
   - Genesis.Core.GameElements.ParticleEmitter
   - Genesis.Core.GameElements.Qube
   - Genesis.Core.GameElements.RectElement
+  - Genesis.Core.GameElements.Sphere
   - Genesis.Core.GameElements.Sprite
   - Genesis.Core.GameElements.Terrain2D
   - Genesis.Core.GameElements.Terrain3D
   - Genesis.Core.Light
   - Genesis.Core.Light2D
+  - Genesis.Graphics.InstancedElement
+  - Genesis.Graphics.RenderInstanceContainer
   inheritedMembers:
   - System.Object.ToString
   - System.Object.Equals(System.Object)
@@ -453,11 +457,11 @@ items:
   summary: Gets or sets the 3D coordinates of the game element.
   example: []
   syntax:
-    content: public Vec3 Location { get; set; }
+    content: public virtual Vec3 Location { get; set; }
     parameters: []
     return:
       type: Genesis.Math.Vec3
-    content.vb: Public Property Location As Vec3
+    content.vb: Public Overridable Property Location As Vec3
   overload: Genesis.Core.GameElement.Location*
 - uid: Genesis.Core.GameElement.Rotation
   commentId: P:Genesis.Core.GameElement.Rotation
@@ -476,11 +480,11 @@ items:
   summary: Gets or sets the 3D rotation of the game element.
   example: []
   syntax:
-    content: public Vec3 Rotation { get; set; }
+    content: public virtual Vec3 Rotation { get; set; }
     parameters: []
     return:
       type: Genesis.Math.Vec3
-    content.vb: Public Property Rotation As Vec3
+    content.vb: Public Overridable Property Rotation As Vec3
   overload: Genesis.Core.GameElement.Rotation*
 - uid: Genesis.Core.GameElement.Size
   commentId: P:Genesis.Core.GameElement.Size
@@ -499,11 +503,11 @@ items:
   summary: Gets or sets the 3D size of the game element.
   example: []
   syntax:
-    content: public Vec3 Size { get; set; }
+    content: public virtual Vec3 Size { get; set; }
     parameters: []
     return:
       type: Genesis.Math.Vec3
-    content.vb: Public Property Size As Vec3
+    content.vb: Public Overridable Property Size As Vec3
   overload: Genesis.Core.GameElement.Size*
 - uid: Genesis.Core.GameElement.Behaviors
   commentId: P:Genesis.Core.GameElement.Behaviors
@@ -666,6 +670,32 @@ items:
       type: System.String
     content.vb: Public Property UUID As String
   overload: Genesis.Core.GameElement.UUID*
+- uid: Genesis.Core.GameElement.CastShadows
+  commentId: P:Genesis.Core.GameElement.CastShadows
+  id: CastShadows
+  parent: Genesis.Core.GameElement
+  langs:
+  - csharp
+  - vb
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: >-
+    Gets or sets a value indicating whether the 3D element casts shadows. 
+
+    Shadows are currently only supported for 3D elements.
+  example: []
+  syntax:
+    content: public bool CastShadows { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property CastShadows As Boolean
+  overload: Genesis.Core.GameElement.CastShadows*
 references:
 - uid: Genesis.Core
   commentId: N:Genesis.Core
@@ -1445,3 +1475,10 @@ references:
   name: UUID
   nameWithType: GameElement.UUID
   fullName: Genesis.Core.GameElement.UUID
+- uid: Genesis.Core.GameElement.CastShadows*
+  commentId: Overload:Genesis.Core.GameElement.CastShadows
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_CastShadows
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows

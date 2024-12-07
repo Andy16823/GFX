@@ -9,17 +9,20 @@ items:
   - Genesis.Graphics.IRenderDevice.BuildFramebuffer(System.Int32,System.Int32)
   - Genesis.Graphics.IRenderDevice.BuildFramebuffer(System.Int32,System.Int32,Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.BuildFramebuffer(System.Int32,System.Int32,System.Int32)
+  - Genesis.Graphics.IRenderDevice.BuildShadowMap(System.Int32,System.Int32)
   - Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer(System.Single[])
   - Genesis.Graphics.IRenderDevice.Dispose
   - Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
   - Genesis.Graphics.IRenderDevice.DisposeElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.DisposeFont(Genesis.Graphics.Font)
+  - Genesis.Graphics.IRenderDevice.DisposeInstance(Genesis.Graphics.RenderInstanceContainer)
   - Genesis.Graphics.IRenderDevice.DisposeTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.DrawBufferedSprite(Genesis.Core.GameElements.BufferedSprite)
   - Genesis.Graphics.IRenderDevice.DrawCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color,System.Single)
   - Genesis.Graphics.IRenderDevice.DrawElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.DrawGameElement(Genesis.Core.GameElement)
+  - Genesis.Graphics.IRenderDevice.DrawInstance(Genesis.Graphics.RenderInstanceContainer)
   - Genesis.Graphics.IRenderDevice.DrawLine(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.DrawMesh(Genesis.Graphics.Mesh,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.DrawRect(Genesis.Math.Rect,System.Drawing.Color)
@@ -34,18 +37,24 @@ items:
   - Genesis.Graphics.IRenderDevice.DrawString(System.String,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Font,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.DrawTexture(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single,Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.DrawVectors(Genesis.Math.Vec3[],System.Drawing.Color)
+  - Genesis.Graphics.IRenderDevice.EditBufferSubData(System.Int32,System.Int32,System.Single[])
   - Genesis.Graphics.IRenderDevice.End
   - Genesis.Graphics.IRenderDevice.FillCircle(Genesis.Math.Vec3,System.Single,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.FillRect(Genesis.Math.Rect,System.Drawing.Color)
   - Genesis.Graphics.IRenderDevice.FinishCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.Graphics.IRenderDevice.FinishLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.FinishSceneRendering(Genesis.Core.Scene)
+  - Genesis.Graphics.IRenderDevice.FinishShadowPass(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Core.Light)
   - Genesis.Graphics.IRenderDevice.GetError
   - Genesis.Graphics.IRenderDevice.GetHandle
   - Genesis.Graphics.IRenderDevice.Init
   - Genesis.Graphics.IRenderDevice.InitElement3D(Genesis.Core.GameElements.Element3D)
   - Genesis.Graphics.IRenderDevice.InitGameElement(Genesis.Core.GameElement)
+  - Genesis.Graphics.IRenderDevice.InitInstance(Genesis.Graphics.RenderInstanceContainer)
+  - Genesis.Graphics.IRenderDevice.InitMaterial(Genesis.Graphics.Material)
   - Genesis.Graphics.IRenderDevice.InitSprite(Genesis.Core.GameElements.Sprite)
+  - Genesis.Graphics.IRenderDevice.IsMaterialLoaded(Genesis.Graphics.Material)
   - Genesis.Graphics.IRenderDevice.LoadFont(Genesis.Graphics.Font)
   - Genesis.Graphics.IRenderDevice.LoadTexture(Genesis.Graphics.Texture)
   - Genesis.Graphics.IRenderDevice.ModelViewMatrix
@@ -53,13 +62,17 @@ items:
   - Genesis.Graphics.IRenderDevice.PrepareCanvasRendering(Genesis.Core.Scene,Genesis.UI.Canvas)
   - Genesis.Graphics.IRenderDevice.PrepareLightmap2D(Genesis.Core.Scene,Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.PrepareSceneRendering(Genesis.Core.Scene)
+  - Genesis.Graphics.IRenderDevice.PrepareShadowPass(Genesis.Graphics.Framebuffer,GlmSharp.mat4)
   - Genesis.Graphics.IRenderDevice.ProjectionMatrix
   - Genesis.Graphics.IRenderDevice.PushMatrix
+  - Genesis.Graphics.IRenderDevice.RenderShadowmap(Genesis.Graphics.Framebuffer,GlmSharp.mat4,Genesis.Core.Scene3D)
   - Genesis.Graphics.IRenderDevice.Rotate(System.Single,Genesis.Math.Vec3)
   - Genesis.Graphics.IRenderDevice.SetCamera(Genesis.Graphics.Viewport,Genesis.Graphics.Camera)
   - Genesis.Graphics.IRenderDevice.SetFramebuffer(Genesis.Graphics.Framebuffer)
   - Genesis.Graphics.IRenderDevice.SetFramebuffer(System.Int32)
   - Genesis.Graphics.IRenderDevice.SetLightSource(Genesis.Core.Light)
+  - Genesis.Graphics.IRenderDevice.SetProjectionMatrix(GlmSharp.mat4)
+  - Genesis.Graphics.IRenderDevice.SetViewMatrix(GlmSharp.mat4)
   - Genesis.Graphics.IRenderDevice.SetViewport(Genesis.Graphics.Viewport)
   - Genesis.Graphics.IRenderDevice.TextureClampS
   - Genesis.Graphics.IRenderDevice.TextureClampT
@@ -103,6 +116,27 @@ items:
     content: void Init()
     content.vb: Sub Init()
   overload: Genesis.Graphics.IRenderDevice.Init*
+- uid: Genesis.Graphics.IRenderDevice.InitInstance(Genesis.Graphics.RenderInstanceContainer)
+  commentId: M:Genesis.Graphics.IRenderDevice.InitInstance(Genesis.Graphics.RenderInstanceContainer)
+  id: InitInstance(Genesis.Graphics.RenderInstanceContainer)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: InitInstance(RenderInstanceContainer)
+  nameWithType: IRenderDevice.InitInstance(RenderInstanceContainer)
+  fullName: Genesis.Graphics.IRenderDevice.InitInstance(Genesis.Graphics.RenderInstanceContainer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void InitInstance(RenderInstanceContainer element)
+    parameters:
+    - id: element
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Sub InitInstance(element As RenderInstanceContainer)
+  overload: Genesis.Graphics.IRenderDevice.InitInstance*
 - uid: Genesis.Graphics.IRenderDevice.InitGameElement(Genesis.Core.GameElement)
   commentId: M:Genesis.Graphics.IRenderDevice.InitGameElement(Genesis.Core.GameElement)
   id: InitGameElement(Genesis.Core.GameElement)
@@ -149,6 +183,53 @@ items:
       type: Genesis.Core.GameElements.Sprite
     content.vb: Sub InitSprite(sprite As Sprite)
   overload: Genesis.Graphics.IRenderDevice.InitSprite*
+- uid: Genesis.Graphics.IRenderDevice.IsMaterialLoaded(Genesis.Graphics.Material)
+  commentId: M:Genesis.Graphics.IRenderDevice.IsMaterialLoaded(Genesis.Graphics.Material)
+  id: IsMaterialLoaded(Genesis.Graphics.Material)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: IsMaterialLoaded(Material)
+  nameWithType: IRenderDevice.IsMaterialLoaded(Material)
+  fullName: Genesis.Graphics.IRenderDevice.IsMaterialLoaded(Genesis.Graphics.Material)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: bool IsMaterialLoaded(Material material)
+    parameters:
+    - id: material
+      type: Genesis.Graphics.Material
+    return:
+      type: System.Boolean
+    content.vb: Function IsMaterialLoaded(material As Material) As Boolean
+  overload: Genesis.Graphics.IRenderDevice.IsMaterialLoaded*
+- uid: Genesis.Graphics.IRenderDevice.InitMaterial(Genesis.Graphics.Material)
+  commentId: M:Genesis.Graphics.IRenderDevice.InitMaterial(Genesis.Graphics.Material)
+  id: InitMaterial(Genesis.Graphics.Material)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: InitMaterial(Material)
+  nameWithType: IRenderDevice.InitMaterial(Material)
+  fullName: Genesis.Graphics.IRenderDevice.InitMaterial(Genesis.Graphics.Material)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Initialize a material for rendering
+  example: []
+  syntax:
+    content: void InitMaterial(Material material)
+    parameters:
+    - id: material
+      type: Genesis.Graphics.Material
+      description: ''
+    content.vb: Sub InitMaterial(material As Material)
+  overload: Genesis.Graphics.IRenderDevice.InitMaterial*
 - uid: Genesis.Graphics.IRenderDevice.InitElement3D(Genesis.Core.GameElements.Element3D)
   commentId: M:Genesis.Graphics.IRenderDevice.InitElement3D(Genesis.Core.GameElements.Element3D)
   id: InitElement3D(Genesis.Core.GameElements.Element3D)
@@ -212,6 +293,34 @@ items:
     content: void End()
     content.vb: Sub [End]()
   overload: Genesis.Graphics.IRenderDevice.End*
+- uid: Genesis.Graphics.IRenderDevice.EditBufferSubData(System.Int32,System.Int32,System.Single[])
+  commentId: M:Genesis.Graphics.IRenderDevice.EditBufferSubData(System.Int32,System.Int32,System.Single[])
+  id: EditBufferSubData(System.Int32,System.Int32,System.Single[])
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: EditBufferSubData(int, int, float[])
+  nameWithType: IRenderDevice.EditBufferSubData(int, int, float[])
+  fullName: Genesis.Graphics.IRenderDevice.EditBufferSubData(int, int, float[])
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void EditBufferSubData(int bufferId, int offset, float[] data)
+    parameters:
+    - id: bufferId
+      type: System.Int32
+    - id: offset
+      type: System.Int32
+    - id: data
+      type: System.Single[]
+    content.vb: Sub EditBufferSubData(bufferId As Integer, offset As Integer, data As Single())
+  overload: Genesis.Graphics.IRenderDevice.EditBufferSubData*
+  nameWithType.vb: IRenderDevice.EditBufferSubData(Integer, Integer, Single())
+  fullName.vb: Genesis.Graphics.IRenderDevice.EditBufferSubData(Integer, Integer, Single())
+  name.vb: EditBufferSubData(Integer, Integer, Single())
 - uid: Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer(System.Single[])
   commentId: M:Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer(System.Single[])
   id: CreateDynamicVertexBuffer(System.Single[])
@@ -272,6 +381,159 @@ items:
   nameWithType.vb: IRenderDevice.CreateStaticVertexBuffer(Single())
   fullName.vb: Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer(Single())
   name.vb: CreateStaticVertexBuffer(Single())
+- uid: Genesis.Graphics.IRenderDevice.BuildShadowMap(System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.IRenderDevice.BuildShadowMap(System.Int32,System.Int32)
+  id: BuildShadowMap(System.Int32,System.Int32)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: BuildShadowMap(int, int)
+  nameWithType: IRenderDevice.BuildShadowMap(int, int)
+  fullName: Genesis.Graphics.IRenderDevice.BuildShadowMap(int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Builds a framebuffer for rendering shadow maps.
+  example: []
+  syntax:
+    content: Framebuffer BuildShadowMap(int width, int height)
+    parameters:
+    - id: width
+      type: System.Int32
+      description: The width of the framebuffer.
+    - id: height
+      type: System.Int32
+      description: The height of the framebuffer.
+    return:
+      type: Genesis.Graphics.Framebuffer
+      description: A framebuffer object configured for shadow mapping.
+    content.vb: Function BuildShadowMap(width As Integer, height As Integer) As Framebuffer
+  overload: Genesis.Graphics.IRenderDevice.BuildShadowMap*
+  nameWithType.vb: IRenderDevice.BuildShadowMap(Integer, Integer)
+  fullName.vb: Genesis.Graphics.IRenderDevice.BuildShadowMap(Integer, Integer)
+  name.vb: BuildShadowMap(Integer, Integer)
+- uid: Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Core.Light)
+  commentId: M:Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Core.Light)
+  id: GenerateLightspaceMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Core.Light)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: GenerateLightspaceMatrix(Camera, Viewport, Light)
+  nameWithType: IRenderDevice.GenerateLightspaceMatrix(Camera, Viewport, Light)
+  fullName: Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Core.Light)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: >-
+    Generates a matrix that transforms coordinates from world space to light space.
+
+    This matrix is used to project the scene from the perspective of the light source.
+  example: []
+  syntax:
+    content: mat4 GenerateLightspaceMatrix(Camera camera, Viewport viewport, Light lightSource)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera object used to generate the view matrix. This is typically a camera with a perspective or orthographic projection.
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport from the current render target
+    - id: lightSource
+      type: Genesis.Core.Light
+      description: The light source used to compute the light space matrix. This includes information like position and direction of the light.
+    return:
+      type: GlmSharp.mat4
+      description: A 4x4 matrix representing the light space transformation.
+    content.vb: Function GenerateLightspaceMatrix(camera As Camera, viewport As Viewport, lightSource As Light) As mat4
+  overload: Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix*
+- uid: Genesis.Graphics.IRenderDevice.PrepareShadowPass(Genesis.Graphics.Framebuffer,GlmSharp.mat4)
+  commentId: M:Genesis.Graphics.IRenderDevice.PrepareShadowPass(Genesis.Graphics.Framebuffer,GlmSharp.mat4)
+  id: PrepareShadowPass(Genesis.Graphics.Framebuffer,GlmSharp.mat4)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: PrepareShadowPass(Framebuffer, mat4)
+  nameWithType: IRenderDevice.PrepareShadowPass(Framebuffer, mat4)
+  fullName: Genesis.Graphics.IRenderDevice.PrepareShadowPass(Genesis.Graphics.Framebuffer, GlmSharp.mat4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Prepares the framebuffer and matrix for rendering shadows. This setup is necessary before rendering the scene to the shadow map.
+  example: []
+  syntax:
+    content: void PrepareShadowPass(Framebuffer shadowmap, mat4 lightspaceMatrix)
+    parameters:
+    - id: shadowmap
+      type: Genesis.Graphics.Framebuffer
+      description: The framebuffer that will be used to render the shadow map.
+    - id: lightspaceMatrix
+      type: GlmSharp.mat4
+      description: The matrix used to transform scene coordinates into light space for shadow mapping.
+    content.vb: Sub PrepareShadowPass(shadowmap As Framebuffer, lightspaceMatrix As mat4)
+  overload: Genesis.Graphics.IRenderDevice.PrepareShadowPass*
+- uid: Genesis.Graphics.IRenderDevice.RenderShadowmap(Genesis.Graphics.Framebuffer,GlmSharp.mat4,Genesis.Core.Scene3D)
+  commentId: M:Genesis.Graphics.IRenderDevice.RenderShadowmap(Genesis.Graphics.Framebuffer,GlmSharp.mat4,Genesis.Core.Scene3D)
+  id: RenderShadowmap(Genesis.Graphics.Framebuffer,GlmSharp.mat4,Genesis.Core.Scene3D)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: RenderShadowmap(Framebuffer, mat4, Scene3D)
+  nameWithType: IRenderDevice.RenderShadowmap(Framebuffer, mat4, Scene3D)
+  fullName: Genesis.Graphics.IRenderDevice.RenderShadowmap(Genesis.Graphics.Framebuffer, GlmSharp.mat4, Genesis.Core.Scene3D)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Renders the scene from the perspective of the light source into the shadow map framebuffer. This creates the shadow map texture used for shadow testing.
+  example: []
+  syntax:
+    content: void RenderShadowmap(Framebuffer shadowmap, mat4 lightspaceMatrix, Scene3D scene)
+    parameters:
+    - id: shadowmap
+      type: Genesis.Graphics.Framebuffer
+      description: The framebuffer where the shadow map will be rendered.
+    - id: lightspaceMatrix
+      type: GlmSharp.mat4
+      description: The matrix that transforms scene coordinates into light space.
+    - id: scene
+      type: Genesis.Core.Scene3D
+      description: The 3D scene to be rendered into the shadow map.
+    content.vb: Sub RenderShadowmap(shadowmap As Framebuffer, lightspaceMatrix As mat4, scene As Scene3D)
+  overload: Genesis.Graphics.IRenderDevice.RenderShadowmap*
+- uid: Genesis.Graphics.IRenderDevice.FinishShadowPass(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.IRenderDevice.FinishShadowPass(Genesis.Graphics.Viewport)
+  id: FinishShadowPass(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: FinishShadowPass(Viewport)
+  nameWithType: IRenderDevice.FinishShadowPass(Viewport)
+  fullName: Genesis.Graphics.IRenderDevice.FinishShadowPass(Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: >-
+    Completes the shadow pass by finalizing any state changes or cleanup required after rendering the shadow map.
+
+    This may involve restoring viewport settings or other post-processing tasks.
+  example: []
+  syntax:
+    content: void FinishShadowPass(Viewport viewport)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport object representing the final render area on the screen or in the context.
+    content.vb: Sub FinishShadowPass(viewport As Viewport)
+  overload: Genesis.Graphics.IRenderDevice.FinishShadowPass*
 - uid: Genesis.Graphics.IRenderDevice.BuildFramebuffer(System.Int32,System.Int32)
   commentId: M:Genesis.Graphics.IRenderDevice.BuildFramebuffer(System.Int32,System.Int32)
   id: BuildFramebuffer(System.Int32,System.Int32)
@@ -887,6 +1149,27 @@ items:
       description: The game element to draw.
     content.vb: Sub DrawGameElement(element As GameElement)
   overload: Genesis.Graphics.IRenderDevice.DrawGameElement*
+- uid: Genesis.Graphics.IRenderDevice.DrawInstance(Genesis.Graphics.RenderInstanceContainer)
+  commentId: M:Genesis.Graphics.IRenderDevice.DrawInstance(Genesis.Graphics.RenderInstanceContainer)
+  id: DrawInstance(Genesis.Graphics.RenderInstanceContainer)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: DrawInstance(RenderInstanceContainer)
+  nameWithType: IRenderDevice.DrawInstance(RenderInstanceContainer)
+  fullName: Genesis.Graphics.IRenderDevice.DrawInstance(Genesis.Graphics.RenderInstanceContainer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void DrawInstance(RenderInstanceContainer element)
+    parameters:
+    - id: element
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Sub DrawInstance(element As RenderInstanceContainer)
+  overload: Genesis.Graphics.IRenderDevice.DrawInstance*
 - uid: Genesis.Graphics.IRenderDevice.DrawSprite(Genesis.Core.GameElements.Sprite)
   commentId: M:Genesis.Graphics.IRenderDevice.DrawSprite(Genesis.Core.GameElements.Sprite)
   id: DrawSprite(Genesis.Core.GameElements.Sprite)
@@ -1515,6 +1798,27 @@ items:
       description: The font to dispose.
     content.vb: Sub DisposeFont(font As Font)
   overload: Genesis.Graphics.IRenderDevice.DisposeFont*
+- uid: Genesis.Graphics.IRenderDevice.DisposeInstance(Genesis.Graphics.RenderInstanceContainer)
+  commentId: M:Genesis.Graphics.IRenderDevice.DisposeInstance(Genesis.Graphics.RenderInstanceContainer)
+  id: DisposeInstance(Genesis.Graphics.RenderInstanceContainer)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: DisposeInstance(RenderInstanceContainer)
+  nameWithType: IRenderDevice.DisposeInstance(RenderInstanceContainer)
+  fullName: Genesis.Graphics.IRenderDevice.DisposeInstance(Genesis.Graphics.RenderInstanceContainer)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void DisposeInstance(RenderInstanceContainer element)
+    parameters:
+    - id: element
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Sub DisposeInstance(element As RenderInstanceContainer)
+  overload: Genesis.Graphics.IRenderDevice.DisposeInstance*
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
   commentId: M:Genesis.Graphics.IRenderDevice.DisposeElement(Genesis.Core.GameElement)
   id: DisposeElement(Genesis.Core.GameElement)
@@ -1563,6 +1867,48 @@ items:
       description: The 3D element to dispose.
     content.vb: Sub DisposeElement3D(element As Element3D)
   overload: Genesis.Graphics.IRenderDevice.DisposeElement3D*
+- uid: Genesis.Graphics.IRenderDevice.SetProjectionMatrix(GlmSharp.mat4)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetProjectionMatrix(GlmSharp.mat4)
+  id: SetProjectionMatrix(GlmSharp.mat4)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: SetProjectionMatrix(mat4)
+  nameWithType: IRenderDevice.SetProjectionMatrix(mat4)
+  fullName: Genesis.Graphics.IRenderDevice.SetProjectionMatrix(GlmSharp.mat4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void SetProjectionMatrix(mat4 projectionMatrix)
+    parameters:
+    - id: projectionMatrix
+      type: GlmSharp.mat4
+    content.vb: Sub SetProjectionMatrix(projectionMatrix As mat4)
+  overload: Genesis.Graphics.IRenderDevice.SetProjectionMatrix*
+- uid: Genesis.Graphics.IRenderDevice.SetViewMatrix(GlmSharp.mat4)
+  commentId: M:Genesis.Graphics.IRenderDevice.SetViewMatrix(GlmSharp.mat4)
+  id: SetViewMatrix(GlmSharp.mat4)
+  parent: Genesis.Graphics.IRenderDevice
+  langs:
+  - csharp
+  - vb
+  name: SetViewMatrix(mat4)
+  nameWithType: IRenderDevice.SetViewMatrix(mat4)
+  fullName: Genesis.Graphics.IRenderDevice.SetViewMatrix(GlmSharp.mat4)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: void SetViewMatrix(mat4 viewMatrix)
+    parameters:
+    - id: viewMatrix
+      type: GlmSharp.mat4
+    content.vb: Sub SetViewMatrix(viewMatrix As mat4)
+  overload: Genesis.Graphics.IRenderDevice.SetViewMatrix*
 - uid: Genesis.Graphics.IRenderDevice.ModelViewMatrix
   commentId: M:Genesis.Graphics.IRenderDevice.ModelViewMatrix
   id: ModelViewMatrix
@@ -1784,6 +2130,21 @@ references:
   name: Init
   nameWithType: IRenderDevice.Init
   fullName: Genesis.Graphics.IRenderDevice.Init
+- uid: Genesis.Graphics.IRenderDevice.InitInstance*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.InitInstance
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_InitInstance_Genesis_Graphics_RenderInstanceContainer_
+  name: InitInstance
+  nameWithType: IRenderDevice.InitInstance
+  fullName: Genesis.Graphics.IRenderDevice.InitInstance
+- uid: Genesis.Graphics.RenderInstanceContainer
+  commentId: T:Genesis.Graphics.RenderInstanceContainer
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderInstanceContainer.html
+  name: RenderInstanceContainer
+  nameWithType: RenderInstanceContainer
+  fullName: Genesis.Graphics.RenderInstanceContainer
 - uid: Genesis.Graphics.IRenderDevice.InitGameElement*
   commentId: Overload:Genesis.Graphics.IRenderDevice.InitGameElement
   isExternal: true
@@ -1878,6 +2239,46 @@ references:
     name: GameElements
     isExternal: true
     href: Genesis.Core.GameElements.html
+- uid: Genesis.Graphics.IRenderDevice.IsMaterialLoaded*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.IsMaterialLoaded
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_IsMaterialLoaded_Genesis_Graphics_Material_
+  name: IsMaterialLoaded
+  nameWithType: IRenderDevice.IsMaterialLoaded
+  fullName: Genesis.Graphics.IRenderDevice.IsMaterialLoaded
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.IRenderDevice.InitMaterial*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.InitMaterial
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_InitMaterial_Genesis_Graphics_Material_
+  name: InitMaterial
+  nameWithType: IRenderDevice.InitMaterial
+  fullName: Genesis.Graphics.IRenderDevice.InitMaterial
 - uid: Genesis.Graphics.IRenderDevice.InitElement3D*
   commentId: Overload:Genesis.Graphics.IRenderDevice.InitElement3D
   isExternal: true
@@ -1907,13 +2308,24 @@ references:
   name: End
   nameWithType: IRenderDevice.End
   fullName: Genesis.Graphics.IRenderDevice.End
-- uid: Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer*
-  commentId: Overload:Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer
+- uid: Genesis.Graphics.IRenderDevice.EditBufferSubData*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.EditBufferSubData
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_CreateDynamicVertexBuffer_System_Single___
-  name: CreateDynamicVertexBuffer
-  nameWithType: IRenderDevice.CreateDynamicVertexBuffer
-  fullName: Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_EditBufferSubData_System_Int32_System_Int32_System_Single___
+  name: EditBufferSubData
+  nameWithType: IRenderDevice.EditBufferSubData
+  fullName: Genesis.Graphics.IRenderDevice.EditBufferSubData
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Single[]
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.single
@@ -1937,24 +2349,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.single
   - name: (
   - name: )
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
+- uid: Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_CreateDynamicVertexBuffer_System_Single___
+  name: CreateDynamicVertexBuffer
+  nameWithType: IRenderDevice.CreateDynamicVertexBuffer
+  fullName: Genesis.Graphics.IRenderDevice.CreateDynamicVertexBuffer
 - uid: Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer*
   commentId: Overload:Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer
   isExternal: true
@@ -1962,13 +2363,13 @@ references:
   name: CreateStaticVertexBuffer
   nameWithType: IRenderDevice.CreateStaticVertexBuffer
   fullName: Genesis.Graphics.IRenderDevice.CreateStaticVertexBuffer
-- uid: Genesis.Graphics.IRenderDevice.BuildFramebuffer*
-  commentId: Overload:Genesis.Graphics.IRenderDevice.BuildFramebuffer
+- uid: Genesis.Graphics.IRenderDevice.BuildShadowMap*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.BuildShadowMap
   isExternal: true
-  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_BuildFramebuffer_System_Int32_System_Int32_
-  name: BuildFramebuffer
-  nameWithType: IRenderDevice.BuildFramebuffer
-  fullName: Genesis.Graphics.IRenderDevice.BuildFramebuffer
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_BuildShadowMap_System_Int32_System_Int32_
+  name: BuildShadowMap
+  nameWithType: IRenderDevice.BuildShadowMap
+  fullName: Genesis.Graphics.IRenderDevice.BuildShadowMap
 - uid: Genesis.Graphics.Framebuffer
   commentId: T:Genesis.Graphics.Framebuffer
   parent: Genesis.Graphics
@@ -1977,6 +2378,86 @@ references:
   name: Framebuffer
   nameWithType: Framebuffer
   fullName: Genesis.Graphics.Framebuffer
+- uid: Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_GenerateLightspaceMatrix_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_Genesis_Core_Light_
+  name: GenerateLightspaceMatrix
+  nameWithType: IRenderDevice.GenerateLightspaceMatrix
+  fullName: Genesis.Graphics.IRenderDevice.GenerateLightspaceMatrix
+- uid: Genesis.Graphics.Camera
+  commentId: T:Genesis.Graphics.Camera
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Camera.html
+  name: Camera
+  nameWithType: Camera
+  fullName: Genesis.Graphics.Camera
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
+- uid: Genesis.Core.Light
+  commentId: T:Genesis.Core.Light
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Light.html
+  name: Light
+  nameWithType: Light
+  fullName: Genesis.Core.Light
+- uid: GlmSharp.mat4
+  commentId: T:GlmSharp.mat4
+  parent: GlmSharp
+  isExternal: true
+  name: mat4
+  nameWithType: mat4
+  fullName: GlmSharp.mat4
+- uid: GlmSharp
+  commentId: N:GlmSharp
+  isExternal: true
+  name: GlmSharp
+  nameWithType: GlmSharp
+  fullName: GlmSharp
+- uid: Genesis.Graphics.IRenderDevice.PrepareShadowPass*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.PrepareShadowPass
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_PrepareShadowPass_Genesis_Graphics_Framebuffer_GlmSharp_mat4_
+  name: PrepareShadowPass
+  nameWithType: IRenderDevice.PrepareShadowPass
+  fullName: Genesis.Graphics.IRenderDevice.PrepareShadowPass
+- uid: Genesis.Graphics.IRenderDevice.RenderShadowmap*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.RenderShadowmap
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_RenderShadowmap_Genesis_Graphics_Framebuffer_GlmSharp_mat4_Genesis_Core_Scene3D_
+  name: RenderShadowmap
+  nameWithType: IRenderDevice.RenderShadowmap
+  fullName: Genesis.Graphics.IRenderDevice.RenderShadowmap
+- uid: Genesis.Core.Scene3D
+  commentId: T:Genesis.Core.Scene3D
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Scene3D.html
+  name: Scene3D
+  nameWithType: Scene3D
+  fullName: Genesis.Core.Scene3D
+- uid: Genesis.Graphics.IRenderDevice.FinishShadowPass*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.FinishShadowPass
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_FinishShadowPass_Genesis_Graphics_Viewport_
+  name: FinishShadowPass
+  nameWithType: IRenderDevice.FinishShadowPass
+  fullName: Genesis.Graphics.IRenderDevice.FinishShadowPass
+- uid: Genesis.Graphics.IRenderDevice.BuildFramebuffer*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.BuildFramebuffer
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_BuildFramebuffer_System_Int32_System_Int32_
+  name: BuildFramebuffer
+  nameWithType: IRenderDevice.BuildFramebuffer
+  fullName: Genesis.Graphics.IRenderDevice.BuildFramebuffer
 - uid: Genesis.Graphics.Texture
   commentId: T:Genesis.Graphics.Texture
   parent: Genesis.Graphics
@@ -2113,22 +2594,6 @@ references:
   name: SetCamera
   nameWithType: IRenderDevice.SetCamera
   fullName: Genesis.Graphics.IRenderDevice.SetCamera
-- uid: Genesis.Graphics.Viewport
-  commentId: T:Genesis.Graphics.Viewport
-  parent: Genesis.Graphics
-  isExternal: true
-  href: Genesis.Graphics.Viewport.html
-  name: Viewport
-  nameWithType: Viewport
-  fullName: Genesis.Graphics.Viewport
-- uid: Genesis.Graphics.Camera
-  commentId: T:Genesis.Graphics.Camera
-  parent: Genesis.Graphics
-  isExternal: true
-  href: Genesis.Graphics.Camera.html
-  name: Camera
-  nameWithType: Camera
-  fullName: Genesis.Graphics.Camera
 - uid: Genesis.Graphics.IRenderDevice.SetLightSource*
   commentId: Overload:Genesis.Graphics.IRenderDevice.SetLightSource
   isExternal: true
@@ -2136,14 +2601,6 @@ references:
   name: SetLightSource
   nameWithType: IRenderDevice.SetLightSource
   fullName: Genesis.Graphics.IRenderDevice.SetLightSource
-- uid: Genesis.Core.Light
-  commentId: T:Genesis.Core.Light
-  parent: Genesis.Core
-  isExternal: true
-  href: Genesis.Core.Light.html
-  name: Light
-  nameWithType: Light
-  fullName: Genesis.Core.Light
 - uid: Genesis.Graphics.IRenderDevice.PushMatrix*
   commentId: Overload:Genesis.Graphics.IRenderDevice.PushMatrix
   isExternal: true
@@ -2232,6 +2689,13 @@ references:
   name: DrawGameElement
   nameWithType: IRenderDevice.DrawGameElement
   fullName: Genesis.Graphics.IRenderDevice.DrawGameElement
+- uid: Genesis.Graphics.IRenderDevice.DrawInstance*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DrawInstance
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DrawInstance_Genesis_Graphics_RenderInstanceContainer_
+  name: DrawInstance
+  nameWithType: IRenderDevice.DrawInstance
+  fullName: Genesis.Graphics.IRenderDevice.DrawInstance
 - uid: Genesis.Graphics.IRenderDevice.DrawSprite*
   commentId: Overload:Genesis.Graphics.IRenderDevice.DrawSprite
   isExternal: true
@@ -2446,6 +2910,13 @@ references:
   name: DisposeFont
   nameWithType: IRenderDevice.DisposeFont
   fullName: Genesis.Graphics.IRenderDevice.DisposeFont
+- uid: Genesis.Graphics.IRenderDevice.DisposeInstance*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeInstance
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_DisposeInstance_Genesis_Graphics_RenderInstanceContainer_
+  name: DisposeInstance
+  nameWithType: IRenderDevice.DisposeInstance
+  fullName: Genesis.Graphics.IRenderDevice.DisposeInstance
 - uid: Genesis.Graphics.IRenderDevice.DisposeElement*
   commentId: Overload:Genesis.Graphics.IRenderDevice.DisposeElement
   isExternal: true
@@ -2460,6 +2931,20 @@ references:
   name: DisposeElement3D
   nameWithType: IRenderDevice.DisposeElement3D
   fullName: Genesis.Graphics.IRenderDevice.DisposeElement3D
+- uid: Genesis.Graphics.IRenderDevice.SetProjectionMatrix*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.SetProjectionMatrix
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetProjectionMatrix_GlmSharp_mat4_
+  name: SetProjectionMatrix
+  nameWithType: IRenderDevice.SetProjectionMatrix
+  fullName: Genesis.Graphics.IRenderDevice.SetProjectionMatrix
+- uid: Genesis.Graphics.IRenderDevice.SetViewMatrix*
+  commentId: Overload:Genesis.Graphics.IRenderDevice.SetViewMatrix
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html#Genesis_Graphics_IRenderDevice_SetViewMatrix_GlmSharp_mat4_
+  name: SetViewMatrix
+  nameWithType: IRenderDevice.SetViewMatrix
+  fullName: Genesis.Graphics.IRenderDevice.SetViewMatrix
 - uid: Genesis.Graphics.IRenderDevice.ModelViewMatrix*
   commentId: Overload:Genesis.Graphics.IRenderDevice.ModelViewMatrix
   isExternal: true

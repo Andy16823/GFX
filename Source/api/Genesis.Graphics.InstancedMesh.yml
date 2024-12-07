@@ -1,0 +1,674 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.InstancedMesh
+  commentId: T:Genesis.Graphics.InstancedMesh
+  id: InstancedMesh
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.InstancedMesh.#ctor
+  - Genesis.Graphics.InstancedMesh.Material
+  - Genesis.Graphics.InstancedMesh.Normals
+  - Genesis.Graphics.InstancedMesh.Propertys
+  - Genesis.Graphics.InstancedMesh.TextureCords
+  - Genesis.Graphics.InstancedMesh.VertexColors
+  - Genesis.Graphics.InstancedMesh.Vertices
+  langs:
+  - csharp
+  - vb
+  name: InstancedMesh
+  nameWithType: InstancedMesh
+  fullName: Genesis.Graphics.InstancedMesh
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Represents an instanced mesh containing material, vertex data, and other properties.
+  example: []
+  syntax:
+    content: public class InstancedMesh
+    content.vb: Public Class InstancedMesh
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.InstancedMesh.#ctor
+  commentId: M:Genesis.Graphics.InstancedMesh.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: InstancedMesh()
+  nameWithType: InstancedMesh.InstancedMesh()
+  fullName: Genesis.Graphics.InstancedMesh.InstancedMesh()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Initializes a new instance of the <xref href="Genesis.Graphics.InstancedMesh" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public InstancedMesh()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.InstancedMesh.#ctor*
+  nameWithType.vb: InstancedMesh.New()
+  fullName.vb: Genesis.Graphics.InstancedMesh.New()
+  name.vb: New()
+- uid: Genesis.Graphics.InstancedMesh.Material
+  commentId: P:Genesis.Graphics.InstancedMesh.Material
+  id: Material
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: Material
+  nameWithType: InstancedMesh.Material
+  fullName: Genesis.Graphics.InstancedMesh.Material
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the material of the mesh.
+  example: []
+  syntax:
+    content: public Material Material { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Graphics.Material
+    content.vb: Public Property Material As Material
+  overload: Genesis.Graphics.InstancedMesh.Material*
+- uid: Genesis.Graphics.InstancedMesh.Vertices
+  commentId: P:Genesis.Graphics.InstancedMesh.Vertices
+  id: Vertices
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: Vertices
+  nameWithType: InstancedMesh.Vertices
+  fullName: Genesis.Graphics.InstancedMesh.Vertices
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the vertex data of the mesh.
+  example: []
+  syntax:
+    content: public float[] Vertices { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public Property Vertices As Single()
+  overload: Genesis.Graphics.InstancedMesh.Vertices*
+- uid: Genesis.Graphics.InstancedMesh.TextureCords
+  commentId: P:Genesis.Graphics.InstancedMesh.TextureCords
+  id: TextureCords
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: TextureCords
+  nameWithType: InstancedMesh.TextureCords
+  fullName: Genesis.Graphics.InstancedMesh.TextureCords
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the texture coordinates of the mesh.
+  example: []
+  syntax:
+    content: public float[] TextureCords { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public Property TextureCords As Single()
+  overload: Genesis.Graphics.InstancedMesh.TextureCords*
+- uid: Genesis.Graphics.InstancedMesh.VertexColors
+  commentId: P:Genesis.Graphics.InstancedMesh.VertexColors
+  id: VertexColors
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: VertexColors
+  nameWithType: InstancedMesh.VertexColors
+  fullName: Genesis.Graphics.InstancedMesh.VertexColors
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the vertex color data of the mesh.
+  example: []
+  syntax:
+    content: public float[] VertexColors { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public Property VertexColors As Single()
+  overload: Genesis.Graphics.InstancedMesh.VertexColors*
+- uid: Genesis.Graphics.InstancedMesh.Normals
+  commentId: P:Genesis.Graphics.InstancedMesh.Normals
+  id: Normals
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: Normals
+  nameWithType: InstancedMesh.Normals
+  fullName: Genesis.Graphics.InstancedMesh.Normals
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the normals of the mesh.
+  example: []
+  syntax:
+    content: public float[] Normals { get; set; }
+    parameters: []
+    return:
+      type: System.Single[]
+    content.vb: Public Property Normals As Single()
+  overload: Genesis.Graphics.InstancedMesh.Normals*
+- uid: Genesis.Graphics.InstancedMesh.Propertys
+  commentId: P:Genesis.Graphics.InstancedMesh.Propertys
+  id: Propertys
+  parent: Genesis.Graphics.InstancedMesh
+  langs:
+  - csharp
+  - vb
+  name: Propertys
+  nameWithType: InstancedMesh.Propertys
+  fullName: Genesis.Graphics.InstancedMesh.Propertys
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets additional properties for the mesh.
+  example: []
+  syntax:
+    content: public Dictionary<string, object> Propertys { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property Propertys As Dictionary(Of String, Object)
+  overload: Genesis.Graphics.InstancedMesh.Propertys*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.InstancedMesh
+  commentId: T:Genesis.Graphics.InstancedMesh
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html
+  name: InstancedMesh
+  nameWithType: InstancedMesh
+  fullName: Genesis.Graphics.InstancedMesh
+- uid: Genesis.Graphics.InstancedMesh.#ctor*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.#ctor
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh__ctor
+  name: InstancedMesh
+  nameWithType: InstancedMesh.InstancedMesh
+  fullName: Genesis.Graphics.InstancedMesh.InstancedMesh
+  nameWithType.vb: InstancedMesh.New
+  fullName.vb: Genesis.Graphics.InstancedMesh.New
+  name.vb: New
+- uid: Genesis.Graphics.InstancedMesh.Material*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.Material
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_Material
+  name: Material
+  nameWithType: InstancedMesh.Material
+  fullName: Genesis.Graphics.InstancedMesh.Material
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
+- uid: Genesis.Graphics.InstancedMesh.Vertices*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.Vertices
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_Vertices
+  name: Vertices
+  nameWithType: InstancedMesh.Vertices
+  fullName: Genesis.Graphics.InstancedMesh.Vertices
+- uid: System.Single[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float[]
+  nameWithType: float[]
+  fullName: float[]
+  nameWithType.vb: Single()
+  fullName.vb: Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.InstancedMesh.TextureCords*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.TextureCords
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_TextureCords
+  name: TextureCords
+  nameWithType: InstancedMesh.TextureCords
+  fullName: Genesis.Graphics.InstancedMesh.TextureCords
+- uid: Genesis.Graphics.InstancedMesh.VertexColors*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.VertexColors
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_VertexColors
+  name: VertexColors
+  nameWithType: InstancedMesh.VertexColors
+  fullName: Genesis.Graphics.InstancedMesh.VertexColors
+- uid: Genesis.Graphics.InstancedMesh.Normals*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.Normals
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_Normals
+  name: Normals
+  nameWithType: InstancedMesh.Normals
+  fullName: Genesis.Graphics.InstancedMesh.Normals
+- uid: Genesis.Graphics.InstancedMesh.Propertys*
+  commentId: Overload:Genesis.Graphics.InstancedMesh.Propertys
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html#Genesis_Graphics_InstancedMesh_Propertys
+  name: Propertys
+  nameWithType: InstancedMesh.Propertys
+  fullName: Genesis.Graphics.InstancedMesh.Propertys
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

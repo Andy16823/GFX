@@ -6,8 +6,10 @@ items:
   parent: Genesis.Physics
   children:
   - Genesis.Physics.PhysicHandler.#ctor
+  - Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
   - Genesis.Physics.PhysicHandler.Callbacks
-  - Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+  - Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  - Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
   - Genesis.Physics.PhysicHandler.Process(Genesis.Core.Scene,Genesis.Core.Game)
   - Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   langs:
@@ -88,16 +90,16 @@ items:
       description: The game to process physics for
     content.vb: Public MustOverride Sub Process(scene As Scene, game As Game)
   overload: Genesis.Physics.PhysicHandler.Process*
-- uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
-  commentId: M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
-  id: ManageElement(Genesis.Physics.PhysicsBehavior)
+- uid: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
+  id: ManageElement(Genesis.Physics.PhysicsBehavior,System.Int32,System.Int32)
   parent: Genesis.Physics.PhysicHandler
   langs:
   - csharp
   - vb
-  name: ManageElement(PhysicsBehavior)
-  nameWithType: PhysicHandler.ManageElement(PhysicsBehavior)
-  fullName: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior)
+  name: ManageElement(PhysicsBehavior, int, int)
+  nameWithType: PhysicHandler.ManageElement(PhysicsBehavior, int, int)
+  fullName: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -105,13 +107,20 @@ items:
   summary: Manages physics interactions for a specific physics behavior.
   example: []
   syntax:
-    content: public virtual void ManageElement(PhysicsBehavior physicsBehavior)
+    content: public virtual void ManageElement(PhysicsBehavior physicsBehavior, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: physicsBehavior
       type: Genesis.Physics.PhysicsBehavior
       description: The physics behavior to manage
-    content.vb: Public Overridable Sub ManageElement(physicsBehavior As PhysicsBehavior)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overridable Sub ManageElement(physicsBehavior As PhysicsBehavior, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Physics.PhysicHandler.ManageElement*
+  nameWithType.vb: PhysicHandler.ManageElement(PhysicsBehavior, Integer, Integer)
+  fullName.vb: Genesis.Physics.PhysicHandler.ManageElement(Genesis.Physics.PhysicsBehavior, Integer, Integer)
+  name.vb: ManageElement(PhysicsBehavior, Integer, Integer)
 - uid: Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   commentId: M:Genesis.Physics.PhysicHandler.RemoveElement(Genesis.Physics.PhysicsBehavior)
   id: RemoveElement(Genesis.Physics.PhysicsBehavior)
@@ -137,6 +146,29 @@ items:
       description: The physics behavior to be removed.
     content.vb: Public MustOverride Sub RemoveElement(physicsBehavior As PhysicsBehavior)
   overload: Genesis.Physics.PhysicHandler.RemoveElement*
+- uid: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+  commentId: M:Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+  id: OnBeforePhysicsUpdate(Genesis.Core.Scene,Genesis.Core.Game)
+  parent: Genesis.Physics.PhysicHandler
+  langs:
+  - csharp
+  - vb
+  name: OnBeforePhysicsUpdate(Scene, Game)
+  nameWithType: PhysicHandler.OnBeforePhysicsUpdate(Scene, Game)
+  fullName: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate(Genesis.Core.Scene, Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public virtual void OnBeforePhysicsUpdate(Scene scene, Game game)
+    parameters:
+    - id: scene
+      type: Genesis.Core.Scene
+    - id: game
+      type: Genesis.Core.Game
+    content.vb: Public Overridable Sub OnBeforePhysicsUpdate(scene As Scene, game As Game)
+  overload: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate*
 - uid: Genesis.Physics.PhysicHandler.Callbacks
   commentId: P:Genesis.Physics.PhysicHandler.Callbacks
   id: Callbacks
@@ -160,6 +192,25 @@ items:
       type: System.Collections.Generic.Dictionary{System.Object,Genesis.Physics.PhysicHandlerEvent}
     content.vb: Public Property Callbacks As Dictionary(Of Object, PhysicHandlerEvent)
   overload: Genesis.Physics.PhysicHandler.Callbacks*
+- uid: Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
+  commentId: E:Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
+  id: BeforePhysicsUpdate
+  parent: Genesis.Physics.PhysicHandler
+  langs:
+  - csharp
+  - vb
+  name: BeforePhysicsUpdate
+  nameWithType: PhysicHandler.BeforePhysicsUpdate
+  fullName: Genesis.Physics.PhysicHandler.BeforePhysicsUpdate
+  type: Event
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public event PhysicHandlerEvent BeforePhysicsUpdate
+    return:
+      type: Genesis.Physics.PhysicHandlerEvent
+    content.vb: Public Event BeforePhysicsUpdate As PhysicHandlerEvent
 references:
 - uid: Genesis.Physics
   commentId: N:Genesis.Physics
@@ -496,7 +547,7 @@ references:
 - uid: Genesis.Physics.PhysicHandler.ManageElement*
   commentId: Overload:Genesis.Physics.PhysicHandler.ManageElement
   isExternal: true
-  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_ManageElement_Genesis_Physics_PhysicsBehavior_System_Int32_System_Int32_
   name: ManageElement
   nameWithType: PhysicHandler.ManageElement
   fullName: Genesis.Physics.PhysicHandler.ManageElement
@@ -508,6 +559,17 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.PhysicHandler.RemoveElement*
   commentId: Overload:Genesis.Physics.PhysicHandler.RemoveElement
   isExternal: true
@@ -515,6 +577,13 @@ references:
   name: RemoveElement
   nameWithType: PhysicHandler.RemoveElement
   fullName: Genesis.Physics.PhysicHandler.RemoveElement
+- uid: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate*
+  commentId: Overload:Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate
+  isExternal: true
+  href: Genesis.Physics.PhysicHandler.html#Genesis_Physics_PhysicHandler_OnBeforePhysicsUpdate_Genesis_Core_Scene_Genesis_Core_Game_
+  name: OnBeforePhysicsUpdate
+  nameWithType: PhysicHandler.OnBeforePhysicsUpdate
+  fullName: Genesis.Physics.PhysicHandler.OnBeforePhysicsUpdate
 - uid: Genesis.Physics.PhysicHandler.Callbacks*
   commentId: Overload:Genesis.Physics.PhysicHandler.Callbacks
   isExternal: true
@@ -640,3 +709,11 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Genesis.Physics.PhysicHandlerEvent
+  commentId: T:Genesis.Physics.PhysicHandlerEvent
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.PhysicHandlerEvent.html
+  name: PhysicHandlerEvent
+  nameWithType: PhysicHandlerEvent
+  fullName: Genesis.Physics.PhysicHandlerEvent

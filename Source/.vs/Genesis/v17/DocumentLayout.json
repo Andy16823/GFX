@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\graphics\\renderinstancecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\graphics\\renderinstancecontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\gameelements\\element3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\element3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\input.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\gameelements\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|c:\\users\\andy1\\documents\\gfx net framework\\gfx - exprimental\\genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\gameelements\\qube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\genesis\\core\\scene3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\scene3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\genesis\\core\\scene2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0B6089B-BA05-4535-A071-538B918C3AD4}|Genesis\\Genesis.csproj|solutionrelative:genesis\\core\\scene2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Element3D.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Element3D.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Element3D.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Element3D.cs",
-              "RelativeToolTip": "Genesis\\Core\\GameElements\\Element3D.cs",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAiwPYAAAA8AAAAAAAAAA==",
+              "Title": "Input.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Input.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Input.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Input.cs",
+              "RelativeToolTip": "Genesis\\Core\\Input.cs",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAwwP8AAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T13:41:36.181Z",
+              "WhenOpened": "2024-12-07T07:35:49.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Sphere.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Sphere.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Sphere.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Sphere.cs",
-              "RelativeToolTip": "Genesis\\Core\\GameElements\\Sphere.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAiwFIAAABAAAAAAAAAAA==",
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Scene.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene.cs",
+              "RelativeToolTip": "Genesis\\Core\\Scene.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAIAwwN0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T13:41:11.493Z",
+              "WhenOpened": "2024-12-07T07:00:08.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Qube.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Qube.cs",
-              "RelativeDocumentMoniker": "Genesis\\Core\\GameElements\\Qube.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\GameElements\\Qube.cs",
-              "RelativeToolTip": "Genesis\\Core\\GameElements\\Qube.cs",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAAAPUAAABCAAAAAAAAAA==",
+              "Title": "Scene3D.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene3D.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Scene3D.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene3D.cs",
+              "RelativeToolTip": "Genesis\\Core\\Scene3D.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T13:40:19.999Z",
+              "WhenOpened": "2024-12-06T21:47:11.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Scene2D.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene2D.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Scene2D.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Scene2D.cs",
+              "RelativeToolTip": "Genesis\\Core\\Scene2D.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T21:46:56.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RenderInstanceContainer.cs",
-              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Graphics\\RenderInstanceContainer.cs",
-              "RelativeDocumentMoniker": "Genesis\\Graphics\\RenderInstanceContainer.cs",
-              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Graphics\\RenderInstanceContainer.cs",
-              "RelativeToolTip": "Genesis\\Graphics\\RenderInstanceContainer.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwEYAAAAVAAAAAAAAAA==",
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Game.cs",
+              "RelativeDocumentMoniker": "Genesis\\Core\\Game.cs",
+              "ToolTip": "C:\\Users\\andy1\\Documents\\GFX Net Framework\\GFX - Exprimental\\Genesis\\Core\\Game.cs",
+              "RelativeToolTip": "Genesis\\Core\\Game.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAAAHsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T13:10:27.303Z",
+              "WhenOpened": "2024-12-06T21:32:23.3Z",
               "EditorCaption": ""
             }
           ]

@@ -6,9 +6,9 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single)
+  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single,System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -38,6 +38,12 @@ items:
   - Genesis.Physics.RigidBodyBehavior3D.AngularVelocity(Genesis.Math.Vec3)
   - Genesis.Physics.RigidBodyBehavior3D.LinearVelocity(System.Single,System.Single,System.Single)
   - Genesis.Physics.RigidBodyBehavior3D.LinearVelocity(Genesis.Math.Vec3)
+  - Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  - Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  - Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  - Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
   - Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   - Genesis.Physics.RigidBodyBehavior3D.GetPhysicsObject
   - Genesis.Physics.RigidBodyBehavior3D.GetPhysicsObject``1
@@ -84,16 +90,16 @@ items:
   nameWithType.vb: SphereRigidBody.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single)
-  id: CreateRigidBody(System.Single)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereRigidBody
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float)
-  nameWithType: SphereRigidBody.CreateRigidBody(float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(float)
+  name: CreateRigidBody(float, int, int)
+  nameWithType: SphereRigidBody.CreateRigidBody(float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -101,27 +107,31 @@ items:
   summary: Creates a rigid body with a sphere shape using the default radius (half of the parent's size).
   example: []
   syntax:
-    content: public override void CreateRigidBody(float mass)
+    content: public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: mass
       type: System.Single
       description: The mass of the sphere rigid body.
-    content.vb: Public Overrides Sub CreateRigidBody(mass As Single)
-  overridden: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateRigidBody(mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody*
-  nameWithType.vb: SphereRigidBody.CreateRigidBody(Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single)
-  id: CreateRigidBody(System.Single,System.Single)
+  nameWithType.vb: SphereRigidBody.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(System.Single,System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereRigidBody
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float, float)
-  nameWithType: SphereRigidBody.CreateRigidBody(float, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(float, float)
+  name: CreateRigidBody(float, float, int, int)
+  nameWithType: SphereRigidBody.CreateRigidBody(float, float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(float, float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -129,7 +139,7 @@ items:
   summary: Creates a rigid body with a sphere shape at the origin.
   example: []
   syntax:
-    content: public void CreateRigidBody(float radius, float mass)
+    content: public void CreateRigidBody(float radius, float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: radius
       type: System.Single
@@ -137,21 +147,25 @@ items:
     - id: mass
       type: System.Single
       description: The mass of the sphere rigid body.
-    content.vb: Public Sub CreateRigidBody(radius As Single, mass As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateRigidBody(radius As Single, mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody*
-  nameWithType.vb: SphereRigidBody.CreateRigidBody(Single, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Single, Single)
-  name.vb: CreateRigidBody(Single, Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single)
-  id: CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single)
+  nameWithType.vb: SphereRigidBody.CreateRigidBody(Single, Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Single, Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Single, Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(Genesis.Math.Vec3,System.Single,System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereRigidBody
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(Vec3, float, float)
-  nameWithType: SphereRigidBody.CreateRigidBody(Vec3, float, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3, float, float)
+  name: CreateRigidBody(Vec3, float, float, int, int)
+  nameWithType: SphereRigidBody.CreateRigidBody(Vec3, float, float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3, float, float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -159,7 +173,7 @@ items:
   summary: Creates a rigid body with a sphere shape at the specified offset.
   example: []
   syntax:
-    content: public void CreateRigidBody(Vec3 offset, float radius, float mass)
+    content: public void CreateRigidBody(Vec3 offset, float radius, float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: offset
       type: Genesis.Math.Vec3
@@ -170,11 +184,15 @@ items:
     - id: mass
       type: System.Single
       description: The mass of the sphere rigid body.
-    content.vb: Public Sub CreateRigidBody(offset As Vec3, radius As Single, mass As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateRigidBody(offset As Vec3, radius As Single, mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody*
-  nameWithType.vb: SphereRigidBody.CreateRigidBody(Vec3, Single, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3, Single, Single)
-  name.vb: CreateRigidBody(Vec3, Single, Single)
+  nameWithType.vb: SphereRigidBody.CreateRigidBody(Vec3, Single, Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody(Genesis.Math.Vec3, Single, Single, Integer, Integer)
+  name.vb: CreateRigidBody(Vec3, Single, Single, Integer, Integer)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -605,6 +623,171 @@ references:
     name: Vec3
     isExternal: true
     href: Genesis.Math.Vec3.html
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLinearVelocity
+  name: GetLinearVelocity()
+  nameWithType: RigidBodyBehavior3D.GetLinearVelocity()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity()
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+    name: GetLinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLinearVelocity
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetLinearVelocity
+    name: GetLinearVelocity
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLinearVelocity
+  - name: (
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetRotation
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetRotation
+  name: GetRotation()
+  nameWithType: RigidBodyBehavior3D.GetRotation()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetRotation()
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetRotation
+    name: GetRotation
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetRotation
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetRotation
+    name: GetRotation
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetRotation
+  - name: (
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.GetLocation
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLocation
+  name: GetLocation()
+  nameWithType: RigidBodyBehavior3D.GetLocation()
+  fullName: Genesis.Physics.RigidBodyBehavior3D.GetLocation()
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetLocation
+    name: GetLocation
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLocation
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.GetLocation
+    name: GetLocation
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_GetLocation
+  - name: (
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateForwardVector_System_Single_
+  name: CalculateForwardVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateForwardVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(float)
+  nameWithType.vb: RigidBodyBehavior3D.CalculateForwardVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(Single)
+  name.vb: CalculateForwardVector(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+    name: CalculateForwardVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateForwardVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateForwardVector(System.Single)
+    name: CalculateForwardVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateForwardVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateRightVector_System_Single_
+  name: CalculateRightVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateRightVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(float)
+  nameWithType.vb: RigidBodyBehavior3D.CalculateRightVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(Single)
+  name.vb: CalculateRightVector(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+    name: CalculateRightVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateRightVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateRightVector(System.Single)
+    name: CalculateRightVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateRightVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+  parent: Genesis.Physics.RigidBodyBehavior3D
+  isExternal: true
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateUpVector_System_Single_
+  name: CalculateUpVector(float)
+  nameWithType: RigidBodyBehavior3D.CalculateUpVector(float)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(float)
+  nameWithType.vb: RigidBodyBehavior3D.CalculateUpVector(Single)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(Single)
+  name.vb: CalculateUpVector(Single)
+  spec.csharp:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+    name: CalculateUpVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateUpVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CalculateUpVector(System.Single)
+    name: CalculateUpVector
+    isExternal: true
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CalculateUpVector_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
   - name: )
 - uid: Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
   commentId: M:Genesis.Physics.RigidBodyBehavior3D.OnUpdate(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -1221,43 +1404,67 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
+- uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Physics.RigidBodyBehavior3D
   isExternal: true
-  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_
-  name: CreateRigidBody(float)
-  nameWithType: RigidBodyBehavior3D.CreateRigidBody(float)
-  fullName: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(float)
-  nameWithType.vb: RigidBodyBehavior3D.CreateRigidBody(Single)
-  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
+  href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_System_Int32_System_Int32_
+  name: CreateRigidBody(float, int, int)
+  nameWithType: RigidBodyBehavior3D.CreateRigidBody(float, int, int)
+  fullName: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(float, int, int)
+  nameWithType.vb: RigidBodyBehavior3D.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
     name: CreateRigidBody
     isExternal: true
-    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   - name: (
   - uid: System.Single
     name: float
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single)
+  - uid: Genesis.Physics.RigidBodyBehavior3D.CreateRigidBody(System.Single,System.Int32,System.Int32)
     name: CreateRigidBody
     isExternal: true
-    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_
+    href: Genesis.Physics.RigidBodyBehavior3D.html#Genesis_Physics_RigidBodyBehavior3D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   - name: (
   - uid: System.Single
     name: Single
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.html#Genesis_Core_Behaviors_Physics3D_SphereRigidBody_CreateRigidBody_System_Single_
+  href: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.html#Genesis_Core_Behaviors_Physics3D_SphereRigidBody_CreateRigidBody_System_Single_System_Int32_System_Int32_
   name: CreateRigidBody
   nameWithType: SphereRigidBody.CreateRigidBody
   fullName: Genesis.Core.Behaviors.Physics3D.SphereRigidBody.CreateRigidBody
@@ -1272,6 +1479,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Math.Vec3
   commentId: T:Genesis.Math.Vec3
   parent: Genesis.Math

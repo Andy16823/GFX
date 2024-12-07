@@ -6,7 +6,7 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.#ctor
-  - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)
+  - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Int32,System.Int32)
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.GetPhysicsObject
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.GetPhysicsObject``1
   - Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.OnDestroy(Genesis.Core.Game,Genesis.Core.GameElement)
@@ -45,16 +45,16 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)
-  id: CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single)
+- uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(Genesis.Physics.PhysicHandler,System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(PhysicHandler, float)
-  nameWithType: ConvexHullBehavior.CreateRigidBody(PhysicHandler, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler, float)
+  name: CreateRigidBody(PhysicHandler, float, int, int)
+  nameWithType: ConvexHullBehavior.CreateRigidBody(PhysicHandler, float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler, float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -62,7 +62,7 @@ items:
   summary: Creates a RigidBody for the ConvexHullBehavior.
   example: []
   syntax:
-    content: public void CreateRigidBody(PhysicHandler handler, float mass)
+    content: public void CreateRigidBody(PhysicHandler handler, float mass, int CollisionGroup = -1, int CollisionMask = -1)
     parameters:
     - id: handler
       type: Genesis.Physics.PhysicHandler
@@ -70,11 +70,15 @@ items:
     - id: mass
       type: System.Single
       description: Mass of the rigid body.
-    content.vb: Public Sub CreateRigidBody(handler As PhysicHandler, mass As Single)
+    - id: CollisionGroup
+      type: System.Int32
+    - id: CollisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateRigidBody(handler As PhysicHandler, mass As Single, CollisionGroup As Integer = -1, CollisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody*
-  nameWithType.vb: ConvexHullBehavior.CreateRigidBody(PhysicHandler, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler, Single)
-  name.vb: CreateRigidBody(PhysicHandler, Single)
+  nameWithType.vb: ConvexHullBehavior.CreateRigidBody(PhysicHandler, Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody(Genesis.Physics.PhysicHandler, Single, Integer, Integer)
+  name.vb: CreateRigidBody(PhysicHandler, Single, Integer, Integer)
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody
   commentId: M:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody
   id: UpdateRigidBody
@@ -722,7 +726,7 @@ references:
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_CreateRigidBody_Genesis_Physics_PhysicHandler_System_Single_
+  href: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.html#Genesis_Core_Behaviors_Physics3D_ConvexHullBehavior_CreateRigidBody_Genesis_Physics_PhysicHandler_System_Single_System_Int32_System_Int32_
   name: CreateRigidBody
   nameWithType: ConvexHullBehavior.CreateRigidBody
   fullName: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.CreateRigidBody
@@ -745,6 +749,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.ConvexHullBehavior.UpdateRigidBody
   isExternal: true

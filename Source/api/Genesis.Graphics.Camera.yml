@@ -10,14 +10,21 @@ items:
   - Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
   - Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
   - Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  - Genesis.Graphics.Camera.FOV
   - Genesis.Graphics.Camera.Far
+  - Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
   - Genesis.Graphics.Camera.GetRect
+  - Genesis.Graphics.Camera.GetViewMatrix
+  - Genesis.Graphics.Camera.GetViewMatrix(Genesis.Graphics.Camera)
   - Genesis.Graphics.Camera.Location
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
   - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
   - Genesis.Graphics.Camera.Near
   - Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   - Genesis.Graphics.Camera.Rotation
+  - Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  - Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
   - Genesis.Graphics.Camera.Size
   - Genesis.Graphics.Camera.Type
   langs:
@@ -30,7 +37,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Graphics
-  summary: Represents a camera in a graphics context for rendering 2D scenes.
+  summary: Represents a camera in a graphics context for rendering.
   example: []
   syntax:
     content: public class Camera
@@ -307,6 +314,99 @@ items:
   nameWithType.vb: Camera.ConvertScreenToWorldOrtho(Viewport, Single, Single)
   fullName.vb: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, Single, Single)
   name.vb: ConvertScreenToWorldOrtho(Viewport, Single, Single)
+- uid: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  id: ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: ScreenToWorldDirection3D(PerspectiveCamera, Viewport, float, float)
+  nameWithType: Camera.ScreenToWorldDirection3D(PerspectiveCamera, Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Projects the mouse coordinates into 3D world space, returning the direction vector.
+  example: []
+  syntax:
+    content: public static Vec3 ScreenToWorldDirection3D(PerspectiveCamera camera, Viewport viewport, float sX, float sY)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.PerspectiveCamera
+      description: The camera used for the projection.
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport for the camera's dimensions.
+    - id: sX
+      type: System.Single
+      description: The x-coordinate of the mouse in screen space.
+    - id: sY
+      type: System.Single
+      description: The y-coordinate of the mouse in screen space.
+    return:
+      type: Genesis.Math.Vec3
+      description: A <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> representing the direction of the ray in 3D space.
+    content.vb: Public Shared Function ScreenToWorldDirection3D(camera As PerspectiveCamera, viewport As Viewport, sX As Single, sY As Single) As Vec3
+  overload: Genesis.Graphics.Camera.ScreenToWorldDirection3D*
+  nameWithType.vb: Camera.ScreenToWorldDirection3D(PerspectiveCamera, Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ScreenToWorldDirection3D(PerspectiveCamera, Viewport, Single, Single)
+- uid: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  id: ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: ScreenToWorldPosition3D(PerspectiveCamera, Viewport, float, float)
+  nameWithType: Camera.ScreenToWorldPosition3D(PerspectiveCamera, Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Converts screen space coordinates (2D) into world space coordinates (3D).
+  remarks: >-
+    The method first normalizes the screen coordinates to the range [-1, 1], then applies 
+
+    the inverse of the combined projection and view matrix to map the 2D screen coordinates 
+
+    back into 3D world coordinates. The result is a position in the world space, representing 
+
+    the direction of a ray starting from the camera's near plane and passing through the 
+
+    specified screen coordinates.
+  example: []
+  syntax:
+    content: public static Vec3 ScreenToWorldPosition3D(PerspectiveCamera camera, Viewport viewport, float sX, float sY)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.PerspectiveCamera
+      description: The perspective camera used for projection and view matrix calculations.
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport that defines the screen's width and height.
+    - id: sX
+      type: System.Single
+      description: The x-coordinate of the mouse position in screen space (pixels).
+    - id: sY
+      type: System.Single
+      description: The y-coordinate of the mouse position in screen space (pixels).
+    return:
+      type: Genesis.Math.Vec3
+      description: >-
+        A <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> representing the corresponding world space coordinates.
+
+        This is the position in the 3D world corresponding to the input screen coordinates, 
+
+        taking into account the perspective projection and camera view matrix.
+    content.vb: Public Shared Function ScreenToWorldPosition3D(camera As PerspectiveCamera, viewport As Viewport, sX As Single, sY As Single) As Vec3
+  overload: Genesis.Graphics.Camera.ScreenToWorldPosition3D*
+  nameWithType.vb: Camera.ScreenToWorldPosition3D(PerspectiveCamera, Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ScreenToWorldPosition3D(PerspectiveCamera, Viewport, Single, Single)
 - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   id: ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
@@ -346,6 +446,113 @@ items:
   nameWithType.vb: Camera.ProjectMouse2D(Camera, Viewport, Integer, Integer)
   fullName.vb: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
   name.vb: ProjectMouse2D(Camera, Viewport, Integer, Integer)
+- uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  id: GetProjectionMatrix(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: GetProjectionMatrix(Viewport)
+  nameWithType: Camera.GetProjectionMatrix(Viewport)
+  fullName: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the projection matrix for this camera based on the specified viewport.
+  example: []
+  syntax:
+    content: public mat4 GetProjectionMatrix(Viewport viewport)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport used to calculate the projection matrix.
+    return:
+      type: GlmSharp.mat4
+      description: A <xref href="GlmSharp.mat4" data-throw-if-not-resolved="false"></xref> representing the projection matrix.
+    content.vb: Public Function GetProjectionMatrix(viewport As Viewport) As mat4
+  overload: Genesis.Graphics.Camera.GetProjectionMatrix*
+- uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  id: GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: GetProjectionMatrix(Camera, Viewport)
+  nameWithType: Camera.GetProjectionMatrix(Camera, Viewport)
+  fullName: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera, Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the projection matrix for the specified camera based on the viewport and field of view.
+  example: []
+  syntax:
+    content: public static mat4 GetProjectionMatrix(Camera camera, Viewport viewport)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera for which to calculate the projection matrix.
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: The viewport used to calculate the projection matrix.
+    return:
+      type: GlmSharp.mat4
+      description: A <xref href="GlmSharp.mat4" data-throw-if-not-resolved="false"></xref> representing the projection matrix.
+    content.vb: Public Shared Function GetProjectionMatrix(camera As Camera, viewport As Viewport) As mat4
+  overload: Genesis.Graphics.Camera.GetProjectionMatrix*
+- uid: Genesis.Graphics.Camera.GetViewMatrix
+  commentId: M:Genesis.Graphics.Camera.GetViewMatrix
+  id: GetViewMatrix
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: GetViewMatrix()
+  nameWithType: Camera.GetViewMatrix()
+  fullName: Genesis.Graphics.Camera.GetViewMatrix()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the view matrix for this camera.
+  example: []
+  syntax:
+    content: public mat4 GetViewMatrix()
+    return:
+      type: GlmSharp.mat4
+      description: A <xref href="GlmSharp.mat4" data-throw-if-not-resolved="false"></xref> representing the view matrix.
+    content.vb: Public Function GetViewMatrix() As mat4
+  overload: Genesis.Graphics.Camera.GetViewMatrix*
+- uid: Genesis.Graphics.Camera.GetViewMatrix(Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.Camera.GetViewMatrix(Genesis.Graphics.Camera)
+  id: GetViewMatrix(Genesis.Graphics.Camera)
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: GetViewMatrix(Camera)
+  nameWithType: Camera.GetViewMatrix(Camera)
+  fullName: Genesis.Graphics.Camera.GetViewMatrix(Genesis.Graphics.Camera)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates the view matrix for the specified camera.
+  example: []
+  syntax:
+    content: public static mat4 GetViewMatrix(Camera camera)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+      description: The camera for which to calculate the view matrix.
+    return:
+      type: GlmSharp.mat4
+      description: A <xref href="GlmSharp.mat4" data-throw-if-not-resolved="false"></xref> representing the view matrix.
+    content.vb: Public Shared Function GetViewMatrix(camera As Camera) As mat4
+  overload: Genesis.Graphics.Camera.GetViewMatrix*
 - uid: Genesis.Graphics.Camera.Location
   commentId: P:Genesis.Graphics.Camera.Location
   id: Location
@@ -484,6 +691,29 @@ items:
       type: Genesis.Graphics.CameraType
     content.vb: Public Property Type As CameraType
   overload: Genesis.Graphics.Camera.Type*
+- uid: Genesis.Graphics.Camera.FOV
+  commentId: P:Genesis.Graphics.Camera.FOV
+  id: FOV
+  parent: Genesis.Graphics.Camera
+  langs:
+  - csharp
+  - vb
+  name: FOV
+  nameWithType: Camera.FOV
+  fullName: Genesis.Graphics.Camera.FOV
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the field of view (FOV) for the camera in degrees.
+  example: []
+  syntax:
+    content: public float FOV { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property FOV As Single
+  overload: Genesis.Graphics.Camera.FOV*
 references:
 - uid: Genesis.Graphics
   commentId: N:Genesis.Graphics
@@ -903,6 +1133,28 @@ references:
   name: ConvertScreenToWorldOrtho
   nameWithType: Camera.ConvertScreenToWorldOrtho
   fullName: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho
+- uid: Genesis.Graphics.Camera.ScreenToWorldDirection3D*
+  commentId: Overload:Genesis.Graphics.Camera.ScreenToWorldDirection3D
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldDirection3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ScreenToWorldDirection3D
+  nameWithType: Camera.ScreenToWorldDirection3D
+  fullName: Genesis.Graphics.Camera.ScreenToWorldDirection3D
+- uid: Genesis.Graphics.PerspectiveCamera
+  commentId: T:Genesis.Graphics.PerspectiveCamera
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html
+  name: PerspectiveCamera
+  nameWithType: PerspectiveCamera
+  fullName: Genesis.Graphics.PerspectiveCamera
+- uid: Genesis.Graphics.Camera.ScreenToWorldPosition3D*
+  commentId: Overload:Genesis.Graphics.Camera.ScreenToWorldPosition3D
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldPosition3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ScreenToWorldPosition3D
+  nameWithType: Camera.ScreenToWorldPosition3D
+  fullName: Genesis.Graphics.Camera.ScreenToWorldPosition3D
 - uid: Genesis.Graphics.Camera.ProjectMouse2D*
   commentId: Overload:Genesis.Graphics.Camera.ProjectMouse2D
   isExternal: true
@@ -921,6 +1173,33 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: GlmSharp.mat4
+  commentId: T:GlmSharp.mat4
+  parent: GlmSharp
+  isExternal: true
+  name: mat4
+  nameWithType: mat4
+  fullName: GlmSharp.mat4
+- uid: Genesis.Graphics.Camera.GetProjectionMatrix*
+  commentId: Overload:Genesis.Graphics.Camera.GetProjectionMatrix
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Viewport_
+  name: GetProjectionMatrix
+  nameWithType: Camera.GetProjectionMatrix
+  fullName: Genesis.Graphics.Camera.GetProjectionMatrix
+- uid: GlmSharp
+  commentId: N:GlmSharp
+  isExternal: true
+  name: GlmSharp
+  nameWithType: GlmSharp
+  fullName: GlmSharp
+- uid: Genesis.Graphics.Camera.GetViewMatrix*
+  commentId: Overload:Genesis.Graphics.Camera.GetViewMatrix
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetViewMatrix
+  name: GetViewMatrix
+  nameWithType: Camera.GetViewMatrix
+  fullName: Genesis.Graphics.Camera.GetViewMatrix
 - uid: Genesis.Graphics.Camera.Location*
   commentId: Overload:Genesis.Graphics.Camera.Location
   isExternal: true
@@ -971,3 +1250,10 @@ references:
   name: CameraType
   nameWithType: CameraType
   fullName: Genesis.Graphics.CameraType
+- uid: Genesis.Graphics.Camera.FOV*
+  commentId: Overload:Genesis.Graphics.Camera.FOV
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_FOV
+  name: FOV
+  nameWithType: Camera.FOV
+  fullName: Genesis.Graphics.Camera.FOV

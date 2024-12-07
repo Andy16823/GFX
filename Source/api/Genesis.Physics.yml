@@ -7,7 +7,10 @@ items:
   - Genesis.Physics.Aabb
   - Genesis.Physics.ColliderBehavior2D
   - Genesis.Physics.ColliderBehavior3D
+  - Genesis.Physics.CollisionGroup
+  - Genesis.Physics.CollisionGroupExtensions
   - Genesis.Physics.HitResult
+  - Genesis.Physics.HitResult2D
   - Genesis.Physics.MatrixSet
   - Genesis.Physics.MouseRay2
   - Genesis.Physics.PhysicHandler
@@ -58,6 +61,22 @@ references:
   name: ColliderBehavior3D
   nameWithType: ColliderBehavior3D
   fullName: Genesis.Physics.ColliderBehavior3D
+- uid: Genesis.Physics.CollisionGroup
+  commentId: T:Genesis.Physics.CollisionGroup
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.CollisionGroup.html
+  name: CollisionGroup
+  nameWithType: CollisionGroup
+  fullName: Genesis.Physics.CollisionGroup
+- uid: Genesis.Physics.CollisionGroupExtensions
+  commentId: T:Genesis.Physics.CollisionGroupExtensions
+  parent: Genesis.Physics
+  isExternal: true
+  href: Genesis.Physics.CollisionGroupExtensions.html
+  name: CollisionGroupExtensions
+  nameWithType: CollisionGroupExtensions
+  fullName: Genesis.Physics.CollisionGroupExtensions
 - uid: Genesis.Physics.PhysicsHandler2D
   commentId: T:Genesis.Physics.PhysicsHandler2D
   isExternal: true
@@ -105,6 +124,7 @@ references:
   fullName: Genesis.Physics.MouseRay2
 - uid: Genesis.Physics.PhysicHandlerEvent
   commentId: T:Genesis.Physics.PhysicHandlerEvent
+  parent: Genesis.Physics
   isExternal: true
   href: Genesis.Physics.PhysicHandlerEvent.html
   name: PhysicHandlerEvent
@@ -149,6 +169,13 @@ references:
   name: PhysicsBehavior
   nameWithType: PhysicsBehavior
   fullName: Genesis.Physics.PhysicsBehavior
+- uid: Genesis.Physics.HitResult2D
+  commentId: T:Genesis.Physics.HitResult2D
+  isExternal: true
+  href: Genesis.Physics.HitResult2D.html
+  name: HitResult2D
+  nameWithType: HitResult2D
+  fullName: Genesis.Physics.HitResult2D
 - uid: Genesis.Physics.Raycast2D
   commentId: T:Genesis.Physics.Raycast2D
   isExternal: true

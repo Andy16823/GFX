@@ -13,8 +13,11 @@ items:
   - Genesis.Physics.Raycast.GetRayDir(GlmSharp.vec4,GlmSharp.vec4)
   - Genesis.Physics.Raycast.GetStartVec(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   - Genesis.Physics.Raycast.GetViewProjectionMatrix(Genesis.Graphics.Camera)
-  - Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
-  - Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  - Genesis.Physics.Raycast.PerformRaycast(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Physics.PhysicHandler)
+  - Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  - Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  - Genesis.Physics.Raycast.PerformRaycastFromScreenAll(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  - Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32,System.Int32,System.Int32)
   - Genesis.Physics.Raycast.Viewport
   langs:
   - csharp
@@ -170,16 +173,16 @@ items:
   nameWithType.vb: Raycast.GetMouseWorldPosition(Camera, Viewport, Integer, Integer)
   fullName.vb: Genesis.Physics.Raycast.GetMouseWorldPosition(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
   name.vb: GetMouseWorldPosition(Camera, Viewport, Integer, Integer)
-- uid: Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
-  commentId: M:Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
-  id: PerformCast(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  id: PerformRaycastFromScreen(Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
   parent: Genesis.Physics.Raycast
   langs:
   - csharp
   - vb
-  name: PerformCast(PhysicHandler, int, int)
-  nameWithType: Raycast.PerformCast(PhysicHandler, int, int)
-  fullName: Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler, int, int)
+  name: PerformRaycastFromScreen(PhysicHandler, int, int)
+  nameWithType: Raycast.PerformRaycastFromScreen(PhysicHandler, int, int)
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -187,7 +190,7 @@ items:
   summary: Performs a raycast and returns the hit result based on the mouse cursor position.
   example: []
   syntax:
-    content: public HitResult PerformCast(PhysicHandler physicHandler, int posX, int posY)
+    content: public HitResult PerformRaycastFromScreen(PhysicHandler physicHandler, int posX, int posY)
     parameters:
     - id: physicHandler
       type: Genesis.Physics.PhysicHandler
@@ -201,21 +204,63 @@ items:
     return:
       type: Genesis.Physics.HitResult
       description: HitResult containing information about the raycasting hit.
-    content.vb: Public Function PerformCast(physicHandler As PhysicHandler, posX As Integer, posY As Integer) As HitResult
-  overload: Genesis.Physics.Raycast.PerformCast*
-  nameWithType.vb: Raycast.PerformCast(PhysicHandler, Integer, Integer)
-  fullName.vb: Genesis.Physics.Raycast.PerformCast(Genesis.Physics.PhysicHandler, Integer, Integer)
-  name.vb: PerformCast(PhysicHandler, Integer, Integer)
-- uid: Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
-  commentId: M:Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
-  id: PerformCast(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+    content.vb: Public Function PerformRaycastFromScreen(physicHandler As PhysicHandler, posX As Integer, posY As Integer) As HitResult
+  overload: Genesis.Physics.Raycast.PerformRaycastFromScreen*
+  nameWithType.vb: Raycast.PerformRaycastFromScreen(PhysicHandler, Integer, Integer)
+  fullName.vb: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Physics.PhysicHandler, Integer, Integer)
+  name.vb: PerformRaycastFromScreen(PhysicHandler, Integer, Integer)
+- uid: Genesis.Physics.Raycast.PerformRaycast(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Physics.PhysicHandler)
+  commentId: M:Genesis.Physics.Raycast.PerformRaycast(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Physics.PhysicHandler)
+  id: PerformRaycast(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Physics.PhysicHandler)
   parent: Genesis.Physics.Raycast
   langs:
   - csharp
   - vb
-  name: PerformCast(Camera, Viewport, PhysicHandler, int, int)
-  nameWithType: Raycast.PerformCast(Camera, Viewport, PhysicHandler, int, int)
-  fullName: Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, int, int)
+  name: PerformRaycast(Vec3, Vec3, PhysicHandler)
+  nameWithType: Raycast.PerformRaycast(Vec3, Vec3, PhysicHandler)
+  fullName: Genesis.Physics.Raycast.PerformRaycast(Genesis.Math.Vec3, Genesis.Math.Vec3, Genesis.Physics.PhysicHandler)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  summary: Performs a raycast between two 3D points to detect collisions within the physics world.
+  remarks: >-
+    The method casts a ray from the <code class="paramref">start</code> position to the <code class="paramref">end</code> position.
+
+    If the ray intersects any object within the physics world, the <xref href="Genesis.Physics.HitResult" data-throw-if-not-resolved="false"></xref> will contain details 
+
+    about the hit, including the element hit and the collision object.
+  example: []
+  syntax:
+    content: public static HitResult PerformRaycast(Vec3 start, Vec3 end, PhysicHandler physicHandler)
+    parameters:
+    - id: start
+      type: Genesis.Math.Vec3
+      description: The starting point of the ray in world space.
+    - id: end
+      type: Genesis.Math.Vec3
+      description: The ending point of the ray in world space.
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+      description: The <xref href="Genesis.Physics.PhysicHandler" data-throw-if-not-resolved="false"></xref> responsible for physics simulation and raycasting.
+    return:
+      type: Genesis.Physics.HitResult
+      description: >-
+        A <xref href="Genesis.Physics.HitResult" data-throw-if-not-resolved="false"></xref> object containing information about whether a hit occurred,
+
+        the collided game element, and the collision details (e.g., location of the hit and collision object).
+    content.vb: Public Shared Function PerformRaycast(start As Vec3, [end] As Vec3, physicHandler As PhysicHandler) As HitResult
+  overload: Genesis.Physics.Raycast.PerformRaycast*
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  id: PerformRaycastFromScreen(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  parent: Genesis.Physics.Raycast
+  langs:
+  - csharp
+  - vb
+  name: PerformRaycastFromScreen(Camera, Viewport, PhysicHandler, int, int)
+  nameWithType: Raycast.PerformRaycastFromScreen(Camera, Viewport, PhysicHandler, int, int)
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -223,7 +268,7 @@ items:
   summary: Performs a raycast and returns the hit result based on the mouse cursor position.
   example: []
   syntax:
-    content: public static HitResult PerformCast(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
+    content: public static HitResult PerformRaycastFromScreen(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
     parameters:
     - id: camera
       type: Genesis.Graphics.Camera
@@ -243,11 +288,83 @@ items:
     return:
       type: Genesis.Physics.HitResult
       description: HitResult containing information about the raycasting hit.
-    content.vb: Public Shared Function PerformCast(camera As Camera, viewport As Viewport, physicHandler As PhysicHandler, posX As Integer, posY As Integer) As HitResult
-  overload: Genesis.Physics.Raycast.PerformCast*
-  nameWithType.vb: Raycast.PerformCast(Camera, Viewport, PhysicHandler, Integer, Integer)
-  fullName.vb: Genesis.Physics.Raycast.PerformCast(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, Integer, Integer)
-  name.vb: PerformCast(Camera, Viewport, PhysicHandler, Integer, Integer)
+    content.vb: Public Shared Function PerformRaycastFromScreen(camera As Camera, viewport As Viewport, physicHandler As PhysicHandler, posX As Integer, posY As Integer) As HitResult
+  overload: Genesis.Physics.Raycast.PerformRaycastFromScreen*
+  nameWithType.vb: Raycast.PerformRaycastFromScreen(Camera, Viewport, PhysicHandler, Integer, Integer)
+  fullName.vb: Genesis.Physics.Raycast.PerformRaycastFromScreen(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, Integer, Integer)
+  name.vb: PerformRaycastFromScreen(Camera, Viewport, PhysicHandler, Integer, Integer)
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32,System.Int32,System.Int32)
+  parent: Genesis.Physics.Raycast
+  langs:
+  - csharp
+  - vb
+  name: PerformRaycastFromScreenFiltered(Camera, Viewport, PhysicHandler, int, int, int, int)
+  nameWithType: Raycast.PerformRaycastFromScreenFiltered(Camera, Viewport, PhysicHandler, int, int, int, int)
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, int, int, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public static HitResult PerformRaycastFromScreenFiltered(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY, int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+    - id: posX
+      type: System.Int32
+    - id: posY
+      type: System.Int32
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    return:
+      type: Genesis.Physics.HitResult
+    content.vb: Public Shared Function PerformRaycastFromScreenFiltered(camera As Camera, viewport As Viewport, physicHandler As PhysicHandler, posX As Integer, posY As Integer, collisionGroup As Integer = -1, collisionMask As Integer = -1) As HitResult
+  overload: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered*
+  nameWithType.vb: Raycast.PerformRaycastFromScreenFiltered(Camera, Viewport, PhysicHandler, Integer, Integer, Integer, Integer)
+  fullName.vb: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, Integer, Integer, Integer, Integer)
+  name.vb: PerformRaycastFromScreenFiltered(Camera, Viewport, PhysicHandler, Integer, Integer, Integer, Integer)
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreenAll(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.Raycast.PerformRaycastFromScreenAll(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  id: PerformRaycastFromScreenAll(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,Genesis.Physics.PhysicHandler,System.Int32,System.Int32)
+  parent: Genesis.Physics.Raycast
+  langs:
+  - csharp
+  - vb
+  name: PerformRaycastFromScreenAll(Camera, Viewport, PhysicHandler, int, int)
+  nameWithType: Raycast.PerformRaycastFromScreenAll(Camera, Viewport, PhysicHandler, int, int)
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreenAll(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, int, int)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public static List<HitResult> PerformRaycastFromScreenAll(Camera camera, Viewport viewport, PhysicHandler physicHandler, int posX, int posY)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+    - id: physicHandler
+      type: Genesis.Physics.PhysicHandler
+    - id: posX
+      type: System.Int32
+    - id: posY
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{Genesis.Physics.HitResult}
+    content.vb: Public Shared Function PerformRaycastFromScreenAll(camera As Camera, viewport As Viewport, physicHandler As PhysicHandler, posX As Integer, posY As Integer) As List(Of HitResult)
+  overload: Genesis.Physics.Raycast.PerformRaycastFromScreenAll*
+  nameWithType.vb: Raycast.PerformRaycastFromScreenAll(Camera, Viewport, PhysicHandler, Integer, Integer)
+  fullName.vb: Genesis.Physics.Raycast.PerformRaycastFromScreenAll(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Genesis.Physics.PhysicHandler, Integer, Integer)
+  name.vb: PerformRaycastFromScreenAll(Camera, Viewport, PhysicHandler, Integer, Integer)
 - uid: Genesis.Physics.Raycast.GetStartVec(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   commentId: M:Genesis.Physics.Raycast.GetStartVec(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
   id: GetStartVec(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
@@ -795,13 +912,13 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
-- uid: Genesis.Physics.Raycast.PerformCast*
-  commentId: Overload:Genesis.Physics.Raycast.PerformCast
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreen*
+  commentId: Overload:Genesis.Physics.Raycast.PerformRaycastFromScreen
   isExternal: true
-  href: Genesis.Physics.Raycast.html#Genesis_Physics_Raycast_PerformCast_Genesis_Physics_PhysicHandler_System_Int32_System_Int32_
-  name: PerformCast
-  nameWithType: Raycast.PerformCast
-  fullName: Genesis.Physics.Raycast.PerformCast
+  href: Genesis.Physics.Raycast.html#Genesis_Physics_Raycast_PerformRaycastFromScreen_Genesis_Physics_PhysicHandler_System_Int32_System_Int32_
+  name: PerformRaycastFromScreen
+  nameWithType: Raycast.PerformRaycastFromScreen
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreen
 - uid: Genesis.Physics.PhysicHandler
   commentId: T:Genesis.Physics.PhysicHandler
   parent: Genesis.Physics
@@ -818,6 +935,127 @@ references:
   name: HitResult
   nameWithType: HitResult
   fullName: Genesis.Physics.HitResult
+- uid: Genesis.Physics.Raycast.PerformRaycast*
+  commentId: Overload:Genesis.Physics.Raycast.PerformRaycast
+  isExternal: true
+  href: Genesis.Physics.Raycast.html#Genesis_Physics_Raycast_PerformRaycast_Genesis_Math_Vec3_Genesis_Math_Vec3_Genesis_Physics_PhysicHandler_
+  name: PerformRaycast
+  nameWithType: Raycast.PerformRaycast
+  fullName: Genesis.Physics.Raycast.PerformRaycast
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered*
+  commentId: Overload:Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered
+  isExternal: true
+  href: Genesis.Physics.Raycast.html#Genesis_Physics_Raycast_PerformRaycastFromScreenFiltered_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_Genesis_Physics_PhysicHandler_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: PerformRaycastFromScreenFiltered
+  nameWithType: Raycast.PerformRaycastFromScreenFiltered
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreenFiltered
+- uid: Genesis.Physics.Raycast.PerformRaycastFromScreenAll*
+  commentId: Overload:Genesis.Physics.Raycast.PerformRaycastFromScreenAll
+  isExternal: true
+  href: Genesis.Physics.Raycast.html#Genesis_Physics_Raycast_PerformRaycastFromScreenAll_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_Genesis_Physics_PhysicHandler_System_Int32_System_Int32_
+  name: PerformRaycastFromScreenAll
+  nameWithType: Raycast.PerformRaycastFromScreenAll
+  fullName: Genesis.Physics.Raycast.PerformRaycastFromScreenAll
+- uid: System.Collections.Generic.List{Genesis.Physics.HitResult}
+  commentId: T:System.Collections.Generic.List{Genesis.Physics.HitResult}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<HitResult>
+  nameWithType: List<HitResult>
+  fullName: System.Collections.Generic.List<Genesis.Physics.HitResult>
+  nameWithType.vb: List(Of HitResult)
+  fullName.vb: System.Collections.Generic.List(Of Genesis.Physics.HitResult)
+  name.vb: List(Of HitResult)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Genesis.Physics.HitResult
+    name: HitResult
+    isExternal: true
+    href: Genesis.Physics.HitResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Genesis.Physics.HitResult
+    name: HitResult
+    isExternal: true
+    href: Genesis.Physics.HitResult.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: Genesis.Physics.Raycast.GetStartVec*
   commentId: Overload:Genesis.Physics.Raycast.GetStartVec
   isExternal: true

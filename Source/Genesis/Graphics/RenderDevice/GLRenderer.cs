@@ -27,6 +27,9 @@ using static System.Windows.Forms.AxHost;
 using BulletSharp;
 using BulletSharp.SoftBody;
 using Newtonsoft.Json.Linq;
+using System.Xml.Linq;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Genesis.Graphics.RenderDevice
 {
@@ -52,6 +55,10 @@ namespace Genesis.Graphics.RenderDevice
         private Framebuffer uiBuffer;
 
         private Viewport m_viewport;
+
+        // test
+        private Framebuffer shadowmap;
+        private mat4 lightspacematrix;
 
         public GLRenderer(IntPtr hwnd, RenderSettings settings)
         {
@@ -93,6 +100,9 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("Light2DShader", new Light2DShader());
             this.ShaderPrograms.Add("SolidShapeShader", new SolidShapeShader());
             this.ShaderPrograms.Add("BorderCircleShader", new BorderCircleShader());
+            this.ShaderPrograms.Add("LightmapShader", new LightmapShader());
+            this.ShaderPrograms.Add("Element3DShader", new Element3DShader());
+            this.ShaderPrograms.Add("InstancedShader", new InstancedShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -164,6 +174,31 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
             gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.StaticDraw);
             return vbo;
+        }
+
+        public Framebuffer BuildShadowMap(int width, int height)
+        {
+            var framebuffer = new Framebuffer();
+            framebuffer.Propertys.Add("width", width);
+            framebuffer.Propertys.Add("height", height);
+            framebuffer.FramebufferID = gl.GenFramebuffers(1);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, framebuffer.FramebufferID);
+            gl.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+            framebuffer.Texture = gl.GenTextures(1);
+            gl.BindTexture(OpenGL.Texture2D, framebuffer.Texture);
+            gl.TexImage2D(OpenGL.Texture2D, 0, OpenGL.DepthComponent, width, height, 0, OpenGL.DepthComponent, OpenGL.Float);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMinFilter, NetGL.OpenGL.Nearest);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureMagFilter, NetGL.OpenGL.Nearest);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapS, OpenGL.ClampToBorder);
+            gl.TexParameteri(NetGL.OpenGL.Texture2D, OpenGL.TextureWrapT, OpenGL.ClampToBorder);
+            gl.TexParameterfv(NetGL.OpenGL.Texture2D, OpenGL.TextureBorderColor, new float[] { 1.0f, 1.0f, 1.0f, 1.0f });
+            gl.FrameBufferTexture2D(OpenGL.FrameBuffer, OpenGL.DepthAttachment, OpenGL.Texture2D, framebuffer.Texture, 0);
+            gl.DrawBuffer(OpenGL.None);
+            gl.ReadBuffer(OpenGL.None);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
+
+            return framebuffer;
         }
 
         /// <summary>
@@ -365,6 +400,10 @@ namespace Genesis.Graphics.RenderDevice
             {
                 this.InitModel((Core.GameElements.Model)element);
             }
+            else if(element.GetType() == typeof(Genesis.Core.GameElements.Sphere))
+            {
+                this.InitSphere((Core.GameElements.Sphere)element);
+            }
             else if(element.GetType() == typeof(Genesis.Core.Light2D))
             {
                 //this.InitLight2D((Light2D)element); Using the instanced shape
@@ -408,8 +447,7 @@ namespace Genesis.Graphics.RenderDevice
             cube.Propertys.Add("ShaderID", this.InitShader(cube.Shader));
 
             // 2. Init the texures
-            cube.Material.Propeterys.Add("tex_id", this.InitTexture(cube.Material.DiffuseTexture));
-            cube.Material.Propeterys.Add("normal_id", this.InitNormalMap(cube.Material.NormalTexture));
+            this.InitMaterial(cube.Material);
 
             int VAO = gl.GenVertexArrays(1);
             gl.BindVertexArray(VAO);
@@ -433,7 +471,7 @@ namespace Genesis.Graphics.RenderDevice
             cube.Propertys.Add("cbo", cbo);
 
             // 4. Load the texcoords
-            float[] texCords = cube.Shape.GetTextureCoordinates();
+            float[] texCords = Qube.GetTextureCoordinates(cube.Size.X, cube.Size.Y, cube.Size.Z);
             int tbo = gl.GenBuffer(1);
             gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
             gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
@@ -454,6 +492,51 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindVertexArray(0);
         }
 
+        private void InitSphere(Sphere sphere)
+        {
+            sphere.Propertys.Add("ShaderID", this.InitShader(sphere.Shader));
+            this.InitMaterial(sphere.Material);
+
+            int VAO = gl.GenVertexArrays(1);
+            gl.BindVertexArray(VAO);
+
+            int vbo = gl.GenBuffer(1);
+            var vertices = sphere.Shape.GetShape();
+            gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+            gl.BufferData(OpenGL.ArrayBuffer, vertices.Length * sizeof(float), vertices, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("vbo", vbo);
+
+            int cbo = gl.GenBuffer(1);
+            var vertexColors = sphere.Shape.GetOrderedColors(sphere.Color);
+            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+            gl.BufferData(OpenGL.ArrayBuffer, vertexColors.Length * sizeof(float), vertexColors, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("cbo", cbo);
+
+            float[] texCords = sphere.Shape.GetOrderedTextureCoordinates();
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("tbo", tbo);
+
+            float[] normals = sphere.Shape.GetOrderedNormals();
+            int nbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+            gl.BufferData(OpenGL.ArrayBuffer, normals.Length * sizeof(float), normals, OpenGL.DynamicDraw);
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+            sphere.Propertys.Add("nbo", nbo);
+
+            sphere.Propertys.Add("vao", VAO);
+            sphere.Propertys.Add("tris", (vertices.Length / 3));
+            gl.BindVertexArray(0);
+        }
+
         /// <summary>
         /// Inital an 3D element
         /// </summary>
@@ -464,7 +547,7 @@ namespace Genesis.Graphics.RenderDevice
 
             if(element.Shader == null)
             {
-                element.Propertys.Add("ShaderID", ShaderPrograms["DiffuseShader"].ProgramID);
+                element.Propertys.Add("ShaderID", ShaderPrograms["Element3DShader"].ProgramID);
             }
             else
             {
@@ -759,6 +842,10 @@ namespace Genesis.Graphics.RenderDevice
             if(element.GetType() == typeof(Qube))
             {
                 this.DrawCube((Qube)element);
+            }
+            else if(element.GetType() == typeof(Sphere))
+            {
+                this.DrawSpehere((Sphere)element);
             }
             else if(element.GetType() == typeof(Terrain3D))
             {
@@ -1192,30 +1279,8 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="camera"></param>
         public void SetCamera(Viewport viewport, Camera camera)
         {
-            float correction = camera.CalculateScreenCorrection(viewport);
-
-            if (camera.Type == CameraType.Ortho)
-            {
-                float halfWidth = (viewport.Width / 2) / correction;
-                float halfHeight = (viewport.Height / 2) / correction;
-
-                float left = camera.Location.X - halfWidth;
-                float right = camera.Location.X + halfWidth;
-                float bottom = camera.Location.Y - halfHeight;
-                float top = camera.Location.Y + halfHeight;
-
-                p_mat = mat4.Ortho(left, right, bottom, top, 0.1f, 100.0f);
-                v_mat = mat4.LookAt(new vec3(0f, 0f, 1f), new vec3(0f, 0f, 0f), new vec3(0f, 1f, 0f));
-            }
-            else
-            {
-                float aspectRatio = (viewport.Width * correction) / (viewport.Height * correction);
-                vec3 cameraPosition = camera.Location.ToGlmVec3();
-                Vec3 cameraFront = Utils.CalculateCameraFront2(camera);
-
-                p_mat = mat4.Perspective(Utils.ToRadians(camera.FOV), aspectRatio, camera.Near, camera.Far);
-                v_mat =  mat4.LookAt(cameraPosition, cameraPosition + cameraFront.ToGlmVec3(), new vec3(0.0f, 1.0f, 0.0f));
-            }
+            p_mat = camera.GetProjectionMatrix(viewport);
+            v_mat = camera.GetViewMatrix();
 
             if(this.camera == null || this.camera != camera)
             {
@@ -1654,6 +1719,7 @@ namespace Genesis.Graphics.RenderDevice
                         gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
                         gl.Uniform1f(gl.GetUniformLocation(elementShaderID, "lightIntensity"), lightSource.Intensity);
                         gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                        gl.Uniform3f(gl.GetUniformLocation(elementShaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
                     }
 
                     gl.ActiveTexture(OpenGL.Texture0);
@@ -1663,6 +1729,18 @@ namespace Genesis.Graphics.RenderDevice
                     gl.ActiveTexture(OpenGL.Texture1);
                     gl.BindTexture(OpenGL.Texture2D, (int)material.Propeterys["normal_id"]);
                     gl.Uniform1I(gl.GetUniformLocation(elementShaderID, "normalMap"), 1);
+
+                    if(this.shadowmap != null)
+                    {
+                        gl.ActiveTexture(OpenGL.Texture2);
+                        gl.BindTexture(OpenGL.Texture2D, shadowmap.Texture);
+                        gl.Uniform1I(gl.GetUniformLocation(elementShaderID, "shadowMap"), 2);
+
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "projection"), 1, false, p_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "view"), 1, false, v_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "model"), 1, false, m_mat.ToArray());
+                        gl.UniformMatrix4fv(gl.GetUniformLocation(elementShaderID, "lightSpaceMatrix"), 1, false, lightspacematrix.ToArray());
+                    }
 
                     gl.BindVertexArray((int)material.Propeterys["vao"]);
                     gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
@@ -1975,9 +2053,9 @@ namespace Genesis.Graphics.RenderDevice
         private void DrawCube(Qube cube)
         {
             // Build the matrices
-            mat4 mt_mat = mat4.Translate(cube.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(cube.Rotation.X) * mat4.RotateY(cube.Rotation.Y) * mat4.RotateZ(cube.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(cube.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(cube);
+            mat4 mr_mat = Utils.GetModelRotation(cube); 
+            mat4 ms_mat = Utils.GetModelScale(cube);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             // Assign the matrices to the shader
@@ -1996,6 +2074,9 @@ namespace Genesis.Graphics.RenderDevice
                 gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
             }
 
+            var materialColor = Utils.ConvertColor(cube.Material.DiffuseColor, true);
+            gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
+
             if (this.lightSource != null)
             {
                 Vec3 ligtDirection = lightSource.GetLightDirection(camera);
@@ -2003,6 +2084,7 @@ namespace Genesis.Graphics.RenderDevice
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
                 gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
                 gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
             }
 
             gl.ActiveTexture(OpenGL.Texture0);
@@ -2013,8 +2095,64 @@ namespace Genesis.Graphics.RenderDevice
             gl.BindTexture(OpenGL.Texture2D, (int)cube.Material.Propeterys["normal_id"]);
             gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
 
+            if (this.shadowmap != null && gl.GetUniformLocation(shaderID, "lightSpaceMatrix") != -1)
+            {
+                gl.ActiveTexture(OpenGL.Texture2);
+                gl.BindTexture(OpenGL.Texture2D, shadowmap.Texture);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "shadowMap"), 2);
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "lightSpaceMatrix"), 1, false, lightspacematrix.ToArray());
+            }
+
             gl.BindVertexArray((int)cube.Propertys["vao"]);
             gl.DrawArrays(OpenGL.Triangles, 0, (int)cube.Propertys["tris"]);
+            gl.BindVertexArray(0);
+        }
+
+        private void DrawSpehere(Sphere sphere)
+        {
+            mat4 mt_mat = Utils.GetModelTransformation(sphere);
+            mat4 mr_mat = Utils.GetModelRotation(sphere);
+            mat4 ms_mat = Utils.GetModelScale(sphere);
+            mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+            // Assign the matrices to the shader
+            int shaderID = (int)sphere.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+
+            if (gl.GetUniformLocation(shaderID, "mvp") != -1)
+            {
+                mat4 mvp = p_mat * v_mat * m_mat;
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "mvp"), 1, false, mvp.ToArray());
+            }
+            else
+            {
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "projection"), 1, false, p_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "view"), 1, false, v_mat.ToArray());
+                gl.UniformMatrix4fv(gl.GetUniformLocation(shaderID, "model"), 1, false, m_mat.ToArray());
+            }
+
+            var materialColor = Utils.ConvertColor(sphere.Material.DiffuseColor, true);
+            gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
+
+            if (this.lightSource != null)
+            {
+                Vec3 ligtDirection = lightSource.GetLightDirection(camera);
+                Vec3 lightColor = lightSource.GetLightColor();
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
+                gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+            }
+
+            gl.ActiveTexture(OpenGL.Texture0);
+            gl.BindTexture(OpenGL.Texture2D, (int)sphere.Material.Propeterys["tex_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+            gl.ActiveTexture(OpenGL.Texture1);
+            gl.BindTexture(OpenGL.Texture2D, (int)sphere.Material.Propeterys["normal_id"]);
+            gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+
+            gl.BindVertexArray((int)sphere.Propertys["vao"]);
+            gl.DrawArrays(OpenGL.Triangles, 0, (int)sphere.Propertys["tris"]);
             gl.BindVertexArray(0);
         }
 
@@ -2234,9 +2372,9 @@ namespace Genesis.Graphics.RenderDevice
 
         private void DrawModel(Core.GameElements.Model model)
         {
-            mat4 mt_mat = mat4.Translate(model.Location.ToGlmVec3());
-            mat4 mr_mat = mat4.RotateX(model.Rotation.X) * mat4.RotateY(model.Rotation.Y) * mat4.RotateZ(model.Rotation.Z);
-            mat4 ms_mat = mat4.Scale(model.Size.ToGlmVec3());
+            mat4 mt_mat = Utils.GetModelTransformation(model);
+            mat4 mr_mat = Utils.GetModelRotation(model);
+            mat4 ms_mat = Utils.GetModelScale(model);
             mat4 m_mat = mt_mat * mr_mat * ms_mat;
 
             foreach (var mesh in model.Meshes)
@@ -2354,15 +2492,25 @@ namespace Genesis.Graphics.RenderDevice
         {
             foreach (KeyValuePair<string, ShaderProgram> item in ShaderPrograms)
             {
-                Console.WriteLine("Dispose " + item.Key);
+                Debug.WriteLine($"Disposing {item.Key}");
                 this.DisposeShader(item.Value);
+                Debug.WriteLine($"{item.Key} Disposed with Error {gl.GetError()}");
             }
 
             foreach (var item in InstancedShapes)
             {
-                Console.WriteLine("Dispose " + item.Key);
+                Debug.WriteLine($"Disposing {item.Key}");
                 gl.DeleteBuffers(1, item.Value.vbo);
-                Console.WriteLine("Disposed " + item.Key + " with error " + gl.GetError());
+                Debug.WriteLine($"{item.Key} Disposed with Error {gl.GetError()}");
+            }
+
+            if(this.shadowmap != null)
+            {
+                Debug.WriteLine($"Disposing Shadowmap");
+                gl.DeleteTextures(1, this.shadowmap.Texture);
+                gl.DeleteFramebuffers(1, this.shadowmap.FramebufferID);
+                gl.DeleteRenderbuffers(1, this.shadowmap.RenderBuffer);
+                Debug.WriteLine($"Shadowmap Disposed with Error {gl.GetError()}");
             }
         }
 
@@ -2498,29 +2646,108 @@ namespace Genesis.Graphics.RenderDevice
             Console.WriteLine("Disposed Light2D " + light2D.UUID + " with error " + gl.GetError());
         }
 
-        public Framebuffer BuildShadowMap(int width, int height)
-        {
-            return null;
-        }
 
         public mat4 GenerateLightspaceMatrix(Camera camera, Viewport viewport, Light lightSource)
         {
-            return mat4.Identity;
+            var cam = (PerspectiveCamera) camera;
+
+            mat4 lightView = mat4.LookAt(lightSource.Location.ToGlmVec3(), new vec3(0), new vec3(0.0f, 1.0f, 0.0f));
+            var frustumCorners = cam.GetFrustum(viewport).ToList(lightView);
+
+            vec3 min = new vec3();
+            vec3 max = new vec3();
+
+            for (int i = 0; i < frustumCorners.Count; i++)
+            {
+                if (frustumCorners[i].x < min.x)
+                    min.x = frustumCorners[i].x;
+                if (frustumCorners[i].y < min.y)
+                    min.y = frustumCorners[i].y;
+                if (frustumCorners[i].z < min.z)
+                    min.z = frustumCorners[i].z;
+
+                if (frustumCorners[i].x > max.x)
+                    max.x = frustumCorners[i].x;
+                if (frustumCorners[i].y > max.y)
+                    max.y = frustumCorners[i].y;
+                if (frustumCorners[i].z > max.z)
+                    max.z = frustumCorners[i].z;
+            }
+
+            float l = min.x - 10f;
+            float r = max.x + 10f;
+            float b = min.y - 10f;
+            float t = max.y + 10f;
+
+            float n = -max.z;
+            float f = -min.z;
+
+            mat4 lightProjection = mat4.Ortho(l, r, b, t, n, f);
+            return lightProjection * lightView;
         }
 
         public void PrepareShadowPass(Framebuffer shadowmap, mat4 lightspaceMatrix)
         {
-            
+            int width = (int) shadowmap.Propertys["width"];
+            int height = (int)shadowmap.Propertys["height"];
+
+            this.shadowmap = shadowmap;
+            this.lightspacematrix = lightspaceMatrix;
+
+            gl.GlCullFace(OpenGL.Front);
+            gl.Viewport(0, 0, width, height);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, shadowmap.FramebufferID);
+            gl.Clear(NetGL.OpenGL.DepthBufferBit);
         }
 
         public void RenderShadowmap(Framebuffer shadowmap, mat4 lightspaceMatrix, Scene3D scene)
         {
-            
+            var shaderId = this.ShaderPrograms["LightmapShader"].ProgramID;
+
+            foreach (var layer in scene.Layer)
+            {
+                foreach (var item in layer.Elements)
+                {
+                    item.OnRender(null, this);
+                    //if(item.GetType() == typeof(Element3D))
+                    //{
+                    //    var element = (Element3D)item;
+
+                    //    mat4 mt_mat = Utils.GetModelTransformation(element);
+                    //    mat4 mr_mat = Utils.GetModelRotation(element);
+                    //    mat4 ms_mat = Utils.GetModelScale(element);
+                    //    mat4 m_mat = mt_mat * mr_mat * ms_mat;
+
+                    //    gl.Enable(OpenGL.Texture2D);
+                    //    foreach (var material in element.Materials)
+                    //    {
+                    //        if (material.Propeterys.ContainsKey("vao"))
+                    //        {
+                    //            gl.UseProgram(shaderId);
+
+                    //            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "lightSpaceMatrix"), 1, false, lightspaceMatrix.ToArray());
+                    //            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderId, "model"), 1, false, m_mat.ToArray());
+
+                    //            gl.BindVertexArray((int)material.Propeterys["vao"]);
+                    //            gl.DrawArrays(OpenGL.Triangles, 0, (int)material.Propeterys["tris"]);
+                    //            gl.BindVertexArray(0);
+
+                    //        }
+                    //    }
+                    //}
+                    //else if(item.GetType() == typeof(Qube))
+                    //{
+                    //    item.OnRender(null, this);
+                    //}
+                }
+            }
         }
 
         public void FinishShadowPass(Viewport viewport)
         {
-            
+            gl.GlCullFace(OpenGL.Back);
+            this.SetViewport(viewport);
+            gl.BindFramebuffer(OpenGL.FrameBuffer, 0);
         }
 
         public void SetProjectionMatrix(mat4 projectionMatrix)
@@ -2535,27 +2762,176 @@ namespace Genesis.Graphics.RenderDevice
 
         public bool IsMaterialLoaded(Material material)
         {
+            if(material.Propeterys.ContainsKey("tex_id") && material.Propeterys.ContainsKey("normal_id"))
+            {
+                return true;
+            }
             return false;
         }
 
         public void InitMaterial(Material material)
         {
-            
+            if(!this.IsMaterialLoaded(material))
+            {
+                Debug.WriteLine($"Loading Material {material.Name}");
+                if (!material.Propeterys.ContainsKey("tex_id"))
+                {
+                    var texturePath = material.DiffuseTexture;
+                    if (material.Propeterys.ContainsKey("Path"))
+                    {
+                        texturePath = Path.Combine((String)material.Propeterys["Path"], material.DiffuseTexture);
+                    }
+                    material.Propeterys.Add("tex_id", this.InitTexture(texturePath));
+                }
+                if (!material.Propeterys.ContainsKey("normal_id"))
+                {
+                    var texturePath = material.NormalTexture;
+                    if (material.Propeterys.ContainsKey("Path"))
+                    {
+                        texturePath = Path.Combine((String)material.Propeterys["Path"], material.NormalTexture);
+                    }
+                    material.Propeterys.Add("normal_id", this.InitNormalMap(texturePath));
+                }
+                Debug.WriteLine($"Loaded Material {material.Name} with error {gl.GetError()}");
+            }
         }
 
         public void InitInstance(RenderInstanceContainer element)
         {
-            throw new NotImplementedException();
+            var shaderId = InitShader(element.Shader);
+            element.Propertys.Add("ShaderID", shaderId);
+            var matrices = element.GetMatrices();
+
+            // Generate the matrix buffer for all meshes so we need only 1 buffer
+            int mbo = gl.GenBuffer(1);
+            int vec4Size = sizeof(float) * 4;
+            gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
+            gl.BufferData(OpenGL.ArrayBuffer, matrices.Length * sizeof(float), matrices, OpenGL.DynamicDraw);
+
+            foreach(var mesh in element.Meshes)
+            {
+                // Init the material
+                this.InitMaterial(mesh.Material);
+
+                // Create an vao for this mesh
+                int vao = gl.GenVertexArrays(1);
+                gl.BindVertexArray(vao);
+
+                // Create the vbo for the mesh
+                int vbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.Vertices.Length * sizeof(float), mesh.Vertices, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(0);
+                gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("vbo", vbo);
+
+                // Create and bind  the cbo for the mesh
+                int cbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.VertexColors.Length * sizeof(float), mesh.VertexColors, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(1);
+                gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("cbo", cbo);
+
+                // Create and bind the tbo for the mesh
+                int tbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.TextureCords.Length * sizeof(float), mesh.TextureCords, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(2);
+                gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("tbo", tbo);
+
+                // Create and bind the nbo for the mesh
+                int nbo = gl.GenBuffer(1);
+                gl.BindBuffer(OpenGL.ArrayBuffer, nbo);
+                gl.BufferData(OpenGL.ArrayBuffer, mesh.Normals.Length * sizeof(float), mesh.Normals, OpenGL.DynamicDraw);
+                gl.EnableVertexAttribArray(3);
+                gl.VertexAttribPointer(3, 3, OpenGL.Float, false, 0, 0);
+                mesh.Propertys.Add("nbo", nbo);
+
+                // Bind the mbo for the mesh
+                gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
+                gl.EnableVertexAttribArray(4);
+                gl.VertexAttribPointer(4, 4, OpenGL.Float, false, 4 * vec4Size, 0);
+                gl.EnableVertexAttribArray(5);
+                gl.VertexAttribPointer(5, 4, OpenGL.Float, false, 4 * vec4Size, vec4Size);
+                gl.EnableVertexAttribArray(6);
+                gl.VertexAttribPointer(6, 4, OpenGL.Float, false, 4 * vec4Size, 2 * vec4Size);
+                gl.EnableVertexAttribArray(7);
+                gl.VertexAttribPointer(7, 4, OpenGL.Float, false, 4 * vec4Size, 3 * vec4Size);
+                gl.VertexAttribDivisor(4, 1);
+                gl.VertexAttribDivisor(5, 1);
+                gl.VertexAttribDivisor(6, 1);
+                gl.VertexAttribDivisor(7, 1);
+                
+                // Save the vao
+                mesh.Propertys.Add("vao", vao);
+                mesh.Propertys.Add("tris", (mesh.Vertices.Length / 3));
+                gl.BindVertexArray(0);
+            }
+
+            element.Propertys.Add("mbo", mbo);
+            Debug.WriteLine($"Initilized Element {element.Name} with error {gl.GetError()}");
         }
 
         public void DrawInstance(RenderInstanceContainer element)
         {
-            throw new NotImplementedException();
+            int instanceCount = element.Children.Count;
+            int shaderID = (int)element.Propertys["ShaderID"];
+            gl.UseProgram(shaderID);
+
+            int projectionLoc = gl.GetUniformLocation(shaderID, "projection");
+            gl.UniformMatrix4fv(projectionLoc, 1, false, p_mat.ToArray());
+
+            int viewLoc = gl.GetUniformLocation(shaderID, "view");
+            gl.UniformMatrix4fv(viewLoc, 1, false, v_mat.ToArray());
+
+            if (this.lightSource != null)
+            {
+                Vec3 lightColor = lightSource.GetLightColor();
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightPos"), lightSource.Location.X, lightSource.Location.Y, lightSource.Location.Z);
+                gl.Uniform1f(gl.GetUniformLocation(shaderID, "lightIntensity"), lightSource.Intensity);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "lightColor"), lightColor.X, lightColor.Y, lightColor.Z);
+                gl.Uniform3f(gl.GetUniformLocation(shaderID, "viewPos"), camera.Location.X, camera.Location.Y, camera.Location.Z);
+            }
+
+            foreach(var mesh in element.Meshes)
+            {
+                var materialColor = Utils.ConvertColor(mesh.Material.DiffuseColor, true);
+                gl.Uniform4f(gl.GetUniformLocation(shaderID, "materialColor"), materialColor[0], materialColor[1], materialColor[2], materialColor[3]);
+
+                gl.ActiveTexture(OpenGL.Texture0);
+                gl.BindTexture(OpenGL.Texture2D, (int)mesh.Material.Propeterys["tex_id"]);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "textureSampler"), 0);
+
+                gl.ActiveTexture(OpenGL.Texture1);
+                gl.BindTexture(OpenGL.Texture2D, (int)mesh.Material.Propeterys["normal_id"]);
+                gl.Uniform1I(gl.GetUniformLocation(shaderID, "normalMap"), 1);
+
+                gl.BindVertexArray((int)mesh.Propertys["vao"]);
+                int vertexCount = (int)mesh.Propertys["tris"] * 3;
+                gl.DrawArraysInstanced(OpenGL.Triangles, 0, vertexCount, instanceCount);
+            }
+
+            gl.BindVertexArray(0);
+            gl.UseProgram(0);
+            gl.ActiveTexture(OpenGL.Texture0);
+            Debug.WriteLine($"Rendered {element.GetType().Name}: {element.Name} with error {gl.GetError()}");
         }
 
         public void DisposeInstance(RenderInstanceContainer element)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Disposing {element.Name}");
+             foreach(var mesh in element.Meshes)
+            {
+                gl.DeleteVertexArrays(1, (int)mesh.Propertys["vao"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["vbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["cbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["tbo"]);
+                gl.DeleteBuffers(1, (int)mesh.Propertys["nbo"]);
+            }
+            gl.DeleteBuffers(1, (int)element.Propertys["mbo"]);
+            Console.WriteLine($"{element.Name} Disposed!");
         }
     }
 }

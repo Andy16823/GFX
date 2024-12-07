@@ -6,6 +6,7 @@ items:
   parent: Genesis.Core.GameElements
   children:
   - Genesis.Core.GameElements.Element3D.#ctor(System.String,System.String,Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3)
+  - Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
   - Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
   - Genesis.Core.GameElements.Element3D.GetShape
   - Genesis.Core.GameElements.Element3D.HasTransparancy
@@ -16,6 +17,7 @@ items:
   - Genesis.Core.GameElements.Element3D.OnRender(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Element3D.OnUpdate(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
   - Genesis.Core.GameElements.Element3D.Shader
+  - Genesis.Core.GameElements.Element3D.ToRenderInstance
   langs:
   - csharp
   - vb
@@ -56,6 +58,7 @@ items:
   - Genesis.Core.GameElement.Children
   - Genesis.Core.GameElement.Parent
   - Genesis.Core.GameElement.UUID
+  - Genesis.Core.GameElement.CastShadows
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -261,6 +264,54 @@ items:
       description: A MaterialBuffer containing vertex, normal, and texture coordinate data.
     content.vb: Public Function GetMaterialBuffers(material As Material) As MaterialBuffer
   overload: Genesis.Core.GameElements.Element3D.GetMaterialBuffers*
+- uid: Genesis.Core.GameElements.Element3D.ToRenderInstance
+  commentId: M:Genesis.Core.GameElements.Element3D.ToRenderInstance
+  id: ToRenderInstance
+  parent: Genesis.Core.GameElements.Element3D
+  langs:
+  - csharp
+  - vb
+  name: ToRenderInstance()
+  nameWithType: Element3D.ToRenderInstance()
+  fullName: Genesis.Core.GameElements.Element3D.ToRenderInstance()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public RenderInstanceContainer ToRenderInstance()
+    return:
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Public Function ToRenderInstance() As RenderInstanceContainer
+  overload: Genesis.Core.GameElements.Element3D.ToRenderInstance*
+- uid: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+  commentId: M:Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+  id: CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+  parent: Genesis.Core.GameElements.Element3D
+  langs:
+  - csharp
+  - vb
+  name: CreateInstanceContainer(Element3D, bool)
+  nameWithType: Element3D.CreateInstanceContainer(Element3D, bool)
+  fullName: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D, bool)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.GameElements
+  syntax:
+    content: public static RenderInstanceContainer CreateInstanceContainer(Element3D element, bool updateInstances = false)
+    parameters:
+    - id: element
+      type: Genesis.Core.GameElements.Element3D
+    - id: updateInstances
+      type: System.Boolean
+    return:
+      type: Genesis.Graphics.RenderInstanceContainer
+    content.vb: Public Shared Function CreateInstanceContainer(element As Element3D, updateInstances As Boolean = False) As RenderInstanceContainer
+  overload: Genesis.Core.GameElements.Element3D.CreateInstanceContainer*
+  nameWithType.vb: Element3D.CreateInstanceContainer(Element3D, Boolean)
+  fullName.vb: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D, Boolean)
+  name.vb: CreateInstanceContainer(Element3D, Boolean)
 - uid: Genesis.Core.GameElements.Element3D.Shader
   commentId: P:Genesis.Core.GameElements.Element3D.Shader
   id: Shader
@@ -730,6 +781,14 @@ references:
   name: UUID
   nameWithType: GameElement.UUID
   fullName: Genesis.Core.GameElement.UUID
+- uid: Genesis.Core.GameElement.CastShadows
+  commentId: P:Genesis.Core.GameElement.CastShadows
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_CastShadows
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
@@ -1353,6 +1412,47 @@ references:
   name: MaterialBuffer
   nameWithType: MaterialBuffer
   fullName: Genesis.Graphics.MaterialBuffer
+- uid: Genesis.Core.GameElements.Element3D.ToRenderInstance*
+  commentId: Overload:Genesis.Core.GameElements.Element3D.ToRenderInstance
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_ToRenderInstance
+  name: ToRenderInstance
+  nameWithType: Element3D.ToRenderInstance
+  fullName: Genesis.Core.GameElements.Element3D.ToRenderInstance
+- uid: Genesis.Graphics.RenderInstanceContainer
+  commentId: T:Genesis.Graphics.RenderInstanceContainer
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderInstanceContainer.html
+  name: RenderInstanceContainer
+  nameWithType: RenderInstanceContainer
+  fullName: Genesis.Graphics.RenderInstanceContainer
+- uid: Genesis.Core.GameElements.Element3D.CreateInstanceContainer*
+  commentId: Overload:Genesis.Core.GameElements.Element3D.CreateInstanceContainer
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_CreateInstanceContainer_Genesis_Core_GameElements_Element3D_System_Boolean_
+  name: CreateInstanceContainer
+  nameWithType: Element3D.CreateInstanceContainer
+  fullName: Genesis.Core.GameElements.Element3D.CreateInstanceContainer
+- uid: Genesis.Core.GameElements.Element3D
+  commentId: T:Genesis.Core.GameElements.Element3D
+  parent: Genesis.Core.GameElements
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html
+  name: Element3D
+  nameWithType: Element3D
+  fullName: Genesis.Core.GameElements.Element3D
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Genesis.Core.GameElements.Element3D.Shader*
   commentId: Overload:Genesis.Core.GameElements.Element3D.Shader
   isExternal: true
@@ -1524,14 +1624,3 @@ references:
   name: HasTransparancy
   nameWithType: Element3D.HasTransparancy
   fullName: Genesis.Core.GameElements.Element3D.HasTransparancy
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean

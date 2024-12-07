@@ -5,6 +5,7 @@ items:
   id: Genesis.Graphics.RenderDevice
   children:
   - Genesis.Graphics.RenderDevice.GLRenderer
+  - Genesis.Graphics.RenderDevice.LegacyRenerer
   langs:
   - csharp
   - vb
@@ -22,3 +23,10 @@ references:
   name: GLRenderer
   nameWithType: GLRenderer
   fullName: Genesis.Graphics.RenderDevice.GLRenderer
+- uid: Genesis.Graphics.RenderDevice.LegacyRenerer
+  commentId: T:Genesis.Graphics.RenderDevice.LegacyRenerer
+  isExternal: true
+  href: Genesis.Graphics.RenderDevice.LegacyRenerer.html
+  name: LegacyRenerer
+  nameWithType: LegacyRenerer
+  fullName: Genesis.Graphics.RenderDevice.LegacyRenerer

@@ -15,8 +15,8 @@ namespace Genesis.Physics
     /// </summary>
     /// <param name="scene">The scene involved in the physics event</param>
     /// <param name="game">The game involved in the physics event</param>
-    /// <param name="element">The element involved in the physics event</param>
-    public delegate void PhysicHandlerEvent(Scene scene, Game game, object element);
+    /// <param name="collision">The information from the collision</param>
+    public delegate void PhysicHandlerEvent(Scene scene, Game game, Collision collision);
 
     /// <summary>
     /// Represents the properties related to physics.
@@ -26,6 +26,13 @@ namespace Genesis.Physics
         public float gravityX;
         public float gravityY;
         public float gravityZ;
+    }
+
+    public struct Collision
+    {
+        public GameElement collidingElement;
+        public GameElement initiator;
+        public int contacts;
     }
 
     /// <summary>
@@ -62,9 +69,9 @@ namespace Genesis.Physics
         /// <param name="physicsBehavior">The physics behavior to manage</param>
         public virtual void ManageElement(PhysicsBehavior physicsBehavior, int collisionGroup = -1, int collisionMask = -1)
         {
-            this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, cObj) =>
+            this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, collision) =>
             {
-                physicsBehavior.Collide(scene, game, (GameElement) cObj);
+                physicsBehavior.Collide(scene, game, collision);
             });
         }
 
@@ -81,7 +88,7 @@ namespace Genesis.Physics
         {
             if(this.BeforePhysicsUpdate != null)
             {
-                this.BeforePhysicsUpdate(scene, game, null);
+                this.BeforePhysicsUpdate(scene, game, default);
             }
         }
     }

@@ -9,6 +9,7 @@ items:
   - Genesis.Graphics.Mesh.Faces
   - Genesis.Graphics.Mesh.Indicies
   - Genesis.Graphics.Mesh.Material
+  - Genesis.Graphics.Mesh.Name
   - Genesis.Graphics.Mesh.Normals
   - Genesis.Graphics.Mesh.Propeterys
   - Genesis.Graphics.Mesh.TextureCords
@@ -61,6 +62,29 @@ items:
   nameWithType.vb: Mesh.New()
   fullName.vb: Genesis.Graphics.Mesh.New()
   name.vb: New()
+- uid: Genesis.Graphics.Mesh.Name
+  commentId: P:Genesis.Graphics.Mesh.Name
+  id: Name
+  parent: Genesis.Graphics.Mesh
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Mesh.Name
+  fullName: Genesis.Graphics.Mesh.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Name of the mesh
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Graphics.Mesh.Name*
 - uid: Genesis.Graphics.Mesh.Material
   commentId: P:Genesis.Graphics.Mesh.Material
   id: Material
@@ -497,6 +521,24 @@ references:
   nameWithType.vb: Mesh.New
   fullName.vb: Genesis.Graphics.Mesh.New
   name.vb: New
+- uid: Genesis.Graphics.Mesh.Name*
+  commentId: Overload:Genesis.Graphics.Mesh.Name
+  isExternal: true
+  href: Genesis.Graphics.Mesh.html#Genesis_Graphics_Mesh_Name
+  name: Name
+  nameWithType: Mesh.Name
+  fullName: Genesis.Graphics.Mesh.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Genesis.Graphics.Mesh.Material*
   commentId: Overload:Genesis.Graphics.Mesh.Material
   isExternal: true

@@ -219,19 +219,22 @@ namespace Genesis.Core
         /// <param name="renderDevice"></param>
         public virtual void OnUpdate(Game game, IRenderDevice renderDevice) 
         {
-            foreach (var item in Layer)
+            if(!game.IsPauseRequested())
             {
-                item.OnUpdate(game, renderDevice);
+                foreach (var item in Layer)
+                {
+                    item.OnUpdate(game, renderDevice);
+                }
+
+                if (this.PhysicHandler != null)
+                {
+                    this.PhysicHandler.Process(this, game);
+                }
             }
 
             foreach (var item in Canvas)
             {
                 item.OnUpdate(game, this);
-            }
-
-            if (this.PhysicHandler != null)
-            {
-                this.PhysicHandler.Process(this, game);
             }
         }
 

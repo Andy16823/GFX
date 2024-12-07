@@ -6,9 +6,9 @@ items:
   parent: Genesis.Core.Behaviors.Physics3D
   children:
   - Genesis.Core.Behaviors.Physics3D.SphereCollider.#ctor(Genesis.Physics.PhysicHandler)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
-  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single,System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -80,16 +80,16 @@ items:
   nameWithType.vb: SphereCollider.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
-  id: CreateCollider
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Int32,System.Int32)
+  id: CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: CreateCollider()
-  nameWithType: SphereCollider.CreateCollider()
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider()
+  name: CreateCollider(int, int)
+  nameWithType: SphereCollider.CreateCollider(int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -97,20 +97,28 @@ items:
   summary: Creates a collider with a sphere shape using the default radius (half of the parent's size).
   example: []
   syntax:
-    content: public override void CreateCollider()
-    content.vb: Public Overrides Sub CreateCollider()
-  overridden: Genesis.Physics.ColliderBehavior3D.CreateCollider
+    content: public override void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateCollider(collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single)
-  id: CreateCollider(System.Single)
+  nameWithType.vb: SphereCollider.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(System.Single,System.Int32,System.Int32)
+  id: CreateCollider(System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: CreateCollider(float)
-  nameWithType: SphereCollider.CreateCollider(float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(float)
+  name: CreateCollider(float, int, int)
+  nameWithType: SphereCollider.CreateCollider(float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -118,26 +126,30 @@ items:
   summary: Creates a collider with a sphere shape at the origin.
   example: []
   syntax:
-    content: public void CreateCollider(float radius)
+    content: public void CreateCollider(float radius, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: radius
       type: System.Single
       description: The radius of the sphere.
-    content.vb: Public Sub CreateCollider(radius As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateCollider(radius As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
-  nameWithType.vb: SphereCollider.CreateCollider(Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Single)
-  name.vb: CreateCollider(Single)
-- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single)
-  id: CreateCollider(Genesis.Math.Vec3,System.Single)
+  nameWithType.vb: SphereCollider.CreateCollider(Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Single, Integer, Integer)
+  name.vb: CreateCollider(Single, Integer, Integer)
+- uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
+  id: CreateCollider(Genesis.Math.Vec3,System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics3D.SphereCollider
   langs:
   - csharp
   - vb
-  name: CreateCollider(Vec3, float)
-  nameWithType: SphereCollider.CreateCollider(Vec3, float)
-  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, float)
+  name: CreateCollider(Vec3, float, int, int)
+  nameWithType: SphereCollider.CreateCollider(Vec3, float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -145,7 +157,7 @@ items:
   summary: Creates a collider with a sphere shape at the specified offset.
   example: []
   syntax:
-    content: public void CreateCollider(Vec3 offset, float radius)
+    content: public void CreateCollider(Vec3 offset, float radius, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: offset
       type: Genesis.Math.Vec3
@@ -153,11 +165,15 @@ items:
     - id: radius
       type: System.Single
       description: The radius of the sphere.
-    content.vb: Public Sub CreateCollider(offset As Vec3, radius As Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateCollider(offset As Vec3, radius As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
-  nameWithType.vb: SphereCollider.CreateCollider(Vec3, Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, Single)
-  name.vb: CreateCollider(Vec3, Single)
+  nameWithType.vb: SphereCollider.CreateCollider(Vec3, Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider(Genesis.Math.Vec3, Single, Integer, Integer)
+  name.vb: CreateCollider(Vec3, Single, Integer, Integer)
 references:
 - uid: Genesis.Core.Behaviors.Physics3D
   commentId: N:Genesis.Core.Behaviors.Physics3D
@@ -1037,35 +1053,69 @@ references:
   name: PhysicHandler
   nameWithType: PhysicHandler
   fullName: Genesis.Physics.PhysicHandler
-- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
-  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider
+- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Physics.ColliderBehavior3D
   isExternal: true
-  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
-  name: CreateCollider()
-  nameWithType: ColliderBehavior3D.CreateCollider()
-  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider()
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
+  name: CreateCollider(int, int)
+  nameWithType: ColliderBehavior3D.CreateCollider(int, int)
+  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider(int, int)
+  nameWithType.vb: ColliderBehavior3D.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
+  - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
     name: CreateCollider
     isExternal: true
-    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+    href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
   - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider*
   commentId: Overload:Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateCollider
+  href: Genesis.Core.Behaviors.Physics3D.SphereCollider.html#Genesis_Core_Behaviors_Physics3D_SphereCollider_CreateCollider_System_Int32_System_Int32_
   name: CreateCollider
   nameWithType: SphereCollider.CreateCollider
   fullName: Genesis.Core.Behaviors.Physics3D.SphereCollider.CreateCollider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Single
   commentId: T:System.Single
   parent: System

@@ -35,6 +35,7 @@ items:
   - Genesis.Graphics.Shapes.PlaneShape
   - Genesis.Graphics.Shapes.QubeShape
   - Genesis.Graphics.Shapes.RectShape
+  - Genesis.Graphics.Shapes.SphereShape
   - Genesis.Graphics.Shapes.SpriteShape
   inheritedMembers:
   - System.Object.ToString

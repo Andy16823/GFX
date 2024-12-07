@@ -12,12 +12,16 @@ items:
   - Genesis.Graphics.Face
   - Genesis.Graphics.Font
   - Genesis.Graphics.Framebuffer
+  - Genesis.Graphics.Frustum
   - Genesis.Graphics.Glyphe
   - Genesis.Graphics.IRenderDevice
+  - Genesis.Graphics.InstancedElement
+  - Genesis.Graphics.InstancedMesh
   - Genesis.Graphics.Material
   - Genesis.Graphics.MaterialBuffer
   - Genesis.Graphics.Mesh
   - Genesis.Graphics.PerspectiveCamera
+  - Genesis.Graphics.RenderInstanceContainer
   - Genesis.Graphics.RenderSettings
   - Genesis.Graphics.Shader
   - Genesis.Graphics.ShaderProgram
@@ -101,6 +105,14 @@ references:
   name: Framebuffer
   nameWithType: Framebuffer
   fullName: Genesis.Graphics.Framebuffer
+- uid: Genesis.Graphics.Frustum
+  commentId: T:Genesis.Graphics.Frustum
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Frustum.html
+  name: Frustum
+  nameWithType: Frustum
+  fullName: Genesis.Graphics.Frustum
 - uid: Genesis.Graphics.Glyphe
   commentId: T:Genesis.Graphics.Glyphe
   parent: Genesis.Graphics
@@ -109,6 +121,14 @@ references:
   name: Glyphe
   nameWithType: Glyphe
   fullName: Genesis.Graphics.Glyphe
+- uid: Genesis.Graphics.InstancedElement
+  commentId: T:Genesis.Graphics.InstancedElement
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.InstancedElement.html
+  name: InstancedElement
+  nameWithType: InstancedElement
+  fullName: Genesis.Graphics.InstancedElement
 - uid: Genesis.Graphics.IRenderDevice
   commentId: T:Genesis.Graphics.IRenderDevice
   parent: Genesis.Graphics
@@ -141,6 +161,22 @@ references:
   name: PerspectiveCamera
   nameWithType: PerspectiveCamera
   fullName: Genesis.Graphics.PerspectiveCamera
+- uid: Genesis.Graphics.InstancedMesh
+  commentId: T:Genesis.Graphics.InstancedMesh
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.InstancedMesh.html
+  name: InstancedMesh
+  nameWithType: InstancedMesh
+  fullName: Genesis.Graphics.InstancedMesh
+- uid: Genesis.Graphics.RenderInstanceContainer
+  commentId: T:Genesis.Graphics.RenderInstanceContainer
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.RenderInstanceContainer.html
+  name: RenderInstanceContainer
+  nameWithType: RenderInstanceContainer
+  fullName: Genesis.Graphics.RenderInstanceContainer
 - uid: Genesis.Graphics.RenderSettings
   commentId: T:Genesis.Graphics.RenderSettings
   parent: Genesis.Graphics

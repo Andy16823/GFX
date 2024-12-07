@@ -122,9 +122,9 @@ namespace Genesis.Core.Behaviors._3D
             this.Parent.AddBehavior(this.RigidBody);
             this.RigidBody.CreateRigidBody(radius, height, mass, offset);
             this.RigidBody.RigidBody.AngularFactor = new BulletSharp.Math.Vector3(0);
-            RigidBody.OnCollide += (sce, game, co) =>
+            RigidBody.OnCollide += (sce, game, collision) =>
             {
-                var physicsBehavior = co.GetBehavior<PhysicsBehavior>();
+                var physicsBehavior = collision.collidingElement.GetBehavior<PhysicsBehavior>();
                 var btCollisionObject = (CollisionObject) physicsBehavior.GetPhysicsObject();
                 if (btCollisionObject.GetType() != typeof(GhostObject))
                 {

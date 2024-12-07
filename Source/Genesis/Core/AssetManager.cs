@@ -140,6 +140,20 @@ namespace Genesis.Core
             }
         }
 
+        public void LoadTextures(String directory)
+        {
+            String ressources = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Resources", directory);
+            foreach (var file in Directory.GetFiles(ressources))
+            {
+                FileInfo info = new FileInfo(file);
+                if (info.Extension.Equals(".png") || info.Extension.Equals(".jpg"))
+                {
+                    this.Textures.Add(new Texture(info.Name, new Bitmap(file)));
+                    Console.WriteLine("Texture " + info.Name + " loaded!");
+                }
+            }
+        }
+
         /// <summary>
         /// Loads fonts from the resource folder.
         /// </summary>

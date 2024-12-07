@@ -56,6 +56,7 @@ items:
   - Genesis.Core.GameElement.Children
   - Genesis.Core.GameElement.Parent
   - Genesis.Core.GameElement.UUID
+  - Genesis.Core.GameElement.CastShadows
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -802,6 +803,14 @@ references:
   name: UUID
   nameWithType: GameElement.UUID
   fullName: Genesis.Core.GameElement.UUID
+- uid: Genesis.Core.GameElement.CastShadows
+  commentId: P:Genesis.Core.GameElement.CastShadows
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_CastShadows
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

@@ -19,6 +19,7 @@ items:
   - Genesis.Core.GameElements.Qube
   - Genesis.Core.GameElements.RectElement
   - Genesis.Core.GameElements.Skybox
+  - Genesis.Core.GameElements.Sphere
   - Genesis.Core.GameElements.Sprite
   - Genesis.Core.GameElements.SpriteShapeDeffinition
   - Genesis.Core.GameElements.Terrain2D
@@ -97,6 +98,13 @@ references:
   name: ParticleEmitter
   nameWithType: ParticleEmitter
   fullName: Genesis.Core.GameElements.ParticleEmitter
+- uid: Genesis.Core.GameElements.Sphere
+  commentId: T:Genesis.Core.GameElements.Sphere
+  isExternal: true
+  href: Genesis.Core.GameElements.Sphere.html
+  name: Sphere
+  nameWithType: Sphere
+  fullName: Genesis.Core.GameElements.Sphere
 - uid: Genesis.Core.GameElements.Waypoint
   commentId: T:Genesis.Core.GameElements.Waypoint
   parent: Genesis.Core.GameElements

@@ -5,10 +5,12 @@ items:
   id: HitResult
   parent: Genesis.Physics
   children:
+  - Genesis.Physics.HitResult.collisionObject
+  - Genesis.Physics.HitResult.hit
+  - Genesis.Physics.HitResult.hitElement
   - Genesis.Physics.HitResult.hitLocation
   - Genesis.Physics.HitResult.rayEnd
   - Genesis.Physics.HitResult.rayStart
-  - Genesis.Physics.HitResult.rigidBody
   langs:
   - csharp
   - vb
@@ -31,6 +33,25 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetType
+- uid: Genesis.Physics.HitResult.hit
+  commentId: F:Genesis.Physics.HitResult.hit
+  id: hit
+  parent: Genesis.Physics.HitResult
+  langs:
+  - csharp
+  - vb
+  name: hit
+  nameWithType: HitResult.hit
+  fullName: Genesis.Physics.HitResult.hit
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public bool hit
+    return:
+      type: System.Boolean
+    content.vb: Public hit As Boolean
 - uid: Genesis.Physics.HitResult.rayStart
   commentId: F:Genesis.Physics.HitResult.rayStart
   id: rayStart
@@ -69,25 +90,44 @@ items:
     return:
       type: Genesis.Math.Vec3
     content.vb: Public rayEnd As Vec3
-- uid: Genesis.Physics.HitResult.rigidBody
-  commentId: F:Genesis.Physics.HitResult.rigidBody
-  id: rigidBody
+- uid: Genesis.Physics.HitResult.collisionObject
+  commentId: F:Genesis.Physics.HitResult.collisionObject
+  id: collisionObject
   parent: Genesis.Physics.HitResult
   langs:
   - csharp
   - vb
-  name: rigidBody
-  nameWithType: HitResult.rigidBody
-  fullName: Genesis.Physics.HitResult.rigidBody
+  name: collisionObject
+  nameWithType: HitResult.collisionObject
+  fullName: Genesis.Physics.HitResult.collisionObject
   type: Field
   assemblies:
   - Genesis
   namespace: Genesis.Physics
   syntax:
-    content: public RigidBody rigidBody
+    content: public CollisionObject collisionObject
     return:
-      type: BulletSharp.RigidBody
-    content.vb: Public rigidBody As RigidBody
+      type: BulletSharp.CollisionObject
+    content.vb: Public collisionObject As CollisionObject
+- uid: Genesis.Physics.HitResult.hitElement
+  commentId: F:Genesis.Physics.HitResult.hitElement
+  id: hitElement
+  parent: Genesis.Physics.HitResult
+  langs:
+  - csharp
+  - vb
+  name: hitElement
+  nameWithType: HitResult.hitElement
+  fullName: Genesis.Physics.HitResult.hitElement
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Physics
+  syntax:
+    content: public GameElement hitElement
+    return:
+      type: Genesis.Core.GameElement
+    content.vb: Public hitElement As GameElement
 - uid: Genesis.Physics.HitResult.hitLocation
   commentId: F:Genesis.Physics.HitResult.hitLocation
   id: hitLocation
@@ -352,6 +392,17 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: Genesis.Math.Vec3
   commentId: T:Genesis.Math.Vec3
   parent: Genesis.Math
@@ -387,16 +438,51 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
-- uid: BulletSharp.RigidBody
-  commentId: T:BulletSharp.RigidBody
+- uid: BulletSharp.CollisionObject
+  commentId: T:BulletSharp.CollisionObject
   parent: BulletSharp
   isExternal: true
-  name: RigidBody
-  nameWithType: RigidBody
-  fullName: BulletSharp.RigidBody
+  name: CollisionObject
+  nameWithType: CollisionObject
+  fullName: BulletSharp.CollisionObject
 - uid: BulletSharp
   commentId: N:BulletSharp
   isExternal: true
   name: BulletSharp
   nameWithType: BulletSharp
   fullName: BulletSharp
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html

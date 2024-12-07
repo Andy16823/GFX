@@ -8,9 +8,12 @@ items:
   - Genesis.Core.Window.#ctor
   - Genesis.Core.Window.Close
   - Genesis.Core.Window.CreateWindowHandle(System.String,Genesis.Graphics.Viewport)
+  - Genesis.Core.Window.GetClientLocation
+  - Genesis.Core.Window.GetClientLocation(System.IntPtr)
   - Genesis.Core.Window.GetClientSize
   - Genesis.Core.Window.Handle
   - Genesis.Core.Window.OnSizeChange
+  - Genesis.Core.Window.RequestClose
   - Genesis.Core.Window.RunGame(Genesis.Core.Game)
   - Genesis.Core.Window.WindowSize
   langs:
@@ -95,6 +98,26 @@ items:
       description: The game instance associated with the window.
     content.vb: Public Sub RunGame(game As Game)
   overload: Genesis.Core.Window.RunGame*
+- uid: Genesis.Core.Window.RequestClose
+  commentId: M:Genesis.Core.Window.RequestClose
+  id: RequestClose
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: RequestClose()
+  nameWithType: Window.RequestClose()
+  fullName: Genesis.Core.Window.RequestClose()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Requests the window to close by posting WM_QUIT message.
+  example: []
+  syntax:
+    content: public void RequestClose()
+    content.vb: Public Sub RequestClose()
+  overload: Genesis.Core.Window.RequestClose*
 - uid: Genesis.Core.Window.GetClientSize
   commentId: M:Genesis.Core.Window.GetClientSize
   id: GetClientSize
@@ -118,6 +141,49 @@ items:
       description: ''
     content.vb: Public Function GetClientSize() As Vec3
   overload: Genesis.Core.Window.GetClientSize*
+- uid: Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  commentId: M:Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  id: GetClientLocation(System.IntPtr)
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: GetClientLocation(IntPtr)
+  nameWithType: Window.GetClientLocation(IntPtr)
+  fullName: Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Vec3 GetClientLocation(IntPtr handle)
+    parameters:
+    - id: handle
+      type: System.IntPtr
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Shared Function GetClientLocation(handle As IntPtr) As Vec3
+  overload: Genesis.Core.Window.GetClientLocation*
+- uid: Genesis.Core.Window.GetClientLocation
+  commentId: M:Genesis.Core.Window.GetClientLocation
+  id: GetClientLocation
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: GetClientLocation()
+  nameWithType: Window.GetClientLocation()
+  fullName: Genesis.Core.Window.GetClientLocation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Vec3 GetClientLocation()
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function GetClientLocation() As Vec3
+  overload: Genesis.Core.Window.GetClientLocation*
 - uid: Genesis.Core.Window.#ctor
   commentId: M:Genesis.Core.Window.#ctor
   id: '#ctor'
@@ -566,6 +632,13 @@ references:
   name: Game
   nameWithType: Game
   fullName: Genesis.Core.Game
+- uid: Genesis.Core.Window.RequestClose*
+  commentId: Overload:Genesis.Core.Window.RequestClose
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_RequestClose
+  name: RequestClose
+  nameWithType: Window.RequestClose
+  fullName: Genesis.Core.Window.RequestClose
 - uid: Genesis.Core.Window.GetClientSize*
   commentId: Overload:Genesis.Core.Window.GetClientSize
   isExternal: true
@@ -608,6 +681,13 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
+- uid: Genesis.Core.Window.GetClientLocation*
+  commentId: Overload:Genesis.Core.Window.GetClientLocation
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_GetClientLocation_System_IntPtr_
+  name: GetClientLocation
+  nameWithType: Window.GetClientLocation
+  fullName: Genesis.Core.Window.GetClientLocation
 - uid: Genesis.Core.Window.#ctor*
   commentId: Overload:Genesis.Core.Window.#ctor
   isExternal: true

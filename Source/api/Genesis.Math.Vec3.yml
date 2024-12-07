@@ -29,14 +29,23 @@ items:
   - Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
   - Genesis.Math.Vec3.Half
   - Genesis.Math.Vec3.Half(Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.Length
   - Genesis.Math.Vec3.Normalize
+  - Genesis.Math.Vec3.NormalizeAngles(Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.NormalizeAngles(System.Single,System.Single,System.Single)
   - Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)
   - Genesis.Math.Vec3.Round(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(Genesis.Math.Vec3)
   - Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)
+  - Genesis.Math.Vec3.SetX(System.Single)
+  - Genesis.Math.Vec3.SetY(System.Single)
+  - Genesis.Math.Vec3.SetZ(System.Single)
   - Genesis.Math.Vec3.Sub(Genesis.Math.Vec3)
+  - Genesis.Math.Vec3.SubX(System.Single)
+  - Genesis.Math.Vec3.SubY(System.Single)
+  - Genesis.Math.Vec3.SubZ(System.Single)
   - Genesis.Math.Vec3.ToBulletVec3
   - Genesis.Math.Vec3.ToGlmVec3
   - Genesis.Math.Vec3.ToString
@@ -59,24 +68,84 @@ items:
   name: Vec3
   nameWithType: Vec3
   fullName: Genesis.Math.Vec3
-  type: Class
+  type: Struct
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Represents a 3D vector for coordinates.
+  summary: Represents a three-dimensional vector, used for representing points or directions in 3D space.
   example: []
   syntax:
-    content: public class Vec3
-    content.vb: Public Class Vec3
-  inheritance:
-  - System.Object
+    content: public struct Vec3
+    content.vb: Public Structure Vec3
   inheritedMembers:
-  - System.Object.Equals(System.Object)
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
   - System.Object.GetType
-  - System.Object.MemberwiseClone
+- uid: Genesis.Math.Vec3.X
+  commentId: F:Genesis.Math.Vec3.X
+  id: X
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Vec3.X
+  fullName: Genesis.Math.Vec3.X
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Gets or sets the X-coordinate of the vector.
+  example: []
+  syntax:
+    content: public float X
+    return:
+      type: System.Single
+    content.vb: Public X As Single
+- uid: Genesis.Math.Vec3.Y
+  commentId: F:Genesis.Math.Vec3.Y
+  id: Y
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Vec3.Y
+  fullName: Genesis.Math.Vec3.Y
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Gets or sets the Y-coordinate of the vector.
+  example: []
+  syntax:
+    content: public float Y
+    return:
+      type: System.Single
+    content.vb: Public Y As Single
+- uid: Genesis.Math.Vec3.Z
+  commentId: F:Genesis.Math.Vec3.Z
+  id: Z
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: Vec3.Z
+  fullName: Genesis.Math.Vec3.Z
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Gets or sets the Z-coordinate of the vector.
+  example: []
+  syntax:
+    content: public float Z
+    return:
+      type: System.Single
+    content.vb: Public Z As Single
 - uid: Genesis.Math.Vec3.#ctor(System.Single,System.Single,System.Single)
   commentId: M:Genesis.Math.Vec3.#ctor(System.Single,System.Single,System.Single)
   id: '#ctor(System.Single,System.Single,System.Single)'
@@ -91,7 +160,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct with the specified coordinates.
   example: []
   syntax:
     content: public Vec3(float x, float y, float z)
@@ -124,17 +193,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new Vector
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct with the specified X and Y coordinates, and Z set to 0.
   example: []
   syntax:
     content: public Vec3(float x, float y)
     parameters:
     - id: x
       type: System.Single
-      description: ''
+      description: The X-coordinate of the vector.
     - id: y
       type: System.Single
-      description: ''
+      description: The Y-coordinate of the vector.
     content.vb: Public Sub New(x As Single, y As Single)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(Single, Single)
@@ -154,14 +223,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new Vector
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct with all coordinates set to the same value.
   example: []
   syntax:
     content: public Vec3(float value)
     parameters:
     - id: value
       type: System.Single
-      description: ''
+      description: The value to assign to all coordinates of the vector.
     content.vb: Public Sub New(value As Single)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(Single)
@@ -181,14 +250,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates from a Size object.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct from a <xref href="System.Drawing.Size" data-throw-if-not-resolved="false"></xref> object, setting Z to 0.
   example: []
   syntax:
     content: public Vec3(Size size)
     parameters:
     - id: size
       type: System.Drawing.Size
-      description: The Size object to extract coordinates from.
+      description: The <xref href="System.Drawing.Size" data-throw-if-not-resolved="false"></xref> object to extract coordinates from.
     content.vb: Public Sub New(size As Size)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(Size)
@@ -208,14 +277,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates from a SizeF object.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct from a <xref href="System.Drawing.SizeF" data-throw-if-not-resolved="false"></xref> object, setting Z to 0.
   example: []
   syntax:
     content: public Vec3(SizeF size)
     parameters:
     - id: size
       type: System.Drawing.SizeF
-      description: The SizeF object to extract coordinates from.
+      description: The <xref href="System.Drawing.SizeF" data-throw-if-not-resolved="false"></xref> object to extract coordinates from.
     content.vb: Public Sub New(size As SizeF)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(SizeF)
@@ -235,13 +304,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates from a Point object.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct from a <xref href="System.Drawing.Point" data-throw-if-not-resolved="false"></xref> object, setting Z to 0.
   example: []
   syntax:
     content: public Vec3(Point point)
     parameters:
     - id: point
       type: System.Drawing.Point
+      description: The <xref href="System.Drawing.Point" data-throw-if-not-resolved="false"></xref> object to extract coordinates from.
     content.vb: Public Sub New(point As Point)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(Point)
@@ -261,13 +331,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates from a PointF object.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct from a <xref href="System.Drawing.PointF" data-throw-if-not-resolved="false"></xref> object, setting Z to 0.
   example: []
   syntax:
     content: public Vec3(PointF point)
     parameters:
     - id: point
       type: System.Drawing.PointF
+      description: The <xref href="System.Drawing.PointF" data-throw-if-not-resolved="false"></xref> object to extract coordinates from.
     content.vb: Public Sub New(point As PointF)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(PointF)
@@ -287,13 +358,14 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Creates a new 3D vector with specified coordinates from a glm vec3 object.
+  summary: Initializes a new instance of the <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> struct from a glm.vec3 object.
   example: []
   syntax:
     content: public Vec3(vec3 vec3)
     parameters:
     - id: vec3
       type: GlmSharp.vec3
+      description: The glm.vec3 object to extract coordinates from.
     content.vb: Public Sub New(vec3 As vec3)
   overload: Genesis.Math.Vec3.#ctor*
   nameWithType.vb: Vec3.New(vec3)
@@ -313,13 +385,13 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns a new 3D vector with X = 0, Y = 0, Z = 0.
+  summary: Returns a new vector representing the origin (0, 0, 0).
   example: []
   syntax:
     content: public static Vec3 Zero()
     return:
       type: Genesis.Math.Vec3
-      description: A Vec3 instance representing the zero vector.
+      description: A <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance representing the zero vector.
     content.vb: Public Shared Function Zero() As Vec3
   overload: Genesis.Math.Vec3.Zero*
 - uid: Genesis.Math.Vec3.Degres(System.Single,System.Single)
@@ -336,20 +408,20 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns the offset angle to the vector.
+  summary: Calculates the angle in degrees from this vector to the specified coordinates.
   example: []
   syntax:
     content: public float Degres(float x, float y)
     parameters:
     - id: x
       type: System.Single
-      description: The X-coordinate of the vector.
+      description: The X-coordinate of the target point.
     - id: y
       type: System.Single
-      description: The Y-coordinate of the vector.
+      description: The Y-coordinate of the target point.
     return:
       type: System.Single
-      description: The offset angle to the vector in degrees.
+      description: The angle in degrees from this vector to the specified point.
     content.vb: Public Function Degres(x As Single, y As Single) As Single
   overload: Genesis.Math.Vec3.Degres*
   nameWithType.vb: Vec3.Degres(Single, Single)
@@ -369,7 +441,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns the offset angle to the vector.
+  summary: Calculates the angle in degrees from this vector to the specified vector.
   example: []
   syntax:
     content: public float Degres(Vec3 vec3)
@@ -379,7 +451,7 @@ items:
       description: The reference vector.
     return:
       type: System.Single
-      description: The offset angle to the vector in degrees.
+      description: The angle in degrees from this vector to the specified vector.
     content.vb: Public Function Degres(vec3 As Vec3) As Single
   overload: Genesis.Math.Vec3.Degres*
 - uid: Genesis.Math.Vec3.Towards(System.Single,System.Single)
@@ -396,19 +468,20 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Calculates the vector towards in 3D.
+  summary: Calculates the point in 3D space towards a specified angle and distance from this vector.
   example: []
   syntax:
     content: public Vec3 Towards(float degrees, float dist)
     parameters:
     - id: degrees
       type: System.Single
+      description: The angle in degrees.
     - id: dist
       type: System.Single
-      description: The distance.
+      description: The distance from this vector.
     return:
       type: Genesis.Math.Vec3
-      description: A new Vec3 instance representing the vector towards in 3D.
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance representing the calculated point in 3D space.
     content.vb: Public Function Towards(degrees As Single, dist As Single) As Vec3
   overload: Genesis.Math.Vec3.Towards*
   nameWithType.vb: Vec3.Towards(Single, Single)
@@ -428,23 +501,23 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns a new vector towards the given direction.
+  summary: Returns a new vector in 2D space towards a specified angle from the given starting vector.
   example: []
   syntax:
     content: public static Vec3 Towards2D(float degrees, Vec3 start, float dist)
     parameters:
     - id: degrees
       type: System.Single
-      description: ''
+      description: The angle in degrees.
     - id: start
       type: Genesis.Math.Vec3
-      description: ''
+      description: The starting vector.
     - id: dist
       type: System.Single
-      description: ''
+      description: The distance from the starting vector.
     return:
       type: Genesis.Math.Vec3
-      description: ''
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance representing the target vector in 2D space.
     content.vb: Public Shared Function Towards2D(degrees As Single, start As Vec3, dist As Single) As Vec3
   overload: Genesis.Math.Vec3.Towards2D*
   nameWithType.vb: Vec3.Towards2D(Single, Vec3, Single)
@@ -464,23 +537,23 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Calculates the Vector towards in 3D
+  summary: Calculates a point in 3D space towards the specified rotation from a starting vector.
   example: []
   syntax:
     content: public static Vec3 Towards3D(Vec3 rotation, Vec3 start, float dist)
     parameters:
     - id: rotation
       type: Genesis.Math.Vec3
-      description: ''
+      description: The rotation vector representing angles.
     - id: start
       type: Genesis.Math.Vec3
-      description: ''
+      description: The starting vector.
     - id: dist
       type: System.Single
-      description: ''
+      description: The distance from the starting vector.
     return:
       type: Genesis.Math.Vec3
-      description: ''
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance representing the calculated point in 3D space.
     content.vb: Public Shared Function Towards3D(rotation As Vec3, start As Vec3, dist As Single) As Vec3
   overload: Genesis.Math.Vec3.Towards3D*
   nameWithType.vb: Vec3.Towards3D(Vec3, Vec3, Single)
@@ -500,29 +573,29 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Calculates the towards vector
+  summary: Calculates a point in 3D space towards the specified rotation angles from a starting vector.
   example: []
   syntax:
     content: public static Vec3 Towards3D(float rotX, float rotY, float rotZ, Vec3 start, float dist)
     parameters:
     - id: rotX
       type: System.Single
-      description: ''
+      description: The rotation angle around the X-axis.
     - id: rotY
       type: System.Single
-      description: ''
+      description: The rotation angle around the Y-axis.
     - id: rotZ
       type: System.Single
-      description: ''
+      description: The rotation angle around the Z-axis.
     - id: start
       type: Genesis.Math.Vec3
-      description: ''
+      description: The starting vector.
     - id: dist
       type: System.Single
-      description: ''
+      description: The distance from the starting vector.
     return:
       type: Genesis.Math.Vec3
-      description: ''
+      description: A new <xref href="Genesis.Math.Vec3" data-throw-if-not-resolved="false"></xref> instance representing the calculated point in 3D space.
     content.vb: Public Shared Function Towards3D(rotX As Single, rotY As Single, rotZ As Single, start As Vec3, dist As Single) As Vec3
   overload: Genesis.Math.Vec3.Towards3D*
   nameWithType.vb: Vec3.Towards3D(Single, Single, Single, Vec3, Single)
@@ -542,17 +615,17 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns the distance between two vectors
+  summary: Calculates the distance between this vector and another vector.
   example: []
   syntax:
     content: public float Distance(Vec3 vec3)
     parameters:
     - id: vec3
       type: Genesis.Math.Vec3
-      description: ''
+      description: The vector to measure distance to.
     return:
       type: System.Single
-      description: ''
+      description: The distance between this vector and the specified vector.
     content.vb: Public Function Distance(vec3 As Vec3) As Single
   overload: Genesis.Math.Vec3.Distance*
 - uid: Genesis.Math.Vec3.Add(Genesis.Math.Vec3)
@@ -569,15 +642,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Adds the value from a vector
+  summary: Adds the value from another vector.
   example: []
   syntax:
-    content: public void Add(Vec3 vec)
+    content: public Vec3 Add(Vec3 vec)
     parameters:
     - id: vec
       type: Genesis.Math.Vec3
-      description: ''
-    content.vb: Public Sub Add(vec As Vec3)
+      description: The vector to add.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 that is the sum of this vector and the specified vector.
+    content.vb: Public Function Add(vec As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Add*
 - uid: Genesis.Math.Vec3.Add(System.Single,System.Single)
   commentId: M:Genesis.Math.Vec3.Add(System.Single,System.Single)
@@ -593,18 +669,21 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Adds the values to the vector
+  summary: Adds the specified X and Y values to this vector.
   example: []
   syntax:
-    content: public void Add(float x, float y)
+    content: public Vec3 Add(float x, float y)
     parameters:
     - id: x
       type: System.Single
-      description: ''
+      description: The value to add to the X component.
     - id: y
       type: System.Single
-      description: ''
-    content.vb: Public Sub Add(x As Single, y As Single)
+      description: The value to add to the Y component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the added values.
+    content.vb: Public Function Add(x As Single, y As Single) As Vec3
   overload: Genesis.Math.Vec3.Add*
   nameWithType.vb: Vec3.Add(Single, Single)
   fullName.vb: Genesis.Math.Vec3.Add(Single, Single)
@@ -623,21 +702,24 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Adds the values to the vector
+  summary: Adds the specified X, Y, and Z values to this vector.
   example: []
   syntax:
-    content: public void Add(float x, float y, float z)
+    content: public Vec3 Add(float x, float y, float z)
     parameters:
     - id: x
       type: System.Single
-      description: ''
+      description: The value to add to the X component.
     - id: y
       type: System.Single
-      description: ''
+      description: The value to add to the Y component.
     - id: z
       type: System.Single
-      description: ''
-    content.vb: Public Sub Add(x As Single, y As Single, z As Single)
+      description: The value to add to the Z component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the added values.
+    content.vb: Public Function Add(x As Single, y As Single, z As Single) As Vec3
   overload: Genesis.Math.Vec3.Add*
   nameWithType.vb: Vec3.Add(Single, Single, Single)
   fullName.vb: Genesis.Math.Vec3.Add(Single, Single, Single)
@@ -656,15 +738,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Add the value to the X param
+  summary: Adds the specified value to the X component of this vector.
   example: []
   syntax:
-    content: public void AddX(float x)
+    content: public Vec3 AddX(float x)
     parameters:
     - id: x
       type: System.Single
-      description: ''
-    content.vb: Public Sub AddX(x As Single)
+      description: The value to add to the X component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated X component.
+    content.vb: Public Function AddX(x As Single) As Vec3
   overload: Genesis.Math.Vec3.AddX*
   nameWithType.vb: Vec3.AddX(Single)
   fullName.vb: Genesis.Math.Vec3.AddX(Single)
@@ -683,15 +768,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Add the value to the y param
+  summary: Adds the specified value to the Y component of this vector.
   example: []
   syntax:
-    content: public void AddY(float y)
+    content: public Vec3 AddY(float y)
     parameters:
     - id: y
       type: System.Single
-      description: ''
-    content.vb: Public Sub AddY(y As Single)
+      description: The value to add to the Y component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Y component.
+    content.vb: Public Function AddY(y As Single) As Vec3
   overload: Genesis.Math.Vec3.AddY*
   nameWithType.vb: Vec3.AddY(Single)
   fullName.vb: Genesis.Math.Vec3.AddY(Single)
@@ -710,15 +798,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Add the value to the z param
+  summary: Adds the specified value to the Z component of this vector.
   example: []
   syntax:
-    content: public void AddZ(float z)
+    content: public Vec3 AddZ(float z)
     parameters:
     - id: z
       type: System.Single
-      description: ''
-    content.vb: Public Sub AddZ(z As Single)
+      description: The value to add to the Z component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Z component.
+    content.vb: Public Function AddZ(z As Single) As Vec3
   overload: Genesis.Math.Vec3.AddZ*
   nameWithType.vb: Vec3.AddZ(Single)
   fullName.vb: Genesis.Math.Vec3.AddZ(Single)
@@ -737,16 +828,199 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Subtract the vector
+  summary: Subtracts the specified vector from this vector.
   example: []
   syntax:
-    content: public void Sub(Vec3 v)
+    content: public Vec3 Sub(Vec3 v)
     parameters:
     - id: v
       type: Genesis.Math.Vec3
-      description: ''
-    content.vb: Public Sub [Sub](v As Vec3)
+      description: The vector to subtract.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 that is the result of the subtraction.
+    content.vb: Public Function [Sub](v As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Sub*
+- uid: Genesis.Math.Vec3.SubX(System.Single)
+  commentId: M:Genesis.Math.Vec3.SubX(System.Single)
+  id: SubX(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SubX(float)
+  nameWithType: Vec3.SubX(float)
+  fullName: Genesis.Math.Vec3.SubX(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Subtracts the specified value from the X component of this vector.
+  example: []
+  syntax:
+    content: public Vec3 SubX(float x)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The value to subtract from the X component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated X component.
+    content.vb: Public Function SubX(x As Single) As Vec3
+  overload: Genesis.Math.Vec3.SubX*
+  nameWithType.vb: Vec3.SubX(Single)
+  fullName.vb: Genesis.Math.Vec3.SubX(Single)
+  name.vb: SubX(Single)
+- uid: Genesis.Math.Vec3.SubY(System.Single)
+  commentId: M:Genesis.Math.Vec3.SubY(System.Single)
+  id: SubY(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SubY(float)
+  nameWithType: Vec3.SubY(float)
+  fullName: Genesis.Math.Vec3.SubY(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Subtracts the specified value from the Y component of this vector.
+  example: []
+  syntax:
+    content: public Vec3 SubY(float y)
+    parameters:
+    - id: y
+      type: System.Single
+      description: The value to subtract from the Y component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Y component.
+    content.vb: Public Function SubY(y As Single) As Vec3
+  overload: Genesis.Math.Vec3.SubY*
+  nameWithType.vb: Vec3.SubY(Single)
+  fullName.vb: Genesis.Math.Vec3.SubY(Single)
+  name.vb: SubY(Single)
+- uid: Genesis.Math.Vec3.SubZ(System.Single)
+  commentId: M:Genesis.Math.Vec3.SubZ(System.Single)
+  id: SubZ(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SubZ(float)
+  nameWithType: Vec3.SubZ(float)
+  fullName: Genesis.Math.Vec3.SubZ(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Subtracts the specified value from the Z component of this vector.
+  example: []
+  syntax:
+    content: public Vec3 SubZ(float z)
+    parameters:
+    - id: z
+      type: System.Single
+      description: The value to subtract from the Z component.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Z component.
+    content.vb: Public Function SubZ(z As Single) As Vec3
+  overload: Genesis.Math.Vec3.SubZ*
+  nameWithType.vb: Vec3.SubZ(Single)
+  fullName.vb: Genesis.Math.Vec3.SubZ(Single)
+  name.vb: SubZ(Single)
+- uid: Genesis.Math.Vec3.SetX(System.Single)
+  commentId: M:Genesis.Math.Vec3.SetX(System.Single)
+  id: SetX(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SetX(float)
+  nameWithType: Vec3.SetX(float)
+  fullName: Genesis.Math.Vec3.SetX(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Sets the X component of the vector to the specified value.
+  example: []
+  syntax:
+    content: public Vec3 SetX(float x)
+    parameters:
+    - id: x
+      type: System.Single
+      description: The value to set the X component to.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated X component.
+    content.vb: Public Function SetX(x As Single) As Vec3
+  overload: Genesis.Math.Vec3.SetX*
+  nameWithType.vb: Vec3.SetX(Single)
+  fullName.vb: Genesis.Math.Vec3.SetX(Single)
+  name.vb: SetX(Single)
+- uid: Genesis.Math.Vec3.SetY(System.Single)
+  commentId: M:Genesis.Math.Vec3.SetY(System.Single)
+  id: SetY(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SetY(float)
+  nameWithType: Vec3.SetY(float)
+  fullName: Genesis.Math.Vec3.SetY(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Sets the Y component of the vector to the specified value.
+  example: []
+  syntax:
+    content: public Vec3 SetY(float y)
+    parameters:
+    - id: y
+      type: System.Single
+      description: The value to set the Y component to.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Y component.
+    content.vb: Public Function SetY(y As Single) As Vec3
+  overload: Genesis.Math.Vec3.SetY*
+  nameWithType.vb: Vec3.SetY(Single)
+  fullName.vb: Genesis.Math.Vec3.SetY(Single)
+  name.vb: SetY(Single)
+- uid: Genesis.Math.Vec3.SetZ(System.Single)
+  commentId: M:Genesis.Math.Vec3.SetZ(System.Single)
+  id: SetZ(System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: SetZ(float)
+  nameWithType: Vec3.SetZ(float)
+  fullName: Genesis.Math.Vec3.SetZ(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Sets the Z component of the vector to the specified value.
+  example: []
+  syntax:
+    content: public Vec3 SetZ(float z)
+    parameters:
+    - id: z
+      type: System.Single
+      description: The value to set the Z component to.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the updated Z component.
+    content.vb: Public Function SetZ(z As Single) As Vec3
+  overload: Genesis.Math.Vec3.SetZ*
+  nameWithType.vb: Vec3.SetZ(Single)
+  fullName.vb: Genesis.Math.Vec3.SetZ(Single)
+  name.vb: SetZ(Single)
 - uid: Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)
   commentId: M:Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)
   id: Set(System.Single,System.Single,System.Single)
@@ -761,21 +1035,24 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Sets the value for the vector
+  summary: Sets the values for the vector.
   example: []
   syntax:
-    content: public void Set(float x, float y, float z)
+    content: public Vec3 Set(float x, float y, float z)
     parameters:
     - id: x
       type: System.Single
-      description: ''
+      description: The value to set the X component to.
     - id: y
       type: System.Single
-      description: ''
+      description: The value to set the Y component to.
     - id: z
       type: System.Single
-      description: ''
-    content.vb: Public Sub [Set](x As Single, y As Single, z As Single)
+      description: The value to set the Z component to.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with the specified values.
+    content.vb: Public Function [Set](x As Single, y As Single, z As Single) As Vec3
   overload: Genesis.Math.Vec3.Set*
   nameWithType.vb: Vec3.Set(Single, Single, Single)
   fullName.vb: Genesis.Math.Vec3.Set(Single, Single, Single)
@@ -794,15 +1071,18 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Sets the value for the vector
+  summary: Sets the values for the vector based on another vector.
   example: []
   syntax:
-    content: public void Set(Vec3 vec)
+    content: public Vec3 Set(Vec3 vec)
     parameters:
     - id: vec
       type: Genesis.Math.Vec3
-      description: ''
-    content.vb: Public Sub [Set](vec As Vec3)
+      description: The vector to copy values from.
+    return:
+      type: Genesis.Math.Vec3
+      description: A new Vec3 with values copied from the specified vector.
+    content.vb: Public Function [Set](vec As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Set*
 - uid: Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
   commentId: M:Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)
@@ -818,20 +1098,20 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Returns the forward vector
+  summary: Returns the forward vector based on the specified rotation and distance.
   example: []
   syntax:
     content: public Vec3 Forward(Vec3 rotation, float dist)
     parameters:
     - id: rotation
       type: Genesis.Math.Vec3
-      description: ''
+      description: The rotation to apply.
     - id: dist
       type: System.Single
-      description: ''
+      description: The distance to project forward.
     return:
       type: Genesis.Math.Vec3
-      description: ''
+      description: A new Vec3 representing the forward vector.
     content.vb: Public Function Forward(rotation As Vec3, dist As Single) As Vec3
   overload: Genesis.Math.Vec3.Forward*
   nameWithType.vb: Vec3.Forward(Vec3, Single)
@@ -884,7 +1164,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Add operator for vector multiplication.
+  summary: Multiply operator for vector multiplication with another vector.
   example: []
   syntax:
     content: public static Vec3 operator *(Vec3 vec1, Vec3 vec2)
@@ -917,7 +1197,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Add operator for vector substraction.
+  summary: Divide operator for vector division by another vector.
   example: []
   syntax:
     content: public static Vec3 operator /(Vec3 vec1, Vec3 vec2)
@@ -927,10 +1207,10 @@ items:
       description: The first vector.
     - id: vec2
       type: Genesis.Math.Vec3
-      description: The second vector.
+      description: The second vector to divide by.
     return:
       type: Genesis.Math.Vec3
-      description: A new Vec3 instance representing the result of vector substraction.
+      description: A new Vec3 instance representing the result of vector division.
     content.vb: Public Shared Operator /(vec1 As Vec3, vec2 As Vec3) As Vec3
   overload: Genesis.Math.Vec3.op_Division*
   nameWithType.vb: Vec3./(Vec3, Vec3)
@@ -950,7 +1230,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Multiplies the vector by a scalar value.
+  summary: Multiplies the vector by a scalar.
   example: []
   syntax:
     content: public static Vec3 operator *(Vec3 vec, float value)
@@ -960,10 +1240,10 @@ items:
       description: The vector to multiply.
     - id: value
       type: System.Single
-      description: The scalar value.
+      description: The scalar to multiply by.
     return:
       type: Genesis.Math.Vec3
-      description: A new Vec3 instance representing the result of the multiplication.
+      description: A new Vec3 instance representing the scaled vector.
     content.vb: Public Shared Operator *(vec As Vec3, value As Single) As Vec3
   overload: Genesis.Math.Vec3.op_Multiply*
   nameWithType.vb: Vec3.*(Vec3, Single)
@@ -983,7 +1263,7 @@ items:
   assemblies:
   - Genesis
   namespace: Genesis.Math
-  summary: Subtracts one vector from another.
+  summary: Subtract operator for vector subtraction.
   example: []
   syntax:
     content: public static Vec3 operator -(Vec3 vec1, Vec3 vec2)
@@ -996,7 +1276,7 @@ items:
       description: The second vector to subtract.
     return:
       type: Genesis.Math.Vec3
-      description: A new Vec3 instance representing the result of the subtraction.
+      description: A new Vec3 instance representing the result of vector subtraction.
     content.vb: Public Shared Operator -(vec1 As Vec3, vec2 As Vec3) As Vec3
   overload: Genesis.Math.Vec3.op_Subtraction*
   nameWithType.vb: Vec3.-(Vec3, Vec3)
@@ -1085,6 +1365,29 @@ items:
       description: A normalized Vec3 instance.
     content.vb: Public Function Normalize() As Vec3
   overload: Genesis.Math.Vec3.Normalize*
+- uid: Genesis.Math.Vec3.Length
+  commentId: M:Genesis.Math.Vec3.Length
+  id: Length
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Length()
+  nameWithType: Vec3.Length()
+  fullName: Genesis.Math.Vec3.Length()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  summary: Returns the vector length
+  example: []
+  syntax:
+    content: public float Length()
+    return:
+      type: System.Single
+      description: ''
+    content.vb: Public Function Length() As Single
+  overload: Genesis.Math.Vec3.Length*
 - uid: Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
   commentId: M:Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)
   id: Normalized(Genesis.Math.Vec3)
@@ -1309,6 +1612,59 @@ items:
       description: ''
     content.vb: Public Shared Function Random(min As Vec3, max As Vec3) As Vec3
   overload: Genesis.Math.Vec3.Random*
+- uid: Genesis.Math.Vec3.NormalizeAngles(System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Math.Vec3.NormalizeAngles(System.Single,System.Single,System.Single)
+  id: NormalizeAngles(System.Single,System.Single,System.Single)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: NormalizeAngles(float, float, float)
+  nameWithType: Vec3.NormalizeAngles(float, float, float)
+  fullName: Genesis.Math.Vec3.NormalizeAngles(float, float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Vec3 NormalizeAngles(float vX, float vY, float vZ)
+    parameters:
+    - id: vX
+      type: System.Single
+    - id: vY
+      type: System.Single
+    - id: vZ
+      type: System.Single
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Shared Function NormalizeAngles(vX As Single, vY As Single, vZ As Single) As Vec3
+  overload: Genesis.Math.Vec3.NormalizeAngles*
+  nameWithType.vb: Vec3.NormalizeAngles(Single, Single, Single)
+  fullName.vb: Genesis.Math.Vec3.NormalizeAngles(Single, Single, Single)
+  name.vb: NormalizeAngles(Single, Single, Single)
+- uid: Genesis.Math.Vec3.NormalizeAngles(Genesis.Math.Vec3)
+  commentId: M:Genesis.Math.Vec3.NormalizeAngles(Genesis.Math.Vec3)
+  id: NormalizeAngles(Genesis.Math.Vec3)
+  parent: Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: NormalizeAngles(Vec3)
+  nameWithType: Vec3.NormalizeAngles(Vec3)
+  fullName: Genesis.Math.Vec3.NormalizeAngles(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Math
+  syntax:
+    content: public static Vec3 NormalizeAngles(Vec3 value)
+    parameters:
+    - id: value
+      type: Genesis.Math.Vec3
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Shared Function NormalizeAngles(value As Vec3) As Vec3
+  overload: Genesis.Math.Vec3.NormalizeAngles*
 - uid: Genesis.Math.Vec3.ToString
   commentId: M:Genesis.Math.Vec3.ToString
   id: ToString
@@ -1331,7 +1687,7 @@ items:
       type: System.String
       description: A string containing the X, Y, and Z coordinates of the vector.
     content.vb: Public Overrides Function ToString() As String
-  overridden: System.Object.ToString
+  overridden: System.ValueType.ToString
   overload: Genesis.Math.Vec3.ToString*
 - uid: Genesis.Math.Vec3.ToGlmVec3
   commentId: M:Genesis.Math.Vec3.ToGlmVec3
@@ -1379,75 +1735,6 @@ items:
       description: A BulletSharp Vector3 instance representing the same vector.
     content.vb: Public Function ToBulletVec3() As Vector3
   overload: Genesis.Math.Vec3.ToBulletVec3*
-- uid: Genesis.Math.Vec3.X
-  commentId: P:Genesis.Math.Vec3.X
-  id: X
-  parent: Genesis.Math.Vec3
-  langs:
-  - csharp
-  - vb
-  name: X
-  nameWithType: Vec3.X
-  fullName: Genesis.Math.Vec3.X
-  type: Property
-  assemblies:
-  - Genesis
-  namespace: Genesis.Math
-  summary: Gets or sets the X-coordinate of the vector.
-  example: []
-  syntax:
-    content: public float X { get; set; }
-    parameters: []
-    return:
-      type: System.Single
-    content.vb: Public Property X As Single
-  overload: Genesis.Math.Vec3.X*
-- uid: Genesis.Math.Vec3.Y
-  commentId: P:Genesis.Math.Vec3.Y
-  id: Y
-  parent: Genesis.Math.Vec3
-  langs:
-  - csharp
-  - vb
-  name: Y
-  nameWithType: Vec3.Y
-  fullName: Genesis.Math.Vec3.Y
-  type: Property
-  assemblies:
-  - Genesis
-  namespace: Genesis.Math
-  summary: Gets or sets the Y-coordinate of the vector.
-  example: []
-  syntax:
-    content: public float Y { get; set; }
-    parameters: []
-    return:
-      type: System.Single
-    content.vb: Public Property Y As Single
-  overload: Genesis.Math.Vec3.Y*
-- uid: Genesis.Math.Vec3.Z
-  commentId: P:Genesis.Math.Vec3.Z
-  id: Z
-  parent: Genesis.Math.Vec3
-  langs:
-  - csharp
-  - vb
-  name: Z
-  nameWithType: Vec3.Z
-  fullName: Genesis.Math.Vec3.Z
-  type: Property
-  assemblies:
-  - Genesis
-  namespace: Genesis.Math
-  summary: Gets or sets the Z-coordinate of the vector.
-  example: []
-  syntax:
-    content: public float Z { get; set; }
-    parameters: []
-    return:
-      type: System.Single
-    content.vb: Public Property Z As Single
-  overload: Genesis.Math.Vec3.Z*
 references:
 - uid: Genesis.Math
   commentId: N:Genesis.Math
@@ -1476,33 +1763,22 @@ references:
     name: Math
     isExternal: true
     href: Genesis.Math.html
-- uid: System.Object
-  commentId: T:System.Object
-  parent: System
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
-  name: object
-  nameWithType: object
-  fullName: object
-  nameWithType.vb: Object
-  fullName.vb: Object
-  name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
   name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
   name.vb: Equals(Object)
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
+  - uid: System.ValueType.Equals(System.Object)
     name: Equals
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
   - name: (
   - uid: System.Object
     name: object
@@ -1510,15 +1786,37 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
+  - uid: System.ValueType.Equals(System.Object)
     name: Equals
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
   - name: (
   - uid: System.Object
     name: Object
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -1610,30 +1908,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -1658,30 +1932,25 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
 - uid: System
   commentId: N:System
   isExternal: true
@@ -1689,16 +1958,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Genesis.Math.Vec3.#ctor*
-  commentId: Overload:Genesis.Math.Vec3.#ctor
-  isExternal: true
-  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3__ctor_System_Single_System_Single_System_Single_
-  name: Vec3
-  nameWithType: Vec3.Vec3
-  fullName: Genesis.Math.Vec3.Vec3
-  nameWithType.vb: Vec3.New
-  fullName.vb: Genesis.Math.Vec3.New
-  name.vb: New
 - uid: System.Single
   commentId: T:System.Single
   parent: System
@@ -1710,6 +1969,24 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math.Vec3.#ctor*
+  commentId: Overload:Genesis.Math.Vec3.#ctor
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3__ctor_System_Single_System_Single_System_Single_
+  name: Vec3
+  nameWithType: Vec3.Vec3
+  fullName: Genesis.Math.Vec3.Vec3
+  nameWithType.vb: Vec3.New
+  fullName.vb: Genesis.Math.Vec3.New
+  name.vb: New
 - uid: System.Drawing.Size
   commentId: T:System.Drawing.Size
   parent: System.Drawing
@@ -1789,14 +2066,6 @@ references:
   name: Zero
   nameWithType: Vec3.Zero
   fullName: Genesis.Math.Vec3.Zero
-- uid: Genesis.Math.Vec3
-  commentId: T:Genesis.Math.Vec3
-  parent: Genesis.Math
-  isExternal: true
-  href: Genesis.Math.Vec3.html
-  name: Vec3
-  nameWithType: Vec3
-  fullName: Genesis.Math.Vec3
 - uid: Genesis.Math.Vec3.Degres*
   commentId: Overload:Genesis.Math.Vec3.Degres
   isExternal: true
@@ -1867,6 +2136,48 @@ references:
   name: Sub
   nameWithType: Vec3.Sub
   fullName: Genesis.Math.Vec3.Sub
+- uid: Genesis.Math.Vec3.SubX*
+  commentId: Overload:Genesis.Math.Vec3.SubX
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SubX_System_Single_
+  name: SubX
+  nameWithType: Vec3.SubX
+  fullName: Genesis.Math.Vec3.SubX
+- uid: Genesis.Math.Vec3.SubY*
+  commentId: Overload:Genesis.Math.Vec3.SubY
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SubY_System_Single_
+  name: SubY
+  nameWithType: Vec3.SubY
+  fullName: Genesis.Math.Vec3.SubY
+- uid: Genesis.Math.Vec3.SubZ*
+  commentId: Overload:Genesis.Math.Vec3.SubZ
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SubZ_System_Single_
+  name: SubZ
+  nameWithType: Vec3.SubZ
+  fullName: Genesis.Math.Vec3.SubZ
+- uid: Genesis.Math.Vec3.SetX*
+  commentId: Overload:Genesis.Math.Vec3.SetX
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SetX_System_Single_
+  name: SetX
+  nameWithType: Vec3.SetX
+  fullName: Genesis.Math.Vec3.SetX
+- uid: Genesis.Math.Vec3.SetY*
+  commentId: Overload:Genesis.Math.Vec3.SetY
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SetY_System_Single_
+  name: SetY
+  nameWithType: Vec3.SetY
+  fullName: Genesis.Math.Vec3.SetY
+- uid: Genesis.Math.Vec3.SetZ*
+  commentId: Overload:Genesis.Math.Vec3.SetZ
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_SetZ_System_Single_
+  name: SetZ
+  nameWithType: Vec3.SetZ
+  fullName: Genesis.Math.Vec3.SetZ
 - uid: Genesis.Math.Vec3.Set*
   commentId: Overload:Genesis.Math.Vec3.Set
   isExternal: true
@@ -1970,6 +2281,13 @@ references:
   name: Normalize
   nameWithType: Vec3.Normalize
   fullName: Genesis.Math.Vec3.Normalize
+- uid: Genesis.Math.Vec3.Length*
+  commentId: Overload:Genesis.Math.Vec3.Length
+  isExternal: true
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Length
+  name: Length
+  nameWithType: Vec3.Length
+  fullName: Genesis.Math.Vec3.Length
 - uid: Genesis.Math.Vec3.Normalized*
   commentId: Overload:Genesis.Math.Vec3.Normalized
   isExternal: true
@@ -2023,28 +2341,33 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
+- uid: Genesis.Math.Vec3.NormalizeAngles*
+  commentId: Overload:Genesis.Math.Vec3.NormalizeAngles
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_NormalizeAngles_System_Single_System_Single_System_Single_
+  name: NormalizeAngles
+  nameWithType: Vec3.NormalizeAngles
+  fullName: Genesis.Math.Vec3.NormalizeAngles
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
   name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
   spec.csharp:
-  - uid: System.Object.ToString
+  - uid: System.ValueType.ToString
     name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
   - name: (
   - name: )
   spec.vb:
-  - uid: System.Object.ToString
+  - uid: System.ValueType.ToString
     name: ToString
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
   - name: (
   - name: )
 - uid: Genesis.Math.Vec3.ToString*
@@ -2108,24 +2431,3 @@ references:
   - uid: BulletSharp.Math
     name: Math
     isExternal: true
-- uid: Genesis.Math.Vec3.X*
-  commentId: Overload:Genesis.Math.Vec3.X
-  isExternal: true
-  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_X
-  name: X
-  nameWithType: Vec3.X
-  fullName: Genesis.Math.Vec3.X
-- uid: Genesis.Math.Vec3.Y*
-  commentId: Overload:Genesis.Math.Vec3.Y
-  isExternal: true
-  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Y
-  name: Y
-  nameWithType: Vec3.Y
-  fullName: Genesis.Math.Vec3.Y
-- uid: Genesis.Math.Vec3.Z*
-  commentId: Overload:Genesis.Math.Vec3.Z
-  isExternal: true
-  href: Genesis.Math.Vec3.html#Genesis_Math_Vec3_Z
-  name: Z
-  nameWithType: Vec3.Z
-  fullName: Genesis.Math.Vec3.Z

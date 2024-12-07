@@ -32,6 +32,8 @@ items:
   - Genesis.Core.GameElements.Element3D.OnDestroy(Genesis.Core.Game)
   - Genesis.Core.GameElements.Element3D.GetShape
   - Genesis.Core.GameElements.Element3D.GetMaterialBuffers(Genesis.Graphics.Material)
+  - Genesis.Core.GameElements.Element3D.ToRenderInstance
+  - Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
   - Genesis.Core.GameElements.Element3D.Shader
   - Genesis.Core.GameElements.Element3D.Meshes
   - Genesis.Core.GameElements.Element3D.Materials
@@ -55,6 +57,7 @@ items:
   - Genesis.Core.GameElement.Children
   - Genesis.Core.GameElement.Parent
   - Genesis.Core.GameElement.UUID
+  - Genesis.Core.GameElement.CastShadows
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -359,6 +362,73 @@ references:
     name: Material
     isExternal: true
     href: Genesis.Graphics.Material.html
+  - name: )
+- uid: Genesis.Core.GameElements.Element3D.ToRenderInstance
+  commentId: M:Genesis.Core.GameElements.Element3D.ToRenderInstance
+  parent: Genesis.Core.GameElements.Element3D
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_ToRenderInstance
+  name: ToRenderInstance()
+  nameWithType: Element3D.ToRenderInstance()
+  fullName: Genesis.Core.GameElements.Element3D.ToRenderInstance()
+  spec.csharp:
+  - uid: Genesis.Core.GameElements.Element3D.ToRenderInstance
+    name: ToRenderInstance
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_ToRenderInstance
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElements.Element3D.ToRenderInstance
+    name: ToRenderInstance
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_ToRenderInstance
+  - name: (
+  - name: )
+- uid: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+  commentId: M:Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+  parent: Genesis.Core.GameElements.Element3D
+  isExternal: true
+  href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_CreateInstanceContainer_Genesis_Core_GameElements_Element3D_System_Boolean_
+  name: CreateInstanceContainer(Element3D, bool)
+  nameWithType: Element3D.CreateInstanceContainer(Element3D, bool)
+  fullName: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D, bool)
+  nameWithType.vb: Element3D.CreateInstanceContainer(Element3D, Boolean)
+  fullName.vb: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D, Boolean)
+  name.vb: CreateInstanceContainer(Element3D, Boolean)
+  spec.csharp:
+  - uid: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+    name: CreateInstanceContainer
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_CreateInstanceContainer_Genesis_Core_GameElements_Element3D_System_Boolean_
+  - name: (
+  - uid: Genesis.Core.GameElements.Element3D
+    name: Element3D
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Genesis.Core.GameElements.Element3D.CreateInstanceContainer(Genesis.Core.GameElements.Element3D,System.Boolean)
+    name: CreateInstanceContainer
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html#Genesis_Core_GameElements_Element3D_CreateInstanceContainer_Genesis_Core_GameElements_Element3D_System_Boolean_
+  - name: (
+  - uid: Genesis.Core.GameElements.Element3D
+    name: Element3D
+    isExternal: true
+    href: Genesis.Core.GameElements.Element3D.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: Genesis.Core.GameElements.Element3D.Shader
   commentId: P:Genesis.Core.GameElements.Element3D.Shader
@@ -712,6 +782,14 @@ references:
   name: UUID
   nameWithType: GameElement.UUID
   fullName: Genesis.Core.GameElement.UUID
+- uid: Genesis.Core.GameElement.CastShadows
+  commentId: P:Genesis.Core.GameElement.CastShadows
+  parent: Genesis.Core.GameElement
+  isExternal: true
+  href: Genesis.Core.GameElement.html#Genesis_Core_GameElement_CastShadows
+  name: CastShadows
+  nameWithType: GameElement.CastShadows
+  fullName: Genesis.Core.GameElement.CastShadows
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object

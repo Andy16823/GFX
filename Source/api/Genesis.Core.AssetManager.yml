@@ -16,6 +16,7 @@ items:
   - Genesis.Core.AssetManager.ImportAssetLibary(System.String)
   - Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
   - Genesis.Core.AssetManager.LoadFonts
+  - Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
   - Genesis.Core.AssetManager.LoadSystemFont(System.String)
   - Genesis.Core.AssetManager.LoadTextures
   - Genesis.Core.AssetManager.PackAssets(System.String)
@@ -161,6 +162,36 @@ items:
   nameWithType.vb: AssetManager.GetFont(String)
   fullName.vb: Genesis.Core.AssetManager.GetFont(String)
   name.vb: GetFont(String)
+- uid: Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
+  commentId: M:Genesis.Core.AssetManager.LoadMaterial(System.String,System.String,System.String)
+  id: LoadMaterial(System.String,System.String,System.String)
+  parent: Genesis.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadMaterial(string, string, string)
+  nameWithType: AssetManager.LoadMaterial(string, string, string)
+  fullName: Genesis.Core.AssetManager.LoadMaterial(string, string, string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Material LoadMaterial(string name, string diffuseTexture, string normalTexture = "")
+    parameters:
+    - id: name
+      type: System.String
+    - id: diffuseTexture
+      type: System.String
+    - id: normalTexture
+      type: System.String
+    return:
+      type: Genesis.Graphics.Material
+    content.vb: Public Function LoadMaterial(name As String, diffuseTexture As String, normalTexture As String = "") As Material
+  overload: Genesis.Core.AssetManager.LoadMaterial*
+  nameWithType.vb: AssetManager.LoadMaterial(String, String, String)
+  fullName.vb: Genesis.Core.AssetManager.LoadMaterial(String, String, String)
+  name.vb: LoadMaterial(String, String, String)
 - uid: Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
   commentId: M:Genesis.Core.AssetManager.Init(Genesis.Graphics.IRenderDevice)
   id: Init(Genesis.Graphics.IRenderDevice)
@@ -816,6 +847,21 @@ references:
   name: Font
   nameWithType: Font
   fullName: Genesis.Graphics.Font
+- uid: Genesis.Core.AssetManager.LoadMaterial*
+  commentId: Overload:Genesis.Core.AssetManager.LoadMaterial
+  isExternal: true
+  href: Genesis.Core.AssetManager.html#Genesis_Core_AssetManager_LoadMaterial_System_String_System_String_System_String_
+  name: LoadMaterial
+  nameWithType: AssetManager.LoadMaterial
+  fullName: Genesis.Core.AssetManager.LoadMaterial
+- uid: Genesis.Graphics.Material
+  commentId: T:Genesis.Graphics.Material
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Material.html
+  name: Material
+  nameWithType: Material
+  fullName: Genesis.Graphics.Material
 - uid: Genesis.Core.AssetManager.Init*
   commentId: Overload:Genesis.Core.AssetManager.Init
   isExternal: true

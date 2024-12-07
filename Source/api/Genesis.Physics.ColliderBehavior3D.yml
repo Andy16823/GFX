@@ -7,7 +7,7 @@ items:
   children:
   - Genesis.Physics.ColliderBehavior3D.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Physics.ColliderBehavior3D.Collider
-  - Genesis.Physics.ColliderBehavior3D.CreateCollider
+  - Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
   - Genesis.Physics.ColliderBehavior3D.GetPhysicsObject
   - Genesis.Physics.ColliderBehavior3D.GetPhysicsObject``1
   - Genesis.Physics.ColliderBehavior3D.Offset
@@ -40,7 +40,9 @@ items:
   derivedClasses:
   - Genesis.Core.Behaviors.Physics3D.BoxCollider
   - Genesis.Core.Behaviors.Physics3D.CapsuleCollider
+  - Genesis.Core.Behaviors.Physics3D.CompoundMeshCollider
   - Genesis.Core.Behaviors.Physics3D.ConvexHullCollider
+  - Genesis.Core.Behaviors.Physics3D.MeshCollider
   - Genesis.Core.Behaviors.Physics3D.SphereCollider
   inheritedMembers:
   - Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)
@@ -77,16 +79,16 @@ items:
   nameWithType.vb: ColliderBehavior3D.New(PhysicHandler)
   fullName.vb: Genesis.Physics.ColliderBehavior3D.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider
-  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider
-  id: CreateCollider
+- uid: Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.ColliderBehavior3D.CreateCollider(System.Int32,System.Int32)
+  id: CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Physics.ColliderBehavior3D
   langs:
   - csharp
   - vb
-  name: CreateCollider()
-  nameWithType: ColliderBehavior3D.CreateCollider()
-  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider()
+  name: CreateCollider(int, int)
+  nameWithType: ColliderBehavior3D.CreateCollider(int, int)
+  fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -97,9 +99,17 @@ items:
     Implement this method in derived classes to define the specific behavior for creating a collider.
   example: []
   syntax:
-    content: public abstract void CreateCollider()
-    content.vb: Public MustOverride Sub CreateCollider()
+    content: public abstract void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public MustOverride Sub CreateCollider(collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Physics.ColliderBehavior3D.CreateCollider*
+  nameWithType.vb: ColliderBehavior3D.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Physics.ColliderBehavior3D.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
 - uid: Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
   commentId: M:Genesis.Physics.ColliderBehavior3D.Translate(Genesis.Math.Vec3)
   id: Translate(Genesis.Math.Vec3)
@@ -851,10 +861,21 @@ references:
 - uid: Genesis.Physics.ColliderBehavior3D.CreateCollider*
   commentId: Overload:Genesis.Physics.ColliderBehavior3D.CreateCollider
   isExternal: true
-  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider
+  href: Genesis.Physics.ColliderBehavior3D.html#Genesis_Physics_ColliderBehavior3D_CreateCollider_System_Int32_System_Int32_
   name: CreateCollider
   nameWithType: ColliderBehavior3D.CreateCollider
   fullName: Genesis.Physics.ColliderBehavior3D.CreateCollider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.ColliderBehavior3D.Translate*
   commentId: Overload:Genesis.Physics.ColliderBehavior3D.Translate
   isExternal: true

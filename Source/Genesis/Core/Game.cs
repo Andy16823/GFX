@@ -73,7 +73,6 @@ namespace Genesis.Core
 
         public Thread GameThread { get; set; }
 
-
         /// <summary>
         /// Event triggered when the game initializes.
         /// </summary>
@@ -118,6 +117,11 @@ namespace Genesis.Core
         /// Event triggered when the game is disposed.
         /// </summary>
         public event GameEventHandler OnDispose;
+
+        /// <summary>
+        /// Defines whenever the game is paused or not.
+        /// </summary>
+        public event Func<Game, bool> PauseRequest;
 
         /// <summary>
         /// Creates a new instance of the Game class.
@@ -195,6 +199,27 @@ namespace Genesis.Core
             if (currentFrame > LastFrame + frameTime)
             {
                 return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether the game should be paused by checking the registered event handlers.
+        /// The event handlers are expected to return a boolean value indicating whether the game should be paused.
+        /// If any of the handlers return <c>true</c>, the game will be paused.
+        ///
+        /// This method invokes all registered event handlers and returns <c>true</c> if any handler
+        /// indicates that the game should pause. It allows custom pause logic to be implemented by developers
+        /// via the <see cref="PauseRequest"/> event.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the game should be paused, otherwise <c>false</c>.
+        /// </returns>
+        internal bool IsPauseRequested()
+        {
+            if(this.PauseRequest != null)
+            {
+                return this.PauseRequest.GetInvocationList().Cast<Func<Game, bool>>().Any(handler => handler(this));
             }
             return false;
         }

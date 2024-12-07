@@ -7,8 +7,8 @@ items:
   children:
   - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.AngularFactor
-  - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single)
-  - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3)
+  - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3,System.Int32,System.Int32)
+  - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
   - Genesis.Core.Behaviors.Physics2D.BoxRigidBody.LinearFactor
   langs:
   - csharp
@@ -58,16 +58,16 @@ items:
   - System.Object.GetHashCode
   - System.Object.GetType
   - System.Object.MemberwiseClone
-- uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single)
-  id: CreateRigidBody(System.Single)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics2D.BoxRigidBody
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float)
-  nameWithType: BoxRigidBody.CreateRigidBody(float)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(float)
+  name: CreateRigidBody(float, int, int)
+  nameWithType: BoxRigidBody.CreateRigidBody(float, int, int)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(float, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -75,17 +75,21 @@ items:
   summary: Creates the rigid body with the specified mass.
   example: []
   syntax:
-    content: public override void CreateRigidBody(float mass)
+    content: public override void CreateRigidBody(float mass, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: mass
       type: System.Single
       description: The mass of the rigid body.
-    content.vb: Public Overrides Sub CreateRigidBody(mass As Single)
-  overridden: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Overrides Sub CreateRigidBody(mass As Single, collisionGroup As Integer = -1, collisionMask As Integer = -1)
+  overridden: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
   overload: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody*
-  nameWithType.vb: BoxRigidBody.CreateRigidBody(Single)
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
+  nameWithType.vb: BoxRigidBody.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
 - uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.#ctor(Genesis.Physics.PhysicHandler)
   commentId: M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.#ctor(Genesis.Physics.PhysicHandler)
   id: '#ctor(Genesis.Physics.PhysicHandler)'
@@ -113,16 +117,16 @@ items:
   nameWithType.vb: BoxRigidBody.New(PhysicHandler)
   fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3)
-  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3)
-  id: CreateRigidBody(System.Single,Genesis.Math.Vec3)
+- uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3,System.Int32,System.Int32)
+  commentId: M:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(System.Single,Genesis.Math.Vec3,System.Int32,System.Int32)
+  id: CreateRigidBody(System.Single,Genesis.Math.Vec3,System.Int32,System.Int32)
   parent: Genesis.Core.Behaviors.Physics2D.BoxRigidBody
   langs:
   - csharp
   - vb
-  name: CreateRigidBody(float, Vec3)
-  nameWithType: BoxRigidBody.CreateRigidBody(float, Vec3)
-  fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(float, Genesis.Math.Vec3)
+  name: CreateRigidBody(float, Vec3, int, int)
+  nameWithType: BoxRigidBody.CreateRigidBody(float, Vec3, int, int)
+  fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(float, Genesis.Math.Vec3, int, int)
   type: Method
   assemblies:
   - Genesis
@@ -130,7 +134,7 @@ items:
   summary: Creates the rigid body with the specified mass and half extents.
   example: []
   syntax:
-    content: public void CreateRigidBody(float mass, Vec3 halfextends)
+    content: public void CreateRigidBody(float mass, Vec3 halfextends, int collisionGroup = -1, int collisionMask = -1)
     parameters:
     - id: mass
       type: System.Single
@@ -138,11 +142,15 @@ items:
     - id: halfextends
       type: Genesis.Math.Vec3
       description: The half extents of the box shape.
-    content.vb: Public Sub CreateRigidBody(mass As Single, halfextends As Vec3)
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public Sub CreateRigidBody(mass As Single, halfextends As Vec3, collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody*
-  nameWithType.vb: BoxRigidBody.CreateRigidBody(Single, Vec3)
-  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(Single, Genesis.Math.Vec3)
-  name.vb: CreateRigidBody(Single, Vec3)
+  nameWithType.vb: BoxRigidBody.CreateRigidBody(Single, Vec3, Integer, Integer)
+  fullName.vb: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody(Single, Genesis.Math.Vec3, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Vec3, Integer, Integer)
 - uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.LinearFactor
   commentId: P:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.LinearFactor
   id: LinearFactor
@@ -1145,43 +1153,67 @@ references:
     name: Physics
     isExternal: true
     href: Genesis.Physics.html
-- uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
-  commentId: M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+- uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
   parent: Genesis.Physics.RigidBodyBehavior2D
   isExternal: true
-  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
-  name: CreateRigidBody(float)
-  nameWithType: RigidBodyBehavior2D.CreateRigidBody(float)
-  fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(float)
-  nameWithType.vb: RigidBodyBehavior2D.CreateRigidBody(Single)
-  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(Single)
-  name.vb: CreateRigidBody(Single)
+  href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_System_Int32_System_Int32_
+  name: CreateRigidBody(float, int, int)
+  nameWithType: RigidBodyBehavior2D.CreateRigidBody(float, int, int)
+  fullName: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(float, int, int)
+  nameWithType.vb: RigidBodyBehavior2D.CreateRigidBody(Single, Integer, Integer)
+  fullName.vb: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(Single, Integer, Integer)
+  name.vb: CreateRigidBody(Single, Integer, Integer)
   spec.csharp:
-  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
     name: CreateRigidBody
     isExternal: true
-    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   - name: (
   - uid: System.Single
     name: float
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
   spec.vb:
-  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single)
+  - uid: Genesis.Physics.RigidBodyBehavior2D.CreateRigidBody(System.Single,System.Int32,System.Int32)
     name: CreateRigidBody
     isExternal: true
-    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_
+    href: Genesis.Physics.RigidBodyBehavior2D.html#Genesis_Physics_RigidBodyBehavior2D_CreateRigidBody_System_Single_System_Int32_System_Int32_
   - name: (
   - uid: System.Single
     name: Single
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody*
   commentId: Overload:Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody
   isExternal: true
-  href: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.html#Genesis_Core_Behaviors_Physics2D_BoxRigidBody_CreateRigidBody_System_Single_
+  href: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.html#Genesis_Core_Behaviors_Physics2D_BoxRigidBody_CreateRigidBody_System_Single_System_Int32_System_Int32_
   name: CreateRigidBody
   nameWithType: BoxRigidBody.CreateRigidBody
   fullName: Genesis.Core.Behaviors.Physics2D.BoxRigidBody.CreateRigidBody
@@ -1196,6 +1228,17 @@ references:
   nameWithType.vb: Single
   fullName.vb: Single
   name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Core.Behaviors.Physics2D.BoxRigidBody
   commentId: T:Genesis.Core.Behaviors.Physics2D.BoxRigidBody
   isExternal: true

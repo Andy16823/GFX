@@ -7,7 +7,7 @@ items:
   children:
   - Genesis.Physics.ColliderBehavior2D.#ctor(Genesis.Physics.PhysicHandler)
   - Genesis.Physics.ColliderBehavior2D.Collider
-  - Genesis.Physics.ColliderBehavior2D.CreateCollider
+  - Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
   - Genesis.Physics.ColliderBehavior2D.GetPhysicsObject
   - Genesis.Physics.ColliderBehavior2D.GetPhysicsObject``1
   - Genesis.Physics.ColliderBehavior2D.Offset
@@ -81,16 +81,16 @@ items:
   nameWithType.vb: ColliderBehavior2D.New(PhysicHandler)
   fullName.vb: Genesis.Physics.ColliderBehavior2D.New(Genesis.Physics.PhysicHandler)
   name.vb: New(PhysicHandler)
-- uid: Genesis.Physics.ColliderBehavior2D.CreateCollider
-  commentId: M:Genesis.Physics.ColliderBehavior2D.CreateCollider
-  id: CreateCollider
+- uid: Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
+  commentId: M:Genesis.Physics.ColliderBehavior2D.CreateCollider(System.Int32,System.Int32)
+  id: CreateCollider(System.Int32,System.Int32)
   parent: Genesis.Physics.ColliderBehavior2D
   langs:
   - csharp
   - vb
-  name: CreateCollider()
-  nameWithType: ColliderBehavior2D.CreateCollider()
-  fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider()
+  name: CreateCollider(int, int)
+  nameWithType: ColliderBehavior2D.CreateCollider(int, int)
+  fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider(int, int)
   type: Method
   assemblies:
   - Genesis
@@ -98,9 +98,17 @@ items:
   summary: Creates the collider object.
   example: []
   syntax:
-    content: public abstract void CreateCollider()
-    content.vb: Public MustOverride Sub CreateCollider()
+    content: public abstract void CreateCollider(int collisionGroup = -1, int collisionMask = -1)
+    parameters:
+    - id: collisionGroup
+      type: System.Int32
+    - id: collisionMask
+      type: System.Int32
+    content.vb: Public MustOverride Sub CreateCollider(collisionGroup As Integer = -1, collisionMask As Integer = -1)
   overload: Genesis.Physics.ColliderBehavior2D.CreateCollider*
+  nameWithType.vb: ColliderBehavior2D.CreateCollider(Integer, Integer)
+  fullName.vb: Genesis.Physics.ColliderBehavior2D.CreateCollider(Integer, Integer)
+  name.vb: CreateCollider(Integer, Integer)
 - uid: Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
   commentId: M:Genesis.Physics.ColliderBehavior2D.Translate(Genesis.Math.Vec3)
   id: Translate(Genesis.Math.Vec3)
@@ -848,10 +856,21 @@ references:
 - uid: Genesis.Physics.ColliderBehavior2D.CreateCollider*
   commentId: Overload:Genesis.Physics.ColliderBehavior2D.CreateCollider
   isExternal: true
-  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider
+  href: Genesis.Physics.ColliderBehavior2D.html#Genesis_Physics_ColliderBehavior2D_CreateCollider_System_Int32_System_Int32_
   name: CreateCollider
   nameWithType: ColliderBehavior2D.CreateCollider
   fullName: Genesis.Physics.ColliderBehavior2D.CreateCollider
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: Genesis.Physics.ColliderBehavior2D.Translate*
   commentId: Overload:Genesis.Physics.ColliderBehavior2D.Translate
   isExternal: true

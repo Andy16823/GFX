@@ -14,6 +14,7 @@ items:
   - Genesis.Graphics.Shapes.QubeShape
   - Genesis.Graphics.Shapes.RectShape
   - Genesis.Graphics.Shapes.Shape
+  - Genesis.Graphics.Shapes.SphereShape
   - Genesis.Graphics.Shapes.SpriteShape
   langs:
   - csharp
@@ -39,6 +40,14 @@ references:
   name: Light2DShape
   nameWithType: Light2DShape
   fullName: Genesis.Graphics.Shapes.Light2DShape
+- uid: Genesis.Graphics.Shapes.SphereShape
+  commentId: T:Genesis.Graphics.Shapes.SphereShape
+  parent: Genesis.Graphics.Shapes
+  isExternal: true
+  href: Genesis.Graphics.Shapes.SphereShape.html
+  name: SphereShape
+  nameWithType: SphereShape
+  fullName: Genesis.Graphics.Shapes.SphereShape
 - uid: Genesis.Graphics.Shapes.FrameShape
   commentId: T:Genesis.Graphics.Shapes.FrameShape
   isExternal: true

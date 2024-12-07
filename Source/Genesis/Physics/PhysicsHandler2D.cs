@@ -69,12 +69,20 @@ namespace Genesis.Physics
 
                     if(Callbacks.ContainsKey(obA))
                     {
-                        Callbacks[obA](scene, game, obB.UserObject);
+                        Collision collision = new Collision();
+                        collision.collidingElement = (GameElement) obB.UserObject;
+                        collision.initiator = (GameElement) obA.UserObject;
+                        collision.contacts = contactManifold.NumContacts;
+                        Callbacks[obA](scene, game, collision);
                     }
 
                     if(Callbacks.ContainsKey(obB))
                     {
-                        Callbacks[obB](scene, game, obA.UserObject);
+                        Collision collision = new Collision();
+                        collision.collidingElement = (GameElement)obA.UserObject;
+                        collision.initiator = (GameElement)obB.UserObject;
+                        collision.contacts = contactManifold.NumContacts;
+                        Callbacks[obB](scene, game, collision);
                     }
                 }
             }
