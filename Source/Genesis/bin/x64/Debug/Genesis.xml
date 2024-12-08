@@ -1365,6 +1365,11 @@
             Event triggered when the game is disposed.
             </summary>
         </member>
+        <member name="E:Genesis.Core.Game.PauseRequest">
+            <summary>
+            Defines whenever the game is paused or not.
+            </summary>
+        </member>
         <member name="M:Genesis.Core.Game.#ctor(Genesis.Graphics.IRenderDevice,Genesis.Graphics.Viewport)">
             <summary>
             Creates a new instance of the Game class.
@@ -1393,6 +1398,20 @@
             </summary>
             <param name="currentFrame">The current time in milliseconds.</param>
             <returns>True if enough time has passed to proceed to the next frame, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Core.Game.IsPauseRequested">
+             <summary>
+             Determines whether the game should be paused by checking the registered event handlers.
+             The event handlers are expected to return a boolean value indicating whether the game should be paused.
+             If any of the handlers return <c>true</c>, the game will be paused.
+            
+             This method invokes all registered event handlers and returns <c>true</c> if any handler
+             indicates that the game should pause. It allows custom pause logic to be implemented by developers
+             via the <see cref="E:Genesis.Core.Game.PauseRequest"/> event.
+             </summary>
+             <returns>
+             <c>true</c> if the game should be paused, otherwise <c>false</c>.
+             </returns>
         </member>
         <member name="M:Genesis.Core.Game.UpdateFrame(System.Int64)">
             <summary>
@@ -2958,6 +2977,7 @@
             </code>
             </example>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Genesis.Core.Input.IsKeyHit(Genesis.Core.Input.Keys)" -->
         <member name="M:Genesis.Core.Input.GetMousePos">
             <summary>
             Gets the current mouse position.
@@ -8185,7 +8205,7 @@
             </summary>
             <param name="scene">The scene involved in the physics event</param>
             <param name="game">The game involved in the physics event</param>
-            <param name="element">The element involved in the physics event</param>
+            <param name="collision">The information from the collision</param>
         </member>
         <member name="T:Genesis.Physics.PhysicPropeterys">
             <summary>
@@ -8286,7 +8306,7 @@
             </summary>
             <param name="scene">The scene involved in the physics behavior event</param>
             <param name="game">The game involved in the physics behavior event</param>
-            <param name="collision">The collision object involved in the physics behavior event</param>
+            <param name="collision">The information about the collision</param>
         </member>
         <member name="T:Genesis.Physics.PhysicsBehavior">
             <summary>
@@ -8298,13 +8318,14 @@
             Event triggered when a collision occurs.
             </summary>
         </member>
-        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Core.GameElement)">
+        <member name="M:Genesis.Physics.PhysicsBehavior.Collide(Genesis.Core.Scene,Genesis.Core.Game,Genesis.Physics.Collision)">
             <summary>
             Handles the collision event, invoking the OnCollide event if subscribed.
             </summary>
             <param name="scene">The scene where the collision occurred</param>
             <param name="game">The game associated with the collision</param>
-            <param name="collisionObject">The collision object involved in the event</param>
+            <param name="collidingElement">The collision object involved in the event</param>
+            <param name="initiator">The object that triggered the event</param>
         </member>
         <member name="M:Genesis.Physics.PhysicsBehavior.GetPhysicsObject">
             <summary>
