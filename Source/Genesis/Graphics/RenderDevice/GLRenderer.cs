@@ -103,6 +103,7 @@ namespace Genesis.Graphics.RenderDevice
             this.ShaderPrograms.Add("LightmapShader", new LightmapShader());
             this.ShaderPrograms.Add("Element3DShader", new Element3DShader());
             this.ShaderPrograms.Add("InstancedShader", new InstancedShader());
+            this.ShaderPrograms.Add("BufferedSpriteShader", new BufferedSpriteShader());
 
             foreach (KeyValuePair<string, ShaderProgram> item in this.ShaderPrograms)
             {
@@ -416,25 +417,114 @@ namespace Genesis.Graphics.RenderDevice
         /// <param name="bufferedSprite"></param>
         private void InitBufferedSprite(BufferedSprite bufferedSprite)
         {
-            float[] verticies = bufferedSprite.Verticies.ToArray();
+            var vec4Size = sizeof(float) * 4;
+            var matrixStride = vec4Size * 4;
+            var instanceMatrices = new List<float>();
+            var instanceColors = new List<float>();
+            var instanceUVTransforms = new List<float>();
+            var instanceExtras = new List<float>();
+
+            foreach (var instance in bufferedSprite.Instances)
+            {
+                instanceMatrices.AddRange(instance.GetMatrixArray());
+                instanceColors.AddRange(instance.GetColorArray());
+                instanceUVTransforms.AddRange(instance.GetUVTransformArray());
+                instanceExtras.AddRange(instance.GetExtrasArray());
+            }
+
+            int vao = gl.GenVertexArrays(1);
+            bufferedSprite.Propertys.Add("vao", vao);
+            gl.BindVertexArray(vao);
+
+            // Create and set inPosition
+            float[] verticies = BufferedSprite.GetVertexBuffer();
             int vbo = gl.GenBuffer(1);
             gl.BindBuffer(OpenGL.ArrayBuffer, vbo);
             gl.BufferData(OpenGL.ArrayBuffer, verticies.Length * sizeof(float), verticies, OpenGL.DynamicDraw);
             bufferedSprite.Propertys.Add("vbo", vbo);
 
-            float[] color = bufferedSprite.Colors.ToArray();
+            gl.EnableVertexAttribArray(0);
+            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
+            gl.VertexAttribDivisor(0, 0);
+
+            // Create and set inTexCoord
+            float[] texCords = BufferedSprite.GetUVBuffer();
+            int tbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
+            gl.BufferData(OpenGL.ArrayBuffer, texCords.Length * sizeof(float), texCords, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("tbo", tbo);
+
+            gl.EnableVertexAttribArray(1);
+            gl.VertexAttribPointer(1, 2, OpenGL.Float, false, 0, 0);
+            gl.VertexAttribDivisor(1, 0);
+
+
+            int[] indicies = BufferedSprite.GetIndexBuffer();
+            int ibo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ElementArrayBuffer, ibo);
+            gl.BufferData(OpenGL.ElementArrayBuffer, indicies.Length * sizeof(int), indicies, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("ibo", ibo);
+
+            // Create and set inInstanceVertexColor
+            float[] colors = instanceColors.ToArray();
             int cbo = gl.GenBuffer(1);
             gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-            gl.BufferData(OpenGL.ArrayBuffer, color.Length * sizeof(float), color, OpenGL.DynamicDraw);
+            gl.BufferData(OpenGL.ArrayBuffer, colors.Length * sizeof(float), colors, OpenGL.DynamicDraw);
             bufferedSprite.Propertys.Add("cbo", cbo);
 
-            float[] texCoords = bufferedSprite.TexCoords.ToArray();
-            int tex = gl.GenBuffer(1);
-            gl.BindBuffer(OpenGL.ArrayBuffer, tex);
-            gl.BufferData(OpenGL.ArrayBuffer, texCoords.Length * sizeof(float), texCoords, OpenGL.DynamicDraw);
-            bufferedSprite.Propertys.Add("tbo", tex);
+            gl.EnableVertexAttribArray(2);
+            gl.VertexAttribPointer(2, 4, OpenGL.Float, false, 0, 0);
+            gl.VertexAttribDivisor(2, 1);
 
-            bufferedSprite.Propertys.Add("tris", bufferedSprite.Verticies.Count / 3);
+            // Create and set inInstanceMatrix
+            float[] matrices = instanceMatrices.ToArray();
+            int mbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, mbo);
+            gl.BufferData(OpenGL.ArrayBuffer, matrices.Length * sizeof(float), matrices, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("mbo", mbo);
+
+            gl.EnableVertexAttribArray(3);
+            gl.VertexAttribPointer(3, 4, OpenGL.Float, false, matrixStride, IntPtr.Zero);
+            gl.VertexAttribDivisor(3, 1);
+
+            gl.EnableVertexAttribArray(4);
+            gl.VertexAttribPointer(4, 4, OpenGL.Float, false, matrixStride, new IntPtr(vec4Size));
+            gl.VertexAttribDivisor(4, 1);
+
+            gl.EnableVertexAttribArray(5);
+            gl.VertexAttribPointer(5, 4, OpenGL.Float, false, matrixStride, new IntPtr(vec4Size * 2));
+            gl.VertexAttribDivisor(5, 1);
+
+            gl.EnableVertexAttribArray(6);
+            gl.VertexAttribPointer(6, 4, OpenGL.Float, false, matrixStride, new IntPtr(vec4Size * 3));
+            gl.VertexAttribDivisor(6, 1);
+
+            // Create and set inUvTransform
+            float[] uvTransforms = instanceUVTransforms.ToArray();
+            int uvto = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, uvto);
+            gl.BufferData(OpenGL.ArrayBuffer, uvTransforms.Length * sizeof(float), uvTransforms, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("uvto", uvto);
+
+            gl.EnableVertexAttribArray(7);
+            gl.VertexAttribPointer(7, 4, OpenGL.Float, false, 0, 0);
+            gl.VertexAttribDivisor(7, 1);
+
+            // Create and set inExtras
+            float[] extras = instanceExtras.ToArray();
+            int exbo = gl.GenBuffer(1);
+            gl.BindBuffer(OpenGL.ArrayBuffer, exbo);
+            gl.BufferData(OpenGL.ArrayBuffer, extras.Length * sizeof(float), extras, OpenGL.DynamicDraw);
+            bufferedSprite.Propertys.Add("exbo", exbo);
+
+            gl.EnableVertexAttribArray(8);
+            gl.VertexAttribPointer(8, 4, OpenGL.Float, false, 0, 0);
+            gl.VertexAttribDivisor(8, 1);
+
+            bufferedSprite.Propertys.Add("instances", bufferedSprite.Instances.Count);
+
+            gl.BindVertexArray(0);
+            gl.BindBuffer(OpenGL.ArrayBuffer, 0);
         }
 
         /// <summary>
@@ -1060,51 +1150,22 @@ namespace Genesis.Graphics.RenderDevice
         public void DrawBufferedSprite(BufferedSprite bufferedSprite)
         {
             gl.Disable(OpenGL.DepthTest);
-            //Create the modelview matrix
-            mat4 mt_mat = mat4.Translate(bufferedSprite.Location.X, bufferedSprite.Location.Y, bufferedSprite.Location.Z);
-            mat4 mr_mat = mat4.RotateZ(0f);
-            mat4 ms_mat = mat4.Scale(1f, 1f, 1f);
-            mat4 m_mat = mt_mat * mr_mat * ms_mat;
-
-            //Create the mvp matrix
-            mat4 mvp = p_mat * v_mat * m_mat;
+            var shaderProgram = ShaderPrograms["BufferedSpriteShader"];
 
             //Load the shader program and set the mvp matrix
-            gl.Enable(NetGL.OpenGL.Texture2D);
-            gl.UseProgram(ShaderPrograms["SpriteShader"].ProgramID);
-            gl.UniformMatrix4fv(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "mvp"), 1, false, mvp.ToArray());
+            gl.UseProgram(shaderProgram.ProgramID);
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderProgram.ProgramID, "p_mat"), 1, false, p_mat.ToArray());
+            gl.UniformMatrix4fv(gl.GetUniformLocation(shaderProgram.ProgramID, "v_mat"), 1, false, v_mat.ToArray());
 
             //Load the texture and send it to the shader
             gl.ActiveTexture(OpenGL.Texture0);
             gl.BindTexture(NetGL.OpenGL.Texture2D, bufferedSprite.Texture.RenderID);
-            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapS, NetGL.OpenGL.Repeate);
-            gl.TexParameteri(NetGL.OpenGL.Texture2D, NetGL.OpenGL.TextureWrapT, NetGL.OpenGL.Repeate);
-            gl.Uniform1I(gl.GetUniformLocation(ShaderPrograms["SpriteShader"].ProgramID, "textureSampler"), 0);
+            gl.Uniform1I(gl.GetUniformLocation(shaderProgram.ProgramID, "textureSampler"), 0);
 
-            //Load the vertex buffer and set the new tex coords
-            
-            //Send the vertex data to the shader
-            
-            int vertexBuffer = (int)bufferedSprite.Propertys["vbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, vertexBuffer);
-            gl.EnableVertexAttribArray(0);
-            gl.VertexAttribPointer(0, 3, OpenGL.Float, false, 0, 0);
-
-            //Send the color data to the shader
-            int cbo = (int)bufferedSprite.Propertys["cbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, cbo);
-            gl.EnableVertexAttribArray(1);
-            gl.VertexAttribPointer(1, 3, OpenGL.Float, false, 0, 0);
-
-            //Create the tex coords and send them to the buffer
-            int tbo = (int)bufferedSprite.Propertys["tbo"];
-            gl.BindBuffer(OpenGL.ArrayBuffer, tbo);
-            gl.EnableVertexAttribArray(2);
-            gl.VertexAttribPointer(2, 2, OpenGL.Float, false, 0, 0);
-
-            //Draw the sprite
-            gl.DrawArrays(OpenGL.Triangles, 0, (int)bufferedSprite.Propertys["tris"]);
-            gl.Disable(NetGL.OpenGL.Texture2D);
+            var vao = (int)bufferedSprite.Propertys["vao"];
+            gl.BindVertexArray(vao);
+            gl.DrawElementsInstanced(OpenGL.Triangles, 6, OpenGL.UnsignedInt, IntPtr.Zero, bufferedSprite.Instances.Count);
+            gl.BindVertexArray(0);
             gl.Enable(OpenGL.DepthTest);
         }
 
@@ -2580,11 +2641,16 @@ namespace Genesis.Graphics.RenderDevice
 
         private void DisposeBufferedSprite(BufferedSprite sprite)
         {
-            Console.WriteLine("Disposing buffered sprite " + sprite.UUID);
+            Debug.WriteLine("Disposing buffered sprite " + sprite.UUID);
+            gl.DeleteVertexArrays(1, (int)sprite.Propertys["vao"]);
             gl.DeleteBuffers(1, (int)sprite.Propertys["vbo"]);
-            gl.DeleteBuffers(1, (int)sprite.Propertys["cbo"]);
             gl.DeleteBuffers(1, (int)sprite.Propertys["tbo"]);
-            Console.WriteLine("Disposed buffered sprite with error " + gl.GetError());
+            gl.DeleteBuffers(1, (int)sprite.Propertys["ibo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["cbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["mbo"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["uvto"]);
+            gl.DeleteBuffers(1, (int)sprite.Propertys["exbo"]);
+            Debug.WriteLine("Disposed buffered sprite with error " + gl.GetError());
         }
 
         private void DisposeCube(Qube cube)

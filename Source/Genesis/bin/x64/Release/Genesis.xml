@@ -568,16 +568,6 @@
             </summary>
             <param name="halfExtends">The half extents of the box trigger.</param>
         </member>
-        <member name="T:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider">
-            <summary>
-            Represents a behavior for creating a physics collider for 2D sprites using BulletSharp.
-            </summary>
-        </member>
-        <member name="M:Genesis.Core.Behaviors.Physics2D.BufferedSpriteCollider.CreateCollider(System.Int32,System.Int32)">
-            <summary>
-            Creates a rigid body for the collider.
-            </summary>
-        </member>
         <member name="P:Genesis.Core.Behaviors.Physics2D.PhysicsBox2D.RigidBody">
             <summary>
             Gets or sets the RigidBody associated with this 2D physics behavior.
@@ -2306,63 +2296,136 @@
             </summary>
             <param name="waypoint">The waypoint to copy values from.</param>
         </member>
-        <member name="T:Genesis.Core.GameElements.SpriteShapeDeffinition">
+        <member name="T:Genesis.Core.GameElements.BufferedSpriteInstance">
             <summary>
-            Represents the definition of the shape for a sprite, including its location and size.
+            Represents a buffered sprite instance used in graphics rendering.
             </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.Location">
+            <summary>
+            Gets or sets the location of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.Rotation">
+            <summary>
+            Gets or sets the rotation of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.Size">
+            <summary>
+            Gets or sets the size of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.Visible">
+            <summary>
+            Gets or sets a value indicating whether the buffered sprite instance is visible.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.Color">
+            <summary>
+            Gets or sets the color of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.UVTransform">
+            <summary>
+            Gets or sets the UV transform of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="P:Genesis.Core.GameElements.BufferedSpriteInstance.InstanceID">
+            <summary>
+            Gets or sets the instance ID of the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.#ctor">
+            <summary>
+            Constructor for the BufferedSpriteInstance class that initializes the buffered sprite instance.
+            </summary>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.GetMatrixArray">
+            <summary>
+            Gets the matrix array of the buffered sprite instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.DefaultUVTransform">
+            <summary>
+            Gets the default UV transform of the buffered sprite instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.GetColorArray">
+            <summary>
+            Gets the color array of the buffered sprite instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.GetUVTransformArray">
+            <summary>
+            Gets the UV transform array of the buffered sprite instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSpriteInstance.GetExtrasArray">
+            <summary>
+            Gets the extras array of the buffered sprite instance.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Core.GameElements.BufferedSprite">
             <summary>
-            Represents a game element that creates a buffered sprite with vertices, colors, and texture coordinates.
+            Represents a buffered sprite used in graphics rendering.
             </summary>
         </member>
-        <member name="P:Genesis.Core.GameElements.BufferedSprite.Verticies">
+        <member name="P:Genesis.Core.GameElements.BufferedSprite.Instances">
             <summary>
-            Gets or sets the list of vertices for the sprite.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElements.BufferedSprite.Colors">
-            <summary>
-            Gets or sets the list of colors for the sprite.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElements.BufferedSprite.TexCoords">
-            <summary>
-            Gets or sets the list of texture coordinates for the sprite.
-            </summary>
-        </member>
-        <member name="P:Genesis.Core.GameElements.BufferedSprite.ShapeDeffinitions">
-            <summary>
-            Gets or sets the list of shape definitions for the sprite.
+            Gets or sets the list of buffered sprite instances.
             </summary>
         </member>
         <member name="P:Genesis.Core.GameElements.BufferedSprite.Texture">
             <summary>
-            Gets or sets the texture applied to the sprite.
+            Gets or sets the texture of the buffered sprite.
             </summary>
         </member>
-        <member name="M:Genesis.Core.GameElements.BufferedSprite.#ctor(System.String,Genesis.Math.Vec3,Genesis.Graphics.Texture)">
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.#ctor(Genesis.Graphics.Texture)">
             <summary>
-            Creates a new buffered sprite with the specified name, location, and texture.
+            Constructor for the BufferedSprite class that initializes the buffered sprite with a texture.
             </summary>
-            <param name="name">The name of the game element.</param>
-            <param name="location">The location of the game element.</param>
-            <param name="texture">The texture applied to the sprite.</param>
+            <param name="texture"></param>
         </member>
-        <member name="M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.#ctor(Genesis.Graphics.SpriteSheet)">
             <summary>
-            Adds a new rectangular shape at the given location and with the given size to the sprite.
+            Constructor for the BufferedSprite class that initializes the buffered sprite with a sprite sheet.
             </summary>
-            <param name="location">The location for the sprite.</param>
-            <param name="size">The size for the sprite.</param>
+            <param name="spriteSheet"></param>
         </member>
-        <member name="M:Genesis.Core.GameElements.BufferedSprite.AddShape(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Graphics.TexCoords)">
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.BakeInstances(System.Int32)">
             <summary>
-            Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
+            Bakes the instances for the buffered sprite.
             </summary>
-            <param name="location">The location for the sprite.</param>
-            <param name="size">The size for the sprite.</param>
-            <param name="texCoords">The texture coordinates for the sprite.</param>
+            <param name="count"></param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.CreateInstance(Genesis.Math.Vec3,Genesis.Math.Vec3,Genesis.Math.Vec3,System.Drawing.Color,Genesis.Math.Vec4,System.Boolean)">
+            <summary>
+            Creates a new instance of the buffered sprite.
+            </summary>
+            <param name="location"></param>
+            <param name="rotation"></param>
+            <param name="size"></param>
+            <param name="color"></param>
+            <param name="visible"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.UpdateInstance(Genesis.Core.GameElements.BufferedSpriteInstance)">
+            <summary>
+            Updates the instance of the buffered sprite.
+            </summary>
+            <param name="instance"></param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.FindHiddenInstance">
+            <summary>
+            Finds a hidden instance of the buffered sprite.
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Genesis.Core.GameElements.BufferedSprite.Init(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)">
             <summary>
@@ -2390,6 +2453,24 @@
             Clears the GPU memory
             </summary>
             <param name="game"></param>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.GetVertexBuffer">
+            <summary>
+            Gets the vertex buffer for the buffered sprite.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.GetIndexBuffer">
+            <summary>
+            Gets the index buffer for the buffered sprite.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Core.GameElements.BufferedSprite.GetUVBuffer">
+            <summary>
+            Gets the uv buffer for the buffered sprite.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Genesis.Core.GameElements.CameraElement">
             <summary>
@@ -3670,13 +3751,6 @@
             Resizes the scene by invoking the event handler for scene resize.
             </summary>
             <param name="viewport">The viewport containing information about the new dimensions.</param>
-        </member>
-        <member name="M:Genesis.Core.Scene.ImportScene2D(System.String,Genesis.Core.AssetManager)">
-            <summary>
-            Loads the given scene file into this scene
-            </summary>
-            <param name="filename">The file name</param>
-            <param name="assetManager">The asset manager</param>
         </member>
         <member name="M:Genesis.Core.Scene.GetSceneFilePropetery(Newtonsoft.Json.Linq.JArray,System.String)">
             <summary>
@@ -7684,6 +7758,537 @@
             <param name="camera">The camera for which to calculate the view matrix.</param>
             <returns>A <see cref="T:GlmSharp.mat4"/> representing the view matrix.</returns>
         </member>
+        <member name="T:Genesis.Math.NoisePoint">
+            <summary>
+            Represents a point in a noise map with coordinates and a noise value.
+            </summary>
+        </member>
+        <member name="M:Genesis.Math.NoisePoint.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor for the NoisePoint struct.
+            </summary>
+            <param name="x">The x-coordinate of the point.</param>
+            <param name="y">The y-coordinate of the point.</param>
+            <param name="value">The noise value associated with the point.</param>
+        </member>
+        <member name="T:Genesis.Math.PerlinNoise">
+            <summary>
+            Class for generating Perlin noise.
+            </summary>
+        </member>
+        <member name="M:Genesis.Math.PerlinNoise.Noise(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates Perlin noise at a specific point.
+            </summary>
+            <param name="x">The x-coordinate of the point.</param>
+            <param name="y">The y-coordinate of the point.</param>
+            <param name="seed">The seed value for the noise generation.</param>
+            <returns>The generated Perlin noise value at the specified point.</returns>
+        </member>
+        <member name="M:Genesis.Math.PerlinNoise.SmoothedNoise(System.Single,System.Single,System.Int32)">
+            <summary>
+            Applies smoothing to the noise at a specific point.
+            </summary>
+            <param name="x">The x-coordinate of the point.</param>
+            <param name="y">The y-coordinate of the point.</param>
+            <param name="seed">The seed value for the noise generation.</param>
+            <returns>The smoothed noise value at the specified point.</returns>
+        </member>
+        <member name="M:Genesis.Math.PerlinNoise.Interpolate(System.Single,System.Single,System.Single)">
+            <summary>
+            Interpolates between two values.
+            </summary>
+            <param name="a">The first value.</param>
+            <param name="b">The second value.</param>
+            <param name="x">The interpolation factor.</param>
+            <returns>The interpolated value.</returns>
+        </member>
+        <member name="M:Genesis.Math.PerlinNoise.GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Generates Perlin noise at a specific point with specified parameters.
+            </summary>
+            <param name="x">The x-coordinate of the point.</param>
+            <param name="y">The y-coordinate of the point.</param>
+            <param name="persistence">The persistence value affecting the amplitude of octaves.</param>
+            <param name="octaves">The number of octaves to generate.</param>
+            <param name="seed">The seed value for the noise generation.</param>
+            <returns>The generated Perlin noise value at the specified point.</returns>
+        </member>
+        <member name="M:Genesis.Math.PerlinNoise.GenerateNoiseMap(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a 2D noise map with specified dimensions and seed.
+            </summary>
+            <param name="width">The width of the noise map.</param>
+            <param name="height">The height of the noise map.</param>
+            <param name="seed">The seed value for the noise generation.</param>
+            <returns>A list of NoisePoint objects representing the generated noise map.</returns>
+        </member>
+        <member name="T:Genesis.Math.Rect">
+            <summary>
+            Represents a rectangle with position and dimensions.
+            </summary>
+        </member>
+        <member name="P:Genesis.Math.Rect.X">
+            <summary>
+            Gets or sets the X-coordinate of the rectangle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Math.Rect.Y">
+            <summary>
+            Gets or sets the Y-coordinate of the rectangle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Math.Rect.Width">
+            <summary>
+            Gets or sets the width of the rectangle.
+            </summary>
+        </member>
+        <member name="P:Genesis.Math.Rect.Height">
+            <summary>
+            Gets or sets the height of the rectangle.
+            </summary>
+        </member>
+        <member name="M:Genesis.Math.Rect.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Constructor for the Rect class that initializes the rectangle with specified position and dimensions.
+            </summary>
+            <param name="x">The X-coordinate of the rectangle.</param>
+            <param name="y">The Y-coordinate of the rectangle.</param>
+            <param name="width">The width of the rectangle.</param>
+            <param name="height">The height of the rectangle.</param>
+        </member>
+        <member name="M:Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Initializes a new instance of the Rect class with the specified location and size.
+            </summary>
+            <param name="location">The location of the rectangle.</param>
+            <param name="size">The size of the rectangle.</param>
+        </member>
+        <member name="M:Genesis.Math.Rect.Contains(System.Single,System.Single)">
+            <summary>
+            Checks if a point with specified coordinates is contained within the rectangle.
+            </summary>
+            <param name="x">The X-coordinate of the point.</param>
+            <param name="y">The Y-coordinate of the point.</param>
+            <returns>True if the point is contained within the rectangle, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Math.Rect.Intersects(Genesis.Math.Rect)">
+            <summary>
+            Checks if the current rectangle intersects with another rectangle.
+            </summary>
+            <param name="rect">The other rectangle to check for intersection.</param>
+            <returns>True if the rectangles intersect, otherwise false.</returns>
+        </member>
+        <member name="M:Genesis.Math.Rect.ToString">
+            <summary>
+            Converts the rectangle to a string representation in the format "X;Y;Width;Height".
+            </summary>
+            <returns>A string representation of the rectangle.</returns>
+        </member>
+        <member name="M:Genesis.Math.Rect.GetLocation">
+            <summary>
+            Returns the location from the rect
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Genesis.Math.Vec3">
+            <summary>
+            Represents a three-dimensional vector, used for representing points or directions in 3D space.
+            </summary>
+        </member>
+        <member name="F:Genesis.Math.Vec3.X">
+            <summary>
+            Gets or sets the X-coordinate of the vector.
+            </summary>
+        </member>
+        <member name="F:Genesis.Math.Vec3.Y">
+            <summary>
+            Gets or sets the Y-coordinate of the vector.
+            </summary>
+        </member>
+        <member name="F:Genesis.Math.Vec3.Z">
+            <summary>
+            Gets or sets the Z-coordinate of the vector.
+            </summary>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with the specified coordinates.
+            </summary>
+            <param name="x">The X-coordinate of the vector.</param>
+            <param name="y">The Y-coordinate of the vector.</param>
+            <param name="z">The Z-coordinate of the vector.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Single,System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with the specified X and Y coordinates, and Z set to 0.
+            </summary>
+            <param name="x">The X-coordinate of the vector.</param>
+            <param name="y">The Y-coordinate of the vector.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Single)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with all coordinates set to the same value.
+            </summary>
+            <param name="value">The value to assign to all coordinates of the vector.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.Size)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.Size"/> object, setting Z to 0.
+            </summary>
+            <param name="size">The <see cref="T:System.Drawing.Size"/> object to extract coordinates from.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.SizeF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.SizeF"/> object, setting Z to 0.
+            </summary>
+            <param name="size">The <see cref="T:System.Drawing.SizeF"/> object to extract coordinates from.</param>>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.Point"/> object, setting Z to 0.
+            </summary>
+            <param name="point">The <see cref="T:System.Drawing.Point"/> object to extract coordinates from.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.PointF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.PointF"/> object, setting Z to 0.
+            </summary>
+            <param name="point">The <see cref="T:System.Drawing.PointF"/> object to extract coordinates from.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.#ctor(GlmSharp.vec3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="!:glm.vec3"/> object.
+            </summary>
+            <param name="vec3">The <see cref="!:glm.vec3"/> object to extract coordinates from.</param>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Zero">
+            <summary>
+            Returns a new vector representing the origin (0, 0, 0).
+            </summary>
+            <returns>A <see cref="T:Genesis.Math.Vec3"/> instance representing the zero vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Degres(System.Single,System.Single)">
+            <summary>
+            Calculates the angle in degrees from this vector to the specified coordinates.
+            </summary>
+            <param name="x">The X-coordinate of the target point.</param>
+            <param name="y">The Y-coordinate of the target point.</param>
+            <returns>The angle in degrees from this vector to the specified point.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Degres(Genesis.Math.Vec3)">
+            <summary>
+            Calculates the angle in degrees from this vector to the specified vector.
+            </summary>
+            <param name="vec3">The reference vector.</param>
+            <returns>The angle in degrees from this vector to the specified vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Towards(System.Single,System.Single)">
+            <summary>
+            Calculates the point in 3D space towards a specified angle and distance from this vector.
+            </summary>
+            <param name="degrees">The angle in degrees.</param>
+            <param name="dist">The distance from this vector.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Towards2D(System.Single,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Returns a new vector in 2D space towards a specified angle from the given starting vector.
+            </summary>
+            <param name="degrees">The angle in degrees.</param>
+            <param name="start">The starting vector.</param>
+            <param name="dist">The distance from the starting vector.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the target vector in 2D space.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Towards3D(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Calculates a point in 3D space towards the specified rotation from a starting vector.
+            </summary>
+            <param name="rotation">The rotation vector representing angles.</param>
+            <param name="start">The starting vector.</param>
+            <param name="dist">The distance from the starting vector.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Towards3D(System.Single,System.Single,System.Single,Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Calculates a point in 3D space towards the specified rotation angles from a starting vector.
+            </summary>
+            <param name="rotX">The rotation angle around the X-axis.</param>
+            <param name="rotY">The rotation angle around the Y-axis.</param>
+            <param name="rotZ">The rotation angle around the Z-axis.</param>
+            <param name="start">The starting vector.</param>
+            <param name="dist">The distance from the starting vector.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Distance(Genesis.Math.Vec3)">
+            <summary>
+            Calculates the distance between this vector and another vector.
+            </summary>
+            <param name="vec3">The vector to measure distance to.</param>
+            <returns>The distance between this vector and the specified vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Add(Genesis.Math.Vec3)">
+            <summary>
+            Adds the value from another vector.
+            </summary>
+            <param name="vec">The vector to add.</param>
+            <returns>A new Vec3 that is the sum of this vector and the specified vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Add(System.Single,System.Single)">
+            <summary>
+            Adds the specified X and Y values to this vector.
+            </summary>
+            <param name="x">The value to add to the X component.</param>
+            <param name="y">The value to add to the Y component.</param>
+            <returns>A new Vec3 with the added values.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Add(System.Single,System.Single,System.Single)">
+            <summary>
+            Adds the specified X, Y, and Z values to this vector.
+            </summary>
+            <param name="x">The value to add to the X component.</param>
+            <param name="y">The value to add to the Y component.</param>
+            <param name="z">The value to add to the Z component.</param>
+            <returns>A new Vec3 with the added values.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.AddX(System.Single)">
+            <summary>
+            Adds the specified value to the X component of this vector.
+            </summary>
+            <param name="x">The value to add to the X component.</param>
+            <returns>A new Vec3 with the updated X component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.AddY(System.Single)">
+            <summary>
+            Adds the specified value to the Y component of this vector.
+            </summary>
+            <param name="y">The value to add to the Y component.</param>
+            <returns>A new Vec3 with the updated Y component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.AddZ(System.Single)">
+            <summary>
+            Adds the specified value to the Z component of this vector.
+            </summary>
+            <param name="z">The value to add to the Z component.</param>
+            <returns>A new Vec3 with the updated Z component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Sub(Genesis.Math.Vec3)">
+            <summary>
+            Subtracts the specified vector from this vector.
+            </summary>
+            <param name="v">The vector to subtract.</param>
+            <returns>A new Vec3 that is the result of the subtraction.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SubX(System.Single)">
+            <summary>
+            Subtracts the specified value from the X component of this vector.
+            </summary>
+            <param name="x">The value to subtract from the X component.</param>
+            <returns>A new Vec3 with the updated X component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SubY(System.Single)">
+            <summary>
+            Subtracts the specified value from the Y component of this vector.
+            </summary>
+            <param name="y">The value to subtract from the Y component.</param>
+            <returns>A new Vec3 with the updated Y component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SubZ(System.Single)">
+            <summary>
+            Subtracts the specified value from the Z component of this vector.
+            </summary>
+            <param name="z">The value to subtract from the Z component.</param>
+            <returns>A new Vec3 with the updated Z component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SetX(System.Single)">
+            <summary>
+            Sets the X component of the vector to the specified value.
+            </summary>
+            <param name="x">The value to set the X component to.</param>
+            <returns>A new Vec3 with the updated X component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SetY(System.Single)">
+            <summary>
+            Sets the Y component of the vector to the specified value.
+            </summary>
+            <param name="y">The value to set the Y component to.</param>
+            <returns>A new Vec3 with the updated Y component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.SetZ(System.Single)">
+            <summary>
+            Sets the Z component of the vector to the specified value.
+            </summary>
+            <param name="z">The value to set the Z component to.</param>
+            <returns>A new Vec3 with the updated Z component.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)">
+            <summary>
+            Sets the values for the vector.
+            </summary>
+            <param name="x">The value to set the X component to.</param>
+            <param name="y">The value to set the Y component to.</param>
+            <param name="z">The value to set the Z component to.</param>
+            <returns>A new Vec3 with the specified values.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Set(Genesis.Math.Vec3)">
+            <summary>
+            Sets the values for the vector based on another vector.
+            </summary>
+            <param name="vec">The vector to copy values from.</param>
+            <returns>A new Vec3 with values copied from the specified vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Returns the forward vector based on the specified rotation and distance.
+            </summary>
+            <param name="rotation">The rotation to apply.</param>
+            <param name="dist">The distance to project forward.</param>
+            <returns>A new Vec3 representing the forward vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.op_Addition(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Add operator for vector addition.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector.</param>
+            <returns>A new Vec3 instance representing the result of vector addition.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.op_Multiply(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Multiply operator for vector multiplication with another vector.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector.</param>
+            <returns>A new Vec3 instance representing the result of vector multiplication.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.op_Division(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Divide operator for vector division by another vector.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector to divide by.</param>
+            <returns>A new Vec3 instance representing the result of vector division.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.op_Multiply(Genesis.Math.Vec3,System.Single)">
+            <summary>
+            Multiplies the vector by a scalar.
+            </summary>
+            <param name="vec">The vector to multiply.</param>
+            <param name="value">The scalar to multiply by.</param>
+            <returns>A new Vec3 instance representing the scaled vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.op_Subtraction(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Subtract operator for vector subtraction.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector to subtract.</param>
+            <returns>A new Vec3 instance representing the result of vector subtraction.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Cross(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Calculates the cross product of two vectors.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector.</param>
+            <returns>A new Vec3 instance representing the cross product of the two vectors.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Dot(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Calculates the dot product of two vectors.
+            </summary>
+            <param name="vec1">The first vector.</param>
+            <param name="vec2">The second vector.</param>
+            <returns>The dot product of the two vectors.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Normalize">
+            <summary>
+            Normalizes the vector.
+            </summary>
+            <returns>A normalized Vec3 instance.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Length">
+            <summary>
+            Returns the vector length
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)">
+            <summary>
+            Returns a normalized version of the input vector.
+            </summary>
+            <param name="vec">The vector to normalize.</param>
+            <returns>A normalized Vec3 instance.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is the smallest integer greater than or equal to the corresponding component of the input Vec3.
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded up to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is rounded down to the nearest integer
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded down to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Round(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new Vec3 object where each component is rounded to the nearest integer
+            </summary>
+            <param name="vec">The input Vec3 to be processed.</param>
+            <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.
+            </summary>
+            <param name="vec">The <see cref="T:Genesis.Math.Vec3"/> instance to halve.</param>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Half">
+            <summary>
+            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with the components of this instance halved.
+            </summary>
+            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with the components halved.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)">
+            <summary>
+            Generates an rendom vector from min an max value with the given seed
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <param name="seed">The seed</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)">
+            <summary>
+            Generates an rendom vector from min an max value
+            </summary>
+            <param name="min">The min vector</param>
+            <param name="max">The max vector</param>
+            <returns></returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.ToString">
+            <summary>
+            Returns a string representation of the vector.
+            </summary>
+            <returns>A string containing the X, Y, and Z coordinates of the vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.ToGlmVec3">
+            <summary>
+            Converts the vector to its GLM equivalent.
+            </summary>
+            <returns>A GLM vec3 instance representing the same vector.</returns>
+        </member>
+        <member name="M:Genesis.Math.Vec3.ToBulletVec3">
+            <summary>
+            Converts the vector to its BulletSharp equivalent.
+            </summary>
+            <returns>A BulletSharp Vector3 instance representing the same vector.</returns>
+        </member>
         <member name="T:Genesis.Physics.Aabb">
             <summary>
             Represents an Axis-Aligned Bounding Box (AABB) in 3D space.
@@ -8898,537 +9503,6 @@
             </summary>
             <param name="game">The game instance.</param>
             <param name="parent">The parent game element.</param>
-        </member>
-        <member name="T:Genesis.Math.NoisePoint">
-            <summary>
-            Represents a point in a noise map with coordinates and a noise value.
-            </summary>
-        </member>
-        <member name="M:Genesis.Math.NoisePoint.#ctor(System.Single,System.Single,System.Single)">
-            <summary>
-            Constructor for the NoisePoint struct.
-            </summary>
-            <param name="x">The x-coordinate of the point.</param>
-            <param name="y">The y-coordinate of the point.</param>
-            <param name="value">The noise value associated with the point.</param>
-        </member>
-        <member name="T:Genesis.Math.PerlinNoise">
-            <summary>
-            Class for generating Perlin noise.
-            </summary>
-        </member>
-        <member name="M:Genesis.Math.PerlinNoise.Noise(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Generates Perlin noise at a specific point.
-            </summary>
-            <param name="x">The x-coordinate of the point.</param>
-            <param name="y">The y-coordinate of the point.</param>
-            <param name="seed">The seed value for the noise generation.</param>
-            <returns>The generated Perlin noise value at the specified point.</returns>
-        </member>
-        <member name="M:Genesis.Math.PerlinNoise.SmoothedNoise(System.Single,System.Single,System.Int32)">
-            <summary>
-            Applies smoothing to the noise at a specific point.
-            </summary>
-            <param name="x">The x-coordinate of the point.</param>
-            <param name="y">The y-coordinate of the point.</param>
-            <param name="seed">The seed value for the noise generation.</param>
-            <returns>The smoothed noise value at the specified point.</returns>
-        </member>
-        <member name="M:Genesis.Math.PerlinNoise.Interpolate(System.Single,System.Single,System.Single)">
-            <summary>
-            Interpolates between two values.
-            </summary>
-            <param name="a">The first value.</param>
-            <param name="b">The second value.</param>
-            <param name="x">The interpolation factor.</param>
-            <returns>The interpolated value.</returns>
-        </member>
-        <member name="M:Genesis.Math.PerlinNoise.GenerateNoise(System.Single,System.Single,System.Single,System.Int32,System.Int32)">
-            <summary>
-            Generates Perlin noise at a specific point with specified parameters.
-            </summary>
-            <param name="x">The x-coordinate of the point.</param>
-            <param name="y">The y-coordinate of the point.</param>
-            <param name="persistence">The persistence value affecting the amplitude of octaves.</param>
-            <param name="octaves">The number of octaves to generate.</param>
-            <param name="seed">The seed value for the noise generation.</param>
-            <returns>The generated Perlin noise value at the specified point.</returns>
-        </member>
-        <member name="M:Genesis.Math.PerlinNoise.GenerateNoiseMap(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Generates a 2D noise map with specified dimensions and seed.
-            </summary>
-            <param name="width">The width of the noise map.</param>
-            <param name="height">The height of the noise map.</param>
-            <param name="seed">The seed value for the noise generation.</param>
-            <returns>A list of NoisePoint objects representing the generated noise map.</returns>
-        </member>
-        <member name="T:Genesis.Math.Rect">
-            <summary>
-            Represents a rectangle with position and dimensions.
-            </summary>
-        </member>
-        <member name="P:Genesis.Math.Rect.X">
-            <summary>
-            Gets or sets the X-coordinate of the rectangle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Math.Rect.Y">
-            <summary>
-            Gets or sets the Y-coordinate of the rectangle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Math.Rect.Width">
-            <summary>
-            Gets or sets the width of the rectangle.
-            </summary>
-        </member>
-        <member name="P:Genesis.Math.Rect.Height">
-            <summary>
-            Gets or sets the height of the rectangle.
-            </summary>
-        </member>
-        <member name="M:Genesis.Math.Rect.#ctor(System.Single,System.Single,System.Single,System.Single)">
-            <summary>
-            Constructor for the Rect class that initializes the rectangle with specified position and dimensions.
-            </summary>
-            <param name="x">The X-coordinate of the rectangle.</param>
-            <param name="y">The Y-coordinate of the rectangle.</param>
-            <param name="width">The width of the rectangle.</param>
-            <param name="height">The height of the rectangle.</param>
-        </member>
-        <member name="M:Genesis.Math.Rect.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Initializes a new instance of the Rect class with the specified location and size.
-            </summary>
-            <param name="location">The location of the rectangle.</param>
-            <param name="size">The size of the rectangle.</param>
-        </member>
-        <member name="M:Genesis.Math.Rect.Contains(System.Single,System.Single)">
-            <summary>
-            Checks if a point with specified coordinates is contained within the rectangle.
-            </summary>
-            <param name="x">The X-coordinate of the point.</param>
-            <param name="y">The Y-coordinate of the point.</param>
-            <returns>True if the point is contained within the rectangle, otherwise false.</returns>
-        </member>
-        <member name="M:Genesis.Math.Rect.Intersects(Genesis.Math.Rect)">
-            <summary>
-            Checks if the current rectangle intersects with another rectangle.
-            </summary>
-            <param name="rect">The other rectangle to check for intersection.</param>
-            <returns>True if the rectangles intersect, otherwise false.</returns>
-        </member>
-        <member name="M:Genesis.Math.Rect.ToString">
-            <summary>
-            Converts the rectangle to a string representation in the format "X;Y;Width;Height".
-            </summary>
-            <returns>A string representation of the rectangle.</returns>
-        </member>
-        <member name="M:Genesis.Math.Rect.GetLocation">
-            <summary>
-            Returns the location from the rect
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:Genesis.Math.Vec3">
-            <summary>
-            Represents a three-dimensional vector, used for representing points or directions in 3D space.
-            </summary>
-        </member>
-        <member name="F:Genesis.Math.Vec3.X">
-            <summary>
-            Gets or sets the X-coordinate of the vector.
-            </summary>
-        </member>
-        <member name="F:Genesis.Math.Vec3.Y">
-            <summary>
-            Gets or sets the Y-coordinate of the vector.
-            </summary>
-        </member>
-        <member name="F:Genesis.Math.Vec3.Z">
-            <summary>
-            Gets or sets the Z-coordinate of the vector.
-            </summary>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Single,System.Single,System.Single)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with the specified coordinates.
-            </summary>
-            <param name="x">The X-coordinate of the vector.</param>
-            <param name="y">The Y-coordinate of the vector.</param>
-            <param name="z">The Z-coordinate of the vector.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Single,System.Single)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with the specified X and Y coordinates, and Z set to 0.
-            </summary>
-            <param name="x">The X-coordinate of the vector.</param>
-            <param name="y">The Y-coordinate of the vector.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Single)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct with all coordinates set to the same value.
-            </summary>
-            <param name="value">The value to assign to all coordinates of the vector.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.Size)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.Size"/> object, setting Z to 0.
-            </summary>
-            <param name="size">The <see cref="T:System.Drawing.Size"/> object to extract coordinates from.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.SizeF)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.SizeF"/> object, setting Z to 0.
-            </summary>
-            <param name="size">The <see cref="T:System.Drawing.SizeF"/> object to extract coordinates from.</param>>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.Point)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.Point"/> object, setting Z to 0.
-            </summary>
-            <param name="point">The <see cref="T:System.Drawing.Point"/> object to extract coordinates from.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(System.Drawing.PointF)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="T:System.Drawing.PointF"/> object, setting Z to 0.
-            </summary>
-            <param name="point">The <see cref="T:System.Drawing.PointF"/> object to extract coordinates from.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.#ctor(GlmSharp.vec3)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Genesis.Math.Vec3"/> struct from a <see cref="!:glm.vec3"/> object.
-            </summary>
-            <param name="vec3">The <see cref="!:glm.vec3"/> object to extract coordinates from.</param>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Zero">
-            <summary>
-            Returns a new vector representing the origin (0, 0, 0).
-            </summary>
-            <returns>A <see cref="T:Genesis.Math.Vec3"/> instance representing the zero vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Degres(System.Single,System.Single)">
-            <summary>
-            Calculates the angle in degrees from this vector to the specified coordinates.
-            </summary>
-            <param name="x">The X-coordinate of the target point.</param>
-            <param name="y">The Y-coordinate of the target point.</param>
-            <returns>The angle in degrees from this vector to the specified point.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Degres(Genesis.Math.Vec3)">
-            <summary>
-            Calculates the angle in degrees from this vector to the specified vector.
-            </summary>
-            <param name="vec3">The reference vector.</param>
-            <returns>The angle in degrees from this vector to the specified vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Towards(System.Single,System.Single)">
-            <summary>
-            Calculates the point in 3D space towards a specified angle and distance from this vector.
-            </summary>
-            <param name="degrees">The angle in degrees.</param>
-            <param name="dist">The distance from this vector.</param>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Towards2D(System.Single,Genesis.Math.Vec3,System.Single)">
-            <summary>
-            Returns a new vector in 2D space towards a specified angle from the given starting vector.
-            </summary>
-            <param name="degrees">The angle in degrees.</param>
-            <param name="start">The starting vector.</param>
-            <param name="dist">The distance from the starting vector.</param>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the target vector in 2D space.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Towards3D(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single)">
-            <summary>
-            Calculates a point in 3D space towards the specified rotation from a starting vector.
-            </summary>
-            <param name="rotation">The rotation vector representing angles.</param>
-            <param name="start">The starting vector.</param>
-            <param name="dist">The distance from the starting vector.</param>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Towards3D(System.Single,System.Single,System.Single,Genesis.Math.Vec3,System.Single)">
-            <summary>
-            Calculates a point in 3D space towards the specified rotation angles from a starting vector.
-            </summary>
-            <param name="rotX">The rotation angle around the X-axis.</param>
-            <param name="rotY">The rotation angle around the Y-axis.</param>
-            <param name="rotZ">The rotation angle around the Z-axis.</param>
-            <param name="start">The starting vector.</param>
-            <param name="dist">The distance from the starting vector.</param>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance representing the calculated point in 3D space.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Distance(Genesis.Math.Vec3)">
-            <summary>
-            Calculates the distance between this vector and another vector.
-            </summary>
-            <param name="vec3">The vector to measure distance to.</param>
-            <returns>The distance between this vector and the specified vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Add(Genesis.Math.Vec3)">
-            <summary>
-            Adds the value from another vector.
-            </summary>
-            <param name="vec">The vector to add.</param>
-            <returns>A new Vec3 that is the sum of this vector and the specified vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Add(System.Single,System.Single)">
-            <summary>
-            Adds the specified X and Y values to this vector.
-            </summary>
-            <param name="x">The value to add to the X component.</param>
-            <param name="y">The value to add to the Y component.</param>
-            <returns>A new Vec3 with the added values.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Add(System.Single,System.Single,System.Single)">
-            <summary>
-            Adds the specified X, Y, and Z values to this vector.
-            </summary>
-            <param name="x">The value to add to the X component.</param>
-            <param name="y">The value to add to the Y component.</param>
-            <param name="z">The value to add to the Z component.</param>
-            <returns>A new Vec3 with the added values.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.AddX(System.Single)">
-            <summary>
-            Adds the specified value to the X component of this vector.
-            </summary>
-            <param name="x">The value to add to the X component.</param>
-            <returns>A new Vec3 with the updated X component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.AddY(System.Single)">
-            <summary>
-            Adds the specified value to the Y component of this vector.
-            </summary>
-            <param name="y">The value to add to the Y component.</param>
-            <returns>A new Vec3 with the updated Y component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.AddZ(System.Single)">
-            <summary>
-            Adds the specified value to the Z component of this vector.
-            </summary>
-            <param name="z">The value to add to the Z component.</param>
-            <returns>A new Vec3 with the updated Z component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Sub(Genesis.Math.Vec3)">
-            <summary>
-            Subtracts the specified vector from this vector.
-            </summary>
-            <param name="v">The vector to subtract.</param>
-            <returns>A new Vec3 that is the result of the subtraction.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SubX(System.Single)">
-            <summary>
-            Subtracts the specified value from the X component of this vector.
-            </summary>
-            <param name="x">The value to subtract from the X component.</param>
-            <returns>A new Vec3 with the updated X component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SubY(System.Single)">
-            <summary>
-            Subtracts the specified value from the Y component of this vector.
-            </summary>
-            <param name="y">The value to subtract from the Y component.</param>
-            <returns>A new Vec3 with the updated Y component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SubZ(System.Single)">
-            <summary>
-            Subtracts the specified value from the Z component of this vector.
-            </summary>
-            <param name="z">The value to subtract from the Z component.</param>
-            <returns>A new Vec3 with the updated Z component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SetX(System.Single)">
-            <summary>
-            Sets the X component of the vector to the specified value.
-            </summary>
-            <param name="x">The value to set the X component to.</param>
-            <returns>A new Vec3 with the updated X component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SetY(System.Single)">
-            <summary>
-            Sets the Y component of the vector to the specified value.
-            </summary>
-            <param name="y">The value to set the Y component to.</param>
-            <returns>A new Vec3 with the updated Y component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.SetZ(System.Single)">
-            <summary>
-            Sets the Z component of the vector to the specified value.
-            </summary>
-            <param name="z">The value to set the Z component to.</param>
-            <returns>A new Vec3 with the updated Z component.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Set(System.Single,System.Single,System.Single)">
-            <summary>
-            Sets the values for the vector.
-            </summary>
-            <param name="x">The value to set the X component to.</param>
-            <param name="y">The value to set the Y component to.</param>
-            <param name="z">The value to set the Z component to.</param>
-            <returns>A new Vec3 with the specified values.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Set(Genesis.Math.Vec3)">
-            <summary>
-            Sets the values for the vector based on another vector.
-            </summary>
-            <param name="vec">The vector to copy values from.</param>
-            <returns>A new Vec3 with values copied from the specified vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Forward(Genesis.Math.Vec3,System.Single)">
-            <summary>
-            Returns the forward vector based on the specified rotation and distance.
-            </summary>
-            <param name="rotation">The rotation to apply.</param>
-            <param name="dist">The distance to project forward.</param>
-            <returns>A new Vec3 representing the forward vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.op_Addition(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Add operator for vector addition.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector.</param>
-            <returns>A new Vec3 instance representing the result of vector addition.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.op_Multiply(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Multiply operator for vector multiplication with another vector.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector.</param>
-            <returns>A new Vec3 instance representing the result of vector multiplication.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.op_Division(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Divide operator for vector division by another vector.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector to divide by.</param>
-            <returns>A new Vec3 instance representing the result of vector division.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.op_Multiply(Genesis.Math.Vec3,System.Single)">
-            <summary>
-            Multiplies the vector by a scalar.
-            </summary>
-            <param name="vec">The vector to multiply.</param>
-            <param name="value">The scalar to multiply by.</param>
-            <returns>A new Vec3 instance representing the scaled vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.op_Subtraction(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Subtract operator for vector subtraction.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector to subtract.</param>
-            <returns>A new Vec3 instance representing the result of vector subtraction.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Cross(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Calculates the cross product of two vectors.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector.</param>
-            <returns>A new Vec3 instance representing the cross product of the two vectors.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Dot(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Calculates the dot product of two vectors.
-            </summary>
-            <param name="vec1">The first vector.</param>
-            <param name="vec2">The second vector.</param>
-            <returns>The dot product of the two vectors.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Normalize">
-            <summary>
-            Normalizes the vector.
-            </summary>
-            <returns>A normalized Vec3 instance.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Length">
-            <summary>
-            Returns the vector length
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Normalized(Genesis.Math.Vec3)">
-            <summary>
-            Returns a normalized version of the input vector.
-            </summary>
-            <param name="vec">The vector to normalize.</param>
-            <returns>A normalized Vec3 instance.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Ceiling(Genesis.Math.Vec3)">
-            <summary>
-            Returns a new Vec3 object where each component is the smallest integer greater than or equal to the corresponding component of the input Vec3.
-            </summary>
-            <param name="vec">The input Vec3 to be processed.</param>
-            <returns>A new Vec3 with each component rounded up to the nearest integer.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Floor(Genesis.Math.Vec3)">
-            <summary>
-            Returns a new Vec3 object where each component is rounded down to the nearest integer
-            </summary>
-            <param name="vec">The input Vec3 to be processed.</param>
-            <returns>A new Vec3 with each component rounded down to the nearest integer.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Round(Genesis.Math.Vec3)">
-            <summary>
-            Returns a new Vec3 object where each component is rounded to the nearest integer
-            </summary>
-            <param name="vec">The input Vec3 to be processed.</param>
-            <returns>A new Vec3 with each component rounded to the nearest integer.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Half(Genesis.Math.Vec3)">
-            <summary>
-            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.
-            </summary>
-            <param name="vec">The <see cref="T:Genesis.Math.Vec3"/> instance to halve.</param>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with each component halved.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Half">
-            <summary>
-            Returns a new <see cref="T:Genesis.Math.Vec3"/> instance with the components of this instance halved.
-            </summary>
-            <returns>A new <see cref="T:Genesis.Math.Vec3"/> instance with the components halved.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Int32)">
-            <summary>
-            Generates an rendom vector from min an max value with the given seed
-            </summary>
-            <param name="min">The min vector</param>
-            <param name="max">The max vector</param>
-            <param name="seed">The seed</param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.Random(Genesis.Math.Vec3,Genesis.Math.Vec3)">
-            <summary>
-            Generates an rendom vector from min an max value
-            </summary>
-            <param name="min">The min vector</param>
-            <param name="max">The max vector</param>
-            <returns></returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.ToString">
-            <summary>
-            Returns a string representation of the vector.
-            </summary>
-            <returns>A string containing the X, Y, and Z coordinates of the vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.ToGlmVec3">
-            <summary>
-            Converts the vector to its GLM equivalent.
-            </summary>
-            <returns>A GLM vec3 instance representing the same vector.</returns>
-        </member>
-        <member name="M:Genesis.Math.Vec3.ToBulletVec3">
-            <summary>
-            Converts the vector to its BulletSharp equivalent.
-            </summary>
-            <returns>A BulletSharp Vector3 instance representing the same vector.</returns>
         </member>
         <member name="T:Genesis.UI.Canvas">
             <summary>

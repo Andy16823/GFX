@@ -64,9 +64,9 @@
     <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
     </Reference>
-    <Reference Include="NetGL, Version=1.0.8874.27403, Culture=neutral, processorArchitecture=AMD64">
+    <Reference Include="NetGL, Version=1.0.9096.19293, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\NetGL - Kopie\x64\Release\NetGL.dll</HintPath>
+      <HintPath>..\..\..\GitHub\NetGL-2023\NetGL\x64\Release\NetGL.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -97,7 +97,6 @@
     <Compile Include="Core\Behaviors\Physics2D\BoxCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BoxRigidBody.cs" />
     <Compile Include="Core\Behaviors\Physics2D\BoxTrigger2D.cs" />
-    <Compile Include="Core\Behaviors\Physics2D\BufferedSpriteCollider.cs" />
     <Compile Include="Core\Behaviors\Physics2D\PhysicsBox2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\PhysicsPolygon2D.cs" />
     <Compile Include="Core\Behaviors\Physics2D\Rigidbody2D.cs" />
@@ -168,6 +167,7 @@
     <Compile Include="Graphics\RenderSettings.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\AnimatedModelShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\BorderCircleShader.cs" />
+    <Compile Include="Graphics\Shaders\OpenGL\BufferedSpriteShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\SpecularShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\Element3DShader.cs" />
     <Compile Include="Graphics\Shaders\OpenGL\FXScreenSpaceShadowShader.cs" />
@@ -182,6 +182,7 @@
     <Compile Include="Graphics\Shapes\Light2DShape.cs" />
     <Compile Include="Graphics\Shapes\SphereShape.cs" />
     <Compile Include="Graphics\SpriteSheet.cs" />
+    <Compile Include="Math\Vec4.cs" />
     <Compile Include="Physics\Aabb.cs" />
     <Compile Include="Graphics\Physics\BulletDebugRenderer.cs" />
     <Compile Include="Graphics\Shader.cs" />

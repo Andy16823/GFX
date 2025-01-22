@@ -1,4 +1,6 @@
-﻿using Genesis.Math;
+﻿using BulletSharp.Math;
+using Genesis.Core;
+using Genesis.Math;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +74,27 @@ namespace Genesis.Graphics
             texCoords.BottomRight = new Vec3(colFactor * (col + 1f), rowFactor * (row + 1f));
             texCoords.BottomLeft = new Vec3(colFactor * col, rowFactor * (row + 1f));
             return texCoords;
+        }
+
+        public Rect GetSpriteBounds(int col, int row)
+        {
+            var textureWidth = (float)Texture.Bitnmap.Width;
+            var textureHeight = (float)Texture.Bitnmap.Height;
+
+            var cellWidth = textureWidth / (float)this.Columns;
+            var cellHeight = textureHeight / (float)this.Rows;
+            var x = (float)col * cellWidth;
+            var y = (float)row * textureHeight;
+
+            return new Rect(x, y, cellWidth, cellHeight);
+        }
+
+        public Vec4 CalculateUVTransform(int col, int row)
+        {
+            var textureWidth = (float)Texture.Bitnmap.Width;
+            var textureHeight = (float)Texture.Bitnmap.Height;
+            var spriteBounds = GetSpriteBounds(col, row);
+            return Utils.CalculateUVTransform(textureWidth, textureHeight, spriteBounds.X, spriteBounds.Y, spriteBounds.Width, spriteBounds.Height);
         }
     }
 }

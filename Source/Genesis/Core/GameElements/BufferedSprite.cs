@@ -1,192 +1,319 @@
-﻿using Genesis.Graphics;
+﻿using BulletSharp.Math;
+using Genesis.Graphics;
 using Genesis.Math;
+using GlmSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Reflection;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using static Genesis.Core.WindowUtilities;
 
 namespace Genesis.Core.GameElements
 {
     /// <summary>
-    /// Represents the definition of the shape for a sprite, including its location and size.
+    /// Represents a buffered sprite instance used in graphics rendering.
     /// </summary>
-    public struct SpriteShapeDeffinition
-    {    
-        public SpriteShapeDeffinition(Vec3 loc, Vec3 size)
+    public class BufferedSpriteInstance : GameElement
+    {
+        private Vec3 m_location;
+        private Vec3 m_rotation;
+        private Vec3 m_size;
+        private bool m_visible;
+        private Color m_color;
+        private Vec4 m_uvTransform;
+
+        /// <summary>
+        /// Gets or sets the location of the buffered sprite instance.
+        /// </summary>
+        public override Vec3 Location
         {
-            this.locX = loc.X;
-            this.locY = loc.Y;
-            this.sizeX = size.X;
-            this.sizeY = size.Y;
+            get => m_location;
+            set
+            {
+                m_location = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
         }
 
-        public float locX;
-        public float locY;
-        public float sizeX;
-        public float sizeY;
+        /// <summary>
+        /// Gets or sets the rotation of the buffered sprite instance.
+        /// </summary>
+        public override Vec3 Rotation
+        {
+            get => m_rotation;
+            set
+            {
+                m_rotation = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the size of the buffered sprite instance.
+        /// </summary>
+        public Vec3 Size
+        {
+            get => m_size;
+            set
+            {
+                m_size = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the buffered sprite instance is visible.
+        /// </summary>
+        public bool Visible
+        {
+            get => m_visible;
+            set
+            {
+                m_visible = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the color of the buffered sprite instance.
+        /// </summary>
+        public Color Color
+        {
+            get => m_color;
+            set
+            {
+                m_color = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the UV transform of the buffered sprite instance.
+        /// </summary>
+        public Vec4 UVTransform
+        {
+            get => m_uvTransform;
+            set
+            {
+                m_uvTransform = value;
+                if (Parent != null)
+                {
+                    (Parent as BufferedSprite).UpdateInstance(this);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the instance ID of the buffered sprite instance.
+        /// </summary>
+        public int InstanceID { get; set; }
+
+        /// <summary>
+        /// Constructor for the BufferedSpriteInstance class that initializes the buffered sprite instance.
+        /// </summary>
+        public BufferedSpriteInstance()
+        {
+            this.Location = new Vec3(0.0f, 0.0f, 0.0f);
+            this.Rotation = new Vec3(0.0f, 0.0f, 0.0f);
+            this.Size = new Vec3(1.0f, 1.0f, 1.0f);
+            this.Color = Color.White;
+            this.UVTransform = DefaultUVTransform();
+            this.Visible = false;
+        }
+
+        /// <summary>
+        /// Gets the matrix array of the buffered sprite instance.
+        /// </summary>
+        /// <returns></returns>
+        public float[] GetMatrixArray()
+        {
+            var t_mat = mat4.Translate(Location.ToGlmVec3());
+            var r_mat = mat4.RotateX(Utils.ToRadians(Rotation.X)) * mat4.RotateY(Utils.ToRadians(Rotation.Y)) * mat4.RotateZ(Utils.ToRadians(Rotation.Z));
+            var s_mat = mat4.Scale(Size.ToGlmVec3());
+
+            var matrix = t_mat * r_mat * s_mat;
+            return matrix.ToArray();
+        }
+
+        /// <summary>
+        /// Gets the default UV transform of the buffered sprite instance.
+        /// </summary>
+        /// <returns></returns>
+        public static Vec4 DefaultUVTransform()
+        {
+            return new Vec4(1.0f, 1.0f, 0.0f, 0.0f);
+        }
+
+        /// <summary>
+        /// Gets the color array of the buffered sprite instance.
+        /// </summary>
+        /// <returns></returns>
+        public float[] GetColorArray()
+        {
+            return Utils.ConvertColor(Color);
+        }
+
+        /// <summary>
+        /// Gets the UV transform array of the buffered sprite instance.
+        /// </summary>
+        /// <returns></returns>
+        public float[] GetUVTransformArray()
+        {
+            return new float[] { UVTransform.X, UVTransform.Y, UVTransform.Z, UVTransform.W };
+        }
+
+        /// <summary>
+        /// Gets the extras array of the buffered sprite instance.
+        /// </summary>
+        /// <returns></returns>
+        public float[] GetExtrasArray()
+        {
+            return new float[] { this.Visible ? 1.0f : 0.0f, 0.0f, 0.0f, 0.0f };
+        }
     }
 
-
     /// <summary>
-    /// Represents a game element that creates a buffered sprite with vertices, colors, and texture coordinates.
+    /// Represents a buffered sprite used in graphics rendering.
     /// </summary>
     public class BufferedSprite : GameElement
     {
-        /// <summary>
-        /// Gets or sets the list of vertices for the sprite.
-        /// </summary>
-        public List<float> Verticies { get; set; }
 
         /// <summary>
-        /// Gets or sets the list of colors for the sprite.
+        /// Gets or sets the list of buffered sprite instances.
         /// </summary>
-        public List<float> Colors { get; set; }
+        public List<BufferedSpriteInstance> Instances { get; set; }
+
 
         /// <summary>
-        /// Gets or sets the list of texture coordinates for the sprite.
-        /// </summary>
-        public List<float> TexCoords { get; set; }
-
-        /// <summary>
-        /// Gets or sets the list of shape definitions for the sprite.
-        /// </summary>
-        public List<SpriteShapeDeffinition> ShapeDeffinitions { get; set; }
-
-        /// <summary>
-        /// Gets or sets the texture applied to the sprite.
+        /// Gets or sets the texture of the buffered sprite.
         /// </summary>
         public Texture Texture { get; set; }
 
+
+        private IRenderDevice renderer;
+
+
         /// <summary>
-        /// Creates a new buffered sprite with the specified name, location, and texture.
+        /// Constructor for the BufferedSprite class that initializes the buffered sprite with a texture.
         /// </summary>
-        /// <param name="name">The name of the game element.</param>
-        /// <param name="location">The location of the game element.</param>
-        /// <param name="texture">The texture applied to the sprite.</param>
-        public BufferedSprite(String name, Vec3 location, Texture texture)
+        /// <param name="texture"></param>
+        public BufferedSprite(Texture texture)
         {
-            this.Name = name;
-            this.Location = location;
+            this.Instances = new List<BufferedSpriteInstance>();
             this.Texture = texture;
-            this.Verticies = new List<float>();
-            this.Colors = new List<float>();
-            this.TexCoords = new List<float>();
-            this.ShapeDeffinitions = new List<SpriteShapeDeffinition>();
         }
 
         /// <summary>
-        /// Adds a new rectangular shape at the given location and with the given size to the sprite.
+        /// Constructor for the BufferedSprite class that initializes the buffered sprite with a sprite sheet.
         /// </summary>
-        /// <param name="location">The location for the sprite.</param>
-        /// <param name="size">The size for the sprite.</param>
-        public void AddShape(Vec3 location, Vec3 size)
+        /// <param name="spriteSheet"></param>
+        public BufferedSprite(SpriteSheet spriteSheet)
         {
-            float LeftX = location.X - (size.X / 2);
-            float RightX = location.X + (size.X / 2);
-            float top = location.Y + (size.Y / 2);
-            float bottom = location.Y - (size.Y / 2);
-
-            float[] verticies =
-            {
-                LeftX, bottom, 0.0f,
-                LeftX, top, 0.0f,
-                RightX, top, 0.0f,
-
-                LeftX, bottom, 0.0f,
-                RightX, top, 0.0f,
-                RightX, bottom, 0.0f
-            };
-            this.Verticies.AddRange(verticies);
-
-            float[] color =
-            {
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-                1f, 1f, 1f
-            };
-            this.Colors.AddRange(color);
-            
-            float[] textCoordsf =
-            {
-                0.0f, 1.0f,
-                0.0f, 0.0f,
-                1.0f, 0.0f,
-
-                0.0f, 1.0f,
-                1.0f, 0.0f,
-                1.0f, 1.0f
-            };
-            this.TexCoords.AddRange(textCoordsf);
-
-            SpriteShapeDeffinition deffinition = new SpriteShapeDeffinition();
-            deffinition.locX = location.X;
-            deffinition.locY = location.Y;
-            deffinition.sizeX = size.X;
-            deffinition.sizeY = size.Y;
-            this.ShapeDeffinitions.Add(deffinition);
+            this.Instances = new List<BufferedSpriteInstance>();
+            this.Texture = spriteSheet.Texture;
         }
 
         /// <summary>
-        /// Adds a new rectangular shape at the given location, size, and texture coordinates to the sprite.
+        /// Bakes the instances for the buffered sprite.
         /// </summary>
-        /// <param name="location">The location for the sprite.</param>
-        /// <param name="size">The size for the sprite.</param>
-        /// <param name="texCoords">The texture coordinates for the sprite.</param>
-        public void AddShape(Vec3 location, Vec3 size, TexCoords texCoords)
+        /// <param name="count"></param>
+        public void BakeInstances(int count)
         {
-            float LeftX = location.X - (size.X / 2);
-            float RightX = location.X + (size.X / 2);
-            float top = location.Y + (size.Y / 2);
-            float bottom = location.Y - (size.Y / 2);
-
-            float[] verticies =
+            for (int i = 0; i < count; i++)
             {
-                LeftX, bottom, 0.0f,
-                LeftX, top, 0.0f,
-                RightX, top, 0.0f,
+                this.CreateInstance(Vec3.Zero(), Vec3.Zero(), Vec3.Zero(), Color.White, BufferedSpriteInstance.DefaultUVTransform(), false);
+            }
+        }
 
-                LeftX, bottom, 0.0f,
-                RightX, top, 0.0f,
-                RightX, bottom, 0.0f
-            };
-            this.Verticies.AddRange(verticies);
-
-            float[] color =
+        /// <summary>
+        /// Creates a new instance of the buffered sprite.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="rotation"></param>
+        /// <param name="size"></param>
+        /// <param name="color"></param>
+        /// <param name="visible"></param>
+        /// <returns></returns>
+        public BufferedSpriteInstance CreateInstance(Vec3 location, Vec3 rotation, Vec3 size, Color color, Vec4 uvTransform, bool visible = true)
+        {
+            var instance = new BufferedSpriteInstance
             {
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-
-                1f, 1f, 1f,
-                1f, 1f, 1f,
-                1f, 1f, 1f
+                Location = location,
+                Rotation = rotation,
+                Size = size,
+                Color = color,
+                UVTransform = uvTransform,
+                Visible = visible,
+                Parent = this
             };
-            this.Colors.AddRange(color);
+            this.Instances.Add(instance);
+            instance.InstanceID = this.Instances.Count - 1;
 
-            float[] textCoordsf =
+            return instance;
+        }
+
+        /// <summary>
+        /// Updates the instance of the buffered sprite.
+        /// </summary>
+        /// <param name="instance"></param>
+        public void UpdateInstance(BufferedSpriteInstance instance)
+        {
+            if (this.renderer != null)
             {
-                texCoords.BottomLeft.X, texCoords.BottomLeft.Y, // Left bottom
-                texCoords.TopLeft.X, texCoords.TopLeft.Y,
-                texCoords.TopRight.X, texCoords.TopRight.Y,
-               
-                texCoords.BottomLeft.X, texCoords.BottomLeft.Y,
-                texCoords.TopRight.X, texCoords.TopRight.Y,
-                texCoords.BottomRight.X,texCoords.BottomRight.Y
-            };
-            this.TexCoords.AddRange(textCoordsf);
+                var matrixOffsetSize = 16 * sizeof(float);
+                var mbo = (int)this.Propertys["mbo"];
+                renderer.EditBufferSubData(mbo, instance.InstanceID * matrixOffsetSize, instance.GetMatrixArray());
 
-            SpriteShapeDeffinition deffinition = new SpriteShapeDeffinition();
-            deffinition.locX = location.X;
-            deffinition.locY = location.Y;
-            deffinition.sizeX = size.X;
-            deffinition.sizeY = size.Y;
-            this.ShapeDeffinitions.Add(deffinition);
+                var colorOffsetSize = 4 * sizeof(float);
+                var cbo = (int)this.Propertys["cbo"];
+                renderer.EditBufferSubData(cbo, instance.InstanceID * colorOffsetSize, instance.GetColorArray());
+
+                var uvTransformOffsetSize = 4 * sizeof(float);
+                var uvto = (int)this.Propertys["uvto"];
+                renderer.EditBufferSubData(uvto, instance.InstanceID * uvTransformOffsetSize, instance.GetUVTransformArray());
+
+                var extrasOffsetSize = 4 * sizeof(float);
+                var exbo = (int)this.Propertys["exbo"];
+                renderer.EditBufferSubData(exbo, instance.InstanceID * extrasOffsetSize, instance.GetExtrasArray());
+            }
+        }
+
+        /// <summary>
+        /// Finds a hidden instance of the buffered sprite.
+        /// </summary>
+        /// <returns></returns>
+        public BufferedSpriteInstance FindHiddenInstance()
+        {
+            foreach (var instance in Instances)
+            {
+                if (!instance.Visible)
+                {
+                    return instance;
+                }
+            }
+            return null;
         }
 
         /// <summary>
@@ -196,7 +323,8 @@ namespace Genesis.Core.GameElements
         /// <param name="renderDevice">The render device used for rendering.</param>
         public override void Init(Game game, IRenderDevice renderDevice)
         {
-            base.Init(game, renderDevice);  
+            base.Init(game, renderDevice);
+            this.renderer = renderDevice;
         }
 
         /// <summary>
@@ -228,6 +356,49 @@ namespace Genesis.Core.GameElements
         {
             base.OnDestroy(game);
             game.RenderDevice.DisposeElement(this);
+        }
+
+        /// <summary>
+        /// Gets the vertex buffer for the buffered sprite.
+        /// </summary>
+        /// <returns></returns>
+        public static float[] GetVertexBuffer()
+        {
+            return new float[]
+            {
+                -0.5f, -0.5f, 0.0f,
+                -0.5f, 0.5f, 0.0f,
+                0.5f, 0.5f, 0.0f,
+                0.5f, -0.5f, 0.0f
+            };
+        }
+
+        /// <summary>
+        /// Gets the index buffer for the buffered sprite.
+        /// </summary>
+        /// <returns></returns>
+        public static int[] GetIndexBuffer()
+        {
+            return new int[] 
+            {
+                0, 1, 3,
+                3, 1, 2
+            };
+        }
+
+        /// <summary>
+        /// Gets the uv buffer for the buffered sprite.
+        /// </summary>
+        /// <returns></returns>
+        public static float[] GetUVBuffer()
+        {
+            return new float[] 
+            {
+                0.0f, 0.0f,
+                0.0f, 1.0f,
+                1.0f, 1.0f,
+                1.0f, 0.0f
+            };
         }
     }
 }
