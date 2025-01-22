@@ -1,0 +1,645 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  id: Viewport
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.Viewport.#ctor
+  - Genesis.Graphics.Viewport.#ctor(System.Single,System.Single)
+  - Genesis.Graphics.Viewport.#ctor(System.Single,System.Single,System.Single,System.Single)
+  - Genesis.Graphics.Viewport.GetSize
+  - Genesis.Graphics.Viewport.GetSizeF
+  - Genesis.Graphics.Viewport.Height
+  - Genesis.Graphics.Viewport.SetNewViewport(System.Single,System.Single)
+  - Genesis.Graphics.Viewport.Width
+  - Genesis.Graphics.Viewport.X
+  - Genesis.Graphics.Viewport.Y
+  langs:
+  - csharp
+  - vb
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public class Viewport
+    content.vb: Public Class Viewport
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Viewport.#ctor
+  commentId: M:Genesis.Graphics.Viewport.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Viewport()
+  nameWithType: Viewport.Viewport()
+  fullName: Genesis.Graphics.Viewport.Viewport()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Viewport()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Viewport.#ctor*
+  nameWithType.vb: Viewport.New()
+  fullName.vb: Genesis.Graphics.Viewport.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Viewport.#ctor(System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Viewport.#ctor(System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single)'
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Viewport(float, float)
+  nameWithType: Viewport.Viewport(float, float)
+  fullName: Genesis.Graphics.Viewport.Viewport(float, float)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Viewport(float width, float height)
+    parameters:
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    content.vb: Public Sub New(width As Single, height As Single)
+  overload: Genesis.Graphics.Viewport.#ctor*
+  nameWithType.vb: Viewport.New(Single, Single)
+  fullName.vb: Genesis.Graphics.Viewport.New(Single, Single)
+  name.vb: New(Single, Single)
+- uid: Genesis.Graphics.Viewport.#ctor(System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Viewport.#ctor(System.Single,System.Single,System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single,System.Single,System.Single)'
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Viewport(float, float, float, float)
+  nameWithType: Viewport.Viewport(float, float, float, float)
+  fullName: Genesis.Graphics.Viewport.Viewport(float, float, float, float)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Viewport(float x, float y, float width, float height)
+    parameters:
+    - id: x
+      type: System.Single
+    - id: y
+      type: System.Single
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    content.vb: Public Sub New(x As Single, y As Single, width As Single, height As Single)
+  overload: Genesis.Graphics.Viewport.#ctor*
+  nameWithType.vb: Viewport.New(Single, Single, Single, Single)
+  fullName.vb: Genesis.Graphics.Viewport.New(Single, Single, Single, Single)
+  name.vb: New(Single, Single, Single, Single)
+- uid: Genesis.Graphics.Viewport.SetNewViewport(System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Viewport.SetNewViewport(System.Single,System.Single)
+  id: SetNewViewport(System.Single,System.Single)
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: SetNewViewport(float, float)
+  nameWithType: Viewport.SetNewViewport(float, float)
+  fullName: Genesis.Graphics.Viewport.SetNewViewport(float, float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public void SetNewViewport(float width, float height)
+    parameters:
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    content.vb: Public Sub SetNewViewport(width As Single, height As Single)
+  overload: Genesis.Graphics.Viewport.SetNewViewport*
+  nameWithType.vb: Viewport.SetNewViewport(Single, Single)
+  fullName.vb: Genesis.Graphics.Viewport.SetNewViewport(Single, Single)
+  name.vb: SetNewViewport(Single, Single)
+- uid: Genesis.Graphics.Viewport.GetSize
+  commentId: M:Genesis.Graphics.Viewport.GetSize
+  id: GetSize
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: GetSize()
+  nameWithType: Viewport.GetSize()
+  fullName: Genesis.Graphics.Viewport.GetSize()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Size GetSize()
+    return:
+      type: System.Drawing.Size
+    content.vb: Public Function GetSize() As Size
+  overload: Genesis.Graphics.Viewport.GetSize*
+- uid: Genesis.Graphics.Viewport.GetSizeF
+  commentId: M:Genesis.Graphics.Viewport.GetSizeF
+  id: GetSizeF
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: GetSizeF()
+  nameWithType: Viewport.GetSizeF()
+  fullName: Genesis.Graphics.Viewport.GetSizeF()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public SizeF GetSizeF()
+    return:
+      type: System.Drawing.SizeF
+    content.vb: Public Function GetSizeF() As SizeF
+  overload: Genesis.Graphics.Viewport.GetSizeF*
+- uid: Genesis.Graphics.Viewport.X
+  commentId: P:Genesis.Graphics.Viewport.X
+  id: X
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Viewport.X
+  fullName: Genesis.Graphics.Viewport.X
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public float X { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property X As Single
+  overload: Genesis.Graphics.Viewport.X*
+- uid: Genesis.Graphics.Viewport.Y
+  commentId: P:Genesis.Graphics.Viewport.Y
+  id: Y
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Viewport.Y
+  fullName: Genesis.Graphics.Viewport.Y
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public float Y { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Y As Single
+  overload: Genesis.Graphics.Viewport.Y*
+- uid: Genesis.Graphics.Viewport.Width
+  commentId: P:Genesis.Graphics.Viewport.Width
+  id: Width
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Viewport.Width
+  fullName: Genesis.Graphics.Viewport.Width
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public float Width { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Width As Single
+  overload: Genesis.Graphics.Viewport.Width*
+- uid: Genesis.Graphics.Viewport.Height
+  commentId: P:Genesis.Graphics.Viewport.Height
+  id: Height
+  parent: Genesis.Graphics.Viewport
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Viewport.Height
+  fullName: Genesis.Graphics.Viewport.Height
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public float Height { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Height As Single
+  overload: Genesis.Graphics.Viewport.Height*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Viewport.#ctor*
+  commentId: Overload:Genesis.Graphics.Viewport.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport__ctor
+  name: Viewport
+  nameWithType: Viewport.Viewport
+  fullName: Genesis.Graphics.Viewport.Viewport
+  nameWithType.vb: Viewport.New
+  fullName.vb: Genesis.Graphics.Viewport.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Graphics.Viewport.SetNewViewport*
+  commentId: Overload:Genesis.Graphics.Viewport.SetNewViewport
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_SetNewViewport_System_Single_System_Single_
+  name: SetNewViewport
+  nameWithType: Viewport.SetNewViewport
+  fullName: Genesis.Graphics.Viewport.SetNewViewport
+- uid: Genesis.Graphics.Viewport.GetSize*
+  commentId: Overload:Genesis.Graphics.Viewport.GetSize
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_GetSize
+  name: GetSize
+  nameWithType: Viewport.GetSize
+  fullName: Genesis.Graphics.Viewport.GetSize
+- uid: System.Drawing.Size
+  commentId: T:System.Drawing.Size
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.size
+  name: Size
+  nameWithType: Size
+  fullName: System.Drawing.Size
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Genesis.Graphics.Viewport.GetSizeF*
+  commentId: Overload:Genesis.Graphics.Viewport.GetSizeF
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_GetSizeF
+  name: GetSizeF
+  nameWithType: Viewport.GetSizeF
+  fullName: Genesis.Graphics.Viewport.GetSizeF
+- uid: System.Drawing.SizeF
+  commentId: T:System.Drawing.SizeF
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.sizef
+  name: SizeF
+  nameWithType: SizeF
+  fullName: System.Drawing.SizeF
+- uid: Genesis.Graphics.Viewport.X*
+  commentId: Overload:Genesis.Graphics.Viewport.X
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_X
+  name: X
+  nameWithType: Viewport.X
+  fullName: Genesis.Graphics.Viewport.X
+- uid: Genesis.Graphics.Viewport.Y*
+  commentId: Overload:Genesis.Graphics.Viewport.Y
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_Y
+  name: Y
+  nameWithType: Viewport.Y
+  fullName: Genesis.Graphics.Viewport.Y
+- uid: Genesis.Graphics.Viewport.Width*
+  commentId: Overload:Genesis.Graphics.Viewport.Width
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_Width
+  name: Width
+  nameWithType: Viewport.Width
+  fullName: Genesis.Graphics.Viewport.Width
+- uid: Genesis.Graphics.Viewport.Height*
+  commentId: Overload:Genesis.Graphics.Viewport.Height
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html#Genesis_Graphics_Viewport_Height
+  name: Height
+  nameWithType: Viewport.Height
+  fullName: Genesis.Graphics.Viewport.Height

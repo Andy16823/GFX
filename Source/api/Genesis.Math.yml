@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  id: Genesis.Math
+  children:
+  - Genesis.Math.Matrix4x4
+  - Genesis.Math.NoisePoint
+  - Genesis.Math.PerlinNoise
+  - Genesis.Math.Rect
+  - Genesis.Math.Vec3
+  langs:
+  - csharp
+  - vb
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  type: Namespace
+  assemblies:
+  - Genesis
+references:
+- uid: Genesis.Math.Matrix4x4
+  commentId: T:Genesis.Math.Matrix4x4
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Matrix4x4.html
+  name: Matrix4x4
+  nameWithType: Matrix4x4
+  fullName: Genesis.Math.Matrix4x4
+- uid: Genesis.Math.NoisePoint
+  commentId: T:Genesis.Math.NoisePoint
+  isExternal: true
+  href: Genesis.Math.NoisePoint.html
+  name: NoisePoint
+  nameWithType: NoisePoint
+  fullName: Genesis.Math.NoisePoint
+- uid: Genesis.Math.PerlinNoise
+  commentId: T:Genesis.Math.PerlinNoise
+  isExternal: true
+  href: Genesis.Math.PerlinNoise.html
+  name: PerlinNoise
+  nameWithType: PerlinNoise
+  fullName: Genesis.Math.PerlinNoise
+- uid: Genesis.Math.Rect
+  commentId: T:Genesis.Math.Rect
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Rect.html
+  name: Rect
+  nameWithType: Rect
+  fullName: Genesis.Math.Rect
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html

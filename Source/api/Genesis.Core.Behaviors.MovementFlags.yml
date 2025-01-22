@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.MovementFlags
+  commentId: T:Genesis.Core.Behaviors.MovementFlags
+  id: MovementFlags
+  parent: Genesis.Core.Behaviors
+  children:
+  - Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  - Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  - Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  langs:
+  - csharp
+  - vb
+  name: MovementFlags
+  nameWithType: MovementFlags
+  fullName: Genesis.Core.Behaviors.MovementFlags
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Enumeration for defining movement flags.
+  example: []
+  syntax:
+    content: public enum MovementFlags
+    content.vb: Public Enum MovementFlags
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  id: CharacterMoveHorizontal
+  parent: Genesis.Core.Behaviors.MovementFlags
+  langs:
+  - csharp
+  - vb
+  name: CharacterMoveHorizontal
+  nameWithType: MovementFlags.CharacterMoveHorizontal
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveHorizontal
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: CharacterMoveHorizontal = 0
+    return:
+      type: Genesis.Core.Behaviors.MovementFlags
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  id: CharacterMoveVertical
+  parent: Genesis.Core.Behaviors.MovementFlags
+  langs:
+  - csharp
+  - vb
+  name: CharacterMoveVertical
+  nameWithType: MovementFlags.CharacterMoveVertical
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVertical
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: CharacterMoveVertical = 1
+    return:
+      type: Genesis.Core.Behaviors.MovementFlags
+- uid: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  commentId: F:Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  id: CharacterMoveVerticalAndHorizontal
+  parent: Genesis.Core.Behaviors.MovementFlags
+  langs:
+  - csharp
+  - vb
+  name: CharacterMoveVerticalAndHorizontal
+  nameWithType: MovementFlags.CharacterMoveVerticalAndHorizontal
+  fullName: Genesis.Core.Behaviors.MovementFlags.CharacterMoveVerticalAndHorizontal
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: CharacterMoveVerticalAndHorizontal = 2
+    return:
+      type: Genesis.Core.Behaviors.MovementFlags
+references:
+- uid: Genesis.Core.Behaviors
+  commentId: N:Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors
+  nameWithType: Genesis.Core.Behaviors
+  fullName: Genesis.Core.Behaviors
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+- uid: Genesis.Core.Behaviors.MovementFlags
+  commentId: T:Genesis.Core.Behaviors.MovementFlags
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MovementFlags.html
+  name: MovementFlags
+  nameWithType: MovementFlags
+  fullName: Genesis.Core.Behaviors.MovementFlags

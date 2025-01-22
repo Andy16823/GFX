@@ -1,0 +1,742 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Window
+  commentId: T:Genesis.Core.Window
+  id: Window
+  parent: Genesis.Core
+  children:
+  - Genesis.Core.Window.#ctor
+  - Genesis.Core.Window.Close
+  - Genesis.Core.Window.CreateWindowHandle(System.String,Genesis.Graphics.Viewport)
+  - Genesis.Core.Window.GetClientLocation
+  - Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  - Genesis.Core.Window.GetClientSize
+  - Genesis.Core.Window.Handle
+  - Genesis.Core.Window.OnSizeChange
+  - Genesis.Core.Window.RequestClose
+  - Genesis.Core.Window.RunGame(Genesis.Core.Game)
+  - Genesis.Core.Window.WindowSize
+  langs:
+  - csharp
+  - vb
+  name: Window
+  nameWithType: Window
+  fullName: Genesis.Core.Window
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Represents a window with specified properties and events.
+  example: []
+  syntax:
+    content: public class Window
+    content.vb: Public Class Window
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Core.Window.CreateWindowHandle(System.String,Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Core.Window.CreateWindowHandle(System.String,Genesis.Graphics.Viewport)
+  id: CreateWindowHandle(System.String,Genesis.Graphics.Viewport)
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: CreateWindowHandle(string, Viewport)
+  nameWithType: Window.CreateWindowHandle(string, Viewport)
+  fullName: Genesis.Core.Window.CreateWindowHandle(string, Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Creates a new window with specified title and viewport size.
+  example: []
+  syntax:
+    content: public IntPtr CreateWindowHandle(string title, Viewport viewport)
+    parameters:
+    - id: title
+      type: System.String
+      description: Title of the window.
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: Initial viewport size.
+    return:
+      type: System.IntPtr
+      description: Handle to the created window.
+    content.vb: Public Function CreateWindowHandle(title As String, viewport As Viewport) As IntPtr
+  overload: Genesis.Core.Window.CreateWindowHandle*
+  nameWithType.vb: Window.CreateWindowHandle(String, Viewport)
+  fullName.vb: Genesis.Core.Window.CreateWindowHandle(String, Genesis.Graphics.Viewport)
+  name.vb: CreateWindowHandle(String, Viewport)
+- uid: Genesis.Core.Window.RunGame(Genesis.Core.Game)
+  commentId: M:Genesis.Core.Window.RunGame(Genesis.Core.Game)
+  id: RunGame(Genesis.Core.Game)
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: RunGame(Game)
+  nameWithType: Window.RunGame(Game)
+  fullName: Genesis.Core.Window.RunGame(Genesis.Core.Game)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Shows the window and starts the game loop.
+  example: []
+  syntax:
+    content: public void RunGame(Game game)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance associated with the window.
+    content.vb: Public Sub RunGame(game As Game)
+  overload: Genesis.Core.Window.RunGame*
+- uid: Genesis.Core.Window.RequestClose
+  commentId: M:Genesis.Core.Window.RequestClose
+  id: RequestClose
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: RequestClose()
+  nameWithType: Window.RequestClose()
+  fullName: Genesis.Core.Window.RequestClose()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Requests the window to close by posting WM_QUIT message.
+  example: []
+  syntax:
+    content: public void RequestClose()
+    content.vb: Public Sub RequestClose()
+  overload: Genesis.Core.Window.RequestClose*
+- uid: Genesis.Core.Window.GetClientSize
+  commentId: M:Genesis.Core.Window.GetClientSize
+  id: GetClientSize
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: GetClientSize()
+  nameWithType: Window.GetClientSize()
+  fullName: Genesis.Core.Window.GetClientSize()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Returns an vector with the window client size
+  example: []
+  syntax:
+    content: public Vec3 GetClientSize()
+    return:
+      type: Genesis.Math.Vec3
+      description: ''
+    content.vb: Public Function GetClientSize() As Vec3
+  overload: Genesis.Core.Window.GetClientSize*
+- uid: Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  commentId: M:Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  id: GetClientLocation(System.IntPtr)
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: GetClientLocation(IntPtr)
+  nameWithType: Window.GetClientLocation(IntPtr)
+  fullName: Genesis.Core.Window.GetClientLocation(System.IntPtr)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public static Vec3 GetClientLocation(IntPtr handle)
+    parameters:
+    - id: handle
+      type: System.IntPtr
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Shared Function GetClientLocation(handle As IntPtr) As Vec3
+  overload: Genesis.Core.Window.GetClientLocation*
+- uid: Genesis.Core.Window.GetClientLocation
+  commentId: M:Genesis.Core.Window.GetClientLocation
+  id: GetClientLocation
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: GetClientLocation()
+  nameWithType: Window.GetClientLocation()
+  fullName: Genesis.Core.Window.GetClientLocation()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Vec3 GetClientLocation()
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function GetClientLocation() As Vec3
+  overload: Genesis.Core.Window.GetClientLocation*
+- uid: Genesis.Core.Window.#ctor
+  commentId: M:Genesis.Core.Window.#ctor
+  id: '#ctor'
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: Window()
+  nameWithType: Window.Window()
+  fullName: Genesis.Core.Window.Window()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Window()
+    content.vb: Public Sub New()
+  overload: Genesis.Core.Window.#ctor*
+  nameWithType.vb: Window.New()
+  fullName.vb: Genesis.Core.Window.New()
+  name.vb: New()
+- uid: Genesis.Core.Window.Handle
+  commentId: P:Genesis.Core.Window.Handle
+  id: Handle
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: Handle
+  nameWithType: Window.Handle
+  fullName: Genesis.Core.Window.Handle
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Gets or sets the handle to the window.
+  example: []
+  syntax:
+    content: public IntPtr Handle { get; set; }
+    parameters: []
+    return:
+      type: System.IntPtr
+    content.vb: Public Property Handle As IntPtr
+  overload: Genesis.Core.Window.Handle*
+- uid: Genesis.Core.Window.WindowSize
+  commentId: P:Genesis.Core.Window.WindowSize
+  id: WindowSize
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: WindowSize
+  nameWithType: Window.WindowSize
+  fullName: Genesis.Core.Window.WindowSize
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public Vec3 WindowSize { get; set; }
+    parameters: []
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Property WindowSize As Vec3
+  overload: Genesis.Core.Window.WindowSize*
+- uid: Genesis.Core.Window.Close
+  commentId: E:Genesis.Core.Window.Close
+  id: Close
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: Close
+  nameWithType: Window.Close
+  fullName: Genesis.Core.Window.Close
+  type: Event
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Event triggered when the window is closed.
+  example: []
+  syntax:
+    content: public event Window.WindowEventHandler Close
+    return:
+      type: Genesis.Core.Window.WindowEventHandler
+    content.vb: Public Event Close As Window.WindowEventHandler
+- uid: Genesis.Core.Window.OnSizeChange
+  commentId: E:Genesis.Core.Window.OnSizeChange
+  id: OnSizeChange
+  parent: Genesis.Core.Window
+  langs:
+  - csharp
+  - vb
+  name: OnSizeChange
+  nameWithType: Window.OnSizeChange
+  fullName: Genesis.Core.Window.OnSizeChange
+  type: Event
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  summary: Event triggered when the window size changes.
+  example: []
+  syntax:
+    content: public event Window.WindowEventHandler OnSizeChange
+    return:
+      type: Genesis.Core.Window.WindowEventHandler
+    content.vb: Public Event OnSizeChange As Window.WindowEventHandler
+references:
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core.Window.CreateWindowHandle*
+  commentId: Overload:Genesis.Core.Window.CreateWindowHandle
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_CreateWindowHandle_System_String_Genesis_Graphics_Viewport_
+  name: CreateWindowHandle
+  nameWithType: Window.CreateWindowHandle
+  fullName: Genesis.Core.Window.CreateWindowHandle
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Core.Window.RunGame*
+  commentId: Overload:Genesis.Core.Window.RunGame
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_RunGame_Genesis_Core_Game_
+  name: RunGame
+  nameWithType: Window.RunGame
+  fullName: Genesis.Core.Window.RunGame
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Core.Window.RequestClose*
+  commentId: Overload:Genesis.Core.Window.RequestClose
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_RequestClose
+  name: RequestClose
+  nameWithType: Window.RequestClose
+  fullName: Genesis.Core.Window.RequestClose
+- uid: Genesis.Core.Window.GetClientSize*
+  commentId: Overload:Genesis.Core.Window.GetClientSize
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_GetClientSize
+  name: GetClientSize
+  nameWithType: Window.GetClientSize
+  fullName: Genesis.Core.Window.GetClientSize
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: Genesis.Core.Window.GetClientLocation*
+  commentId: Overload:Genesis.Core.Window.GetClientLocation
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_GetClientLocation_System_IntPtr_
+  name: GetClientLocation
+  nameWithType: Window.GetClientLocation
+  fullName: Genesis.Core.Window.GetClientLocation
+- uid: Genesis.Core.Window.#ctor*
+  commentId: Overload:Genesis.Core.Window.#ctor
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window__ctor
+  name: Window
+  nameWithType: Window.Window
+  fullName: Genesis.Core.Window.Window
+  nameWithType.vb: Window.New
+  fullName.vb: Genesis.Core.Window.New
+  name.vb: New
+- uid: Genesis.Core.Window.Handle*
+  commentId: Overload:Genesis.Core.Window.Handle
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_Handle
+  name: Handle
+  nameWithType: Window.Handle
+  fullName: Genesis.Core.Window.Handle
+- uid: Genesis.Core.Window.WindowSize*
+  commentId: Overload:Genesis.Core.Window.WindowSize
+  isExternal: true
+  href: Genesis.Core.Window.html#Genesis_Core_Window_WindowSize
+  name: WindowSize
+  nameWithType: Window.WindowSize
+  fullName: Genesis.Core.Window.WindowSize
+- uid: Genesis.Core.Window.WindowEventHandler
+  commentId: T:Genesis.Core.Window.WindowEventHandler
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Window.html
+  name: Window.WindowEventHandler
+  nameWithType: Window.WindowEventHandler
+  fullName: Genesis.Core.Window.WindowEventHandler
+  spec.csharp:
+  - uid: Genesis.Core.Window
+    name: Window
+    isExternal: true
+    href: Genesis.Core.Window.html
+  - name: .
+  - uid: Genesis.Core.Window.WindowEventHandler
+    name: WindowEventHandler
+    isExternal: true
+    href: Genesis.Core.Window.WindowEventHandler.html
+  spec.vb:
+  - uid: Genesis.Core.Window
+    name: Window
+    isExternal: true
+    href: Genesis.Core.Window.html
+  - name: .
+  - uid: Genesis.Core.Window.WindowEventHandler
+    name: WindowEventHandler
+    isExternal: true
+    href: Genesis.Core.Window.WindowEventHandler.html

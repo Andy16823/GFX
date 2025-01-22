@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors.MoveDirection
+  commentId: T:Genesis.Core.Behaviors.MoveDirection
+  id: MoveDirection
+  parent: Genesis.Core.Behaviors
+  children:
+  - Genesis.Core.Behaviors.MoveDirection.East
+  - Genesis.Core.Behaviors.MoveDirection.North
+  - Genesis.Core.Behaviors.MoveDirection.South
+  - Genesis.Core.Behaviors.MoveDirection.West
+  langs:
+  - csharp
+  - vb
+  name: MoveDirection
+  nameWithType: MoveDirection
+  fullName: Genesis.Core.Behaviors.MoveDirection
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  summary: Enumeration for the move direction
+  example: []
+  syntax:
+    content: public enum MoveDirection
+    content.vb: Public Enum MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection.North
+  commentId: F:Genesis.Core.Behaviors.MoveDirection.North
+  id: North
+  parent: Genesis.Core.Behaviors.MoveDirection
+  langs:
+  - csharp
+  - vb
+  name: North
+  nameWithType: MoveDirection.North
+  fullName: Genesis.Core.Behaviors.MoveDirection.North
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: North = 0
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection.East
+  commentId: F:Genesis.Core.Behaviors.MoveDirection.East
+  id: East
+  parent: Genesis.Core.Behaviors.MoveDirection
+  langs:
+  - csharp
+  - vb
+  name: East
+  nameWithType: MoveDirection.East
+  fullName: Genesis.Core.Behaviors.MoveDirection.East
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: East = 1
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection.South
+  commentId: F:Genesis.Core.Behaviors.MoveDirection.South
+  id: South
+  parent: Genesis.Core.Behaviors.MoveDirection
+  langs:
+  - csharp
+  - vb
+  name: South
+  nameWithType: MoveDirection.South
+  fullName: Genesis.Core.Behaviors.MoveDirection.South
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: South = 2
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+- uid: Genesis.Core.Behaviors.MoveDirection.West
+  commentId: F:Genesis.Core.Behaviors.MoveDirection.West
+  id: West
+  parent: Genesis.Core.Behaviors.MoveDirection
+  langs:
+  - csharp
+  - vb
+  name: West
+  nameWithType: MoveDirection.West
+  fullName: Genesis.Core.Behaviors.MoveDirection.West
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors
+  syntax:
+    content: West = 3
+    return:
+      type: Genesis.Core.Behaviors.MoveDirection
+references:
+- uid: Genesis.Core.Behaviors
+  commentId: N:Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors
+  nameWithType: Genesis.Core.Behaviors
+  fullName: Genesis.Core.Behaviors
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+- uid: Genesis.Core.Behaviors.MoveDirection
+  commentId: T:Genesis.Core.Behaviors.MoveDirection
+  parent: Genesis.Core.Behaviors
+  isExternal: true
+  href: Genesis.Core.Behaviors.MoveDirection.html
+  name: MoveDirection
+  nameWithType: MoveDirection
+  fullName: Genesis.Core.Behaviors.MoveDirection

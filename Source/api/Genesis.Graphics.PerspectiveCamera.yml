@@ -1,0 +1,1637 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.PerspectiveCamera
+  commentId: T:Genesis.Graphics.PerspectiveCamera
+  id: PerspectiveCamera
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.PerspectiveCamera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)
+  - Genesis.Graphics.PerspectiveCamera.CameraFront
+  - Genesis.Graphics.PerspectiveCamera.CameraRight
+  - Genesis.Graphics.PerspectiveCamera.CameraUp
+  - Genesis.Graphics.PerspectiveCamera.Forward(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.GetFrustum(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix(Genesis.Graphics.Camera)
+  - Genesis.Graphics.PerspectiveCamera.GetViewMatrix(Genesis.Graphics.Camera)
+  - Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  - Genesis.Graphics.PerspectiveCamera.MoveBackward(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.MoveDown(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.MoveForward(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.MoveLeft(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.MoveRight(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.MoveUp(System.Single)
+  - Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Graphics.Texture,Genesis.Math.Vec3)
+  - Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.Int32,Genesis.Math.Vec3)
+  langs:
+  - csharp
+  - vb
+  name: PerspectiveCamera
+  nameWithType: PerspectiveCamera
+  fullName: Genesis.Graphics.PerspectiveCamera
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Represents a perspective camera derived from the Camera class.
+  example: []
+  syntax:
+    content: 'public class PerspectiveCamera : Camera'
+    content.vb: Public Class PerspectiveCamera Inherits Camera
+  inheritance:
+  - System.Object
+  - Genesis.Graphics.Camera
+  inheritedMembers:
+  - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+  - Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
+  - Genesis.Graphics.Camera.GetRect
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  - Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  - Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  - Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  - Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  - Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  - Genesis.Graphics.Camera.GetViewMatrix
+  - Genesis.Graphics.Camera.Location
+  - Genesis.Graphics.Camera.Size
+  - Genesis.Graphics.Camera.Rotation
+  - Genesis.Graphics.Camera.Near
+  - Genesis.Graphics.Camera.Far
+  - Genesis.Graphics.Camera.Type
+  - Genesis.Graphics.Camera.FOV
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.PerspectiveCamera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)
+  id: '#ctor(Genesis.Math.Vec3,Genesis.Math.Vec3,System.Single,System.Single)'
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: PerspectiveCamera(Vec3, Vec3, float, float)
+  nameWithType: PerspectiveCamera.PerspectiveCamera(Vec3, Vec3, float, float)
+  fullName: Genesis.Graphics.PerspectiveCamera.PerspectiveCamera(Genesis.Math.Vec3, Genesis.Math.Vec3, float, float)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Constructor for the PerspectiveCamera class.
+  example: []
+  syntax:
+    content: public PerspectiveCamera(Vec3 location, Vec3 size, float near, float far)
+    parameters:
+    - id: location
+      type: Genesis.Math.Vec3
+      description: The position of the camera.
+    - id: size
+      type: Genesis.Math.Vec3
+      description: The size of the camera.
+    - id: near
+      type: System.Single
+      description: The near clipping plane of the camera.
+    - id: far
+      type: System.Single
+      description: The far clipping plane of the camera.
+    content.vb: Public Sub New(location As Vec3, size As Vec3, near As Single, far As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.#ctor*
+  nameWithType.vb: PerspectiveCamera.New(Vec3, Vec3, Single, Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.New(Genesis.Math.Vec3, Genesis.Math.Vec3, Single, Single)
+  name.vb: New(Vec3, Vec3, Single, Single)
+- uid: Genesis.Graphics.PerspectiveCamera.CameraFront
+  commentId: M:Genesis.Graphics.PerspectiveCamera.CameraFront
+  id: CameraFront
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: CameraFront()
+  nameWithType: PerspectiveCamera.CameraFront()
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraFront()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets the front direction vector of the camera.
+  example: []
+  syntax:
+    content: public Vec3 CameraFront()
+    return:
+      type: Genesis.Math.Vec3
+      description: The front direction vector of the camera.
+    content.vb: Public Function CameraFront() As Vec3
+  overload: Genesis.Graphics.PerspectiveCamera.CameraFront*
+- uid: Genesis.Graphics.PerspectiveCamera.CameraRight
+  commentId: M:Genesis.Graphics.PerspectiveCamera.CameraRight
+  id: CameraRight
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: CameraRight()
+  nameWithType: PerspectiveCamera.CameraRight()
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraRight()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Vec3 CameraRight()
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function CameraRight() As Vec3
+  overload: Genesis.Graphics.PerspectiveCamera.CameraRight*
+- uid: Genesis.Graphics.PerspectiveCamera.CameraUp
+  commentId: M:Genesis.Graphics.PerspectiveCamera.CameraUp
+  id: CameraUp
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: CameraUp()
+  nameWithType: PerspectiveCamera.CameraUp()
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraUp()
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Vec3 CameraUp()
+    return:
+      type: Genesis.Math.Vec3
+    content.vb: Public Function CameraUp() As Vec3
+  overload: Genesis.Graphics.PerspectiveCamera.CameraUp*
+- uid: Genesis.Graphics.PerspectiveCamera.MoveForward(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveForward(System.Single)
+  id: MoveForward(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveForward(float)
+  nameWithType: PerspectiveCamera.MoveForward(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveForward(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera forward by a specified value.
+  example: []
+  syntax:
+    content: public void MoveForward(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera forward.
+    content.vb: Public Sub MoveForward(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveForward*
+  nameWithType.vb: PerspectiveCamera.MoveForward(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveForward(Single)
+  name.vb: MoveForward(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.MoveBackward(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveBackward(System.Single)
+  id: MoveBackward(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveBackward(float)
+  nameWithType: PerspectiveCamera.MoveBackward(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveBackward(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera backward by a specified value.
+  example: []
+  syntax:
+    content: public void MoveBackward(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera backward.
+    content.vb: Public Sub MoveBackward(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveBackward*
+  nameWithType.vb: PerspectiveCamera.MoveBackward(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveBackward(Single)
+  name.vb: MoveBackward(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.MoveUp(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveUp(System.Single)
+  id: MoveUp(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveUp(float)
+  nameWithType: PerspectiveCamera.MoveUp(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveUp(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera up by a specified value.
+  example: []
+  syntax:
+    content: public void MoveUp(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera up.
+    content.vb: Public Sub MoveUp(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveUp*
+  nameWithType.vb: PerspectiveCamera.MoveUp(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveUp(Single)
+  name.vb: MoveUp(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.MoveDown(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveDown(System.Single)
+  id: MoveDown(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveDown(float)
+  nameWithType: PerspectiveCamera.MoveDown(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveDown(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera down by a specified value.
+  example: []
+  syntax:
+    content: public void MoveDown(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera down.
+    content.vb: Public Sub MoveDown(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveDown*
+  nameWithType.vb: PerspectiveCamera.MoveDown(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveDown(Single)
+  name.vb: MoveDown(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.MoveLeft(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveLeft(System.Single)
+  id: MoveLeft(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveLeft(float)
+  nameWithType: PerspectiveCamera.MoveLeft(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveLeft(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera left by a specified value.
+  example: []
+  syntax:
+    content: public void MoveLeft(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera left.
+    content.vb: Public Sub MoveLeft(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveLeft*
+  nameWithType.vb: PerspectiveCamera.MoveLeft(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveLeft(Single)
+  name.vb: MoveLeft(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.MoveRight(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.MoveRight(System.Single)
+  id: MoveRight(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: MoveRight(float)
+  nameWithType: PerspectiveCamera.MoveRight(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveRight(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Moves the camera right by a specified value.
+  example: []
+  syntax:
+    content: public void MoveRight(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The distance to move the camera right.
+    content.vb: Public Sub MoveRight(value As Single)
+  overload: Genesis.Graphics.PerspectiveCamera.MoveRight*
+  nameWithType.vb: PerspectiveCamera.MoveRight(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.MoveRight(Single)
+  name.vb: MoveRight(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.Forward(System.Single)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.Forward(System.Single)
+  id: Forward(System.Single)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: Forward(float)
+  nameWithType: PerspectiveCamera.Forward(float)
+  fullName: Genesis.Graphics.PerspectiveCamera.Forward(float)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Calculates a point in front of the camera at a specified distance.
+  example: []
+  syntax:
+    content: public Vec3 Forward(float distance)
+    parameters:
+    - id: distance
+      type: System.Single
+      description: The distance from the camera.
+    return:
+      type: Genesis.Math.Vec3
+      description: The calculated point in front of the camera.
+    content.vb: Public Function Forward(distance As Single) As Vec3
+  overload: Genesis.Graphics.PerspectiveCamera.Forward*
+  nameWithType.vb: PerspectiveCamera.Forward(Single)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.Forward(Single)
+  name.vb: Forward(Single)
+- uid: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Graphics.Texture,Genesis.Math.Vec3)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Graphics.Texture,Genesis.Math.Vec3)
+  id: RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,Genesis.Graphics.Texture,Genesis.Math.Vec3)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: RenderToTexture(Game, IRenderDevice, Texture, Vec3)
+  nameWithType: PerspectiveCamera.RenderToTexture(Game, IRenderDevice, Texture, Vec3)
+  fullName: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, Genesis.Graphics.Texture, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Renders the scene to a texture using a specified render target and resolution.
+  example: []
+  syntax:
+    content: public void RenderToTexture(Game game, IRenderDevice renderer, Texture renderTarget, Vec3 resolution)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The Game instance.
+    - id: renderer
+      type: Genesis.Graphics.IRenderDevice
+      description: The render device.
+    - id: renderTarget
+      type: Genesis.Graphics.Texture
+      description: The render target texture.
+    - id: resolution
+      type: Genesis.Math.Vec3
+      description: The resolution of the rendered texture.
+    content.vb: Public Sub RenderToTexture(game As Game, renderer As IRenderDevice, renderTarget As Texture, resolution As Vec3)
+  overload: Genesis.Graphics.PerspectiveCamera.RenderToTexture*
+- uid: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.Int32,Genesis.Math.Vec3)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.Int32,Genesis.Math.Vec3)
+  id: RenderToTexture(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.Int32,Genesis.Math.Vec3)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: RenderToTexture(Game, IRenderDevice, int, Vec3)
+  nameWithType: PerspectiveCamera.RenderToTexture(Game, IRenderDevice, int, Vec3)
+  fullName: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, int, Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Renders the scene to a texture using a specified render target ID and resolution.
+  example: []
+  syntax:
+    content: public void RenderToTexture(Game game, IRenderDevice renderer, int renderTarget, Vec3 resolution)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The Game instance.
+    - id: renderer
+      type: Genesis.Graphics.IRenderDevice
+      description: The render device.
+    - id: renderTarget
+      type: System.Int32
+      description: The ID of the render target.
+    - id: resolution
+      type: Genesis.Math.Vec3
+      description: The resolution of the rendered texture.
+    content.vb: Public Sub RenderToTexture(game As Game, renderer As IRenderDevice, renderTarget As Integer, resolution As Vec3)
+  overload: Genesis.Graphics.PerspectiveCamera.RenderToTexture*
+  nameWithType.vb: PerspectiveCamera.RenderToTexture(Game, IRenderDevice, Integer, Vec3)
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.RenderToTexture(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, Integer, Genesis.Math.Vec3)
+  name.vb: RenderToTexture(Game, IRenderDevice, Integer, Vec3)
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  id: LookAt(Genesis.Math.Vec3)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: LookAt(Vec3)
+  nameWithType: PerspectiveCamera.LookAt(Vec3)
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt(Genesis.Math.Vec3)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Adjusts the camera's orientation to look at a specified position.
+  example: []
+  syntax:
+    content: public void LookAt(Vec3 vec3)
+    parameters:
+    - id: vec3
+      type: Genesis.Math.Vec3
+      description: The position to look at.
+    content.vb: Public Sub LookAt(vec3 As Vec3)
+  overload: Genesis.Graphics.PerspectiveCamera.LookAt*
+- uid: Genesis.Graphics.PerspectiveCamera.GetFrustum(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.GetFrustum(Genesis.Graphics.Viewport)
+  id: GetFrustum(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: GetFrustum(Viewport)
+  nameWithType: PerspectiveCamera.GetFrustum(Viewport)
+  fullName: Genesis.Graphics.PerspectiveCamera.GetFrustum(Genesis.Graphics.Viewport)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: 'ToDo: Change FOV'
+  example: []
+  syntax:
+    content: public Frustum GetFrustum(Viewport viewport)
+    parameters:
+    - id: viewport
+      type: Genesis.Graphics.Viewport
+      description: ''
+    return:
+      type: Genesis.Graphics.Frustum
+      description: ''
+    content.vb: Public Function GetFrustum(viewport As Viewport) As Frustum
+  overload: Genesis.Graphics.PerspectiveCamera.GetFrustum*
+- uid: Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix(Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix(Genesis.Graphics.Camera)
+  id: GetProjectionMatrix(Genesis.Graphics.Camera)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: GetProjectionMatrix(Camera)
+  nameWithType: PerspectiveCamera.GetProjectionMatrix(Camera)
+  fullName: Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix(Genesis.Graphics.Camera)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public static mat4 GetProjectionMatrix(Camera camera)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+    return:
+      type: GlmSharp.mat4
+    content.vb: Public Shared Function GetProjectionMatrix(camera As Camera) As mat4
+  overload: Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix*
+- uid: Genesis.Graphics.PerspectiveCamera.GetViewMatrix(Genesis.Graphics.Camera)
+  commentId: M:Genesis.Graphics.PerspectiveCamera.GetViewMatrix(Genesis.Graphics.Camera)
+  id: GetViewMatrix(Genesis.Graphics.Camera)
+  parent: Genesis.Graphics.PerspectiveCamera
+  langs:
+  - csharp
+  - vb
+  name: GetViewMatrix(Camera)
+  nameWithType: PerspectiveCamera.GetViewMatrix(Camera)
+  fullName: Genesis.Graphics.PerspectiveCamera.GetViewMatrix(Genesis.Graphics.Camera)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public static mat4 GetViewMatrix(Camera camera)
+    parameters:
+    - id: camera
+      type: Genesis.Graphics.Camera
+    return:
+      type: GlmSharp.mat4
+    content.vb: Public Shared Function GetViewMatrix(camera As Camera) As mat4
+  overload: Genesis.Graphics.PerspectiveCamera.GetViewMatrix*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Genesis.Graphics.Camera
+  commentId: T:Genesis.Graphics.Camera
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Camera.html
+  name: Camera
+  nameWithType: Camera
+  fullName: Genesis.Graphics.Camera
+- uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_
+  name: LookAt(GameElement)
+  nameWithType: Camera.LookAt(GameElement)
+  fullName: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+    name: LookAt
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement)
+    name: LookAt
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: )
+- uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
+  commentId: M:Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_System_Boolean_
+  name: LookAt(GameElement, bool)
+  nameWithType: Camera.LookAt(GameElement, bool)
+  fullName: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement, bool)
+  nameWithType.vb: Camera.LookAt(GameElement, Boolean)
+  fullName.vb: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement, Boolean)
+  name.vb: LookAt(GameElement, Boolean)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
+    name: LookAt
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_System_Boolean_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.LookAt(Genesis.Core.GameElement,System.Boolean)
+    name: LookAt
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_LookAt_Genesis_Core_GameElement_System_Boolean_
+  - name: (
+  - uid: Genesis.Core.GameElement
+    name: GameElement
+    isExternal: true
+    href: Genesis.Core.GameElement.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Genesis.Graphics.Camera.GetRect
+  commentId: M:Genesis.Graphics.Camera.GetRect
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetRect
+  name: GetRect()
+  nameWithType: Camera.GetRect()
+  fullName: Genesis.Graphics.Camera.GetRect()
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.GetRect
+    name: GetRect
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetRect
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.GetRect
+    name: GetRect
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetRect
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  name: CalculateScreenCorrection(float, float)
+  nameWithType: Camera.CalculateScreenCorrection(float, float)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(float, float)
+  nameWithType.vb: Camera.CalculateScreenCorrection(Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.CalculateScreenCorrection(Single, Single)
+  name.vb: CalculateScreenCorrection(Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(System.Single,System.Single)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_System_Single_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  name: CalculateScreenCorrection(Viewport)
+  nameWithType: Camera.CalculateScreenCorrection(Viewport)
+  fullName: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.CalculateScreenCorrection(Genesis.Graphics.Viewport)
+    name: CalculateScreenCorrection
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_CalculateScreenCorrection_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+- uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ConvertScreenToWorldOrtho(Viewport, float, float)
+  nameWithType: Camera.ConvertScreenToWorldOrtho(Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, float, float)
+  nameWithType.vb: Camera.ConvertScreenToWorldOrtho(Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ConvertScreenToWorldOrtho(Viewport, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ConvertScreenToWorldOrtho
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ConvertScreenToWorldOrtho(Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ConvertScreenToWorldOrtho
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ConvertScreenToWorldOrtho_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldDirection3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ScreenToWorldDirection3D(PerspectiveCamera, Viewport, float, float)
+  nameWithType: Camera.ScreenToWorldDirection3D(PerspectiveCamera, Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, float, float)
+  nameWithType.vb: Camera.ScreenToWorldDirection3D(PerspectiveCamera, Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ScreenToWorldDirection3D(PerspectiveCamera, Viewport, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ScreenToWorldDirection3D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldDirection3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.PerspectiveCamera
+    name: PerspectiveCamera
+    isExternal: true
+    href: Genesis.Graphics.PerspectiveCamera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ScreenToWorldDirection3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ScreenToWorldDirection3D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldDirection3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.PerspectiveCamera
+    name: PerspectiveCamera
+    isExternal: true
+    href: Genesis.Graphics.PerspectiveCamera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  commentId: M:Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldPosition3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  name: ScreenToWorldPosition3D(PerspectiveCamera, Viewport, float, float)
+  nameWithType: Camera.ScreenToWorldPosition3D(PerspectiveCamera, Viewport, float, float)
+  fullName: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, float, float)
+  nameWithType.vb: Camera.ScreenToWorldPosition3D(PerspectiveCamera, Viewport, Single, Single)
+  fullName.vb: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera, Genesis.Graphics.Viewport, Single, Single)
+  name.vb: ScreenToWorldPosition3D(PerspectiveCamera, Viewport, Single, Single)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ScreenToWorldPosition3D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldPosition3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.PerspectiveCamera
+    name: PerspectiveCamera
+    isExternal: true
+    href: Genesis.Graphics.PerspectiveCamera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ScreenToWorldPosition3D(Genesis.Graphics.PerspectiveCamera,Genesis.Graphics.Viewport,System.Single,System.Single)
+    name: ScreenToWorldPosition3D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ScreenToWorldPosition3D_Genesis_Graphics_PerspectiveCamera_Genesis_Graphics_Viewport_System_Single_System_Single_
+  - name: (
+  - uid: Genesis.Graphics.PerspectiveCamera
+    name: PerspectiveCamera
+    isExternal: true
+    href: Genesis.Graphics.PerspectiveCamera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  commentId: M:Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  name: ProjectMouse2D(Camera, Viewport, int, int)
+  nameWithType: Camera.ProjectMouse2D(Camera, Viewport, int, int)
+  fullName: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, int, int)
+  nameWithType.vb: Camera.ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  fullName.vb: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera, Genesis.Graphics.Viewport, Integer, Integer)
+  name.vb: ProjectMouse2D(Camera, Viewport, Integer, Integer)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+    name: ProjectMouse2D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.ProjectMouse2D(Genesis.Graphics.Camera,Genesis.Graphics.Viewport,System.Int32,System.Int32)
+    name: ProjectMouse2D
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_ProjectMouse2D_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_System_Int32_System_Int32_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Viewport_
+  name: GetProjectionMatrix(Viewport)
+  nameWithType: Camera.GetProjectionMatrix(Viewport)
+  fullName: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+    name: GetProjectionMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Viewport)
+    name: GetProjectionMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+- uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  commentId: M:Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_
+  name: GetProjectionMatrix(Camera, Viewport)
+  nameWithType: Camera.GetProjectionMatrix(Camera, Viewport)
+  fullName: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera, Genesis.Graphics.Viewport)
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+    name: GetProjectionMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.GetProjectionMatrix(Genesis.Graphics.Camera,Genesis.Graphics.Viewport)
+    name: GetProjectionMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetProjectionMatrix_Genesis_Graphics_Camera_Genesis_Graphics_Viewport_
+  - name: (
+  - uid: Genesis.Graphics.Camera
+    name: Camera
+    isExternal: true
+    href: Genesis.Graphics.Camera.html
+  - name: ','
+  - name: " "
+  - uid: Genesis.Graphics.Viewport
+    name: Viewport
+    isExternal: true
+    href: Genesis.Graphics.Viewport.html
+  - name: )
+- uid: Genesis.Graphics.Camera.GetViewMatrix
+  commentId: M:Genesis.Graphics.Camera.GetViewMatrix
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetViewMatrix
+  name: GetViewMatrix()
+  nameWithType: Camera.GetViewMatrix()
+  fullName: Genesis.Graphics.Camera.GetViewMatrix()
+  spec.csharp:
+  - uid: Genesis.Graphics.Camera.GetViewMatrix
+    name: GetViewMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetViewMatrix
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Genesis.Graphics.Camera.GetViewMatrix
+    name: GetViewMatrix
+    isExternal: true
+    href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_GetViewMatrix
+  - name: (
+  - name: )
+- uid: Genesis.Graphics.Camera.Location
+  commentId: P:Genesis.Graphics.Camera.Location
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Location
+  name: Location
+  nameWithType: Camera.Location
+  fullName: Genesis.Graphics.Camera.Location
+- uid: Genesis.Graphics.Camera.Size
+  commentId: P:Genesis.Graphics.Camera.Size
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Size
+  name: Size
+  nameWithType: Camera.Size
+  fullName: Genesis.Graphics.Camera.Size
+- uid: Genesis.Graphics.Camera.Rotation
+  commentId: P:Genesis.Graphics.Camera.Rotation
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Rotation
+  name: Rotation
+  nameWithType: Camera.Rotation
+  fullName: Genesis.Graphics.Camera.Rotation
+- uid: Genesis.Graphics.Camera.Near
+  commentId: P:Genesis.Graphics.Camera.Near
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Near
+  name: Near
+  nameWithType: Camera.Near
+  fullName: Genesis.Graphics.Camera.Near
+- uid: Genesis.Graphics.Camera.Far
+  commentId: P:Genesis.Graphics.Camera.Far
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Far
+  name: Far
+  nameWithType: Camera.Far
+  fullName: Genesis.Graphics.Camera.Far
+- uid: Genesis.Graphics.Camera.Type
+  commentId: P:Genesis.Graphics.Camera.Type
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_Type
+  name: Type
+  nameWithType: Camera.Type
+  fullName: Genesis.Graphics.Camera.Type
+- uid: Genesis.Graphics.Camera.FOV
+  commentId: P:Genesis.Graphics.Camera.FOV
+  parent: Genesis.Graphics.Camera
+  isExternal: true
+  href: Genesis.Graphics.Camera.html#Genesis_Graphics_Camera_FOV
+  name: FOV
+  nameWithType: Camera.FOV
+  fullName: Genesis.Graphics.Camera.FOV
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.PerspectiveCamera.#ctor*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.#ctor
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera__ctor_Genesis_Math_Vec3_Genesis_Math_Vec3_System_Single_System_Single_
+  name: PerspectiveCamera
+  nameWithType: PerspectiveCamera.PerspectiveCamera
+  fullName: Genesis.Graphics.PerspectiveCamera.PerspectiveCamera
+  nameWithType.vb: PerspectiveCamera.New
+  fullName.vb: Genesis.Graphics.PerspectiveCamera.New
+  name.vb: New
+- uid: Genesis.Math.Vec3
+  commentId: T:Genesis.Math.Vec3
+  parent: Genesis.Math
+  isExternal: true
+  href: Genesis.Math.Vec3.html
+  name: Vec3
+  nameWithType: Vec3
+  fullName: Genesis.Math.Vec3
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Genesis.Math
+  commentId: N:Genesis.Math
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Math
+  nameWithType: Genesis.Math
+  fullName: Genesis.Math
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Math
+    name: Math
+    isExternal: true
+    href: Genesis.Math.html
+- uid: Genesis.Graphics.PerspectiveCamera.CameraFront*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.CameraFront
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_CameraFront
+  name: CameraFront
+  nameWithType: PerspectiveCamera.CameraFront
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraFront
+- uid: Genesis.Graphics.PerspectiveCamera.CameraRight*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.CameraRight
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_CameraRight
+  name: CameraRight
+  nameWithType: PerspectiveCamera.CameraRight
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraRight
+- uid: Genesis.Graphics.PerspectiveCamera.CameraUp*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.CameraUp
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_CameraUp
+  name: CameraUp
+  nameWithType: PerspectiveCamera.CameraUp
+  fullName: Genesis.Graphics.PerspectiveCamera.CameraUp
+- uid: Genesis.Graphics.PerspectiveCamera.MoveForward*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveForward
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveForward_System_Single_
+  name: MoveForward
+  nameWithType: PerspectiveCamera.MoveForward
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveForward
+- uid: Genesis.Graphics.PerspectiveCamera.MoveBackward*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveBackward
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveBackward_System_Single_
+  name: MoveBackward
+  nameWithType: PerspectiveCamera.MoveBackward
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveBackward
+- uid: Genesis.Graphics.PerspectiveCamera.MoveUp*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveUp
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveUp_System_Single_
+  name: MoveUp
+  nameWithType: PerspectiveCamera.MoveUp
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveUp
+- uid: Genesis.Graphics.PerspectiveCamera.MoveDown*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveDown
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveDown_System_Single_
+  name: MoveDown
+  nameWithType: PerspectiveCamera.MoveDown
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveDown
+- uid: Genesis.Graphics.PerspectiveCamera.MoveLeft*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveLeft
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveLeft_System_Single_
+  name: MoveLeft
+  nameWithType: PerspectiveCamera.MoveLeft
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveLeft
+- uid: Genesis.Graphics.PerspectiveCamera.MoveRight*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.MoveRight
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_MoveRight_System_Single_
+  name: MoveRight
+  nameWithType: PerspectiveCamera.MoveRight
+  fullName: Genesis.Graphics.PerspectiveCamera.MoveRight
+- uid: Genesis.Graphics.PerspectiveCamera.Forward*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.Forward
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_Forward_System_Single_
+  name: Forward
+  nameWithType: PerspectiveCamera.Forward
+  fullName: Genesis.Graphics.PerspectiveCamera.Forward
+- uid: Genesis.Graphics.PerspectiveCamera.RenderToTexture*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.RenderToTexture
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_RenderToTexture_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_Genesis_Graphics_Texture_Genesis_Math_Vec3_
+  name: RenderToTexture
+  nameWithType: PerspectiveCamera.RenderToTexture
+  fullName: Genesis.Graphics.PerspectiveCamera.RenderToTexture
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Graphics.IRenderDevice
+  commentId: T:Genesis.Graphics.IRenderDevice
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html
+  name: IRenderDevice
+  nameWithType: IRenderDevice
+  fullName: Genesis.Graphics.IRenderDevice
+- uid: Genesis.Graphics.Texture
+  commentId: T:Genesis.Graphics.Texture
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Texture.html
+  name: Texture
+  nameWithType: Texture
+  fullName: Genesis.Graphics.Texture
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.PerspectiveCamera.LookAt*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.LookAt
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_LookAt_Genesis_Math_Vec3_
+  name: LookAt
+  nameWithType: PerspectiveCamera.LookAt
+  fullName: Genesis.Graphics.PerspectiveCamera.LookAt
+- uid: Genesis.Graphics.PerspectiveCamera.GetFrustum*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.GetFrustum
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_GetFrustum_Genesis_Graphics_Viewport_
+  name: GetFrustum
+  nameWithType: PerspectiveCamera.GetFrustum
+  fullName: Genesis.Graphics.PerspectiveCamera.GetFrustum
+- uid: Genesis.Graphics.Viewport
+  commentId: T:Genesis.Graphics.Viewport
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Viewport.html
+  name: Viewport
+  nameWithType: Viewport
+  fullName: Genesis.Graphics.Viewport
+- uid: Genesis.Graphics.Frustum
+  commentId: T:Genesis.Graphics.Frustum
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Frustum.html
+  name: Frustum
+  nameWithType: Frustum
+  fullName: Genesis.Graphics.Frustum
+- uid: Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_GetProjectionMatrix_Genesis_Graphics_Camera_
+  name: GetProjectionMatrix
+  nameWithType: PerspectiveCamera.GetProjectionMatrix
+  fullName: Genesis.Graphics.PerspectiveCamera.GetProjectionMatrix
+- uid: GlmSharp.mat4
+  commentId: T:GlmSharp.mat4
+  parent: GlmSharp
+  isExternal: true
+  name: mat4
+  nameWithType: mat4
+  fullName: GlmSharp.mat4
+- uid: GlmSharp
+  commentId: N:GlmSharp
+  isExternal: true
+  name: GlmSharp
+  nameWithType: GlmSharp
+  fullName: GlmSharp
+- uid: Genesis.Graphics.PerspectiveCamera.GetViewMatrix*
+  commentId: Overload:Genesis.Graphics.PerspectiveCamera.GetViewMatrix
+  isExternal: true
+  href: Genesis.Graphics.PerspectiveCamera.html#Genesis_Graphics_PerspectiveCamera_GetViewMatrix_Genesis_Graphics_Camera_
+  name: GetViewMatrix
+  nameWithType: PerspectiveCamera.GetViewMatrix
+  fullName: Genesis.Graphics.PerspectiveCamera.GetViewMatrix

@@ -1,0 +1,275 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.GameEventHandler
+  commentId: T:Genesis.Core.GameEventHandler
+  id: GameEventHandler
+  parent: Genesis.Core
+  children:
+  - Genesis.Core.GameEventHandler.#ctor(System.Object,System.IntPtr)
+  - Genesis.Core.GameEventHandler.BeginInvoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.AsyncCallback,System.Object)
+  - Genesis.Core.GameEventHandler.EndInvoke(System.IAsyncResult)
+  - Genesis.Core.GameEventHandler.Invoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  langs:
+  - csharp
+  - vb
+  name: GameEventHandler
+  nameWithType: GameEventHandler
+  fullName: Genesis.Core.GameEventHandler
+  type: Delegate
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public delegate void GameEventHandler(Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+    content.vb: Public Delegate Sub GameEventHandler(game As Game, renderDevice As IRenderDevice)
+- uid: Genesis.Core.GameEventHandler.#ctor(System.Object,System.IntPtr)
+  commentId: M:Genesis.Core.GameEventHandler.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: Genesis.Core.GameEventHandler
+  langs:
+  - csharp
+  - vb
+  name: GameEventHandler(object, IntPtr)
+  nameWithType: GameEventHandler.GameEventHandler(object, IntPtr)
+  fullName: Genesis.Core.GameEventHandler.GameEventHandler(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public GameEventHandler(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: Genesis.Core.GameEventHandler.#ctor*
+  nameWithType.vb: GameEventHandler.New(Object, IntPtr)
+  fullName.vb: Genesis.Core.GameEventHandler.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: Genesis.Core.GameEventHandler.Invoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  commentId: M:Genesis.Core.GameEventHandler.Invoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  id: Invoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice)
+  parent: Genesis.Core.GameEventHandler
+  langs:
+  - csharp
+  - vb
+  name: Invoke(Game, IRenderDevice)
+  nameWithType: GameEventHandler.Invoke(Game, IRenderDevice)
+  fullName: Genesis.Core.GameEventHandler.Invoke(Genesis.Core.Game, Genesis.Graphics.IRenderDevice)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public virtual void Invoke(Game game, IRenderDevice renderDevice)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+    content.vb: Public Overridable Sub Invoke(game As Game, renderDevice As IRenderDevice)
+  overload: Genesis.Core.GameEventHandler.Invoke*
+- uid: Genesis.Core.GameEventHandler.BeginInvoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.AsyncCallback,System.Object)
+  commentId: M:Genesis.Core.GameEventHandler.BeginInvoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.AsyncCallback,System.Object)
+  id: BeginInvoke(Genesis.Core.Game,Genesis.Graphics.IRenderDevice,System.AsyncCallback,System.Object)
+  parent: Genesis.Core.GameEventHandler
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(Game, IRenderDevice, AsyncCallback, object)
+  nameWithType: GameEventHandler.BeginInvoke(Game, IRenderDevice, AsyncCallback, object)
+  fullName: Genesis.Core.GameEventHandler.BeginInvoke(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(Game game, IRenderDevice renderDevice, AsyncCallback callback, object @object)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+    - id: renderDevice
+      type: Genesis.Graphics.IRenderDevice
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(game As Game, renderDevice As IRenderDevice, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: Genesis.Core.GameEventHandler.BeginInvoke*
+  nameWithType.vb: GameEventHandler.BeginInvoke(Game, IRenderDevice, AsyncCallback, Object)
+  fullName.vb: Genesis.Core.GameEventHandler.BeginInvoke(Genesis.Core.Game, Genesis.Graphics.IRenderDevice, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(Game, IRenderDevice, AsyncCallback, Object)
+- uid: Genesis.Core.GameEventHandler.EndInvoke(System.IAsyncResult)
+  commentId: M:Genesis.Core.GameEventHandler.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: Genesis.Core.GameEventHandler
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: GameEventHandler.EndInvoke(IAsyncResult)
+  fullName: Genesis.Core.GameEventHandler.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: Genesis.Core.GameEventHandler.EndInvoke*
+references:
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Graphics.IRenderDevice
+  commentId: T:Genesis.Graphics.IRenderDevice
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.IRenderDevice.html
+  name: IRenderDevice
+  nameWithType: IRenderDevice
+  fullName: Genesis.Graphics.IRenderDevice
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Core.GameEventHandler.#ctor*
+  commentId: Overload:Genesis.Core.GameEventHandler.#ctor
+  isExternal: true
+  href: Genesis.Core.GameEventHandler.html#Genesis_Core_GameEventHandler__ctor_System_Object_System_IntPtr_
+  name: GameEventHandler
+  nameWithType: GameEventHandler.GameEventHandler
+  fullName: Genesis.Core.GameEventHandler.GameEventHandler
+  nameWithType.vb: GameEventHandler.New
+  fullName.vb: Genesis.Core.GameEventHandler.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Core.GameEventHandler.Invoke*
+  commentId: Overload:Genesis.Core.GameEventHandler.Invoke
+  isExternal: true
+  href: Genesis.Core.GameEventHandler.html#Genesis_Core_GameEventHandler_Invoke_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_
+  name: Invoke
+  nameWithType: GameEventHandler.Invoke
+  fullName: Genesis.Core.GameEventHandler.Invoke
+- uid: Genesis.Core.GameEventHandler.BeginInvoke*
+  commentId: Overload:Genesis.Core.GameEventHandler.BeginInvoke
+  isExternal: true
+  href: Genesis.Core.GameEventHandler.html#Genesis_Core_GameEventHandler_BeginInvoke_Genesis_Core_Game_Genesis_Graphics_IRenderDevice_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: GameEventHandler.BeginInvoke
+  fullName: Genesis.Core.GameEventHandler.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: Genesis.Core.GameEventHandler.EndInvoke*
+  commentId: Overload:Genesis.Core.GameEventHandler.EndInvoke
+  isExternal: true
+  href: Genesis.Core.GameEventHandler.html#Genesis_Core_GameEventHandler_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: GameEventHandler.EndInvoke
+  fullName: Genesis.Core.GameEventHandler.EndInvoke

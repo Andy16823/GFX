@@ -1,0 +1,474 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Shader
+  commentId: T:Genesis.Graphics.Shader
+  id: Shader
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.Shader.#ctor
+  - Genesis.Graphics.Shader.#ctor(System.String)
+  - Genesis.Graphics.Shader.FromFile(System.String)
+  - Genesis.Graphics.Shader.ShaderID
+  - Genesis.Graphics.Shader.Source
+  langs:
+  - csharp
+  - vb
+  name: Shader
+  nameWithType: Shader
+  fullName: Genesis.Graphics.Shader
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public class Shader
+    content.vb: Public Class Shader
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Shader.#ctor
+  commentId: M:Genesis.Graphics.Shader.#ctor
+  id: '#ctor'
+  parent: Genesis.Graphics.Shader
+  langs:
+  - csharp
+  - vb
+  name: Shader()
+  nameWithType: Shader.Shader()
+  fullName: Genesis.Graphics.Shader.Shader()
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Shader()
+    content.vb: Public Sub New()
+  overload: Genesis.Graphics.Shader.#ctor*
+  nameWithType.vb: Shader.New()
+  fullName.vb: Genesis.Graphics.Shader.New()
+  name.vb: New()
+- uid: Genesis.Graphics.Shader.#ctor(System.String)
+  commentId: M:Genesis.Graphics.Shader.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Genesis.Graphics.Shader
+  langs:
+  - csharp
+  - vb
+  name: Shader(string)
+  nameWithType: Shader.Shader(string)
+  fullName: Genesis.Graphics.Shader.Shader(string)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public Shader(string source)
+    parameters:
+    - id: source
+      type: System.String
+    content.vb: Public Sub New(source As String)
+  overload: Genesis.Graphics.Shader.#ctor*
+  nameWithType.vb: Shader.New(String)
+  fullName.vb: Genesis.Graphics.Shader.New(String)
+  name.vb: New(String)
+- uid: Genesis.Graphics.Shader.FromFile(System.String)
+  commentId: M:Genesis.Graphics.Shader.FromFile(System.String)
+  id: FromFile(System.String)
+  parent: Genesis.Graphics.Shader
+  langs:
+  - csharp
+  - vb
+  name: FromFile(string)
+  nameWithType: Shader.FromFile(string)
+  fullName: Genesis.Graphics.Shader.FromFile(string)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public static Shader FromFile(string filename)
+    parameters:
+    - id: filename
+      type: System.String
+    return:
+      type: Genesis.Graphics.Shader
+    content.vb: Public Shared Function FromFile(filename As String) As Shader
+  overload: Genesis.Graphics.Shader.FromFile*
+  nameWithType.vb: Shader.FromFile(String)
+  fullName.vb: Genesis.Graphics.Shader.FromFile(String)
+  name.vb: FromFile(String)
+- uid: Genesis.Graphics.Shader.ShaderID
+  commentId: P:Genesis.Graphics.Shader.ShaderID
+  id: ShaderID
+  parent: Genesis.Graphics.Shader
+  langs:
+  - csharp
+  - vb
+  name: ShaderID
+  nameWithType: Shader.ShaderID
+  fullName: Genesis.Graphics.Shader.ShaderID
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public int ShaderID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ShaderID As Integer
+  overload: Genesis.Graphics.Shader.ShaderID*
+- uid: Genesis.Graphics.Shader.Source
+  commentId: P:Genesis.Graphics.Shader.Source
+  id: Source
+  parent: Genesis.Graphics.Shader
+  langs:
+  - csharp
+  - vb
+  name: Source
+  nameWithType: Shader.Source
+  fullName: Genesis.Graphics.Shader.Source
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public string Source { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Source As String
+  overload: Genesis.Graphics.Shader.Source*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Shader.#ctor*
+  commentId: Overload:Genesis.Graphics.Shader.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Shader.html#Genesis_Graphics_Shader__ctor
+  name: Shader
+  nameWithType: Shader.Shader
+  fullName: Genesis.Graphics.Shader.Shader
+  nameWithType.vb: Shader.New
+  fullName.vb: Genesis.Graphics.Shader.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Genesis.Graphics.Shader.FromFile*
+  commentId: Overload:Genesis.Graphics.Shader.FromFile
+  isExternal: true
+  href: Genesis.Graphics.Shader.html#Genesis_Graphics_Shader_FromFile_System_String_
+  name: FromFile
+  nameWithType: Shader.FromFile
+  fullName: Genesis.Graphics.Shader.FromFile
+- uid: Genesis.Graphics.Shader
+  commentId: T:Genesis.Graphics.Shader
+  parent: Genesis.Graphics
+  isExternal: true
+  href: Genesis.Graphics.Shader.html
+  name: Shader
+  nameWithType: Shader
+  fullName: Genesis.Graphics.Shader
+- uid: Genesis.Graphics.Shader.ShaderID*
+  commentId: Overload:Genesis.Graphics.Shader.ShaderID
+  isExternal: true
+  href: Genesis.Graphics.Shader.html#Genesis_Graphics_Shader_ShaderID
+  name: ShaderID
+  nameWithType: Shader.ShaderID
+  fullName: Genesis.Graphics.Shader.ShaderID
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.Shader.Source*
+  commentId: Overload:Genesis.Graphics.Shader.Source
+  isExternal: true
+  href: Genesis.Graphics.Shader.html#Genesis_Graphics_Shader_Source
+  name: Source
+  nameWithType: Shader.Source
+  fullName: Genesis.Graphics.Shader.Source

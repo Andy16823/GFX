@@ -1,0 +1,279 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent
+  commentId: T:Genesis.Graphics.AnimationCallback.AnimationEvent
+  id: AnimationCallback.AnimationEvent
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor(System.Object,System.IntPtr)
+  - Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke(Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  - Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke(System.IAsyncResult)
+  - Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke(Genesis.Core.Game,Genesis.Core.GameElement)
+  langs:
+  - csharp
+  - vb
+  name: AnimationCallback.AnimationEvent
+  nameWithType: AnimationCallback.AnimationEvent
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent
+  type: Delegate
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Delegate for the animation event callback.
+  example: []
+  syntax:
+    content: public delegate void AnimationCallback.AnimationEvent(Game game, GameElement element)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+      description: The game instance triggering the event.
+    - id: element
+      type: Genesis.Core.GameElement
+      description: The game element associated with the event.
+    content.vb: Public Delegate Sub AnimationCallback.AnimationEvent(game As Game, element As GameElement)
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor(System.Object,System.IntPtr)
+  commentId: M:Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor(System.Object,System.IntPtr)
+  id: '#ctor(System.Object,System.IntPtr)'
+  parent: Genesis.Graphics.AnimationCallback.AnimationEvent
+  langs:
+  - csharp
+  - vb
+  name: AnimationEvent(object, IntPtr)
+  nameWithType: AnimationCallback.AnimationEvent.AnimationEvent(object, IntPtr)
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.AnimationEvent(object, System.IntPtr)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public AnimationEvent(object @object, IntPtr method)
+    parameters:
+    - id: object
+      type: System.Object
+    - id: method
+      type: System.IntPtr
+    content.vb: Public Sub New([object] As Object, method As IntPtr)
+  overload: Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor*
+  nameWithType.vb: AnimationCallback.AnimationEvent.New(Object, IntPtr)
+  fullName.vb: Genesis.Graphics.AnimationCallback.AnimationEvent.New(Object, System.IntPtr)
+  name.vb: New(Object, IntPtr)
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke(Genesis.Core.Game,Genesis.Core.GameElement)
+  commentId: M:Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke(Genesis.Core.Game,Genesis.Core.GameElement)
+  id: Invoke(Genesis.Core.Game,Genesis.Core.GameElement)
+  parent: Genesis.Graphics.AnimationCallback.AnimationEvent
+  langs:
+  - csharp
+  - vb
+  name: Invoke(Game, GameElement)
+  nameWithType: AnimationCallback.AnimationEvent.Invoke(Game, GameElement)
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke(Genesis.Core.Game, Genesis.Core.GameElement)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public virtual void Invoke(Game game, GameElement element)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+    - id: element
+      type: Genesis.Core.GameElement
+    content.vb: Public Overridable Sub Invoke(game As Game, element As GameElement)
+  overload: Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke*
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke(Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  commentId: M:Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke(Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  id: BeginInvoke(Genesis.Core.Game,Genesis.Core.GameElement,System.AsyncCallback,System.Object)
+  parent: Genesis.Graphics.AnimationCallback.AnimationEvent
+  langs:
+  - csharp
+  - vb
+  name: BeginInvoke(Game, GameElement, AsyncCallback, object)
+  nameWithType: AnimationCallback.AnimationEvent.BeginInvoke(Game, GameElement, AsyncCallback, object)
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke(Genesis.Core.Game, Genesis.Core.GameElement, System.AsyncCallback, object)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public virtual IAsyncResult BeginInvoke(Game game, GameElement element, AsyncCallback callback, object @object)
+    parameters:
+    - id: game
+      type: Genesis.Core.Game
+    - id: element
+      type: Genesis.Core.GameElement
+    - id: callback
+      type: System.AsyncCallback
+    - id: object
+      type: System.Object
+    return:
+      type: System.IAsyncResult
+    content.vb: Public Overridable Function BeginInvoke(game As Game, element As GameElement, callback As AsyncCallback, [object] As Object) As IAsyncResult
+  overload: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke*
+  nameWithType.vb: AnimationCallback.AnimationEvent.BeginInvoke(Game, GameElement, AsyncCallback, Object)
+  fullName.vb: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke(Genesis.Core.Game, Genesis.Core.GameElement, System.AsyncCallback, Object)
+  name.vb: BeginInvoke(Game, GameElement, AsyncCallback, Object)
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke(System.IAsyncResult)
+  commentId: M:Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke(System.IAsyncResult)
+  id: EndInvoke(System.IAsyncResult)
+  parent: Genesis.Graphics.AnimationCallback.AnimationEvent
+  langs:
+  - csharp
+  - vb
+  name: EndInvoke(IAsyncResult)
+  nameWithType: AnimationCallback.AnimationEvent.EndInvoke(IAsyncResult)
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke(System.IAsyncResult)
+  type: Method
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  syntax:
+    content: public virtual void EndInvoke(IAsyncResult result)
+    parameters:
+    - id: result
+      type: System.IAsyncResult
+    content.vb: Public Overridable Sub EndInvoke(result As IAsyncResult)
+  overload: Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: Genesis.Core.Game
+  commentId: T:Genesis.Core.Game
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Game.html
+  name: Game
+  nameWithType: Game
+  fullName: Genesis.Core.Game
+- uid: Genesis.Core.GameElement
+  commentId: T:Genesis.Core.GameElement
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.GameElement.html
+  name: GameElement
+  nameWithType: GameElement
+  fullName: Genesis.Core.GameElement
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor*
+  commentId: Overload:Genesis.Graphics.AnimationCallback.AnimationEvent.#ctor
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.AnimationEvent.html#Genesis_Graphics_AnimationCallback_AnimationEvent__ctor_System_Object_System_IntPtr_
+  name: AnimationEvent
+  nameWithType: AnimationCallback.AnimationEvent.AnimationEvent
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.AnimationEvent
+  nameWithType.vb: AnimationCallback.AnimationEvent.New
+  fullName.vb: Genesis.Graphics.AnimationCallback.AnimationEvent.New
+  name.vb: New
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: IntPtr
+  nameWithType: IntPtr
+  fullName: System.IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke*
+  commentId: Overload:Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.AnimationEvent.html#Genesis_Graphics_AnimationCallback_AnimationEvent_Invoke_Genesis_Core_Game_Genesis_Core_GameElement_
+  name: Invoke
+  nameWithType: AnimationCallback.AnimationEvent.Invoke
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.Invoke
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke*
+  commentId: Overload:Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.AnimationEvent.html#Genesis_Graphics_AnimationCallback_AnimationEvent_BeginInvoke_Genesis_Core_Game_Genesis_Core_GameElement_System_AsyncCallback_System_Object_
+  name: BeginInvoke
+  nameWithType: AnimationCallback.AnimationEvent.BeginInvoke
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.BeginInvoke
+- uid: System.AsyncCallback
+  commentId: T:System.AsyncCallback
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.asynccallback
+  name: AsyncCallback
+  nameWithType: AsyncCallback
+  fullName: System.AsyncCallback
+- uid: System.IAsyncResult
+  commentId: T:System.IAsyncResult
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncresult
+  name: IAsyncResult
+  nameWithType: IAsyncResult
+  fullName: System.IAsyncResult
+- uid: Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke*
+  commentId: Overload:Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke
+  isExternal: true
+  href: Genesis.Graphics.AnimationCallback.AnimationEvent.html#Genesis_Graphics_AnimationCallback_AnimationEvent_EndInvoke_System_IAsyncResult_
+  name: EndInvoke
+  nameWithType: AnimationCallback.AnimationEvent.EndInvoke
+  fullName: Genesis.Graphics.AnimationCallback.AnimationEvent.EndInvoke

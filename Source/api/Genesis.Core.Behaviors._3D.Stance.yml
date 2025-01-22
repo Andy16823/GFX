@@ -1,0 +1,135 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Behaviors._3D.Stance
+  commentId: T:Genesis.Core.Behaviors._3D.Stance
+  id: Stance
+  parent: Genesis.Core.Behaviors._3D
+  children:
+  - Genesis.Core.Behaviors._3D.Stance.Idle
+  - Genesis.Core.Behaviors._3D.Stance.Run
+  - Genesis.Core.Behaviors._3D.Stance.Walk
+  langs:
+  - csharp
+  - vb
+  name: Stance
+  nameWithType: Stance
+  fullName: Genesis.Core.Behaviors._3D.Stance
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors._3D
+  summary: Defines the stance of the character.
+  example: []
+  syntax:
+    content: public enum Stance
+    content.vb: Public Enum Stance
+- uid: Genesis.Core.Behaviors._3D.Stance.Walk
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Walk
+  id: Walk
+  parent: Genesis.Core.Behaviors._3D.Stance
+  langs:
+  - csharp
+  - vb
+  name: Walk
+  nameWithType: Stance.Walk
+  fullName: Genesis.Core.Behaviors._3D.Stance.Walk
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors._3D
+  syntax:
+    content: Walk = 0
+    return:
+      type: Genesis.Core.Behaviors._3D.Stance
+- uid: Genesis.Core.Behaviors._3D.Stance.Run
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Run
+  id: Run
+  parent: Genesis.Core.Behaviors._3D.Stance
+  langs:
+  - csharp
+  - vb
+  name: Run
+  nameWithType: Stance.Run
+  fullName: Genesis.Core.Behaviors._3D.Stance.Run
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors._3D
+  syntax:
+    content: Run = 1
+    return:
+      type: Genesis.Core.Behaviors._3D.Stance
+- uid: Genesis.Core.Behaviors._3D.Stance.Idle
+  commentId: F:Genesis.Core.Behaviors._3D.Stance.Idle
+  id: Idle
+  parent: Genesis.Core.Behaviors._3D.Stance
+  langs:
+  - csharp
+  - vb
+  name: Idle
+  nameWithType: Stance.Idle
+  fullName: Genesis.Core.Behaviors._3D.Stance.Idle
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core.Behaviors._3D
+  syntax:
+    content: Idle = 2
+    return:
+      type: Genesis.Core.Behaviors._3D.Stance
+references:
+- uid: Genesis.Core.Behaviors._3D
+  commentId: N:Genesis.Core.Behaviors._3D
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core.Behaviors._3D
+  nameWithType: Genesis.Core.Behaviors._3D
+  fullName: Genesis.Core.Behaviors._3D
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors._3D
+    name: _3D
+    isExternal: true
+    href: Genesis.Core.Behaviors._3D.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  - name: .
+  - uid: Genesis.Core.Behaviors
+    name: Behaviors
+    isExternal: true
+    href: Genesis.Core.Behaviors.html
+  - name: .
+  - uid: Genesis.Core.Behaviors._3D
+    name: _3D
+    isExternal: true
+    href: Genesis.Core.Behaviors._3D.html
+- uid: Genesis.Core.Behaviors._3D.Stance
+  commentId: T:Genesis.Core.Behaviors._3D.Stance
+  parent: Genesis.Core.Behaviors._3D
+  isExternal: true
+  href: Genesis.Core.Behaviors._3D.Stance.html
+  name: Stance
+  nameWithType: Stance
+  fullName: Genesis.Core.Behaviors._3D.Stance

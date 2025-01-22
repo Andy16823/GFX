@@ -1,0 +1,542 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Graphics.Texture
+  commentId: T:Genesis.Graphics.Texture
+  id: Texture
+  parent: Genesis.Graphics
+  children:
+  - Genesis.Graphics.Texture.#ctor(System.Drawing.Bitmap)
+  - Genesis.Graphics.Texture.#ctor(System.Int32)
+  - Genesis.Graphics.Texture.#ctor(System.String,System.Drawing.Bitmap)
+  - Genesis.Graphics.Texture.Bitnmap
+  - Genesis.Graphics.Texture.Name
+  - Genesis.Graphics.Texture.RenderID
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: Texture
+  fullName: Genesis.Graphics.Texture
+  type: Class
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Represents a texture used in graphics rendering.
+  example: []
+  syntax:
+    content: public class Texture
+    content.vb: Public Class Texture
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: Genesis.Graphics.Texture.#ctor(System.Drawing.Bitmap)
+  commentId: M:Genesis.Graphics.Texture.#ctor(System.Drawing.Bitmap)
+  id: '#ctor(System.Drawing.Bitmap)'
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: Texture(Bitmap)
+  nameWithType: Texture.Texture(Bitmap)
+  fullName: Genesis.Graphics.Texture.Texture(System.Drawing.Bitmap)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Constructor for the Texture class that initializes the texture with a Bitmap.
+  example: []
+  syntax:
+    content: public Texture(Bitmap bitmap)
+    parameters:
+    - id: bitmap
+      type: System.Drawing.Bitmap
+      description: The Bitmap representing the texture.
+    content.vb: Public Sub New(bitmap As Bitmap)
+  overload: Genesis.Graphics.Texture.#ctor*
+  nameWithType.vb: Texture.New(Bitmap)
+  fullName.vb: Genesis.Graphics.Texture.New(System.Drawing.Bitmap)
+  name.vb: New(Bitmap)
+- uid: Genesis.Graphics.Texture.#ctor(System.String,System.Drawing.Bitmap)
+  commentId: M:Genesis.Graphics.Texture.#ctor(System.String,System.Drawing.Bitmap)
+  id: '#ctor(System.String,System.Drawing.Bitmap)'
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: Texture(string, Bitmap)
+  nameWithType: Texture.Texture(string, Bitmap)
+  fullName: Genesis.Graphics.Texture.Texture(string, System.Drawing.Bitmap)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Constructor for the Texture class that initializes the texture with a name and a Bitmap.
+  example: []
+  syntax:
+    content: public Texture(string name, Bitmap bitnmap)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the texture.
+    - id: bitnmap
+      type: System.Drawing.Bitmap
+    content.vb: Public Sub New(name As String, bitnmap As Bitmap)
+  overload: Genesis.Graphics.Texture.#ctor*
+  nameWithType.vb: Texture.New(String, Bitmap)
+  fullName.vb: Genesis.Graphics.Texture.New(String, System.Drawing.Bitmap)
+  name.vb: New(String, Bitmap)
+- uid: Genesis.Graphics.Texture.#ctor(System.Int32)
+  commentId: M:Genesis.Graphics.Texture.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: Texture(int)
+  nameWithType: Texture.Texture(int)
+  fullName: Genesis.Graphics.Texture.Texture(int)
+  type: Constructor
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Constructor for the Texture class that initializes the texture with a render ID.
+  example: []
+  syntax:
+    content: public Texture(int RenderID)
+    parameters:
+    - id: RenderID
+      type: System.Int32
+    content.vb: Public Sub New(RenderID As Integer)
+  overload: Genesis.Graphics.Texture.#ctor*
+  nameWithType.vb: Texture.New(Integer)
+  fullName.vb: Genesis.Graphics.Texture.New(Integer)
+  name.vb: New(Integer)
+- uid: Genesis.Graphics.Texture.Name
+  commentId: P:Genesis.Graphics.Texture.Name
+  id: Name
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Texture.Name
+  fullName: Genesis.Graphics.Texture.Name
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the name of the texture.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Genesis.Graphics.Texture.Name*
+- uid: Genesis.Graphics.Texture.RenderID
+  commentId: P:Genesis.Graphics.Texture.RenderID
+  id: RenderID
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: RenderID
+  nameWithType: Texture.RenderID
+  fullName: Genesis.Graphics.Texture.RenderID
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the render ID associated with the texture.
+  example: []
+  syntax:
+    content: public int RenderID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RenderID As Integer
+  overload: Genesis.Graphics.Texture.RenderID*
+- uid: Genesis.Graphics.Texture.Bitnmap
+  commentId: P:Genesis.Graphics.Texture.Bitnmap
+  id: Bitnmap
+  parent: Genesis.Graphics.Texture
+  langs:
+  - csharp
+  - vb
+  name: Bitnmap
+  nameWithType: Texture.Bitnmap
+  fullName: Genesis.Graphics.Texture.Bitnmap
+  type: Property
+  assemblies:
+  - Genesis
+  namespace: Genesis.Graphics
+  summary: Gets or sets the Bitmap representing the texture.
+  example: []
+  syntax:
+    content: public Bitmap Bitnmap { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Bitmap
+    content.vb: Public Property Bitnmap As Bitmap
+  overload: Genesis.Graphics.Texture.Bitnmap*
+references:
+- uid: Genesis.Graphics
+  commentId: N:Genesis.Graphics
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Graphics
+  nameWithType: Genesis.Graphics
+  fullName: Genesis.Graphics
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Graphics
+    name: Graphics
+    isExternal: true
+    href: Genesis.Graphics.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Genesis.Graphics.Texture.#ctor*
+  commentId: Overload:Genesis.Graphics.Texture.#ctor
+  isExternal: true
+  href: Genesis.Graphics.Texture.html#Genesis_Graphics_Texture__ctor_System_Drawing_Bitmap_
+  name: Texture
+  nameWithType: Texture.Texture
+  fullName: Genesis.Graphics.Texture.Texture
+  nameWithType.vb: Texture.New
+  fullName.vb: Genesis.Graphics.Texture.New
+  name.vb: New
+- uid: System.Drawing.Bitmap
+  commentId: T:System.Drawing.Bitmap
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.bitmap
+  name: Bitmap
+  nameWithType: Bitmap
+  fullName: System.Drawing.Bitmap
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Genesis.Graphics.Texture.Name*
+  commentId: Overload:Genesis.Graphics.Texture.Name
+  isExternal: true
+  href: Genesis.Graphics.Texture.html#Genesis_Graphics_Texture_Name
+  name: Name
+  nameWithType: Texture.Name
+  fullName: Genesis.Graphics.Texture.Name
+- uid: Genesis.Graphics.Texture.RenderID*
+  commentId: Overload:Genesis.Graphics.Texture.RenderID
+  isExternal: true
+  href: Genesis.Graphics.Texture.html#Genesis_Graphics_Texture_RenderID
+  name: RenderID
+  nameWithType: Texture.RenderID
+  fullName: Genesis.Graphics.Texture.RenderID
+- uid: Genesis.Graphics.Texture.Bitnmap*
+  commentId: Overload:Genesis.Graphics.Texture.Bitnmap
+  isExternal: true
+  href: Genesis.Graphics.Texture.html#Genesis_Graphics_Texture_Bitnmap
+  name: Bitnmap
+  nameWithType: Texture.Bitnmap
+  fullName: Genesis.Graphics.Texture.Bitnmap

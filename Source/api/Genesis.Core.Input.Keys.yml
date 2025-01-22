@@ -1,0 +1,3154 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.Core.Input.Keys
+  commentId: T:Genesis.Core.Input.Keys
+  id: Input.Keys
+  parent: Genesis.Core
+  children:
+  - Genesis.Core.Input.Keys.A
+  - Genesis.Core.Input.Keys.Add
+  - Genesis.Core.Input.Keys.Alt
+  - Genesis.Core.Input.Keys.Apps
+  - Genesis.Core.Input.Keys.Attn
+  - Genesis.Core.Input.Keys.B
+  - Genesis.Core.Input.Keys.Back
+  - Genesis.Core.Input.Keys.BrowserBack
+  - Genesis.Core.Input.Keys.BrowserFavorites
+  - Genesis.Core.Input.Keys.BrowserForward
+  - Genesis.Core.Input.Keys.BrowserHome
+  - Genesis.Core.Input.Keys.BrowserRefresh
+  - Genesis.Core.Input.Keys.BrowserSearch
+  - Genesis.Core.Input.Keys.BrowserStop
+  - Genesis.Core.Input.Keys.C
+  - Genesis.Core.Input.Keys.Cancel
+  - Genesis.Core.Input.Keys.CapsLock
+  - Genesis.Core.Input.Keys.Clear
+  - Genesis.Core.Input.Keys.Control
+  - Genesis.Core.Input.Keys.Crsel
+  - Genesis.Core.Input.Keys.D
+  - Genesis.Core.Input.Keys.D0
+  - Genesis.Core.Input.Keys.D1
+  - Genesis.Core.Input.Keys.D2
+  - Genesis.Core.Input.Keys.D3
+  - Genesis.Core.Input.Keys.D4
+  - Genesis.Core.Input.Keys.D5
+  - Genesis.Core.Input.Keys.D6
+  - Genesis.Core.Input.Keys.D7
+  - Genesis.Core.Input.Keys.D8
+  - Genesis.Core.Input.Keys.D9
+  - Genesis.Core.Input.Keys.Decimal
+  - Genesis.Core.Input.Keys.Delete
+  - Genesis.Core.Input.Keys.Divide
+  - Genesis.Core.Input.Keys.Down
+  - Genesis.Core.Input.Keys.E
+  - Genesis.Core.Input.Keys.End
+  - Genesis.Core.Input.Keys.Enter
+  - Genesis.Core.Input.Keys.EraseEof
+  - Genesis.Core.Input.Keys.Escape
+  - Genesis.Core.Input.Keys.Execute
+  - Genesis.Core.Input.Keys.Exsel
+  - Genesis.Core.Input.Keys.F
+  - Genesis.Core.Input.Keys.F1
+  - Genesis.Core.Input.Keys.F10
+  - Genesis.Core.Input.Keys.F11
+  - Genesis.Core.Input.Keys.F12
+  - Genesis.Core.Input.Keys.F13
+  - Genesis.Core.Input.Keys.F14
+  - Genesis.Core.Input.Keys.F15
+  - Genesis.Core.Input.Keys.F16
+  - Genesis.Core.Input.Keys.F17
+  - Genesis.Core.Input.Keys.F18
+  - Genesis.Core.Input.Keys.F19
+  - Genesis.Core.Input.Keys.F2
+  - Genesis.Core.Input.Keys.F20
+  - Genesis.Core.Input.Keys.F21
+  - Genesis.Core.Input.Keys.F22
+  - Genesis.Core.Input.Keys.F23
+  - Genesis.Core.Input.Keys.F24
+  - Genesis.Core.Input.Keys.F3
+  - Genesis.Core.Input.Keys.F4
+  - Genesis.Core.Input.Keys.F5
+  - Genesis.Core.Input.Keys.F6
+  - Genesis.Core.Input.Keys.F7
+  - Genesis.Core.Input.Keys.F8
+  - Genesis.Core.Input.Keys.F9
+  - Genesis.Core.Input.Keys.G
+  - Genesis.Core.Input.Keys.H
+  - Genesis.Core.Input.Keys.Help
+  - Genesis.Core.Input.Keys.Home
+  - Genesis.Core.Input.Keys.I
+  - Genesis.Core.Input.Keys.Insert
+  - Genesis.Core.Input.Keys.J
+  - Genesis.Core.Input.Keys.K
+  - Genesis.Core.Input.Keys.L
+  - Genesis.Core.Input.Keys.LButton
+  - Genesis.Core.Input.Keys.LControlKey
+  - Genesis.Core.Input.Keys.LMenu
+  - Genesis.Core.Input.Keys.LShiftKey
+  - Genesis.Core.Input.Keys.LWin
+  - Genesis.Core.Input.Keys.LaunchApplication1
+  - Genesis.Core.Input.Keys.LaunchApplication2
+  - Genesis.Core.Input.Keys.LaunchMail
+  - Genesis.Core.Input.Keys.Left
+  - Genesis.Core.Input.Keys.M
+  - Genesis.Core.Input.Keys.MButton
+  - Genesis.Core.Input.Keys.MediaNextTrack
+  - Genesis.Core.Input.Keys.MediaPlayPause
+  - Genesis.Core.Input.Keys.MediaPreviousTrack
+  - Genesis.Core.Input.Keys.MediaStop
+  - Genesis.Core.Input.Keys.Multiply
+  - Genesis.Core.Input.Keys.N
+  - Genesis.Core.Input.Keys.None
+  - Genesis.Core.Input.Keys.NumLock
+  - Genesis.Core.Input.Keys.NumPad0
+  - Genesis.Core.Input.Keys.NumPad1
+  - Genesis.Core.Input.Keys.NumPad2
+  - Genesis.Core.Input.Keys.NumPad3
+  - Genesis.Core.Input.Keys.NumPad4
+  - Genesis.Core.Input.Keys.NumPad5
+  - Genesis.Core.Input.Keys.NumPad6
+  - Genesis.Core.Input.Keys.NumPad7
+  - Genesis.Core.Input.Keys.NumPad8
+  - Genesis.Core.Input.Keys.NumPad9
+  - Genesis.Core.Input.Keys.O
+  - Genesis.Core.Input.Keys.Oem8
+  - Genesis.Core.Input.Keys.OemBackslash
+  - Genesis.Core.Input.Keys.OemClear
+  - Genesis.Core.Input.Keys.OemCloseBrackets
+  - Genesis.Core.Input.Keys.OemComma
+  - Genesis.Core.Input.Keys.OemMinus
+  - Genesis.Core.Input.Keys.OemOpenBrackets
+  - Genesis.Core.Input.Keys.OemPeriod
+  - Genesis.Core.Input.Keys.OemPipe
+  - Genesis.Core.Input.Keys.OemPlus
+  - Genesis.Core.Input.Keys.OemQuestion
+  - Genesis.Core.Input.Keys.OemQuotes
+  - Genesis.Core.Input.Keys.OemSemicolon
+  - Genesis.Core.Input.Keys.OemTilde
+  - Genesis.Core.Input.Keys.P
+  - Genesis.Core.Input.Keys.Pa1
+  - Genesis.Core.Input.Keys.Packet
+  - Genesis.Core.Input.Keys.PageDown
+  - Genesis.Core.Input.Keys.PageUp
+  - Genesis.Core.Input.Keys.Pause
+  - Genesis.Core.Input.Keys.Play
+  - Genesis.Core.Input.Keys.Print
+  - Genesis.Core.Input.Keys.PrintScreen
+  - Genesis.Core.Input.Keys.ProcessKey
+  - Genesis.Core.Input.Keys.Q
+  - Genesis.Core.Input.Keys.R
+  - Genesis.Core.Input.Keys.RButton
+  - Genesis.Core.Input.Keys.RControlKey
+  - Genesis.Core.Input.Keys.RMenu
+  - Genesis.Core.Input.Keys.RShiftKey
+  - Genesis.Core.Input.Keys.RWin
+  - Genesis.Core.Input.Keys.Right
+  - Genesis.Core.Input.Keys.S
+  - Genesis.Core.Input.Keys.Scroll
+  - Genesis.Core.Input.Keys.Select
+  - Genesis.Core.Input.Keys.SelectMedia
+  - Genesis.Core.Input.Keys.Separator
+  - Genesis.Core.Input.Keys.Shift
+  - Genesis.Core.Input.Keys.Sleep
+  - Genesis.Core.Input.Keys.Space
+  - Genesis.Core.Input.Keys.Subtract
+  - Genesis.Core.Input.Keys.T
+  - Genesis.Core.Input.Keys.Tab
+  - Genesis.Core.Input.Keys.U
+  - Genesis.Core.Input.Keys.Up
+  - Genesis.Core.Input.Keys.V
+  - Genesis.Core.Input.Keys.VolumeDown
+  - Genesis.Core.Input.Keys.VolumeMute
+  - Genesis.Core.Input.Keys.VolumeUp
+  - Genesis.Core.Input.Keys.W
+  - Genesis.Core.Input.Keys.X
+  - Genesis.Core.Input.Keys.XButton1
+  - Genesis.Core.Input.Keys.XButton2
+  - Genesis.Core.Input.Keys.Y
+  - Genesis.Core.Input.Keys.Z
+  - Genesis.Core.Input.Keys.Zoom
+  langs:
+  - csharp
+  - vb
+  name: Input.Keys
+  nameWithType: Input.Keys
+  fullName: Genesis.Core.Input.Keys
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: public enum Input.Keys
+    content.vb: Public Enum Input.Keys
+- uid: Genesis.Core.Input.Keys.None
+  commentId: F:Genesis.Core.Input.Keys.None
+  id: None
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: Input.Keys.None
+  fullName: Genesis.Core.Input.Keys.None
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: None = 0
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LButton
+  commentId: F:Genesis.Core.Input.Keys.LButton
+  id: LButton
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LButton
+  nameWithType: Input.Keys.LButton
+  fullName: Genesis.Core.Input.Keys.LButton
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LButton = 1
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.RButton
+  commentId: F:Genesis.Core.Input.Keys.RButton
+  id: RButton
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: RButton
+  nameWithType: Input.Keys.RButton
+  fullName: Genesis.Core.Input.Keys.RButton
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: RButton = 2
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Cancel
+  commentId: F:Genesis.Core.Input.Keys.Cancel
+  id: Cancel
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Cancel
+  nameWithType: Input.Keys.Cancel
+  fullName: Genesis.Core.Input.Keys.Cancel
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Cancel = 3
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.MButton
+  commentId: F:Genesis.Core.Input.Keys.MButton
+  id: MButton
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: MButton
+  nameWithType: Input.Keys.MButton
+  fullName: Genesis.Core.Input.Keys.MButton
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: MButton = 4
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.XButton1
+  commentId: F:Genesis.Core.Input.Keys.XButton1
+  id: XButton1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: XButton1
+  nameWithType: Input.Keys.XButton1
+  fullName: Genesis.Core.Input.Keys.XButton1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: XButton1 = 5
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.XButton2
+  commentId: F:Genesis.Core.Input.Keys.XButton2
+  id: XButton2
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: XButton2
+  nameWithType: Input.Keys.XButton2
+  fullName: Genesis.Core.Input.Keys.XButton2
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: XButton2 = 6
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Back
+  commentId: F:Genesis.Core.Input.Keys.Back
+  id: Back
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Back
+  nameWithType: Input.Keys.Back
+  fullName: Genesis.Core.Input.Keys.Back
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Back = 8
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Tab
+  commentId: F:Genesis.Core.Input.Keys.Tab
+  id: Tab
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Tab
+  nameWithType: Input.Keys.Tab
+  fullName: Genesis.Core.Input.Keys.Tab
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Tab = 9
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Clear
+  commentId: F:Genesis.Core.Input.Keys.Clear
+  id: Clear
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Clear
+  nameWithType: Input.Keys.Clear
+  fullName: Genesis.Core.Input.Keys.Clear
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Clear = 12
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Enter
+  commentId: F:Genesis.Core.Input.Keys.Enter
+  id: Enter
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Enter
+  nameWithType: Input.Keys.Enter
+  fullName: Genesis.Core.Input.Keys.Enter
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Enter = 13
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Shift
+  commentId: F:Genesis.Core.Input.Keys.Shift
+  id: Shift
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Shift
+  nameWithType: Input.Keys.Shift
+  fullName: Genesis.Core.Input.Keys.Shift
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Shift = 16
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Control
+  commentId: F:Genesis.Core.Input.Keys.Control
+  id: Control
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Control
+  nameWithType: Input.Keys.Control
+  fullName: Genesis.Core.Input.Keys.Control
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Control = 17
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Alt
+  commentId: F:Genesis.Core.Input.Keys.Alt
+  id: Alt
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Alt
+  nameWithType: Input.Keys.Alt
+  fullName: Genesis.Core.Input.Keys.Alt
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Alt = 18
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Pause
+  commentId: F:Genesis.Core.Input.Keys.Pause
+  id: Pause
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Pause
+  nameWithType: Input.Keys.Pause
+  fullName: Genesis.Core.Input.Keys.Pause
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Pause = 19
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.CapsLock
+  commentId: F:Genesis.Core.Input.Keys.CapsLock
+  id: CapsLock
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: CapsLock
+  nameWithType: Input.Keys.CapsLock
+  fullName: Genesis.Core.Input.Keys.CapsLock
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: CapsLock = 20
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Escape
+  commentId: F:Genesis.Core.Input.Keys.Escape
+  id: Escape
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Escape
+  nameWithType: Input.Keys.Escape
+  fullName: Genesis.Core.Input.Keys.Escape
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Escape = 27
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Space
+  commentId: F:Genesis.Core.Input.Keys.Space
+  id: Space
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Space
+  nameWithType: Input.Keys.Space
+  fullName: Genesis.Core.Input.Keys.Space
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Space = 32
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.PageUp
+  commentId: F:Genesis.Core.Input.Keys.PageUp
+  id: PageUp
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: PageUp
+  nameWithType: Input.Keys.PageUp
+  fullName: Genesis.Core.Input.Keys.PageUp
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: PageUp = 33
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.PageDown
+  commentId: F:Genesis.Core.Input.Keys.PageDown
+  id: PageDown
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: PageDown
+  nameWithType: Input.Keys.PageDown
+  fullName: Genesis.Core.Input.Keys.PageDown
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: PageDown = 34
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.End
+  commentId: F:Genesis.Core.Input.Keys.End
+  id: End
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: Input.Keys.End
+  fullName: Genesis.Core.Input.Keys.End
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: End = 35
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Home
+  commentId: F:Genesis.Core.Input.Keys.Home
+  id: Home
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Home
+  nameWithType: Input.Keys.Home
+  fullName: Genesis.Core.Input.Keys.Home
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Home = 36
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Left
+  commentId: F:Genesis.Core.Input.Keys.Left
+  id: Left
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: Input.Keys.Left
+  fullName: Genesis.Core.Input.Keys.Left
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Left = 37
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Up
+  commentId: F:Genesis.Core.Input.Keys.Up
+  id: Up
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Up
+  nameWithType: Input.Keys.Up
+  fullName: Genesis.Core.Input.Keys.Up
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Up = 38
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Right
+  commentId: F:Genesis.Core.Input.Keys.Right
+  id: Right
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: Input.Keys.Right
+  fullName: Genesis.Core.Input.Keys.Right
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Right = 39
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Down
+  commentId: F:Genesis.Core.Input.Keys.Down
+  id: Down
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Down
+  nameWithType: Input.Keys.Down
+  fullName: Genesis.Core.Input.Keys.Down
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Down = 40
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Select
+  commentId: F:Genesis.Core.Input.Keys.Select
+  id: Select
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Select
+  nameWithType: Input.Keys.Select
+  fullName: Genesis.Core.Input.Keys.Select
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Select = 41
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Print
+  commentId: F:Genesis.Core.Input.Keys.Print
+  id: Print
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Print
+  nameWithType: Input.Keys.Print
+  fullName: Genesis.Core.Input.Keys.Print
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Print = 42
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Execute
+  commentId: F:Genesis.Core.Input.Keys.Execute
+  id: Execute
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Execute
+  nameWithType: Input.Keys.Execute
+  fullName: Genesis.Core.Input.Keys.Execute
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Execute = 43
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.PrintScreen
+  commentId: F:Genesis.Core.Input.Keys.PrintScreen
+  id: PrintScreen
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: PrintScreen
+  nameWithType: Input.Keys.PrintScreen
+  fullName: Genesis.Core.Input.Keys.PrintScreen
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: PrintScreen = 44
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Insert
+  commentId: F:Genesis.Core.Input.Keys.Insert
+  id: Insert
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Insert
+  nameWithType: Input.Keys.Insert
+  fullName: Genesis.Core.Input.Keys.Insert
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Insert = 45
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Delete
+  commentId: F:Genesis.Core.Input.Keys.Delete
+  id: Delete
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: Input.Keys.Delete
+  fullName: Genesis.Core.Input.Keys.Delete
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Delete = 46
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Help
+  commentId: F:Genesis.Core.Input.Keys.Help
+  id: Help
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Help
+  nameWithType: Input.Keys.Help
+  fullName: Genesis.Core.Input.Keys.Help
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Help = 47
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D0
+  commentId: F:Genesis.Core.Input.Keys.D0
+  id: D0
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D0
+  nameWithType: Input.Keys.D0
+  fullName: Genesis.Core.Input.Keys.D0
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D0 = 48
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D1
+  commentId: F:Genesis.Core.Input.Keys.D1
+  id: D1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D1
+  nameWithType: Input.Keys.D1
+  fullName: Genesis.Core.Input.Keys.D1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D1 = 49
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D2
+  commentId: F:Genesis.Core.Input.Keys.D2
+  id: D2
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D2
+  nameWithType: Input.Keys.D2
+  fullName: Genesis.Core.Input.Keys.D2
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D2 = 50
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D3
+  commentId: F:Genesis.Core.Input.Keys.D3
+  id: D3
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D3
+  nameWithType: Input.Keys.D3
+  fullName: Genesis.Core.Input.Keys.D3
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D3 = 51
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D4
+  commentId: F:Genesis.Core.Input.Keys.D4
+  id: D4
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D4
+  nameWithType: Input.Keys.D4
+  fullName: Genesis.Core.Input.Keys.D4
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D4 = 52
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D5
+  commentId: F:Genesis.Core.Input.Keys.D5
+  id: D5
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D5
+  nameWithType: Input.Keys.D5
+  fullName: Genesis.Core.Input.Keys.D5
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D5 = 53
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D6
+  commentId: F:Genesis.Core.Input.Keys.D6
+  id: D6
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D6
+  nameWithType: Input.Keys.D6
+  fullName: Genesis.Core.Input.Keys.D6
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D6 = 54
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D7
+  commentId: F:Genesis.Core.Input.Keys.D7
+  id: D7
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D7
+  nameWithType: Input.Keys.D7
+  fullName: Genesis.Core.Input.Keys.D7
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D7 = 55
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D8
+  commentId: F:Genesis.Core.Input.Keys.D8
+  id: D8
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D8
+  nameWithType: Input.Keys.D8
+  fullName: Genesis.Core.Input.Keys.D8
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D8 = 56
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D9
+  commentId: F:Genesis.Core.Input.Keys.D9
+  id: D9
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D9
+  nameWithType: Input.Keys.D9
+  fullName: Genesis.Core.Input.Keys.D9
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D9 = 57
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.A
+  commentId: F:Genesis.Core.Input.Keys.A
+  id: A
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: A
+  nameWithType: Input.Keys.A
+  fullName: Genesis.Core.Input.Keys.A
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: A = 65
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.B
+  commentId: F:Genesis.Core.Input.Keys.B
+  id: B
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: B
+  nameWithType: Input.Keys.B
+  fullName: Genesis.Core.Input.Keys.B
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: B = 66
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.C
+  commentId: F:Genesis.Core.Input.Keys.C
+  id: C
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: C
+  nameWithType: Input.Keys.C
+  fullName: Genesis.Core.Input.Keys.C
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: C = 67
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.D
+  commentId: F:Genesis.Core.Input.Keys.D
+  id: D
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: D
+  nameWithType: Input.Keys.D
+  fullName: Genesis.Core.Input.Keys.D
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: D = 68
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.E
+  commentId: F:Genesis.Core.Input.Keys.E
+  id: E
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: E
+  nameWithType: Input.Keys.E
+  fullName: Genesis.Core.Input.Keys.E
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: E = 69
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F
+  commentId: F:Genesis.Core.Input.Keys.F
+  id: F
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F
+  nameWithType: Input.Keys.F
+  fullName: Genesis.Core.Input.Keys.F
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F = 70
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.G
+  commentId: F:Genesis.Core.Input.Keys.G
+  id: G
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: G
+  nameWithType: Input.Keys.G
+  fullName: Genesis.Core.Input.Keys.G
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: G = 71
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.H
+  commentId: F:Genesis.Core.Input.Keys.H
+  id: H
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: H
+  nameWithType: Input.Keys.H
+  fullName: Genesis.Core.Input.Keys.H
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: H = 72
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.I
+  commentId: F:Genesis.Core.Input.Keys.I
+  id: I
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: I
+  nameWithType: Input.Keys.I
+  fullName: Genesis.Core.Input.Keys.I
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: I = 73
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.J
+  commentId: F:Genesis.Core.Input.Keys.J
+  id: J
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: J
+  nameWithType: Input.Keys.J
+  fullName: Genesis.Core.Input.Keys.J
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: J = 74
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.K
+  commentId: F:Genesis.Core.Input.Keys.K
+  id: K
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: K
+  nameWithType: Input.Keys.K
+  fullName: Genesis.Core.Input.Keys.K
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: K = 75
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.L
+  commentId: F:Genesis.Core.Input.Keys.L
+  id: L
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: L
+  nameWithType: Input.Keys.L
+  fullName: Genesis.Core.Input.Keys.L
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: L = 76
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.M
+  commentId: F:Genesis.Core.Input.Keys.M
+  id: M
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: M
+  nameWithType: Input.Keys.M
+  fullName: Genesis.Core.Input.Keys.M
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: M = 77
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.N
+  commentId: F:Genesis.Core.Input.Keys.N
+  id: N
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: N
+  nameWithType: Input.Keys.N
+  fullName: Genesis.Core.Input.Keys.N
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: N = 78
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.O
+  commentId: F:Genesis.Core.Input.Keys.O
+  id: O
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: O
+  nameWithType: Input.Keys.O
+  fullName: Genesis.Core.Input.Keys.O
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: O = 79
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.P
+  commentId: F:Genesis.Core.Input.Keys.P
+  id: P
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: P
+  nameWithType: Input.Keys.P
+  fullName: Genesis.Core.Input.Keys.P
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: P = 80
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Q
+  commentId: F:Genesis.Core.Input.Keys.Q
+  id: Q
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Q
+  nameWithType: Input.Keys.Q
+  fullName: Genesis.Core.Input.Keys.Q
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Q = 81
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.R
+  commentId: F:Genesis.Core.Input.Keys.R
+  id: R
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: R
+  nameWithType: Input.Keys.R
+  fullName: Genesis.Core.Input.Keys.R
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: R = 82
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.S
+  commentId: F:Genesis.Core.Input.Keys.S
+  id: S
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: S
+  nameWithType: Input.Keys.S
+  fullName: Genesis.Core.Input.Keys.S
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: S = 83
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.T
+  commentId: F:Genesis.Core.Input.Keys.T
+  id: T
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: T
+  nameWithType: Input.Keys.T
+  fullName: Genesis.Core.Input.Keys.T
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: T = 84
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.U
+  commentId: F:Genesis.Core.Input.Keys.U
+  id: U
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: U
+  nameWithType: Input.Keys.U
+  fullName: Genesis.Core.Input.Keys.U
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: U = 85
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.V
+  commentId: F:Genesis.Core.Input.Keys.V
+  id: V
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: V
+  nameWithType: Input.Keys.V
+  fullName: Genesis.Core.Input.Keys.V
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: V = 86
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.W
+  commentId: F:Genesis.Core.Input.Keys.W
+  id: W
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: W
+  nameWithType: Input.Keys.W
+  fullName: Genesis.Core.Input.Keys.W
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: W = 87
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.X
+  commentId: F:Genesis.Core.Input.Keys.X
+  id: X
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Input.Keys.X
+  fullName: Genesis.Core.Input.Keys.X
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: X = 88
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Y
+  commentId: F:Genesis.Core.Input.Keys.Y
+  id: Y
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Input.Keys.Y
+  fullName: Genesis.Core.Input.Keys.Y
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Y = 89
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Z
+  commentId: F:Genesis.Core.Input.Keys.Z
+  id: Z
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: Input.Keys.Z
+  fullName: Genesis.Core.Input.Keys.Z
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Z = 90
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LWin
+  commentId: F:Genesis.Core.Input.Keys.LWin
+  id: LWin
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LWin
+  nameWithType: Input.Keys.LWin
+  fullName: Genesis.Core.Input.Keys.LWin
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LWin = 91
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.RWin
+  commentId: F:Genesis.Core.Input.Keys.RWin
+  id: RWin
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: RWin
+  nameWithType: Input.Keys.RWin
+  fullName: Genesis.Core.Input.Keys.RWin
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: RWin = 92
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Apps
+  commentId: F:Genesis.Core.Input.Keys.Apps
+  id: Apps
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Apps
+  nameWithType: Input.Keys.Apps
+  fullName: Genesis.Core.Input.Keys.Apps
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Apps = 93
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Sleep
+  commentId: F:Genesis.Core.Input.Keys.Sleep
+  id: Sleep
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Sleep
+  nameWithType: Input.Keys.Sleep
+  fullName: Genesis.Core.Input.Keys.Sleep
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Sleep = 95
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad0
+  commentId: F:Genesis.Core.Input.Keys.NumPad0
+  id: NumPad0
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad0
+  nameWithType: Input.Keys.NumPad0
+  fullName: Genesis.Core.Input.Keys.NumPad0
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad0 = 96
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad1
+  commentId: F:Genesis.Core.Input.Keys.NumPad1
+  id: NumPad1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad1
+  nameWithType: Input.Keys.NumPad1
+  fullName: Genesis.Core.Input.Keys.NumPad1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad1 = 97
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad2
+  commentId: F:Genesis.Core.Input.Keys.NumPad2
+  id: NumPad2
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad2
+  nameWithType: Input.Keys.NumPad2
+  fullName: Genesis.Core.Input.Keys.NumPad2
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad2 = 98
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad3
+  commentId: F:Genesis.Core.Input.Keys.NumPad3
+  id: NumPad3
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad3
+  nameWithType: Input.Keys.NumPad3
+  fullName: Genesis.Core.Input.Keys.NumPad3
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad3 = 99
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad4
+  commentId: F:Genesis.Core.Input.Keys.NumPad4
+  id: NumPad4
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad4
+  nameWithType: Input.Keys.NumPad4
+  fullName: Genesis.Core.Input.Keys.NumPad4
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad4 = 100
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad5
+  commentId: F:Genesis.Core.Input.Keys.NumPad5
+  id: NumPad5
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad5
+  nameWithType: Input.Keys.NumPad5
+  fullName: Genesis.Core.Input.Keys.NumPad5
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad5 = 101
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad6
+  commentId: F:Genesis.Core.Input.Keys.NumPad6
+  id: NumPad6
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad6
+  nameWithType: Input.Keys.NumPad6
+  fullName: Genesis.Core.Input.Keys.NumPad6
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad6 = 102
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad7
+  commentId: F:Genesis.Core.Input.Keys.NumPad7
+  id: NumPad7
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad7
+  nameWithType: Input.Keys.NumPad7
+  fullName: Genesis.Core.Input.Keys.NumPad7
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad7 = 103
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad8
+  commentId: F:Genesis.Core.Input.Keys.NumPad8
+  id: NumPad8
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad8
+  nameWithType: Input.Keys.NumPad8
+  fullName: Genesis.Core.Input.Keys.NumPad8
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad8 = 104
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumPad9
+  commentId: F:Genesis.Core.Input.Keys.NumPad9
+  id: NumPad9
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumPad9
+  nameWithType: Input.Keys.NumPad9
+  fullName: Genesis.Core.Input.Keys.NumPad9
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumPad9 = 105
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Multiply
+  commentId: F:Genesis.Core.Input.Keys.Multiply
+  id: Multiply
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Multiply
+  nameWithType: Input.Keys.Multiply
+  fullName: Genesis.Core.Input.Keys.Multiply
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Multiply = 106
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Add
+  commentId: F:Genesis.Core.Input.Keys.Add
+  id: Add
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Add
+  nameWithType: Input.Keys.Add
+  fullName: Genesis.Core.Input.Keys.Add
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Add = 107
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Separator
+  commentId: F:Genesis.Core.Input.Keys.Separator
+  id: Separator
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Separator
+  nameWithType: Input.Keys.Separator
+  fullName: Genesis.Core.Input.Keys.Separator
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Separator = 108
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Subtract
+  commentId: F:Genesis.Core.Input.Keys.Subtract
+  id: Subtract
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Subtract
+  nameWithType: Input.Keys.Subtract
+  fullName: Genesis.Core.Input.Keys.Subtract
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Subtract = 109
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Decimal
+  commentId: F:Genesis.Core.Input.Keys.Decimal
+  id: Decimal
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Decimal
+  nameWithType: Input.Keys.Decimal
+  fullName: Genesis.Core.Input.Keys.Decimal
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Decimal = 110
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Divide
+  commentId: F:Genesis.Core.Input.Keys.Divide
+  id: Divide
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Divide
+  nameWithType: Input.Keys.Divide
+  fullName: Genesis.Core.Input.Keys.Divide
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Divide = 111
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F1
+  commentId: F:Genesis.Core.Input.Keys.F1
+  id: F1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F1
+  nameWithType: Input.Keys.F1
+  fullName: Genesis.Core.Input.Keys.F1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F1 = 112
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F2
+  commentId: F:Genesis.Core.Input.Keys.F2
+  id: F2
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F2
+  nameWithType: Input.Keys.F2
+  fullName: Genesis.Core.Input.Keys.F2
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F2 = 113
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F3
+  commentId: F:Genesis.Core.Input.Keys.F3
+  id: F3
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F3
+  nameWithType: Input.Keys.F3
+  fullName: Genesis.Core.Input.Keys.F3
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F3 = 114
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F4
+  commentId: F:Genesis.Core.Input.Keys.F4
+  id: F4
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F4
+  nameWithType: Input.Keys.F4
+  fullName: Genesis.Core.Input.Keys.F4
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F4 = 115
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F5
+  commentId: F:Genesis.Core.Input.Keys.F5
+  id: F5
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F5
+  nameWithType: Input.Keys.F5
+  fullName: Genesis.Core.Input.Keys.F5
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F5 = 116
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F6
+  commentId: F:Genesis.Core.Input.Keys.F6
+  id: F6
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F6
+  nameWithType: Input.Keys.F6
+  fullName: Genesis.Core.Input.Keys.F6
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F6 = 117
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F7
+  commentId: F:Genesis.Core.Input.Keys.F7
+  id: F7
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F7
+  nameWithType: Input.Keys.F7
+  fullName: Genesis.Core.Input.Keys.F7
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F7 = 118
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F8
+  commentId: F:Genesis.Core.Input.Keys.F8
+  id: F8
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F8
+  nameWithType: Input.Keys.F8
+  fullName: Genesis.Core.Input.Keys.F8
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F8 = 119
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F9
+  commentId: F:Genesis.Core.Input.Keys.F9
+  id: F9
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F9
+  nameWithType: Input.Keys.F9
+  fullName: Genesis.Core.Input.Keys.F9
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F9 = 120
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F10
+  commentId: F:Genesis.Core.Input.Keys.F10
+  id: F10
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F10
+  nameWithType: Input.Keys.F10
+  fullName: Genesis.Core.Input.Keys.F10
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F10 = 121
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F11
+  commentId: F:Genesis.Core.Input.Keys.F11
+  id: F11
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F11
+  nameWithType: Input.Keys.F11
+  fullName: Genesis.Core.Input.Keys.F11
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F11 = 122
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F12
+  commentId: F:Genesis.Core.Input.Keys.F12
+  id: F12
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F12
+  nameWithType: Input.Keys.F12
+  fullName: Genesis.Core.Input.Keys.F12
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F12 = 123
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F13
+  commentId: F:Genesis.Core.Input.Keys.F13
+  id: F13
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F13
+  nameWithType: Input.Keys.F13
+  fullName: Genesis.Core.Input.Keys.F13
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F13 = 124
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F14
+  commentId: F:Genesis.Core.Input.Keys.F14
+  id: F14
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F14
+  nameWithType: Input.Keys.F14
+  fullName: Genesis.Core.Input.Keys.F14
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F14 = 125
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F15
+  commentId: F:Genesis.Core.Input.Keys.F15
+  id: F15
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F15
+  nameWithType: Input.Keys.F15
+  fullName: Genesis.Core.Input.Keys.F15
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F15 = 126
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F16
+  commentId: F:Genesis.Core.Input.Keys.F16
+  id: F16
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F16
+  nameWithType: Input.Keys.F16
+  fullName: Genesis.Core.Input.Keys.F16
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F16 = 127
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F17
+  commentId: F:Genesis.Core.Input.Keys.F17
+  id: F17
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F17
+  nameWithType: Input.Keys.F17
+  fullName: Genesis.Core.Input.Keys.F17
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F17 = 128
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F18
+  commentId: F:Genesis.Core.Input.Keys.F18
+  id: F18
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F18
+  nameWithType: Input.Keys.F18
+  fullName: Genesis.Core.Input.Keys.F18
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F18 = 129
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F19
+  commentId: F:Genesis.Core.Input.Keys.F19
+  id: F19
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F19
+  nameWithType: Input.Keys.F19
+  fullName: Genesis.Core.Input.Keys.F19
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F19 = 130
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F20
+  commentId: F:Genesis.Core.Input.Keys.F20
+  id: F20
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F20
+  nameWithType: Input.Keys.F20
+  fullName: Genesis.Core.Input.Keys.F20
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F20 = 131
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F21
+  commentId: F:Genesis.Core.Input.Keys.F21
+  id: F21
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F21
+  nameWithType: Input.Keys.F21
+  fullName: Genesis.Core.Input.Keys.F21
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F21 = 132
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F22
+  commentId: F:Genesis.Core.Input.Keys.F22
+  id: F22
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F22
+  nameWithType: Input.Keys.F22
+  fullName: Genesis.Core.Input.Keys.F22
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F22 = 133
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F23
+  commentId: F:Genesis.Core.Input.Keys.F23
+  id: F23
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F23
+  nameWithType: Input.Keys.F23
+  fullName: Genesis.Core.Input.Keys.F23
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F23 = 134
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.F24
+  commentId: F:Genesis.Core.Input.Keys.F24
+  id: F24
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: F24
+  nameWithType: Input.Keys.F24
+  fullName: Genesis.Core.Input.Keys.F24
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: F24 = 135
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.NumLock
+  commentId: F:Genesis.Core.Input.Keys.NumLock
+  id: NumLock
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: NumLock
+  nameWithType: Input.Keys.NumLock
+  fullName: Genesis.Core.Input.Keys.NumLock
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: NumLock = 144
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Scroll
+  commentId: F:Genesis.Core.Input.Keys.Scroll
+  id: Scroll
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Scroll
+  nameWithType: Input.Keys.Scroll
+  fullName: Genesis.Core.Input.Keys.Scroll
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Scroll = 145
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LShiftKey
+  commentId: F:Genesis.Core.Input.Keys.LShiftKey
+  id: LShiftKey
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LShiftKey
+  nameWithType: Input.Keys.LShiftKey
+  fullName: Genesis.Core.Input.Keys.LShiftKey
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LShiftKey = 160
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.RShiftKey
+  commentId: F:Genesis.Core.Input.Keys.RShiftKey
+  id: RShiftKey
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: RShiftKey
+  nameWithType: Input.Keys.RShiftKey
+  fullName: Genesis.Core.Input.Keys.RShiftKey
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: RShiftKey = 161
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LControlKey
+  commentId: F:Genesis.Core.Input.Keys.LControlKey
+  id: LControlKey
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LControlKey
+  nameWithType: Input.Keys.LControlKey
+  fullName: Genesis.Core.Input.Keys.LControlKey
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LControlKey = 162
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.RControlKey
+  commentId: F:Genesis.Core.Input.Keys.RControlKey
+  id: RControlKey
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: RControlKey
+  nameWithType: Input.Keys.RControlKey
+  fullName: Genesis.Core.Input.Keys.RControlKey
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: RControlKey = 163
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LMenu
+  commentId: F:Genesis.Core.Input.Keys.LMenu
+  id: LMenu
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LMenu
+  nameWithType: Input.Keys.LMenu
+  fullName: Genesis.Core.Input.Keys.LMenu
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LMenu = 164
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.RMenu
+  commentId: F:Genesis.Core.Input.Keys.RMenu
+  id: RMenu
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: RMenu
+  nameWithType: Input.Keys.RMenu
+  fullName: Genesis.Core.Input.Keys.RMenu
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: RMenu = 165
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserBack
+  commentId: F:Genesis.Core.Input.Keys.BrowserBack
+  id: BrowserBack
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserBack
+  nameWithType: Input.Keys.BrowserBack
+  fullName: Genesis.Core.Input.Keys.BrowserBack
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserBack = 166
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserForward
+  commentId: F:Genesis.Core.Input.Keys.BrowserForward
+  id: BrowserForward
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserForward
+  nameWithType: Input.Keys.BrowserForward
+  fullName: Genesis.Core.Input.Keys.BrowserForward
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserForward = 167
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserRefresh
+  commentId: F:Genesis.Core.Input.Keys.BrowserRefresh
+  id: BrowserRefresh
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserRefresh
+  nameWithType: Input.Keys.BrowserRefresh
+  fullName: Genesis.Core.Input.Keys.BrowserRefresh
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserRefresh = 168
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserStop
+  commentId: F:Genesis.Core.Input.Keys.BrowserStop
+  id: BrowserStop
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserStop
+  nameWithType: Input.Keys.BrowserStop
+  fullName: Genesis.Core.Input.Keys.BrowserStop
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserStop = 169
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserSearch
+  commentId: F:Genesis.Core.Input.Keys.BrowserSearch
+  id: BrowserSearch
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserSearch
+  nameWithType: Input.Keys.BrowserSearch
+  fullName: Genesis.Core.Input.Keys.BrowserSearch
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserSearch = 170
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserFavorites
+  commentId: F:Genesis.Core.Input.Keys.BrowserFavorites
+  id: BrowserFavorites
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserFavorites
+  nameWithType: Input.Keys.BrowserFavorites
+  fullName: Genesis.Core.Input.Keys.BrowserFavorites
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserFavorites = 171
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.BrowserHome
+  commentId: F:Genesis.Core.Input.Keys.BrowserHome
+  id: BrowserHome
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: BrowserHome
+  nameWithType: Input.Keys.BrowserHome
+  fullName: Genesis.Core.Input.Keys.BrowserHome
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: BrowserHome = 172
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.VolumeMute
+  commentId: F:Genesis.Core.Input.Keys.VolumeMute
+  id: VolumeMute
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: VolumeMute
+  nameWithType: Input.Keys.VolumeMute
+  fullName: Genesis.Core.Input.Keys.VolumeMute
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: VolumeMute = 173
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.VolumeDown
+  commentId: F:Genesis.Core.Input.Keys.VolumeDown
+  id: VolumeDown
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: VolumeDown
+  nameWithType: Input.Keys.VolumeDown
+  fullName: Genesis.Core.Input.Keys.VolumeDown
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: VolumeDown = 174
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.VolumeUp
+  commentId: F:Genesis.Core.Input.Keys.VolumeUp
+  id: VolumeUp
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: VolumeUp
+  nameWithType: Input.Keys.VolumeUp
+  fullName: Genesis.Core.Input.Keys.VolumeUp
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: VolumeUp = 175
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.MediaNextTrack
+  commentId: F:Genesis.Core.Input.Keys.MediaNextTrack
+  id: MediaNextTrack
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: MediaNextTrack
+  nameWithType: Input.Keys.MediaNextTrack
+  fullName: Genesis.Core.Input.Keys.MediaNextTrack
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: MediaNextTrack = 176
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.MediaPreviousTrack
+  commentId: F:Genesis.Core.Input.Keys.MediaPreviousTrack
+  id: MediaPreviousTrack
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: MediaPreviousTrack
+  nameWithType: Input.Keys.MediaPreviousTrack
+  fullName: Genesis.Core.Input.Keys.MediaPreviousTrack
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: MediaPreviousTrack = 177
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.MediaStop
+  commentId: F:Genesis.Core.Input.Keys.MediaStop
+  id: MediaStop
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: MediaStop
+  nameWithType: Input.Keys.MediaStop
+  fullName: Genesis.Core.Input.Keys.MediaStop
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: MediaStop = 178
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.MediaPlayPause
+  commentId: F:Genesis.Core.Input.Keys.MediaPlayPause
+  id: MediaPlayPause
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: MediaPlayPause
+  nameWithType: Input.Keys.MediaPlayPause
+  fullName: Genesis.Core.Input.Keys.MediaPlayPause
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: MediaPlayPause = 179
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LaunchMail
+  commentId: F:Genesis.Core.Input.Keys.LaunchMail
+  id: LaunchMail
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LaunchMail
+  nameWithType: Input.Keys.LaunchMail
+  fullName: Genesis.Core.Input.Keys.LaunchMail
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LaunchMail = 180
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.SelectMedia
+  commentId: F:Genesis.Core.Input.Keys.SelectMedia
+  id: SelectMedia
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: SelectMedia
+  nameWithType: Input.Keys.SelectMedia
+  fullName: Genesis.Core.Input.Keys.SelectMedia
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: SelectMedia = 181
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LaunchApplication1
+  commentId: F:Genesis.Core.Input.Keys.LaunchApplication1
+  id: LaunchApplication1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LaunchApplication1
+  nameWithType: Input.Keys.LaunchApplication1
+  fullName: Genesis.Core.Input.Keys.LaunchApplication1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LaunchApplication1 = 182
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.LaunchApplication2
+  commentId: F:Genesis.Core.Input.Keys.LaunchApplication2
+  id: LaunchApplication2
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: LaunchApplication2
+  nameWithType: Input.Keys.LaunchApplication2
+  fullName: Genesis.Core.Input.Keys.LaunchApplication2
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: LaunchApplication2 = 183
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemSemicolon
+  commentId: F:Genesis.Core.Input.Keys.OemSemicolon
+  id: OemSemicolon
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemSemicolon
+  nameWithType: Input.Keys.OemSemicolon
+  fullName: Genesis.Core.Input.Keys.OemSemicolon
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemSemicolon = 186
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemPlus
+  commentId: F:Genesis.Core.Input.Keys.OemPlus
+  id: OemPlus
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemPlus
+  nameWithType: Input.Keys.OemPlus
+  fullName: Genesis.Core.Input.Keys.OemPlus
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemPlus = 187
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemComma
+  commentId: F:Genesis.Core.Input.Keys.OemComma
+  id: OemComma
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemComma
+  nameWithType: Input.Keys.OemComma
+  fullName: Genesis.Core.Input.Keys.OemComma
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemComma = 188
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemMinus
+  commentId: F:Genesis.Core.Input.Keys.OemMinus
+  id: OemMinus
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemMinus
+  nameWithType: Input.Keys.OemMinus
+  fullName: Genesis.Core.Input.Keys.OemMinus
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemMinus = 189
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemPeriod
+  commentId: F:Genesis.Core.Input.Keys.OemPeriod
+  id: OemPeriod
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemPeriod
+  nameWithType: Input.Keys.OemPeriod
+  fullName: Genesis.Core.Input.Keys.OemPeriod
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemPeriod = 190
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemQuestion
+  commentId: F:Genesis.Core.Input.Keys.OemQuestion
+  id: OemQuestion
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemQuestion
+  nameWithType: Input.Keys.OemQuestion
+  fullName: Genesis.Core.Input.Keys.OemQuestion
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemQuestion = 191
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemTilde
+  commentId: F:Genesis.Core.Input.Keys.OemTilde
+  id: OemTilde
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemTilde
+  nameWithType: Input.Keys.OemTilde
+  fullName: Genesis.Core.Input.Keys.OemTilde
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemTilde = 192
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemOpenBrackets
+  commentId: F:Genesis.Core.Input.Keys.OemOpenBrackets
+  id: OemOpenBrackets
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemOpenBrackets
+  nameWithType: Input.Keys.OemOpenBrackets
+  fullName: Genesis.Core.Input.Keys.OemOpenBrackets
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemOpenBrackets = 219
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemPipe
+  commentId: F:Genesis.Core.Input.Keys.OemPipe
+  id: OemPipe
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemPipe
+  nameWithType: Input.Keys.OemPipe
+  fullName: Genesis.Core.Input.Keys.OemPipe
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemPipe = 220
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemCloseBrackets
+  commentId: F:Genesis.Core.Input.Keys.OemCloseBrackets
+  id: OemCloseBrackets
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemCloseBrackets
+  nameWithType: Input.Keys.OemCloseBrackets
+  fullName: Genesis.Core.Input.Keys.OemCloseBrackets
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemCloseBrackets = 221
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemQuotes
+  commentId: F:Genesis.Core.Input.Keys.OemQuotes
+  id: OemQuotes
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemQuotes
+  nameWithType: Input.Keys.OemQuotes
+  fullName: Genesis.Core.Input.Keys.OemQuotes
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemQuotes = 222
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Oem8
+  commentId: F:Genesis.Core.Input.Keys.Oem8
+  id: Oem8
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Oem8
+  nameWithType: Input.Keys.Oem8
+  fullName: Genesis.Core.Input.Keys.Oem8
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Oem8 = 223
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemBackslash
+  commentId: F:Genesis.Core.Input.Keys.OemBackslash
+  id: OemBackslash
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemBackslash
+  nameWithType: Input.Keys.OemBackslash
+  fullName: Genesis.Core.Input.Keys.OemBackslash
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemBackslash = 226
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.ProcessKey
+  commentId: F:Genesis.Core.Input.Keys.ProcessKey
+  id: ProcessKey
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: ProcessKey
+  nameWithType: Input.Keys.ProcessKey
+  fullName: Genesis.Core.Input.Keys.ProcessKey
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: ProcessKey = 229
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Packet
+  commentId: F:Genesis.Core.Input.Keys.Packet
+  id: Packet
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Packet
+  nameWithType: Input.Keys.Packet
+  fullName: Genesis.Core.Input.Keys.Packet
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Packet = 231
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Attn
+  commentId: F:Genesis.Core.Input.Keys.Attn
+  id: Attn
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Attn
+  nameWithType: Input.Keys.Attn
+  fullName: Genesis.Core.Input.Keys.Attn
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Attn = 246
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Crsel
+  commentId: F:Genesis.Core.Input.Keys.Crsel
+  id: Crsel
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Crsel
+  nameWithType: Input.Keys.Crsel
+  fullName: Genesis.Core.Input.Keys.Crsel
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Crsel = 247
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Exsel
+  commentId: F:Genesis.Core.Input.Keys.Exsel
+  id: Exsel
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Exsel
+  nameWithType: Input.Keys.Exsel
+  fullName: Genesis.Core.Input.Keys.Exsel
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Exsel = 248
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.EraseEof
+  commentId: F:Genesis.Core.Input.Keys.EraseEof
+  id: EraseEof
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: EraseEof
+  nameWithType: Input.Keys.EraseEof
+  fullName: Genesis.Core.Input.Keys.EraseEof
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: EraseEof = 249
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Play
+  commentId: F:Genesis.Core.Input.Keys.Play
+  id: Play
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Play
+  nameWithType: Input.Keys.Play
+  fullName: Genesis.Core.Input.Keys.Play
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Play = 250
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Zoom
+  commentId: F:Genesis.Core.Input.Keys.Zoom
+  id: Zoom
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Zoom
+  nameWithType: Input.Keys.Zoom
+  fullName: Genesis.Core.Input.Keys.Zoom
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Zoom = 251
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.Pa1
+  commentId: F:Genesis.Core.Input.Keys.Pa1
+  id: Pa1
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: Pa1
+  nameWithType: Input.Keys.Pa1
+  fullName: Genesis.Core.Input.Keys.Pa1
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: Pa1 = 253
+    return:
+      type: Genesis.Core.Input.Keys
+- uid: Genesis.Core.Input.Keys.OemClear
+  commentId: F:Genesis.Core.Input.Keys.OemClear
+  id: OemClear
+  parent: Genesis.Core.Input.Keys
+  langs:
+  - csharp
+  - vb
+  name: OemClear
+  nameWithType: Input.Keys.OemClear
+  fullName: Genesis.Core.Input.Keys.OemClear
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.Core
+  syntax:
+    content: OemClear = 254
+    return:
+      type: Genesis.Core.Input.Keys
+references:
+- uid: Genesis.Core
+  commentId: N:Genesis.Core
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.Core
+  nameWithType: Genesis.Core
+  fullName: Genesis.Core
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.Core
+    name: Core
+    isExternal: true
+    href: Genesis.Core.html
+- uid: Genesis.Core.Input.Keys
+  commentId: T:Genesis.Core.Input.Keys
+  parent: Genesis.Core
+  isExternal: true
+  href: Genesis.Core.Input.html
+  name: Input.Keys
+  nameWithType: Input.Keys
+  fullName: Genesis.Core.Input.Keys
+  spec.csharp:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html
+  spec.vb:
+  - uid: Genesis.Core.Input
+    name: Input
+    isExternal: true
+    href: Genesis.Core.Input.html
+  - name: .
+  - uid: Genesis.Core.Input.Keys
+    name: Keys
+    isExternal: true
+    href: Genesis.Core.Input.Keys.html

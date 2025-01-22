@@ -1,0 +1,229 @@
+### YamlMime:ManagedReference
+items:
+- uid: Genesis.UI.WidgetAnchor
+  commentId: T:Genesis.UI.WidgetAnchor
+  id: WidgetAnchor
+  parent: Genesis.UI
+  children:
+  - Genesis.UI.WidgetAnchor.BOTTOM_LEFT
+  - Genesis.UI.WidgetAnchor.BOTTOM_MID
+  - Genesis.UI.WidgetAnchor.BOTTOM_RIGHT
+  - Genesis.UI.WidgetAnchor.MID_LEFT
+  - Genesis.UI.WidgetAnchor.MID_MID
+  - Genesis.UI.WidgetAnchor.MID_RIGHT
+  - Genesis.UI.WidgetAnchor.TOP_LEFT
+  - Genesis.UI.WidgetAnchor.TOP_MID
+  - Genesis.UI.WidgetAnchor.TOP_RIGHT
+  langs:
+  - csharp
+  - vb
+  name: WidgetAnchor
+  nameWithType: WidgetAnchor
+  fullName: Genesis.UI.WidgetAnchor
+  type: Enum
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  summary: Enum for the widget position
+  example: []
+  syntax:
+    content: public enum WidgetAnchor
+    content.vb: Public Enum WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.TOP_LEFT
+  commentId: F:Genesis.UI.WidgetAnchor.TOP_LEFT
+  id: TOP_LEFT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: TOP_LEFT
+  nameWithType: WidgetAnchor.TOP_LEFT
+  fullName: Genesis.UI.WidgetAnchor.TOP_LEFT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: TOP_LEFT = 0
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.TOP_MID
+  commentId: F:Genesis.UI.WidgetAnchor.TOP_MID
+  id: TOP_MID
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: TOP_MID
+  nameWithType: WidgetAnchor.TOP_MID
+  fullName: Genesis.UI.WidgetAnchor.TOP_MID
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: TOP_MID = 1
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.TOP_RIGHT
+  commentId: F:Genesis.UI.WidgetAnchor.TOP_RIGHT
+  id: TOP_RIGHT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: TOP_RIGHT
+  nameWithType: WidgetAnchor.TOP_RIGHT
+  fullName: Genesis.UI.WidgetAnchor.TOP_RIGHT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: TOP_RIGHT = 2
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.MID_LEFT
+  commentId: F:Genesis.UI.WidgetAnchor.MID_LEFT
+  id: MID_LEFT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: MID_LEFT
+  nameWithType: WidgetAnchor.MID_LEFT
+  fullName: Genesis.UI.WidgetAnchor.MID_LEFT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: MID_LEFT = 3
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.MID_MID
+  commentId: F:Genesis.UI.WidgetAnchor.MID_MID
+  id: MID_MID
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: MID_MID
+  nameWithType: WidgetAnchor.MID_MID
+  fullName: Genesis.UI.WidgetAnchor.MID_MID
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: MID_MID = 4
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.MID_RIGHT
+  commentId: F:Genesis.UI.WidgetAnchor.MID_RIGHT
+  id: MID_RIGHT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: MID_RIGHT
+  nameWithType: WidgetAnchor.MID_RIGHT
+  fullName: Genesis.UI.WidgetAnchor.MID_RIGHT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: MID_RIGHT = 5
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.BOTTOM_LEFT
+  commentId: F:Genesis.UI.WidgetAnchor.BOTTOM_LEFT
+  id: BOTTOM_LEFT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: BOTTOM_LEFT
+  nameWithType: WidgetAnchor.BOTTOM_LEFT
+  fullName: Genesis.UI.WidgetAnchor.BOTTOM_LEFT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: BOTTOM_LEFT = 6
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.BOTTOM_MID
+  commentId: F:Genesis.UI.WidgetAnchor.BOTTOM_MID
+  id: BOTTOM_MID
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: BOTTOM_MID
+  nameWithType: WidgetAnchor.BOTTOM_MID
+  fullName: Genesis.UI.WidgetAnchor.BOTTOM_MID
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: BOTTOM_MID = 7
+    return:
+      type: Genesis.UI.WidgetAnchor
+- uid: Genesis.UI.WidgetAnchor.BOTTOM_RIGHT
+  commentId: F:Genesis.UI.WidgetAnchor.BOTTOM_RIGHT
+  id: BOTTOM_RIGHT
+  parent: Genesis.UI.WidgetAnchor
+  langs:
+  - csharp
+  - vb
+  name: BOTTOM_RIGHT
+  nameWithType: WidgetAnchor.BOTTOM_RIGHT
+  fullName: Genesis.UI.WidgetAnchor.BOTTOM_RIGHT
+  type: Field
+  assemblies:
+  - Genesis
+  namespace: Genesis.UI
+  syntax:
+    content: BOTTOM_RIGHT = 8
+    return:
+      type: Genesis.UI.WidgetAnchor
+references:
+- uid: Genesis.UI
+  commentId: N:Genesis.UI
+  isExternal: true
+  href: Genesis.html
+  name: Genesis.UI
+  nameWithType: Genesis.UI
+  fullName: Genesis.UI
+  spec.csharp:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.UI
+    name: UI
+    isExternal: true
+    href: Genesis.UI.html
+  spec.vb:
+  - uid: Genesis
+    name: Genesis
+    isExternal: true
+    href: Genesis.html
+  - name: .
+  - uid: Genesis.UI
+    name: UI
+    isExternal: true
+    href: Genesis.UI.html
+- uid: Genesis.UI.WidgetAnchor
+  commentId: T:Genesis.UI.WidgetAnchor
+  parent: Genesis.UI
+  isExternal: true
+  href: Genesis.UI.WidgetAnchor.html
+  name: WidgetAnchor
+  nameWithType: WidgetAnchor
+  fullName: Genesis.UI.WidgetAnchor
