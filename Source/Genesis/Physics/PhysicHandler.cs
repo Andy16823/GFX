@@ -82,7 +82,10 @@ namespace Genesis.Physics
         /// <remarks>
         /// This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
         /// </remarks>
-        public abstract void RemoveElement(PhysicsBehavior physicsBehavior);
+        public virtual void RemoveElement(PhysicsBehavior physicsBehavior)
+        {
+            this.Callbacks.Remove(physicsBehavior.GetPhysicsObject());
+        }
 
         public virtual void OnBeforePhysicsUpdate(Scene scene, Game game)
         {

@@ -107,6 +107,7 @@ namespace Genesis.Physics
         /// </remarks>
         public override void RemoveElement(PhysicsBehavior physicsBehavior)
         {
+            base.RemoveElement(physicsBehavior);
             PhysicsWorld.RemoveCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject());
         }
     }
