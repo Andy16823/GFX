@@ -50,6 +50,7 @@ namespace Genesis.Core.Behaviors.Physics3D
                 //Scale it
                 this.RigidBody.CollisionShape.LocalScaling = new Vector3(scale.X, scale.Y, scale.Z);
                 handler.ManageElement(this);
+                info.Dispose();
             }
             else
             {
@@ -127,6 +128,11 @@ namespace Genesis.Core.Behaviors.Physics3D
                 parent.Location = newLocation;
                 parent.Rotation = newRotation;
             }
+        }
+
+        public override void OnCollide(Collision collision, GameElement parent)
+        {
+            
         }
     }
 }

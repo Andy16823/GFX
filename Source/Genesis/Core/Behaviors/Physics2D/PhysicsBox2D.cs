@@ -54,6 +54,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             RigidBody.UserObject = this.Parent;
             this.RigidBody.ApplyGravity();
             handler.ManageElement(this);
+            info.Dispose();
         }
 
         /// <summary>
@@ -129,6 +130,11 @@ namespace Genesis.Core.Behaviors.Physics2D
         public override T GetPhysicsObject<T>()
         {
             return (T)(object)RigidBody;
+        }
+
+        public override void OnCollide(Collision collision, GameElement parent)
+        {
+            
         }
     }
 }

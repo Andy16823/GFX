@@ -1,5 +1,6 @@
 ﻿using Genesis.Graphics;
 using Genesis.Math;
+using Genesis.Physics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -170,6 +171,23 @@ namespace Genesis.Core
             foreach (var element in this.Children)
             {
                 element.OnDestroy(game);
+            }
+        }
+
+        /// <summary>
+        /// Called when the game element collides with another object.
+        /// </summary>
+        /// <param name="collision">The collision data.</param>
+        public virtual void OnCollide(Collision collision)
+        {
+            foreach (var behavior in this.Behaviors)
+            {
+                behavior.OnCollide(collision, this);
+            }
+
+            foreach (var child in this.Children)
+            {
+                child.OnCollide(collision);
             }
         }
 

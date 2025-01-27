@@ -64,26 +64,28 @@ namespace Genesis.Physics
                 for (int i = 0; i < numManifolds; i++)
                 {
                     PersistentManifold contactManifold = PhysicsWorld.Dispatcher.GetManifoldByIndexInternal(i);
+
                     CollisionObject obA = contactManifold.Body0 as CollisionObject;
+                    var elementA = (GameElement)obA.UserObject;
+
                     CollisionObject obB = contactManifold.Body1 as CollisionObject;
+                    var elementB = (GameElement)obB.UserObject;
 
-                    if(Callbacks.ContainsKey(obA))
+                    Collision collisionA = new Collision()
                     {
-                        Collision collision = new Collision();
-                        collision.collidingElement = (GameElement) obB.UserObject;
-                        collision.initiator = (GameElement) obA.UserObject;
-                        collision.contacts = contactManifold.NumContacts;
-                        Callbacks[obA](scene, game, collision);
-                    }
+                        collidingElement = elementB,
+                        initiator = elementA,
+                        contacts = contactManifold.NumContacts
+                    };
+                    elementA.OnCollide(collisionA);
 
-                    if(Callbacks.ContainsKey(obB))
+                    Collision collisionB = new Collision()
                     {
-                        Collision collision = new Collision();
-                        collision.collidingElement = (GameElement)obA.UserObject;
-                        collision.initiator = (GameElement)obB.UserObject;
-                        collision.contacts = contactManifold.NumContacts;
-                        Callbacks[obB](scene, game, collision);
-                    }
+                        collidingElement = elementA,
+                        initiator = elementB,
+                        contacts = contactManifold.NumContacts
+                    };
+                    elementB.OnCollide(collisionB);
                 }
             }
         }
@@ -94,7 +96,6 @@ namespace Genesis.Physics
         /// <param name="physicsBehavior">The PhysicsBehavior representing the collision object.</param>
         public override void ManageElement(PhysicsBehavior physicsBehavior, int collisionFilterGroup = -1, int collisionMaskGroup = -1)
         {
-            base.ManageElement(physicsBehavior);
             PhysicsWorld.AddCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject(), collisionFilterGroup, collisionMaskGroup);
         }
 
@@ -107,7 +108,6 @@ namespace Genesis.Physics
         /// </remarks>
         public override void RemoveElement(PhysicsBehavior physicsBehavior)
         {
-            base.RemoveElement(physicsBehavior);
             PhysicsWorld.RemoveCollisionObject((CollisionObject)physicsBehavior.GetPhysicsObject());
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Genesis.Graphics;
+using Genesis.Physics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,5 +45,7 @@ namespace Genesis.Core
         /// <param name="game">The game instance.</param>
         /// <param name="parent">The parent game element.</param>
         public abstract void OnDestroy(Game game, GameElement parent);
+
+        public abstract void OnCollide(Collision collision, GameElement parent);
     }
 }

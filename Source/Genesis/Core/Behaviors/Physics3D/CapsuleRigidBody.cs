@@ -55,6 +55,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.ApplyGravity();
 
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
+            constructionInfo.Dispose();
         }
     }
 }

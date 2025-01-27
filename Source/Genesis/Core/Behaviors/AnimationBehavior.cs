@@ -1,6 +1,7 @@
 ﻿using Genesis.Core.GameElements;
 using Genesis.Graphics;
 using Genesis.Math;
+using Genesis.Physics;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -211,6 +212,11 @@ namespace Genesis.Core.Behaviors
         public void AddCallback(String animation, int frame, AnimationEvent animationEvent)
         {
             this.Callbacks.Add(new AnimationCallback(animation, frame, animationEvent));
+        }
+
+        public override void OnCollide(Collision collision, GameElement parent)
+        {
+            
         }
     }
 }

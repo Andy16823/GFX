@@ -110,7 +110,6 @@ namespace Genesis.Core.GameElements
         public override void OnDestroy(Game game)
         {
             base.OnDestroy(game);
-            game.RenderDevice.DisposeTexture(Texture);
         }
 
         /// <summary>

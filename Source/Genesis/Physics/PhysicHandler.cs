@@ -42,20 +42,6 @@ namespace Genesis.Physics
     {
         public event PhysicHandlerEvent BeforePhysicsUpdate;
 
-
-        /// <summary>
-        /// Gets or sets the dictionary of physics callbacks.
-        /// </summary>
-        public Dictionary<object, PhysicHandlerEvent>  Callbacks { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PhysicHandler"/> class.
-        /// </summary>
-        public PhysicHandler()
-        {
-            this.Callbacks = new Dictionary<object, PhysicHandlerEvent>();
-        }
-
         /// <summary>
         /// Processes physics interactions for a given scene and game.
         /// </summary>
@@ -67,13 +53,7 @@ namespace Genesis.Physics
         /// Manages physics interactions for a specific physics behavior.
         /// </summary>
         /// <param name="physicsBehavior">The physics behavior to manage</param>
-        public virtual void ManageElement(PhysicsBehavior physicsBehavior, int collisionGroup = -1, int collisionMask = -1)
-        {
-            this.Callbacks.Add(physicsBehavior.GetPhysicsObject(), (scene, game, collision) =>
-            {
-                physicsBehavior.Collide(scene, game, collision);
-            });
-        }
+        public abstract void ManageElement(PhysicsBehavior physicsBehavior, int collisionGroup = -1, int collisionMask = -1);
 
         /// <summary>
         /// Removes the specified physics behavior from the physics world.
@@ -82,10 +62,7 @@ namespace Genesis.Physics
         /// <remarks>
         /// This abstract method should be implemented to remove the collision object associated with the provided physics behavior from the physics world.
         /// </remarks>
-        public virtual void RemoveElement(PhysicsBehavior physicsBehavior)
-        {
-            this.Callbacks.Remove(physicsBehavior.GetPhysicsObject());
-        }
+        public abstract void RemoveElement(PhysicsBehavior physicsBehavior);
 
         public virtual void OnBeforePhysicsUpdate(Scene scene, Game game)
         {

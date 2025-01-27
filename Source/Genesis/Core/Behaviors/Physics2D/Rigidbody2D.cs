@@ -73,6 +73,7 @@ namespace Genesis.Core.Behaviors.Physics2D
             RigidBody.UserObject = this.Parent;
             this.RigidBody.ApplyGravity();
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
+            info.Dispose();
         }
     }
 }

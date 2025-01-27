@@ -1,5 +1,6 @@
 ﻿using Genesis.Core.GameElements;
 using Genesis.Graphics;
+using Genesis.Physics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -123,6 +124,11 @@ namespace Genesis.Core.Behaviors
         public void MoveRight()
         {
             parent.Location = parent.Location.AddX(MoveSpeed * (float)game.DeltaTime);
+        }
+
+        public override void OnCollide(Collision collision, GameElement parent)
+        {
+            
         }
     }
 }

@@ -53,6 +53,7 @@ namespace Genesis.Core.Behaviors.Physics3D
             RigidBody.CollisionShape.LocalScaling = element.Size.ToBulletVec3();
             
             PhysicHandler.ManageElement(this, collisionGroup, collisionMask);
+            info.Dispose();
         }
     }
 }

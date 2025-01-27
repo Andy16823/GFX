@@ -127,7 +127,17 @@ namespace Genesis.Physics
         /// <param name="parent">The parent game element.</param>
         public override void OnDestroy(Game game, GameElement parent)
         {
-            PhysicHandler.RemoveElement(this);
+            this.RemoveCollider();
+        }
+
+        /// <summary>
+        /// Removes the Collider from the physics world
+        /// </summary>
+        public virtual void RemoveCollider()
+        {
+            this.PhysicHandler.RemoveElement(this);
+            this.Collider.CollisionShape.Dispose();
+            this.Collider.Dispose();
         }
 
         /// <summary>
@@ -165,6 +175,11 @@ namespace Genesis.Physics
             parent.Location = new Vec3(position.X, position.Y, position.Z) - Offset;
             parent.Rotation = new Vec3(Utils.ToDegrees(rotationVector.x), Utils.ToDegrees(rotationVector.y), Utils.ToDegrees(rotationVector.z));
             Collider.Activate(true);
+        }
+
+        public override void OnCollide(Collision collision, GameElement parent)
+        {
+            
         }
     }
 }
