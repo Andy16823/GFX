@@ -1,6 +1,8 @@
 # **GFX Game Engine 1.5.0**  
 Welcome to the GFX Game Engine – an open-source framework designed to make game development simple, powerful, and accessible. With version 1.5.0, GFX now takes a big leap into 3D game development while continuing to provide a solid foundation for 2D projects.
 
+If you have any questions about GFX, join our community on [Discord](https://discord.gg/qZRgRKedBs).
+ 
 ---
 
 ## **Overview**  
